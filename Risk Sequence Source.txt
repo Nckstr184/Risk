@@ -1,0 +1,60 @@
+title Risk Sequence
+
+MainGUI -> GameBoard: Create an object
+GameBoard --> MainGUI: Return a filled JPanel
+
+
+Continent -> Dino: Create a continent
+Dino -> Territory: Create a territory list
+Dino-->Dino: Create 7 territories per Continent
+Continent -> Crescent: Create a continent
+Crescent -> Territory: Create a territory list
+loop text
+Crescent-->Crescent: Create 7 territories per Continent
+end
+Continent -> Wildcat: Create a continent
+Wildact-> Territory: Create a territory list
+loop text
+Wildcat-->Wildcat: Create 7 territories per Continent
+end
+Continent -> Languages: Create a continent
+Languages -> Territory: Create a territory list
+loop text
+Languages-->Languages: Create 7 territories per Continent
+end
+Continent -> Sun: Create a continent
+Sun -> Territory: Create a territory list
+loop text
+Sun-->Sun: Create 7 territories per Continent
+end
+Continent -> Pizza: Create a continent
+Pizza-> Territory: Create a territory list
+loop text
+Pizza-->Pizza: Create 7 territories per Continent
+end
+
+GameLogic -> CardCollection: Create a collection of Cards
+
+CardCollection -> Card: Create a Card object
+Card -> RiskCard: Create 42 RiskCards
+Card -> WildCard: Create 2 WildCards
+
+CardCollection --> GameLogic: Return a card collection
+
+GameLogic -> PlayerCollection: Create the list of Players
+
+StartWindow -> PlayerCollection: Return number of players and how many AI
+
+PlayerCollection -> Human: Create human players
+PlayerCollection -> EasyAI: Create Easy AI
+PlayerColelction -> MediumAI: Create Medium AI
+PlayerCollection -> HardAI: Create Hard AI
+
+PlayerCollection --> BattleLogic: get the attacker and defender
+BattleLogic -> Dice: Roll the attacker dice
+Dice --> BattleLogic: Return attacker dice values
+BattleLogic -> Dice: Roll the defender dice
+Dice --> BattleLogic: Return the defender dice values
+BattleLogic -> Continent: Change number of armies at location
+
+GameLogic -> PlayerCollection: Start next turn
