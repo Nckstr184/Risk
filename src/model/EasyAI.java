@@ -1,5 +1,5 @@
 package model;
 
-public class EasyAI extends Player {
+public class EasyAI extends Player implements AIStrategy{
 
 }
