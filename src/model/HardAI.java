@@ -1,6 +1,12 @@
 package model;
 
+import java.awt.Color;
+
 public class HardAI extends Player implements AIStrategy{
+
+	public HardAI(String name, Color color) {
+		super(name, color);
+	}
 
 	@Override
 	public void deployArmy() {

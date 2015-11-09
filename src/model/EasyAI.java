@@ -1,15 +1,19 @@
 package model;
 
+import java.awt.Color;
 import java.util.Random;
 
 public class EasyAI extends Player implements AIStrategy {
 
+
 	Random r;
 	int randomChoice;
 
-	public EasyAI() {
+	public EasyAI(String name, Color color) {
+		super(name, color);
 		r = new Random();
 	}
+
 
 	@Override
 	public void deployArmy() {

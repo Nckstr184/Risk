@@ -1,7 +1,13 @@
 package model;
 
+import java.awt.Color;
+
 public class MediumAI extends Player implements AIStrategy{
 
+
+	public MediumAI(String name, Color color) {
+		super(name, color);
+	}
 
 	@Override
 	public void deployArmy() {
