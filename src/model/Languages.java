@@ -21,6 +21,5 @@ public class Languages extends Continent {
 		LangTerr.add(5, new Territory("Git",new Point(730,190), button, currentPlayer, 0));
 		LangTerr.add(6, new Territory("Perl",new Point(790,180), button, currentPlayer, 0));
 
-		
 	}
 }

@@ -20,7 +20,6 @@ public class Sun extends Continent {
 		sunTerr.add(4, new Territory("Horus",new Point(400,260), button, currentPlayer, 0));
 		sunTerr.add(5, new Territory("Tonatiuh",new Point(350,260), button, currentPlayer, 0));
 		sunTerr.add(6, new Territory("Amun",new Point(360,210), button, currentPlayer, 0));
-
-		
+	
 	}
 }

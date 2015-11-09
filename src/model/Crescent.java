@@ -5,6 +5,8 @@ import java.util.ArrayList;
 
 import javax.swing.JButton;
 
+import java.util.ArrayList;
+
 public class Crescent extends Continent {
 	ArrayList<Territory> cresTerr;
 	public Crescent(String cName, ArrayList<Territory> cTerritories,boolean cConquered) {
@@ -21,6 +23,5 @@ public class Crescent extends Continent {
 		cresTerr.add(5, new Territory("Bloo Bawl",new Point(730,390), button, currentPlayer, 0));
 		cresTerr.add(6, new Territory("Crescent Capital",new Point(770,350), button, currentPlayer, 0));
 
-		
 	}
 }

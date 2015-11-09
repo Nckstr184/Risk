@@ -4,7 +4,6 @@ import java.awt.Point;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
-
 public class Wildcat extends Continent {
 	ArrayList<Territory> wildTerr;
 	public Wildcat(String cName, ArrayList<Territory> cTerritories,boolean cConquered) {
@@ -21,6 +20,5 @@ public class Wildcat extends Continent {
 		wildTerr.add(5, new Territory("McKale",new Point(320,500), button, currentPlayer, 0));
 		wildTerr.add(6, new Territory("Zona",new Point(270,540), button, currentPlayer, 0));
 
-		
 	}
 }
