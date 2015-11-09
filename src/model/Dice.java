@@ -6,62 +6,53 @@ public class Dice {
 
 	private int diceRolled, numOfDice;
 	private double tempDice;
-	public ArrayList<Integer> diceList;
-	private Dice tester;
 	
-
+	private Dice tester;
+	ArrayList<Integer> diceList = new ArrayList<Integer>();
 
 	public Dice(int numOfDiceRolled) {
 		this.numOfDice = numOfDiceRolled;
-		ArrayList<Integer> diceList = new ArrayList<Integer>();
+		
 		if (numOfDice == 3) {
 			diceList.add(rollDice());
 			diceList.add(rollDice());
 			diceList.add(rollDice());
-			
-			
+
 		}
 		if (numOfDice == 2) {
 			diceList.add(rollDice());
 			diceList.add(rollDice());
-			
-		
+
 		}
 		if (numOfDice == 1) {
 			diceList.add(rollDice());
-			
-			
+
 		}
-		
-	
-		
+
 	}
-	public int rollDice(){
+
+	public int rollDice() {
 		int max = 7;
 		int min = 1;
-		diceRolled = (int)(Math.random() * (max - min) + min);
-		
+		diceRolled = (int) (Math.random() * (max - min) + min);
+
 		return diceRolled;
 	}
-	public ArrayList<Integer> getDice(){
+
+	public ArrayList<Integer> getDice() {
 		return diceList;
 	}
-	
-	public int getDice1(){
+
+	public int getDice1() {
 		return diceList.get(0);
 	}
-	public int getDice2(){
+
+	public int getDice2() {
 		return diceList.get(2);
 	}
-	public int getDice3(){
+
+	public int getDice3() {
 		return diceList.get(3);
 	}
-	
-	
-	
-	
-	
-	
-	
 
 }
