@@ -29,7 +29,7 @@ public abstract class Player {
 		return playerCards;
 	}
 	
-	public String getString()
+	public String getName()
 	{
 		return name;
 	}
