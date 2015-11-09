@@ -16,7 +16,7 @@ public class PlayerTest {
 
 	@Test
 	public void test() {
-		Player test=new Human("test",Color.BLACK);
+		Player test=new Human("test",Color.BLACK, 0);
 
 		assertEquals("test", test.getName());
 		assertEquals(Color.BLACK, test.returnColor());

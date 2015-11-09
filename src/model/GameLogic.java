@@ -29,11 +29,11 @@ public class GameLogic {
 		// Filling in the territories list
 		ArrayList<Territory> tempTerritories;
 		for(int i=0; i<allContinents.size(); i++) {
-			tempTerritories = allContinents.get(i);
+			tempTerritories = allContinents.get(i).getTerritories();
 			for(int j=0; j<NUM_OF_TERRITORIES; j++) {
 				allTerritories.add(tempTerritories.get(j));
 			}
 		}
 	}
-
+	
 }
