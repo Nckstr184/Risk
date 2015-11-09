@@ -9,12 +9,14 @@ public abstract class Player {
 	private Color playerColor;
 	private ArrayList<Card> playerCards;
 	private ArrayList<Territory> playerTerritories;
+	private int numOfArmies;
 	
 	
-	public Player(String name, Color color)
+	public Player(String name, Color color, int numOfArmies)
 	{
 		this.name=name;
 		this.playerColor=color;
+		this.numOfArmies=numOfArmies;
 		playerCards=new ArrayList<Card>();
 		playerTerritories=new ArrayList<Territory>();
 	}
@@ -29,9 +31,13 @@ public abstract class Player {
 		return playerCards;
 	}
 	
-	public String getString()
+	public String getName()
 	{
 		return name;
+	}
+	
+	public int getNumOfArmies() {
+		return numOfArmies;
 	}
 	
 	public Color returnColor()

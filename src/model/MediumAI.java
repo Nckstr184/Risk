@@ -1,12 +1,13 @@
 package model;
 
 import java.awt.Color;
+import java.util.ArrayList;
 
 public class MediumAI extends Player implements AIStrategy{
 
-
-	public MediumAI(String name, Color color) {
-		super(name, color);
+	ArrayList<Territory> territories;
+	public MediumAI(String name, Color color, int numOfArmies) {
+		super(name, color, numOfArmies);
 	}
 
 	@Override
