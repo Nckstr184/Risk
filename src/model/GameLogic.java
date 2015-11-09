@@ -8,12 +8,14 @@ public class GameLogic {
 	
 	private ArrayList<Territory> allTerritories;
 	private ArrayList<Continent> allContinents;
+	private ArrayList<Player> allPlayers;
 	private Languages languages;
 	private Dino dino;
 	private Wildcat wildcat;
 	private Pizza pizza;
 	private Crescent crescent;
 	private Sun sun;
+	
 	public GameLogic() {
 		allTerritories = new ArrayList<Territory>();
 		allContinents = new ArrayList<Continent>();
@@ -36,4 +38,7 @@ public class GameLogic {
 		}
 	}
 	
+	public void startGame(ArrayList<Player> allPlayers) {
+		this.allPlayers = allPlayers;
+	}
 }
