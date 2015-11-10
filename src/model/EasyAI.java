@@ -27,26 +27,48 @@ public class EasyAI extends Player implements AIStrategy {
 	
 
 	@Override
-	public void deployArmy() {
+	public Territory deployArmy(ArrayList<Territory> territories) {
 		// choose random territories to add reward units
+		int rand = r.nextInt(territories.size());
+		Territory temp = territories.get(rand);
+		return temp;
 	}
 
 	@Override
 	public boolean chooseRetreat() {
 		// chooses whether to retreat in the middle of battle
-		return false;
+		int rand = r.nextInt(2);
+		if(rand == 0)
+			return true;
+		else
+			return false;
 	}
 
 	@Override
-	public void attackTerritory() {
+	public Territory attackTerritory(ArrayList<Territory> connected) {
 		// chooses a random connected territory to attack, as long
 		// as there is more than one army in it
-
+		int rand = r.nextInt(2);
+		if(rand == 0) {
+			rand = r.nextInt(connected.size());
+			return connected.get(rand);
+		}
+		// returns null if it decides to not attack
+		return null;
 	}
 
 	@Override
-	public void fortifyPosition() {
+	public void fortifyPosition(ArrayList<Territory> connected) {
 		// randomly decides to move armies to friendly connected territory
+		int rand = r.nextInt(2);
+		if(rand == 0) {
+			rand = r.nextInt(connected.size());
+			Territory temp = connected.get(rand);
+			int armySize = this.getNumOfArmies();
+			rand = r.nextInt(armySize-1);
+			
+			temp.addUnits(rand);
+		}
 	}
 
 }

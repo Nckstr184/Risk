@@ -1,12 +1,14 @@
 package model;
 
+import java.util.ArrayList;
+
 public interface AIStrategy {
 	
-	public void deployArmy();
+	public Territory deployArmy(ArrayList<Territory> territories);
 	
 	public boolean chooseRetreat();
 	
-	public void attackTerritory();
+	public Territory attackTerritory(ArrayList<Territory> connected);
 	
-	public void fortifyPosition();
+	public void fortifyPosition(ArrayList<Territory> connected);
 }

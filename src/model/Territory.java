@@ -41,6 +41,9 @@ public class Territory {
 	public Player getOwner(){
 		return player;
 	}
+	public void addUnits(int unitNum) {
+		units += unitNum;
+	}
 	public int getUnits(){
 		return units;
 	}
