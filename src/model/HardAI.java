@@ -1,6 +1,7 @@
 package model;
 
 import java.awt.Color;
+import java.util.ArrayList;
 
 public class HardAI extends Player implements AIStrategy{
 
@@ -9,9 +10,9 @@ public class HardAI extends Player implements AIStrategy{
 	}
 
 	@Override
-	public void deployArmy() {
+	public Territory deployArmy(ArrayList<Territory> territories) {
 		// TODO Auto-generated method stub
-		
+		return null;
 	}
 
 	@Override
@@ -21,15 +22,16 @@ public class HardAI extends Player implements AIStrategy{
 	}
 
 	@Override
-	public void attackTerritory() {
+	public Territory attackTerritory(ArrayList<Territory> connected) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void fortifyPosition(ArrayList<Territory> connected) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
-	public void fortifyPosition() {
-		// TODO Auto-generated method stub
-		
-	}
 
 }

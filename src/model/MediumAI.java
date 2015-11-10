@@ -9,27 +9,23 @@ public class MediumAI extends Player implements AIStrategy{
 	public MediumAI(String name, Color color, int numOfArmies) {
 		super(name, color, numOfArmies);
 	}
-
 	@Override
-	public void deployArmy() {
+	public Territory deployArmy(ArrayList<Territory> territories) {
 		// TODO Auto-generated method stub
-		
+		return null;
 	}
-
 	@Override
 	public boolean chooseRetreat() {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
 	@Override
-	public void attackTerritory() {
+	public Territory attackTerritory(ArrayList<Territory> connected) {
 		// TODO Auto-generated method stub
-		
+		return null;
 	}
-
 	@Override
-	public void fortifyPosition() {
+	public void fortifyPosition(ArrayList<Territory> connected) {
 		// TODO Auto-generated method stub
 		
 	}
