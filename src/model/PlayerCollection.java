@@ -22,4 +22,12 @@ public class PlayerCollection implements Serializable {
 	public Player getPlayer(int index) {
 		return playerList.get(index);
 	}
+	
+	public void setPlayerList(ArrayList<Player> playerList) {
+		this.playerList = playerList;
+	}
+	
+	public int getNumOfPlayers() {
+		return playerList.size();
+	}
 }

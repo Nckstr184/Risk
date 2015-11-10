@@ -10,6 +10,7 @@ public abstract class Player {
 	private ArrayList<Card> playerCards;
 	private ArrayList<Territory> playerTerritories;
 	private int numOfArmies;
+	private int diceRoll;
 	
 	
 	public Player(String name, Color color, int numOfArmies)
@@ -71,6 +72,14 @@ public abstract class Player {
 		{
 			playerCards.remove(index);
 		}
+	}
+	
+	public void setDiceRoll(int roll) {
+		diceRoll = roll;
+	}
+	
+	public int getDiceRoll() {
+		return diceRoll;
 	}
 	
 }
