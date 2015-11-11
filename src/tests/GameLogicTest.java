@@ -4,11 +4,14 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import model.GameLogic;
+
 public class GameLogicTest {
 
 	@Test
 	public void test() {
-		fail("Not yet implemented");
+		GameLogic logic= new GameLogic();
+		
 	}
 
 }
