@@ -6,12 +6,10 @@ import java.util.ArrayList;
 public abstract class Continent implements Serializable{
 	
 	String name;
-	ArrayList<Territory> territories;
 	boolean conquered=false;
 	
-	public Continent(String cName, ArrayList<Territory> cTerritories, boolean cConquered){
+	public Continent(String cName, boolean cConquered){
 		name=cName;
-		territories= cTerritories;
 		conquered= cConquered;
 		
 		
@@ -19,9 +17,7 @@ public abstract class Continent implements Serializable{
 	public String getName(){
 		return name;
 	}
-	public ArrayList<Territory> getTerritories(){
-		return territories;
-	}
+	public abstract ArrayList<Territory> getTerritories();
 	public boolean cConquered(){
 		return conquered;
 	}

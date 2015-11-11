@@ -8,7 +8,7 @@ public class MediumAITest {
 
 	@Test
 	public void test() {
-		fail("Not yet implemented");
+
 	}
 
 }
