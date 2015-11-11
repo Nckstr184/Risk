@@ -11,6 +11,7 @@ public class Dino extends Continent {
 	public Dino(String cName, ArrayList<Territory> cTerritories,boolean cConquered) {
 		super(cName, cTerritories, cConquered);
 		
+		dinoTerr = new ArrayList<Territory>();
 		Player currentPlayer = null;//get current player
 		JButton button= new JButton("0");
 		// Sting name, Point tcoords, JButton tbutton, Player owner, int numOfUnits

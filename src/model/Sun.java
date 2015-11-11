@@ -10,6 +10,7 @@ public class Sun extends Continent {
 	public Sun(String cName, ArrayList<Territory> cTerritories,boolean cConquered) {
 		super(cName, cTerritories, cConquered);
 		
+		sunTerr = new ArrayList<Territory>();
 		Player currentPlayer = null;//get current player
 		JButton button= new JButton("0");
 		// Sting name, Point tcoords, JButton tbutton, Player owner, int numOfUnits

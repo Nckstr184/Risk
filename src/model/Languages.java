@@ -10,6 +10,7 @@ public class Languages extends Continent {
 	public Languages(String cName, ArrayList<Territory> cTerritories,boolean cConquered) {
 		super(cName, cTerritories, cConquered);
 		
+		LangTerr = new ArrayList<Territory>();
 		Player currentPlayer = null;//get current player
 		JButton button= new JButton("0");
 		// Sting name, Point tcoords, JButton tbutton, Player owner, int numOfUnits

@@ -12,7 +12,7 @@ public class Crescent extends Continent {
 	ArrayList<Territory> cresTerr;
 	public Crescent(String cName, ArrayList<Territory> cTerritories,boolean cConquered) {
 		super(cName, cTerritories, cConquered);
-		
+		cresTerr = new ArrayList<Territory>();
 		//WE NEED TO FIX THIS TO PULL IN THE CURRENT PLAYER
 		Player currentPlayer = new Human(cName, Color.RED, 0);//get current player
 		JButton button= new JButton("0");
