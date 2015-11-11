@@ -25,6 +25,14 @@ public class GameLogic {
 		defendDice = new Dice(2);
 		turnDice = new Dice(1);
 		
+		languages=new Languages("languages", allTerritories, false);
+		dino=new Dino("dino", allTerritories, false);
+		wildcat=new Wildcat("wildcat", allTerritories, false);
+		pizza=new Pizza("pizza", allTerritories, false);
+		crescent=new Crescent("crescent", allTerritories, false);
+		sun=new Sun("sun", allTerritories, false);
+
+		
 		// Adding all the continent objects to an arraylist
 		allContinents.add(languages);
 		allContinents.add(dino);
@@ -43,6 +51,10 @@ public class GameLogic {
 		}
 	}
 
+	public ArrayList<Territory> getTerritories()
+	{
+		return allTerritories;
+	}
 	public void addPlayers(Player player) {
 		allPlayers.addPlayers(player);
 	}
