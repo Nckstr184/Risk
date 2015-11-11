@@ -24,7 +24,7 @@ public class GameLogic {
 		attackDice = new Dice(3);
 		defendDice = new Dice(2);
 		turnDice = new Dice(1);
-
+		
 		// Adding all the continent objects to an arraylist
 		allContinents.add(languages);
 		allContinents.add(dino);

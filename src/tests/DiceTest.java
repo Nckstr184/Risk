@@ -28,5 +28,18 @@ public class DiceTest {
 		ArrayList<Integer> testList = test.getDice();
 		assertEquals(1,testList.size());	
 	}
+	
+	@Test
+	public void testDiceGetters() {
+		Dice test = new Dice(3);
+		test.setDice1(0);
+		test.setDice2(1);
+		test.setDice3(2);
+
+		assertEquals(0, test.getDice1());
+		assertEquals(1, test.getDice2());
+		assertEquals(2, test.getDice3());
+
+	}
 
 }
