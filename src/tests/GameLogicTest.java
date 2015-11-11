@@ -22,12 +22,12 @@ public class GameLogicTest {
 	public void test() {
 		GameLogic logic= new GameLogic();
 		ArrayList<Territory> cTerritories=new ArrayList<Territory>();
-		Continent Crescent=new Crescent("Crescent", cTerritories, false);
-		Continent Dino=new Dino("Dino", cTerritories, false);
-		Continent Pizza=new Pizza("Pizza", cTerritories, false);
-		Continent Sun=new Sun("Sun", cTerritories, false);
-		Continent Languages=new Languages("Languages", cTerritories, false);
-		Continent Wildcat=new Wildcat("Wildcat", cTerritories, false);
+		Continent Crescent=new Crescent("Crescent", false);
+		Continent Dino=new Dino("Dino", false);
+		Continent Pizza=new Pizza("Pizza", false);
+		Continent Sun=new Sun("Sun", false);
+		Continent Languages=new Languages("Languages", false);
+		Continent Wildcat=new Wildcat("Wildcat",false);
 		
 		cTerritories=Crescent.getTerritories();
 		cTerritories.addAll(Dino.getTerritories());
