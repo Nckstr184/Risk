@@ -1,9 +1,13 @@
 package model;
 
 import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
+
+import javax.imageio.ImageIO;
 
 public class CardCollection implements Serializable {
 
@@ -13,6 +17,57 @@ public class CardCollection implements Serializable {
 			C6T3, C6T4, C6T5, C6T6, C6T7, wildCard1, wildCard2;
 
 	public CardCollection() {
+		
+		try {
+			C1T1 = ImageIO.read(new File("./Pictures/C1T1.png"));
+			C1T2 = ImageIO.read(new File("./Pictures/C1T2.png"));
+			C1T3 = ImageIO.read(new File("./Pictures/C1T3.png"));
+			C1T4 = ImageIO.read(new File("./Pictures/C1T4.png"));
+			C1T5 = ImageIO.read(new File("./Pictures/C1T5.png"));
+			C1T6 = ImageIO.read(new File("./Pictures/C1T6.png"));
+			C1T7 = ImageIO.read(new File("./Pictures/C1T7.png"));
+			C2T1 = ImageIO.read(new File("./Pictures/C2T1.png"));
+			C2T2 = ImageIO.read(new File("./Pictures/C2T2.png"));
+			C2T3 = ImageIO.read(new File("./Pictures/C2T3.png"));
+			C2T4 = ImageIO.read(new File("./Pictures/C2T4.png"));
+			C2T5 = ImageIO.read(new File("./Pictures/C2T5.png"));
+			C2T6 = ImageIO.read(new File("./Pictures/C2T6.png"));
+			C2T7 = ImageIO.read(new File("./Pictures/C2T7.png"));
+			C3T1 = ImageIO.read(new File("./Pictures/C3T1.png"));
+			C3T2 = ImageIO.read(new File("./Pictures/C3T2.png"));
+			C3T3 = ImageIO.read(new File("./Pictures/C3T3.png"));
+			C3T4 = ImageIO.read(new File("./Pictures/C3T4.png"));
+			C3T5 = ImageIO.read(new File("./Pictures/C3T5.png"));
+			C3T6 = ImageIO.read(new File("./Pictures/C3T6.png"));
+			C3T7 = ImageIO.read(new File("./Pictures/C3T7.png"));
+			C4T1 = ImageIO.read(new File("./Pictures/C4T1.png"));
+			C4T2 = ImageIO.read(new File("./Pictures/C4T2.png"));
+			C4T3 = ImageIO.read(new File("./Pictures/C4T3.png"));
+			C4T4 = ImageIO.read(new File("./Pictures/C4T4.png"));
+			C4T5 = ImageIO.read(new File("./Pictures/C4T5.png"));
+			C4T6 = ImageIO.read(new File("./Pictures/C4T6.png"));
+			C4T7 = ImageIO.read(new File("./Pictures/C4T7.png"));
+			C5T1 = ImageIO.read(new File("./Pictures/C5T1.png"));
+			C5T2 = ImageIO.read(new File("./Pictures/C5T2.png"));
+			C5T3 = ImageIO.read(new File("./Pictures/C5T3.png"));
+			C5T4 = ImageIO.read(new File("./Pictures/C5T4.png"));
+			C5T5 = ImageIO.read(new File("./Pictures/C5T5.png"));
+			C5T6 = ImageIO.read(new File("./Pictures/C5T6.png"));
+			C5T7 = ImageIO.read(new File("./Pictures/C5T7.png"));
+			C6T1 = ImageIO.read(new File("./Pictures/C6T1.png"));
+			C6T2 = ImageIO.read(new File("./Pictures/C6T2.png"));
+			C6T3 = ImageIO.read(new File("./Pictures/C6T3.png"));
+			C6T4 = ImageIO.read(new File("./Pictures/C6T4.png"));
+			C6T5 = ImageIO.read(new File("./Pictures/C6T5.png"));
+			C6T6 = ImageIO.read(new File("./Pictures/C6T6.png"));
+			C6T7 = ImageIO.read(new File("./Pictures/C6T7.png"));
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println("ERROR!!!");
+			e.printStackTrace();
+		}
+		
 		cardCollection = new ArrayList<Card>();
 		cardCollection.add(new RiskCard("Java", "SPONGEBOB", C1T1));
 		cardCollection.add(new RiskCard("Python", "PATRICK", C1T2));
