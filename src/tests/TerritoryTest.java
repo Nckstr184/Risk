@@ -14,7 +14,6 @@ import model.Territory;
 
 public class TerritoryTest {
 
-	@SuppressWarnings("deprecation")
 	@Test
 	public void test() {
 		Player temp=new Human("Player", null, 0);
@@ -31,8 +30,8 @@ public class TerritoryTest {
 		assertEquals(1, terr.getUnits());
 		double x=0;
 		double y=0;
-		assertEquals(x, terr.getX());
-		assertEquals(y, terr.getY());
+		assertEquals(x, terr.getX(),0);
+		assertEquals(y, terr.getY(),0);
 
 	}
 
