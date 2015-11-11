@@ -2,5 +2,5 @@ package model;
 
 public enum CardType {
 
-	SPONGEBOB, PATRICK, GARY;
+	SPONGEBOB, PATRICK, GARY, WILD;
 }

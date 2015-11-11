@@ -6,6 +6,7 @@ public abstract class Card {
 
 	String type;
 	Image img;
+	
 
 	public Card(String type, Image img) {
 		this.type = type;
