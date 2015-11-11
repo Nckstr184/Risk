@@ -7,6 +7,7 @@ import java.awt.Image;
 import org.junit.Test;
 
 import model.RiskCard;
+import model.WildCard;
 
 public class CardTest {
 
@@ -15,6 +16,10 @@ public class CardTest {
 		Image image=null;
 		RiskCard test= new RiskCard("territory","type", image);
 		assertEquals("territory", test.getTerritory());
+		WildCard test1= new WildCard("territory",image);
+		assertEquals("territory", test1.getType());
+		assertEquals(image, test1.getImage());
+
 	}
 
 }
