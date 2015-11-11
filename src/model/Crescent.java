@@ -10,8 +10,8 @@ import java.util.ArrayList;
 
 public class Crescent extends Continent {
 	ArrayList<Territory> cresTerr;
-	public Crescent(String cName, ArrayList<Territory> cTerritories,boolean cConquered) {
-		super(cName, cTerritories, cConquered);
+	public Crescent(String cName, boolean cConquered) {
+		super(cName, cConquered);
 		cresTerr = new ArrayList<Territory>();
 		//WE NEED TO FIX THIS TO PULL IN THE CURRENT PLAYER
 		Player currentPlayer = new Human(cName, Color.RED, 0);//get current player
@@ -25,5 +25,8 @@ public class Crescent extends Continent {
 		cresTerr.add(5, new Territory("Bloo Bawl",new Point(730,390), button, currentPlayer, 0));
 		cresTerr.add(6, new Territory("Crescent Capital",new Point(770,350), button, currentPlayer, 0));
 
+	}
+	public ArrayList<Territory> getTerritories() {
+		return cresTerr;
 	}
 }

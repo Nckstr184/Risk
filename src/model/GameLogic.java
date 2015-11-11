@@ -25,12 +25,12 @@ public class GameLogic {
 		defendDice = new Dice(2);
 		turnDice = new Dice(1);
 		
-		languages=new Languages("languages", allTerritories, false);
-		dino=new Dino("dino", allTerritories, false);
-		wildcat=new Wildcat("wildcat", allTerritories, false);
-		pizza=new Pizza("pizza", allTerritories, false);
-		crescent=new Crescent("crescent", allTerritories, false);
-		sun=new Sun("sun", allTerritories, false);
+		languages=new Languages("languages", false);
+		dino=new Dino("dino", false);
+		wildcat=new Wildcat("wildcat", false);
+		pizza=new Pizza("pizza", false);
+		crescent=new Crescent("crescent", false);
+		sun=new Sun("sun", false);
 
 		
 		// Adding all the continent objects to an arraylist
