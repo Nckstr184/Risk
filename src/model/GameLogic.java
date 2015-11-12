@@ -55,6 +55,12 @@ public class GameLogic {
 	{
 		return allTerritories;
 	}
+	
+	public Player getPlayerAt(int index)
+	{
+		return allPlayers.getPlayer(index);
+	}
+	
 	public void addPlayers(Player player) {
 		allPlayers.addPlayers(player);
 	}
