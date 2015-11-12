@@ -80,33 +80,33 @@ public class GameLogic {
 		}
 		// sorts the players based on dice roll *DOESNT ROLL AGAIN FOR DUPLICATES*
 		// However, duplicates do not break the sorting (Insertion Sort FTW)
-		tempList = InsertionSort((Player[]) tempList.toArray());
+		tempList = InsertionSort(tempList.toArray());
 		
 		// sets the master Player List to the sorted one
 		allPlayers.setPlayerList(tempList);
 	}
 
-	public ArrayList<Player> InsertionSort(Player[] num) {
+	public ArrayList<Player> InsertionSort(Object[] objects) {
 		int j; // the number of items sorted so far
 		int key; // the item to be inserted
 		int i;
 
-		for (j = 1; j < num.length; j++) // Start with 1 (not 0)
+		for (j = 1; j < objects.length; j++) // Start with 1 (not 0)
 		{
-			key = num[j].getDiceRoll();
-			for (i = j - 1; (i >= 0) && (num[i].getDiceRoll() < key); i--) // Smaller
+			key = ((Player) objects[j]).getDiceRoll();
+			for (i = j - 1; (i >= 0) && (((Player) objects[i]).getDiceRoll() < key); i--) // Smaller
 																			// values
 			// are moving up
 			{
-				num[i + 1] = num[i];
+				objects[i + 1] = objects[i];
 			}
-			num[i + 1].setDiceRoll(key); // Put the key in its proper location
+			((Player) objects[i + 1]).setDiceRoll(key); // Put the key in its proper location
 		}
 		
 		// converts Player[] to ArrayList<Player>
 		ArrayList<Player> temp = new ArrayList<Player>();
-		for (int k = 0; k < num.length; k++) {
-			temp.add(num[k]);
+		for (int k = 0; k < objects.length; k++) {
+			temp.add((Player) objects[k]);
 		}
 		
 		return temp;
