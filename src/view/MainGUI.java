@@ -48,7 +48,11 @@ public class MainGUI extends JFrame {
 	}
 
 	public MainGUI() {
+
 		this.setLayout(null);
+
+
+		GameBoard map = new GameBoard();
 
 		Dimension sizeMe = Toolkit.getDefaultToolkit().getScreenSize();
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -69,10 +73,13 @@ public class MainGUI extends JFrame {
 		
 		
      // nbt.setBackground(Color.BLUE);
+
 		Font font = new Font("Serif",Font.BOLD, 30);
 		
-      nbt.setSize(50, 50);
-      nbt.setLocation(100, 100);
+      
+      nbt.setSize(25, 25);
+      nbt.setLocation(680, 150);
+
       nbt.setOpaque(false);
       nbt.setContentAreaFilled(false);
       nbt.setBorderPainted(false);
@@ -88,6 +95,8 @@ public class MainGUI extends JFrame {
       this.add(nbt);
       
       nbt.setVisible(true);
+      this.add(map);
+		
 	        
 	    }
 		private class buttonListener implements ActionListener{
