@@ -7,9 +7,10 @@ import javax.swing.JButton;
 
 public class Sun extends Continent {
 	ArrayList<Territory> sunTerr;
-	public Sun(String cName, ArrayList<Territory> cTerritories,boolean cConquered) {
-		super(cName, cTerritories, cConquered);
+	public Sun(String cName, boolean cConquered) {
+		super(cName, cConquered);
 		
+		sunTerr = new ArrayList<Territory>();
 		Player currentPlayer = null;//get current player
 		JButton button= new JButton("0");
 		// Sting name, Point tcoords, JButton tbutton, Player owner, int numOfUnits
@@ -21,5 +22,8 @@ public class Sun extends Continent {
 		sunTerr.add(5, new Territory("Tonatiuh",new Point(350,260), button, currentPlayer, 0));
 		sunTerr.add(6, new Territory("Amun",new Point(360,210), button, currentPlayer, 0));
 	
+	}
+	public ArrayList<Territory> getTerritories() {
+		return sunTerr;
 	}
 }

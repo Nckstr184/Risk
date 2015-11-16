@@ -1,167 +1,133 @@
 package model;
 
 import java.awt.Image;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
-
-import model.Card;
+import java.util.Collections;
 
 import javax.imageio.ImageIO;
 
-public class CardCollection implements Serializable{
-	ArrayList<Card> cards;
-	
-	public CardCollection(){
-		BufferedImage newImg = null;
-		BufferedImage newImg1 = null;
-		BufferedImage newImg2 = null;
-		BufferedImage newImg3 = null;
-		BufferedImage newImg4 = null;
-		BufferedImage newImg5 = null;
-		BufferedImage newImg6 = null;
-		BufferedImage newImg7 = null;
-		BufferedImage newImg8 = null;
-		BufferedImage newImg9 = null;
-		BufferedImage newImg10 = null;
-		BufferedImage newImg11 = null;
-		BufferedImage newImg12 = null;
-		BufferedImage newImg13 = null;
-		BufferedImage newImg14 = null;
-		BufferedImage newImg15 = null;
-		BufferedImage newImg16 = null;
-		BufferedImage newImg17 = null;
-		BufferedImage newImg18 = null;
-		BufferedImage newImg19 = null;
-		BufferedImage newImg20 = null;
-		BufferedImage newImg21 = null;
-		BufferedImage newImg22 = null;
-		BufferedImage newImg23 = null;
-		BufferedImage newImg24 = null;
-		BufferedImage newImg25 = null;
-		BufferedImage newImg26 = null;
-		BufferedImage newImg27 = null;
-		BufferedImage newImg28 = null;
-		BufferedImage newImg29 = null;
-		BufferedImage newImg30 = null;
-		BufferedImage newImg31 = null;
-		BufferedImage newImg32 = null;
-		BufferedImage newImg33 = null;
-		BufferedImage newImg34 = null;
-		BufferedImage newImg35 = null;
-		BufferedImage newImg36 = null;
-		BufferedImage newImg37 = null;
-		BufferedImage newImg38 = null;
-		BufferedImage newImg39 = null;
-		BufferedImage newImg40 = null;
-		BufferedImage newImg41 = null;
-		
+public class CardCollection implements Serializable {
+
+	ArrayList<Card> cardCollection, cardCollectionShuffled;
+	Image C1T1, C1T2, C1T3, C1T4, C1T5, C1T6, C1T7, C2T1, C2T2, C2T3, C2T4, C2T5, C2T6, C2T7, C3T1, C3T2, C3T3, C3T4,
+			C3T5, C3T6, C3T7, C4T1, C4T2, C4T3, C4T4, C4T5, C4T6, C4T7, C5T1, C5T2, C5T3, C5T4, C5T5, C5T6, C5T7, C6T1, C6T2,
+			C6T3, C6T4, C6T5, C6T6, C6T7, wildCard1, wildCard2;
+
+	public CardCollection() {
 		
 		try {
-			newImg = ImageIO.read(new File("./Pictures/cards/C1T1.png"));
-			newImg1 = ImageIO.read(new File("./Pictures/cards/C1T2.png"));
-			newImg2 = ImageIO.read(new File("./Pictures/cards/C1T3.png"));
-			newImg3 = ImageIO.read(new File("./Pictures/cards/C1T4.png"));
-			newImg4 = ImageIO.read(new File("./Pictures/cards/C1T5.png"));
-			newImg5 = ImageIO.read(new File("./Pictures/cards/C1T6.png"));
-			newImg6 = ImageIO.read(new File("./Pictures/cards/C1T7.png"));
-			
-			newImg7 = ImageIO.read(new File("./Pictures/cards/C2T1.png"));
-			newImg8 = ImageIO.read(new File("./Pictures/cards/C2T2.png"));
-			newImg9 = ImageIO.read(new File("./Pictures/cards/C2T3.png"));
-			newImg10 = ImageIO.read(new File("./Pictures/cards/C2T4.png"));
-			newImg11 = ImageIO.read(new File("./Pictures/cards/C2T5.png"));
-			newImg12 = ImageIO.read(new File("./Pictures/cards/C2T6.png"));
-			newImg13 = ImageIO.read(new File("./Pictures/cards/C2T7.png"));
-			
-			newImg14 = ImageIO.read(new File("./Pictures/cards/C3T1.png"));
-			newImg15 = ImageIO.read(new File("./Pictures/cards/C3T2.png"));
-			newImg16 = ImageIO.read(new File("./Pictures/cards/C3T3.png"));
-			newImg17 = ImageIO.read(new File("./Pictures/cards/C3T4.png"));
-			newImg18 = ImageIO.read(new File("./Pictures/cards/C3T5.png"));
-			newImg19 = ImageIO.read(new File("./Pictures/cards/C3T6.png"));
-			newImg20 = ImageIO.read(new File("./Pictures/cards/C3T7.png"));
-			
-			newImg21 = ImageIO.read(new File("./Pictures/cards/C4T1.png"));
-			newImg22 = ImageIO.read(new File("./Pictures/cards/C4T2.png"));
-			newImg23 = ImageIO.read(new File("./Pictures/cards/C4T3.png"));
-			newImg24 = ImageIO.read(new File("./Pictures/cards/C4T4.png"));
-			newImg25 = ImageIO.read(new File("./Pictures/cards/C4T5.png"));
-			newImg26 = ImageIO.read(new File("./Pictures/cards/C4T6.png"));
-			newImg27 = ImageIO.read(new File("./Pictures/cards/C4T7.png"));
-			
-			newImg28 = ImageIO.read(new File("./Pictures/cards/C5T1.png"));
-			newImg29 = ImageIO.read(new File("./Pictures/cards/C5T2.png"));
-			newImg30 = ImageIO.read(new File("./Pictures/cards/C5T3.png"));
-			newImg31 = ImageIO.read(new File("./Pictures/cards/C5T4.png"));
-			newImg32 = ImageIO.read(new File("./Pictures/cards/C5T5.png"));
-			newImg33 = ImageIO.read(new File("./Pictures/cards/C5T6.png"));
-			newImg34 = ImageIO.read(new File("./Pictures/cards/C5T7.png"));
-			
-			newImg35 = ImageIO.read(new File("./Pictures/cards/C6T1.png"));
-			newImg36 = ImageIO.read(new File("./Pictures/cards/C6T2.png"));
-			newImg37 = ImageIO.read(new File("./Pictures/cards/C6T3.png"));
-			newImg38 = ImageIO.read(new File("./Pictures/cards/C6T4.png"));
-			newImg39 = ImageIO.read(new File("./Pictures/cards/C6T5.png"));
-			newImg40 = ImageIO.read(new File("./Pictures/cards/C6T6.png"));
-			newImg41 = ImageIO.read(new File("./Pictures/cards/C6T7.png"));
-			
-			
-			
+			C1T1 = ImageIO.read(new File("./Pictures/C1T1.png"));
+			C1T2 = ImageIO.read(new File("./Pictures/C1T2.png"));
+			C1T3 = ImageIO.read(new File("./Pictures/C1T3.png"));
+			C1T4 = ImageIO.read(new File("./Pictures/C1T4.png"));
+			C1T5 = ImageIO.read(new File("./Pictures/C1T5.png"));
+			C1T6 = ImageIO.read(new File("./Pictures/C1T6.png"));
+			C1T7 = ImageIO.read(new File("./Pictures/C1T7.png"));
+			C2T1 = ImageIO.read(new File("./Pictures/C2T1.png"));
+			C2T2 = ImageIO.read(new File("./Pictures/C2T2.png"));
+			C2T3 = ImageIO.read(new File("./Pictures/C2T3.png"));
+			C2T4 = ImageIO.read(new File("./Pictures/C2T4.png"));
+			C2T5 = ImageIO.read(new File("./Pictures/C2T5.png"));
+			C2T6 = ImageIO.read(new File("./Pictures/C2T6.png"));
+			C2T7 = ImageIO.read(new File("./Pictures/C2T7.png"));
+			C3T1 = ImageIO.read(new File("./Pictures/C3T1.png"));
+			C3T2 = ImageIO.read(new File("./Pictures/C3T2.png"));
+			C3T3 = ImageIO.read(new File("./Pictures/C3T3.png"));
+			C3T4 = ImageIO.read(new File("./Pictures/C3T4.png"));
+			C3T5 = ImageIO.read(new File("./Pictures/C3T5.png"));
+			C3T6 = ImageIO.read(new File("./Pictures/C3T6.png"));
+			C3T7 = ImageIO.read(new File("./Pictures/C3T7.png"));
+			C4T1 = ImageIO.read(new File("./Pictures/C4T1.png"));
+			C4T2 = ImageIO.read(new File("./Pictures/C4T2.png"));
+			C4T3 = ImageIO.read(new File("./Pictures/C4T3.png"));
+			C4T4 = ImageIO.read(new File("./Pictures/C4T4.png"));
+			C4T5 = ImageIO.read(new File("./Pictures/C4T5.png"));
+			C4T6 = ImageIO.read(new File("./Pictures/C4T6.png"));
+			C4T7 = ImageIO.read(new File("./Pictures/C4T7.png"));
+			C5T1 = ImageIO.read(new File("./Pictures/C5T1.png"));
+			C5T2 = ImageIO.read(new File("./Pictures/C5T2.png"));
+			C5T3 = ImageIO.read(new File("./Pictures/C5T3.png"));
+			C5T4 = ImageIO.read(new File("./Pictures/C5T4.png"));
+			C5T5 = ImageIO.read(new File("./Pictures/C5T5.png"));
+			C5T6 = ImageIO.read(new File("./Pictures/C5T6.png"));
+			C5T7 = ImageIO.read(new File("./Pictures/C5T7.png"));
+			C6T1 = ImageIO.read(new File("./Pictures/C6T1.png"));
+			C6T2 = ImageIO.read(new File("./Pictures/C6T2.png"));
+			C6T3 = ImageIO.read(new File("./Pictures/C6T3.png"));
+			C6T4 = ImageIO.read(new File("./Pictures/C6T4.png"));
+			C6T5 = ImageIO.read(new File("./Pictures/C6T5.png"));
+			C6T6 = ImageIO.read(new File("./Pictures/C6T6.png"));
+			C6T7 = ImageIO.read(new File("./Pictures/C6T7.png"));
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
+			System.out.println("ERROR!!!");
 			e.printStackTrace();
 		}
-		cards.add(new Card(CardType.SPONGEBOB,  newImg));
-		cards.add(new Card(CardType.PATRICK,  newImg1));
-		cards.add(new Card(CardType.GARY,  newImg2));
-		cards.add(new Card(CardType.SPONGEBOB,  newImg3));
-		cards.add(new Card(CardType.PATRICK,  newImg5));
-		cards.add(new Card(CardType.GARY,  newImg5));
-		cards.add(new Card(CardType.SPONGEBOB,  newImg6));
 		
-		cards.add(new Card(CardType.PATRICK,  newImg7));
-		cards.add(new Card(CardType.GARY,  newImg8));
-		cards.add(new Card(CardType.SPONGEBOB,  newImg9));
-		cards.add(new Card(CardType.PATRICK,  newImg10));
-		cards.add(new Card(CardType.GARY,  newImg11));
-		cards.add(new Card(CardType.SPONGEBOB,  newImg12));
-		cards.add(new Card(CardType.PATRICK,  newImg13));
-		
-		cards.add(new Card(CardType.GARY,  newImg14));
-		cards.add(new Card(CardType.SPONGEBOB,  newImg15));
-		cards.add(new Card(CardType.PATRICK,  newImg16));
-		cards.add(new Card(CardType.GARY,  newImg17));
-		cards.add(new Card(CardType.SPONGEBOB,  newImg18));
-		cards.add(new Card(CardType.PATRICK,  newImg19));
-		cards.add(new Card(CardType.GARY,  newImg20));
-		
-		cards.add(new Card(CardType.SPONGEBOB,  newImg21));
-		cards.add(new Card(CardType.PATRICK,  newImg22));
-		cards.add(new Card(CardType.GARY,  newImg23));
-		cards.add(new Card(CardType.SPONGEBOB,  newImg24));
-		cards.add(new Card(CardType.PATRICK,  newImg25));
-		cards.add(new Card(CardType.GARY,  newImg26));
-		cards.add(new Card(CardType.PATRICK,  newImg27));
-		
-		cards.add(new Card(CardType.SPONGEBOB,  newImg28));
-		cards.add(new Card(CardType.GARY,  newImg29));
-		cards.add(new Card(CardType.SPONGEBOB,  newImg30));
-		cards.add(new Card(CardType.PATRICK,  newImg31));
-		cards.add(new Card(CardType.GARY,  newImg32));
-		cards.add(new Card(CardType.SPONGEBOB,  newImg33));
-		cards.add(new Card(CardType.PATRICK,  newImg34));
-		
-		cards.add(new Card(CardType.GARY,  newImg35));
-		cards.add(new Card(CardType.SPONGEBOB,  newImg36));
-		cards.add(new Card(CardType.PATRICK,  newImg37));
-		cards.add(new Card(CardType.GARY,  newImg38));
-		cards.add(new Card(CardType.SPONGEBOB,  newImg39));
-		cards.add(new Card(CardType.PATRICK,  newImg40));
-		cards.add(new Card(CardType.GARY,  newImg41));
+		cardCollection = new ArrayList<Card>();
+		cardCollection.add(new RiskCard("Java", "SPONGEBOB", C1T1));
+		cardCollection.add(new RiskCard("Python", "PATRICK", C1T2));
+		cardCollection.add(new RiskCard("C", "GARY", C1T3));
+		cardCollection.add(new RiskCard("SQL", "SPONGEBOB", C1T4));
+		cardCollection.add(new RiskCard("Ruby", "PATRICK", C1T5));
+		cardCollection.add(new RiskCard("Git", "GARY", C1T6));
+		cardCollection.add(new RiskCard("Perl", "SPONGEBOB", C1T7));
+		cardCollection.add(new RiskCard("Wilber", "PATRICK", C2T1));
+		cardCollection.add(new RiskCard("Wilma", "GARY", C2T2));
+		cardCollection.add(new RiskCard("Rich", "SPONGEBOB", C2T3));
+		cardCollection.add(new RiskCard("Miller", "PATRICK", C2T4));
+		cardCollection.add(new RiskCard("Scooby", "GARY", C2T5));
+		cardCollection.add(new RiskCard("McKale", "SPONGEBOB", C2T6));
+		cardCollection.add(new RiskCard("Zone", "GARY", C2T7));
+		cardCollection.add(new RiskCard("Papa Johns", "GARY", C3T1));
+		cardCollection.add(new RiskCard("Dominos", "SPONGEBOB", C3T2));
+		cardCollection.add(new RiskCard("PizzaHut", "PATRICK", C3T3));
+		cardCollection.add(new RiskCard("Black Jack", "GARY", C3T4));
+		cardCollection.add(new RiskCard("Hungry Howie", "SPONGEBOB", C3T5));
+		cardCollection.add(new RiskCard("Brooklyn's", "PATRICK", C3T6));
+		cardCollection.add(new RiskCard("Pizza Planet", "GARY", C3T7));
+		cardCollection.add(new RiskCard("RawrVille", "SPONGEBOB", C4T1));
+		cardCollection.add(new RiskCard("Laiegges", "PATRICK", C4T2));
+		cardCollection.add(new RiskCard("Dactilito", "GARY", C4T3));
+		cardCollection.add(new RiskCard("Miller","PATRICK",C4T4));
+		cardCollection.add(new RiskCard("DirtyDan", "SPONGEBOB", C4T5));
+		cardCollection.add(new RiskCard("BlackBeard", "PATRICK", C4T6));
+		cardCollection.add(new RiskCard("Monisaurus", "GARY", C4T7));
+		cardCollection.add(new RiskCard("Scraptopia", "SPONGEBOB", C5T1));
+		cardCollection.add(new RiskCard("Land Of Zach", "GARY", C5T2));
+		cardCollection.add(new RiskCard("Giant", "SPONGEBOB", C5T3));
+		cardCollection.add(new RiskCard("New Land Of Zach", "PATRICK", C5T4));
+		cardCollection.add(new RiskCard("South Scraptopia", "GARY", C5T5));
+		cardCollection.add(new RiskCard("Bloo Bawl", "SPONGEBOB", C5T6));
+		cardCollection.add(new RiskCard("Crescent Capital", "PATRICK", C5T7));
+		cardCollection.add(new RiskCard("Apollo", "GARY", C6T1));
+		cardCollection.add(new RiskCard("Ra", "SPONGEBOB", C6T2));
+		cardCollection.add(new RiskCard("Helios", "PATRICK", C6T3));
+		cardCollection.add(new RiskCard("Inti", "GARY", C6T4));
+		cardCollection.add(new RiskCard("Horus", "SPONGEBOB", C6T5));
+		cardCollection.add(new RiskCard("Tonatiuh", "PATRICK", C6T6));
+		cardCollection.add(new RiskCard("Amun", "GARY", C6T7));
+		cardCollection.add(new WildCard("WILD",wildCard1));
+		cardCollection.add(new WildCard("WILD",wildCard2));
+
+	}
+
+	public ArrayList<Card> getCardCollection() {
+
+		return cardCollection;
+	}
+
+	public ArrayList<Card> shuffle() {
+		Collections.shuffle(cardCollection);
+		return cardCollection;
+	}
+
+	public Card getCard(int i) {
+		return cardCollection.get(i);
 	}
 
 }

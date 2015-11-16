@@ -1,5 +1,6 @@
 package model;
 
+import java.awt.Color;
 import java.awt.Point;
 import java.util.ArrayList;
 
@@ -9,10 +10,11 @@ import java.util.ArrayList;
 
 public class Crescent extends Continent {
 	ArrayList<Territory> cresTerr;
-	public Crescent(String cName, ArrayList<Territory> cTerritories,boolean cConquered) {
-		super(cName, cTerritories, cConquered);
-		
-		Player currentPlayer = null;//get current player
+	public Crescent(String cName, boolean cConquered) {
+		super(cName, cConquered);
+		cresTerr = new ArrayList<Territory>();
+		//WE NEED TO FIX THIS TO PULL IN THE CURRENT PLAYER
+		Player currentPlayer = new Human(cName, Color.RED, 0);//get current player
 		JButton button= new JButton("0");
 		// Sting name, Point tcoords, JButton tbutton, Player owner, int numOfUnits
 		cresTerr.add(0, new Territory("Scraptopia",new Point(580,430), button, currentPlayer, 0));
@@ -23,5 +25,8 @@ public class Crescent extends Continent {
 		cresTerr.add(5, new Territory("Bloo Bawl",new Point(730,390), button, currentPlayer, 0));
 		cresTerr.add(6, new Territory("Crescent Capital",new Point(770,350), button, currentPlayer, 0));
 
+	}
+	public ArrayList<Territory> getTerritories() {
+		return cresTerr;
 	}
 }

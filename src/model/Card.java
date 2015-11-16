@@ -6,6 +6,7 @@ public class Card {
 
 	CardType type;
 	Image img;
+	
 
 	public Card(CardType type, Image img) {
 		this.type = type;

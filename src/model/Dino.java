@@ -8,9 +8,10 @@ import javax.swing.JButton;
 public class Dino extends Continent {
 
 	ArrayList<Territory> dinoTerr;
-	public Dino(String cName, ArrayList<Territory> cTerritories,boolean cConquered) {
-		super(cName, cTerritories, cConquered);
+	public Dino(String cName, boolean cConquered) {
+		super(cName, cConquered);
 		
+		dinoTerr = new ArrayList<Territory>();
 		Player currentPlayer = null;//get current player
 		JButton button= new JButton("0");
 		// Sting name, Point tcoords, JButton tbutton, Player owner, int numOfUnits
@@ -23,6 +24,10 @@ public class Dino extends Continent {
 		dinoTerr.add(6, new Territory("ToyStory",new Point(840,520), button, currentPlayer, 0));
 
 		
+	}
+	
+	public ArrayList<Territory> getTerritories() {
+		return dinoTerr;
 	}
 
 }

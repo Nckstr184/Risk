@@ -4,10 +4,11 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class Run6Bots {
+public class MediumAITest {
 
 	@Test
 	public void test() {
+
 	}
 
 }

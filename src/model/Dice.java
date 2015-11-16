@@ -48,11 +48,25 @@ public class Dice {
 	}
 
 	public int getDice2() {
-		return diceList.get(2);
+		return diceList.get(1);
 	}
 
 	public int getDice3() {
-		return diceList.get(3);
+		return diceList.get(2);
 	}
 
+	public void setDice1(int number)
+	{
+		diceList.set(0, number);
+	}
+	
+	public void setDice2(int number)
+	{
+		diceList.set(1, number);
+	}
+	
+	public void setDice3(int number)
+	{
+		diceList.set(2, number);
+	}
 }

@@ -7,9 +7,10 @@ import javax.swing.JButton;
 
 public class Languages extends Continent {
 	ArrayList<Territory> LangTerr;
-	public Languages(String cName, ArrayList<Territory> cTerritories,boolean cConquered) {
-		super(cName, cTerritories, cConquered);
+	public Languages(String cName, boolean cConquered) {
+		super(cName,  cConquered);
 		
+		LangTerr = new ArrayList<Territory>();
 		Player currentPlayer = null;//get current player
 		JButton button= new JButton("0");
 		// Sting name, Point tcoords, JButton tbutton, Player owner, int numOfUnits
@@ -21,5 +22,9 @@ public class Languages extends Continent {
 		LangTerr.add(5, new Territory("Git",new Point(730,190), button, currentPlayer, 0));
 		LangTerr.add(6, new Territory("Perl",new Point(790,180), button, currentPlayer, 0));
 
+	}
+	
+	public ArrayList<Territory> getTerritories() {
+		return LangTerr;
 	}
 }

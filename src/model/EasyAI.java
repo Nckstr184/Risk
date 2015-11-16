@@ -25,6 +25,11 @@ public class EasyAI extends Player implements AIStrategy {
 		}
 	}
 	
+	public ArrayList<Territory> returnTerritories()
+	{
+		return territories;
+	}
+	
 
 	@Override
 	public Territory deployArmy(ArrayList<Territory> territories) {

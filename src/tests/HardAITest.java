@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class Run6Bots {
+public class HardAITest {
 
 	@Test
 	public void test() {
