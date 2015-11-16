@@ -6,7 +6,7 @@ public class RiskCard extends Card {
 
 	String territory;
 	
-	public RiskCard(String territory, String type, Image img) {
+	public RiskCard(String territory, CardType type, Image img) {
 		super(type, img);
 		this.territory = territory;
 	}
