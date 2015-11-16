@@ -26,6 +26,7 @@ import javax.swing.WindowConstants;
 public class MainGUI extends JFrame {
 	
 	GameBoard map;
+	JPanel bottomDisplay, sideDisplay;
 	JTextField updateDisplay;
 	JButton toggleSound, quitGame, saveGame;
 	
@@ -39,6 +40,13 @@ public class MainGUI extends JFrame {
 
 	public MainGUI() {
 		GameBoard map = new GameBoard();
+		JPanel bottomeDisplay = new JPanel();
+		JPanel sideDisplay = new JPanel();
+		
+		bottomDisplay.setSize(1000,200);
+		bottomDisplay.setLocation(0,800);
+		bottomDisplay.setBackground(Color.RED);
+		
 		Dimension sizeMe = Toolkit.getDefaultToolkit().getScreenSize();
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(sizeMe);
@@ -63,6 +71,7 @@ public class MainGUI extends JFrame {
       this.add(nbt);
       nbt.setVisible(true);
       this.add(map);
+      this.add(bottomDisplay);
 		
 	        
 	    }

@@ -17,8 +17,8 @@ public class GameBoard extends JPanel{
 	
 	ArrayList<Continent> Continents;
 	BufferedImage map;
-	JPanel board;
-	JFrame temp;
+	JPanel board, boardDisplay, boardInfo;
+	
 	
 	/*
 	public static void main(String args[]) {
