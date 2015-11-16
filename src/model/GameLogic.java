@@ -73,8 +73,7 @@ public class GameLogic {
 		// this rolls the dice per person to check to see who goes first
 		for (int i = 0; i < numOfPlayers; i++) {
 			temp = allPlayers.getPlayer(i);
-			turnDice.rollDice();
-			roll = turnDice.getDice1();
+			roll = turnDice.rollDice();
 			temp.setDiceRoll(roll);
 			tempList.add(temp);
 		}
