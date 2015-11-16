@@ -1,5 +1,22 @@
 package view;
 
-public class CardWindow {
+import javax.swing.JLabel;
+
+import model.CardCollection;
+
+public class CardWindow extends JLabel {
+	
+	
+	JLabel cardHand;
+	
+	public CardWindow(){
+		
+		
+	}
+	
+	public void setUpCollection(CardCollection collection){
+		
+		
+	}
 
 }
