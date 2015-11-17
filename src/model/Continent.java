@@ -18,6 +18,7 @@ public abstract class Continent implements Serializable{
 		return name;
 	}
 	public abstract ArrayList<Territory> getTerritories();
+	
 	public boolean cConquered(){
 		return conquered;
 	}

@@ -3,9 +3,13 @@ package view;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.LayoutManager;
+import java.awt.Point;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -21,6 +25,10 @@ import javax.swing.JTextField;
 import javax.swing.RootPaneContainer;
 import javax.swing.WindowConstants;
 
+import model.Player;
+import model.Sun;
+import model.Territory;
+
 
 
 public class MainGUI extends JFrame {
@@ -29,6 +37,8 @@ public class MainGUI extends JFrame {
 	JPanel bottomDisplay, sideDisplay;
 	JTextField updateDisplay;
 	JButton toggleSound, quitGame, saveGame;
+	String B1T1;
+	
 	
 	
 	
@@ -39,20 +49,27 @@ public class MainGUI extends JFrame {
 	}
 
 	public MainGUI() {
+
+		this.setLayout(null);
+
+
 		GameBoard map = new GameBoard();
+
 		JPanel bottomeDisplay = new JPanel();
 		JPanel sideDisplay = new JPanel();
 		
-		bottomDisplay.setSize(1000,200);
-		bottomDisplay.setLocation(0,800);
-		bottomDisplay.setBackground(Color.RED);
+	
 		
+
 		Dimension sizeMe = Toolkit.getDefaultToolkit().getScreenSize();
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(sizeMe);
 		this.setLayout(null);
-		ImageIcon C1T1= new ImageIcon("./Pictures/circle.png");
-		JButton nbt= new JButton(C1T1);
+		ImageIcon gray1= new ImageIcon("./Pictures/circle.png");
+		B1T1=new String("0");
+		JLabel num= new JLabel(B1T1);
+		JButton nbt= new JButton(gray1);
+		nbt.addActionListener(new buttonListener());
 		
 //		GameBoard panel = new GameBoard((new ImageIcon("images/background.png").getImage()));
 //		panel.setLocation(300, 10);
@@ -63,19 +80,42 @@ public class MainGUI extends JFrame {
 		
 		
      // nbt.setBackground(Color.BLUE);
+
+		Font font = new Font("Serif",Font.BOLD, 30);
+		
+      
       nbt.setSize(25, 25);
       nbt.setLocation(680, 150);
+
       nbt.setOpaque(false);
       nbt.setContentAreaFilled(false);
       nbt.setBorderPainted(false);
+      num.setSize(50,50);
+      num.setFont(font);
+      num.setForeground(Color.WHITE);
+      num.setLocation(118, 103);
+      num.setOpaque(false);
+     
+     
+     
+      this.add(num);
       this.add(nbt);
+      
       nbt.setVisible(true);
       this.add(map);
       this.add(bottomDisplay);
 		
 	        
 	    }
-		
+		private class buttonListener implements ActionListener{
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		}
 		
 		
 	}
