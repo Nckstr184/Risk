@@ -44,7 +44,7 @@ public class MainGUI extends JFrame {
 	public static void main(String[] args) {
 		MainGUI window = new MainGUI();
 		window.setVisible(true);
-		
+		System.out.println("Brooklyn's");
 	}
 
 	public MainGUI() {
