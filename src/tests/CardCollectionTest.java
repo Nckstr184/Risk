@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import model.Card;
 import model.CardCollection;
+import model.CardType;
 import model.RiskCard;
 
 
@@ -19,8 +20,8 @@ public class CardCollectionTest {
 	public void testGetTerritory() {
 		
 		ArrayList<Card> cardList= new ArrayList<Card>();
-		RiskCard card1 = new RiskCard("d", "GARY", img1);
-		RiskCard card2 = new RiskCard("c", "SPONGEBOB", img1);		
+		RiskCard card1 = new RiskCard("d",CardType.GARY, img1);
+		RiskCard card2 = new RiskCard("c", CardType.SPONGEBOB, img1);		
 		assertEquals("d", card1.getTerritory());
 		assertNotEquals("f", card1.getTerritory());
 		assertEquals("c", card2.getTerritory());
@@ -34,9 +35,9 @@ public class CardCollectionTest {
 		Card A = collectionTest.getCard(0);
 		Card B = collectionTest.getCard(1);
 		Card C = collectionTest.getCard(2);
-		String D = A.getType();
-		String E = B.getType();
-		String F = C.getType();
+		CardType D = A.getType();
+		CardType E = B.getType();
+		CardType F = C.getType();
 		
 		assertEquals("SPONGEBOB", D);
 		assertNotEquals("PATRICK", D);

@@ -82,4 +82,8 @@ public abstract class Player {
 		return diceRoll;
 	}
 	
+	public String toString() {
+		return name;
+	}
+	
 }

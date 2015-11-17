@@ -24,15 +24,14 @@ public class GameLogic {
 		attackDice = new Dice(3);
 		defendDice = new Dice(2);
 		turnDice = new Dice(1);
-		
-		languages=new Languages("languages", false);
-		dino=new Dino("dino", false);
-		wildcat=new Wildcat("wildcat", false);
-		pizza=new Pizza("pizza", false);
-		crescent=new Crescent("crescent", false);
-		sun=new Sun("sun", false);
 
-		
+		languages = new Languages("languages", false);
+		dino = new Dino("dino", false);
+		wildcat = new Wildcat("wildcat", false);
+		pizza = new Pizza("pizza", false);
+		crescent = new Crescent("crescent", false);
+		sun = new Sun("sun", false);
+
 		// Adding all the continent objects to an arraylist
 		allContinents.add(languages);
 		allContinents.add(dino);
@@ -51,16 +50,14 @@ public class GameLogic {
 		}
 	}
 
-	public ArrayList<Territory> getTerritories()
-	{
+	public ArrayList<Territory> getTerritories() {
 		return allTerritories;
 	}
-	
-	public Player getPlayerAt(int index)
-	{
+
+	public Player getPlayerAt(int index) {
 		return allPlayers.getPlayer(index);
 	}
-	
+
 	public void addPlayers(Player player) {
 		allPlayers.addPlayers(player);
 	}
@@ -73,15 +70,15 @@ public class GameLogic {
 		// this rolls the dice per person to check to see who goes first
 		for (int i = 0; i < numOfPlayers; i++) {
 			temp = allPlayers.getPlayer(i);
-			turnDice.rollDice();
-			roll = turnDice.getDice1();
+			roll = turnDice.rollDice();
 			temp.setDiceRoll(roll);
 			tempList.add(temp);
 		}
-		// sorts the players based on dice roll *DOESNT ROLL AGAIN FOR DUPLICATES*
+		// sorts the players based on dice roll *DOESNT ROLL AGAIN FOR
+		// DUPLICATES*
 		// However, duplicates do not break the sorting (Insertion Sort FTW)
 		tempList = InsertionSort(tempList.toArray());
-		
+
 		// sets the master Player List to the sorted one
 		allPlayers.setPlayerList(tempList);
 	}
@@ -94,21 +91,22 @@ public class GameLogic {
 		for (j = 1; j < objects.length; j++) // Start with 1 (not 0)
 		{
 			key = ((Player) objects[j]).getDiceRoll();
-			for (i = j - 1; (i >= 0) && (((Player) objects[i]).getDiceRoll() > key); i--) // Smaller
-																			// values
+			for (i = j - 1; (i >= 0) && (((Player) objects[i]).getDiceRoll() < key); i--) // Smaller
+			// values
 			// are moving up
 			{
 				objects[i + 1] = objects[i];
 			}
-			((Player) objects[i + 1]).setDiceRoll(key); // Put the key in its proper location
+			((Player) objects[i + 1]).setDiceRoll(key); // Put the key in its
+														// proper location
 		}
-		
+
 		// converts Player[] to ArrayList<Player>
 		ArrayList<Player> temp = new ArrayList<Player>();
 		for (int k = 0; k < objects.length; k++) {
 			temp.add((Player) objects[k]);
 		}
-		
+
 		return temp;
 	}
 

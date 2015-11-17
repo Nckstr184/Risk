@@ -2,18 +2,18 @@ package model;
 
 import java.awt.Image;
 
-public abstract class Card {
+public class Card {
 
-	String type;
+	CardType type;
 	Image img;
 	
 
-	public Card(String type, Image img) {
+	public Card(CardType type, Image img) {
 		this.type = type;
 		this.img = img;
 	}
 
-	public String getType() {
+	public CardType getType() {
 		return type;
 	}
 
