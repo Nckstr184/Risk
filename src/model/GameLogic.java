@@ -48,7 +48,57 @@ public class GameLogic {
 				allTerritories.add(tempTerritories.get(j));
 			}
 		}
+		
+		setNeighbors(allTerritories);
 	}
+
+	private void setNeighbors(ArrayList<Territory> allTerritories2) {
+	
+			Territory Java=allTerritories2.get(0);
+			Territory Python=allTerritories2.get(1);
+			Territory C=allTerritories2.get(2);
+			Territory SQL=allTerritories2.get(3);
+			Territory Ruby=allTerritories2.get(4);
+			Territory Git=allTerritories2.get(5);
+			Territory Perl=allTerritories2.get(6);
+			Territory Rawrville=allTerritories2.get(7);
+			Territory Laiegges=allTerritories2.get(8);
+			Territory Dactilito=allTerritories2.get(9);
+			Territory Dirtydan=allTerritories2.get(10);
+			Territory BlackBeard=allTerritories2.get(11);
+			Territory Monisaurus=allTerritories2.get(12);
+			Territory ToyStory=allTerritories2.get(13);
+			Territory Wilber=allTerritories2.get(14);
+			Territory Wilma=allTerritories2.get(15);
+			Territory Rich=allTerritories2.get(16);
+			Territory Miller=allTerritories2.get(17);
+			Territory Scooby=allTerritories2.get(18);
+			Territory McKale=allTerritories2.get(19);
+			Territory Zona=allTerritories2.get(20);
+			Territory PapaJohns=allTerritories2.get(21);
+			Territory Dominos=allTerritories2.get(22);
+			Territory PizzaHut=allTerritories2.get(23);
+			Territory BlackJack=allTerritories2.get(24);
+			Territory HungryHowies=allTerritories2.get(25);
+			Territory Brooklyns=allTerritories2.get(26);
+			Territory Mamas=allTerritories2.get(27);
+			Territory Scraptopia=allTerritories2.get(28);
+			Territory LandOfZach=allTerritories2.get(29);
+			Territory Giant=allTerritories2.get(30);
+			Territory NewLandOfZach=allTerritories2.get(31);
+			Territory SouthScraptopia=allTerritories2.get(32);
+			Territory BlooBawl=allTerritories2.get(33);
+			Territory CrescentCapital=allTerritories2.get(34);
+			Territory Apollo=allTerritories2.get(35);
+			Territory Ra=allTerritories2.get(36);
+			Territory Helios=allTerritories2.get(37);
+			Territory Inti=allTerritories2.get(38);
+			Territory Horus=allTerritories2.get(39);
+			Territory Tonatiuh=allTerritories2.get(40);
+			Territory Amun=allTerritories2.get(41);
+	
+
+		}		
 
 	public ArrayList<Territory> getTerritories() {
 		return allTerritories;
