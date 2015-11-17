@@ -6,9 +6,9 @@ public interface AIStrategy {
 	
 	public Territory deployArmy(ArrayList<Territory> territories);
 	
-	public boolean chooseRetreat();
+	public boolean chooseRetreat(Territory currentTerr);
 	
-	public Territory attackTerritory(ArrayList<Territory> connected);
+	public Territory attackTerritory(Territory currentTerr, ArrayList<Territory> connected);
 	
-	public void fortifyPosition(ArrayList<Territory> connected);
+	public void fortifyPosition(Territory currentTerr, ArrayList<Territory> connected);
 }
