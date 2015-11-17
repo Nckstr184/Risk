@@ -83,7 +83,7 @@ public class Dice {
 		diceList.set(2, number);
 	}
 
-	public void InsertionSort(Integer[] objects) {
+	private void InsertionSort(Integer[] objects) {
 		int j; // the number of items sorted so far
 		int key; // the item to be inserted
 		int i;
