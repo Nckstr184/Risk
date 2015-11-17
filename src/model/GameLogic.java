@@ -97,8 +97,223 @@ public class GameLogic {
 			Territory Tonatiuh=allTerritories2.get(40);
 			Territory Amun=allTerritories2.get(41);
 	
+			///////////////////////////LANGUAGES//////////////////////////////////////////////////////
+			Java.addNeighbors(Python);
+			Java.addNeighbors(C);
+			Java.addNeighbors(SQL);
+			Java.addNeighbors(Helios);
+			
+			Python.addNeighbors(Java);
+			Python.addNeighbors(C);
+			Python.addNeighbors(SQL);
+			Python.addNeighbors(Git);
+			Python.addNeighbors(Perl);
 
-		}		
+			C.addNeighbors(Java);
+			C.addNeighbors(Python);
+			C.addNeighbors(SQL);
+			C.addNeighbors(Ruby);
+			
+			SQL.addNeighbors(Java);
+			SQL.addNeighbors(Python);
+			SQL.addNeighbors(C);
+			SQL.addNeighbors(Ruby);
+			SQL.addNeighbors(Git);
+			
+			Ruby.addNeighbors(C);
+			Ruby.addNeighbors(SQL);
+			Ruby.addNeighbors(Ruby);
+			Ruby.addNeighbors(Giant);
+			
+			Git.addNeighbors(Python);
+			Git.addNeighbors(SQL);
+			Git.addNeighbors(Ruby);
+			Git.addNeighbors(Perl);
+
+			Perl.addNeighbors(Python);
+			Perl.addNeighbors(Git);
+			
+			///////////////////////////DINO//////////////////////////////////////////////////////
+
+			Rawrville.addNeighbors(Laiegges);
+			Rawrville.addNeighbors(Dactilito);
+			
+			Laiegges.addNeighbors(Rawrville);
+			Laiegges.addNeighbors(Dactilito);
+			Laiegges.addNeighbors(Dirtydan);
+			Laiegges.addNeighbors(CrescentCapital);
+			
+			Dactilito.addNeighbors(Rawrville);
+			Dactilito.addNeighbors(Laiegges);
+			Dactilito.addNeighbors(Dirtydan);
+			Dactilito.addNeighbors(BlackBeard);
+			Dactilito.addNeighbors(ToyStory);
+			
+			Dirtydan.addNeighbors(Laiegges);
+			Dirtydan.addNeighbors(Dactilito);
+			Dirtydan.addNeighbors(BlackBeard);
+			Dirtydan.addNeighbors(Monisaurus);
+			Dirtydan.addNeighbors(NewLandOfZach);
+			Dirtydan.addNeighbors(BlooBawl);
+			Dirtydan.addNeighbors(CrescentCapital);
+			
+			BlackBeard.addNeighbors(Dactilito);
+			BlackBeard.addNeighbors(Dirtydan);
+			BlackBeard.addNeighbors(Monisaurus);
+			BlackBeard.addNeighbors(ToyStory);
+
+			Monisaurus.addNeighbors(Dirtydan);
+			Monisaurus.addNeighbors(BlackBeard);
+			Monisaurus.addNeighbors(ToyStory);
+			Monisaurus.addNeighbors(NewLandOfZach);
+			
+			ToyStory.addNeighbors(Dactilito);
+			ToyStory.addNeighbors(BlackBeard);
+			ToyStory.addNeighbors(Monisaurus);
+			
+			///////////////////////////WILDCAT//////////////////////////////////////////////////////
+			Wilber.addNeighbors(Wilma);
+			Wilber.addNeighbors(Rich);
+			Wilber.addNeighbors(Scooby);
+			Wilber.addNeighbors(PapaJohns);
+			Wilber.addNeighbors(Dominos);
+			Wilber.addNeighbors(Brooklyns);
+			Wilber.addNeighbors(Tonatiuh);
+			
+			Wilma.addNeighbors(Wilber);
+			Wilma.addNeighbors(Rich);
+			Wilma.addNeighbors(Miller);
+			
+			Rich.addNeighbors(Wilber);
+			Rich.addNeighbors(Wilma);
+			Rich.addNeighbors(Miller);
+			Rich.addNeighbors(Scooby);
+			Rich.addNeighbors(McKale);
+			
+			Miller.addNeighbors(Wilma);
+			Miller.addNeighbors(Rich);
+			Miller.addNeighbors(McKale);
+			Miller.addNeighbors(Scraptopia);
+			
+			Scooby.addNeighbors(Wilber);
+			Scooby.addNeighbors(Rich);
+			Scooby.addNeighbors(McKale);
+			Scooby.addNeighbors(Zona);
+			Scooby.addNeighbors(PapaJohns);
+			
+			McKale.addNeighbors(Rich);
+			McKale.addNeighbors(Miller);
+			McKale.addNeighbors(Scooby);
+			McKale.addNeighbors(Zona);
+
+			Zona.addNeighbors(Scooby);
+			Zona.addNeighbors(McKale);
+			
+			///////////////////////////PIZZA//////////////////////////////////////////////////////
+			PapaJohns.addNeighbors(Dominos);
+			PapaJohns.addNeighbors(PizzaHut);
+			PapaJohns.addNeighbors(BlackJack);
+			PapaJohns.addNeighbors(Wilber);
+			PapaJohns.addNeighbors(Scooby);
+			
+			Dominos.addNeighbors(PapaJohns);
+			Dominos.addNeighbors(PizzaHut);
+			Dominos.addNeighbors(HungryHowies);
+			Dominos.addNeighbors(Brooklyns);
+			Dominos.addNeighbors(Wilber);
+			
+			PizzaHut.addNeighbors(PapaJohns);
+			PizzaHut.addNeighbors(Dominos);
+			PizzaHut.addNeighbors(BlackJack);
+			PizzaHut.addNeighbors(HungryHowies);
+
+			BlackJack.addNeighbors(PapaJohns);
+			BlackJack.addNeighbors(Dominos);
+			BlackJack.addNeighbors(PizzaHut);
+			
+			
+			HungryHowies.addNeighbors(Dominos);
+			HungryHowies.addNeighbors(PizzaHut);
+			HungryHowies.addNeighbors(BlackJack);
+			HungryHowies.addNeighbors(Brooklyns);
+			
+			Brooklyns.addNeighbors(Dominos);
+			Brooklyns.addNeighbors(HungryHowies);
+			Brooklyns.addNeighbors(Mamas);
+			Brooklyns.addNeighbors(Wilber);
+			Brooklyns.addNeighbors(Tonatiuh);
+
+			Mamas.addNeighbors(Brooklyns);
+			Mamas.addNeighbors(Apollo);
+			Mamas.addNeighbors(Tonatiuh);
+
+			///////////////////////////CRESCENT//////////////////////////////////////////////////////
+			Scraptopia.addNeighbors(LandOfZach);
+			Scraptopia.addNeighbors(Miller);
+			
+			LandOfZach.addNeighbors(Scraptopia);
+			LandOfZach.addNeighbors(Giant);
+			LandOfZach.addNeighbors(NewLandOfZach);
+			
+			Giant.addNeighbors(LandOfZach);
+			Giant.addNeighbors(SouthScraptopia);
+			Giant.addNeighbors(BlooBawl);
+			Giant.addNeighbors(Ruby);
+			
+			NewLandOfZach.addNeighbors(LandOfZach);
+			NewLandOfZach.addNeighbors(SouthScraptopia);
+			NewLandOfZach.addNeighbors(BlooBawl);
+			NewLandOfZach.addNeighbors(Dirtydan);
+			NewLandOfZach.addNeighbors(Monisaurus);
+			
+			SouthScraptopia.addNeighbors(Giant);
+			SouthScraptopia.addNeighbors(NewLandOfZach);
+			
+			BlooBawl.addNeighbors(Giant);
+			BlooBawl.addNeighbors(NewLandOfZach);
+			BlooBawl.addNeighbors(CrescentCapital);
+			BlooBawl.addNeighbors(Dirtydan);
+			
+			CrescentCapital.addNeighbors(BlooBawl);
+			CrescentCapital.addNeighbors(Laiegges);
+			CrescentCapital.addNeighbors(Dirtydan);
+
+			///////////////////////////SUN//////////////////////////////////////////////////////
+			Apollo.addNeighbors(Ra);
+			Apollo.addNeighbors(Tonatiuh);
+			Apollo.addNeighbors(Amun);
+			Apollo.addNeighbors(Mamas);
+			
+			Ra.addNeighbors(Apollo);
+			Ra.addNeighbors(Helios);
+			Ra.addNeighbors(Amun);
+			
+			Helios.addNeighbors(Ra);
+			Helios.addNeighbors(Inti);
+			Helios.addNeighbors(Horus);
+			Helios.addNeighbors(Amun);
+			Helios.addNeighbors(Java);
+			
+			Inti.addNeighbors(Helios);
+			Inti.addNeighbors(Horus);
+			
+			Horus.addNeighbors(Helios);
+			Horus.addNeighbors(Inti);
+			Horus.addNeighbors(Tonatiuh);
+			Horus.addNeighbors(Amun);
+			
+			Tonatiuh.addNeighbors(Apollo);
+			Tonatiuh.addNeighbors(Horus);
+			Tonatiuh.addNeighbors(Amun);
+			Tonatiuh.addNeighbors(Brooklyns);
+			Tonatiuh.addNeighbors(Mamas);
+
+			Amun.addNeighbors(Apollo);
+			Amun.addNeighbors(Ra);
+			Amun.addNeighbors(Helios);
+			Amun.addNeighbors(Horus);
+			Amun.addNeighbors(Tonatiuh);
+			}		
 
 	public ArrayList<Territory> getTerritories() {
 		return allTerritories;
