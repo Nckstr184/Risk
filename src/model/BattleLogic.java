@@ -36,7 +36,6 @@ public class BattleLogic {
 			if(attackDice.getDice().get(i) <= defendDice.getDice().get(i))
 				count++;
 		}
-		
 		return count;
 	}
 	
@@ -47,7 +46,6 @@ public class BattleLogic {
 			if(attackDice.getDice().get(i) > defendDice.getDice().get(i))
 				count++;
 		}
-		
 		return count;
 	}
 	
