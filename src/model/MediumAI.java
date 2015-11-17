@@ -66,7 +66,7 @@ public class MediumAI extends Player implements AIStrategy {
 	// If the current Territory has more than 3 armies, it moves its current
 	// amount of armies minus 3. If no friendly connected territory has less
 	// armies than the current Territory, then no armies are moved.
-	// SHOULD ONLY BE CALLED ONCE PER TURN
+	// SHOULD ONLY BE CALLED ONCE MAX AT THE END OF THE TURN
 
 	@Override
 	public void fortifyPosition(Territory currentTerr, ArrayList<Territory> connected) {
