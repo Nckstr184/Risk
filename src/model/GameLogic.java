@@ -94,7 +94,7 @@ public class GameLogic {
 		for (j = 1; j < objects.length; j++) // Start with 1 (not 0)
 		{
 			key = ((Player) objects[j]).getDiceRoll();
-			for (i = j - 1; (i >= 0) && (((Player) objects[i]).getDiceRoll() < key); i--) // Smaller
+			for (i = j - 1; (i >= 0) && (((Player) objects[i]).getDiceRoll() > key); i--) // Smaller
 																			// values
 			// are moving up
 			{
