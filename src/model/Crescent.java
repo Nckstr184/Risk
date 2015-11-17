@@ -26,7 +26,9 @@ public class Crescent extends Continent {
 		cresTerr.add(6, new Territory("Crescent Capital",new Point(770,350), button, currentPlayer, 0));
 
 	}
+	
 	public ArrayList<Territory> getTerritories() {
 		return cresTerr;
 	}
+	
 }
