@@ -26,13 +26,13 @@ public class GameBoard extends JPanel{
 	JPanel board;
 	JFrame temp;
 	
-	String javaN,pythonN, cN, sqlN, rubyN, gitN, perlN;//number on the circle for language
-	JButton javaL, pythonL, cL, sqlL, rubyL, gitL, perlL;//circle button for language
-	JLabel l1,l2,l3,l4,l5,l6,l7;//number for language
+	String javaUnits,pythonUnits, cUnits, sqlUnits, rubyUnits, gitUnits, perlUnits;//number on the circLanguagee for language
+	JButton javaLanguage, pythonLanguage, cLanguage, sqlLanguage, rubyLanguage, gitLanguage, perlLanguage;//circLanguagee button for language
+	JLabel languageLabel1,languageLabel2,languageLabel3,languageLabel4,languageLabel5,languageLabel6,languageLabel7;//number for language
 	
 	
 	ImageIcon gray1;
-	JLabel picLabel;
+	JLabel picLanguageabel;
 
 	JPanel boardDisplay, boardInfo;
 	
@@ -58,185 +58,174 @@ public class GameBoard extends JPanel{
 		
 		try {
 			map = ImageIO.read(new File("./Pictures/map.png"));
-			picLabel = new JLabel(new ImageIcon(map));
-			picLabel.setLocation(0, 0);
-			picLabel.setSize(900, 550);
+			picLanguageabel = new JLabel(new ImageIcon(map));
+			picLanguageabel.setLocation(0, 0);
+			picLanguageabel.setSize(900, 550);
 			
 		} catch (IOException e) {
 			System.out.println("ERROR with map");
 			e.printStackTrace();
 		}
-		gray1= new ImageIcon("./Pictures/circle.png");
-		
-		
-		javaN=new String("0");
-		pythonN=new String("0");
-		cN=new String("0");
-		sqlN=new String("0");
-		rubyN=new String("0");
-		gitN=new String("0");
-		perlN=new String("0");
-		
-		l1= new JLabel(javaN);
-		l2= new JLabel(pythonN);
-		l3= new JLabel(cN);
-		l4= new JLabel(sqlN);
-		l5= new JLabel(rubyN);
-		l6= new JLabel(gitN);
-		l7= new JLabel(perlN);
-		
-		
-		javaL= new JButton(gray1);
-		pythonL= new JButton(gray1);
-		cL= new JButton(gray1);
-		sqlL= new JButton(gray1);
-		rubyL= new JButton(gray1);
-		gitL= new JButton(gray1);
-		perlL= new JButton(gray1);
-		
-		
-		javaL.addActionListener(new buttonListener());
-		pythonL.addActionListener(new buttonListener());
-		cL.addActionListener(new buttonListener());
-		sqlL.addActionListener(new buttonListener());
-		rubyL.addActionListener(new buttonListener());
-		gitL.addActionListener(new buttonListener());
-		perlL.addActionListener(new buttonListener());
-		
-		
-		
-//		GameBoard panel = new GameBoard((new ImageIcon("images/background.png").getImage()));
-//		panel.setLocation(300, 10);
-//	    panel.setSize(500,500);
-//	    this.add(panel);
-//	    panel.setVisible(true);
-//	    
-		
-		
-     // nbt.setBackground(Color.BLUE);
-
-		Font font = new Font("Serif",Font.BOLD, 20);
-		
-      
-		javaL.setSize(25, 25);
-		javaL.setLocation(520, 100);
-		javaL.setOpaque(false);
-		javaL.setContentAreaFilled(false);
-		javaL.setBorderPainted(false);
-		
-      l1.setSize(25,25);
-      l1.setFont(font);
-      l1.setForeground(Color.WHITE);
-      l1.setLocation(528, 103);
-      l1.setOpaque(false);
-     
-      pythonL.setSize(25, 25);
-		pythonL.setLocation(640, 85);
-		pythonL.setOpaque(false);
-		pythonL.setContentAreaFilled(false);
-		pythonL.setBorderPainted(false);
-		
-    l2.setSize(25,25);
-    l2.setFont(font);
-    l2.setForeground(Color.WHITE);
-    l2.setLocation(648, 88);
-    l2.setOpaque(false);
-    
-    cL.setSize(25, 25);
-	cL.setLocation(535, 145);
-	cL.setOpaque(false);
-	cL.setContentAreaFilled(false);
-	cL.setBorderPainted(false);
-	
-  l3.setSize(25,25);
-  l3.setFont(font);
-  l3.setForeground(Color.WHITE);
-  l3.setLocation(543, 148);
-  l3.setOpaque(false);
-  
-  sqlL.setSize(25, 25);
-	sqlL.setLocation(600, 110);
-	sqlL.setOpaque(false);
-	sqlL.setContentAreaFilled(false);
-	sqlL.setBorderPainted(false);
-	
-l4.setSize(25,25);
-l4.setFont(font);
-l4.setForeground(Color.WHITE);
-l4.setLocation(608, 113);
-l4.setOpaque(false);
-
-rubyL.setSize(25, 25);
-rubyL.setLocation(600, 165);
-rubyL.setOpaque(false);
-rubyL.setContentAreaFilled(false);
-rubyL.setBorderPainted(false);
-
-l5.setSize(25,25);
-l5.setFont(font);
-l5.setForeground(Color.WHITE);
-l5.setLocation(608, 168);
-l5.setOpaque(false);
-
-gitL.setSize(25, 25);
-gitL.setLocation(640, 140);
-gitL.setOpaque(false);
-gitL.setContentAreaFilled(false);
-gitL.setBorderPainted(false);
-
-l6.setSize(25,25);
-l6.setFont(font);
-l6.setForeground(Color.WHITE);
-l6.setLocation(648, 143);
-l6.setOpaque(false);
-
-perlL.setSize(25, 25);
-perlL.setLocation(690, 130);
-perlL.setOpaque(false);
-perlL.setContentAreaFilled(false);
-perlL.setBorderPainted(false);
-
-l7.setSize(25,25);
-l7.setFont(font);
-l7.setForeground(Color.WHITE);
-l7.setLocation(698, 133);
-l7.setOpaque(false);
-
-
-     
-     //add all lables
-      this.add(l1);
-      this.add(l2);
-      this.add(l3);
-      this.add(l4);
-      this.add(l5);
-      this.add(l6);
-      this.add(l7);
-      
-      
-      //add all buttons
-      this.add(javaL);
-      this.add(pythonL);
-      this.add(cL);
-      this.add(sqlL);
-      this.add(rubyL);
-      this.add(gitL);
-      this.add(perlL);
-      
-
-      
+		addButtons();
       
       //add map
-      this.add(picLabel);
+      this.add(picLanguageabel);
       
            
 		
 	}
+	private void addButtons() {
+		gray1= new ImageIcon("./Pictures/circLanguagee.png");
+		Font font = new Font("Serif",Font.BOLD, 20);
+		
+		
+		javaUnits=new String("0");
+		pythonUnits=new String("0");
+		cUnits=new String("0");
+		sqlUnits=new String("0");
+		rubyUnits=new String("0");
+		gitUnits=new String("0");
+		perlUnits=new String("0");
+		
+		languageLabel1= new JLabel(javaUnits);
+		languageLabel2= new JLabel(pythonUnits);
+		languageLabel3= new JLabel(cUnits);
+		languageLabel4= new JLabel(sqlUnits);
+		languageLabel5= new JLabel(rubyUnits);
+		languageLabel6= new JLabel(gitUnits);
+		languageLabel7= new JLabel(perlUnits);
+		
+		
+		javaLanguage= new JButton(gray1);
+		pythonLanguage= new JButton(gray1);
+		cLanguage= new JButton(gray1);
+		sqlLanguage= new JButton(gray1);
+		rubyLanguage= new JButton(gray1);
+		gitLanguage= new JButton(gray1);
+		perlLanguage= new JButton(gray1);
+		
+		
+		javaLanguage.addActionListener(new buttonListener());
+		pythonLanguage.addActionListener(new buttonListener());
+		cLanguage.addActionListener(new buttonListener());
+		sqlLanguage.addActionListener(new buttonListener());
+		rubyLanguage.addActionListener(new buttonListener());
+		gitLanguage.addActionListener(new buttonListener());
+		perlLanguage.addActionListener(new buttonListener());
+		
+	
+		javaLanguage.setSize(25, 25);
+		javaLanguage.setLocation(520, 100);
+		javaLanguage.setOpaque(false);
+		javaLanguage.setContentAreaFilled(false);
+		javaLanguage.setBorderPainted(false);
+		
+		languageLabel1.setSize(25,25);
+		languageLabel1.setFont(font);
+		languageLabel1.setForeground(Color.WHITE);
+		languageLabel1.setLocation(528, 103);
+		languageLabel1.setOpaque(false);
+     
+		pythonLanguage.setSize(25, 25);
+		pythonLanguage.setLocation(640, 85);
+		pythonLanguage.setOpaque(false);
+		pythonLanguage.setContentAreaFilled(false);
+		pythonLanguage.setBorderPainted(false);
+		
+		languageLabel2.setSize(25,25);
+		languageLabel2.setFont(font);
+		languageLabel2.setForeground(Color.WHITE);
+		languageLabel2.setLocation(648, 88);
+		languageLabel2.setOpaque(false);
+    
+	    cLanguage.setSize(25, 25);
+		cLanguage.setLocation(535, 145);
+		cLanguage.setOpaque(false);
+		cLanguage.setContentAreaFilled(false);
+		cLanguage.setBorderPainted(false);
+		
+		languageLabel3.setSize(25,25);
+		languageLabel3.setFont(font);
+		languageLabel3.setForeground(Color.WHITE);
+		languageLabel3.setLocation(543, 148);
+		languageLabel3.setOpaque(false);
+	  
+		sqlLanguage.setSize(25, 25);
+		sqlLanguage.setLocation(600, 110);
+		sqlLanguage.setOpaque(false);
+		sqlLanguage.setContentAreaFilled(false);
+		sqlLanguage.setBorderPainted(false);
+	
+		languageLabel4.setSize(25,25);
+		languageLabel4.setFont(font);
+		languageLabel4.setForeground(Color.WHITE);
+		languageLabel4.setLocation(608, 113);
+		languageLabel4.setOpaque(false);
+
+		rubyLanguage.setSize(25, 25);
+		rubyLanguage.setLocation(600, 165);
+		rubyLanguage.setOpaque(false);
+		rubyLanguage.setContentAreaFilled(false);
+		rubyLanguage.setBorderPainted(false);
+
+		languageLabel5.setSize(25,25);
+		languageLabel5.setFont(font);
+		languageLabel5.setForeground(Color.WHITE);
+		languageLabel5.setLocation(608, 168);
+		languageLabel5.setOpaque(false);
+
+		gitLanguage.setSize(25, 25);
+		gitLanguage.setLocation(640, 140);
+		gitLanguage.setOpaque(false);
+		gitLanguage.setContentAreaFilled(false);
+		gitLanguage.setBorderPainted(false);
+
+		languageLabel6.setSize(25,25);
+		languageLabel6.setFont(font);
+		languageLabel6.setForeground(Color.WHITE);
+		languageLabel6.setLocation(648, 143);
+		languageLabel6.setOpaque(false);
+
+		perlLanguage.setSize(25, 25);
+		perlLanguage.setLocation(690, 130);
+		perlLanguage.setOpaque(false);
+		perlLanguage.setContentAreaFilled(false);
+		perlLanguage.setBorderPainted(false);
+
+		languageLabel7.setSize(25,25);
+		languageLabel7.setFont(font);
+		languageLabel7.setForeground(Color.WHITE);
+		languageLabel7.setLocation(698, 133);
+		languageLabel7.setOpaque(false);
+
+
+     
+     //add all lables
+		this.add(languageLabel1);
+		this.add(languageLabel2);
+		this.add(languageLabel3);
+		this.add(languageLabel4);
+		this.add(languageLabel5);
+		this.add(languageLabel6);
+		this.add(languageLabel7);
+      
+      
+      //add all buttons
+		this.add(javaLanguage);
+		this.add(pythonLanguage);
+		this.add(cLanguage);
+		this.add(sqlLanguage);
+		this.add(rubyLanguage);
+		this.add(gitLanguage);
+		this.add(perlLanguage);
+	}
+	
+	
 	private class buttonListener implements ActionListener{
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			gray1= new ImageIcon("./Pictures/bcircle.png");
+			gray1= new ImageIcon("./Pictures/bcircLanguagee.png");
 			
 		}
 		
