@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.LayoutManager;
 import java.awt.Point;
@@ -13,7 +14,6 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-
 import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -24,12 +24,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.RootPaneContainer;
 import javax.swing.WindowConstants;
-
+import com.sun.prism.Graphics;
 import model.Player;
 import model.Sun;
 import model.Territory;
-
-
 
 public class MainGUI extends JFrame {
 	
@@ -38,14 +36,14 @@ public class MainGUI extends JFrame {
 	JTextField updateDisplay;
 	JButton toggleSound, quitGame, saveGame;
 	String B1T1;
-	
-	
-	
+	JButton nbt;
+	JLabel num;
+	ImageIcon gray1;
 	
 	public static void main(String[] args) {
 		MainGUI window = new MainGUI();
 		window.setVisible(true);
-		System.out.println("Brooklyn's");
+		
 	}
 
 	public MainGUI() {
@@ -65,10 +63,10 @@ public class MainGUI extends JFrame {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(sizeMe);
 		this.setLayout(null);
-		ImageIcon gray1= new ImageIcon("./Pictures/circle.png");
+		gray1= new ImageIcon("./Pictures/circle.png");
 		B1T1=new String("0");
-		JLabel num= new JLabel(B1T1);
-		JButton nbt= new JButton(gray1);
+		num= new JLabel(B1T1);
+		nbt= new JButton(gray1);
 		nbt.addActionListener(new buttonListener());
 		
 //		GameBoard panel = new GameBoard((new ImageIcon("images/background.png").getImage()));
@@ -81,7 +79,7 @@ public class MainGUI extends JFrame {
 		
      // nbt.setBackground(Color.BLUE);
 
-		Font font = new Font("Serif",Font.BOLD, 30);
+		Font font = new Font("Serif",Font.BOLD, 20);
 		
       
       nbt.setSize(25, 25);
@@ -90,10 +88,10 @@ public class MainGUI extends JFrame {
       nbt.setOpaque(false);
       nbt.setContentAreaFilled(false);
       nbt.setBorderPainted(false);
-      num.setSize(50,50);
+      num.setSize(25,25);
       num.setFont(font);
       num.setForeground(Color.WHITE);
-      num.setLocation(118, 103);
+      num.setLocation(688, 153);
       num.setOpaque(false);
      
      
@@ -111,7 +109,7 @@ public class MainGUI extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
+				gray1= new ImageIcon("./Pictures/bcircle.png");
 				
 			}
 			
