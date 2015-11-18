@@ -17,13 +17,11 @@ import javax.swing.JTextField;
 public class MainGUI extends JFrame {
 
 	GameBoard map;
-	JPanel bottomDisplay, sideDisplay;
+	BottomBoard bottomBoard;
+	SideBoard sideBoard;
 	JTextField updateDisplay;
 	JButton toggleSound, quitGame, saveGame;
 
-	JButton nbt, ter1;
-	JLabel num;
-	ImageIcon gray1;
 
 	public static void main(String[] args) {
 		MainGUI window = new MainGUI();
@@ -35,10 +33,8 @@ public class MainGUI extends JFrame {
 
 		this.setLayout(null);
 
-		GameBoard map = new GameBoard();
-
-		JPanel bottomeDisplay = new JPanel();
-		JPanel sideDisplay = new JPanel();
+		map = new GameBoard();
+		bottomBoard= new BottomBoard();
 
 		Dimension sizeMe = Toolkit.getDefaultToolkit().getScreenSize();
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -67,6 +63,7 @@ public class MainGUI extends JFrame {
 		this.add(toggleSound);
 
 		this.add(map);
+		this.add(bottomBoard);
 
 	}
 
@@ -74,7 +71,7 @@ public class MainGUI extends JFrame {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			gray1 = new ImageIcon("./Pictures/bcircle.png");
+	//		gray = new ImageIcon("./Pictures/bcircle.png");
 
 		}
 

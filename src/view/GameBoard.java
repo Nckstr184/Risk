@@ -59,21 +59,13 @@ public class GameBoard extends JPanel {
 			this.setSize(900, 550);
 			this.setLocation(380, -10);
 			this.setLayout(null);
-			/*
-			 * try { map = ImageIO.read(new File("./Pictures/map.png"));
-			 * picLanguageabel = new JLabel(new ImageIcon(map));
-			 * picLanguageabel.setLocation(0, 0); picLanguageabel.setSize(900,
-			 * 550);
-			 * 
-			 * }
-			 */} catch (IOException e) {
+			
+		
+		} catch (IOException e) {
 			System.out.println("ERROR with map");
 			e.printStackTrace();
 		}
 		addButtons();
-
-		// add map
-		// this.add(picLanguageabel);
 
 	}
 
