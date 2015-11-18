@@ -39,10 +39,7 @@ public class MainGUI extends JFrame {
 	GameBoard map;
 	JTextField updateDisplay;
 	JButton toggleSound, quitGame, saveGame;
-	String B1T1;
-	JButton nbt;
-	JLabel num;
-	ImageIcon gray1;
+	
 	
 	public static void main(String[] args) {
 		MainGUI window = new MainGUI();
@@ -60,57 +57,12 @@ public class MainGUI extends JFrame {
 		Dimension sizeMe = Toolkit.getDefaultToolkit().getScreenSize();
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(sizeMe);
-		this.setLayout(null);
-		gray1= new ImageIcon("./Pictures/circle.png");
-		B1T1=new String("0");
-		num= new JLabel(B1T1);
-		nbt= new JButton(gray1);
-		nbt.addActionListener(new buttonListener());
 		
-//		GameBoard panel = new GameBoard((new ImageIcon("images/background.png").getImage()));
-//		panel.setLocation(300, 10);
-//	    panel.setSize(500,500);
-//	    this.add(panel);
-//	    panel.setVisible(true);
-//	    
-		
-		
-     // nbt.setBackground(Color.BLUE);
-
-		Font font = new Font("Serif",Font.BOLD, 20);
-		
-      
-      nbt.setSize(25, 25);
-      nbt.setLocation(680, 150);
-
-      nbt.setOpaque(false);
-      nbt.setContentAreaFilled(false);
-      nbt.setBorderPainted(false);
-      num.setSize(25,25);
-      num.setFont(font);
-      num.setForeground(Color.WHITE);
-      num.setLocation(688, 153);
-      num.setOpaque(false);
-     
-     
-     
-      this.add(num);
-      this.add(nbt);
-      
-      nbt.setVisible(true);
       this.add(map);
 		
 	        
 	    }
-		private class buttonListener implements ActionListener{
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				gray1= new ImageIcon("./Pictures/bcircle.png");
-				
-			}
-			
-		}
+		
 		
 		
 	}
