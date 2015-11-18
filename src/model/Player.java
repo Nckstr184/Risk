@@ -32,6 +32,11 @@ public abstract class Player {
 		return playerCards;
 	}
 	
+	public void addArmies(int numArmies)
+	{
+		numOfArmies=numOfArmies+numArmies;
+	}
+	
 	public String getName()
 	{
 		return name;
