@@ -398,5 +398,21 @@ public class GameLogic {
 
 		return temp;
 	}
+	
+	public PlayerCollection getPlayerList() {
+		return allPlayers;
+	}
+	
+	public boolean isGameComplete() {
+		if(languages.cConquered())
+			if(dino.cConquered())
+				if(wildcat.cConquered())
+					if(pizza.cConquered())
+						if(crescent.cConquered())
+							if(sun.cConquered())
+								return true;
+		
+		return false;
+	}
 
 }
