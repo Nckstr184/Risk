@@ -27,7 +27,9 @@ public class Run6Bots {
 		
 		for (int i = 0; i < 1000; i++) {
 			logic.startGame();
-			
+			while(!logic.isGameComplete()) {
+				
+			}
 		}
 
 	}

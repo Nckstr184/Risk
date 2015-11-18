@@ -345,8 +345,8 @@ public class GameLogic {
 
 		// sets the master Player List to the sorted one
 		allPlayers.setPlayerList(tempList);
-		
-		// TODO: Randomly set 1 army per turn to a territory 
+
+		// TODO: Randomly set 1 army per turn to a territory
 	}
 
 	public ArrayList<Player> InsertionSort(Object[] objects) {
@@ -375,20 +375,20 @@ public class GameLogic {
 
 		return temp;
 	}
-	
+
 	public PlayerCollection getPlayerList() {
 		return allPlayers;
 	}
-	
+
 	public boolean isGameComplete() {
-		if(languages.cConquered())
-			if(dino.cConquered())
-				if(wildcat.cConquered())
-					if(pizza.cConquered())
-						if(crescent.cConquered())
-							if(sun.cConquered())
+		if (languages.cConquered())
+			if (dino.cConquered())
+				if (wildcat.cConquered())
+					if (pizza.cConquered())
+						if (crescent.cConquered())
+							if (sun.cConquered())
 								return true;
-		
+
 		return false;
 	}
 
