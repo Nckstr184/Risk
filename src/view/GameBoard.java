@@ -26,7 +26,7 @@ public class GameBoard extends JPanel{
 	JPanel board;
 	JFrame temp;
 	
-	String javaUnits,pythonUnits, cUnits, sqlUnits, rubyUnits, gitUnits, perlUnits;//number on the circLanguagee for language
+	int javaUnits,pythonUnits, cUnits, sqlUnits, rubyUnits, gitUnits, perlUnits;//number on the circLanguagee for language
 	JButton javaLanguage, pythonLanguage, cLanguage, sqlLanguage, rubyLanguage, gitLanguage, perlLanguage;//circLanguagee button for language
 	JLabel languageLabel1,languageLabel2,languageLabel3,languageLabel4,languageLabel5,languageLabel6,languageLabel7;//number for language
 	
@@ -75,21 +75,21 @@ public class GameBoard extends JPanel{
 		Font font = new Font("Serif",Font.BOLD, 20);
 		
 		
-		javaUnits=new String("0");
-		pythonUnits=new String("0");
-		cUnits=new String("0");
-		sqlUnits=new String("0");
-		rubyUnits=new String("0");
-		gitUnits=new String("0");
-		perlUnits=new String("0");
+		javaUnits=0;
+		pythonUnits=0;
+		cUnits=0;
+		sqlUnits=0;
+		rubyUnits=0;
+		gitUnits=0;
+		perlUnits=0;
 		
-		languageLabel1= new JLabel(javaUnits);
-		languageLabel2= new JLabel(pythonUnits);
-		languageLabel3= new JLabel(cUnits);
-		languageLabel4= new JLabel(sqlUnits);
-		languageLabel5= new JLabel(rubyUnits);
-		languageLabel6= new JLabel(gitUnits);
-		languageLabel7= new JLabel(perlUnits);
+		languageLabel1= new JLabel(""+javaUnits);
+		languageLabel2= new JLabel(""+pythonUnits);
+		languageLabel3= new JLabel(""+cUnits);
+		languageLabel4= new JLabel(""+sqlUnits);
+		languageLabel5= new JLabel(""+rubyUnits);
+		languageLabel6= new JLabel(""+gitUnits);
+		languageLabel7= new JLabel(""+perlUnits);
 		
 		
 		javaLanguage= new JButton(gray);
