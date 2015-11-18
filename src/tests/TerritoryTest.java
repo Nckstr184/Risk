@@ -8,9 +8,9 @@ import javax.swing.JButton;
 
 import org.junit.Test;
 
-import model.Human;
 import model.Player;
 import model.Territory;
+import typesOfPlayers.Human;
 
 public class TerritoryTest {
 

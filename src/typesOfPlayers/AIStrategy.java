@@ -1,6 +1,8 @@
-package model;
+package typesOfPlayers;
 
 import java.util.ArrayList;
+
+import model.Territory;
 
 public interface AIStrategy {
 	

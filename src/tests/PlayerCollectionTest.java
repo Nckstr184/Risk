@@ -7,9 +7,9 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-import model.Human;
 import model.Player;
 import model.PlayerCollection;
+import typesOfPlayers.Human;
 
 public class PlayerCollectionTest {
 

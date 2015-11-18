@@ -1,27 +1,30 @@
 package view;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+
 
 public class StartWindow extends JFrame {
 	JComboBox diff1, diff2, diff3, diff4, diff5, diff6;
-	JLabel player1, player2, player3, player4, player5, player6;
+	JTextField player1, player2, player3, player4, player5, player6;
 	JButton startGame;
 	JPanel panel;
+	JLabel enterName;
+	
+	
+	
 	
 	
 	public StartWindow(){
-		LayoutWindow();
-		
-	}
-	
-	
-	private void LayoutWindow(){
 		
 		this.setSize(350, 350);
 		this.setTitle("Start Window");
@@ -30,12 +33,12 @@ public class StartWindow extends JFrame {
 		
 		this.setLocation(350,100);
 
-		player1 = new JLabel();
-		player2 = new JLabel();
-		player3 = new JLabel();
-		player4 = new JLabel();
-		player5 = new JLabel();
-		player6 = new JLabel();
+		player1 = new JTextField();
+		player2 = new JTextField();
+		player3 = new JTextField();
+		player4 = new JTextField();
+		player5 = new JTextField();
+		player6 = new JTextField();
 		
 		diff1 = new JComboBox();
 		diff2 = new JComboBox();
@@ -44,13 +47,18 @@ public class StartWindow extends JFrame {
 		diff5 = new JComboBox();
 		diff6 = new JComboBox();
 		
+		enterName = new JLabel();
 		
-		player1.setText("Player 1: ");
-		player2.setText("Player 2: ");
-		player3.setText("Player 3: ");
-		player4.setText("Player 4: ");
-		player5.setText("Player 5: ");
-		player6.setText("Player 6: ");
+		enterName.setText("Enter Player Names in Text Fields");
+		enterName.setSize(300,15);
+		enterName.setLocation(0,0);
+		
+		player1.setText(" ");
+		player2.setText(" ");
+		player3.setText(" ");
+		player4.setText(" ");
+		player5.setText(" ");
+		player6.setText(" ");
 		
 		String [] player1Choice = {"Human", "Easy AI", "Medium AI", "Hard AI"};
 		String [] player2Choice = {"Easy AI", "Medium AI", "Hard AI","Human"};
@@ -100,22 +108,15 @@ public class StartWindow extends JFrame {
 		
 		diff6.setLocation(80,150);
 		diff6.setSize(150,50);
-		/*numPlayers.setSize(150,20);
-		numPlayers.setLocation(0,10);
-		setNumPlayers.setSize(100,20);
-		setNumPlayers.setLocation(150,10);
-		diff.setSize(150,20);
-		diff.setLocation(0,30);
-		diff.setSize(100, 20);
-		setDiff.setLocation(150,30);
-		setDiff.setSize(100,20);*/
+		
 		
 		startGame = new JButton();
+		startGame.addActionListener(new startGameListener());
 		startGame.setSize(200,50);
 		startGame.setLocation(50,200);
 		startGame.setText("Start the Battle!!!");
 		
-		
+		this.add(enterName);
 		this.add(diff1);
 		this.add(player1);
 		this.add(diff2);
@@ -132,6 +133,30 @@ public class StartWindow extends JFrame {
 		this.add(startGame);
 		
 		this.setVisible(true);
+		
+	}
+	
+
+	public class startGameListener implements ActionListener{
+		  
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			String player1Name = player1.getText();
+			String player2Name = player2.getText();
+			String player3Name = player3.getText();
+			String player4Name = player4.getText();
+			String player5Name = player5.getText();
+			String player6Name = player6.getText();
+			
+			String diffi1 = (String)diff1.getSelectedItem();
+			
+			
+			System.out.println(player1Name);
+			System.out.println(diffi1);
+			
+			dispose();
+			
+			}
 		
 	}
 	

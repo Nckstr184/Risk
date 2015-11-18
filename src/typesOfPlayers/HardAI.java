@@ -1,7 +1,10 @@
-package model;
+package typesOfPlayers;
 
 import java.awt.Color;
 import java.util.ArrayList;
+
+import model.Player;
+import model.Territory;
 
 public class HardAI extends Player implements AIStrategy{
 

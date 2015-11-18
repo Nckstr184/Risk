@@ -1,10 +1,13 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class GameLogic {
 	private final int NUM_OF_TERRITORIES = 7;
+	public Random r;
 
+	
 	private ArrayList<Territory> allTerritories;
 	private ArrayList<Continent> allContinents;
 	private PlayerCollection allPlayers;
@@ -345,6 +348,64 @@ public class GameLogic {
 
 		// sets the master Player List to the sorted one
 		allPlayers.setPlayerList(tempList);
+		// TODO: Randomly set 1 army per turn to a territory 
+		startUpPlaceReinforcementPhase();
+	}
+
+	private void startUpPlaceReinforcementPhase() {
+		disperseNumberOfArmies();
+		//make temp list of territories
+		ArrayList<Territory> tempTerrs=getTerritories();
+		r = new Random();
+		while(!tempTerrs.isEmpty())
+		{
+			for(int i=0; i<allPlayers.getNumOfPlayers(); i++)
+			{
+			int randomIndex=r.nextInt(tempTerrs.size());
+			Territory tempTerritory=tempTerrs.get(randomIndex);
+			Player tempPlayer=allPlayers.getPlayer(i);
+			tempPlayer.addTerritories(tempTerritory);
+			tempTerrs.remove(randomIndex);
+			tempPlayer.addArmies(-1);
+			tempTerritory.addUnits(1);
+			}
+			
+		}
+	}
+
+	private void disperseNumberOfArmies() {
+		if(allPlayers.getNumOfPlayers()==3)
+		{
+			for(int i=0; i<3; i++)
+			{
+				Player temp=allPlayers.getPlayer(i);
+				temp.addArmies(35);
+			}
+		}
+		if(allPlayers.getNumOfPlayers()==4)
+		{
+			for(int i=0; i<4; i++)
+			{
+				Player temp=allPlayers.getPlayer(i);
+				temp.addArmies(30);
+			}
+		}
+		if(allPlayers.getNumOfPlayers()==5)
+		{
+			for(int i=0; i<5; i++)
+			{
+				Player temp=allPlayers.getPlayer(i);
+				temp.addArmies(25);
+			}
+		}
+		if(allPlayers.getNumOfPlayers()==6)
+		{
+			for(int i=0; i<6; i++)
+			{
+				Player temp=allPlayers.getPlayer(i);
+				temp.addArmies(20);
+			}
+		}
 	}
 
 	public ArrayList<Player> InsertionSort(Object[] objects) {
@@ -372,6 +433,22 @@ public class GameLogic {
 		}
 
 		return temp;
+	}
+
+	public PlayerCollection getPlayerList() {
+		return allPlayers;
+	}
+
+	public boolean isGameComplete() {
+		if (languages.cConquered())
+			if (dino.cConquered())
+				if (wildcat.cConquered())
+					if (pizza.cConquered())
+						if (crescent.cConquered())
+							if (sun.cConquered())
+								return true;
+
+		return false;
 	}
 
 }

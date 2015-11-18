@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 import javax.swing.JButton;
 
+import typesOfPlayers.Human;
+
 import java.util.ArrayList;
 
 public class Crescent extends Continent {
