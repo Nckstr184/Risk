@@ -32,6 +32,7 @@ import model.Territory;
 public class MainGUI extends JFrame {
 	
 	GameBoard map;
+	JPanel bottomDisplay, sideDisplay;
 	JTextField updateDisplay;
 	JButton toggleSound, quitGame, saveGame;
 	String B1T1;
@@ -51,6 +52,12 @@ public class MainGUI extends JFrame {
 
 
 		GameBoard map = new GameBoard();
+
+		JPanel bottomeDisplay = new JPanel();
+		JPanel sideDisplay = new JPanel();
+		
+	
+		
 
 		Dimension sizeMe = Toolkit.getDefaultToolkit().getScreenSize();
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -94,6 +101,7 @@ public class MainGUI extends JFrame {
       
       nbt.setVisible(true);
       this.add(map);
+      this.add(bottomDisplay);
 		
 	        
 	    }
