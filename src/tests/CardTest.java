@@ -18,7 +18,7 @@ public class CardTest {
 		RiskCard test= new RiskCard("territory",CardType.SPONGEBOB, image);
 		assertEquals("territory", test.getTerritory());
 		WildCard test1= new WildCard(CardType.WILD,image);
-		assertEquals("territory", test1.getType());
+		assertEquals(CardType.WILD, test1.getType());
 		assertEquals(image, test1.getImage());
 
 	}

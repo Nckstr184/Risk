@@ -22,6 +22,7 @@ public class GameBoard extends JPanel{
 	
 	ArrayList<Continent> Continents;
 	BufferedImage map;
+<<<<<<< HEAD
 	JPanel board;
 	JFrame temp;
 	String B1T1;
@@ -29,6 +30,10 @@ public class GameBoard extends JPanel{
 	JLabel num;
 	ImageIcon gray1;
 	JLabel picLabel;
+=======
+	JPanel board, boardDisplay, boardInfo;
+	
+>>>>>>> c37de9bb30c6708c57d0e97dd9034e0126f3cc00
 	
 	/*
 	public static void main(String args[]) {

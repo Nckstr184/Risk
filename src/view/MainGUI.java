@@ -14,7 +14,6 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-
 import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -25,18 +24,15 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.RootPaneContainer;
 import javax.swing.WindowConstants;
-
 import com.sun.prism.Graphics;
-
 import model.Player;
 import model.Sun;
 import model.Territory;
 
-
-
 public class MainGUI extends JFrame {
 	
 	GameBoard map;
+	JPanel bottomDisplay, sideDisplay;
 	JTextField updateDisplay;
 	JButton toggleSound, quitGame, saveGame;
 	
@@ -54,11 +50,18 @@ public class MainGUI extends JFrame {
 
 		GameBoard map = new GameBoard();
 
+		JPanel bottomeDisplay = new JPanel();
+		JPanel sideDisplay = new JPanel();
+		
+	
+		
+
 		Dimension sizeMe = Toolkit.getDefaultToolkit().getScreenSize();
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(sizeMe);
 		
       this.add(map);
+      this.add(bottomDisplay);
 		
 	        
 	    }

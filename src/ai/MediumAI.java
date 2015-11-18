@@ -1,7 +1,10 @@
-package model;
+package ai;
 
 import java.awt.Color;
 import java.util.ArrayList;
+
+import model.Player;
+import model.Territory;
 
 public class MediumAI extends Player implements AIStrategy {
 
@@ -50,7 +53,7 @@ public class MediumAI extends Player implements AIStrategy {
 		smallestNumOfArmies = connected.get(0).getUnits();
 
 		for (int i = 1; i < connected.size(); i++) {
-			if (smallestNumOfArmies > connected.get(i).getUnits()) {
+			if (smallestNumOfArmies > connected.get(i).getUnits() && connected.get(i).getOwner() != this) {
 				smallestNumOfArmies = connected.get(i).getUnits();
 				indexOfSmallestArmies = i;
 			}

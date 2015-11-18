@@ -39,17 +39,17 @@ public class CardCollectionTest {
 		CardType E = B.getType();
 		CardType F = C.getType();
 		
-		assertEquals("SPONGEBOB", D);
-		assertNotEquals("PATRICK", D);
-		assertNotEquals("GARY", D);
+		assertEquals(CardType.SPONGEBOB, D);
+		assertNotEquals(CardType.PATRICK, D);
+		assertNotEquals(CardType.GARY, D);
 		
-		assertNotEquals("SPONGEBOB", E);
-		assertEquals("PATRICK", E);
-		assertNotEquals("GARY", E);
+		assertNotEquals(CardType.SPONGEBOB, E);
+		assertEquals(CardType.PATRICK, E);
+		assertNotEquals(CardType.GARY, E);
 		
-		assertNotEquals("SPONGEBOB", F);
-		assertNotEquals("PATRICK", F);
-		assertEquals("GARY", F);
+		assertNotEquals(CardType.SPONGEBOB, F);
+		assertNotEquals(CardType.PATRICK, F);
+		assertEquals(CardType.GARY, F);
 		
 	}
 	
