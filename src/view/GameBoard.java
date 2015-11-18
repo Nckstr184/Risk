@@ -31,28 +31,18 @@ public class GameBoard extends JPanel{
 	JLabel languageLabel1,languageLabel2,languageLabel3,languageLabel4,languageLabel5,languageLabel6,languageLabel7;//number for language
 	
 	
-	ImageIcon gray1;
+	ImageIcon gray, red, blue, purple, orange, yellow, green;
 	JLabel picLanguageabel;
+	
+	
 
-	JPanel boardDisplay, boardInfo;
-	
-
-	
-	/*
-	public static void main(String args[]) {
-
-		GameBoard window = new GameBoard();
-		window.setVisible(true);
-	}*/
-	
-	
 	public GameBoard(){
 
 		
 		this.setSize(900,550);
 		this.setLocation(380,-10);
 		this.setLayout(null);
-
+		
 		
 		
 		
@@ -75,7 +65,13 @@ public class GameBoard extends JPanel{
 		
 	}
 	private void addButtons() {
-		gray1= new ImageIcon("./Pictures/circLanguagee.png");
+		gray= new ImageIcon("./Pictures/circle.png");
+		red= new ImageIcon("./Pictures/rcircle.png");
+		blue= new ImageIcon("./Pictures/bcircle.png");
+		purple= new ImageIcon("./Pictures/pcircle.png");
+		orange= new ImageIcon("./Pictures/ocircle.png");
+		yellow= new ImageIcon("./Pictures/ycircle.png");
+		green= new ImageIcon("./Pictures/gcircle.png");
 		Font font = new Font("Serif",Font.BOLD, 20);
 		
 		
@@ -96,13 +92,13 @@ public class GameBoard extends JPanel{
 		languageLabel7= new JLabel(perlUnits);
 		
 		
-		javaLanguage= new JButton(gray1);
-		pythonLanguage= new JButton(gray1);
-		cLanguage= new JButton(gray1);
-		sqlLanguage= new JButton(gray1);
-		rubyLanguage= new JButton(gray1);
-		gitLanguage= new JButton(gray1);
-		perlLanguage= new JButton(gray1);
+		javaLanguage= new JButton(gray);
+		pythonLanguage= new JButton(gray);
+		cLanguage= new JButton(gray);
+		sqlLanguage= new JButton(gray);
+		rubyLanguage= new JButton(gray);
+		gitLanguage= new JButton(gray);
+		perlLanguage= new JButton(gray);
 		
 		
 		javaLanguage.addActionListener(new buttonListener());
@@ -225,7 +221,7 @@ public class GameBoard extends JPanel{
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			gray1= new ImageIcon("./Pictures/bcircLanguagee.png");
+			gray= red;
 			
 		}
 		
