@@ -61,7 +61,7 @@ public class MainGUI extends JFrame {
 		this.setSize(sizeMe);
 		
       this.add(map);
-      this.add(bottomDisplay);
+     // this.add(bottomDisplay);
 		
 	        
 	    }
