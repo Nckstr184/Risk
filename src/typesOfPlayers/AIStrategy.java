@@ -1,4 +1,4 @@
-package ai;
+package typesOfPlayers;
 
 import java.util.ArrayList;
 

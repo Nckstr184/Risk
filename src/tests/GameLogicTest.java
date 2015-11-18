@@ -11,13 +11,13 @@ import model.Continent;
 import model.Crescent;
 import model.Dino;
 import model.GameLogic;
-import model.Human;
 import model.Languages;
 import model.Pizza;
 import model.Player;
 import model.Sun;
 import model.Territory;
 import model.Wildcat;
+import typesOfPlayers.Human;
 
 public class GameLogicTest {
 

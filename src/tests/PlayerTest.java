@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import org.junit.Test;
 
 import model.Card;
-import model.Human;
 import model.Player;
 import model.RiskCard;
 import model.Territory;
+import typesOfPlayers.Human;
 
 public class PlayerTest {
 

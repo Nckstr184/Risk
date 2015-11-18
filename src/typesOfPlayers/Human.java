@@ -1,6 +1,8 @@
-package model;
+package typesOfPlayers;
 
 import java.awt.Color;
+
+import model.Player;
 
 public class Human extends Player {
 
