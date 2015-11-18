@@ -16,19 +16,19 @@ public class HardAI extends Player implements AIStrategy{
 	}
 
 	@Override
-	public boolean chooseRetreat() {
+	public boolean chooseRetreat(Territory currentTerr) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public Territory attackTerritory(ArrayList<Territory> connected) {
+	public Territory attackTerritory(Territory currentTerr, ArrayList<Territory> connected) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void fortifyPosition(ArrayList<Territory> connected) {
+	public void fortifyPosition(Territory currentTerr, ArrayList<Territory> connected) {
 		// TODO Auto-generated method stub
 		
 	}

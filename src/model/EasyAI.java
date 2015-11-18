@@ -40,7 +40,7 @@ public class EasyAI extends Player implements AIStrategy {
 	}
 
 	@Override
-	public boolean chooseRetreat() {
+	public boolean chooseRetreat(Territory currentTerr) {
 		// chooses whether to retreat in the middle of battle
 		int rand = r.nextInt(2);
 		if(rand == 0)
@@ -50,7 +50,7 @@ public class EasyAI extends Player implements AIStrategy {
 	}
 
 	@Override
-	public Territory attackTerritory(ArrayList<Territory> connected) {
+	public Territory attackTerritory(Territory currentTerr, ArrayList<Territory> connected) {
 		// chooses a random connected territory to attack, as long
 		// as there is more than one army in it
 		int rand = r.nextInt(2);
@@ -63,7 +63,7 @@ public class EasyAI extends Player implements AIStrategy {
 	}
 
 	@Override
-	public void fortifyPosition(ArrayList<Territory> connected) {
+	public void fortifyPosition(Territory currentTerr, ArrayList<Territory> connected) {
 		// randomly decides to move armies to friendly connected territory
 		int rand = r.nextInt(2);
 		if(rand == 0) {

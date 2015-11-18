@@ -1,12 +1,10 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class BattleLogic {
-	Player attacker, defender;
-	Dice attackDice, defendDice;
-	int numOfAttackDice, numOfDefendDice, mostDiceOnField;
+	private Player attacker, defender;
+	private Dice attackDice, defendDice;
+	private int numOfAttackDice, numOfDefendDice, mostDiceOnField;
 
 	public BattleLogic(Player attacker, Player defender) {
 		this.attacker = attacker;
@@ -36,7 +34,6 @@ public class BattleLogic {
 			if(attackDice.getDice().get(i) <= defendDice.getDice().get(i))
 				count++;
 		}
-		
 		return count;
 	}
 	
@@ -47,7 +44,6 @@ public class BattleLogic {
 			if(attackDice.getDice().get(i) > defendDice.getDice().get(i))
 				count++;
 		}
-		
 		return count;
 	}
 	
