@@ -18,8 +18,8 @@ import javax.swing.JPanel;
 
 import model.Continent;
 
-public class GameBoard extends JPanel{
-	
+public class GameBoard extends JPanel {
+
 	ArrayList<Continent> Continents;
 	BufferedImage map;
 
@@ -38,20 +38,14 @@ public class GameBoard extends JPanel{
 
 	public GameBoard(){
 
-		
-		this.setSize(900,550);
-		this.setLocation(380,-10);
+		this.setSize(900, 550);
+		this.setLocation(380, -10);
 		this.setLayout(null);
-		
-		
-		
-		
 		try {
 			map = ImageIO.read(new File("./Pictures/map.png"));
 			picLanguageabel = new JLabel(new ImageIcon(map));
 			picLanguageabel.setLocation(0, 0);
 			picLanguageabel.setSize(900, 550);
-			
 		} catch (IOException e) {
 			System.out.println("ERROR with map");
 			e.printStackTrace();
@@ -222,11 +216,8 @@ public class GameBoard extends JPanel{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			gray= red;
-			
 		}
-		
-	}
-		 
-		
+
 	}
 
+}
