@@ -2,12 +2,12 @@ package tests;
 
 import java.awt.Color;
 
-import model.EasyAI;
+import ai.EasyAI;
+import ai.MediumAI;
 import model.GameLogic;
-import model.MediumAI;
 
 public class Run6Bots {
-	
+
 	public static void main(String[] args) {
 		EasyAI ai1 = new EasyAI("1", Color.RED, 20);
 		EasyAI ai2 = new EasyAI("2", Color.BLUE, 20);
@@ -23,8 +23,9 @@ public class Run6Bots {
 		logic.addPlayers(ai5);
 		logic.addPlayers(ai6);
 		
-		logic.startGame();
-		
-		
+		for (int i = 0; i < 1000; i++) {
+			logic.startGame();
+		}
+
 	}
 }

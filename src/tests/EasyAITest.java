@@ -6,7 +6,7 @@ import java.awt.Color;
 
 import org.junit.Test;
 
-import model.EasyAI;
+import ai.EasyAI;
 import model.Player;
 
 public class EasyAITest {

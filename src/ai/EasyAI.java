@@ -1,8 +1,11 @@
-package model;
+package ai;
 
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Random;
+
+import model.Player;
+import model.Territory;
 
 public class EasyAI extends Player implements AIStrategy {
 	
@@ -55,7 +58,9 @@ public class EasyAI extends Player implements AIStrategy {
 		// as there is more than one army in it
 		int rand = r.nextInt(2);
 		if(rand == 0) {
+			do {
 			rand = r.nextInt(connected.size());
+			} while(connected.get(rand).getOwner() != this);
 			return connected.get(rand);
 		}
 		// returns null if it decides to not attack

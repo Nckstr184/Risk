@@ -345,6 +345,8 @@ public class GameLogic {
 
 		// sets the master Player List to the sorted one
 		allPlayers.setPlayerList(tempList);
+		
+		// TODO: Randomly set 1 army per turn to a territory 
 	}
 
 	public ArrayList<Player> InsertionSort(Object[] objects) {
