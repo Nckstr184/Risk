@@ -107,13 +107,6 @@ public class MainGUI extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				gray1= new ImageIcon("./Pictures/bcircle.png");
-				repaint();
-				
-			}
-
-			public void paintComponent(Graphics g){
-			//	super.paintComponent(g);
-				Graphics2D g2= (Graphics2D) g;
 				
 			}
 			
