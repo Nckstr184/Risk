@@ -14,12 +14,12 @@ import typesOfPlayers.MediumAI;
 public class Run6Bots {
 
 	public static void main(String[] args) {
-		Player ai1 = new EasyAI("1", Color.RED, 20);
-		Player ai2 = new EasyAI("2", Color.BLUE, 20);
-		Player ai3 = new EasyAI("3", Color.GREEN, 20);
-		Player ai4 = new MediumAI("4", Color.BLACK, 20);
-		Player ai5 = new MediumAI("5", Color.CYAN, 20);
-		Player ai6 = new MediumAI("6", Color.GRAY, 20);
+		Player ai1 = new EasyAI("easy", Color.RED, 20);
+		Player ai2 = new EasyAI("easy", Color.BLUE, 20);
+		Player ai3 = new EasyAI("easy", Color.GREEN, 20);
+		Player ai4 = new MediumAI("medium", Color.BLACK, 20);
+		Player ai5 = new MediumAI("medium", Color.CYAN, 20);
+		Player ai6 = new MediumAI("medium", Color.GRAY, 20);
 		GameLogic gameLogic = new GameLogic();
 		BattleLogic battleLogic;
 		gameLogic.addPlayers(ai1);
@@ -28,17 +28,18 @@ public class Run6Bots {
 		gameLogic.addPlayers(ai4);
 		gameLogic.addPlayers(ai5);
 		gameLogic.addPlayers(ai6);
-		
+		int easyWin = 0, mediumWin = 0;
 
 		for (int i = 0; i < 1000; i++) {
 			gameLogic.startGame();
 			PlayerCollection allPlayers = gameLogic.getPlayerList();
 			int count = 0;
+			Player currPlayer = null;
 			while (!gameLogic.isGameComplete()) {
 				// TODO: Deploy Armies Phase
 				
 				// Attack Phase
-				Player currPlayer = allPlayers.getPlayer(count % 6);
+				currPlayer = allPlayers.getPlayer(count % 6);
 				ArrayList<Territory> territories = currPlayer.getTerritories();
 				currPlayer.deployArmy(territories);
 				int mostArmies = 0, indexOfMost = 0;
@@ -64,7 +65,15 @@ public class Run6Bots {
 				// Fortify Phase
 				currPlayer.fortifyPosition(currTerritory, currTerritory.getNeighbors());
 			}
+			if(currPlayer.getName().equals("easy")) {
+				easyWin++;
+			}
+			else if(currPlayer.getName().equals("medium")) {
+				mediumWin++;
+			}
 		}
-
+		
+		System.out.println("EasyAI wins: " + easyWin);
+		System.out.println("MediumAI wins: " + mediumWin);
 	}
 }
