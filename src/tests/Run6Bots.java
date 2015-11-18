@@ -1,10 +1,13 @@
 package tests;
 
 import java.awt.Color;
+import java.util.ArrayList;
 
+import model.BattleLogic;
 import model.GameLogic;
 import model.Player;
 import model.PlayerCollection;
+import model.Territory;
 import typesOfPlayers.EasyAI;
 import typesOfPlayers.MediumAI;
 
@@ -17,20 +20,48 @@ public class Run6Bots {
 		Player ai4 = new MediumAI("4", Color.BLACK, 20);
 		Player ai5 = new MediumAI("5", Color.CYAN, 20);
 		Player ai6 = new MediumAI("6", Color.GRAY, 20);
-		GameLogic logic = new GameLogic();
-		PlayerCollection allPlayers = logic.getPlayerList();
-		logic.addPlayers(ai1);
-		logic.addPlayers(ai2);
-		logic.addPlayers(ai3);
-		logic.addPlayers(ai4);
-		logic.addPlayers(ai5);
-		logic.addPlayers(ai6);
-		
+		GameLogic gameLogic = new GameLogic();
+		BattleLogic battleLogic;
+		PlayerCollection allPlayers = gameLogic.getPlayerList();
+		gameLogic.addPlayers(ai1);
+		gameLogic.addPlayers(ai2);
+		gameLogic.addPlayers(ai3);
+		gameLogic.addPlayers(ai4);
+		gameLogic.addPlayers(ai5);
+		gameLogic.addPlayers(ai6);
+
 		for (int i = 0; i < 1000; i++) {
-			logic.startGame();
+			gameLogic.startGame();
 			int count = 0;
-			while(!logic.isGameComplete()) {
+			while (!gameLogic.isGameComplete()) {
+				// TODO: Deploy Armies Phase
+				
+				// Attack Phase
 				Player currPlayer = allPlayers.getPlayer(count % 6);
+				ArrayList<Territory> territories = currPlayer.getTerritories();
+				currPlayer.deployArmy(territories);
+				int mostArmies = 0, indexOfMost = 0;
+				for (int j = 0; j < territories.size(); j++) {
+					if (mostArmies < territories.get(j).getUnits()) {
+						mostArmies = territories.get(j).getUnits();
+						indexOfMost = j;
+					}
+				}
+				Territory currTerritory = territories.get(indexOfMost);
+				Territory attackingTerritory = currPlayer.attackTerritory(currTerritory, currTerritory.getNeighbors());
+				if (attackingTerritory != null) {
+					battleLogic = new BattleLogic(currPlayer, attackingTerritory.getOwner());
+
+					while (currPlayer.chooseRetreat(currTerritory)) {
+						battleLogic.attackPlayer((currTerritory.getUnits() - 1) % 3,
+								(attackingTerritory.getUnits() - 1) % 2);
+						currPlayer.addArmies(battleLogic.armiesAttackerLost());
+						attackingTerritory.getOwner().addArmies(battleLogic.armiesDefenderLost());
+					}
+				}
+				
+				// Fortify Phase
+				
 			}
 		}
 
