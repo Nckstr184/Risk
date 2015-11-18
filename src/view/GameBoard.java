@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -18,6 +18,7 @@ public class GameBoard extends JPanel{
 	ArrayList<Continent> Continents;
 	BufferedImage map;
 	JPanel board, boardDisplay, boardInfo;
+	JButton ter1;
 	
 	
 	/*
@@ -31,8 +32,8 @@ public class GameBoard extends JPanel{
 	public GameBoard(){
 
 		
-		this.setSize(900,550);
-		this.setLocation(380,-10);
+		this.setSize(1285,550);
+		this.setLocation(0,-5);
 		
 		
 		
@@ -40,10 +41,12 @@ public class GameBoard extends JPanel{
 			map = ImageIO.read(new File("./Pictures/map.png"));
 			JLabel picLabel = new JLabel(new ImageIcon(map));
 			add(picLabel);
+			
 		} catch (IOException e) {
 			System.out.println("ERROR with map");
 			e.printStackTrace();
 		}
+		
 		
 		
 	}

@@ -1,33 +1,18 @@
 package view;
 
 import java.awt.Color;
-import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.LayoutManager;
-import java.awt.Point;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import javax.imageio.ImageIO;
-import javax.swing.Icon;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.RootPaneContainer;
-import javax.swing.WindowConstants;
-import com.sun.prism.Graphics;
-import model.Player;
-import model.Sun;
-import model.Territory;
 
 public class MainGUI extends JFrame {
 	
@@ -36,14 +21,14 @@ public class MainGUI extends JFrame {
 	JTextField updateDisplay;
 	JButton toggleSound, quitGame, saveGame;
 	String B1T1;
-	JButton nbt;
+	JButton nbt, ter1;
 	JLabel num;
 	ImageIcon gray1;
 	
 	public static void main(String[] args) {
 		MainGUI window = new MainGUI();
-		window.setVisible(true);
-		
+		window.setVisible(false);
+		new StartWindow().setVisible(true);
 	}
 
 	public MainGUI() {
@@ -56,28 +41,24 @@ public class MainGUI extends JFrame {
 		JPanel bottomeDisplay = new JPanel();
 		JPanel sideDisplay = new JPanel();
 		
-	
-		
-
 		Dimension sizeMe = Toolkit.getDefaultToolkit().getScreenSize();
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(sizeMe);
 		this.setLayout(null);
+		
 		gray1= new ImageIcon("./Pictures/circle.png");
 		B1T1=new String("0");
 		num= new JLabel(B1T1);
 		nbt= new JButton(gray1);
 		nbt.addActionListener(new buttonListener());
 		
-//		GameBoard panel = new GameBoard((new ImageIcon("images/background.png").getImage()));
-//		panel.setLocation(300, 10);
-//	    panel.setSize(500,500);
-//	    this.add(panel);
-//	    panel.setVisible(true);
-//	    
-		
-		
-     // nbt.setBackground(Color.BLUE);
+		saveGame = new JButton();
+		quitGame = new JButton();
+		toggleSound = new JButton();
+		quitGame.addActionListener(new quitGameListener());
+		saveGame.addActionListener(new saveGameListener());
+		toggleSound.addActionListener(new toggleSoundListener());
+
 
 		Font font = new Font("Serif",Font.BOLD, 20);
 		
@@ -94,14 +75,26 @@ public class MainGUI extends JFrame {
       num.setLocation(688, 153);
       num.setOpaque(false);
      
-     
+      saveGame.setLocation(5,30);
+      saveGame.setSize(80,40);
+      saveGame.setText("Save Game");
+      toggleSound.setLocation(5,80);
+      toggleSound.setSize(80,40);
+      toggleSound.setText("Sound");
+      quitGame.setLocation(5, 130);
+      quitGame.setSize(80,40);
+      quitGame.setText("Quit Game");
+      this.add(saveGame);
+      this.add(quitGame);
+      this.add(toggleSound);
      
       this.add(num);
       this.add(nbt);
       
       nbt.setVisible(true);
       this.add(map);
-      this.add(bottomDisplay);
+     
+      
 		
 	        
 	    }
@@ -114,6 +107,35 @@ public class MainGUI extends JFrame {
 			}
 			
 		}
+		private class saveGameListener implements ActionListener{
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("Saving Game");
+				
+			}
+			
+		}
+		private class quitGameListener implements ActionListener{
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+				
+			}
+			
+		}
+		private class toggleSoundListener implements ActionListener{
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("Change Sound");
+				
+			}
+			
+		}
+		
+		
 		
 		
 	}
