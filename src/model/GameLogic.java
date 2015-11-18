@@ -353,7 +353,7 @@ public class GameLogic {
 	}
 
 	private void startUpPlaceReinforcementPhase() {
-		// TODO Auto-generated method stub
+		disperseNumberOfArmies();
 		//make temp list of territories
 		ArrayList<Territory> tempTerrs=getTerritories();
 		r = new Random();
@@ -366,8 +366,45 @@ public class GameLogic {
 			Player tempPlayer=allPlayers.getPlayer(i);
 			tempPlayer.addTerritories(tempTerritory);
 			tempTerrs.remove(randomIndex);
+			tempPlayer.addArmies(-1);
+			tempTerritory.addUnits(1);
 			}
 			
+		}
+	}
+
+	private void disperseNumberOfArmies() {
+		if(allPlayers.getNumOfPlayers()==3)
+		{
+			for(int i=0; i<3; i++)
+			{
+				Player temp=allPlayers.getPlayer(i);
+				temp.addArmies(35);
+			}
+		}
+		if(allPlayers.getNumOfPlayers()==4)
+		{
+			for(int i=0; i<4; i++)
+			{
+				Player temp=allPlayers.getPlayer(i);
+				temp.addArmies(30);
+			}
+		}
+		if(allPlayers.getNumOfPlayers()==5)
+		{
+			for(int i=0; i<5; i++)
+			{
+				Player temp=allPlayers.getPlayer(i);
+				temp.addArmies(25);
+			}
+		}
+		if(allPlayers.getNumOfPlayers()==6)
+		{
+			for(int i=0; i<6; i++)
+			{
+				Player temp=allPlayers.getPlayer(i);
+				temp.addArmies(20);
+			}
 		}
 	}
 
