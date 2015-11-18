@@ -71,10 +71,13 @@ public class EasyAI extends Player implements AIStrategy {
 		// randomly decides to move armies to friendly connected territory
 		int rand = r.nextInt(2);
 		if (rand == 0) {
-			rand = r.nextInt(connected.size());
-			Territory temp = connected.get(rand);
-			int armySize = this.getNumOfArmies();
-			rand = r.nextInt(armySize - 1);
+			Territory temp;
+			do {
+				rand = r.nextInt(connected.size());
+				temp = connected.get(rand);
+				int armySize = this.getNumOfArmies();
+				rand = r.nextInt(armySize - 1);
+			} while (connected.get(rand).getOwner() != this);
 
 			temp.addUnits(rand);
 		}

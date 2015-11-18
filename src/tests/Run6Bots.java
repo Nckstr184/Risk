@@ -22,16 +22,17 @@ public class Run6Bots {
 		Player ai6 = new MediumAI("6", Color.GRAY, 20);
 		GameLogic gameLogic = new GameLogic();
 		BattleLogic battleLogic;
-		PlayerCollection allPlayers = gameLogic.getPlayerList();
 		gameLogic.addPlayers(ai1);
 		gameLogic.addPlayers(ai2);
 		gameLogic.addPlayers(ai3);
 		gameLogic.addPlayers(ai4);
 		gameLogic.addPlayers(ai5);
 		gameLogic.addPlayers(ai6);
+		
 
 		for (int i = 0; i < 1000; i++) {
 			gameLogic.startGame();
+			PlayerCollection allPlayers = gameLogic.getPlayerList();
 			int count = 0;
 			while (!gameLogic.isGameComplete()) {
 				// TODO: Deploy Armies Phase
@@ -61,7 +62,7 @@ public class Run6Bots {
 				}
 				
 				// Fortify Phase
-				
+				currPlayer.fortifyPosition(currTerritory, currTerritory.getNeighbors());
 			}
 		}
 
