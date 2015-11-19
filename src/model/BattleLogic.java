@@ -1,5 +1,8 @@
 package model;
 
+import java.util.ArrayList;
+
+//WE NEED TO CHECK TO SEE IF ATTACKER HAS MORE THAN ONE ARMY BEFORE WE RUN BATTLE LOGIC!!!!!!!!!!!////////
 
 public class BattleLogic {
 	private Player attacker, defender;
@@ -12,6 +15,7 @@ public class BattleLogic {
 	}
 
 	public void attackPlayer(int numOfAttackDice, int numOfDefendDice) {
+	
 		this.numOfAttackDice = numOfAttackDice;
 		this.numOfDefendDice = numOfDefendDice;
 		
@@ -25,6 +29,7 @@ public class BattleLogic {
 
 		// roll the defending dice (1-2)
 		defendDice = new Dice(numOfDefendDice);
+		
 	}
 	
 	public int armiesAttackerLost() {
@@ -45,6 +50,15 @@ public class BattleLogic {
 				count++;
 		}
 		return count;
+	}
+	
+	public boolean attackerWin()
+	{
+		if(defender.getNumOfArmies()==0)
+		{
+			return true;
+		}
+		return false;
 	}
 	
 }
