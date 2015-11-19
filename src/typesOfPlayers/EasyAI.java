@@ -75,9 +75,9 @@ public class EasyAI extends Player implements AIStrategy {
 			do {
 				rand = r.nextInt(connected.size());
 				temp = connected.get(rand);
+			} while (temp.getOwner() != this);
 				int armySize = this.getNumOfArmies();
 				rand = r.nextInt(armySize - 1);
-			} while (connected.get(rand).getOwner() != this);
 
 			temp.addUnits(rand);
 		}
