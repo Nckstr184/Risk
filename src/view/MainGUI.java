@@ -33,15 +33,15 @@ public class MainGUI extends JFrame {
 
 		this.setLayout(null);
 
-<<<<<<< HEAD
+
 		GameBoard map = new GameBoard();
 		
 		JPanel bottomeDisplay = new JPanel();
 		JPanel sideDisplay = new JPanel();
-=======
+
 		map = new GameBoard();
 		bottomBoard= new BottomBoard();
->>>>>>> d51f83a2e74b486c55c2932533ddeeb3fbb68773
+
 
 		Dimension sizeMe = Toolkit.getDefaultToolkit().getScreenSize();
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
