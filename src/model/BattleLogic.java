@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class BattleLogic {
 	private Player attacker, defender;
 	private Dice attackDice, defendDice;
-	private int numOfAttackDice, numOfDefendDice, mostDiceOnField;
+	private int numOfAttackDice, numOfDefendDice, leastDiceOnField;
 
 	public BattleLogic(Player attacker, Player defender) {
 		this.attacker = attacker;
@@ -19,10 +19,10 @@ public class BattleLogic {
 		this.numOfAttackDice = numOfAttackDice;
 		this.numOfDefendDice = numOfDefendDice;
 		
-		if(numOfAttackDice <= numOfDefendDice)
-			mostDiceOnField = numOfDefendDice;
+		if(numOfAttackDice >= numOfDefendDice)
+			leastDiceOnField = numOfDefendDice;
 		else
-			mostDiceOnField = numOfAttackDice;
+			leastDiceOnField = numOfAttackDice;
 		
 		// roll the attackers dice (1-3)
 		attackDice = new Dice(numOfAttackDice);
@@ -35,7 +35,7 @@ public class BattleLogic {
 	public int armiesAttackerLost() {
 		int count = 0;
 		
-		for(int i=0; i<mostDiceOnField;i++) {
+		for(int i=0; i<leastDiceOnField;i++) {
 			if(attackDice.getDice().get(i) <= defendDice.getDice().get(i))
 				count++;
 		}
@@ -45,7 +45,7 @@ public class BattleLogic {
 	public int armiesDefenderLost() {
 		int count = 0;
 		
-		for(int i=0; i<mostDiceOnField;i++) {
+		for(int i=0; i<leastDiceOnField;i++) {
 			if(attackDice.getDice().get(i) > defendDice.getDice().get(i))
 				count++;
 		}
@@ -54,8 +54,18 @@ public class BattleLogic {
 	
 	public boolean attackerWin()
 	{
-		if(defender.getNumOfArmies()==0)
+		if(defender.getNumOfArmies()<=0)
 		{
+			System.out.println("CHECK2");
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean defenderWin() {
+		if(attacker.getNumOfArmies()<=0)
+		{
+			System.out.println("CHECK3");
 			return true;
 		}
 		return false;

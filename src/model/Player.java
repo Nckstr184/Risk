@@ -78,6 +78,60 @@ public abstract class Player {
 		return name;
 	}
 
+	public boolean turnInCard() {
+		if(playerCards.size() < 3)
+			return false;
+		
+		// 3 of same type or using wilds
+		int repeatCount;
+		ArrayList<Integer> indexes = new ArrayList<Integer>();
+		for (int i = 0; i < playerCards.size(); i++) {
+			indexes.clear();
+			repeatCount = 0;
+			indexes.add(i);
+			for (int j = i + 1; j < playerCards.size(); j++) {
+				if (i != j && (playerCards.get(i).getType().equals(playerCards.get(j).getType())
+						|| playerCards.get(j).getType().equals(CardType.WILD))) {
+					repeatCount++;
+					indexes.add(j);
+					if (repeatCount == 3)
+						break;
+				}
+			}
+			if (repeatCount >= 3) {
+				Card card = playerCards.get(indexes.get(0));
+				for (int k = 0; k < 3; k++) {
+					this.removeCard(playerCards.get(indexes.get(k)));
+				}
+				return true;
+			}
+		}
+
+		repeatCount = 0;
+		ArrayList<CardType> availableType = new ArrayList<CardType>();
+		availableType.add(CardType.GARY);
+		availableType.add(CardType.PATRICK);
+		availableType.add(CardType.SPONGEBOB);
+		for (int j = 0; j < playerCards.size(); j++) {
+			if (availableType.indexOf(playerCards.get(j).getType()) != -1) {
+				repeatCount++;
+				availableType.remove(availableType.indexOf(playerCards.get(j).getType()));
+				indexes.add(j);
+				if (repeatCount == 3)
+					break;
+			}
+		}
+		if (repeatCount >= 3) {
+			Card card = playerCards.get(indexes.get(0));
+			for (int k = 0; k < 3; k++) {
+				this.removeCard(playerCards.get(indexes.get(k)));
+			}
+			return true;
+		}
+		// if there is no card able to be turned in then it returns false
+		return false;
+	}
+
 	public void startGame() {
 	}
 
