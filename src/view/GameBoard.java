@@ -205,6 +205,12 @@ public class GameBoard extends JPanel {
 		
 		myMap = new HashMap<JButton,JLabel>();
 		myMap.put(perlLanguage, languageLabel7);
+		myMap.put(javaLanguage, languageLabel1);
+		myMap.put(pythonLanguage, languageLabel2);
+		myMap.put(cLanguage, languageLabel3);
+		myMap.put(sqlLanguage, languageLabel4);
+		myMap.put(rubyLanguage, languageLabel5);
+		myMap.put(gitLanguage, languageLabel6);
 
 		languageLabel7.setSize(25, 25);
 		languageLabel7.setFont(font);
