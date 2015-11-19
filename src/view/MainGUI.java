@@ -1,22 +1,20 @@
 package view;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class MainGUI extends JFrame {
 
 	GameBoard map;
+	
 	BottomBoard bottomBoard;
 	SideBoard sideBoard;
 	JTextField updateDisplay;
@@ -25,21 +23,33 @@ public class MainGUI extends JFrame {
 
 	public static void main(String[] args) {
 		MainGUI window = new MainGUI();
-		window.setVisible(true);
-		new StartWindow().setVisible(false);
+
+		window.setVisible(false);
+		StartWindow window1 = new StartWindow();
+		window1.setVisible(true);
+		
+
+	
+
 	}
 	
 	public MainGUI() {
 
 		this.setLayout(null);
 
+<<<<<<< HEAD
 
 		GameBoard map = new GameBoard();
+=======
+		
+		
+		JPanel bottomeDisplay = new JPanel();
+		JPanel sideDisplay = new JPanel();
+>>>>>>> e0bfa98ae31aca757a0a7975804196c903b7ded2
 
 		map = new GameBoard();
 		bottomBoard= new BottomBoard();
-
-
+		
 		Dimension sizeMe = Toolkit.getDefaultToolkit().getScreenSize();
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(sizeMe);
@@ -63,13 +73,13 @@ public class MainGUI extends JFrame {
 		quitGame.setSize(80, 40);
 		quitGame.setText("Quit Game");
 		
-
-		this.add(map);
-		this.add(bottomBoard);
-		
 		this.add(saveGame);
 		this.add(quitGame);
 		this.add(toggleSound);
+		this.add(map);
+		this.add(bottomBoard);
+		
+		
 
 	}
 

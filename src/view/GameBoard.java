@@ -16,6 +16,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 import model.Continent;
 
@@ -23,7 +24,14 @@ public class GameBoard extends JPanel {
 
 	HashMap<JButton, JLabel> myMap;
 	ArrayList<Continent> Continents;
-	BufferedImage map;
+	BufferedImage map, bottomDisplay;
+
+
+	JPanel board, boardDisplay, boardInfo;
+	JButton ter1;
+
+	JFrame temp;
+	JTextField bottomField;
 
 	int javaUnits, pythonUnits, cUnits, sqlUnits, rubyUnits, gitUnits, perlUnits;// number
 																					// on
@@ -43,19 +51,30 @@ public class GameBoard extends JPanel {
 
 	public GameBoard() {
 
-		this.setSize(1285, 550);
+		this.setSize(1285, 750);
 		this.setLocation(0, -5);
 
 		try {
 			map = ImageIO.read(new File("./Pictures/map.png"));
+			bottomDisplay = ImageIO.read(new File("./Pictures/gui1.png"));
+			
 			JLabel picLabel = new JLabel(new ImageIcon(map));
+			JLabel bottomLabel = new JLabel(new ImageIcon(bottomDisplay));
 			
 
 			picLabel.setSize(1285, 550);
 			picLabel.setLocation(0, 0);
+			bottomLabel.setSize(1285, 160);
+			bottomLabel.setLocation(0,540);
+			
+			
 			this.setLayout(null);
 			addButtons();
 			add(picLabel);
+			add(bottomLabel);
+			
+			
+			
 		} catch (IOException e) {
 			System.out.println("ERROR with map");
 			e.printStackTrace();
@@ -211,6 +230,8 @@ public class GameBoard extends JPanel {
 		this.add(gitLanguage);
 		this.add(perlLanguage);
 	}
+	
+	
 
 	private class buttonListener implements ActionListener {
 

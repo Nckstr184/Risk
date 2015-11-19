@@ -53,16 +53,20 @@ public class EasyAI extends Player implements AIStrategy {
 
 	@Override
 	public Territory attackTerritory(Territory currentTerr, ArrayList<Territory> connected) {
+		//System.out.println("AttackTerritory call");
 		// chooses a random connected territory to attack, as long
 		// as there is more than one army in it
 		int rand = r.nextInt(2);
 		if (rand == 0) {
 			do {
 				rand = r.nextInt(connected.size());
-			} while (connected.get(rand).getOwner() != this);
+			} while (connected.get(rand).getOwner().getName().equals(this.getName()));
+			
+			//System.out.println("Returning territory");
 			return connected.get(rand);
 		}
 		// returns null if it decides to not attack
+		//System.out.println("Returning null");
 		return null;
 	}
 
@@ -70,14 +74,18 @@ public class EasyAI extends Player implements AIStrategy {
 	public void fortifyPosition(Territory currentTerr, ArrayList<Territory> connected) {
 		// randomly decides to move armies to friendly connected territory
 		int rand = r.nextInt(2);
+
+		
 		if (rand == 0) {
-			Territory temp;
-			do {
-				rand = r.nextInt(connected.size());
-				temp = connected.get(rand);
-			} while (temp.getOwner() != this);
-				int armySize = this.getNumOfArmies();
-				rand = r.nextInt(armySize - 1);
+			Territory temp = null;
+			for(int i=0;i<connected.size();i++) {
+				temp = connected.get(i);
+				if(!temp.getOwner().getName().equals(this.getName()))
+					break;
+			}
+			
+			int armySize = this.getNumOfArmies();
+			rand = r.nextInt(armySize - 1);
 
 			temp.addUnits(rand);
 		}

@@ -7,7 +7,6 @@ public class GameLogic {
 	private final int NUM_OF_TERRITORIES = 7;
 	public Random r;
 
-	
 	private ArrayList<Territory> allTerritories;
 	private ArrayList<Continent> allContinents;
 	private PlayerCollection allPlayers;
@@ -332,7 +331,7 @@ public class GameLogic {
 	public void startGame() {
 		numOfPlayers = allPlayers.getNumOfPlayers();
 		Player temp;
-		int roll;
+		int roll; /*
 		ArrayList<Player> tempList = new ArrayList<Player>();
 		// this rolls the dice per person to check to see who goes first
 		for (int i = 0; i < numOfPlayers; i++) {
@@ -345,64 +344,55 @@ public class GameLogic {
 		// DUPLICATES*
 		// However, duplicates do not break the sorting (Insertion Sort FTW)
 		tempList = InsertionSort(tempList.toArray());
- 
+
 		// sets the master Player List to the sorted one
 		allPlayers.setPlayerList(tempList);
-		// TODO: Randomly set 1 army per turn to a territory 
+		// TODO: Randomly set 1 army per turn to a territory */
 		startUpPlaceReinforcementPhase();
 	}
 
 	private void startUpPlaceReinforcementPhase() {
 		disperseNumberOfArmies();
-		//make temp list of territories
-		ArrayList<Territory> tempTerrs=getTerritories();
+		// make temp list of territories
+		ArrayList<Territory> tempTerrs = getTerritories();
 		r = new Random();
-		while(!tempTerrs.isEmpty())
-		{
-			for(int i=0; i<allPlayers.getNumOfPlayers(); i++)
-			{
-			int randomIndex=r.nextInt(tempTerrs.size());
-			Territory tempTerritory=tempTerrs.get(randomIndex);
-			Player tempPlayer=allPlayers.getPlayer(i);
-			tempPlayer.addTerritories(tempTerritory);
-			tempTerrs.remove(randomIndex);
-			tempPlayer.addArmies(-1);
-			tempTerritory.addUnits(1);
+		while (!tempTerrs.isEmpty()) {
+			for (int i = 0; i < allPlayers.getNumOfPlayers(); i++) {
+				int randomIndex = r.nextInt(tempTerrs.size());
+				Territory tempTerritory = tempTerrs.get(randomIndex);
+				Player tempPlayer = allPlayers.getPlayer(i);
+				tempPlayer.addTerritories(tempTerritory);
+				tempTerritory.setOwner(tempPlayer);
+				tempTerrs.remove(randomIndex);
+				tempPlayer.addArmies(-1);
+				tempTerritory.addUnits(1);
 			}
-			
+
 		}
 	}
 
 	private void disperseNumberOfArmies() {
-		if(allPlayers.getNumOfPlayers()==3)
-		{
-			for(int i=0; i<3; i++)
-			{
-				Player temp=allPlayers.getPlayer(i);
+		if (allPlayers.getNumOfPlayers() == 3) {
+			for (int i = 0; i < 3; i++) {
+				Player temp = allPlayers.getPlayer(i);
 				temp.addArmies(35);
 			}
 		}
-		if(allPlayers.getNumOfPlayers()==4)
-		{
-			for(int i=0; i<4; i++)
-			{
-				Player temp=allPlayers.getPlayer(i);
+		if (allPlayers.getNumOfPlayers() == 4) {
+			for (int i = 0; i < 4; i++) {
+				Player temp = allPlayers.getPlayer(i);
 				temp.addArmies(30);
 			}
 		}
-		if(allPlayers.getNumOfPlayers()==5)
-		{
-			for(int i=0; i<5; i++)
-			{
-				Player temp=allPlayers.getPlayer(i);
+		if (allPlayers.getNumOfPlayers() == 5) {
+			for (int i = 0; i < 5; i++) {
+				Player temp = allPlayers.getPlayer(i);
 				temp.addArmies(25);
 			}
 		}
-		if(allPlayers.getNumOfPlayers()==6)
-		{
-			for(int i=0; i<6; i++)
-			{
-				Player temp=allPlayers.getPlayer(i);
+		if (allPlayers.getNumOfPlayers() == 6) {
+			for (int i = 0; i < 6; i++) {
+				Player temp = allPlayers.getPlayer(i);
 				temp.addArmies(20);
 			}
 		}
@@ -429,6 +419,7 @@ public class GameLogic {
 		// converts Player[] to ArrayList<Player>
 		ArrayList<Player> temp = new ArrayList<Player>();
 		for (int k = 0; k < objects.length; k++) {
+			System.out.println(objects[k]);
 			temp.add((Player) objects[k]);
 		}
 
