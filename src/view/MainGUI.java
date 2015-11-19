@@ -29,8 +29,7 @@ public class MainGUI extends JFrame {
 		window1.setVisible(true);
 		
 
-		window.setVisible(true);
-		new StartWindow().setVisible(false);
+	
 
 	}
 	
@@ -69,13 +68,13 @@ public class MainGUI extends JFrame {
 		quitGame.setSize(80, 40);
 		quitGame.setText("Quit Game");
 		
-
-		this.add(map);
-		this.add(bottomBoard);
-		
 		this.add(saveGame);
 		this.add(quitGame);
 		this.add(toggleSound);
+		this.add(map);
+		this.add(bottomBoard);
+		
+		
 
 	}
 
