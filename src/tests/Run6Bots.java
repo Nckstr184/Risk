@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 
 import model.BattleLogic;
+import model.CardCollection;
 import model.GameLogic;
 import model.Player;
 import model.PlayerCollection;
@@ -28,7 +29,10 @@ public class Run6Bots {
 		gameLogic.addPlayers(ai4);
 		gameLogic.addPlayers(ai5);
 		gameLogic.addPlayers(ai6);
-		int easyWin = 0, mediumWin = 0;
+		int easyWin = 0, mediumWin = 0, nextCard = 0;
+		
+		CardCollection allCards = new CardCollection();
+		allCards.shuffle();
 
 		for (int i = 0; i < 1000; i++) {
 			gameLogic.startGame();

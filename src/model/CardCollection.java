@@ -121,9 +121,8 @@ public class CardCollection implements Serializable {
 		return cardCollection;
 	}
 
-	public ArrayList<Card> shuffle() {
+	public void shuffle() {
 		Collections.shuffle(cardCollection);
-		return cardCollection;
 	}
 
 	public Card getCard(int i) {
