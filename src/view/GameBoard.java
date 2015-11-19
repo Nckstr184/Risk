@@ -25,11 +25,6 @@ public class GameBoard extends JPanel {
 	ArrayList<Continent> Continents;
 	BufferedImage map;
 
-	JPanel board, boardDisplay, boardInfo;
-	JButton ter1;
-
-	JFrame temp;
-
 	int javaUnits, pythonUnits, cUnits, sqlUnits, rubyUnits, gitUnits, perlUnits;// number
 																					// on
 																					// the
