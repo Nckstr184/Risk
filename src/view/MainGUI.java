@@ -23,15 +23,15 @@ public class MainGUI extends JFrame {
 
 	public static void main(String[] args) {
 		MainGUI window = new MainGUI();
-<<<<<<< HEAD
+
 		window.setVisible(false);
 		StartWindow window1 = new StartWindow();
 		window1.setVisible(true);
 		
-=======
+
 		window.setVisible(true);
 		new StartWindow().setVisible(false);
->>>>>>> f683955739fb9b787854500b0751da5d13a41713
+
 	}
 	
 	public MainGUI() {
