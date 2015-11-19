@@ -47,7 +47,7 @@ public class Run6Bots {
 			while (!gameLogic.isGameComplete()) {
 				currPlayer = allPlayers.getPlayer((count % 6));
 				ArrayList<Territory> territories = currPlayer.getTerritories();
-				//System.out.println(currPlayer.getName());
+				// System.out.println(currPlayer.getName());
 				noMoreRewardCard = false;
 				if (currPlayer.turnInCard()) {
 					if (numberOfCardTurnIns < 6) {
@@ -90,17 +90,18 @@ public class Run6Bots {
 				if (attackingTerritory != null) {
 					battleLogic = new BattleLogic(currPlayer, attackingTerritory.getOwner());
 
-					while (currPlayer.chooseRetreat(currTerritory) && currTerritory.getUnits() > 0 && attackingTerritory.getUnits() > 0) {
-						 //System.out.println("Attacking");
-						//System.out.println(currTerritory.getUnits());
+					while (currPlayer.chooseRetreat(currTerritory) && currTerritory.getUnits() > 0
+							&& attackingTerritory.getUnits() > 0) {
+						// System.out.println("Attacking");
+						// System.out.println(currTerritory.getUnits());
 						int temp1 = Math.abs(currTerritory.getUnits() % 3);
 						if (temp1 == 0)
 							temp1 = 3;
-						
+
 						int temp2 = Math.abs(attackingTerritory.getUnits() % 2);
 						if (temp2 == 0)
 							temp2 = 2;
-						
+
 						int currTerrDiceNum = r.nextInt(temp1) + 1;
 						int attackingTerrDiceNum = r.nextInt(temp2) + 1;
 						battleLogic.attackPlayer(currTerrDiceNum, attackingTerrDiceNum);
@@ -108,12 +109,14 @@ public class Run6Bots {
 						currPlayer.addArmies(battleLogic.armiesAttackerLost());
 						attackingTerritory.getOwner().addArmies(battleLogic.armiesDefenderLost());
 					}
+
 					if (attackingTerritory.getUnits() <= 0) {
 						System.out.println("Attacker Won");
 						// changing owner of territory
 						Player temp = attackingTerritory.getOwner();
 						temp.removeTerritory(attackingTerritory);
 						currPlayer.addTerritories(attackingTerritory);
+						attackingTerritory.setOwner(currPlayer);
 
 						// giving reward card (only if it's the first win)
 						if (!noMoreRewardCard && nextCard < 44) {
@@ -122,12 +125,12 @@ public class Run6Bots {
 							currPlayer.addCard(allCards.getCard(nextCard));
 							nextCard++;
 						}
-					}
-					else if(currTerritory.getUnits() <= 0) {
+					} else if (currTerritory.getUnits() <= 0) {
 						System.out.println("Defender Won");
 						currPlayer.removeTerritory(currTerritory);
 						attackingTerritory.getOwner().addTerritories(currTerritory);
-						
+						currTerritory.setOwner(attackingTerritory.getOwner());
+
 						if (!noMoreRewardCard && nextCard < 44) {
 							// System.out.println("Giving Reward Card");
 							noMoreRewardCard = true;
@@ -138,7 +141,7 @@ public class Run6Bots {
 				}
 
 				// Fortify Phase
-				 //System.out.println("Fortifying Position");
+				// System.out.println("Fortifying Position");
 
 				// System.out.println(territories.get(0).getOwner().getName());
 				// System.out.println(territories.get(0).getNeighbors());
