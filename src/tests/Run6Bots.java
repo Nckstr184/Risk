@@ -61,6 +61,12 @@ public class Run6Bots {
 						currPlayer.addArmies(battleLogic.armiesAttackerLost());
 						attackingTerritory.getOwner().addArmies(battleLogic.armiesDefenderLost());
 					}
+					if(battleLogic.attackerWin())
+					{
+						Player temp=attackingTerritory.getOwner();
+						temp.removeTerritory(attackingTerritory);
+						currPlayer.addTerritories(attackingTerritory);
+					}
 				}
 				
 				// Fortify Phase
