@@ -8,13 +8,12 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-
 import javax.swing.JFrame;
-
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -22,6 +21,7 @@ import model.Continent;
 
 public class GameBoard extends JPanel {
 
+	HashMap<JButton, JLabel> myMap;
 	ArrayList<Continent> Continents;
 	BufferedImage map;
 
@@ -183,6 +183,9 @@ public class GameBoard extends JPanel {
 		perlLanguage.setOpaque(false);
 		perlLanguage.setContentAreaFilled(false);
 		perlLanguage.setBorderPainted(false);
+		
+		myMap = new HashMap<JButton,JLabel>();
+		myMap.put(perlLanguage, languageLabel7);
 
 		languageLabel7.setSize(25, 25);
 		languageLabel7.setFont(font);
@@ -213,7 +216,23 @@ public class GameBoard extends JPanel {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			gray = red;
+			// TODO Auto-generated method stub
+			JButton myButton = (JButton)e.getSource();
+			
+			JLabel myLabel = myMap.get(myButton);
+			myButton.setIcon(red);
+			if(myLabel != null) {
+				System.out.println("got label");
+				String curr = myLabel.getText();
+				Integer i = new Integer(10);
+				i = Integer.getInteger(curr);
+				//i = i + 1;
+				//int myint = i.intValue() + 1;
+;				//System.out.println("Curr: " + curr);
+				/myLabel.setText(i.toString());
+			}
+			
+				
 		}
 
 	}

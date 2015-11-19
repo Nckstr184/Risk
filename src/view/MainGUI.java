@@ -35,9 +35,6 @@ public class MainGUI extends JFrame {
 
 
 		GameBoard map = new GameBoard();
- 		
-		JPanel bottomeDisplay = new JPanel();
-		JPanel sideDisplay = new JPanel();
 
 		map = new GameBoard();
 		bottomBoard= new BottomBoard();
