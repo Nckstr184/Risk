@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 
 import model.BattleLogic;
+import model.CardCollection;
 import model.GameLogic;
 import model.Player;
 import model.PlayerCollection;
@@ -28,7 +29,10 @@ public class Run6Bots {
 		gameLogic.addPlayers(ai4);
 		gameLogic.addPlayers(ai5);
 		gameLogic.addPlayers(ai6);
-		int easyWin = 0, mediumWin = 0;
+		int easyWin = 0, mediumWin = 0, nextCard = 0;
+		
+		CardCollection allCards = new CardCollection();
+		allCards.shuffle();
 
 		for (int i = 0; i < 1000; i++) {
 			gameLogic.startGame();
@@ -38,6 +42,7 @@ public class Run6Bots {
 			while (!gameLogic.isGameComplete()) {
 				// TODO: Deploy Armies Phase
 				
+				// TODO: Figure out rewarding cards
 				// Attack Phase
 				currPlayer = allPlayers.getPlayer(count % 6);
 				ArrayList<Territory> territories = currPlayer.getTerritories();
@@ -59,6 +64,12 @@ public class Run6Bots {
 								(attackingTerritory.getUnits() - 1) % 2);
 						currPlayer.addArmies(battleLogic.armiesAttackerLost());
 						attackingTerritory.getOwner().addArmies(battleLogic.armiesDefenderLost());
+					}
+					if(battleLogic.attackerWin())
+					{
+						Player temp=attackingTerritory.getOwner();
+						temp.removeTerritory(attackingTerritory);
+						currPlayer.addTerritories(attackingTerritory);
 					}
 				}
 				

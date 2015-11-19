@@ -49,18 +49,18 @@ public class GameBoard extends JPanel {
 		try {
 			map = ImageIO.read(new File("./Pictures/map.png"));
 			JLabel picLabel = new JLabel(new ImageIcon(map));
-			add(picLabel);
-
-			this.setSize(900, 550);
-			this.setLocation(380, -10);
-			this.setLayout(null);
 			
-		
+
+			picLabel.setSize(1285, 550);
+			picLabel.setLocation(0, 0);
+			this.setLayout(null);
+			addButtons();
+			add(picLabel);
 		} catch (IOException e) {
 			System.out.println("ERROR with map");
 			e.printStackTrace();
 		}
-		addButtons();
+		
 
 	}
 
@@ -107,7 +107,7 @@ public class GameBoard extends JPanel {
 		perlLanguage.addActionListener(new buttonListener());
 
 		javaLanguage.setSize(25, 25);
-		javaLanguage.setLocation(520, 100);
+		javaLanguage.setLocation(770, 90);
 		javaLanguage.setOpaque(false);
 		javaLanguage.setContentAreaFilled(false);
 		javaLanguage.setBorderPainted(false);
@@ -115,11 +115,11 @@ public class GameBoard extends JPanel {
 		languageLabel1.setSize(25, 25);
 		languageLabel1.setFont(font);
 		languageLabel1.setForeground(Color.WHITE);
-		languageLabel1.setLocation(528, 103);
+		languageLabel1.setLocation(778, 93);
 		languageLabel1.setOpaque(false);
 
 		pythonLanguage.setSize(25, 25);
-		pythonLanguage.setLocation(640, 85);
+		pythonLanguage.setLocation(890, 83);
 		pythonLanguage.setOpaque(false);
 		pythonLanguage.setContentAreaFilled(false);
 		pythonLanguage.setBorderPainted(false);
@@ -127,11 +127,11 @@ public class GameBoard extends JPanel {
 		languageLabel2.setSize(25, 25);
 		languageLabel2.setFont(font);
 		languageLabel2.setForeground(Color.WHITE);
-		languageLabel2.setLocation(648, 88);
+		languageLabel2.setLocation(898, 85);
 		languageLabel2.setOpaque(false);
 
 		cLanguage.setSize(25, 25);
-		cLanguage.setLocation(535, 145);
+		cLanguage.setLocation(785, 135);
 		cLanguage.setOpaque(false);
 		cLanguage.setContentAreaFilled(false);
 		cLanguage.setBorderPainted(false);
@@ -139,11 +139,11 @@ public class GameBoard extends JPanel {
 		languageLabel3.setSize(25, 25);
 		languageLabel3.setFont(font);
 		languageLabel3.setForeground(Color.WHITE);
-		languageLabel3.setLocation(543, 148);
+		languageLabel3.setLocation(793, 138);
 		languageLabel3.setOpaque(false);
 
 		sqlLanguage.setSize(25, 25);
-		sqlLanguage.setLocation(600, 110);
+		sqlLanguage.setLocation(850, 110);
 		sqlLanguage.setOpaque(false);
 		sqlLanguage.setContentAreaFilled(false);
 		sqlLanguage.setBorderPainted(false);
@@ -151,11 +151,11 @@ public class GameBoard extends JPanel {
 		languageLabel4.setSize(25, 25);
 		languageLabel4.setFont(font);
 		languageLabel4.setForeground(Color.WHITE);
-		languageLabel4.setLocation(608, 113);
+		languageLabel4.setLocation(858, 113);
 		languageLabel4.setOpaque(false);
 
 		rubyLanguage.setSize(25, 25);
-		rubyLanguage.setLocation(600, 165);
+		rubyLanguage.setLocation(850, 155);
 		rubyLanguage.setOpaque(false);
 		rubyLanguage.setContentAreaFilled(false);
 		rubyLanguage.setBorderPainted(false);
@@ -163,11 +163,11 @@ public class GameBoard extends JPanel {
 		languageLabel5.setSize(25, 25);
 		languageLabel5.setFont(font);
 		languageLabel5.setForeground(Color.WHITE);
-		languageLabel5.setLocation(608, 168);
+		languageLabel5.setLocation(858, 158);
 		languageLabel5.setOpaque(false);
 
 		gitLanguage.setSize(25, 25);
-		gitLanguage.setLocation(640, 140);
+		gitLanguage.setLocation(910, 140);
 		gitLanguage.setOpaque(false);
 		gitLanguage.setContentAreaFilled(false);
 		gitLanguage.setBorderPainted(false);
@@ -175,11 +175,11 @@ public class GameBoard extends JPanel {
 		languageLabel6.setSize(25, 25);
 		languageLabel6.setFont(font);
 		languageLabel6.setForeground(Color.WHITE);
-		languageLabel6.setLocation(648, 143);
+		languageLabel6.setLocation(918, 143);
 		languageLabel6.setOpaque(false);
 
 		perlLanguage.setSize(25, 25);
-		perlLanguage.setLocation(690, 130);
+		perlLanguage.setLocation(1010, 120);
 		perlLanguage.setOpaque(false);
 		perlLanguage.setContentAreaFilled(false);
 		perlLanguage.setBorderPainted(false);
@@ -187,7 +187,7 @@ public class GameBoard extends JPanel {
 		languageLabel7.setSize(25, 25);
 		languageLabel7.setFont(font);
 		languageLabel7.setForeground(Color.WHITE);
-		languageLabel7.setLocation(698, 133);
+		languageLabel7.setLocation(1016, 123);
 		languageLabel7.setOpaque(false);
 
 		// add all lables
