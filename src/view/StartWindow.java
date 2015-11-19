@@ -53,12 +53,12 @@ public class StartWindow extends JFrame {
 		enterName.setSize(300,15);
 		enterName.setLocation(0,0);
 		
-		player1.setText(" ");
-		player2.setText(" ");
-		player3.setText(" ");
-		player4.setText(" ");
-		player5.setText(" ");
-		player6.setText(" ");
+		player1.setText("");
+		player2.setText("");
+		player3.setText("");
+		player4.setText("");
+		player5.setText("");
+		player6.setText("");
 		
 		String [] player1Choice = {"Human", "Easy AI", "Medium AI", "Hard AI"};
 		String [] player2Choice = {"Easy AI", "Medium AI", "Hard AI","Human"};
