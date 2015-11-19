@@ -38,6 +38,7 @@ public class Run6Bots {
 			while (!gameLogic.isGameComplete()) {
 				// TODO: Deploy Armies Phase
 				
+				// TODO: Figure out rewarding cards
 				// Attack Phase
 				currPlayer = allPlayers.getPlayer(count % 6);
 				ArrayList<Territory> territories = currPlayer.getTerritories();
