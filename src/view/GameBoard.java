@@ -244,13 +244,12 @@ public class GameBoard extends JPanel {
 			myButton.setIcon(red);
 			if(myLabel != null) {
 				System.out.println("got label");
-				//String curr = myLabel.getText();
-			//	Integer i = new Integer(10);
-				//i = Integer.getInteger(curr);
-				//i = i + 1;
-				//int myint = i.intValue() + 1;
-;				//System.out.println("Curr: " + curr);
-				//myLabel.setText(i.toString());
+				String curr = myLabel.getText();
+				int i = Integer.parseInt(curr);
+				
+				if(i<20){
+				myLabel.setText(""+(i+1));
+				}
 			}
 			
 				
