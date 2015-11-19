@@ -90,8 +90,9 @@ public class Run6Bots {
 				if (attackingTerritory != null) {
 					battleLogic = new BattleLogic(currPlayer, attackingTerritory.getOwner());
 
-					while (currPlayer.chooseRetreat(currTerritory) || battleLogic.attackerWin() || battleLogic.defenderWin()) {
-						// System.out.println("Attacking");
+					while (currPlayer.chooseRetreat(currTerritory) && currTerritory.getUnits() > 0 && attackingTerritory.getUnits() > 0) {
+						 //System.out.println("Attacking");
+						//System.out.println(currTerritory.getUnits());
 						int temp1 = Math.abs(currTerritory.getUnits() % 3);
 						if (temp1 == 0)
 							temp1 = 3;
@@ -107,7 +108,7 @@ public class Run6Bots {
 						currPlayer.addArmies(battleLogic.armiesAttackerLost());
 						attackingTerritory.getOwner().addArmies(battleLogic.armiesDefenderLost());
 					}
-					if (battleLogic.attackerWin()) {
+					if (attackingTerritory.getUnits() <= 0) {
 						System.out.println("Attacker Won");
 						// changing owner of territory
 						Player temp = attackingTerritory.getOwner();
@@ -122,25 +123,22 @@ public class Run6Bots {
 							nextCard++;
 						}
 					}
-					else if (battleLogic.defenderWin()) {
+					else if(currTerritory.getUnits() <= 0) {
 						System.out.println("Defender Won");
-						// changing owner of territory
-						Player temp = attackingTerritory.getOwner();
-						temp.removeTerritory(attackingTerritory);
-						currPlayer.addTerritories(attackingTerritory);
-
-						// giving reward card (only if it's the first win)
+						currPlayer.removeTerritory(currTerritory);
+						attackingTerritory.getOwner().addTerritories(currTerritory);
+						
 						if (!noMoreRewardCard && nextCard < 44) {
 							// System.out.println("Giving Reward Card");
 							noMoreRewardCard = true;
-							currPlayer.addCard(allCards.getCard(nextCard));
+							attackingTerritory.getOwner().addCard(allCards.getCard(nextCard));
 							nextCard++;
 						}
 					}
 				}
 
 				// Fortify Phase
-				// System.out.println("Fortifying Position");
+				 //System.out.println("Fortifying Position");
 
 				// System.out.println(territories.get(0).getOwner().getName());
 				// System.out.println(territories.get(0).getNeighbors());

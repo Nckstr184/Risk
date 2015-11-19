@@ -94,7 +94,7 @@ public abstract class Player {
 						|| playerCards.get(j).getType().equals(CardType.WILD))) {
 					repeatCount++;
 					indexes.add(j);
-					if (repeatCount == 3)
+					if (indexes.size() == 3)
 						break;
 				}
 			}
@@ -117,12 +117,11 @@ public abstract class Player {
 				repeatCount++;
 				availableType.remove(availableType.indexOf(playerCards.get(j).getType()));
 				indexes.add(j);
-				if (repeatCount == 3)
+				if (indexes.size() == 3)
 					break;
 			}
 		}
 		if (repeatCount >= 3) {
-			Card card = playerCards.get(indexes.get(0));
 			for (int k = 0; k < 3; k++) {
 				this.removeCard(playerCards.get(indexes.get(k)));
 			}
