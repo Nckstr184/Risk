@@ -60,6 +60,9 @@ public class Territory {
 		return button;
 	}
 
+	public void setOwner(Player player) {
+		this.player = player;
+	}
 	public Player getOwner() {
 		return player;
 	}

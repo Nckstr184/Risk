@@ -24,12 +24,15 @@ public class GameBoard extends JPanel {
 	ArrayList<Continent> Continents;
 	BufferedImage map, bottomDisplay;
 
+<<<<<<< HEAD
 	JPanel board, boardDisplay, boardInfo;
 	JButton ter1;
 
 	JFrame temp;
 	JTextField bottomField;
 
+=======
+>>>>>>> f683955739fb9b787854500b0751da5d13a41713
 	int javaUnits, pythonUnits, cUnits, sqlUnits, rubyUnits, gitUnits, perlUnits;// number
 																					// on
 																					// the

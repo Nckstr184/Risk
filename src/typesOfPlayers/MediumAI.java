@@ -17,6 +17,7 @@ public class MediumAI extends Player implements AIStrategy {
 	// returns the territory with the least amount of armies
 	@Override
 	public Territory deployArmy(ArrayList<Territory> territories) {
+		System.out.println("Infinite?");
 		int armiesToPlace = super.getNumOfArmies();
 		int smallestNumOfArmies, indexOfSmallestArmies = 0;
 		smallestNumOfArmies = territories.get(0).getUnits();

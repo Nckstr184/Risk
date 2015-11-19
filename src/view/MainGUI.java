@@ -23,10 +23,15 @@ public class MainGUI extends JFrame {
 
 	public static void main(String[] args) {
 		MainGUI window = new MainGUI();
+<<<<<<< HEAD
 		window.setVisible(false);
 		StartWindow window1 = new StartWindow();
 		window1.setVisible(true);
 		
+=======
+		window.setVisible(true);
+		new StartWindow().setVisible(false);
+>>>>>>> f683955739fb9b787854500b0751da5d13a41713
 	}
 	
 	public MainGUI() {
@@ -63,12 +68,14 @@ public class MainGUI extends JFrame {
 		quitGame.setLocation(5, 130);
 		quitGame.setSize(80, 40);
 		quitGame.setText("Quit Game");
-		this.add(saveGame);
-		this.add(quitGame);
-		this.add(toggleSound);
+		
 
 		this.add(map);
 		this.add(bottomBoard);
+		
+		this.add(saveGame);
+		this.add(quitGame);
+		this.add(toggleSound);
 
 	}
 
