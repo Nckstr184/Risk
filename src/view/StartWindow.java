@@ -275,9 +275,9 @@ public class StartWindow extends JFrame {
 	public void setPlayerColor(Color color) {
 
 	}
-	public ArrayList<Player> getPlayerCollection(){
-		return pCollection;
-	}
+	//public ArrayList<Player> getPlayerCollection(){
+		//return pCollection;
+	//}
 
 	public void setAI(int difficulty) {
 

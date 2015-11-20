@@ -251,20 +251,20 @@ public class GameBoard extends JPanel {
 			if(myLabel != null) {
 				System.out.println("got label");
 				String curr = myLabel.getText();
-<<<<<<< HEAD
+
 				Integer i = new Integer(10);
 				i = Integer.getInteger(curr);
 				//i = i + 1;
 				//int myint = i.intValue() + 1;
 ;				//System.out.println("Curr: " + curr);
 				//myLabel.setText(i.toString());
-=======
-				int i = Integer.parseInt(curr);
+
+				
 				
 				if(i<20){
 				myLabel.setText(""+(i+1));
 				}
->>>>>>> c33bb50bfcc994984d331a623bf56fd905fd9d25
+
 			}
 			
 				
