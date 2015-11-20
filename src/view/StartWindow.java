@@ -250,12 +250,12 @@ public class StartWindow extends JFrame {
 			
 			setNumberOfPlayers(count);
 			System.out.println("Number of Players: " +pCollection.getNumOfPlayers());
-			System.out.println(pCollection.getPlayer(0));
+			/*System.out.println(pCollection.getPlayer(0));
 			System.out.println(pCollection.getPlayer(1));
 			System.out.println(pCollection.getPlayer(2));
 			System.out.println(pCollection.getPlayer(3));
 			System.out.println(pCollection.getPlayer(4));
-			System.out.println(pCollection.getPlayer(5));
+			System.out.println(pCollection.getPlayer(5));*/
 			
 			
 			MainGUI mainGui = new MainGUI();
