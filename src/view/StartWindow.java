@@ -3,6 +3,7 @@ package view;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -11,6 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import model.Player;
 import model.PlayerCollection;
 import typesOfPlayers.EasyAI;
 import typesOfPlayers.Human;
@@ -22,11 +24,13 @@ public class StartWindow extends JFrame {
 	JButton startGame;
 	JPanel panel;
 	JLabel enterName;
-	PlayerCollection pCollection;
+	public PlayerCollection pCollection;
+	Player playerOne, playerTwo, playerThree, playerFor, playerFive, playerSix;
 	Human human1, human2, human3, human4, human5, human6;
 	EasyAI easy1, easy2, easy3, easy4, easy5, easy6;
 	MediumAI med1, med2, med3, med4, med5, med6;
-	public String playerName, player1Name, player2Name, player3Name, player4Name, player5Name, player6Name, selectedDiff1,
+	ArrayList<Player> pList;
+	String playerName, player1Name, player2Name, player3Name, player4Name, player5Name, player6Name, selectedDiff1,
 			selectedDiff2, selectedDiff3, selectedDiff4, selectedDiff5, selectedDiff6;
 
 	
@@ -206,37 +210,56 @@ public class StartWindow extends JFrame {
 			}
 			if(selectedDiff1 == "Human"){human1 = new Human(player1Name,Color.black,20);
 			pCollection.addPlayers(human1);}
-			if(selectedDiff1 == "Easy A.I"){easy1 = new EasyAI(player1Name,Color.black,20);
+			if(selectedDiff1 == "Easy AI"){easy1 = new EasyAI(player1Name,Color.black,20);
 			pCollection.addPlayers(easy1);}
-			if(selectedDiff1 == "Medium A.I"){med1 = new MediumAI(player1Name,Color.black,20);
+			if(selectedDiff1 == "Medium AI"){med1 = new MediumAI(player1Name,Color.black,20);
 			pCollection.addPlayers(med1);}
-			if(selectedDiff2 == "Human"){human2 = new Human(player2Name,Color.black,20);
+			if(selectedDiff2 == "Human"){human2 = new Human(player2Name,Color.red,20);
 			pCollection.addPlayers(human2);}
-			if(selectedDiff2 == "Easy A.I"){easy2 = new EasyAI(player2Name,Color.black,20);
+			if(selectedDiff2 == "Easy AI"){easy2 = new EasyAI(player2Name,Color.red,20);
 			pCollection.addPlayers(easy2);}
-			if(selectedDiff2 == "Medium A.I"){med2 = new MediumAI(player2Name,Color.black,20);
+			if(selectedDiff2 == "Medium AI"){med2 = new MediumAI(player2Name,Color.red,20);
 			pCollection.addPlayers(med2);}
-			if(selectedDiff3 == "Human"){human3 = new Human(player3Name,Color.black,20);}
-			if(selectedDiff3 == "Easy A.I"){easy3 = new EasyAI(player3Name,Color.black,20);}
-			if(selectedDiff3 == "Medium A.I"){med3 = new MediumAI(playerName,Color.black,20);}
-			if(selectedDiff4 == "Human"){human4 = new Human(player4Name,Color.black,20);}
-			if(selectedDiff4 == "Easy A.I"){easy4 = new EasyAI(player4Name,Color.black,20);}
-			if(selectedDiff4 == "Medium A.I"){med4 = new MediumAI(player4Name,Color.black,20);}
-			if(selectedDiff5 == "Human"){human5 = new Human(player5Name,Color.black,20);}
-			if(selectedDiff5 == "Easy A.I"){easy5 = new EasyAI(player5Name,Color.black,20);}
-			if(selectedDiff5 == "Medium A.I"){med5 = new MediumAI(player5Name,Color.black,20);}
-			if(selectedDiff6 == "Human"){human6 = new Human(player6Name,Color.black,20);}
-			if(selectedDiff6 == "Easy A.I"){easy6 = new EasyAI(player6Name,Color.black,20);}
-			if(selectedDiff6 == "Medium A.I"){med6 = new MediumAI(player6Name,Color.black,20);}
+			if(selectedDiff3 == "Human"){human3 = new Human(player3Name,Color.yellow,20);
+			pCollection.addPlayers(human3);}
+			if(selectedDiff3 == "Easy AI"){easy3 = new EasyAI(player3Name,Color.yellow,20);
+			pCollection.addPlayers(easy3);}
+			if(selectedDiff3 == "Medium AI"){med3 = new MediumAI(playerName,Color.yellow,20);
+			pCollection.addPlayers(med3);}
+			if(selectedDiff4 == "Human"){human4 = new Human(player4Name,Color.green,20);
+			pCollection.addPlayers(human4);}
+			if(selectedDiff4 == "Easy AI"){easy4 = new EasyAI(player4Name,Color.green,20);
+			pCollection.addPlayers(easy4);}
+			if(selectedDiff4 == "Medium AI"){med4 = new MediumAI(player4Name,Color.green,20);
+			pCollection.addPlayers(med4);}
+			if(selectedDiff5 == "Human"){human5 = new Human(player5Name,Color.white,20);
+			pCollection.addPlayers(human5);}
+			if(selectedDiff5 == "Easy AI"){easy5 = new EasyAI(player5Name,Color.white,20);
+			pCollection.addPlayers(easy5);}
+			if(selectedDiff5 == "Medium AI"){med5 = new MediumAI(player5Name,Color.white,20);
+			pCollection.addPlayers(med5);}
+			if(selectedDiff6 == "Human"){human6 = new Human(player6Name,Color.orange,20);
+			pCollection.addPlayers(human6);}
+			if(selectedDiff6 == "Easy AI"){easy6 = new EasyAI(player6Name,Color.orange,20);}
+			pCollection.addPlayers(easy6);
+			if(selectedDiff6 == "Medium AI"){med6 = new MediumAI(player6Name,Color.orange,20);
+			pCollection.addPlayers(med6);}
 			
 			
 			
 			
 			setNumberOfPlayers(count);
+			System.out.println("Number of Players: " +pCollection.getNumOfPlayers());
+			System.out.println(pCollection.getPlayer(0));
+			System.out.println(pCollection.getPlayer(1));
+			System.out.println(pCollection.getPlayer(2));
+			System.out.println(pCollection.getPlayer(3));
+			System.out.println(pCollection.getPlayer(4));
+			System.out.println(pCollection.getPlayer(5));
+			
 			
 			MainGUI mainGui = new MainGUI();
 			mainGui.setVisible(true);
-		
 			
 			dispose();
 
@@ -245,16 +268,15 @@ public class StartWindow extends JFrame {
 	}
 
 	public void setNumberOfPlayers(int numPlayers) {
-		this.numOfPlayers = numPlayers;
+		numOfPlayers = numPlayers;
 	}
 	
 
-	public void setPlayer1Name(String setPlayerName) {
-		this.playerName = setPlayerName;
-	}
-
 	public void setPlayerColor(Color color) {
 
+	}
+	public ArrayList<Player> getPlayerCollection(){
+		return pCollection;
 	}
 
 	public void setAI(int difficulty) {

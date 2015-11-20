@@ -250,7 +250,7 @@ public class GameBoard extends JPanel {
 				//i = i + 1;
 				//int myint = i.intValue() + 1;
 ;				//System.out.println("Curr: " + curr);
-				/myLabel.setText(i.toString());
+				//myLabel.setText(i.toString());
 			}
 			
 				
