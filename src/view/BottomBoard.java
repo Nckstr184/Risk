@@ -9,12 +9,15 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import model.PlayerCollection;
+
 
 
 public class BottomBoard extends JPanel {
 
 	
 	BufferedImage bottomBoard;
+	PlayerCollection playerList;
 
 	public BottomBoard(){
 
@@ -43,6 +46,7 @@ public class BottomBoard extends JPanel {
 			System.out.println("ERROR with map");
 			e.printStackTrace();
 		}
+		
 		
 		
 	}
