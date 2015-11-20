@@ -253,10 +253,10 @@ public class GameBoard extends JPanel {
 				String curr = myLabel.getText();
 
 				Integer i = new Integer(10);
-				i = Integer.getInteger(curr);
+				i = Integer.parseInt(curr);
 				//i = i + 1;
 				//int myint = i.intValue() + 1;
-;				//System.out.println("Curr: " + curr);
+				//System.out.println("Curr: " + curr);
 				//myLabel.setText(i.toString());
 
 				
