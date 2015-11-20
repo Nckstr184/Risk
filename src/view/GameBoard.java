@@ -205,6 +205,12 @@ public class GameBoard extends JPanel {
 		
 		myMap = new HashMap<JButton,JLabel>();
 		myMap.put(perlLanguage, languageLabel7);
+		myMap.put(javaLanguage, languageLabel1);
+		myMap.put(pythonLanguage, languageLabel2);
+		myMap.put(cLanguage, languageLabel3);
+		myMap.put(sqlLanguage, languageLabel4);
+		myMap.put(rubyLanguage, languageLabel5);
+		myMap.put(gitLanguage, languageLabel6);
 
 		languageLabel7.setSize(25, 25);
 		languageLabel7.setFont(font);
@@ -245,12 +251,20 @@ public class GameBoard extends JPanel {
 			if(myLabel != null) {
 				System.out.println("got label");
 				String curr = myLabel.getText();
+<<<<<<< HEAD
 				Integer i = new Integer(10);
 				i = Integer.getInteger(curr);
 				//i = i + 1;
 				//int myint = i.intValue() + 1;
 ;				//System.out.println("Curr: " + curr);
 				//myLabel.setText(i.toString());
+=======
+				int i = Integer.parseInt(curr);
+				
+				if(i<20){
+				myLabel.setText(""+(i+1));
+				}
+>>>>>>> c33bb50bfcc994984d331a623bf56fd905fd9d25
 			}
 			
 				

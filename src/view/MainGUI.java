@@ -37,7 +37,10 @@ public class MainGUI extends JFrame {
 
 		this.setLayout(null);
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c33bb50bfcc994984d331a623bf56fd905fd9d25
 
 		GameBoard map = new GameBoard();
 
