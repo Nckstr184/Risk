@@ -47,7 +47,7 @@ public class Run6Bots {
 			while (!gameLogic.isGameComplete()) {
 				currPlayer = allPlayers.getPlayer((count % 6));
 				ArrayList<Territory> territories = currPlayer.getTerritories();
-				// System.out.println(currPlayer.getName());
+				 System.out.println(currPlayer.getName());
 				noMoreRewardCard = false;
 				if (currPlayer.turnInCard()) {
 					if (numberOfCardTurnIns < 6) {
@@ -62,7 +62,7 @@ public class Run6Bots {
 					while (rewardArmyNumber != 0) {
 
 						// System.out.println(currPlayer.getNumOfArmies());
-						// System.out.println("Placing Armies");
+						System.out.println("Placing Armies");
 						currPlayer.deployArmy(currPlayer.getTerritories()).addUnits(1);
 						currPlayer.addArmies(1);
 						rewardArmyNumber--;
@@ -90,20 +90,29 @@ public class Run6Bots {
 				if (attackingTerritory != null) {
 					battleLogic = new BattleLogic(currPlayer, attackingTerritory.getOwner());
 
-					while (currPlayer.chooseRetreat(currTerritory) && currTerritory.getUnits() > 0
+					while (currPlayer.chooseRetreat(currTerritory) && currTerritory.getUnits() > 1
 							&& attackingTerritory.getUnits() > 0) {
-						// System.out.println("Attacking");
+						 System.out.println("Attacking");
 						// System.out.println(currTerritory.getUnits());
-						int temp1 = Math.abs(currTerritory.getUnits() % 3);
-						if (temp1 == 0)
-							temp1 = 3;
+						int temp1, temp2;
+						if (currTerritory.getUnits() < 3) {
+							temp1 = currTerritory.getUnits() - 1;
+						} else {
+							temp1 = Math.abs(currTerritory.getUnits() % 3);
+							if (temp1 == 0)
+								temp1 = 3;
+						}
 
-						int temp2 = Math.abs(attackingTerritory.getUnits() % 2);
-						if (temp2 == 0)
-							temp2 = 2;
-
-						int currTerrDiceNum = r.nextInt(temp1) + 1;
-						int attackingTerrDiceNum = r.nextInt(temp2) + 1;
+						if (attackingTerritory.getUnits() <= 3) {
+							temp2 = attackingTerritory.getUnits() - 1;
+						} else {
+							temp2 = Math.abs(attackingTerritory.getUnits() % 2);
+							if (temp2 == 0)
+								temp2 = 2;
+						}
+						
+						int currTerrDiceNum = temp1;
+						int attackingTerrDiceNum = temp2;
 						battleLogic.attackPlayer(currTerrDiceNum, attackingTerrDiceNum);
 
 						currPlayer.addArmies(battleLogic.armiesAttackerLost());
@@ -123,18 +132,6 @@ public class Run6Bots {
 							// System.out.println("Giving Reward Card");
 							noMoreRewardCard = true;
 							currPlayer.addCard(allCards.getCard(nextCard));
-							nextCard++;
-						}
-					} else if (currTerritory.getUnits() <= 0) {
-						System.out.println("Defender Won");
-						currPlayer.removeTerritory(currTerritory);
-						attackingTerritory.getOwner().addTerritories(currTerritory);
-						currTerritory.setOwner(attackingTerritory.getOwner());
-
-						if (!noMoreRewardCard && nextCard < 44) {
-							// System.out.println("Giving Reward Card");
-							noMoreRewardCard = true;
-							attackingTerritory.getOwner().addCard(allCards.getCard(nextCard));
 							nextCard++;
 						}
 					}
