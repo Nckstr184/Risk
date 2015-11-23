@@ -47,7 +47,7 @@ public class Run6Bots {
 			while (!gameLogic.isGameComplete()) {
 				currPlayer = allPlayers.getPlayer((count % 6));
 				ArrayList<Territory> territories = currPlayer.getTerritories();
-				 System.out.println(currPlayer.getName());
+				System.out.println(currPlayer.getName());
 				noMoreRewardCard = false;
 				if (currPlayer.turnInCard()) {
 					if (numberOfCardTurnIns < 6) {
@@ -88,7 +88,8 @@ public class Run6Bots {
 				// System.out.println("About to check to see if we are
 				// attacking");
 				if (defendingTerritory != null) {
-					battleLogic = new BattleLogic(currPlayer, defendingTerritory.getOwner(), currTerritory, defendingTerritory);
+					battleLogic = new BattleLogic(currPlayer, defendingTerritory.getOwner(), currTerritory,
+							defendingTerritory);
 
 					while (currPlayer.chooseRetreat(currTerritory) && currTerritory.getUnits() > 1
 							&& defendingTerritory.getUnits() > 0) {
@@ -103,14 +104,10 @@ public class Run6Bots {
 								temp1 = 3;
 						}
 
-						if (defendingTerritory.getUnits() <= 3) {
-							temp2 = defendingTerritory.getUnits() - 1;
-						} else {
-							temp2 = Math.abs(defendingTerritory.getUnits() % 2);
-							if (temp2 == 0)
-								temp2 = 2;
-						}
-						
+						temp2 = Math.abs(defendingTerritory.getUnits() % 2);
+						if (temp2 == 0)
+							temp2 = 2;
+						System.out.println(temp1 + "   " + temp2);
 						int currTerrDiceNum = temp1;
 						int attackingTerrDiceNum = temp2;
 						battleLogic.attackPlayer(currTerrDiceNum, attackingTerrDiceNum);
@@ -118,13 +115,8 @@ public class Run6Bots {
 					}
 
 					if (battleLogic.attackerWin()) {
-						 System.out.println("Attacker Won");
+						System.out.println("Attacker Won");
 						// changing owner of territory
-						Player temp = defendingTerritory.getOwner();
-						temp.removeTerritory(defendingTerritory);
-						currPlayer.addTerritories(defendingTerritory);
-						defendingTerritory.setOwner(currPlayer);
-
 						// giving reward card (only if it's the first win)
 						if (!noMoreRewardCard && nextCard < 44) {
 							// System.out.println("Giving Reward Card");
