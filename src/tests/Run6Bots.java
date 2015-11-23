@@ -84,14 +84,14 @@ public class Run6Bots {
 				Territory currTerritory = territories.get(indexOfMost);
 				// System.out.println(currTerritory);
 				// System.out.println(currTerritory.getNeighbors());
-				Territory attackingTerritory = currPlayer.attackTerritory(currTerritory, currTerritory.getNeighbors());
+				Territory defendingTerritory = currPlayer.attackTerritory(currTerritory, currTerritory.getNeighbors());
 				// System.out.println("About to check to see if we are
 				// attacking");
-				if (attackingTerritory != null) {
-					battleLogic = new BattleLogic(currPlayer, attackingTerritory.getOwner());
+				if (defendingTerritory != null) {
+					battleLogic = new BattleLogic(currPlayer, defendingTerritory.getOwner(), currTerritory, defendingTerritory);
 
 					while (currPlayer.chooseRetreat(currTerritory) && currTerritory.getUnits() > 1
-							&& attackingTerritory.getUnits() > 0) {
+							&& defendingTerritory.getUnits() > 0) {
 						 System.out.println("Attacking");
 						// System.out.println(currTerritory.getUnits());
 						int temp1, temp2;
@@ -103,10 +103,10 @@ public class Run6Bots {
 								temp1 = 3;
 						}
 
-						if (attackingTerritory.getUnits() <= 3) {
-							temp2 = attackingTerritory.getUnits() - 1;
+						if (defendingTerritory.getUnits() <= 3) {
+							temp2 = defendingTerritory.getUnits() - 1;
 						} else {
-							temp2 = Math.abs(attackingTerritory.getUnits() % 2);
+							temp2 = Math.abs(defendingTerritory.getUnits() % 2);
 							if (temp2 == 0)
 								temp2 = 2;
 						}
@@ -114,18 +114,16 @@ public class Run6Bots {
 						int currTerrDiceNum = temp1;
 						int attackingTerrDiceNum = temp2;
 						battleLogic.attackPlayer(currTerrDiceNum, attackingTerrDiceNum);
-
-						currPlayer.addArmies(battleLogic.armiesAttackerLost());
-						attackingTerritory.getOwner().addArmies(battleLogic.armiesDefenderLost());
+						battleLogic.subtractArmies();
 					}
 
-					if (attackingTerritory.getUnits() <= 0) {
-						System.out.println("Attacker Won");
+					if (battleLogic.attackerWin()) {
+						 System.out.println("Attacker Won");
 						// changing owner of territory
-						Player temp = attackingTerritory.getOwner();
-						temp.removeTerritory(attackingTerritory);
-						currPlayer.addTerritories(attackingTerritory);
-						attackingTerritory.setOwner(currPlayer);
+						Player temp = defendingTerritory.getOwner();
+						temp.removeTerritory(defendingTerritory);
+						currPlayer.addTerritories(defendingTerritory);
+						defendingTerritory.setOwner(currPlayer);
 
 						// giving reward card (only if it's the first win)
 						if (!noMoreRewardCard && nextCard < 44) {
