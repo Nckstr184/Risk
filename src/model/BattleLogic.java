@@ -5,13 +5,16 @@ import java.util.ArrayList;
 //WE NEED TO CHECK TO SEE IF ATTACKER HAS MORE THAN ONE ARMY BEFORE WE RUN BATTLE LOGIC!!!!!!!!!!!////////
 
 public class BattleLogic {
-	private Player attacker, defender;
+	private Player attacker, defender; 
 	private Dice attackDice, defendDice;
+	private Territory attackingTerritory, defendingTerritory;
 	private int numOfAttackDice, numOfDefendDice, leastDiceOnField;
 
-	public BattleLogic(Player attacker, Player defender) {
+	public BattleLogic(Player attacker, Player defender, Territory attackingTerritory, Territory defendingTerritory) {
 		this.attacker = attacker;
 		this.defender = defender;
+		this.attackingTerritory=attackingTerritory;
+		this.defendingTerritory=defendingTerritory;
 	}
 
 	public void attackPlayer(int numOfAttackDice, int numOfDefendDice) {
@@ -54,7 +57,7 @@ public class BattleLogic {
 	
 	public boolean attackerWin()
 	{
-		if(defender.getNumOfArmies()<=0)
+		if(defendingTerritory.getUnits()<=0)
 		{
 			System.out.println("CHECK2");
 			return true;
@@ -63,7 +66,7 @@ public class BattleLogic {
 	}
 	
 	public boolean defenderWin() {
-		if(attacker.getNumOfArmies()<=0)
+		if(attackingTerritory.getUnits()<=0)
 		{
 			System.out.println("CHECK3");
 			return true;
