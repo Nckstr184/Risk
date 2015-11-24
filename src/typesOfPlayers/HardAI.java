@@ -27,24 +27,42 @@ public class HardAI extends Player implements AIStrategy {
 		 * angle
 		 */
 		int highestNumberOfArmies = 0;
+		int armySum;
+		int indexOfHighest = 0;
 		ArrayList<Territory> neighbors;
 		for (int i = 0; i < territories.size(); i++) {
 			neighbors = territories.get(i).getNeighbors();
+			armySum = 0;
 			for (int j = 0; j < neighbors.size(); j++) {
-
+				armySum += neighbors.get(j).getUnits();
+			}
+			if (highestNumberOfArmies < armySum) {
+				highestNumberOfArmies = armySum;
+				indexOfHighest = i;
 			}
 		}
-		return null;
+		return territories.get(indexOfHighest);
 	}
 
 	@Override
 	public boolean chooseRetreat(Territory currentTerr) {
 		/*
-		 * Use the total number of enemy armies surrounding the territory to
+		 * Use the total highest of enemy armies surrounding the territory to
 		 * determine whether or not to retreat
 		 */
 
-		return false;
+		ArrayList<Territory> neighbors = currentTerr.getNeighbors();
+		int highestArmies = 0;
+		for (int j = 0; j < neighbors.size(); j++) {
+			if (highestArmies < neighbors.get(j).getUnits()) {
+				highestArmies = neighbors.get(j).getUnits();
+			}
+		}
+		if (currentTerr.getUnits() - highestArmies > 3) {
+			return false;
+		}
+
+		return true;
 	}
 
 	@Override
