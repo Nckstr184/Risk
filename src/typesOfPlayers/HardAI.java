@@ -7,6 +7,13 @@ import model.Player;
 import model.Territory;
 
 public class HardAI extends Player implements AIStrategy{
+	/*
+	 * Basically this entire AI is developed on making sure you are
+	 * more powerful than the territories surrounding you.  HardAI
+	 * probably won't attack much and takes more of a defensive stand,
+	 * letting Easy, Medium, and Human kill each other off and weaken
+	 * each other
+	 */
 
 	public HardAI(String name, Color color, int numOfArmies) {
 		super(name, color, numOfArmies);
@@ -14,25 +21,42 @@ public class HardAI extends Player implements AIStrategy{
 
 	@Override
 	public Territory deployArmy(ArrayList<Territory> territories) {
-		// TODO Auto-generated method stub
+		/*
+		 * Use the total number of enemy armies surrounding the territory
+		 * to figure out how many armies to place in a certain territory.
+		 * You want to make sure you are powerful enough to withstand
+		 * an attack from any angle
+		 */
 		return null;
 	}
 
 	@Override
 	public boolean chooseRetreat(Territory currentTerr) {
-		// TODO Auto-generated method stub
+		/*
+		 * Use the total number of enemy armies surrounding the territory to 
+		 * determine whether or not to retreat
+		 */
+		
 		return false;
 	}
 
 	@Override
 	public Territory attackTerritory(Territory currentTerr, ArrayList<Territory> connected) {
-		// TODO Auto-generated method stub
+		/*
+		 * Choose the territory with the biggest difference in armies in order
+		 * to win the easiest and get a card.  chooseRetreat will take care
+		 * of stopping attacking
+		 */
 		return null;
 	}
 
 	@Override
 	public void fortifyPosition(Territory currentTerr, ArrayList<Territory> connected) {
-		// TODO Auto-generated method stub
+		/*
+		 * Same idea as the rest, make sure that you fortify if one of your connected
+		 * territories doesn't have enough.  But make sure you don't weaken yourself
+		 * while doing this.
+		 */
 		
 	}
 
