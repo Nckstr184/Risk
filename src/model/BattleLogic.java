@@ -35,9 +35,10 @@ public class BattleLogic {
 
 	}
 
-	public void subtractArmies() {
+	public int[] subtractArmies() {
 		int countAttack = 0;
 		int countDefend = 0;
+		int[] unitsToLose = new int[2];
 
 		for (int i = 0; i < leastDiceOnField; i++) {
 			if (attackDice.getDice().get(i) <= defendDice.getDice().get(i))
@@ -47,9 +48,11 @@ public class BattleLogic {
 				countDefend++;
 			}
 		}
-		attackingTerritory.addUnits((-1) * countAttack);
-		defendingTerritory.addUnits((-1) * countDefend);
-
+		
+		unitsToLose[0] = ((-1) * countAttack);
+		unitsToLose[1] = ((-1) * countDefend);
+		
+		return unitsToLose;
 	}
 
 	public boolean attackerWin() {

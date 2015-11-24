@@ -54,11 +54,9 @@ public abstract class Player {
 	}
 
 	public void removeTerritory(Territory removedTerritory) {
-		for(int index=0; index<playerTerritories.size(); index++)
-		{
-			String temp=playerTerritories.get(index).getname();
-			if(removedTerritory.getname().compareTo(temp)==0)
-			{
+		for (int index = 0; index < playerTerritories.size(); index++) {
+			String temp = playerTerritories.get(index).getname();
+			if (removedTerritory.getname().equals(temp)) {
 				playerTerritories.remove(index);
 			}
 		}
@@ -105,7 +103,7 @@ public abstract class Player {
 				return true;
 			}
 		}
-		//System.out.println(playerCards.size());
+		// System.out.println(playerCards.size());
 		indexes.clear();
 		ArrayList<CardType> availableType = new ArrayList<CardType>();
 		availableType.add(CardType.GARY);

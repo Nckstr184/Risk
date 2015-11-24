@@ -51,8 +51,10 @@ public class Run6Bots {
 				System.out.println(currPlayer.getName());
 				noMoreRewardCard = false;
 				int rand;
+				
 				getReinforcements(currPlayer);
-				// System.out.println(currPlayer.getNumOfArmies());
+				
+				System.out.println("Number of Armies: " + currPlayer.getNumOfArmies());
 				if (currPlayer.turnInCard()) {
 					System.out.println("Turning in card");
 					if (numberOfCardTurnIns < 6) {
@@ -66,14 +68,13 @@ public class Run6Bots {
 				}
 
 				while (currPlayer.getNumOfArmies() != 0) {
-					// System.out.println(currPlayer.getNumOfArmies());
 					currPlayer.deployArmy(territories).addUnits(1);
 					currPlayer.addArmies(-1);
 				}
-				// System.out.println("Finishing Army placement");
+				
+				System.out.println("Number of Armies: " + currPlayer.getNumOfArmies());
 
 				// Attack Phase
-				// System.out.println("Starting attack phase");
 				int mostArmies = 0, indexOfMost = 0;
 				System.out.println(territories.size());
 				for (int j = 0; j < territories.size(); j++) {
@@ -88,44 +89,42 @@ public class Run6Bots {
 				// System.out.println(currTerritory);
 				// System.out.println(currTerritory.getNeighbors());
 				Territory defendingTerritory = currPlayer.attackTerritory(currTerritory, currTerritory.getNeighbors());
-				// System.out.println("About to check to see if we are
-				// attacking");
 
 				if (defendingTerritory != null) {
 					Player defender = defendingTerritory.getOwner();
 					battleLogic = new BattleLogic(currPlayer, defendingTerritory.getOwner(), currTerritory,
 							defendingTerritory);
-					// System.out.println("Checking while loop");
 					System.out.println(currTerritory.getUnits() + " " + defendingTerritory.getUnits());
-					// System.out.println(currTerritory);
-					// System.out.println(currPlayer.chooseRetreat(currTerritory));
 					while (!currPlayer.chooseRetreat(currTerritory)) {
 						// System.out.println("Attacking");
-						// System.out.println(currTerritory.getUnits());
 						int temp1, temp2;
-						if (currTerritory.getUnits() < 3) {
-							temp1 = currTerritory.getUnits() - 1;
+						if (currTerritory.getUnits() <= 3) {
+							temp1 = currTerritory.getUnits();
 						} else {
-							temp1 = Math.abs(currTerritory.getUnits() % 3);
-							if (temp1 == 0)
-								temp1 = 3;
+							temp1 = 3;
 						}
 
-						temp2 = Math.abs(defendingTerritory.getUnits() % 2);
-						if (temp2 == 0)
+						if (defendingTerritory.getUnits() <= 2) {
+							temp2 = defendingTerritory.getUnits();
+						} else
 							temp2 = 2;
+
 						int currTerrDiceNum = temp1;
 						int attackingTerrDiceNum = temp2;
+						//System.out.println(currTerritory.getUnits() + "     " + defendingTerritory.getUnits());
 						battleLogic.attackPlayer(currTerrDiceNum, attackingTerrDiceNum);
-						// System.out.println("Just finished attackPlayer
-						// method");
-						battleLogic.subtractArmies();
-						// System.out.println("Just subtracted armies");
+						int[] unitsToLose = battleLogic.subtractArmies();
 
-						if (battleLogic.attackerWin()) {
-							// System.out.println("Attacker Won");
-							// changing owner of territory
-							// giving reward card (only if it's the first win)
+						// Subtracting armies from the players
+						currPlayer.addArmies(unitsToLose[0]);
+						defender.addArmies(unitsToLose[1]);
+						if (defendingTerritory.getUnits() <= 0) {
+							System.out.println("Attacker won");
+							defender.removeTerritory(defendingTerritory);
+							currPlayer.addTerritories(defendingTerritory);
+							defendingTerritory.setOwner(currPlayer);
+							currTerritory.addUnits(-1);
+							defendingTerritory.addUnits(1);
 
 							if (!noMoreRewardCard && nextCard < 44) {
 								System.out.println("Giving Reward Card");
@@ -142,11 +141,7 @@ public class Run6Bots {
 
 				// Fortify Phase
 				// System.out.println("Fortifying Position");
-
-				// System.out.println(territories.get(0).getOwner().getName());
-				// System.out.println(territories.get(0).getNeighbors());
 				currPlayer.fortifyPosition(territories.get(0), territories.get(0).getNeighbors());
-				// System.out.println("Going to the next player");
 				count++;
 			}
 			System.out.println("Game Over");
