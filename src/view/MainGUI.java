@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Toolkit;
@@ -15,8 +16,12 @@ public class MainGUI extends JFrame {
 
 	GameBoard map;
 
+
 	BottomBoard bottomBoard;
+
 	SideBoard sideBoard;
+
+	
 	JTextField updateDisplay;
 	JButton toggleSound, quitGame, saveGame;
 
@@ -24,23 +29,24 @@ public class MainGUI extends JFrame {
 		MainGUI window = new MainGUI();
 		window.setVisible(true);
 
-		//StartWindow window1 = new StartWindow();
-		// window1.setVisible(true);
-		//GameBoard map = new GameBoard();
-		//map.setVisible(true);
-		
-
 	}
 
 	public MainGUI() {
 		map = new GameBoard();
 
+
 		JPanel bottomeDisplay = new JPanel();
 		JPanel sideDisplay = new JPanel();
 
+
 		this.setLayout(null);
 
+
+		
+		bottomBoard= new BottomBoard();
 	
+		
+
 		
 
 		Dimension sizeMe = Toolkit.getDefaultToolkit().getScreenSize();
@@ -69,7 +75,12 @@ public class MainGUI extends JFrame {
 		this.add(saveGame);
 		this.add(quitGame);
 		this.add(toggleSound);
+		
 		this.add(map);
+
+		this.add(bottomBoard);
+	
+
 		
 
 	}

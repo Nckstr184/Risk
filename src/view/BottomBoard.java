@@ -23,18 +23,23 @@ public class BottomBoard extends JPanel {
 
 		
 		this.setSize(1920,400);
-		this.setLocation(0,550);
+		this.setLocation(-320,415);
 		
 		
 		
 		try {
 			bottomBoard = ImageIO.read(new File("./Pictures/gui1.png"));
 			JLabel picLabel = new JLabel(new ImageIcon(bottomBoard));
-			add(picLabel);
+			System.out.println("got piclabel");
 			
-			this.setSize(1920, 400);
-			this.setLocation(0, 550);
+			picLabel.setSize(1920, 400);
+			picLabel.setLocation(0, 0);
+			System.out.println("set piclabel");
+			
+			
 			this.setLayout(null);
+			add(picLabel);
+			System.out.println("add piclabel");
 			
 			
 		} catch (IOException e) {

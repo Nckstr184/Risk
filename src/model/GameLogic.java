@@ -356,11 +356,14 @@ public class GameLogic {
 		// make temp list of territories
 		ArrayList<Territory> tempTerrs = getTerritories();
 		r = new Random();
+		int randomIndex;
+		Territory tempTerritory;
+		Player tempPlayer;
 		while (!tempTerrs.isEmpty()) {
 			for (int i = 0; i < allPlayers.getNumOfPlayers(); i++) {
-				int randomIndex = r.nextInt(tempTerrs.size());
-				Territory tempTerritory = tempTerrs.get(randomIndex);
-				Player tempPlayer = allPlayers.getPlayer(i);
+				randomIndex = r.nextInt(tempTerrs.size());
+				tempTerritory = tempTerrs.get(randomIndex);
+				tempPlayer = allPlayers.getPlayer(i);
 				tempPlayer.addTerritories(tempTerritory);
 				tempTerritory.setOwner(tempPlayer);
 				tempTerrs.remove(randomIndex);

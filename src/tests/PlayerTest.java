@@ -31,7 +31,6 @@ public class PlayerTest {
 		test.addTerritories(tempT);
 		assertEquals(1, tList.size());
 		assertEquals(1, cList.size());
-		test.removeCard(temp);
 		test.removeTerritory(tempT);
 		assertEquals(0, tList.size());
 		assertEquals(0, cList.size());

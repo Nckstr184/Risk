@@ -75,4 +75,13 @@ public class Territory {
 		return units;
 	}
 
+//	public boolean checkIfContinentIsConquered() {
+//		// TODO Auto-generated method stub
+//		for(int index=0; index<neighbors.size(); index++)
+//		{
+//			Territory temp=neighbors.get(index);
+//			if()
+//		}
+//	}
+
 }
