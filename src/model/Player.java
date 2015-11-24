@@ -2,6 +2,7 @@ package model;
 
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.List;
 
 public abstract class Player {
 
@@ -53,15 +54,19 @@ public abstract class Player {
 	}
 
 	public void removeTerritory(Territory removedTerritory) {
-		int index = playerTerritories.indexOf(removedTerritory);
-		if (index >= 0) {
-			playerTerritories.remove(index);
+		for(int index=0; index<playerTerritories.size(); index++)
+		{
+			String temp=playerTerritories.get(index).getname();
+			if(removedTerritory.getname().compareTo(temp)==0)
+			{
+				playerTerritories.remove(index);
+			}
 		}
 	}
 
-	public void removeCard(Card removedCard) {
-		int index = playerCards.indexOf(removedCard);
-		if (index >= 0) {
+	public void removeCard(List<Card> removeTheseCards) {
+		for (int i = 0; i < removeTheseCards.size(); i++) {
+			int index = playerCards.indexOf(removeTheseCards.get(i));
 			playerCards.remove(index);
 		}
 	}
@@ -79,54 +84,46 @@ public abstract class Player {
 	}
 
 	public boolean turnInCard() {
-		if(playerCards.size() < 3)
+		if (playerCards.size() < 3)
 			return false;
-		
+
 		// 3 of same type or using wilds
-		int repeatCount;
-		ArrayList<Integer> indexes = new ArrayList<Integer>();
+		ArrayList<Card> indexes = new ArrayList<Card>();
 		for (int i = 0; i < playerCards.size(); i++) {
 			indexes.clear();
-			repeatCount = 0;
-			indexes.add(i);
+			indexes.add(playerCards.get(i));
 			for (int j = i + 1; j < playerCards.size(); j++) {
-				if (i != j && (playerCards.get(i).getType().equals(playerCards.get(j).getType())
+				if ((playerCards.get(i).getType().equals(playerCards.get(j).getType())
 						|| playerCards.get(j).getType().equals(CardType.WILD))) {
-					repeatCount++;
-					indexes.add(j);
-					if (indexes.size() == 3)
-						break;
+					indexes.add(playerCards.get(j));
 				}
 			}
-			if (repeatCount >= 3) {
-				Card card = playerCards.get(indexes.get(0));
+			if (indexes.size() >= 3) {
 				for (int k = 0; k < 3; k++) {
-					this.removeCard(playerCards.get(indexes.get(k)));
+					playerCards.remove(indexes.get(k));
 				}
 				return true;
 			}
 		}
-
-		repeatCount = 0;
+		//System.out.println(playerCards.size());
+		indexes.clear();
 		ArrayList<CardType> availableType = new ArrayList<CardType>();
 		availableType.add(CardType.GARY);
 		availableType.add(CardType.PATRICK);
 		availableType.add(CardType.SPONGEBOB);
 		for (int j = 0; j < playerCards.size(); j++) {
 			if (availableType.indexOf(playerCards.get(j).getType()) != -1) {
-				repeatCount++;
 				availableType.remove(availableType.indexOf(playerCards.get(j).getType()));
-				indexes.add(j);
-				if (indexes.size() == 3)
-					break;
+				indexes.add(playerCards.get(j));
 			}
 		}
-		if (repeatCount >= 3) {
+		if (availableType.size() == 0) {
 			for (int k = 0; k < 3; k++) {
-				this.removeCard(playerCards.get(indexes.get(k)));
+				playerCards.remove(indexes.get(k));
 			}
 			return true;
 		}
+
 		// if there is no card able to be turned in then it returns false
 		return false;
 	}

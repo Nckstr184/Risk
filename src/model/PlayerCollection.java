@@ -11,6 +11,9 @@ public class PlayerCollection implements Serializable {
 		playerList = new ArrayList<Player>();
 	}
 
+	public void removePlayer(Player player) {
+		playerList.remove(playerList.indexOf(player));
+	}
 	public boolean addPlayers(Player player) {
 		if (playerList.size() < 6) {
 			playerList.add(player);

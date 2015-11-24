@@ -54,20 +54,12 @@ public class BattleLogic {
 
 	public boolean attackerWin() {
 		if (defendingTerritory.getUnits() <= 0) {
-			System.out.println("CHECK2");
+			//System.out.println("CHECK2");
 			defender.removeTerritory(defendingTerritory);
 			attacker.addTerritories(defendingTerritory);
 			defendingTerritory.setOwner(attacker);
 			attackingTerritory.addUnits(-1);
 			defendingTerritory.addUnits(1);
-			return true;
-		}
-		return false;
-	}
-
-	public boolean defenderWin() {
-		if (attackingTerritory.getUnits() <= 1) {
-			System.out.println("CHECK3");
 			return true;
 		}
 		return false;
