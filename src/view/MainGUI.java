@@ -14,41 +14,35 @@ import javax.swing.JTextField;
 public class MainGUI extends JFrame {
 
 	GameBoard map;
-	
+
 	BottomBoard bottomBoard;
 	SideBoard sideBoard;
 	JTextField updateDisplay;
 	JButton toggleSound, quitGame, saveGame;
 
-
 	public static void main(String[] args) {
 		MainGUI window = new MainGUI();
+		window.setVisible(true);
 
-		window.setVisible(false);
-		StartWindow window1 = new StartWindow();
-		window1.setVisible(true);
+		//StartWindow window1 = new StartWindow();
+		// window1.setVisible(true);
+		//GameBoard map = new GameBoard();
+		//map.setVisible(true);
 		
-
-	
 
 	}
-	
+
 	public MainGUI() {
+		map = new GameBoard();
 
-		this.setLayout(null);
-
-
-		GameBoard map = new GameBoard();
-
-		
-		
 		JPanel bottomeDisplay = new JPanel();
 		JPanel sideDisplay = new JPanel();
 
+		this.setLayout(null);
 
-		map = new GameBoard();
-		bottomBoard= new BottomBoard();
+	
 		
+
 		Dimension sizeMe = Toolkit.getDefaultToolkit().getScreenSize();
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(sizeMe);
@@ -71,13 +65,11 @@ public class MainGUI extends JFrame {
 		quitGame.setLocation(5, 130);
 		quitGame.setSize(80, 40);
 		quitGame.setText("Quit Game");
-		
+
 		this.add(saveGame);
 		this.add(quitGame);
 		this.add(toggleSound);
 		this.add(map);
-		this.add(bottomBoard);
-		
 		
 
 	}
@@ -86,7 +78,7 @@ public class MainGUI extends JFrame {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-	//		gray = new ImageIcon("./Pictures/bcircle.png");
+			// gray = new ImageIcon("./Pictures/bcircle.png");
 
 		}
 

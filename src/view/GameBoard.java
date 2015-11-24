@@ -26,7 +26,6 @@ public class GameBoard extends JPanel {
 	ArrayList<Continent> Continents;
 	BufferedImage map, bottomDisplay;
 
-
 	JPanel board, boardDisplay, boardInfo;
 	JButton ter1;
 
@@ -48,38 +47,45 @@ public class GameBoard extends JPanel {
 
 	ImageIcon gray, red, blue, purple, orange, yellow, green;
 	JLabel picLanguageabel;
+	StartWindow startWindow;
 
 	public GameBoard() {
 
-		this.setSize(1285, 750);
-		this.setLocation(0, -5);
+		startWindow = new StartWindow();
+		while (startWindow.isDisplayable()) {
+			System.out.print("");
 
-		try {
-			map = ImageIO.read(new File("./Pictures/map.png"));
-			bottomDisplay = ImageIO.read(new File("./Pictures/gui1.png"));
-			
-			JLabel picLabel = new JLabel(new ImageIcon(map));
-			JLabel bottomLabel = new JLabel(new ImageIcon(bottomDisplay));
-			
+			if (!startWindow.isDisplayable()) {
+				System.out.print("");
+				this.setSize(1285, 750);
+				this.setLocation(0, -5);
+				
+				try {
+					map = ImageIO.read(new File("./Pictures/map.png"));
+					bottomDisplay = ImageIO.read(new File("./Pictures/gui1.png"));
 
-			picLabel.setSize(1285, 550);
-			picLabel.setLocation(0, 0);
-			bottomLabel.setSize(1285, 160);
-			bottomLabel.setLocation(0,540);
-			
-			
-			this.setLayout(null);
-			addButtons();
-			add(picLabel);
-			add(bottomLabel);
-			
-			
-			
-		} catch (IOException e) {
-			System.out.println("ERROR with map");
-			e.printStackTrace();
+					JLabel picLabel = new JLabel(new ImageIcon(map));
+					JLabel bottomLabel = new JLabel(new ImageIcon(bottomDisplay));
+
+					picLabel.setSize(1285, 550);
+					picLabel.setLocation(0, 0);
+					bottomLabel.setSize(1285, 160);
+					bottomLabel.setLocation(0, 540);
+
+					this.setLayout(null);
+					addButtons();
+					add(picLabel);
+					add(bottomLabel);
+					System.out.println("NUMBER OF PLAYERS: " +startWindow.getNumberOfPlayer());
+					
+				} catch (IOException e) {
+					System.out.println("ERROR with map");
+					e.printStackTrace();
+				}
+
+			}
+
 		}
-		
 
 	}
 
@@ -202,8 +208,8 @@ public class GameBoard extends JPanel {
 		perlLanguage.setOpaque(false);
 		perlLanguage.setContentAreaFilled(false);
 		perlLanguage.setBorderPainted(false);
-		
-		myMap = new HashMap<JButton,JLabel>();
+
+		myMap = new HashMap<JButton, JLabel>();
 		myMap.put(perlLanguage, languageLabel7);
 		myMap.put(javaLanguage, languageLabel1);
 		myMap.put(pythonLanguage, languageLabel2);
@@ -236,38 +242,37 @@ public class GameBoard extends JPanel {
 		this.add(gitLanguage);
 		this.add(perlLanguage);
 	}
-	
-	
+
+	private void setGuiNotVisible() {
+		this.setVisible(false);
+	}
 
 	private class buttonListener implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			JButton myButton = (JButton)e.getSource();
-			
+			JButton myButton = (JButton) e.getSource();
+
 			JLabel myLabel = myMap.get(myButton);
 			myButton.setIcon(red);
-			if(myLabel != null) {
+			if (myLabel != null) {
 				System.out.println("got label");
 				String curr = myLabel.getText();
 
 				Integer i = new Integer(10);
 				i = Integer.getInteger(curr);
-				//i = i + 1;
-				//int myint = i.intValue() + 1;
-;				//System.out.println("Curr: " + curr);
-				//myLabel.setText(i.toString());
+				// i = i + 1;
+				// int myint = i.intValue() + 1;
+				; // System.out.println("Curr: " + curr);
+					// myLabel.setText(i.toString());
 
-				
-				
-				if(i<20){
-				myLabel.setText(""+(i+1));
+				if (i < 20) {
+					myLabel.setText("" + (i + 1));
 				}
 
 			}
-			
-				
+
 		}
 
 	}

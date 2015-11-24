@@ -249,17 +249,6 @@ public class StartWindow extends JFrame {
 			
 			
 			setNumberOfPlayers(count);
-			System.out.println("Number of Players: " +pCollection.getNumOfPlayers());
-			/*System.out.println(pCollection.getPlayer(0));
-			System.out.println(pCollection.getPlayer(1));
-			System.out.println(pCollection.getPlayer(2));
-			System.out.println(pCollection.getPlayer(3));
-			System.out.println(pCollection.getPlayer(4));
-			System.out.println(pCollection.getPlayer(5));*/
-			
-			
-			MainGUI mainGui = new MainGUI();
-			mainGui.setVisible(true);
 			
 			dispose();
 
@@ -271,13 +260,14 @@ public class StartWindow extends JFrame {
 		numOfPlayers = numPlayers;
 	}
 	
+	public int getNumberOfPlayer(){
+		return numOfPlayers;
+	}
+	
 
 	public void setPlayerColor(Color color) {
 
 	}
-	//public ArrayList<Player> getPlayerCollection(){
-		//return pCollection;
-	//}
 
 	public void setAI(int difficulty) {
 
