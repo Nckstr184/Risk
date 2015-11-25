@@ -37,12 +37,12 @@ public class BattleLogic {
 	}
 
 
-	public void subtractArmies() {
+	public int[] subtractArmies() {
 		
 		int countAttack = 0;
 		int countDefend = 0;
 		
-		//int[] unitsToLose = new int[2];
+		int[] unitsToLose = new int[2];
 
 		for (int i = 0; i < leastDiceOnField; i++) {
 			//System.out.println("Attack Dice"+attackDice.getDice().size() );
@@ -55,17 +55,17 @@ public class BattleLogic {
 				countDefend++;
 			}
 		}
-		defender.addArmies((-1)*countDefend);
-		attacker.addArmies((-1)*countAttack);
+		//defender.addArmies((-1)*countDefend);
+		//attacker.addArmies((-1)*countAttack);
 
 		//System.out.println("countAttack"+countAttack);
 		//System.out.println("countDefend"+countDefend);
-		//unitsToLose[0] = ((-1) * countAttack);
-		//unitsToLose[1] = ((-1) * countDefend);
+		unitsToLose[0] = ((-1) * countAttack);
+		unitsToLose[1] = ((-1) * countDefend);
 		//System.out.println("UNITS TO LOOSE"+unitsToLose[0]);
 		//System.out.println(unitsToLose[1]);
 
-	//	return unitsToLose;
+		return unitsToLose;
 	}
 
 	public boolean attackerWin() {
