@@ -16,12 +16,10 @@ public class MainGUI extends JFrame {
 
 	GameBoard map;
 
-
 	BottomBoard bottomBoard;
 
 	SideBoard sideBoard;
 
-	
 	JTextField updateDisplay;
 	JButton toggleSound, quitGame, saveGame;
 
@@ -34,24 +32,15 @@ public class MainGUI extends JFrame {
 	public MainGUI() {
 		map = new GameBoard();
 
-
 		JPanel bottomeDisplay = new JPanel();
 		JPanel sideDisplay = new JPanel();
 
+		this.setLayout(new BorderLayout());
 
-		this.setLayout(null);
+		// bottomBoard= new BottomBoard();
 
-
-		
-		bottomBoard= new BottomBoard();
-	
-		
-
-		
-
-		Dimension sizeMe = Toolkit.getDefaultToolkit().getScreenSize();
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setSize(sizeMe);
+		this.setSize(1300, 750);
 
 		saveGame = new JButton();
 		quitGame = new JButton();
@@ -75,13 +64,10 @@ public class MainGUI extends JFrame {
 		this.add(saveGame);
 		this.add(quitGame);
 		this.add(toggleSound);
-		
+
 		this.add(map);
 
-		this.add(bottomBoard);
-	
-
-		
+		// this.add(bottomBoard);
 
 	}
 
