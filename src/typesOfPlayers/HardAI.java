@@ -34,7 +34,10 @@ public class HardAI extends Player implements AIStrategy {
 			neighbors = territories.get(i).getNeighbors();
 			armySum = 0;
 			for (int j = 0; j < neighbors.size(); j++) {
+				if(!neighbors.get(j).getOwner().getName().equals(this.getName()))
+				{
 				armySum += neighbors.get(j).getUnits();
+				}
 			}
 			if (highestNumberOfArmies < armySum) {
 				highestNumberOfArmies = armySum;
