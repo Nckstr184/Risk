@@ -12,6 +12,7 @@ import model.Player;
 import model.PlayerCollection;
 import model.Territory;
 import typesOfPlayers.EasyAI;
+import typesOfPlayers.HardAI;
 import typesOfPlayers.MediumAI;
 
 public class Run6Bots {

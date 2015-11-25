@@ -96,7 +96,7 @@ public class HardAI extends Player implements AIStrategy {
 	}
 
 	@Override
-	public void fortifyPosition(Territory currentTerr, ArrayList<Territory> connected) {
+	public ArrayList<Object> fortifyPosition(Territory currentTerr, ArrayList<Territory> connected) {
 		/*
 		 * Same idea as the rest, make sure that you fortify if one of your
 		 * connected territories doesn't have enough. But make sure you don't
@@ -106,8 +106,15 @@ public class HardAI extends Player implements AIStrategy {
 		 * surrounding it and find which has the lowest. Then compare that to
 		 * how many you have surrounding yourself. If you can't spare sending
 		 * armies then don't
+		 * 
+		 * RETURN AN ARRAY LIST WITH THE FIRST INDEX BEING THE TERRITORY AND THE
+		 * SECOND BEING AN INT.
+		 * 
+		 * territoryAndArmyNum.add(TerritoryToFortify);
+		 * territoryAndArmyNum.add(NumberOfArmiesToMove);
 		 */
 		ArrayList<Territory> friendlyConnected = new ArrayList<Territory>();
+		ArrayList<Object> territoryAndArmyNum;
 
 		for (int i = 0; i < connected.size(); i++) {
 			if (connected.get(i).getOwner().getName().equals(currentTerr.getOwner().getName())) {
