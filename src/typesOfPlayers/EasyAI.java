@@ -35,7 +35,7 @@ public class EasyAI extends Player implements AIStrategy {
 	@Override
 	public Territory deployArmy(ArrayList<Territory> territories) {
 		// choose random territories to add reward units
-		//System.out.println(territories.size());
+		// System.out.println(territories.size());
 		int rand = r.nextInt(territories.size());
 		Territory temp = territories.get(rand);
 		return temp;
@@ -67,12 +67,11 @@ public class EasyAI extends Player implements AIStrategy {
 				if (availableTerritories.indexOf(connected.get(rand)) != -1) {
 					availableTerritories.remove(availableTerritories.indexOf(connected.get(rand)));
 				}
-				if(availableTerritories.size() == 0 && availableTerritories.indexOf(connected.get(rand)) == -1){
+				if (availableTerritories.size() == 0 && availableTerritories.indexOf(connected.get(rand)) == -1) {
 					return null;
 				}
 			} while (connected.get(rand).getOwner().getName().equals(this.getName())
 					&& availableTerritories.size() > 0);
-
 
 			// System.out.println("Returning territory");
 			return connected.get(rand);
@@ -83,25 +82,28 @@ public class EasyAI extends Player implements AIStrategy {
 	}
 
 	@Override
-	public void fortifyPosition(Territory currentTerr, ArrayList<Territory> connected) {
+	public ArrayList<Object> fortifyPosition(Territory currentTerr, ArrayList<Territory> connected) {
 		// randomly decides to move armies to friendly connected territory
 		int rand = r.nextInt(2);
-		
+		ArrayList<Object> territoryAndArmyNum = new ArrayList<Object>();
+
+		Territory temp = null;
 		if (rand == 0) {
-			Territory temp = null;
 			for (int i = 0; i < connected.size(); i++) {
 				temp = connected.get(i);
 				if (!temp.getOwner().getName().equals(this.getName()))
 					break;
 			}
-
+			territoryAndArmyNum.add(temp);
+			
 			int armySize = this.getNumOfArmies();
 			if (armySize > 0) {
 				rand = r.nextInt(armySize - 1);
-
-				temp.addUnits(rand);
 			}
+			territoryAndArmyNum.add(rand);
+			return territoryAndArmyNum;
 		}
+		return null;
 	}
 
 }

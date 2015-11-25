@@ -114,6 +114,12 @@ public class HardAI extends Player implements AIStrategy {
 
 		Territory terrWithLargestDiff = deployArmy(friendlyConnected);
 
+		Territory checkNumAtTerr = attackTerritory(currentTerr, friendlyConnected);
+		if (checkNumAtTerr != null) {
+			if (currentTerr.getUnits - checkNumAtTerr.getUnits() > 3) {
+
+			}
+		}
 	}
 
 }

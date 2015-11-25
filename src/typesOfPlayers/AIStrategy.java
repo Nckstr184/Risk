@@ -12,5 +12,5 @@ public interface AIStrategy {
 	
 	public Territory attackTerritory(Territory currentTerr, ArrayList<Territory> connected);
 	
-	public void fortifyPosition(Territory currentTerr, ArrayList<Territory> connected);
+	public ArrayList<Object> fortifyPosition(Territory currentTerr, ArrayList<Territory> connected);
 }
