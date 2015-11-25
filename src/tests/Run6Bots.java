@@ -17,12 +17,14 @@ import typesOfPlayers.MediumAI;
 public class Run6Bots {
 
 	public static void main(String[] args) {
+		
 		Player ai1 = new EasyAI("easy1", Color.RED, 20);
 		Player ai2 = new EasyAI("easy2", Color.BLUE, 20);
 		Player ai3 = new EasyAI("easy3", Color.GREEN, 20);
 		Player ai4 = new MediumAI("medium4", Color.BLACK, 20);
 		Player ai5 = new MediumAI("medium5", Color.CYAN, 20);
 		Player ai6 = new MediumAI("medium6", Color.GRAY, 20);
+		
 		GameLogic gameLogic = new GameLogic();
 		BattleLogic battleLogic;
 		gameLogic.addPlayers(ai6);
@@ -36,6 +38,7 @@ public class Run6Bots {
 		Random r = new Random();
 		Card rewardCard;
 
+		
 		for (int i = 0; i < 1; i++) {
 			gameLogic.startGame();
 			int numberOfCardTurnIns = 0, numberOfRewardArmies = 4;
@@ -68,8 +71,11 @@ public class Run6Bots {
 				}
 
 				while (currPlayer.getNumOfArmies() != 0) {
+				//	System.out.println("ArmiesBeforeDeployment "+ currPlayer.getNumOfArmies());
 					currPlayer.deployArmy(territories).addUnits(1);
 					currPlayer.addArmies(-1);
+					//System.out.println("ArmiesAfterDeployment "+ currPlayer.getNumOfArmies());
+
 				}
 				
 				System.out.println("Number of Armies: " + currPlayer.getNumOfArmies());
@@ -90,13 +96,14 @@ public class Run6Bots {
 				// System.out.println(currTerritory.getNeighbors());
 				Territory defendingTerritory = currPlayer.attackTerritory(currTerritory, currTerritory.getNeighbors());
 
+
 				if (defendingTerritory != null) {
 					Player defender = defendingTerritory.getOwner();
 					battleLogic = new BattleLogic(currPlayer, defendingTerritory.getOwner(), currTerritory,
 							defendingTerritory);
 					System.out.println(currTerritory.getUnits() + " " + defendingTerritory.getUnits());
 					while (!currPlayer.chooseRetreat(currTerritory)) {
-						// System.out.println("Attacking");
+						//System.out.println("Attacking");
 						int temp1, temp2;
 						if (currTerritory.getUnits() <= 3) {
 							temp1 = currTerritory.getUnits();
@@ -111,13 +118,16 @@ public class Run6Bots {
 
 						int currTerrDiceNum = temp1;
 						int attackingTerrDiceNum = temp2;
-						//System.out.println(currTerritory.getUnits() + "     " + defendingTerritory.getUnits());
+						System.out.println(currTerritory.getUnits() + "     " + defendingTerritory.getUnits());
 						battleLogic.attackPlayer(currTerrDiceNum, attackingTerrDiceNum);
-						int[] unitsToLose = battleLogic.subtractArmies();
+						//int[] unitsToLose = battleLogic.subtractArmies();
 
 						// Subtracting armies from the players
-						currPlayer.addArmies(unitsToLose[0]);
-						defender.addArmies(unitsToLose[1]);
+						//System.out.println("Units to loose"+unitsToLose[0] + "     " + unitsToLose[1]);
+					//	System.out.println("BEFORE REMOVING UNITs"+currPlayer.getNumOfArmies() + "     " + defender.getNumOfArmies());
+					//	currPlayer.addArmies(unitsToLose[0]);
+					//	defender.addArmies(unitsToLose[1]);
+					//	System.out.println("AFTER REMOVING UNITs"+currPlayer.getNumOfArmies() + "     " + defender.getNumOfArmies());
 						if (defendingTerritory.getUnits() <= 0) {
 							System.out.println("Attacker won");
 							defender.removeTerritory(defendingTerritory);
@@ -156,6 +166,11 @@ public class Run6Bots {
 
 		System.out.println("EasyAI wins: " + easyWin);
 		System.out.println("MediumAI wins: " + mediumWin);
+	}
+
+	private static void attackLoop(Player currPlayer, Territory currTerritory, Territory defendingTerritory) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	private static void getReinforcements(Player currPlayer) {

@@ -11,6 +11,7 @@ public class BattleLogic {
 	private int numOfAttackDice, numOfDefendDice, leastDiceOnField;
 
 	public BattleLogic(Player attacker, Player defender, Territory attackingTerritory, Territory defendingTerritory) {
+		
 		this.attacker = attacker;
 		this.defender = defender;
 		this.attackingTerritory = attackingTerritory;
@@ -32,15 +33,21 @@ public class BattleLogic {
 
 		// roll the defending dice (1-2)
 		defendDice = new Dice(numOfDefendDice);
-
+		subtractArmies();
 	}
 
-	public int[] subtractArmies() {
+
+	public void subtractArmies() {
+		
 		int countAttack = 0;
 		int countDefend = 0;
-		int[] unitsToLose = new int[2];
+		
+		//int[] unitsToLose = new int[2];
 
 		for (int i = 0; i < leastDiceOnField; i++) {
+			//System.out.println("Attack Dice"+attackDice.getDice().size() );
+			//System.out.println("Defend Dice"+defendDice.getDice().size() );
+
 			if (attackDice.getDice().get(i) <= defendDice.getDice().get(i))
 				countAttack++;
 
@@ -48,11 +55,17 @@ public class BattleLogic {
 				countDefend++;
 			}
 		}
-		
-		unitsToLose[0] = ((-1) * countAttack);
-		unitsToLose[1] = ((-1) * countDefend);
-		
-		return unitsToLose;
+		defender.addArmies((-1)*countDefend);
+		attacker.addArmies((-1)*countAttack);
+
+		//System.out.println("countAttack"+countAttack);
+		//System.out.println("countDefend"+countDefend);
+		//unitsToLose[0] = ((-1) * countAttack);
+		//unitsToLose[1] = ((-1) * countDefend);
+		//System.out.println("UNITS TO LOOSE"+unitsToLose[0]);
+		//System.out.println(unitsToLose[1]);
+
+	//	return unitsToLose;
 	}
 
 	public boolean attackerWin() {
