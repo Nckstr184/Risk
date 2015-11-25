@@ -101,7 +101,7 @@ public class Run6Bots {
 					Player defender = defendingTerritory.getOwner();
 					battleLogic = new BattleLogic(currPlayer, defendingTerritory.getOwner(), currTerritory,
 							defendingTerritory);
-					System.out.println(currTerritory.getUnits() + " " + defendingTerritory.getUnits());
+				//	System.out.println(currTerritory.getUnits() + " " + defendingTerritory.getUnits());
 					while (currPlayer.chooseRetreat(currTerritory)) {
 						System.out.println("Attacking");
 						int temp1, temp2;
@@ -124,10 +124,10 @@ public class Run6Bots {
 
 						// Subtracting armies from the players
 						//System.out.println("Units to loose"+unitsToLose[0] + "     " + unitsToLose[1]);
-					//	System.out.println("BEFORE REMOVING UNITs"+currPlayer.getNumOfArmies() + "     " + defender.getNumOfArmies());
+						System.out.println("BEFORE REMOVING UNITs"+currPlayer.getNumOfArmies() + "     " + defender.getNumOfArmies());
 						currTerritory.addUnits(unitsToLose[0]);
 						defendingTerritory.addUnits(unitsToLose[1]);
-					//System.out.println("AFTER REMOVING UNITs"+currPlayer.getNumOfArmies() + "     " + defender.getNumOfArmies());
+					System.out.println("AFTER REMOVING UNITs"+currPlayer.getNumOfArmies() + "     " + defender.getNumOfArmies());
 						if (defendingTerritory.getUnits() <= 0) {
 							System.out.println("Attacker won");
 							defender.removeTerritory(defendingTerritory);
