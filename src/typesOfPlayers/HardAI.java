@@ -54,7 +54,8 @@ public class HardAI extends Player implements AIStrategy {
 		ArrayList<Territory> neighbors = currentTerr.getNeighbors();
 		int highestArmies = 0;
 		for (int j = 0; j < neighbors.size(); j++) {
-			if (highestArmies < neighbors.get(j).getUnits()) {
+			if (highestArmies < neighbors.get(j).getUnits()
+					&& !neighbors.get(j).getOwner().getName().equals(currentTerr.getOwner().getName())) {
 				highestArmies = neighbors.get(j).getUnits();
 			}
 		}
@@ -71,7 +72,23 @@ public class HardAI extends Player implements AIStrategy {
 		 * Choose the territory with the biggest difference in armies in order
 		 * to win the easiest and get a card. chooseRetreat will take care of
 		 * stopping attacking
+		 * 
+		 * Returns null if no armies can be attacked
 		 */
+		int lowestNumberOfArmies = 0;
+		int indexOfLowest = 0;
+
+		for (int i = 0; i < connected.size(); i++) {
+			if (lowestNumberOfArmies < connected.get(i).getUnits()) {
+				lowestNumberOfArmies = connected.get(i).getUnits();
+				indexOfLowest = i;
+			}
+		}
+
+		if (currentTerr.getUnits() - lowestNumberOfArmies > 3) {
+			return connected.get(indexOfLowest);
+		}
+
 		return null;
 	}
 
@@ -81,7 +98,21 @@ public class HardAI extends Player implements AIStrategy {
 		 * Same idea as the rest, make sure that you fortify if one of your
 		 * connected territories doesn't have enough. But make sure you don't
 		 * weaken yourself while doing this.
+		 * 
+		 * Use deploy army to check each friendly location's numOfArmies
+		 * surrounding it and find which has the lowest. Then compare that to
+		 * how many you have surrounding yourself. If you can't spare sending
+		 * armies then don't
 		 */
+		ArrayList<Territory> friendlyConnected = new ArrayList<Territory>();
+
+		for (int i = 0; i < connected.size(); i++) {
+			if (connected.get(i).getOwner().getName().equals(currentTerr.getOwner().getName())) {
+				friendlyConnected.add(connected.get(i));
+			}
+		}
+
+		Territory terrWithLargestDiff = deployArmy(friendlyConnected);
 
 	}
 
