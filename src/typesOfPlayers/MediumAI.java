@@ -76,7 +76,7 @@ public class MediumAI extends Player implements AIStrategy {
 		int smallestNumOfArmies, indexOfSmallestArmies = -1;
 		smallestNumOfArmies = currentTerr.getUnits();
 		for (int i = 0; i < connected.size(); i++) {
-			if (connected.get(i).getOwner() == this) {
+			if (connected.get(i).getOwner().getName().equals(currentTerr.getOwner().getName())) {
 				if (smallestNumOfArmies > connected.get(i).getUnits()) {
 					smallestNumOfArmies = connected.get(i).getUnits();
 					indexOfSmallestArmies = i;
