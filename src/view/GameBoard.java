@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -51,7 +52,6 @@ public class GameBoard extends JPanel {
 
 	public GameBoard() {
 
-
 		startWindow = new StartWindow();
 		while (startWindow.isDisplayable()) {
 			System.out.print("");
@@ -60,7 +60,7 @@ public class GameBoard extends JPanel {
 				System.out.print("");
 				this.setSize(1285, 750);
 				this.setLocation(0, -5);
-				
+
 				try {
 					map = ImageIO.read(new File("./Pictures/map.png"));
 					bottomDisplay = ImageIO.read(new File("./Pictures/gui1.png"));
@@ -69,16 +69,17 @@ public class GameBoard extends JPanel {
 					JLabel bottomLabel = new JLabel(new ImageIcon(bottomDisplay));
 
 					picLabel.setSize(1285, 550);
-					picLabel.setLocation(0, 0);
-					bottomLabel.setSize(1285, 160);
-					bottomLabel.setLocation(0, 540);
 
-					this.setLayout(null);
+					bottomLabel.setSize(1285, 160);
+					playerTags();
+					this.setLayout(new BorderLayout());
 					addButtons();
-					add(picLabel);
-					add(bottomLabel);
-					System.out.println("NUMBER OF PLAYERS: " +startWindow.getNumberOfPlayer());
 					
+					add(picLabel, BorderLayout.NORTH);
+
+					add(bottomLabel, BorderLayout.SOUTH);
+					System.out.println("NUMBER OF PLAYERS: " + startWindow.getNumberOfPlayer());
+
 				} catch (IOException e) {
 					System.out.println("ERROR with map");
 					e.printStackTrace();
@@ -86,10 +87,28 @@ public class GameBoard extends JPanel {
 
 			}
 
-		
 		}
 	}
-	
+
+	private void playerTags(){
+		int numberOfPlayers;
+		JLabel playerTag;
+		numberOfPlayers = startWindow.getNumberOfPlayer();
+		Font font = new Font("Verdana", Font.BOLD, 18);
+		int count = 1;
+		for(int i = 0; i < numberOfPlayers; i++){
+			playerTag = new JLabel("" +startWindow.getPlayerName(i));
+			playerTag.setSize(150,40);
+			playerTag.setLocation(170*count,600);
+			playerTag.setFont(font);
+			playerTag.setForeground(startWindow.getPlayerColor(i));
+			add(playerTag);
+			//add(playerTag, BorderLayout.SOUTH);
+			count++;
+		}
+		
+		
+	}
 
 	private void addButtons() {
 		gray = new ImageIcon("./Pictures/circle.png");
@@ -271,11 +290,10 @@ public class GameBoard extends JPanel {
 					// myLabel.setText(i.toString());
 
 				i = Integer.parseInt(curr);
-				//i = i + 1;
-				//int myint = i.intValue() + 1;
-				//System.out.println("Curr: " + curr);
-				//myLabel.setText(i.toString());
-
+				// i = i + 1;
+				// int myint = i.intValue() + 1;
+				// System.out.println("Curr: " + curr);
+				// myLabel.setText(i.toString());
 
 				if (i < 20) {
 					myLabel.setText("" + (i + 1));
