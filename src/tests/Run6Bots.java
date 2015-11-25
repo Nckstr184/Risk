@@ -190,6 +190,7 @@ public class Run6Bots {
 
 	private static void getReinforcements(Player currPlayer) {
 		// TODO Auto-generated method stub
+		System.out.println( currPlayer.getTerritories().size());
 		int reinforcementNumber = (int) currPlayer.getTerritories().size() / 3;
 		if (reinforcementNumber < 3) {
 			reinforcementNumber = 3;
