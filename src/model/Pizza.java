@@ -20,7 +20,7 @@ public class Pizza extends Continent {
 		pizzaTerr.add(3, new Territory("Black Jack",new Point(150,280), button, currentPlayer, 0));
 		pizzaTerr.add(4, new Territory("Hungry Howie's",new Point(210,290), button, currentPlayer, 0));
 		pizzaTerr.add(5, new Territory("Brooklyn's",new Point(250,300), button, currentPlayer, 0));
-		pizzaTerr.add(6, new Territory("Mama's",new Point(280,260), button, currentPlayer, 0));
+		pizzaTerr.add(6, new Territory("Pizza Planet",new Point(280,260), button, currentPlayer, 0));
 
 		
 	}

@@ -194,37 +194,37 @@ public class StartWindow extends JFrame {
 			count = 0;
 
 			if (selectedDiff1 == "Human") {
-				playerOne = new Human(player1Name, Color.lightGray, 0);
+				playerOne = new Human(player1Name, Color.yellow, 0);
 				pCollection.addPlayers(playerOne);
 				count++;
 			}
 			if (selectedDiff1 == "Easy AI") {
-				playerOne = new EasyAI(player1Name, Color.lightGray, 0);
+				playerOne = new EasyAI(player1Name, Color.yellow, 0);
 				pCollection.addPlayers(playerOne);
 				count++;
 			}
 			if (selectedDiff1 == "Medium AI") {
-				playerOne = new MediumAI(player1Name, Color.lightGray, 0);
+				playerOne = new MediumAI(player1Name, Color.yellow, 0);
 				pCollection.addPlayers(playerOne);
 				count++;
 			}
 			if (selectedDiff1 == "Hard AI") {
-				playerOne = new HardAI(player1Name, Color.lightGray, 0);
+				playerOne = new HardAI(player1Name, Color.yellow, 0);
 				pCollection.addPlayers(playerOne);
 				count++;
 			}
 			if (selectedDiff2 == "Human") {
-				playerTwo = new Human(player2Name, Color.red, 0);
+				playerTwo = new Human(player2Name, Color.green, 0);
 				pCollection.addPlayers(playerTwo);
 				count++;
 			}
 			if (selectedDiff2 == "Easy AI") {
-				playerTwo = new EasyAI(player2Name, Color.red, 0);
+				playerTwo = new EasyAI(player2Name, Color.green, 0);
 				pCollection.addPlayers(playerTwo);
 				count++;
 			}
 			if (selectedDiff2 == "Medium AI") {
-				playerTwo = new MediumAI(player2Name, Color.red, 0);
+				playerTwo = new MediumAI(player2Name, Color.green, 0);
 				pCollection.addPlayers(playerTwo);
 				count++;
 			}
@@ -234,22 +234,22 @@ public class StartWindow extends JFrame {
 				count++;
 			}
 			if (selectedDiff3 == "Human") {
-				playerThree = new Human(player3Name, Color.yellow, 0);
+				playerThree = new Human(player3Name, Color.orange, 0);
 				pCollection.addPlayers(playerThree);
 				count++;
 			}
 			if (selectedDiff3 == "Easy AI") {
-				playerThree = new EasyAI(player3Name, Color.yellow, 0);
+				playerThree = new EasyAI(player3Name, Color.orange, 0);
 				pCollection.addPlayers(playerThree);
 				count++;
 			}
 			if (selectedDiff3 == "Medium AI") {
-				playerThree = new MediumAI(player3Name, Color.yellow, 0);
+				playerThree = new MediumAI(player3Name, Color.orange, 0);
 				pCollection.addPlayers(playerThree);
 				count++;
 			}
 			if (selectedDiff3 == "Hard AI") {
-				playerThree = new HardAI(player3Name, Color.yellow, 0);
+				playerThree = new HardAI(player3Name, Color.orange, 0);
 				pCollection.addPlayers(playerThree);
 				count++;
 			}
