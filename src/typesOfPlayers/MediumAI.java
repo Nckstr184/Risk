@@ -17,7 +17,7 @@ public class MediumAI extends Player implements AIStrategy {
 	// returns the territory with the least amount of armies
 	@Override
 	public Territory deployArmy(ArrayList<Territory> territories) {
-		//System.out.println("Infinite?");
+		// System.out.println("Infinite?");
 		int smallestNumOfArmies, indexOfSmallestArmies = 0;
 		smallestNumOfArmies = territories.get(0).getUnits();
 		for (int i = 1; i < territories.size(); i++) {
@@ -49,17 +49,18 @@ public class MediumAI extends Player implements AIStrategy {
 
 	@Override
 	public Territory attackTerritory(Territory currentTerr, ArrayList<Territory> connected) {
-		int smallestNumOfArmies, indexOfSmallestArmies = 0;
-		smallestNumOfArmies = connected.get(0).getUnits();
+		int smallestNumOfArmies, indexOfSmallestArmies = -1;
+		smallestNumOfArmies = 0;
 
-		for (int i = 1; i < connected.size(); i++) {
-			if (smallestNumOfArmies > connected.get(i).getUnits() && connected.get(i).getOwner() != this) {
+		for (int i = 0; i < connected.size(); i++) {
+			if (smallestNumOfArmies > connected.get(i).getUnits()
+					&& !connected.get(i).getOwner().getName().equals(currentTerr.getOwner().getName())) {
 				smallestNumOfArmies = connected.get(i).getUnits();
 				indexOfSmallestArmies = i;
 			}
 		}
 
-		if (currentTerr.getUnits() - smallestNumOfArmies > 2) {
+		if (currentTerr.getUnits() - smallestNumOfArmies > 2 && indexOfSmallestArmies != -1) {
 			return connected.get(indexOfSmallestArmies);
 		}
 
@@ -72,8 +73,9 @@ public class MediumAI extends Player implements AIStrategy {
 	// SHOULD ONLY BE CALLED ONCE MAX AT THE END OF THE TURN
 
 	@Override
-	public void fortifyPosition(Territory currentTerr, ArrayList<Territory> connected) {
+	public ArrayList<Object> fortifyPosition(Territory currentTerr, ArrayList<Territory> connected) {
 		int smallestNumOfArmies, indexOfSmallestArmies = -1;
+		ArrayList<Object> territoryAndArmyNum = new ArrayList<Object>();
 		smallestNumOfArmies = currentTerr.getUnits();
 		for (int i = 0; i < connected.size(); i++) {
 			if (connected.get(i).getOwner().getName().equals(currentTerr.getOwner().getName())) {
@@ -84,13 +86,18 @@ public class MediumAI extends Player implements AIStrategy {
 			}
 		}
 
+		int armiesToMove = 0;
 		if (indexOfSmallestArmies != -1) {
+			territoryAndArmyNum.add(connected.get(indexOfSmallestArmies));
 			if (currentTerr.getUnits() > 3) {
-				int armiesToMove = currentTerr.getUnits() - 3;
-				connected.get(indexOfSmallestArmies).addUnits(armiesToMove);
-				currentTerr.addUnits((-1) * armiesToMove);
+				armiesToMove = currentTerr.getUnits() - 3;
 			}
+			territoryAndArmyNum.add((-1) * armiesToMove);
 		}
+		if (territoryAndArmyNum.size() != 0)
+			return territoryAndArmyNum;
+
+		return null;
 	}
 
 }

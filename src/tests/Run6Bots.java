@@ -12,6 +12,7 @@ import model.Player;
 import model.PlayerCollection;
 import model.Territory;
 import typesOfPlayers.EasyAI;
+import typesOfPlayers.HardAI;
 import typesOfPlayers.MediumAI;
 
 public class Run6Bots {
@@ -20,10 +21,10 @@ public class Run6Bots {
 
 		Player ai1 = new EasyAI("easy1", Color.RED, 20);
 		Player ai2 = new EasyAI("easy2", Color.BLUE, 20);
-		Player ai3 = new EasyAI("easy3", Color.GREEN, 20);
+		Player ai3 = new MediumAI("medium3", Color.GREEN, 20);
 		Player ai4 = new MediumAI("medium4", Color.BLACK, 20);
-		Player ai5 = new MediumAI("medium5", Color.CYAN, 20);
-		Player ai6 = new MediumAI("medium6", Color.GRAY, 20);
+		Player ai5 = new HardAI("hard5", Color.CYAN, 20);
+		Player ai6 = new HardAI("hard6", Color.GRAY, 20);
 
 		GameLogic gameLogic = new GameLogic();
 		BattleLogic battleLogic;
@@ -33,7 +34,7 @@ public class Run6Bots {
 		gameLogic.addPlayers(ai3);
 		gameLogic.addPlayers(ai2);
 		gameLogic.addPlayers(ai1);
-		int easyWin = 0, mediumWin = 0, nextCard = 0;
+		int easyWin = 0, mediumWin = 0, hardWin = 0, nextCard = 0;
 		boolean noMoreRewardCard;
 		Random r = new Random();
 		Card rewardCard;
@@ -50,7 +51,7 @@ public class Run6Bots {
 			while (!gameLogic.isGameComplete()) {
 				currPlayer = allPlayers.getPlayer((count % allPlayers.getNumOfPlayers()));
 				ArrayList<Territory> territories = currPlayer.getTerritories();
-				// System.out.println(currPlayer.getName());
+				System.out.println(currPlayer.getName());
 				noMoreRewardCard = false;
 				int rand;
 
@@ -102,12 +103,15 @@ public class Run6Bots {
 				// System.out.println(currTerritory);
 				// System.out.println(currTerritory.getNeighbors());
 				Territory defendingTerritory = currPlayer.attackTerritory(currTerritory, currTerritory.getNeighbors());
-
+				
+				
 				if (defendingTerritory != null) {
+					System.out.println("Attacker: " + currTerritory.getOwner());
+					System.out.println("Defender: " + defendingTerritory.getOwner());
 					Player defender = defendingTerritory.getOwner();
 					battleLogic = new BattleLogic(currPlayer, defendingTerritory.getOwner(), currTerritory,
 							defendingTerritory);
-					System.out.println(currTerritory.getUnits() + " " + defendingTerritory.getUnits());
+					System.out.println(currTerritory.getUnits() + " " +  defendingTerritory.getUnits());
 					while (currPlayer.chooseRetreat(currTerritory) && currTerritory.getUnits() > 1) {
 						// System.out.println("Attacking");
 						int temp1, temp2;
@@ -145,7 +149,7 @@ public class Run6Bots {
 							defender.removeTerritory(defendingTerritory);
 							currPlayer.addTerritories(defendingTerritory);
 							defendingTerritory.setOwner(currPlayer);
-							
+
 							currTerritory.addUnits(-1);
 							while (defendingTerritory.getUnits() <= 0) {
 								defendingTerritory.addUnits(1);
@@ -166,16 +170,26 @@ public class Run6Bots {
 
 				// Fortify Phase
 				// System.out.println("Fortifying Position");
-				currPlayer.fortifyPosition(territories.get(0), territories.get(0).getNeighbors());
+				ArrayList<Object> territoryAndArmyNum = currPlayer.fortifyPosition(territories.get(0),
+						territories.get(0).getNeighbors());
+				if (territoryAndArmyNum != null) {
+					Territory territoryToFortify = (Territory) territoryAndArmyNum.get(0);
+					int armiesToMove = (int) territoryAndArmyNum.get(1);
+					//System.out.println("Before removing Units: " + currTerritory.getUnits());
+					territoryToFortify.addUnits((-1) * armiesToMove);
+					currTerritory.addUnits(armiesToMove);
+					//System.out.println("After removing Units: " + currTerritory.getUnits());
+				}
 				count++;
 			}
 			System.out.println("Game Over");
-			if (currPlayer.getName().equals("easy1") || currPlayer.getName().equals("easy2")
-					|| currPlayer.getName().equals("easy3")) {
+			if (currPlayer.getName().equals("easy1") || currPlayer.getName().equals("easy2")) {
 				easyWin++;
-			} else if (currPlayer.getName().equals("medium1") || currPlayer.getName().equals("medium2")
-					|| currPlayer.getName().equals("medium3")) {
+			} else if (currPlayer.getName().equals("medium1") || currPlayer.getName().equals("medium2")) {
 				mediumWin++;
+			}
+			else {
+				hardWin++;
 			}
 		}
 
@@ -190,6 +204,7 @@ public class Run6Bots {
 
 	private static void getReinforcements(Player currPlayer) {
 		// TODO Auto-generated method stub
+		System.out.println( currPlayer.getTerritories().size());
 		int reinforcementNumber = (int) currPlayer.getTerritories().size() / 3;
 		if (reinforcementNumber < 3) {
 			reinforcementNumber = 3;

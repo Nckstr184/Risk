@@ -141,6 +141,7 @@ public abstract class Player {
 		return null;
 	}
 
-	public void fortifyPosition(Territory currentTerr, ArrayList<Territory> connected) {
+	public ArrayList<Object> fortifyPosition(Territory currentTerr, ArrayList<Territory> connected) {
+		return null;
 	}
 }
