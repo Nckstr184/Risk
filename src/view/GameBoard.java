@@ -25,7 +25,7 @@ public class GameBoard extends JPanel {
 
 	HashMap<JButton, JLabel> myMap;
 	ArrayList<Continent> Continents;
-	BufferedImage map, bottomDisplay;
+	BufferedImage map, bottomDisplay, leftDisplay, rightDisplay;
 
 	JPanel board, boardDisplay, boardInfo;
 	JButton ter1;
@@ -58,24 +58,27 @@ public class GameBoard extends JPanel {
 
 			if (!startWindow.isDisplayable()) {
 				System.out.print("");
-				this.setSize(1285, 750);
+				this.setSize(1300, 750);
 				this.setLocation(0, -5);
 
 				try {
 					map = ImageIO.read(new File("./Pictures/map.png"));
 					bottomDisplay = ImageIO.read(new File("./Pictures/gui1.png"));
+					leftDisplay = ImageIO.read(new File("./Pictures/gui2.png"));
+					rightDisplay = ImageIO.read(new File("./Pictures/gui2.png"));
 
 					JLabel picLabel = new JLabel(new ImageIcon(map));
 					JLabel bottomLabel = new JLabel(new ImageIcon(bottomDisplay));
+					JLabel leftLabel = new JLabel(new ImageIcon(leftDisplay));
+					JLabel rightLabel = new JLabel(new ImageIcon(rightDisplay));
 
-					picLabel.setSize(1285, 550);
-
-					bottomLabel.setSize(1285, 160);
 					playerTags();
-					this.setLayout(new BorderLayout());
-					addButtons();
 					
+					addButtons();
+
 					add(picLabel, BorderLayout.NORTH);
+					add(leftLabel, BorderLayout.WEST);
+					add(rightLabel, BorderLayout.EAST);
 
 					add(bottomLabel, BorderLayout.SOUTH);
 					System.out.println("NUMBER OF PLAYERS: " + startWindow.getNumberOfPlayer());
@@ -90,24 +93,23 @@ public class GameBoard extends JPanel {
 		}
 	}
 
-	private void playerTags(){
+	private void playerTags() {
 		int numberOfPlayers;
 		JLabel playerTag;
 		numberOfPlayers = startWindow.getNumberOfPlayer();
 		Font font = new Font("Verdana", Font.BOLD, 18);
 		int count = 1;
-		for(int i = 0; i < numberOfPlayers; i++){
-			playerTag = new JLabel("" +startWindow.getPlayerName(i));
-			playerTag.setSize(150,40);
-			playerTag.setLocation(170*count,600);
+		for (int i = 0; i < numberOfPlayers; i++) {
+			playerTag = new JLabel("" + startWindow.getPlayerName(i));
+			playerTag.setSize(150, 40);
+			playerTag.setLocation(170 * count, 600);
 			playerTag.setFont(font);
 			playerTag.setForeground(startWindow.getPlayerColor(i));
 			add(playerTag);
-			//add(playerTag, BorderLayout.SOUTH);
+			// add(playerTag, BorderLayout.SOUTH);
 			count++;
 		}
-		
-		
+
 	}
 
 	private void addButtons() {
