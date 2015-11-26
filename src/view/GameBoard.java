@@ -301,9 +301,74 @@ public class GameBoard extends JPanel {
 			if (d.getname() == "Pizza Planet") {
 				pizzaplanetPizza = new JButton(yellow);
 			}
+			if (d.getname() == "Rawrville") {
+				rawrvilleDino = new JButton(yellow);
+			}
+			if (d.getname() == "Laiegges") {
+				laieggesDino = new JButton(yellow);
+			}
+			if (d.getname() == "Dactilito") {
+				dactilitoDino = new JButton(yellow);
+			}
+			if (d.getname() == "Dirtydan") {
+				dirtydanDino = new JButton(yellow);
+			}
+			if (d.getname() == "BlackBeard") {
+				blackbeardDino = new JButton(yellow);
+			}
+			if (d.getname() == "Monisaurus") {
+				monisaurusDino = new JButton(yellow);
+			}
+			if (d.getname() == "ToyStory") {
+				toystoryDino = new JButton(yellow);
+			}
+			if (d.getname() == "Scraptopia") {
+				scraptopiaCresent = new JButton(yellow);
+			}
+			if (d.getname() == "Land Of Zach") {
+				landofzachCresent = new JButton(yellow);
+			}
+			if (d.getname() == "Giant") {
+				giantCresent = new JButton(yellow);
+			}
+			if (d.getname() == "New Land Of Zach") {
+				newlandofzachCresent = new JButton(yellow);
+			}
+			if (d.getname() == "South Scraptopia") {
+				southscraptopiaCresent = new JButton(yellow);
+			}
+			if (d.getname() == "Bloo Bawl") {
+				bloobawlCresent = new JButton(yellow);
+			}
+			if (d.getname() == "Cresent Capital") {
+				cresentcaptitalCresent = new JButton(yellow);
+			}
+			if (d.getname() == "Apollo") {
+				apolloSun = new JButton(yellow);
+			}
+			if (d.getname() == "Ra") {
+				raSun = new JButton(yellow);
+			}
+			if (d.getname() == "Helios") {
+				heliosSun = new JButton(yellow);
+			}
+			if (d.getname() == "Inti") {
+				intiSun = new JButton(yellow);
+			}
+			if (d.getname() == "Horus") {
+				horusSun = new JButton(yellow);
+			}
+			if (d.getname() == "Tonatiuh") {
+				tonatiuhSun = new JButton(yellow);
+			}
+			if (d.getname() == "Amun") {
+				amunSun = new JButton(yellow);
+			}
+			
 
 		}
-
+		
+		
 		for (Territory d : player2.getTerritories()) {
 			if (d.getname() == "Wilma") {
 				wilmaWildcat = new JButton(green);
@@ -367,6 +432,69 @@ public class GameBoard extends JPanel {
 			}
 			if (d.getname() == "Pizza Planet") {
 				pizzaplanetPizza = new JButton(green);
+			}
+			if (d.getname() == "Rawrville") {
+				rawrvilleDino = new JButton(green);
+			}
+			if (d.getname() == "Laiegges") {
+				laieggesDino = new JButton(green);
+			}
+			if (d.getname() == "Dactilito") {
+				dactilitoDino = new JButton(green);
+			}
+			if (d.getname() == "Dirtydan") {
+				dirtydanDino = new JButton(green);
+			}
+			if (d.getname() == "BlackBeard") {
+				blackbeardDino = new JButton(green);
+			}
+			if (d.getname() == "Monisaurus") {
+				monisaurusDino = new JButton(green);
+			}
+			if (d.getname() == "ToyStory") {
+				toystoryDino = new JButton(green);
+			}
+			if (d.getname() == "Scraptopia") {
+				scraptopiaCresent = new JButton(green);
+			}
+			if (d.getname() == "Land Of Zach") {
+				landofzachCresent = new JButton(green);
+			}
+			if (d.getname() == "Giant") {
+				giantCresent = new JButton(green);
+			}
+			if (d.getname() == "New Land Of Zach") {
+				newlandofzachCresent = new JButton(green);
+			}
+			if (d.getname() == "South Scraptopia") {
+				southscraptopiaCresent = new JButton(green);
+			}
+			if (d.getname() == "Bloo Bawl") {
+				bloobawlCresent = new JButton(green);
+			}
+			if (d.getname() == "Cresent Capital") {
+				cresentcaptitalCresent = new JButton(green);
+			}
+			if (d.getname() == "Apollo") {
+				apolloSun = new JButton(green);
+			}
+			if (d.getname() == "Ra") {
+				raSun = new JButton(green);
+			}
+			if (d.getname() == "Helios") {
+				heliosSun = new JButton(green);
+			}
+			if (d.getname() == "Inti") {
+				intiSun = new JButton(green);
+			}
+			if (d.getname() == "Horus") {
+				horusSun = new JButton(green);
+			}
+			if (d.getname() == "Tonatiuh") {
+				tonatiuhSun = new JButton(yellow);
+			}
+			if (d.getname() == "Amun") {
+				amunSun = new JButton(green);
 			}
 
 		}
@@ -435,6 +563,69 @@ public class GameBoard extends JPanel {
 			if (d.getname() == "Pizza Planet") {
 				pizzaplanetPizza = new JButton(orange);
 			}
+			if (d.getname() == "Rawrville") {
+				rawrvilleDino = new JButton(orange);
+			}
+			if (d.getname() == "Laiegges") {
+				laieggesDino = new JButton(orange);
+			}
+			if (d.getname() == "Dactilito") {
+				dactilitoDino = new JButton(orange);
+			}
+			if (d.getname() == "Dirtydan") {
+				dirtydanDino = new JButton(orange);
+			}
+			if (d.getname() == "BlackBeard") {
+				blackbeardDino = new JButton(orange);
+			}
+			if (d.getname() == "Monisaurus") {
+				monisaurusDino = new JButton(orange);
+			}
+			if (d.getname() == "ToyStory") {
+				toystoryDino = new JButton(orange);
+			}
+			if (d.getname() == "Scraptopia") {
+				scraptopiaCresent = new JButton(orange);
+			}
+			if (d.getname() == "Land Of Zach") {
+				landofzachCresent = new JButton(orange);
+			}
+			if (d.getname() == "Giant") {
+				giantCresent = new JButton(orange);
+			}
+			if (d.getname() == "New Land Of Zach") {
+				newlandofzachCresent = new JButton(orange);
+			}
+			if (d.getname() == "South Scraptopia") {
+				southscraptopiaCresent = new JButton(orange);
+			}
+			if (d.getname() == "Bloo Bawl") {
+				bloobawlCresent = new JButton(orange);
+			}
+			if (d.getname() == "Cresent Capital") {
+				cresentcaptitalCresent = new JButton(orange);
+			}
+			if (d.getname() == "Apollo") {
+				apolloSun = new JButton(orange);
+			}
+			if (d.getname() == "Ra") {
+				raSun = new JButton(orange);
+			}
+			if (d.getname() == "Helios") {
+				heliosSun = new JButton(orange);
+			}
+			if (d.getname() == "Inti") {
+				intiSun = new JButton(orange);
+			}
+			if (d.getname() == "Horus") {
+				horusSun = new JButton(orange);
+			}
+			if (d.getname() == "Tonatiuh") {
+				tonatiuhSun = new JButton(orange);
+			}
+			if (d.getname() == "Amun") {
+				amunSun = new JButton(orange);
+			}
 
 		}
 		for (Territory d : player4.getTerritories()) {
@@ -500,6 +691,69 @@ public class GameBoard extends JPanel {
 			}
 			if (d.getname() == "Pizza Planet") {
 				pizzaplanetPizza = new JButton(red);
+			}
+			if (d.getname() == "Rawrville") {
+				rawrvilleDino = new JButton(red);
+			}
+			if (d.getname() == "Laiegges") {
+				laieggesDino = new JButton(red);
+			}
+			if (d.getname() == "Dactilito") {
+				dactilitoDino = new JButton(red);
+			}
+			if (d.getname() == "Dirtydan") {
+				dirtydanDino = new JButton(red);
+			}
+			if (d.getname() == "BlackBeard") {
+				blackbeardDino = new JButton(red);
+			}
+			if (d.getname() == "Monisaurus") {
+				monisaurusDino = new JButton(red);
+			}
+			if (d.getname() == "ToyStory") {
+				toystoryDino = new JButton(red);
+			}
+			if (d.getname() == "Scraptopia") {
+				scraptopiaCresent = new JButton(red);
+			}
+			if (d.getname() == "Land Of Zach") {
+				landofzachCresent = new JButton(red);
+			}
+			if (d.getname() == "Giant") {
+				giantCresent = new JButton(red);
+			}
+			if (d.getname() == "New Land Of Zach") {
+				newlandofzachCresent = new JButton(red);
+			}
+			if (d.getname() == "South Scraptopia") {
+				southscraptopiaCresent = new JButton(red);
+			}
+			if (d.getname() == "Bloo Bawl") {
+				bloobawlCresent = new JButton(red);
+			}
+			if (d.getname() == "Cresent Capital") {
+				cresentcaptitalCresent = new JButton(red);
+			}
+			if (d.getname() == "Apollo") {
+				apolloSun = new JButton(red);
+			}
+			if (d.getname() == "Ra") {
+				raSun = new JButton(red);
+			}
+			if (d.getname() == "Helios") {
+				heliosSun = new JButton(red);
+			}
+			if (d.getname() == "Inti") {
+				intiSun = new JButton(red);
+			}
+			if (d.getname() == "Horus") {
+				horusSun = new JButton(red);
+			}
+			if (d.getname() == "Tonatiuh") {
+				tonatiuhSun = new JButton(red);
+			}
+			if (d.getname() == "Amun") {
+				amunSun = new JButton(red);
 			}
 
 		}
@@ -567,6 +821,69 @@ public class GameBoard extends JPanel {
 			if (d.getname() == "Pizza Planet") {
 				pizzaplanetPizza = new JButton(purple);
 			}
+			if (d.getname() == "Rawrville") {
+				rawrvilleDino = new JButton(purple);
+			}
+			if (d.getname() == "Laiegges") {
+				laieggesDino = new JButton(purple);
+			}
+			if (d.getname() == "Dactilito") {
+				dactilitoDino = new JButton(purple);
+			}
+			if (d.getname() == "Dirtydan") {
+				dirtydanDino = new JButton(purple);
+			}
+			if (d.getname() == "BlackBeard") {
+				blackbeardDino = new JButton(purple);
+			}
+			if (d.getname() == "Monisaurus") {
+				monisaurusDino = new JButton(purple);
+			}
+			if (d.getname() == "ToyStory") {
+				toystoryDino = new JButton(purple);
+			}
+			if (d.getname() == "Scraptopia") {
+				scraptopiaCresent = new JButton(purple);
+			}
+			if (d.getname() == "Land Of Zach") {
+				landofzachCresent = new JButton(purple);
+			}
+			if (d.getname() == "Giant") {
+				giantCresent = new JButton(purple);
+			}
+			if (d.getname() == "New Land Of Zach") {
+				newlandofzachCresent = new JButton(purple);
+			}
+			if (d.getname() == "South Scraptopia") {
+				southscraptopiaCresent = new JButton(purple);
+			}
+			if (d.getname() == "Bloo Bawl") {
+				bloobawlCresent = new JButton(purple);
+			}
+			if (d.getname() == "Cresent Capital") {
+				cresentcaptitalCresent = new JButton(purple);
+			}
+			if (d.getname() == "Apollo") {
+				apolloSun = new JButton(purple);
+			}
+			if (d.getname() == "Ra") {
+				raSun = new JButton(purple);
+			}
+			if (d.getname() == "Helios") {
+				heliosSun = new JButton(purple);
+			}
+			if (d.getname() == "Inti") {
+				intiSun = new JButton(purple);
+			}
+			if (d.getname() == "Horus") {
+				horusSun = new JButton(purple);
+			}
+			if (d.getname() == "Tonatiuh") {
+				tonatiuhSun = new JButton(purple);
+			}
+			if (d.getname() == "Amun") {
+				amunSun = new JButton(purple);
+			}
 
 		}
 		for (Territory d : player6.getTerritories()) {
@@ -632,6 +949,69 @@ public class GameBoard extends JPanel {
 			}
 			if (d.getname() == "Pizza Planet") {
 				pizzaplanetPizza = new JButton(blue);
+			}
+			if (d.getname() == "Rawrville") {
+				rawrvilleDino = new JButton(blue);
+			}
+			if (d.getname() == "Laiegges") {
+				laieggesDino = new JButton(blue);
+			}
+			if (d.getname() == "Dactilito") {
+				dactilitoDino = new JButton(blue);
+			}
+			if (d.getname() == "Dirtydan") {
+				dirtydanDino = new JButton(blue);
+			}
+			if (d.getname() == "BlackBeard") {
+				blackbeardDino = new JButton(blue);
+			}
+			if (d.getname() == "Monisaurus") {
+				monisaurusDino = new JButton(blue);
+			}
+			if (d.getname() == "ToyStory") {
+				toystoryDino = new JButton(blue);
+			}
+			if (d.getname() == "Scraptopia") {
+				scraptopiaCresent = new JButton(blue);
+			}
+			if (d.getname() == "Land Of Zach") {
+				landofzachCresent = new JButton(blue);
+			}
+			if (d.getname() == "Giant") {
+				giantCresent = new JButton(blue);
+			}
+			if (d.getname() == "New Land Of Zach") {
+				newlandofzachCresent = new JButton(blue);
+			}
+			if (d.getname() == "South Scraptopia") {
+				southscraptopiaCresent = new JButton(blue);
+			}
+			if (d.getname() == "Bloo Bawl") {
+				bloobawlCresent = new JButton(blue);
+			}
+			if (d.getname() == "Cresent Capital") {
+				cresentcaptitalCresent = new JButton(blue);
+			}
+			if (d.getname() == "Apollo") {
+				apolloSun = new JButton(blue);
+			}
+			if (d.getname() == "Ra") {
+				raSun = new JButton(blue);
+			}
+			if (d.getname() == "Helios") {
+				heliosSun = new JButton(blue);
+			}
+			if (d.getname() == "Inti") {
+				intiSun = new JButton(blue);
+			}
+			if (d.getname() == "Horus") {
+				horusSun = new JButton(blue);
+			}
+			if (d.getname() == "Tonatiuh") {
+				tonatiuhSun = new JButton(blue);
+			}
+			if (d.getname() == "Amun") {
+				amunSun = new JButton(blue);
 			}
 
 		}
@@ -1053,13 +1433,7 @@ public class GameBoard extends JPanel {
 		sunLabel6 = new JLabel("" + tonatiuhUnits);
 		sunLabel7 = new JLabel("" + amunUnits);
 
-		apolloSun = new JButton(gray);
-		raSun = new JButton(gray);
-		heliosSun = new JButton(gray);
-		intiSun = new JButton(gray);
-		horusSun = new JButton(gray);
-		tonatiuhSun = new JButton(gray);
-		amunSun = new JButton(gray);
+		
 
 		apolloSun.addActionListener(new buttonListener());
 		raSun.addActionListener(new buttonListener());
@@ -1199,13 +1573,7 @@ public class GameBoard extends JPanel {
 				dinoLabel6 = new JLabel("" + bUnits);
 				dinoLabel7 = new JLabel("" + ppUnits);
 
-				rawrvilleDino = new JButton(gray);
-				laieggesDino = new JButton(gray);
-				dactilitoDino = new JButton(gray);
-				dirtydanDino = new JButton(gray);
-				blackbeardDino = new JButton(gray);
-				monisaurusDino = new JButton(gray);
-				toystoryDino = new JButton(gray);
+			
 
 				rawrvilleDino.addActionListener(new buttonListener());
 				laieggesDino.addActionListener(new buttonListener());
@@ -1344,13 +1712,7 @@ public class GameBoard extends JPanel {
 				cresentLabel6 = new JLabel("" + blooUnits);
 				cresentLabel7 = new JLabel("" + capUnits);
 
-				scraptopiaCresent = new JButton(gray);
-				landofzachCresent = new JButton(gray);
-				giantCresent = new JButton(gray);
-				newlandofzachCresent = new JButton(gray);
-				southscraptopiaCresent = new JButton(gray);
-				bloobawlCresent = new JButton(gray);
-				cresentcaptitalCresent = new JButton(gray);
+				
 
 				scraptopiaCresent.addActionListener(new buttonListener());
 				landofzachCresent.addActionListener(new buttonListener());
