@@ -19,7 +19,7 @@ public class HardAI extends Player implements AIStrategy {
 	}
 
 	@Override
-	public Territory deployArmy(ArrayList<Territory> territories) {
+	public ArrayList<Object> deployArmy(ArrayList<Territory> territories) {
 		/*
 		 * Use the total number of enemy armies surrounding the territory to
 		 * figure out how many armies to place in a certain territory. You want
@@ -29,14 +29,22 @@ public class HardAI extends Player implements AIStrategy {
 		int highestNumberOfArmies = 0;
 		int armySum;
 		int indexOfHighest = 0;
-		ArrayList<Territory> neighbors;
+		Player temp;
+		ArrayList<Territory> neighbors= new ArrayList<Territory>();
+		ArrayList<Object> returns=new ArrayList<Object>();
 		for (int i = 0; i < territories.size(); i++) {
 			neighbors = territories.get(i).getNeighbors();
 			armySum = 0;
 			for (int j = 0; j < neighbors.size(); j++) {
-				if(!neighbors.get(j).getOwner().getName().equals(this.getName()))
+				temp=neighbors.get(j).getOwner();
+				if(!temp.getName().equals(this.getName()))
 				{
-				armySum += neighbors.get(j).getUnits();
+					for (int neighborIndex = 0; neighborIndex < neighbors.size(); neighborIndex++) {
+						if(temp.getName().equals(neighbors.get(neighborIndex).getname()))
+						{
+						armySum += neighbors.get(j).getUnits();
+						}
+				}
 				}
 			}
 			if (highestNumberOfArmies < armySum) {
@@ -44,7 +52,10 @@ public class HardAI extends Player implements AIStrategy {
 				indexOfHighest = i;
 			}
 		}
-		return territories.get(indexOfHighest);
+		returns.add(neighbors.get(indexOfHighest));
+		returns.add(highestNumberOfArmies);
+		
+		return returns;
 	}
 
 	@Override
@@ -115,6 +126,7 @@ public class HardAI extends Player implements AIStrategy {
 		 */
 		ArrayList<Territory> friendlyConnected = new ArrayList<Territory>();
 		ArrayList<Object> territoryAndArmyNum = new ArrayList<Object>();
+		ArrayList<Object> deployTerrAndArmy= new ArrayList<Object>();
 
 		for (int i = 0; i < connected.size(); i++) {
 			if (connected.get(i).getOwner().getName().equals(currentTerr.getOwner().getName())) {
@@ -122,7 +134,8 @@ public class HardAI extends Player implements AIStrategy {
 			}
 		}
 
-		Territory terrWithLargestDiff = deployArmy(friendlyConnected);
+		
+		deployTerrAndArmy = deployArmy(friendlyConnected);
 
 		Territory checkNumAtTerr = attackTerritory(currentTerr, friendlyConnected);
 		if (checkNumAtTerr != null) {

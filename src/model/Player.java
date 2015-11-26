@@ -129,7 +129,7 @@ public abstract class Player {
 	public void startGame() {
 	}
 
-	public Territory deployArmy(ArrayList<Territory> territories) {
+	public ArrayList<Object> deployArmy(ArrayList<Territory> territories) {
 		return null;
 	}
 
