@@ -52,21 +52,23 @@ public class GameBoard extends JPanel {
 	JLabel languageLabel1, languageLabel2, languageLabel3, languageLabel4, languageLabel5, languageLabel6,
 			languageLabel7;// number for language
 	JButton wilberWildcat, wilmaWildcat, richWildcat, millerWildcat, scoobyWildcat, mckaleWildcat, zonaWildcat;
-	JLabel wildcatLabel1, wildcatLabel2,wildcatLabel3,wildcatLabel4,wildcatLabel5,wildcatLabel6,wildcatLabel7;
+	JLabel wildcatLabel1, wildcatLabel2, wildcatLabel3, wildcatLabel4, wildcatLabel5, wildcatLabel6, wildcatLabel7;
 	int wilberUnits, wilmaUnits, richUnits, millerUnits, scoobyUnits, mckaleUnits, zonaUnits;
-	
-	JButton papajohnsPizza, dominosPizza, pizzahutPizza, blackjackPizza, hungryhowiesPizza, brooklynPizza, pizzaplanetPizza;
-	JLabel pizzaLabel1,pizzaLabel2,pizzaLabel3,pizzaLabel4,pizzaLabel5,pizzaLabel6,pizzaLabel7;
+
+	JButton papajohnsPizza, dominosPizza, pizzahutPizza, blackjackPizza, hungryhowiesPizza, brooklynPizza,
+			pizzaplanetPizza;
+	JLabel pizzaLabel1, pizzaLabel2, pizzaLabel3, pizzaLabel4, pizzaLabel5, pizzaLabel6, pizzaLabel7;
 	int pjUnits, domUnits, phUnits, bjUnits, hhUnits, bUnits, ppUnits;
-	
+
 	JButton rawrvilleDino, laieggesDino, dactilitoDino, dirtydanDino, blackbeardDino, monisaurusDino, toystoryDino;
 	JLabel dinoLabel1, dinoLabel2, dinoLabel3, dinoLabel4, dinoLabel5, dinoLabel6, dinoLabel7;
 	int rawrUnits, eggUnits, dacUnits, danUnits, bbUnits, moniUnits, tsUnits;
-	
-	JButton scraptopiaCresent, landofzachCresent, giantCresent,newlandofzachCresent,southscraptopiaCresent, bloobawlCresent, cresentcaptitalCresent;
+
+	JButton scraptopiaCresent, landofzachCresent, giantCresent, newlandofzachCresent, southscraptopiaCresent,
+			bloobawlCresent, cresentcaptitalCresent;
 	JLabel cresentLabel1, cresentLabel2, cresentLabel3, cresentLabel4, cresentLabel5, cresentLabel6, cresentLabel7;
 	int scrapUnits, zachUnits, giantUnits, newzachUnits, southUnits, blooUnits, capUnits;
-	
+
 	JButton apolloSun, raSun, heliosSun, intiSun, horusSun, tonatiuhSun, amunSun;
 	JLabel sunLabel1, sunLabel2, sunLabel3, sunLabel4, sunLabel5, sunLabel6, sunLabel7;
 	int apolloUnits, raUnits, heliosUnits, intiUnits, horusUnits, tonatiuhUnits, amunUnits;
@@ -106,9 +108,8 @@ public class GameBoard extends JPanel {
 					add(rightLabel, BorderLayout.EAST);
 
 					add(bottomLabel, BorderLayout.SOUTH);
-					
+
 					startNewGame();
-					
 
 				} catch (IOException e) {
 					System.out.println("ERROR with map");
@@ -126,7 +127,7 @@ public class GameBoard extends JPanel {
 		numberOfPlayers = startWindow.getNumberOfPlayer();
 		Font font = new Font("Verdana", Font.BOLD, 18);
 		int count = 1;
-		
+
 		for (int i = 0; i < numberOfPlayers; i++) {
 			playerTag = new JLabel("" + startWindow.getPlayerName(i));
 			playerTag.setSize(150, 40);
@@ -139,41 +140,83 @@ public class GameBoard extends JPanel {
 		}
 
 	}
-	
-	private void startNewGame(){
+
+	private void startNewGame() {
 		GameLogic newGame = new GameLogic();
 		CardCollection newDeck = new CardCollection();
 		newDeck.shuffle();
+
+		if (startWindow.getNumberOfPlayer() == 6) {
+			newGame.addPlayers(startWindow.playerOne);
+			newGame.addPlayers(startWindow.playerTwo);
+			newGame.addPlayers(startWindow.playerThree);
+			newGame.addPlayers(startWindow.playerFour);
+			newGame.addPlayers(startWindow.playerFive);
+			newGame.addPlayers(startWindow.playerSix);
+
+			player1 = newGame.getPlayerAt(0);
+			player2 = newGame.getPlayerAt(1);
+			player3 = newGame.getPlayerAt(2);
+			player4 = newGame.getPlayerAt(3);
+			player5 = newGame.getPlayerAt(4);
+			player6 = newGame.getPlayerAt(5);
+		}
+		if (startWindow.getNumberOfPlayer() == 5) {
+			newGame.addPlayers(startWindow.playerOne);
+			newGame.addPlayers(startWindow.playerTwo);
+			newGame.addPlayers(startWindow.playerThree);
+			newGame.addPlayers(startWindow.playerFour);
+			newGame.addPlayers(startWindow.playerFive);
+
+			player1 = newGame.getPlayerAt(0);
+			player2 = newGame.getPlayerAt(1);
+			player3 = newGame.getPlayerAt(2);
+			player4 = newGame.getPlayerAt(3);
+			player5 = newGame.getPlayerAt(4);
 		
+	
+		}
+		if(startWindow.getNumberOfPlayer() == 4){
+			newGame.addPlayers(startWindow.playerOne);
+			newGame.addPlayers(startWindow.playerTwo);
+			newGame.addPlayers(startWindow.playerThree);
+			newGame.addPlayers(startWindow.playerFour);
+
+			player1 = newGame.getPlayerAt(0);
+			player2 = newGame.getPlayerAt(1);
+			player3 = newGame.getPlayerAt(2);
+			player4 = newGame.getPlayerAt(3);
 		
-		newGame.addPlayers(startWindow.playerOne);
-		newGame.addPlayers(startWindow.playerTwo);
-		newGame.addPlayers(startWindow.playerThree);
-		newGame.addPlayers(startWindow.playerFour);
-		newGame.addPlayers(startWindow.playerFive);
-		newGame.addPlayers(startWindow.playerSix);
+	
+			}
+		if(startWindow.getNumberOfPlayer() == 3){
+			newGame.addPlayers(startWindow.playerOne);
+			newGame.addPlayers(startWindow.playerTwo);
+			newGame.addPlayers(startWindow.playerThree);
+
+			player1 = newGame.getPlayerAt(0);
+			player2 = newGame.getPlayerAt(1);
+			player3 = newGame.getPlayerAt(2);
+			
 		
+			}
+		if(startWindow.getNumberOfPlayer() == 2){
+			newGame.addPlayers(startWindow.playerOne);
+			newGame.addPlayers(startWindow.playerTwo);
+
+			player1 = newGame.getPlayerAt(0);
+			player2 = newGame.getPlayerAt(1);
+			
+			
+			}
 		
-		player1 = newGame.getPlayerAt(0);
-		player2 = newGame.getPlayerAt(1);
-		player3 = newGame.getPlayerAt(2);
-		player4 = newGame.getPlayerAt(3);
-		player5 = newGame.getPlayerAt(4);
-		player6 = newGame.getPlayerAt(5);
-		
+
+
 		newGame.startGame();
-		System.out.println(player1.getNumOfArmies());
-		System.out.println(player2.getNumOfArmies());
-		System.out.println(player3.getNumOfArmies());
-		System.out.println(player4.getNumOfArmies());
-		
-		
-		
-		
-		
-		//newGame.startGame();
-		
-		
+	
+
+		// newGame.startGame();
+
 	}
 
 	private void addButtons() {
@@ -329,10 +372,8 @@ public class GameBoard extends JPanel {
 		this.add(rubyLanguage);
 		this.add(gitLanguage);
 		this.add(perlLanguage);
-		
-		
-		
-		//ALL OF WILDCAT***
+
+		// ALL OF WILDCAT***
 		wilberUnits = 0;
 		wilmaUnits = 0;
 		richUnits = 0;
@@ -475,9 +516,8 @@ public class GameBoard extends JPanel {
 		this.add(scoobyWildcat);
 		this.add(mckaleWildcat);
 		this.add(zonaWildcat);
-		
-		
-		//ALL FOR PIZZA***
+
+		// ALL FOR PIZZA***
 		pjUnits = 0;
 		domUnits = 0;
 		phUnits = 0;
@@ -620,7 +660,7 @@ public class GameBoard extends JPanel {
 		this.add(hungryhowiesPizza);
 		this.add(brooklynPizza);
 		this.add(pizzaplanetPizza);
-		
+
 	}
 
 	private void setGuiNotVisible() {
@@ -633,7 +673,6 @@ public class GameBoard extends JPanel {
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 			JButton myButton = (JButton) e.getSource();
-			
 
 			JLabel myLabel = myMap.get(myButton);
 			myButton.setIcon(red);
@@ -643,9 +682,6 @@ public class GameBoard extends JPanel {
 
 				Integer i = new Integer(10);
 				i = Integer.parseInt(curr);
-
-				
-
 
 				if (i < 20) {
 					myLabel.setText("" + (i + 1));
