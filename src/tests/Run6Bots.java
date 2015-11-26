@@ -51,7 +51,7 @@ public class Run6Bots {
 			while (!gameLogic.isGameComplete()) {
 				currPlayer = allPlayers.getPlayer((count % allPlayers.getNumOfPlayers()));
 				ArrayList<Territory> territories = currPlayer.getTerritories();
-				System.out.println(currPlayer.getName());
+			//	System.out.println(currPlayer.getName());
 				noMoreRewardCard = false;
 				int rand;
 
@@ -78,7 +78,7 @@ public class Run6Bots {
 				while (currPlayer.getNumOfArmies() != 0) {
 					// System.out.println("ArmiesBeforeDeployment "+
 					// currPlayer.getNumOfArmies());
-					currPlayer.deployArmy(territories).addUnits(1);
+					((Territory) currPlayer.deployArmy(territories).get(0)).addUnits(1);
 					currPlayer.addArmies(-1);
 					// System.out.println("ArmiesAfterDeployment "+
 					// currPlayer.getNumOfArmies());
@@ -106,12 +106,12 @@ public class Run6Bots {
 				
 				
 				if (defendingTerritory != null) {
-					System.out.println("Attacker: " + currTerritory.getOwner());
-					System.out.println("Defender: " + defendingTerritory.getOwner());
+				//	System.out.println("Attacker: " + currTerritory.getOwner());
+				//	System.out.println("Defender: " + defendingTerritory.getOwner());
 					Player defender = defendingTerritory.getOwner();
 					battleLogic = new BattleLogic(currPlayer, defendingTerritory.getOwner(), currTerritory,
 							defendingTerritory);
-					System.out.println(currTerritory.getUnits() + " " +  defendingTerritory.getUnits());
+				//	System.out.println(currTerritory.getUnits() + " " +  defendingTerritory.getUnits());
 					while (currPlayer.chooseRetreat(currTerritory) && currTerritory.getUnits() > 1) {
 						// System.out.println("Attacking");
 						int temp1, temp2;
@@ -173,6 +173,7 @@ public class Run6Bots {
 				ArrayList<Object> territoryAndArmyNum = currPlayer.fortifyPosition(territories.get(0),
 						territories.get(0).getNeighbors());
 				if (territoryAndArmyNum != null) {
+					System.out.println(currPlayer.getName());
 					Territory territoryToFortify = (Territory) territoryAndArmyNum.get(0);
 					int armiesToMove = (int) territoryAndArmyNum.get(1);
 					//System.out.println("Before removing Units: " + currTerritory.getUnits());
