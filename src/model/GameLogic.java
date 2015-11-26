@@ -396,6 +396,7 @@ public class GameLogic {
 		if (allPlayers.getNumOfPlayers() == 6) {
 			for (int i = 0; i < 6; i++) {
 				Player temp = allPlayers.getPlayer(i);
+				if(temp!=null)
 				temp.addArmies(20);
 			}
 		}

@@ -51,7 +51,7 @@ public class Run6Bots {
 			while (!gameLogic.isGameComplete()) {
 				currPlayer = allPlayers.getPlayer((count % allPlayers.getNumOfPlayers()));
 				ArrayList<Territory> territories = currPlayer.getTerritories();
-				System.out.println(currPlayer.getName());
+			//	System.out.println(currPlayer.getName());
 				noMoreRewardCard = false;
 				int rand;
 
@@ -106,12 +106,12 @@ public class Run6Bots {
 				
 				
 				if (defendingTerritory != null) {
-					System.out.println("Attacker: " + currTerritory.getOwner());
-					System.out.println("Defender: " + defendingTerritory.getOwner());
+				//	System.out.println("Attacker: " + currTerritory.getOwner());
+				//	System.out.println("Defender: " + defendingTerritory.getOwner());
 					Player defender = defendingTerritory.getOwner();
 					battleLogic = new BattleLogic(currPlayer, defendingTerritory.getOwner(), currTerritory,
 							defendingTerritory);
-					System.out.println(currTerritory.getUnits() + " " +  defendingTerritory.getUnits());
+				//	System.out.println(currTerritory.getUnits() + " " +  defendingTerritory.getUnits());
 					while (currPlayer.chooseRetreat(currTerritory) && currTerritory.getUnits() > 1) {
 						// System.out.println("Attacking");
 						int temp1, temp2;
