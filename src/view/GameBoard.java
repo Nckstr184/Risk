@@ -20,6 +20,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import model.Continent;
+import model.GameLogic;
 
 public class GameBoard extends JPanel {
 
@@ -90,9 +91,9 @@ public class GameBoard extends JPanel {
 					JLabel bottomLabel = new JLabel(new ImageIcon(bottomDisplay));
 					JLabel leftLabel = new JLabel(new ImageIcon(leftDisplay));
 					JLabel rightLabel = new JLabel(new ImageIcon(rightDisplay));
-
-					playerTags();
 					
+					playerTags();
+					this.setLayout(new BorderLayout());
 					addButtons();
 
 					add(picLabel, BorderLayout.NORTH);
@@ -100,6 +101,8 @@ public class GameBoard extends JPanel {
 					add(rightLabel, BorderLayout.EAST);
 
 					add(bottomLabel, BorderLayout.SOUTH);
+					
+					startNewGame();
 					System.out.println("NUMBER OF PLAYERS: " + startWindow.getNumberOfPlayer());
 
 				} catch (IOException e) {
@@ -118,6 +121,7 @@ public class GameBoard extends JPanel {
 		numberOfPlayers = startWindow.getNumberOfPlayer();
 		Font font = new Font("Verdana", Font.BOLD, 18);
 		int count = 1;
+		
 		for (int i = 0; i < numberOfPlayers; i++) {
 			playerTag = new JLabel("" + startWindow.getPlayerName(i));
 			playerTag.setSize(150, 40);
@@ -129,6 +133,20 @@ public class GameBoard extends JPanel {
 			count++;
 		}
 
+	}
+	
+	private void startNewGame(){
+		GameLogic newGame = new GameLogic();
+		newGame.addPlayers(startWindow.playerOne);
+		newGame.addPlayers(startWindow.playerTwo);
+		newGame.addPlayers(startWindow.playerThree);
+		newGame.addPlayers(startWindow.playerFour);
+		newGame.addPlayers(startWindow.playerFive);
+		newGame.addPlayers(startWindow.playerSix);
+		
+		newGame.startGame();
+		
+		
 	}
 
 	private void addButtons() {

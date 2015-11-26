@@ -37,7 +37,7 @@ public class MainGUI extends JFrame {
 
 		this.setLayout(new BorderLayout());
 
-		// bottomBoard= new BottomBoard();
+	
 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(1300, 750);
