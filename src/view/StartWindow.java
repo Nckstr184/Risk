@@ -20,7 +20,7 @@ import typesOfPlayers.Human;
 import typesOfPlayers.MediumAI;
 
 public class StartWindow extends JFrame {
-	JComboBox diff1, diff2, diff3, diff4, diff5, diff6;
+	JComboBox<String> diff1, diff2, diff3, diff4, diff5, diff6;
 	JTextField player1, player2, player3, player4, player5, player6;
 	JButton startGame;
 	JPanel panel;
@@ -54,12 +54,12 @@ public class StartWindow extends JFrame {
 		player5 = new JTextField();
 		player6 = new JTextField();
 
-		diff1 = new JComboBox();
-		diff2 = new JComboBox();
-		diff3 = new JComboBox();
-		diff4 = new JComboBox();
-		diff5 = new JComboBox();
-		diff6 = new JComboBox();
+//		diff1 = new JComboBox();
+//		diff2 = new JComboBox();
+//		diff3 = new JComboBox();
+//		diff4 = new JComboBox();
+//		diff5 = new JComboBox();
+//		diff6 = new JComboBox();
 
 		enterName = new JLabel();
 
@@ -80,12 +80,12 @@ public class StartWindow extends JFrame {
 		String[] player4Choice = { "Select A.I", "None", "Human", "Easy AI", "Medium AI", "Hard AI" };
 		String[] player5Choice = { "Select A.I", "None", "Human", "Easy AI", "Medium AI", "Hard AI" };
 		String[] player6Choice = { "Select A.I", "None", "Human", "Easy AI", "Medium AI", "Hard AI" };
-		JComboBox<String> diff1 = new JComboBox<String>(player1Choice);
-		JComboBox<String> diff2 = new JComboBox<String>(player2Choice);
-		JComboBox<String> diff3 = new JComboBox<String>(player3Choice);
-		JComboBox<String> diff4 = new JComboBox<String>(player4Choice);
-		JComboBox<String> diff5 = new JComboBox<String>(player5Choice);
-		JComboBox<String> diff6 = new JComboBox<String>(player6Choice);
+		 diff1 = new JComboBox<String>(player1Choice);
+		 diff2 = new JComboBox<String>(player2Choice);
+		 diff3 = new JComboBox<String>(player3Choice);
+		diff4 = new JComboBox<String>(player4Choice);
+		 diff5 = new JComboBox<String>(player5Choice);
+	diff6 = new JComboBox<String>(player6Choice);
 
 		player1.setLocation(10, 10);
 		player1.setSize(75, 30);

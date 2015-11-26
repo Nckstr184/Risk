@@ -1504,7 +1504,7 @@ public class GameBoard extends JPanel {
 		sunLabel5.setOpaque(false);
 
 		tonatiuhSun.setSize(25, 25);
-		tonatiuhSun.setLocation(465, 235);//*
+		tonatiuhSun.setLocation(495, 215);//*
 		tonatiuhSun.setOpaque(false);
 		tonatiuhSun.setContentAreaFilled(false);
 		tonatiuhSun.setBorderPainted(false);
@@ -1516,7 +1516,7 @@ public class GameBoard extends JPanel {
 		sunLabel6.setOpaque(false);
 
 		amunSun.setSize(25, 25);
-		amunSun.setLocation(410, 170);//*
+		amunSun.setLocation(510, 170);//*
 		amunSun.setOpaque(false);
 		amunSun.setContentAreaFilled(false);
 		amunSun.setBorderPainted(false);
@@ -1656,7 +1656,7 @@ public class GameBoard extends JPanel {
 				dinoLabel6.setOpaque(false);
 
 				toystoryDino.setSize(25, 25);
-				toystoryDino.setLocation(750, 408);
+				toystoryDino.setLocation(930, 408);
 				toystoryDino.setOpaque(false);
 				toystoryDino.setContentAreaFilled(false);
 				toystoryDino.setBorderPainted(false);
@@ -1795,7 +1795,7 @@ public class GameBoard extends JPanel {
 				cresentLabel6.setOpaque(false);
 
 				cresentcaptitalCresent.setSize(25, 25);
-				cresentcaptitalCresent.setLocation(658, 185);
+				cresentcaptitalCresent.setLocation(838, 285);
 				cresentcaptitalCresent.setOpaque(false);
 				cresentcaptitalCresent.setContentAreaFilled(false);
 				cresentcaptitalCresent.setBorderPainted(false);
@@ -1852,9 +1852,9 @@ public class GameBoard extends JPanel {
 			JLabel myLabel = myMap.get(myButton);
 			//myButton.setIcon(red);
 			//add colors
-	if(player1.deployArmy(territories) != null){
-					myButton.setIcon(red);
-				}
+//	if(player1.deployArmy(territories) != null){
+//					myButton.setIcon(red);
+//				}
 //				if(startWindow.pCollection.getPlayer(2)){
 //					myButton.setIcon(blue);
 //				}
