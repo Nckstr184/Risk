@@ -38,8 +38,8 @@ public class GameBoard extends JPanel {
 	Player player1, player2, player3, player4, player5, player6;
 
 	JPanel board, boardDisplay, boardInfo;
-	JButton ter1;
-	Player current;
+	
+	
 
 	JFrame temp;
 	JTextField bottomField;
@@ -1120,11 +1120,11 @@ public class GameBoard extends JPanel {
 			JButton myButton = (JButton) e.getSource();
 
 			JLabel myLabel = myMap.get(myButton);
-			myButton.setIcon(red);
-			
-//				if(startWindow.pCollection.getPlayer(1).){
-//					myButton.setIcon(red);
-//				}
+			//myButton.setIcon(red);
+			//add colors
+	if(player1.deployArmy(territories) != null){
+					myButton.setIcon(red);
+				}
 //				if(startWindow.pCollection.getPlayer(2)){
 //					myButton.setIcon(blue);
 //				}
@@ -1140,7 +1140,7 @@ public class GameBoard extends JPanel {
 //				if(startWindow.pCollection.getPlayer(6)){
 //					myButton.setIcon(green);
 //				}
-				
+//				
 				
 			if (myLabel != null) {
 				System.out.println("got label");
