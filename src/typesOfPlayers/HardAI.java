@@ -52,7 +52,7 @@ public class HardAI extends Player implements AIStrategy {
 				indexOfHighest = i;
 			}
 		}
-		returns.add(neighbors.get(indexOfHighest));
+		returns.add(territories.get(indexOfHighest));
 		returns.add(highestNumberOfArmies);
 		
 		return returns;

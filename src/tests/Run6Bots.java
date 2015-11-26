@@ -173,6 +173,7 @@ public class Run6Bots {
 				ArrayList<Object> territoryAndArmyNum = currPlayer.fortifyPosition(territories.get(0),
 						territories.get(0).getNeighbors());
 				if (territoryAndArmyNum != null) {
+					System.out.println(currPlayer.getName());
 					Territory territoryToFortify = (Territory) territoryAndArmyNum.get(0);
 					int armiesToMove = (int) territoryAndArmyNum.get(1);
 					//System.out.println("Before removing Units: " + currTerritory.getUnits());
