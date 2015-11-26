@@ -114,7 +114,7 @@ public class HardAI extends Player implements AIStrategy {
 		 * territoryAndArmyNum.add(NumberOfArmiesToMove);
 		 */
 		ArrayList<Territory> friendlyConnected = new ArrayList<Territory>();
-		ArrayList<Object> territoryAndArmyNum;
+		ArrayList<Object> territoryAndArmyNum = new ArrayList<Object>();
 
 		for (int i = 0; i < connected.size(); i++) {
 			if (connected.get(i).getOwner().getName().equals(currentTerr.getOwner().getName())) {
@@ -126,10 +126,11 @@ public class HardAI extends Player implements AIStrategy {
 
 		Territory checkNumAtTerr = attackTerritory(currentTerr, friendlyConnected);
 		if (checkNumAtTerr != null) {
-			if (currentTerr.getUnits - checkNumAtTerr.getUnits() > 3) {
+			if (currentTerr.getUnits() - checkNumAtTerr.getUnits() > 3) {
 
 			}
 		}
+		return territoryAndArmyNum;
 	}
 
 }

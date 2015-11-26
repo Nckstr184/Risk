@@ -75,6 +75,24 @@ public class Territory {
 		return units;
 	}
 
+	public int findDifferentPlayersArround()
+	{
+		
+		int numOfNeighbors=this.getNeighbors().size();
+		Player temp=this.getOwner();
+		String ownerName=this.getOwner().getName();
+		ArrayList<Player> differentPlayers=new ArrayList<Player>();
+		for(int i=0; i<numOfNeighbors; i++)
+		{
+			temp=neighbors.get(i).getOwner();
+			if((temp.getName().compareTo(ownerName)!=0)&&(!differentPlayers.contains(temp)))
+			{
+			differentPlayers.add(temp);
+			}
+		}
+		return differentPlayers.size();
+		
+	}
 //	public boolean checkIfContinentIsConquered() {
 //		// TODO Auto-generated method stub
 //		for(int index=0; index<neighbors.size(); index++)
