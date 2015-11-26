@@ -19,14 +19,19 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import model.CardCollection;
 import model.Continent;
 import model.GameLogic;
+import model.Player;
+import model.Territory;
 
 public class GameBoard extends JPanel {
 
 	HashMap<JButton, JLabel> myMap;
-	ArrayList<Continent> Continents;
+	ArrayList<Continent> continents;
+	ArrayList<Territory> territories;
 	BufferedImage map, bottomDisplay, leftDisplay, rightDisplay;
+	Player player1, player2, player3, player4, player5, player6;
 
 	JPanel board, boardDisplay, boardInfo;
 	JButton ter1;
@@ -91,7 +96,7 @@ public class GameBoard extends JPanel {
 					JLabel bottomLabel = new JLabel(new ImageIcon(bottomDisplay));
 					JLabel leftLabel = new JLabel(new ImageIcon(leftDisplay));
 					JLabel rightLabel = new JLabel(new ImageIcon(rightDisplay));
-					
+					System.out.println("NUMBER OF PLAYERS: " + startWindow.getNumberOfPlayer());
 					playerTags();
 					this.setLayout(new BorderLayout());
 					addButtons();
@@ -103,7 +108,7 @@ public class GameBoard extends JPanel {
 					add(bottomLabel, BorderLayout.SOUTH);
 					
 					startNewGame();
-					System.out.println("NUMBER OF PLAYERS: " + startWindow.getNumberOfPlayer());
+					
 
 				} catch (IOException e) {
 					System.out.println("ERROR with map");
@@ -137,6 +142,10 @@ public class GameBoard extends JPanel {
 	
 	private void startNewGame(){
 		GameLogic newGame = new GameLogic();
+		CardCollection newDeck = new CardCollection();
+		newDeck.shuffle();
+		
+		
 		newGame.addPlayers(startWindow.playerOne);
 		newGame.addPlayers(startWindow.playerTwo);
 		newGame.addPlayers(startWindow.playerThree);
@@ -144,7 +153,22 @@ public class GameBoard extends JPanel {
 		newGame.addPlayers(startWindow.playerFive);
 		newGame.addPlayers(startWindow.playerSix);
 		
-		newGame.startGame();
+		
+		player1 = newGame.getPlayerAt(0);
+		player2 = newGame.getPlayerAt(1);
+		player3 = newGame.getPlayerAt(2);
+		player4 = newGame.getPlayerAt(3);
+		player5 = newGame.getPlayerAt(4);
+		player6 = newGame.getPlayerAt(5);
+		System.out.println(newGame.getPlayerAt(5));
+		//newGame.startGame();
+	
+		
+		
+		
+		
+		
+		//newGame.startGame();
 		
 		
 	}
