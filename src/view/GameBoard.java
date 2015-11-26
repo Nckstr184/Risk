@@ -574,6 +574,150 @@ public class GameBoard extends JPanel {
 		this.add(brooklynPizza);
 		this.add(pizzaplanetPizza);
 		
+		
+		//ALL FOR DINO***
+				rawrUnits = 0;
+				eggUnits = 0;
+				dacUnits = 0;
+				danUnits = 0;
+				bbUnits = 0;
+				moniUnits = 0;
+				tsUnits = 0;
+
+				dinoLabel1 = new JLabel("" + pjUnits);
+				dinoLabel2 = new JLabel("" + domUnits);
+				dinoLabel3 = new JLabel("" + phUnits);
+				dinoLabel4 = new JLabel("" + bjUnits);
+				dinoLabel5 = new JLabel("" + hhUnits);
+				dinoLabel6 = new JLabel("" + bUnits);
+				dinoLabel7 = new JLabel("" + ppUnits);
+
+				rawrvilleDino = new JButton(gray);
+				laieggesDino = new JButton(gray);
+				dactilitoDino = new JButton(gray);
+				dirtydanDino = new JButton(gray);
+				blackbeardDino = new JButton(gray);
+				monisaurusDino = new JButton(gray);
+				toystoryDino = new JButton(gray);
+
+				rawrvilleDino.addActionListener(new buttonListener());
+				laieggesDino.addActionListener(new buttonListener());
+				dactilitoDino.addActionListener(new buttonListener());
+				dirtydanDino.addActionListener(new buttonListener());
+				blackbeardDino.addActionListener(new buttonListener());
+				monisaurusDino.addActionListener(new buttonListener());
+				toystoryDino.addActionListener(new buttonListener());
+
+				rawrvilleDino.setSize(25, 25);
+				rawrvilleDino.setLocation(960, 224);
+				rawrvilleDino.setOpaque(false);
+				rawrvilleDino.setContentAreaFilled(false);
+				rawrvilleDino.setBorderPainted(false);
+
+				dinoLabel1.setSize(25, 25);
+				dinoLabel1.setFont(font);
+				dinoLabel1.setForeground(Color.WHITE);
+				dinoLabel1.setLocation(968, 227);
+				dinoLabel1.setOpaque(false);
+
+				laieggesDino.setSize(25, 25);
+				laieggesDino.setLocation(923, 241);
+				laieggesDino.setOpaque(false);
+				laieggesDino.setContentAreaFilled(false);
+				laieggesDino.setBorderPainted(false);
+
+				dinoLabel2.setSize(25, 25);
+				dinoLabel2.setFont(font);
+				dinoLabel2.setForeground(Color.WHITE);
+				dinoLabel2.setLocation(931, 244);
+				dinoLabel2.setOpaque(false);
+
+				dactilitoDino.setSize(25, 25);
+				dactilitoDino.setLocation(920, 325);
+				dactilitoDino.setOpaque(false);
+				dactilitoDino.setContentAreaFilled(false);
+				dactilitoDino.setBorderPainted(false);
+
+				dinoLabel3.setSize(25, 25);
+				dinoLabel3.setFont(font);
+				dinoLabel3.setForeground(Color.WHITE);
+				dinoLabel3.setLocation(928, 328);
+				dinoLabel3.setOpaque(false);
+
+				dirtydanDino.setSize(25, 25);
+				dirtydanDino.setLocation(868, 315);
+				dirtydanDino.setOpaque(false);
+				dirtydanDino.setContentAreaFilled(false);
+				dirtydanDino.setBorderPainted(false);
+
+				dinoLabel4.setSize(25, 25);
+				dinoLabel4.setFont(font);
+				dinoLabel4.setForeground(Color.WHITE);
+				dinoLabel4.setLocation(875, 318);
+				dinoLabel4.setOpaque(false);
+
+				blackbeardDino.setSize(25, 25);
+				blackbeardDino.setLocation(885, 358);
+				blackbeardDino.setOpaque(false);
+				blackbeardDino.setContentAreaFilled(false);
+				blackbeardDino.setBorderPainted(false);
+
+				dinoLabel5.setSize(25, 25);
+				dinoLabel5.setFont(font);
+				dinoLabel5.setForeground(Color.WHITE);
+				dinoLabel5.setLocation(893, 361);
+				dinoLabel5.setOpaque(false);
+
+				monisaurusDino.setSize(25, 25);
+				monisaurusDino.setLocation(845, 383);
+				monisaurusDino.setOpaque(false);
+				monisaurusDino.setContentAreaFilled(false);
+				monisaurusDino.setBorderPainted(false);
+
+				dinoLabel6.setSize(25, 25);
+				dinoLabel6.setFont(font);
+				dinoLabel6.setForeground(Color.WHITE);
+				dinoLabel6.setLocation(853, 386);
+				dinoLabel6.setOpaque(false);
+
+				toystoryDino.setSize(25, 25);
+				toystoryDino.setLocation(830, 408);
+				toystoryDino.setOpaque(false);
+				toystoryDino.setContentAreaFilled(false);
+				toystoryDino.setBorderPainted(false);
+
+				myMap = new HashMap<JButton, JLabel>();
+				myMap.put(rawrvilleDino, dinoLabel1);
+				myMap.put(laieggesDino, dinoLabel2);
+				myMap.put(dactilitoDino, dinoLabel3);
+				myMap.put(dirtydanDino, dinoLabel4);
+				myMap.put(blackbeardDino, dinoLabel5);
+				myMap.put(monisaurusDino, dinoLabel6);
+				myMap.put(toystoryDino, dinoLabel7);
+
+				dinoLabel7.setSize(25, 25);
+				dinoLabel7.setFont(font);
+				dinoLabel7.setForeground(Color.WHITE);
+				dinoLabel7.setLocation(938, 411);
+				dinoLabel7.setOpaque(false);
+
+				// add all lables
+				this.add(dinoLabel1);
+				this.add(dinoLabel2);
+				this.add(dinoLabel3);
+				this.add(dinoLabel4);
+				this.add(dinoLabel5);
+				this.add(dinoLabel6);
+				this.add(dinoLabel7);
+
+				// add all buttons
+				this.add(rawrvilleDino);
+				this.add(laieggesDino);
+				this.add(dactilitoDino);
+				this.add(dirtydanDino);
+				this.add(blackbeardDino);
+				this.add(monisaurusDino);
+				this.add(toystoryDino);
 	}
 
 	private void setGuiNotVisible() {
