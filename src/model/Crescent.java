@@ -25,7 +25,7 @@ public class Crescent extends Continent {
 		cresTerr.add(3, new Territory("New Land of Zach",new Point(690,450), button, currentPlayer, 0));
 		cresTerr.add(4, new Territory("South Scraptopia",new Point(680,410), button, currentPlayer, 0));
 		cresTerr.add(5, new Territory("Bloo Bawl",new Point(730,390), button, currentPlayer, 0));
-		cresTerr.add(6, new Territory("Crescent Capital",new Point(770,350), button, currentPlayer, 0));
+		cresTerr.add(6, new Territory("Cresent Capital",new Point(770,350), button, currentPlayer, 0));
 
 	}
 	

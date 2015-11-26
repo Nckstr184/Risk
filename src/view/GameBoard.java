@@ -325,13 +325,13 @@ public class GameBoard extends JPanel {
 			if (d.getname() == "Scraptopia") {
 				scraptopiaCresent = new JButton(yellow);
 			}
-			if (d.getname() == "Land Of Zach") {
+			if (d.getname() == "Land of Zach") {
 				landofzachCresent = new JButton(yellow);
 			}
 			if (d.getname() == "Giant") {
 				giantCresent = new JButton(yellow);
 			}
-			if (d.getname() == "New Land Of Zach") {
+			if (d.getname() == "New Land of Zach") {
 				newlandofzachCresent = new JButton(yellow);
 			}
 			if (d.getname() == "South Scraptopia") {
@@ -457,13 +457,13 @@ public class GameBoard extends JPanel {
 			if (d.getname() == "Scraptopia") {
 				scraptopiaCresent = new JButton(green);
 			}
-			if (d.getname() == "Land Of Zach") {
+			if (d.getname() == "Land of Zach") {
 				landofzachCresent = new JButton(green);
 			}
 			if (d.getname() == "Giant") {
 				giantCresent = new JButton(green);
 			}
-			if (d.getname() == "New Land Of Zach") {
+			if (d.getname() == "New Land of Zach") {
 				newlandofzachCresent = new JButton(green);
 			}
 			if (d.getname() == "South Scraptopia") {
@@ -587,13 +587,13 @@ public class GameBoard extends JPanel {
 			if (d.getname() == "Scraptopia") {
 				scraptopiaCresent = new JButton(orange);
 			}
-			if (d.getname() == "Land Of Zach") {
+			if (d.getname() == "Land of Zach") {
 				landofzachCresent = new JButton(orange);
 			}
 			if (d.getname() == "Giant") {
 				giantCresent = new JButton(orange);
 			}
-			if (d.getname() == "New Land Of Zach") {
+			if (d.getname() == "New Land of Zach") {
 				newlandofzachCresent = new JButton(orange);
 			}
 			if (d.getname() == "South Scraptopia") {
@@ -716,13 +716,13 @@ public class GameBoard extends JPanel {
 			if (d.getname() == "Scraptopia") {
 				scraptopiaCresent = new JButton(red);
 			}
-			if (d.getname() == "Land Of Zach") {
+			if (d.getname() == "Land of Zach") {
 				landofzachCresent = new JButton(red);
 			}
 			if (d.getname() == "Giant") {
 				giantCresent = new JButton(red);
 			}
-			if (d.getname() == "New Land Of Zach") {
+			if (d.getname() == "New Land of Zach") {
 				newlandofzachCresent = new JButton(red);
 			}
 			if (d.getname() == "South Scraptopia") {
@@ -845,13 +845,13 @@ public class GameBoard extends JPanel {
 			if (d.getname() == "Scraptopia") {
 				scraptopiaCresent = new JButton(purple);
 			}
-			if (d.getname() == "Land Of Zach") {
+			if (d.getname() == "Land of Zach") {
 				landofzachCresent = new JButton(purple);
 			}
 			if (d.getname() == "Giant") {
 				giantCresent = new JButton(purple);
 			}
-			if (d.getname() == "New Land Of Zach") {
+			if (d.getname() == "New Land of Zach") {
 				newlandofzachCresent = new JButton(purple);
 			}
 			if (d.getname() == "South Scraptopia") {
@@ -974,13 +974,13 @@ public class GameBoard extends JPanel {
 			if (d.getname() == "Scraptopia") {
 				scraptopiaCresent = new JButton(blue);
 			}
-			if (d.getname() == "Land Of Zach") {
+			if (d.getname() == "Land of Zach") {
 				landofzachCresent = new JButton(blue);
 			}
 			if (d.getname() == "Giant") {
 				giantCresent = new JButton(blue);
 			}
-			if (d.getname() == "New Land Of Zach") {
+			if (d.getname() == "New Land of Zach") {
 				newlandofzachCresent = new JButton(blue);
 			}
 			if (d.getname() == "South Scraptopia") {
