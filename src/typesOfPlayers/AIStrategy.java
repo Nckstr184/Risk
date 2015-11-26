@@ -6,7 +6,7 @@ import model.Territory;
 
 public interface AIStrategy {
 	
-	public Territory deployArmy(ArrayList<Territory> territories);
+	public ArrayList<Object> deployArmy(ArrayList<Territory> territories);
 	
 	public boolean chooseRetreat(Territory currentTerr);
 	
