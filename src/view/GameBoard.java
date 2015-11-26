@@ -160,9 +160,12 @@ public class GameBoard extends JPanel {
 		player4 = newGame.getPlayerAt(3);
 		player5 = newGame.getPlayerAt(4);
 		player6 = newGame.getPlayerAt(5);
-		System.out.println(newGame.getPlayerAt(5));
-		//newGame.startGame();
-	
+		
+		newGame.startGame();
+		System.out.println(player1.getNumOfArmies());
+		System.out.println(player2.getNumOfArmies());
+		System.out.println(player3.getNumOfArmies());
+		System.out.println(player4.getNumOfArmies());
 		
 		
 		
