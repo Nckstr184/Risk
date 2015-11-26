@@ -25,7 +25,7 @@ import model.Continent;
 import model.Player;
 
 import model.GameLogic;
-import model.Player;
+
 import model.Territory;
 
 
@@ -1851,6 +1851,7 @@ public class GameBoard extends JPanel {
 
 			JLabel myLabel = myMap.get(myButton);
 			myButton.setIcon(red);
+			
 //				if(startWindow.pCollection.getPlayer(1).){
 //					myButton.setIcon(red);
 //				}
