@@ -70,6 +70,10 @@ public class Territory {
 	public void addUnits(int unitNum) {
 		units += unitNum;
 	}
+	
+	public void removeUnits(int unitNum) {
+		units -= unitNum;
+	}
 
 	public int getUnits() {
 		return units;

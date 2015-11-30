@@ -51,7 +51,7 @@ public class BattleLogic {
 			if (attackDice.getDice().get(i) <= defendDice.getDice().get(i))
 				countAttack++;
 
-			if (attackDice.getDice().get(i) > defendDice.getDice().get(i)) {
+			else if (attackDice.getDice().get(i) > defendDice.getDice().get(i)) {
 				countDefend++;
 			}
 		}
@@ -60,8 +60,8 @@ public class BattleLogic {
 
 		//System.out.println("countAttack"+countAttack);
 		//System.out.println("countDefend"+countDefend);
-		unitsToLose[0] = ((-1) * countAttack);
-		unitsToLose[1] = ((-1) * countDefend);
+		unitsToLose[0] = (countAttack);
+		unitsToLose[1] = (countDefend);
 		//System.out.println("UNITS TO LOOSE"+unitsToLose[0]);
 		//System.out.println(unitsToLose[1]);
 

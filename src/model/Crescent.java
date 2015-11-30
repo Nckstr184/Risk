@@ -25,12 +25,27 @@ public class Crescent extends Continent {
 		cresTerr.add(3, new Territory("New Land of Zach",new Point(690,450), button, currentPlayer, 0));
 		cresTerr.add(4, new Territory("South Scraptopia",new Point(680,410), button, currentPlayer, 0));
 		cresTerr.add(5, new Territory("Bloo Bawl",new Point(730,390), button, currentPlayer, 0));
-		cresTerr.add(6, new Territory("Crescent Capital",new Point(770,350), button, currentPlayer, 0));
+		cresTerr.add(6, new Territory("Cresent Capital",new Point(770,350), button, currentPlayer, 0));
 
 	}
 	
 	public ArrayList<Territory> getTerritories() {
 		return cresTerr;
+	}
+
+	@Override
+	public boolean isConquered() {
+		int count = 0;
+		String player = cresTerr.get(0).getOwner().getName();
+		for(int i=1;i<cresTerr.size();i++) {
+			if(cresTerr.get(i).getOwner().getName().equals(player)){
+				count++;
+			}
+		}
+		if(count == (cresTerr.size()-1))
+			return true;
+		
+		return false;
 	}
 	
 }
