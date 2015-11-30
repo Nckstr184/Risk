@@ -23,7 +23,6 @@ public class GameLogicTest {
 
 	@Test
 	public void test() {
-		GameLogic logic= new GameLogic();
 		ArrayList<Territory> cTerritories=new ArrayList<Territory>();
 		Continent Crescent=new Crescent("Crescent", false);
 		Continent Dino=new Dino("Dino", false);
@@ -35,6 +34,8 @@ public class GameLogicTest {
 		Player human2 = new Human("human2", Color.BLACK, 0);
 		Player human3 = new Human("human3", Color.BLACK, 0);
 		Player human4 = new Human("human4", Color.BLACK, 0);
+
+		GameLogic logic= new GameLogic(human, human2, human3, human4, null, null);
 		
 		cTerritories=logic.getTerritories();
 		logic.addPlayers(human);
@@ -45,6 +46,11 @@ public class GameLogicTest {
 		assertEquals(human, logic.getPlayerAt(0));
 		logic.startGame();
 		assertEquals(human, logic.getPlayerAt(0));
+		
+		assertEquals(logic.getNumOfPlayers(), 4);
+		logic.removePlayer(human);
+		assertEquals(logic.getNumOfPlayers(), 3);
 	}
+	
 
 }

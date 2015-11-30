@@ -36,5 +36,18 @@ public class Sun extends Continent {
 	public ArrayList<Territory> getTerritories() {
 		return sunTerr;
 	}
-	
+	@Override
+	public boolean isConquered() {
+		int count = 0;
+		String player = sunTerr.get(0).getOwner().getName();
+		for(int i=1;i<sunTerr.size();i++) {
+			if(sunTerr.get(i).getOwner().getName().equals(player)){
+				count++;
+			}
+		}
+		if(count == (sunTerr.size()-1))
+			return true;
+		
+		return false;
+	}
 }

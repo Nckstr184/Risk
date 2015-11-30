@@ -26,4 +26,19 @@ public class Wildcat extends Continent {
 	public ArrayList<Territory> getTerritories() {
 		return wildTerr;
 	}
+	
+	@Override
+	public boolean isConquered() {
+		int count = 0;
+		String player = wildTerr.get(0).getOwner().getName();
+		for(int i=1;i<wildTerr.size();i++) {
+			if(wildTerr.get(i).getOwner().getName().equals(player)){
+				count++;
+			}
+		}
+		if(count == (wildTerr.size()-1))
+			return true;
+		
+		return false;
+	}
 }
