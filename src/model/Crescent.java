@@ -32,5 +32,20 @@ public class Crescent extends Continent {
 	public ArrayList<Territory> getTerritories() {
 		return cresTerr;
 	}
+
+	@Override
+	public boolean isConquered() {
+		int count = 0;
+		String player = cresTerr.get(0).getOwner().getName();
+		for(int i=1;i<cresTerr.size();i++) {
+			if(cresTerr.get(i).getOwner().getName().equals(player)){
+				count++;
+			}
+		}
+		if(count == (cresTerr.size()-1))
+			return true;
+		
+		return false;
+	}
 	
 }

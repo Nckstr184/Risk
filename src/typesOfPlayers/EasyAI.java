@@ -33,12 +33,12 @@ public class EasyAI extends Player implements AIStrategy {
 	}
 
 	@Override
-	public ArrayList<Object> deployArmy(ArrayList<Territory> territories) {
+	public ArrayList<Object> deployArmy() {
 		// choose random territories to add reward units
 		// System.out.println(territories.size());
 		ArrayList<Object> random= new ArrayList<Object>();
-		int rand = r.nextInt(territories.size());
-		Territory temp = territories.get(rand);
+		int rand = r.nextInt(getTerritories().size());
+		Territory temp = getTerritories().get(rand);
 		random.add(temp);
 		random.add(0);
 		return random;

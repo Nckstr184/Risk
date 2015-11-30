@@ -28,4 +28,19 @@ public class Pizza extends Continent {
 	public ArrayList<Territory> getTerritories() {
 		return pizzaTerr;
 	}
+	
+	@Override
+	public boolean isConquered() {
+		int count = 0;
+		String player = pizzaTerr.get(0).getOwner().getName();
+		for(int i=1;i<pizzaTerr.size();i++) {
+			if(pizzaTerr.get(i).getOwner().getName().equals(player)){
+				count++;
+			}
+		}
+		if(count == (pizzaTerr.size()-1))
+			return true;
+		
+		return false;
+	}
 }

@@ -30,7 +30,11 @@ public abstract class Player {
 	}
 
 	public void addArmies(int numArmies) {
-		numOfArmies = numOfArmies + numArmies;
+		numOfArmies += numArmies;
+	}
+	
+	public void removeArmies(int numArmies) {
+		numOfArmies -= numArmies;
 	}
 
 	public String getName() {
@@ -61,7 +65,7 @@ public abstract class Player {
 			}
 		}
 	}
-
+	
 	public void removeCard(List<Card> removeTheseCards) {
 		for (int i = 0; i < removeTheseCards.size(); i++) {
 			int index = playerCards.indexOf(removeTheseCards.get(i));
@@ -129,7 +133,7 @@ public abstract class Player {
 	public void startGame() {
 	}
 
-	public ArrayList<Object> deployArmy(ArrayList<Territory> territories) {
+	public ArrayList<Object> deployArmy() {
 		return null;
 	}
 

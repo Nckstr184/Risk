@@ -30,4 +30,18 @@ public class Dino extends Continent {
 		return dinoTerr;
 	}
 
+	@Override
+	public boolean isConquered() {
+		int count = 0;
+		String player = dinoTerr.get(0).getOwner().getName();
+		for(int i=1;i<dinoTerr.size();i++) {
+			if(dinoTerr.get(i).getOwner().getName().equals(player)){
+				count++;
+			}
+		}
+		if(count == (dinoTerr.size()-1))
+			return true;
+		
+		return false;
+	}
 }
