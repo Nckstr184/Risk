@@ -15,8 +15,7 @@ public class Run6BotsFIX {
 	/*
 	 * TODO LIST
 	 * 
-	 * TODO: Fix HardAI to actually function and not have an empty if statement
-	 * TODO: Fix nullPointer with FortifyPosition
+	 * TODO: Fix HardAI to actually function and not have an empty if statement (CAUSING IOB ERROR CURRENTLY)
 	 * TODO: Check attack logic a few more times to make sure corner cases are covered
 	 * TODO: Try to move some of the battle logic stuff somewhere else, there is too much here
 	 */
@@ -38,6 +37,7 @@ public class Run6BotsFIX {
 			gameLogic.startGame();
 			while (!gameLogic.isGameComplete()) {
 				currPlayer = gameLogic.nextPlayer();
+				System.out.println(currPlayer.getName());
 
 				/*
 				 * ~~~~~~~~~~~~~~~~~~~ DEPLOY ARMIES LOGIC ~~~~~~~~~~~~~~~~~~~

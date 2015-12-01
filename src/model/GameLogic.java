@@ -544,7 +544,7 @@ public class GameLogic {
 		ArrayList<Object> fortifyReturn = currPlayer.fortifyPosition(currPlayer.getTerritories().get(0),
 				currPlayer.getTerritories().get(0).getNeighbors());
 
-		if (fortifyReturn.size() > 0) {
+		if (fortifyReturn != null && fortifyReturn.size() > 0) {
 			Territory territoryToFortify = (Territory) fortifyReturn.get(0);
 			int armiesToAdd = (Integer) fortifyReturn.get(1);
 
