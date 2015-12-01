@@ -134,7 +134,7 @@ public class Run6Bots {
 						int[] unitsToLose = battleLogic.subtractArmies();
 
 						// Subtracting armies from the players
-						// System.out.println("Units to loose"+unitsToLose[0] +
+						// System.out.println("Units to lose"+unitsToLose[0] +
 						// " " + unitsToLose[1]);
 						// System.out.println("BEFORE REMOVING
 						// UNITs"+currPlayer.getNumOfArmies() + " " +
