@@ -34,7 +34,7 @@ public class GameBoard extends JPanel {
 	ArrayList<Continent> continents;
 	ArrayList<Territory> territories;
 	BufferedImage map, bottomDisplay, leftDisplay, rightDisplay;
-	Player player1, player2, player3, player4, player5, player6;
+	Player player1, player2, player3, player4, player5, player6, currPlayer;
 
 	JPanel board, boardDisplay, boardInfo;
 
@@ -78,6 +78,7 @@ public class GameBoard extends JPanel {
 	ImageIcon gray, red, blue, purple, orange, yellow, green;
 	JLabel picLanguageabel;
 	StartWindow startWindow;
+	GameLogic newGame;
 
 	public GameBoard() {
 
@@ -102,16 +103,19 @@ public class GameBoard extends JPanel {
 					JLabel leftLabel = new JLabel(new ImageIcon(leftDisplay));
 					JLabel rightLabel = new JLabel(new ImageIcon(rightDisplay));
 					System.out.println("NUMBER OF PLAYERS: " + startWindow.getNumberOfPlayer());
-					playerTags();
+					
 					this.setLayout(new BorderLayout());
 					startNewGame();
+					playerTags();
 					addButtons();
+					currPlayer = newGame.getPlayerAt(0);
 
 					add(picLabel, BorderLayout.CENTER);
 					add(leftLabel, BorderLayout.WEST);
 					add(rightLabel, BorderLayout.EAST);
 
 					add(bottomLabel, BorderLayout.SOUTH);
+					
 
 				} catch (IOException e) {
 					System.out.println("ERROR with map");
@@ -125,26 +129,33 @@ public class GameBoard extends JPanel {
 
 	private void playerTags() {
 		int numberOfPlayers;
-		JLabel playerTag;
+		JLabel playerTag, playerTag2;
 		numberOfPlayers = startWindow.getNumberOfPlayer();
 		Font font = new Font("Verdana", Font.BOLD, 18);
+		Font font2 = new Font("Verdana", Font.BOLD, 9);
 		int count = 1;
 
 		for (int i = 0; i < numberOfPlayers; i++) {
-			playerTag = new JLabel("" + startWindow.getPlayerName(i));
+			playerTag = new JLabel(startWindow.getPlayerName(i));
+			playerTag2 = new JLabel("You have "+ newGame.getPlayerAt(i).getNumOfArmies() +" units left to place!");
 			playerTag.setSize(150, 40);
 			playerTag.setLocation(170 * count, 600);
 			playerTag.setFont(font);
 			playerTag.setForeground(startWindow.getPlayerColor(i));
+			playerTag2.setSize(200,40);
+			playerTag2.setLocation(165* count, 620);
+			playerTag2.setFont(font2);
+			playerTag2.setForeground(startWindow.getPlayerColor(i));
 			add(playerTag);
+			add(playerTag2);
 			// add(playerTag, BorderLayout.SOUTH);
 			count++;
 		}
 
 	}
 
-	private void startNewGame() {
-		GameLogic newGame = new GameLogic(startWindow.playerOne, startWindow.playerTwo, startWindow.playerThree,
+	public void startNewGame() {
+		newGame = new GameLogic(startWindow.playerOne, startWindow.playerTwo, startWindow.playerThree,
 				startWindow.playerFour, startWindow.playerFive, startWindow.playerSix);
 		CardCollection newDeck = new CardCollection();
 		newDeck.shuffle();
@@ -2828,18 +2839,15 @@ public class GameBoard extends JPanel {
 
 		javaLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				JButton myButton = (JButton) e.getSource();
-
 				JLabel myLabel = myMap.get(myButton);
-
-				System.out.println(player1.getNumOfArmies());
-
-				if (myLabel != null) {
-
-					myLabel.setText("" + javaUnits);
+				if(currPlayer.getNumOfArmies() >= 1){
+					javaUnits +=1;
+					myLabel.setText(""+ javaUnits);
+					currPlayer.removeArmies(1);	
+					
+					//ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 				}
-
 			}
 		});
 		pythonLanguage.addActionListener(new buttonListener());

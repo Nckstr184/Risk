@@ -331,6 +331,11 @@ public class StartWindow extends JFrame {
 		return playerName;
 
 	}
+	
+	public Player getPlayerAt(int index){
+		return pCollection.getPlayer(index);
+		
+	}
 
 	public void setPlayerColor(Color color) {
 
