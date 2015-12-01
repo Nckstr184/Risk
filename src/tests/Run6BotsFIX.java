@@ -15,9 +15,9 @@ public class Run6BotsFIX {
 	/*
 	 * TODO LIST
 	 * 
-	 * TODO: Fix HardAI to actually function and not have an empty if statement
-	 * TODO: Fix nullPointer with FortifyPosition
+	 * TODO: Fix HardAI to actually function and not have an empty if statement (CAUSING IOB ERROR CURRENTLY)
 	 * TODO: Check attack logic a few more times to make sure corner cases are covered
+	 * TODO: Transfer territories on Attacker win
 	 * TODO: Try to move some of the battle logic stuff somewhere else, there is too much here
 	 */
 
@@ -29,15 +29,17 @@ public class Run6BotsFIX {
 			Player easy2 = new EasyAI("easy2", Color.RED, 20);
 			Player medium3 = new MediumAI("medium3", Color.RED, 20);
 			Player medium4 = new MediumAI("medium4", Color.RED, 20);
-			Player hard5 = new HardAI("hard5", Color.RED, 20);
-			Player hard6 = new HardAI("hard6", Color.RED, 20);
+			//Player hard5 = new HardAI("hard5", Color.RED, 20);
+			//Player hard6 = new HardAI("hard6", Color.RED, 20);
 			Player currPlayer;
-			GameLogic gameLogic = new GameLogic(easy1, easy2, medium3, medium4, hard5, hard6);
+			GameLogic gameLogic = new GameLogic(easy1, easy2, medium3, medium4, null, null);
 			BattleLogic battleLogic;
 
 			gameLogic.startGame();
 			while (!gameLogic.isGameComplete()) {
 				currPlayer = gameLogic.nextPlayer();
+				System.out.println(currPlayer.getName());
+				System.out.println("Number of Territories: " + currPlayer.getTerritories().size());
 
 				/*
 				 * ~~~~~~~~~~~~~~~~~~~ DEPLOY ARMIES LOGIC ~~~~~~~~~~~~~~~~~~~
@@ -77,10 +79,13 @@ public class Run6BotsFIX {
 						}
 
 						if (defendingTerritory.getUnits() <= 2) {
-							defenderDiceNum = defendingTerritory.getUnits() - 1;
+							System.out.println("Defending Units at Territory: " + defendingTerritory.getUnits());
+							defenderDiceNum = defendingTerritory.getUnits();
 						} else
 							defenderDiceNum = 2;
-
+						
+						System.out.println("Attacking Dice: " + attackerDiceNum);
+						System.out.println("Defending Dice: " + defenderDiceNum);
 						battleLogic.attackPlayer(attackerDiceNum, defenderDiceNum);
 						int[] unitsToLose = battleLogic.subtractArmies();
 

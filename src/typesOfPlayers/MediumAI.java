@@ -20,8 +20,8 @@ public class MediumAI extends Player implements AIStrategy {
 		// System.out.println("Infinite?");
 		ArrayList<Object> mediumInfo=new ArrayList<Object>();
 		int smallestNumOfArmies, indexOfSmallestArmies = 0;
-		smallestNumOfArmies = territories.get(0).getUnits();
-		for (int i = 1; i < territories.size(); i++) {
+		smallestNumOfArmies = getTerritories().get(0).getUnits();
+		for (int i = 1; i < getTerritories().size(); i++) {
 			if (smallestNumOfArmies > getTerritories().get(i).getUnits()) {
 				smallestNumOfArmies = getTerritories().get(i).getUnits();
 				indexOfSmallestArmies = i;
