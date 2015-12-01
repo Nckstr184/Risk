@@ -94,8 +94,8 @@ public class GameBoard extends JPanel {
 				try {
 					map = ImageIO.read(new File("./Pictures/map1.png"));
 					bottomDisplay = ImageIO.read(new File("./Pictures/gui1.png"));
-					leftDisplay = ImageIO.read(new File("./Pictures/gui2.png"));
-					rightDisplay = ImageIO.read(new File("./Pictures/gui2.png"));
+					leftDisplay = ImageIO.read(new File("./Pictures/gui2n.png"));
+					rightDisplay = ImageIO.read(new File("./Pictures/gui2n.png"));
 
 					JLabel picLabel = new JLabel(new ImageIcon(map));
 					JLabel bottomLabel = new JLabel(new ImageIcon(bottomDisplay));
@@ -107,7 +107,7 @@ public class GameBoard extends JPanel {
 					startNewGame();
 					addButtons();
 
-					add(picLabel, BorderLayout.NORTH);
+					add(picLabel, BorderLayout.CENTER);
 					add(leftLabel, BorderLayout.WEST);
 					add(rightLabel, BorderLayout.EAST);
 
@@ -144,7 +144,8 @@ public class GameBoard extends JPanel {
 	}
 
 	private void startNewGame() {
-		GameLogic newGame = new GameLogic();
+		GameLogic newGame = new GameLogic(startWindow.playerOne, startWindow.playerTwo, startWindow.playerThree,
+				startWindow.playerFour, startWindow.playerFive, startWindow.playerSix);
 		CardCollection newDeck = new CardCollection();
 		newDeck.shuffle();
 
@@ -210,11 +211,10 @@ public class GameBoard extends JPanel {
 
 		newGame.startGame();
 
-		// newGame.startGame();
-
+	
 	}
 
-	private void addButtons() {
+	public void addButtons() {
 
 		gray = new ImageIcon("./Pictures/circle.png");
 		red = new ImageIcon("./Pictures/rcircle.png");
