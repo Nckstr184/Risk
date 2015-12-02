@@ -26,7 +26,6 @@ public class GameLogic {
 		allContinents = new ArrayList<Continent>();
 		allPlayers = new PlayerCollection();
 		allCards = new CardCollection();
-		allCards.shuffle();
 
 		nextCard = 0;
 		indexOfPlayerTurn = 0;
@@ -85,7 +84,7 @@ public class GameLogic {
 	public Player nextPlayer() {
 		playerTurn++;
 		noMoreRewardCard = false;
-		indexOfPlayerTurn = playerTurn % allPlayers.getNumOfPlayers();
+		indexOfPlayerTurn = playerTurn % (allPlayers.getNumOfPlayers());
 		return allPlayers.getPlayer(indexOfPlayerTurn);
 	}
 
@@ -369,11 +368,12 @@ public class GameLogic {
 	}
 
 	public int getNumOfPlayers() {
-		return numOfPlayers;
+		return allPlayers.getNumOfPlayers();
 	}
 
 	public void startGame() {
 		numOfPlayers = allPlayers.getNumOfPlayers();
+		allCards.shuffle();
 
 		disperseNumberOfArmies();
 		startUpPlaceReinforcementPhase();
@@ -390,11 +390,11 @@ public class GameLogic {
 		while (!tempTerrs.isEmpty()) {
 			for (int i = 0; i < allPlayers.getNumOfPlayers(); i++) {
 				if (!tempTerrs.isEmpty()) {
-					System.out.println(count++);
+					//System.out.println(count++);
 					randomIndex = r.nextInt(tempTerrs.size());
 					tempTerritory = tempTerrs.get(randomIndex);
 					tempPlayer = allPlayers.getPlayer(i);
-					System.out.println(tempTerritory.getOwner());
+					//System.out.println(tempTerritory.getOwner());
 					if (tempPlayer.getNumOfArmies() > 0) {
 						tempPlayer.addTerritories(tempTerritory);
 						tempTerritory.setOwner(tempPlayer);
@@ -405,9 +405,9 @@ public class GameLogic {
 				}
 			}
 		}
-		
-		for(int i=0;i<allTerritories.size();i++) {
-			System.out.println(allTerritories.get(i).getName() + " has " + allTerritories.get(i).getUnits() + " units");
+
+		for (int i = 0; i < allTerritories.size(); i++) {
+			//System.out.println(allTerritories.get(i).getName() + " has " + allTerritories.get(i).getUnits() + " units");
 		}
 	}
 
@@ -491,35 +491,41 @@ public class GameLogic {
 		} else {
 			currPlayer.addArmies((int) (totalNumOfTerritories / 3));
 		}
+
+		//System.out.println(currPlayer.getNumOfArmies());
 	}
 
 	public void deployAllArmies() {
 		Player currPlayer = allPlayers.getPlayer(indexOfPlayerTurn);
-
+		// System.out.println("Current player being deployed: " +
+		// currPlayer.getName());
 		while (currPlayer.getNumOfArmies() > 0) {
-			((Territory) currPlayer.deployArmy().get(0)).addUnits(1);
-			currPlayer.removeArmies(1);
+			ArrayList<Object> deployingList = currPlayer.deployArmy();
+			Territory tempTerr = (Territory) deployingList.get(0);
+			Integer tempInt = (Integer) deployingList.get(1);
+			if (tempTerr.getUnits() <= 5)
+				tempTerr.addUnits(tempInt);
+			currPlayer.removeArmies(tempInt);
 		}
 	}
 
-	
-	
 	public void attackLogic(Territory attackingTerr, Territory defendingTerr, int[] unitsToLose) {
 		Player attacker = attackingTerr.getOwner();
 		Player defender = defendingTerr.getOwner();
-		System.out.println("Defender: " + defender.getName());
+		//System.out.println("Defender: " + defender.getName());
 
 		attackingTerr.removeUnits(unitsToLose[0]);
 		defendingTerr.removeUnits(unitsToLose[1]);
 
 		if (defendingTerr.getUnits() <= 0) {
-			System.out.println("Attacker won!");
+			//System.out.println("Attacker won!");
 			defender.removeTerritory(defendingTerr);
 			attacker.addTerritories(defendingTerr);
 			defendingTerr.setOwner(attacker);
 
-			attackingTerr.removeUnits(1);
-			while (defendingTerr.getUnits() <= 0) {
+			int movingArmies = attackingTerr.getUnits() - 1;
+			attackingTerr.removeUnits(movingArmies);
+			while (defendingTerr.getUnits() <= movingArmies ) {
 				defendingTerr.addUnits(1);
 			}
 
@@ -529,19 +535,23 @@ public class GameLogic {
 				nextCard++;
 			}
 
-			System.out.println("Should be the attacker's name -> " + defendingTerr.getOwner().getName());
+			//System.out.println("Should be the attacker's name -> " + defendingTerr.getOwner().getName());
+
+			if (defender.getTerritories().size() == 0) {
+				allPlayers.removePlayer(defender);
+			}
 		}
 
 	}
 
 	public void fortifyPosition() {
-		Player currPlayer = allPlayers.getPlayer(indexOfPlayerTurn);
+		Player currPlayer = allPlayers.getPlayer(playerTurn % (allPlayers.getNumOfPlayers()));
 
 		ArrayList<Object> fortifyReturn = currPlayer.fortifyPosition(currPlayer.getTerritories().get(0),
 				currPlayer.getTerritories().get(0).getNeighbors());
 
 		if (fortifyReturn != null && fortifyReturn.size() > 0) {
-			System.out.println("Fortifying the territories of: " + currPlayer.getName());
+			//System.out.println("Fortifying the territories of: " + currPlayer.getName());
 			Territory territoryToFortify = (Territory) fortifyReturn.get(0);
 			int armiesToAdd = (Integer) fortifyReturn.get(1);
 
