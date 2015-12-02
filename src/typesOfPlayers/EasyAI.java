@@ -40,7 +40,7 @@ public class EasyAI extends Player implements AIStrategy {
 		int rand = r.nextInt(getTerritories().size());
 		Territory temp = getTerritories().get(rand);
 		random.add(temp);
-		random.add(0);
+		random.add(1);
 		return random;
 	}
 
@@ -64,7 +64,6 @@ public class EasyAI extends Player implements AIStrategy {
 		int count = 0;
 		ArrayList<Territory> availableTerritories = new ArrayList<Territory>(connected);
 
-		if (rand == 0) {
 			do {
 				rand = r.nextInt(connected.size());
 				if (availableTerritories.indexOf(connected.get(rand)) != -1) {
@@ -79,9 +78,8 @@ public class EasyAI extends Player implements AIStrategy {
 			// System.out.println("Returning territory");
 			if (!connected.get(rand).getOwner().getName().equals(this.getName()))
 				return connected.get(rand);
-		}
 		// returns null if it decides to not attack
-		// System.out.println("Returning null");
+		System.out.println("Returning null");
 		return null;
 	}
 
@@ -100,8 +98,8 @@ public class EasyAI extends Player implements AIStrategy {
 			}
 			territoryAndArmyNum.add(temp);
 
-			int armySize = this.getNumOfArmies();
-			if (armySize > 0) {
+			int armySize = currentTerr.getUnits();
+			if (armySize > 1) {
 				rand = r.nextInt(armySize - 1);
 			}
 			territoryAndArmyNum.add(rand);
