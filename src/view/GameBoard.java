@@ -81,8 +81,14 @@ public class GameBoard extends JPanel {
 	ImageIcon gray, red, blue, purple, orange, yellow, green;
 	JLabel picLanguageabel;
 	StartWindow startWindow;
+	OpenNewMenu newgame;
 
 	public GameBoard() {
+		newgame= new OpenNewMenu();
+		while(newgame.isDisplayable()){
+			
+		
+		if(!newgame.isDisplayable()){
 
 		startWindow = new StartWindow();
 	//	current = new Player();
@@ -96,7 +102,7 @@ public class GameBoard extends JPanel {
 
 				try {
 					map = ImageIO.read(new File("./Pictures/map1.png"));
-					bottomDisplay = ImageIO.read(new File("./Pictures/gui1.png"));
+					bottomDisplay = ImageIO.read(new File("./Pictures/bottomgui.png"));
 					leftDisplay = ImageIO.read(new File("./Pictures/gui2.png"));
 					rightDisplay = ImageIO.read(new File("./Pictures/gui2.png"));
 
@@ -122,7 +128,8 @@ public class GameBoard extends JPanel {
 				}
 
 			}
-
+		}
+		}
 		}
 	}
 
@@ -1795,7 +1802,7 @@ public class GameBoard extends JPanel {
 				cresentLabel6.setOpaque(false);
 
 				cresentcaptitalCresent.setSize(25, 25);
-				cresentcaptitalCresent.setLocation(838, 285);
+				cresentcaptitalCresent.setLocation(868, 285);
 				cresentcaptitalCresent.setOpaque(false);
 				cresentcaptitalCresent.setContentAreaFilled(false);
 				cresentcaptitalCresent.setBorderPainted(false);
