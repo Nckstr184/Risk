@@ -40,7 +40,7 @@ public class HardAI extends Player implements AIStrategy {
 				if(!temp.getName().equals(this.getName()))
 				{
 					for (int neighborIndex = 0; neighborIndex < neighbors.size(); neighborIndex++) {
-						if(temp.getName().equals(neighbors.get(neighborIndex).getname()))
+						if(temp.getName().equals(neighbors.get(neighborIndex).getName()))
 						{
 						armySum += neighbors.get(j).getUnits();
 						}
@@ -82,7 +82,7 @@ public class HardAI extends Player implements AIStrategy {
 				if(!temp.getName().equals(this.getName()))
 				{
 					for (int neighborIndex = 0; neighborIndex < neighbors.size(); neighborIndex++) {
-						if(temp.getName().equals(neighbors.get(neighborIndex).getname()))
+						if(temp.getName().equals(neighbors.get(neighborIndex).getName()))
 						{
 						armySum += neighbors.get(j).getUnits();
 						}

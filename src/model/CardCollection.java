@@ -11,6 +11,10 @@ import javax.imageio.ImageIO;
 
 public class CardCollection implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6250934081881949608L;
 	ArrayList<Card> cardCollection, cardCollectionShuffled;
 	Image C1T1, C1T2, C1T3, C1T4, C1T5, C1T6, C1T7, C2T1, C2T2, C2T3, C2T4, C2T5, C2T6, C2T7, C3T1, C3T2, C3T3, C3T4,
 			C3T5, C3T6, C3T7, C4T1, C4T2, C4T3, C4T4, C4T5, C4T6, C4T7, C5T1, C5T2, C5T3, C5T4, C5T5, C5T6, C5T7, C6T1, C6T2,

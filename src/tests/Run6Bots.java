@@ -78,7 +78,9 @@ public class Run6Bots {
 				while (currPlayer.getNumOfArmies() != 0) {
 					// System.out.println("ArmiesBeforeDeployment "+
 					// currPlayer.getNumOfArmies());
-					((Territory) currPlayer.deployArmy(territories).get(0)).addUnits(1);
+					
+					//Esgar Changed stuff in here
+					((Territory) currPlayer.deployArmy().get(0)).addUnits(1);
 					currPlayer.addArmies(-1);
 					// System.out.println("ArmiesAfterDeployment "+
 					// currPlayer.getNumOfArmies());

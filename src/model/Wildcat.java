@@ -5,6 +5,10 @@ import java.util.ArrayList;
 
 import javax.swing.JButton;
 public class Wildcat extends Continent {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6782143764516605641L;
 	ArrayList<Territory> wildTerr;
 	public Wildcat(String cName, boolean cConquered) {
 		super(cName, cConquered);

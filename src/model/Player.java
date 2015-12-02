@@ -1,11 +1,19 @@
 package model;
 
 import java.awt.Color;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Player {
+public abstract class Player implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 637979960045413951L;
+	/**
+	 * 
+	 */
 	private String name;
 	private Color playerColor;
 	private ArrayList<Card> playerCards;
@@ -59,8 +67,8 @@ public abstract class Player {
 
 	public void removeTerritory(Territory removedTerritory) {
 		for (int index = 0; index < playerTerritories.size(); index++) {
-			String temp = playerTerritories.get(index).getname();
-			if (removedTerritory.getname().equals(temp)) {
+			String temp = playerTerritories.get(index).getName();
+			if (removedTerritory.getName().equals(temp)) {
 				playerTerritories.remove(index);
 			}
 		}
