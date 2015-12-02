@@ -21,7 +21,7 @@ public class TerritoryTest {
 		Point point=new Point(0,0);
 		Territory terr=new Territory("terr", point, button, temp,0);
 		
-		assertEquals("terr", terr.getname());
+		assertEquals("terr", terr.getName());
 		assertEquals(temp, terr.getOwner());
 		assertEquals(button, terr.getButton());
 		assertEquals(point, terr.getPoint());

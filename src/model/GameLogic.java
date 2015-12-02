@@ -374,29 +374,14 @@ public class GameLogic {
 
 	public void startGame() {
 		numOfPlayers = allPlayers.getNumOfPlayers();
-		Player temp;
-		int roll; /*
-					 * ArrayList<Player> tempList = new ArrayList<Player>(); //
-					 * this rolls the dice per person to check to see who goes
-					 * first for (int i = 0; i < numOfPlayers; i++) { temp =
-					 * allPlayers.getPlayer(i); roll = turnDice.rollDice();
-					 * temp.setDiceRoll(roll); tempList.add(temp); } // sorts
-					 * the players based on dice roll *DOESNT ROLL AGAIN FOR //
-					 * DUPLICATES* // However, duplicates do not break the
-					 * sorting (Insertion Sort FTW) tempList =
-					 * InsertionSort(tempList.toArray());
-					 * 
-					 * // sets the master Player List to the sorted one
-					 * allPlayers.setPlayerList(tempList); // TODO: Randomly set
-					 * 1 army per turn to a territory
-					 */
+
+		disperseNumberOfArmies();
 		startUpPlaceReinforcementPhase();
 	}
 
 	private void startUpPlaceReinforcementPhase() {
-		disperseNumberOfArmies();
 		// make temp list of territories
-		ArrayList<Territory> tempTerrs = this.getTerritories();
+		ArrayList<Territory> tempTerrs = new ArrayList<Territory>(this.getTerritories());
 		r = new Random();
 		int randomIndex;
 		Territory tempTerritory;
@@ -409,14 +394,20 @@ public class GameLogic {
 					randomIndex = r.nextInt(tempTerrs.size());
 					tempTerritory = tempTerrs.get(randomIndex);
 					tempPlayer = allPlayers.getPlayer(i);
-					tempPlayer.addTerritories(tempTerritory);
-					tempTerritory.setOwner(tempPlayer);
-					tempTerrs.remove(randomIndex);
-					tempPlayer.addArmies(-1);
-					tempTerritory.addUnits(1);
+					System.out.println(tempTerritory.getOwner());
+					if (tempPlayer.getNumOfArmies() > 0) {
+						tempPlayer.addTerritories(tempTerritory);
+						tempTerritory.setOwner(tempPlayer);
+						tempTerrs.remove(randomIndex);
+						while (tempTerritory.getUnits() != 1)
+							tempTerritory.addUnits(1);
+					}
 				}
 			}
-
+		}
+		
+		for(int i=0;i<allTerritories.size();i++) {
+			System.out.println(allTerritories.get(i).getName() + " has " + allTerritories.get(i).getUnits() + " units");
 		}
 	}
 
@@ -442,8 +433,7 @@ public class GameLogic {
 		if (allPlayers.getNumOfPlayers() == 6) {
 			for (int i = 0; i < 6; i++) {
 				Player temp = allPlayers.getPlayer(i);
-				if (temp != null)
-					temp.addArmies(20);
+				temp.addArmies(20);
 			}
 		}
 	}
@@ -512,14 +502,18 @@ public class GameLogic {
 		}
 	}
 
+	
+	
 	public void attackLogic(Territory attackingTerr, Territory defendingTerr, int[] unitsToLose) {
 		Player attacker = attackingTerr.getOwner();
 		Player defender = defendingTerr.getOwner();
+		System.out.println("Defender: " + defender.getName());
 
 		attackingTerr.removeUnits(unitsToLose[0]);
 		defendingTerr.removeUnits(unitsToLose[1]);
 
 		if (defendingTerr.getUnits() <= 0) {
+			System.out.println("Attacker won!");
 			defender.removeTerritory(defendingTerr);
 			attacker.addTerritories(defendingTerr);
 			defendingTerr.setOwner(attacker);
@@ -534,6 +528,8 @@ public class GameLogic {
 				attacker.addCard(allCards.getCard(nextCard));
 				nextCard++;
 			}
+
+			System.out.println("Should be the attacker's name -> " + defendingTerr.getOwner().getName());
 		}
 
 	}
@@ -544,13 +540,31 @@ public class GameLogic {
 		ArrayList<Object> fortifyReturn = currPlayer.fortifyPosition(currPlayer.getTerritories().get(0),
 				currPlayer.getTerritories().get(0).getNeighbors());
 
-		if (fortifyReturn.size() > 0) {
+		if (fortifyReturn != null && fortifyReturn.size() > 0) {
+			System.out.println("Fortifying the territories of: " + currPlayer.getName());
 			Territory territoryToFortify = (Territory) fortifyReturn.get(0);
 			int armiesToAdd = (Integer) fortifyReturn.get(1);
 
 			territoryToFortify.addUnits(armiesToAdd);
 			currPlayer.getTerritories().get(0).removeUnits(armiesToAdd);
 		}
+	}
+
+	public boolean attackerWin(Territory defendingTerr) {
+		if (defendingTerr.getUnits() <= 0) {
+			return true;
+		}
+
+		return false;
+	}
+
+	public void transferTerritory(Player attacker, Player defender, Territory attackingTerr, Territory defendingTerr) {
+
+		defender.removeTerritory(defendingTerr);
+		attacker.addTerritories(defendingTerr);
+		defendingTerr.setOwner(attacker);
+		attackingTerr.removeUnits(1);
+		defendingTerr.addUnits(1);
 	}
 
 	// CARD LOGIC SECTION

@@ -54,12 +54,6 @@ public class StartWindow extends JFrame {
 		player5 = new JTextField();
 		player6 = new JTextField();
 
-//		diff1 = new JComboBox();
-//		diff2 = new JComboBox();
-//		diff3 = new JComboBox();
-//		diff4 = new JComboBox();
-//		diff5 = new JComboBox();
-//		diff6 = new JComboBox();
 
 		enterName = new JLabel();
 
@@ -336,6 +330,11 @@ public class StartWindow extends JFrame {
 		String playerName = name.getName();
 		return playerName;
 
+	}
+	
+	public Player getPlayerAt(int index){
+		return pCollection.getPlayer(index);
+		
 	}
 
 	public void setPlayerColor(Color color) {

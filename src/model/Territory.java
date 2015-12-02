@@ -25,7 +25,7 @@ public class Territory {
 		neighbors = new ArrayList<Territory>();
 	}
 
-	public String getname() {
+	public String getName() {
 		return tname;
 	}
 
@@ -72,16 +72,17 @@ public class Territory {
 	}
 	
 	public void removeUnits(int unitNum) {
+		System.out.print(tname + "'s units have changed from " + units);
 		units -= unitNum;
+		System.out.println(" to " + units);
 	}
 
 	public int getUnits() {
 		return units;
 	}
 
-	public int findDifferentPlayersArround()
+	public int findDifferentPlayersAround()
 	{
-		
 		int numOfNeighbors=this.getNeighbors().size();
 		Player temp=this.getOwner();
 		String ownerName=this.getOwner().getName();

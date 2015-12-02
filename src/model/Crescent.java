@@ -16,7 +16,7 @@ public class Crescent extends Continent {
 		super(cName, cConquered);
 		cresTerr = new ArrayList<Territory>();
 		//WE NEED TO FIX THIS TO PULL IN THE CURRENT PLAYER
-		Player currentPlayer = new Human(cName, Color.RED, 0);//get current player
+		Player currentPlayer = null;//get current player
 		JButton button= new JButton("0");
 		// Sting name, Point tcoords, JButton tbutton, Player owner, int numOfUnits
 		cresTerr.add(0, new Territory("Scraptopia",new Point(580,430), button, currentPlayer, 0));
