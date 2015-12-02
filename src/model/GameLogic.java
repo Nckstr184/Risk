@@ -502,6 +502,8 @@ public class GameLogic {
 		}
 	}
 
+	
+	
 	public void attackLogic(Territory attackingTerr, Territory defendingTerr, int[] unitsToLose) {
 		Player attacker = attackingTerr.getOwner();
 		Player defender = defendingTerr.getOwner();
