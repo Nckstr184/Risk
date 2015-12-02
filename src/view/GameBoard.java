@@ -78,10 +78,20 @@ public class GameBoard extends JPanel {
 	ImageIcon gray, red, blue, purple, orange, yellow, green;
 	JLabel picLanguageabel;
 	StartWindow startWindow;
+
+	OpenNewMenu newgame;
+
 	GameLogic newGame;
 	JLabel playerTag, playerTag2;
 
+
 	public GameBoard() {
+		newgame= new OpenNewMenu();
+		while(newgame.isDisplayable()){
+			System.out.print("");
+		
+		if(!newgame.isDisplayable()){
+			System.out.print("");
 
 		startWindow = new StartWindow();
 		// current = new Player();
@@ -95,9 +105,10 @@ public class GameBoard extends JPanel {
 
 				try {
 					map = ImageIO.read(new File("./Pictures/map1.png"));
-					bottomDisplay = ImageIO.read(new File("./Pictures/gui1.png"));
-					leftDisplay = ImageIO.read(new File("./Pictures/gui2n.png"));
-					rightDisplay = ImageIO.read(new File("./Pictures/gui2n.png"));
+
+					bottomDisplay = ImageIO.read(new File("./Pictures/bottomgui.png"));
+					leftDisplay = ImageIO.read(new File("./Pictures/gui2.png"));
+					rightDisplay = ImageIO.read(new File("./Pictures/gui2.png"));
 
 					JLabel picLabel = new JLabel(new ImageIcon(map));
 					JLabel bottomLabel = new JLabel(new ImageIcon(bottomDisplay));
@@ -123,7 +134,8 @@ public class GameBoard extends JPanel {
 				}
 
 			}
-
+		}
+		}
 		}
 		
 
@@ -3747,6 +3759,288 @@ public class GameBoard extends JPanel {
 		this.add(horusSun);
 		this.add(tonatiuhSun);
 		this.add(amunSun);
+
+		
+		
+		//ALL FOR DINO***
+				rawrUnits = 0;
+				eggUnits = 0;
+				dacUnits = 0;
+				danUnits = 0;
+				bbUnits = 0;
+				moniUnits = 0;
+				tsUnits = 0;
+
+				dinoLabel1 = new JLabel("" + pjUnits);
+				dinoLabel2 = new JLabel("" + domUnits);
+				dinoLabel3 = new JLabel("" + phUnits);
+				dinoLabel4 = new JLabel("" + bjUnits);
+				dinoLabel5 = new JLabel("" + hhUnits);
+				dinoLabel6 = new JLabel("" + bUnits);
+				dinoLabel7 = new JLabel("" + ppUnits);
+
+			
+
+				rawrvilleDino.addActionListener(new buttonListener());
+				laieggesDino.addActionListener(new buttonListener());
+				dactilitoDino.addActionListener(new buttonListener());
+				dirtydanDino.addActionListener(new buttonListener());
+				blackbeardDino.addActionListener(new buttonListener());
+				monisaurusDino.addActionListener(new buttonListener());
+				toystoryDino.addActionListener(new buttonListener());
+
+				rawrvilleDino.setSize(25, 25);
+				rawrvilleDino.setLocation(960, 224);
+				rawrvilleDino.setOpaque(false);
+				rawrvilleDino.setContentAreaFilled(false);
+				rawrvilleDino.setBorderPainted(false);
+
+				dinoLabel1.setSize(25, 25);
+				dinoLabel1.setFont(font);
+				dinoLabel1.setForeground(Color.WHITE);
+				dinoLabel1.setLocation(968, 227);
+				dinoLabel1.setOpaque(false);
+
+				laieggesDino.setSize(25, 25);
+				laieggesDino.setLocation(923, 241);
+				laieggesDino.setOpaque(false);
+				laieggesDino.setContentAreaFilled(false);
+				laieggesDino.setBorderPainted(false);
+
+				dinoLabel2.setSize(25, 25);
+				dinoLabel2.setFont(font);
+				dinoLabel2.setForeground(Color.WHITE);
+				dinoLabel2.setLocation(931, 244);
+				dinoLabel2.setOpaque(false);
+
+				dactilitoDino.setSize(25, 25);
+				dactilitoDino.setLocation(920, 325);
+				dactilitoDino.setOpaque(false);
+				dactilitoDino.setContentAreaFilled(false);
+				dactilitoDino.setBorderPainted(false);
+
+				dinoLabel3.setSize(25, 25);
+				dinoLabel3.setFont(font);
+				dinoLabel3.setForeground(Color.WHITE);
+				dinoLabel3.setLocation(928, 328);
+				dinoLabel3.setOpaque(false);
+
+				dirtydanDino.setSize(25, 25);
+				dirtydanDino.setLocation(868, 315);
+				dirtydanDino.setOpaque(false);
+				dirtydanDino.setContentAreaFilled(false);
+				dirtydanDino.setBorderPainted(false);
+
+				dinoLabel4.setSize(25, 25);
+				dinoLabel4.setFont(font);
+				dinoLabel4.setForeground(Color.WHITE);
+				dinoLabel4.setLocation(875, 318);
+				dinoLabel4.setOpaque(false);
+
+				blackbeardDino.setSize(25, 25);
+				blackbeardDino.setLocation(885, 358);
+				blackbeardDino.setOpaque(false);
+				blackbeardDino.setContentAreaFilled(false);
+				blackbeardDino.setBorderPainted(false);
+
+				dinoLabel5.setSize(25, 25);
+				dinoLabel5.setFont(font);
+				dinoLabel5.setForeground(Color.WHITE);
+				dinoLabel5.setLocation(893, 361);
+				dinoLabel5.setOpaque(false);
+
+				monisaurusDino.setSize(25, 25);
+				monisaurusDino.setLocation(845, 383);
+				monisaurusDino.setOpaque(false);
+				monisaurusDino.setContentAreaFilled(false);
+				monisaurusDino.setBorderPainted(false);
+
+				dinoLabel6.setSize(25, 25);
+				dinoLabel6.setFont(font);
+				dinoLabel6.setForeground(Color.WHITE);
+				dinoLabel6.setLocation(853, 386);
+				dinoLabel6.setOpaque(false);
+
+				toystoryDino.setSize(25, 25);
+				toystoryDino.setLocation(930, 408);
+				toystoryDino.setOpaque(false);
+				toystoryDino.setContentAreaFilled(false);
+				toystoryDino.setBorderPainted(false);
+
+			//	myMap = new HashMap<JButton, JLabel>();
+				myMap.put(rawrvilleDino, dinoLabel1);
+				myMap.put(laieggesDino, dinoLabel2);
+				myMap.put(dactilitoDino, dinoLabel3);
+				myMap.put(dirtydanDino, dinoLabel4);
+				myMap.put(blackbeardDino, dinoLabel5);
+				myMap.put(monisaurusDino, dinoLabel6);
+				myMap.put(toystoryDino, dinoLabel7);
+
+				dinoLabel7.setSize(25, 25);
+				dinoLabel7.setFont(font);
+				dinoLabel7.setForeground(Color.WHITE);
+				dinoLabel7.setLocation(938, 411);
+				dinoLabel7.setOpaque(false);
+
+				// add all lables
+				this.add(dinoLabel1);
+				this.add(dinoLabel2);
+				this.add(dinoLabel3);
+				this.add(dinoLabel4);
+				this.add(dinoLabel5);
+				this.add(dinoLabel6);
+				this.add(dinoLabel7);
+
+				// add all buttons
+				this.add(rawrvilleDino);
+				this.add(laieggesDino);
+				this.add(dactilitoDino);
+				this.add(dirtydanDino);
+				this.add(blackbeardDino);
+				this.add(monisaurusDino);
+				this.add(toystoryDino);
+				
+				
+				// ALL CRESENT**
+				scrapUnits = 0;
+				zachUnits = 0;
+				giantUnits = 0;
+				newzachUnits = 0;
+				southUnits = 0;
+				blooUnits = 0;
+				capUnits = 0;
+
+				cresentLabel1 = new JLabel("" + scrapUnits);
+				cresentLabel2 = new JLabel("" + zachUnits);
+				cresentLabel3 = new JLabel("" + giantUnits);
+				cresentLabel4 = new JLabel("" + newzachUnits);
+				cresentLabel5 = new JLabel("" + southUnits);
+				cresentLabel6 = new JLabel("" + blooUnits);
+				cresentLabel7 = new JLabel("" + capUnits);
+
+				
+
+				scraptopiaCresent.addActionListener(new buttonListener());
+				landofzachCresent.addActionListener(new buttonListener());
+				giantCresent.addActionListener(new buttonListener());
+				newlandofzachCresent.addActionListener(new buttonListener());
+				southscraptopiaCresent.addActionListener(new buttonListener());
+				bloobawlCresent.addActionListener(new buttonListener());
+				cresentcaptitalCresent.addActionListener(new buttonListener());
+
+				scraptopiaCresent.setSize(25, 25);
+				scraptopiaCresent.setLocation(715, 334);
+				scraptopiaCresent.setOpaque(false);
+				scraptopiaCresent.setContentAreaFilled(false);
+				scraptopiaCresent.setBorderPainted(false);
+
+				cresentLabel1.setSize(25, 25);
+				cresentLabel1.setFont(font);
+				cresentLabel1.setForeground(Color.WHITE);
+				cresentLabel1.setLocation(723, 337);
+				cresentLabel1.setOpaque(false);
+
+				landofzachCresent.setSize(25, 25);
+				landofzachCresent.setLocation(750, 335);
+				landofzachCresent.setOpaque(false);
+				landofzachCresent.setContentAreaFilled(false);
+				landofzachCresent.setBorderPainted(false);
+
+				cresentLabel2.setSize(25, 25);
+				cresentLabel2.setFont(font);
+				cresentLabel2.setForeground(Color.WHITE);
+				cresentLabel2.setLocation(758, 338);
+				cresentLabel2.setOpaque(false);
+
+				giantCresent.setSize(25, 25);
+				giantCresent.setLocation(765, 298);
+				giantCresent.setOpaque(false);
+				giantCresent.setContentAreaFilled(false);
+				giantCresent.setBorderPainted(false);
+
+				cresentLabel3.setSize(25, 25);
+				cresentLabel3.setFont(font);
+				cresentLabel3.setForeground(Color.WHITE);
+				cresentLabel3.setLocation(773, 301);
+				cresentLabel3.setOpaque(false);
+
+				newlandofzachCresent.setSize(25, 25);
+				newlandofzachCresent.setLocation(790, 350);
+				newlandofzachCresent.setOpaque(false);
+				newlandofzachCresent.setContentAreaFilled(false);
+				newlandofzachCresent.setBorderPainted(false);
+
+				cresentLabel4.setSize(25, 25);
+				cresentLabel4.setFont(font);
+				cresentLabel4.setForeground(Color.WHITE);
+				cresentLabel4.setLocation(798, 353);
+				cresentLabel4.setOpaque(false);
+
+				southscraptopiaCresent.setSize(25, 25);
+				southscraptopiaCresent.setLocation(790, 320);
+				southscraptopiaCresent.setOpaque(false);
+				southscraptopiaCresent.setContentAreaFilled(false);
+				southscraptopiaCresent.setBorderPainted(false);
+
+				cresentLabel5.setSize(25, 25);
+				cresentLabel5.setFont(font);
+				cresentLabel5.setForeground(Color.WHITE);
+				cresentLabel5.setLocation(798, 323);
+				cresentLabel5.setOpaque(false);
+
+				bloobawlCresent.setSize(25, 25);
+				bloobawlCresent.setLocation(835, 310);
+				bloobawlCresent.setOpaque(false);
+				bloobawlCresent.setContentAreaFilled(false);
+				bloobawlCresent.setBorderPainted(false);
+
+				cresentLabel6.setSize(25, 25);
+				cresentLabel6.setFont(font);
+				cresentLabel6.setForeground(Color.WHITE);
+				cresentLabel6.setLocation(843, 313);
+				cresentLabel6.setOpaque(false);
+
+				cresentcaptitalCresent.setSize(25, 25);
+				cresentcaptitalCresent.setLocation(868, 285);
+				cresentcaptitalCresent.setOpaque(false);
+				cresentcaptitalCresent.setContentAreaFilled(false);
+				cresentcaptitalCresent.setBorderPainted(false);
+
+	//			myMap = new HashMap<JButton, JLabel>();
+				myMap.put(scraptopiaCresent, cresentLabel1);
+				myMap.put(landofzachCresent, cresentLabel2);
+				myMap.put(giantCresent, cresentLabel3);
+				myMap.put(newlandofzachCresent, cresentLabel4);
+				myMap.put(southscraptopiaCresent, cresentLabel5);
+				myMap.put(bloobawlCresent, cresentLabel6);
+				myMap.put(cresentcaptitalCresent, cresentLabel7);
+
+				cresentLabel7.setSize(25, 25);
+				cresentLabel7.setFont(font);
+				cresentLabel7.setForeground(Color.WHITE);
+				cresentLabel7.setLocation(866, 288);
+				cresentLabel7.setOpaque(false);
+
+				// add all lables
+				this.add(cresentLabel1);
+				this.add(cresentLabel2);
+				this.add(cresentLabel3);
+				this.add(cresentLabel4);
+				this.add(cresentLabel5);
+				this.add(cresentLabel6);
+				this.add(cresentLabel7);
+
+				// add all buttons
+				this.add(scraptopiaCresent);
+				this.add(landofzachCresent);
+				this.add(giantCresent);
+				this.add(newlandofzachCresent);
+				this.add(southscraptopiaCresent);
+				this.add(bloobawlCresent);
+				this.add(cresentcaptitalCresent);
+				
+				
+			
 
 		// add all lables
 		this.add(dinoLabel1);
