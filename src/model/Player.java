@@ -42,6 +42,7 @@ public abstract class Player implements Serializable{
 	}
 	
 	public void removeArmies(int numArmies) {
+		//System.out.println("This should print as many times as the number above");
 		numOfArmies -= numArmies;
 	}
 

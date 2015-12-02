@@ -68,6 +68,7 @@ public class Territory implements Serializable{
 	public void setOwner(Player player) {
 		this.player = player;
 	}
+
 	public Player getOwner() {
 		return player;
 	}
@@ -75,41 +76,38 @@ public class Territory implements Serializable{
 	public void addUnits(int unitNum) {
 		units += unitNum;
 	}
-	
+
 	public void removeUnits(int unitNum) {
-		System.out.print(tname + "'s units have changed from " + units);
+		//System.out.print(tname + "'s units have changed from " + units);
 		units -= unitNum;
-		System.out.println(" to " + units);
+		//System.out.println(" to " + units);
 	}
 
 	public int getUnits() {
 		return units;
 	}
 
-	public int findDifferentPlayersAround()
-	{
-		int numOfNeighbors=this.getNeighbors().size();
-		Player temp=this.getOwner();
-		String ownerName=this.getOwner().getName();
-		ArrayList<Player> differentPlayers=new ArrayList<Player>();
-		for(int i=0; i<numOfNeighbors; i++)
-		{
-			temp=neighbors.get(i).getOwner();
-			if((temp.getName().compareTo(ownerName)!=0)&&(!differentPlayers.contains(temp)))
-			{
-			differentPlayers.add(temp);
+	public int findDifferentPlayersAround() {
+		int numOfNeighbors = this.getNeighbors().size();
+		Player temp = this.getOwner();
+		String ownerName = this.getOwner().getName();
+		ArrayList<Player> differentPlayers = new ArrayList<Player>();
+		for (int i = 0; i < numOfNeighbors; i++) {
+			temp = neighbors.get(i).getOwner();
+			if ((temp.getName().compareTo(ownerName) != 0) && (!differentPlayers.contains(temp))) {
+				differentPlayers.add(temp);
 			}
 		}
 		return differentPlayers.size();
-		
+
 	}
-//	public boolean checkIfContinentIsConquered() {
-//		// TODO Auto-generated method stub
-//		for(int index=0; index<neighbors.size(); index++)
-//		{
-//			Territory temp=neighbors.get(index);
-//			if()
-//		}
-//	}
+	// public boolean checkIfContinentIsConquered() {
+	// // TODO Auto-generated method stub
+	// for(int index=0; index<neighbors.size(); index++)
+	// {
+	// Territory temp=neighbors.get(index);
+	// if()
+	// }
+	// }
 
 }

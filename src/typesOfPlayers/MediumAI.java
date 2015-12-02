@@ -2,6 +2,7 @@ package typesOfPlayers;
 
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.Random;
 
 import model.Player;
 import model.Territory;
@@ -18,9 +19,10 @@ public class MediumAI extends Player implements AIStrategy {
 	@Override
 	public ArrayList<Object> deployArmy() {
 		// System.out.println("Infinite?");
-		ArrayList<Object> mediumInfo=new ArrayList<Object>();
+		ArrayList<Object> mediumInfo = new ArrayList<Object>();
 		int smallestNumOfArmies, indexOfSmallestArmies = 0;
 		smallestNumOfArmies = getTerritories().get(0).getUnits();
+
 		for (int i = 1; i < getTerritories().size(); i++) {
 			if (smallestNumOfArmies > getTerritories().get(i).getUnits()) {
 				smallestNumOfArmies = getTerritories().get(i).getUnits();
@@ -28,7 +30,8 @@ public class MediumAI extends Player implements AIStrategy {
 			}
 		}
 		mediumInfo.add(getTerritories().get(indexOfSmallestArmies));
-		mediumInfo.add(0);
+
+		mediumInfo.add(1);
 		return mediumInfo;
 
 	}
@@ -68,6 +71,7 @@ public class MediumAI extends Player implements AIStrategy {
 		}
 
 		return null;
+
 	}
 	// finds the friendly connected territory with the least amount of armies.
 	// If the current Territory has more than 3 armies, it moves its current
@@ -95,9 +99,9 @@ public class MediumAI extends Player implements AIStrategy {
 			if (currentTerr.getUnits() > 3) {
 				armiesToMove = currentTerr.getUnits() - 3;
 			}
-			territoryAndArmyNum.add((-1) * armiesToMove);
+			territoryAndArmyNum.add(armiesToMove);
 		}
-		if (territoryAndArmyNum.size() != 0)
+		if (territoryAndArmyNum.size() == 2)
 			return territoryAndArmyNum;
 
 		return null;
