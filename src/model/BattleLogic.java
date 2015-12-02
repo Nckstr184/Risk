@@ -51,34 +51,14 @@ public class BattleLogic {
 			if (attackDice.getDice().get(i) <= defendDice.getDice().get(i))
 				countAttack++;
 
-			if (attackDice.getDice().get(i) > defendDice.getDice().get(i)) {
+			else if (attackDice.getDice().get(i) > defendDice.getDice().get(i)) {
 				countDefend++;
 			}
 		}
-		//defender.addArmies((-1)*countDefend);
-		//attacker.addArmies((-1)*countAttack);
-
-		//System.out.println("countAttack"+countAttack);
-		//System.out.println("countDefend"+countDefend);
-		unitsToLose[0] = ((-1) * countAttack);
-		unitsToLose[1] = ((-1) * countDefend);
-		//System.out.println("UNITS TO LOOSE"+unitsToLose[0]);
-		//System.out.println(unitsToLose[1]);
+		unitsToLose[0] = (countAttack);
+		unitsToLose[1] = (countDefend);
 
 		return unitsToLose;
-	}
-
-	public boolean attackerWin() {
-		if (defendingTerritory.getUnits() <= 0) {
-			//System.out.println("CHECK2");
-			defender.removeTerritory(defendingTerritory);
-			attacker.addTerritories(defendingTerritory);
-			defendingTerritory.setOwner(attacker);
-			attackingTerritory.addUnits(-1);
-			defendingTerritory.addUnits(1);
-			return true;
-		}
-		return false;
 	}
 
 }

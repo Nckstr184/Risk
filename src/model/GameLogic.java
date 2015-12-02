@@ -9,23 +9,51 @@ public class GameLogic {
 
 	private ArrayList<Territory> allTerritories;
 	private ArrayList<Continent> allContinents;
+	private CardCollection allCards;
 	private PlayerCollection allPlayers;
 	private Dice attackDice, defendDice, turnDice;
-	private int numOfPlayers;
+	private int numOfPlayers, playerTurn, indexOfPlayerTurn, nextCard;
 	private Languages languages;
 	private Dino dino;
 	private Wildcat wildcat;
 	private Pizza pizza;
 	private Crescent crescent;
 	private Sun sun;
+	private boolean noMoreRewardCard;
 
-	public GameLogic() {
+	public GameLogic(Player p1, Player p2, Player p3, Player p4, Player p5, Player p6) {
 		allTerritories = new ArrayList<Territory>();
 		allContinents = new ArrayList<Continent>();
 		allPlayers = new PlayerCollection();
+		allCards = new CardCollection();
+		allCards.shuffle();
+
+		nextCard = 0;
+		indexOfPlayerTurn = 0;
+		noMoreRewardCard = false;
+
 		attackDice = new Dice(3);
 		defendDice = new Dice(2);
 		turnDice = new Dice(1);
+
+		if (p1 != null) {
+			allPlayers.addPlayers(p1);
+		}
+		if (p2 != null) {
+			allPlayers.addPlayers(p2);
+		}
+		if (p3 != null) {
+			allPlayers.addPlayers(p3);
+		}
+		if (p4 != null) {
+			allPlayers.addPlayers(p4);
+		}
+		if (p5 != null) {
+			allPlayers.addPlayers(p5);
+		}
+		if (p6 != null) {
+			allPlayers.addPlayers(p6);
+		}
 
 		languages = new Languages("languages", false);
 		dino = new Dino("dino", false);
@@ -52,6 +80,13 @@ public class GameLogic {
 		}
 
 		setNeighbors(allTerritories);
+	}
+
+	public Player nextPlayer() {
+		playerTurn++;
+		noMoreRewardCard = false;
+		indexOfPlayerTurn = playerTurn % allPlayers.getNumOfPlayers();
+		return allPlayers.getPlayer(indexOfPlayerTurn);
 	}
 
 	private void setNeighbors(ArrayList<Territory> allTerritories2) {
@@ -328,49 +363,51 @@ public class GameLogic {
 		allPlayers.addPlayers(player);
 	}
 
+	public void removePlayer(Player player) {
+		allPlayers.removePlayer(player);
+		numOfPlayers = allPlayers.getNumOfPlayers();
+	}
+
+	public int getNumOfPlayers() {
+		return numOfPlayers;
+	}
+
 	public void startGame() {
 		numOfPlayers = allPlayers.getNumOfPlayers();
-		Player temp;
-		int roll; /*
-		ArrayList<Player> tempList = new ArrayList<Player>();
-		// this rolls the dice per person to check to see who goes first
-		for (int i = 0; i < numOfPlayers; i++) {
-			temp = allPlayers.getPlayer(i);
-			roll = turnDice.rollDice();
-			temp.setDiceRoll(roll);
-			tempList.add(temp);
-		}
-		// sorts the players based on dice roll *DOESNT ROLL AGAIN FOR
-		// DUPLICATES*
-		// However, duplicates do not break the sorting (Insertion Sort FTW)
-		tempList = InsertionSort(tempList.toArray());
 
-		// sets the master Player List to the sorted one
-		allPlayers.setPlayerList(tempList);
-		// TODO: Randomly set 1 army per turn to a territory */
+		disperseNumberOfArmies();
 		startUpPlaceReinforcementPhase();
 	}
 
 	private void startUpPlaceReinforcementPhase() {
-		disperseNumberOfArmies();
 		// make temp list of territories
-		ArrayList<Territory> tempTerrs = getTerritories();
+		ArrayList<Territory> tempTerrs = new ArrayList<Territory>(this.getTerritories());
 		r = new Random();
 		int randomIndex;
 		Territory tempTerritory;
 		Player tempPlayer;
+		int count = 0;
 		while (!tempTerrs.isEmpty()) {
 			for (int i = 0; i < allPlayers.getNumOfPlayers(); i++) {
-				randomIndex = r.nextInt(tempTerrs.size());
-				tempTerritory = tempTerrs.get(randomIndex);
-				tempPlayer = allPlayers.getPlayer(i);
-				tempPlayer.addTerritories(tempTerritory);
-				tempTerritory.setOwner(tempPlayer);
-				tempTerrs.remove(randomIndex);
-				tempPlayer.addArmies(-1);
-				tempTerritory.addUnits(1);
+				if (!tempTerrs.isEmpty()) {
+					System.out.println(count++);
+					randomIndex = r.nextInt(tempTerrs.size());
+					tempTerritory = tempTerrs.get(randomIndex);
+					tempPlayer = allPlayers.getPlayer(i);
+					System.out.println(tempTerritory.getOwner());
+					if (tempPlayer.getNumOfArmies() > 0) {
+						tempPlayer.addTerritories(tempTerritory);
+						tempTerritory.setOwner(tempPlayer);
+						tempTerrs.remove(randomIndex);
+						while (tempTerritory.getUnits() != 1)
+							tempTerritory.addUnits(1);
+					}
+				}
 			}
-
+		}
+		
+		for(int i=0;i<allTerritories.size();i++) {
+			System.out.println(allTerritories.get(i).getName() + " has " + allTerritories.get(i).getUnits() + " units");
 		}
 	}
 
@@ -396,7 +433,6 @@ public class GameLogic {
 		if (allPlayers.getNumOfPlayers() == 6) {
 			for (int i = 0; i < 6; i++) {
 				Player temp = allPlayers.getPlayer(i);
-				if(temp!=null)
 				temp.addArmies(20);
 			}
 		}
@@ -446,4 +482,108 @@ public class GameLogic {
 		return false;
 	}
 
+	public void addReinforcements() {
+		Player currPlayer = allPlayers.getPlayer(indexOfPlayerTurn);
+		int totalNumOfTerritories = currPlayer.getTerritories().size();
+
+		if (totalNumOfTerritories < 9) {
+			currPlayer.addArmies(3);
+		} else {
+			currPlayer.addArmies((int) (totalNumOfTerritories / 3));
+		}
+	}
+
+	public void deployAllArmies() {
+		Player currPlayer = allPlayers.getPlayer(indexOfPlayerTurn);
+
+		while (currPlayer.getNumOfArmies() > 0) {
+			((Territory) currPlayer.deployArmy().get(0)).addUnits(1);
+			currPlayer.removeArmies(1);
+		}
+	}
+
+	
+	
+	public void attackLogic(Territory attackingTerr, Territory defendingTerr, int[] unitsToLose) {
+		Player attacker = attackingTerr.getOwner();
+		Player defender = defendingTerr.getOwner();
+		System.out.println("Defender: " + defender.getName());
+
+		attackingTerr.removeUnits(unitsToLose[0]);
+		defendingTerr.removeUnits(unitsToLose[1]);
+
+		if (defendingTerr.getUnits() <= 0) {
+			System.out.println("Attacker won!");
+			defender.removeTerritory(defendingTerr);
+			attacker.addTerritories(defendingTerr);
+			defendingTerr.setOwner(attacker);
+
+			attackingTerr.removeUnits(1);
+			while (defendingTerr.getUnits() <= 0) {
+				defendingTerr.addUnits(1);
+			}
+
+			if (!noMoreRewardCard && nextCard < 44) {
+				noMoreRewardCard = true;
+				attacker.addCard(allCards.getCard(nextCard));
+				nextCard++;
+			}
+
+			System.out.println("Should be the attacker's name -> " + defendingTerr.getOwner().getName());
+		}
+
+	}
+
+	public void fortifyPosition() {
+		Player currPlayer = allPlayers.getPlayer(indexOfPlayerTurn);
+
+		ArrayList<Object> fortifyReturn = currPlayer.fortifyPosition(currPlayer.getTerritories().get(0),
+				currPlayer.getTerritories().get(0).getNeighbors());
+
+		if (fortifyReturn != null && fortifyReturn.size() > 0) {
+			System.out.println("Fortifying the territories of: " + currPlayer.getName());
+			Territory territoryToFortify = (Territory) fortifyReturn.get(0);
+			int armiesToAdd = (Integer) fortifyReturn.get(1);
+
+			territoryToFortify.addUnits(armiesToAdd);
+			currPlayer.getTerritories().get(0).removeUnits(armiesToAdd);
+		}
+	}
+
+	public boolean attackerWin(Territory defendingTerr) {
+		if (defendingTerr.getUnits() <= 0) {
+			return true;
+		}
+
+		return false;
+	}
+
+	public void transferTerritory(Player attacker, Player defender, Territory attackingTerr, Territory defendingTerr) {
+
+		defender.removeTerritory(defendingTerr);
+		attacker.addTerritories(defendingTerr);
+		defendingTerr.setOwner(attacker);
+		attackingTerr.removeUnits(1);
+		defendingTerr.addUnits(1);
+	}
+
+	// CARD LOGIC SECTION
+
+	private int numOfRewardArmies = 4;
+	private int numOfCardTurnIns = 0;
+
+	public void turnInCard() {
+		Player currPlayer = allPlayers.getPlayer(indexOfPlayerTurn);
+
+		if (currPlayer.turnInCard()) {
+			if (numOfCardTurnIns < 6) {
+				currPlayer.addArmies(numOfRewardArmies);
+				numOfRewardArmies += 2;
+			} else {
+				currPlayer.addArmies(numOfRewardArmies);
+				numOfRewardArmies += 5;
+			}
+			currPlayer.addArmies(numOfRewardArmies);
+		}
+	}
 }

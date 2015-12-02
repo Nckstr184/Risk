@@ -41,5 +41,16 @@ public class DiceTest {
 		assertEquals(2, test.getDice3());
 
 	}
+	
+	@Test
+	public void testInsertionSort() {
+		Integer[] testSort = {6, 25, 3};
+		Dice test = new Dice(3);
+		test.InsertionSort(testSort);
+		
+		assertEquals(test.getDice1(), 25);
+		assertEquals(test.getDice2(), 6);
+		assertEquals(test.getDice3(), 3);
+	}
 
 }

@@ -33,12 +33,12 @@ public class EasyAI extends Player implements AIStrategy {
 	}
 
 	@Override
-	public ArrayList<Object> deployArmy(ArrayList<Territory> territories) {
+	public ArrayList<Object> deployArmy() {
 		// choose random territories to add reward units
 		// System.out.println(territories.size());
-		ArrayList<Object> random= new ArrayList<Object>();
-		int rand = r.nextInt(territories.size());
-		Territory temp = territories.get(rand);
+		ArrayList<Object> random = new ArrayList<Object>();
+		int rand = r.nextInt(getTerritories().size());
+		Territory temp = getTerritories().get(rand);
 		random.add(temp);
 		random.add(0);
 		return random;
@@ -77,7 +77,8 @@ public class EasyAI extends Player implements AIStrategy {
 					&& availableTerritories.size() > 0);
 
 			// System.out.println("Returning territory");
-			return connected.get(rand);
+			if (!connected.get(rand).getOwner().getName().equals(this.getName()))
+				return connected.get(rand);
 		}
 		// returns null if it decides to not attack
 		// System.out.println("Returning null");
@@ -98,7 +99,7 @@ public class EasyAI extends Player implements AIStrategy {
 					break;
 			}
 			territoryAndArmyNum.add(temp);
-			
+
 			int armySize = this.getNumOfArmies();
 			if (armySize > 0) {
 				rand = r.nextInt(armySize - 1);

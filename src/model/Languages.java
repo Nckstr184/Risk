@@ -27,4 +27,19 @@ public class Languages extends Continent {
 	public ArrayList<Territory> getTerritories() {
 		return LangTerr;
 	}
+	
+	@Override
+	public boolean isConquered() {
+		int count = 0;
+		String player = LangTerr.get(0).getOwner().getName();
+		for(int i=1;i<LangTerr.size();i++) {
+			if(LangTerr.get(i).getOwner().getName().equals(player)){
+				count++;
+			}
+		}
+		if(count == (LangTerr.size()-1))
+			return true;
+		
+		return false;
+	}
 }

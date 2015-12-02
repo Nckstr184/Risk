@@ -19,7 +19,49 @@ public class HardAI extends Player implements AIStrategy {
 	}
 
 	@Override
-	public ArrayList<Object> deployArmy(ArrayList<Territory> territories) {
+	public ArrayList<Object> deployArmy() {
+		/*
+		 * Use the total number of enemy armies surrounding the territory to
+		 * figure out how many armies to place in a certain territory. You want
+		 * to make sure you are powerful enough to withstand an attack from any
+		 * angle
+		 */
+		int highestNumberOfArmies = 0;
+		int armySum;
+		int indexOfHighest = 0;
+		Player temp;
+		ArrayList<Territory> neighbors= new ArrayList<Territory>();
+		ArrayList<Object> returns=new ArrayList<Object>();
+		for (int i = 0; i < getTerritories().size(); i++) {
+			neighbors = getTerritories().get(i).getNeighbors();
+			armySum = 0;
+			for (int j = 0; j < neighbors.size(); j++) {
+				temp=neighbors.get(j).getOwner();
+				if(!temp.getName().equals(this.getName()))
+				{
+					for (int neighborIndex = 0; neighborIndex < neighbors.size(); neighborIndex++) {
+						if(temp.getName().equals(neighbors.get(neighborIndex).getName()))
+						{
+						armySum += neighbors.get(j).getUnits();
+						}
+				}
+				}
+			}
+			if (highestNumberOfArmies < armySum) {
+				highestNumberOfArmies = armySum;
+				indexOfHighest = i;
+			}
+		}
+		System.out.println(getTerritories().size());
+		System.out.println(indexOfHighest);
+		
+		returns.add(getTerritories().get(indexOfHighest));
+		returns.add(highestNumberOfArmies);
+		
+		return returns;
+	}
+	
+	private ArrayList<Object> deployArmy(ArrayList<Territory> territories) {
 		/*
 		 * Use the total number of enemy armies surrounding the territory to
 		 * figure out how many armies to place in a certain territory. You want
@@ -40,7 +82,7 @@ public class HardAI extends Player implements AIStrategy {
 				if(!temp.getName().equals(this.getName()))
 				{
 					for (int neighborIndex = 0; neighborIndex < neighbors.size(); neighborIndex++) {
-						if(temp.getName().equals(neighbors.get(neighborIndex).getname()))
+						if(temp.getName().equals(neighbors.get(neighborIndex).getName()))
 						{
 						armySum += neighbors.get(j).getUnits();
 						}

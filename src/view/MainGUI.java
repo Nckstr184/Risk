@@ -32,8 +32,8 @@ public class MainGUI extends JFrame {
 	public MainGUI() {
 		map = new GameBoard();
 
-		JPanel bottomeDisplay = new JPanel();
-		JPanel sideDisplay = new JPanel();
+		//JPanel bottomeDisplay = new JPanel();
+		//JPanel sideDisplay = new JPanel();
 
 		this.setLayout(new BorderLayout());
 
@@ -51,16 +51,18 @@ public class MainGUI extends JFrame {
 
 		Font font = new Font("Serif", Font.BOLD, 20);
 
-		saveGame.setLocation(5, 30);
+		saveGame.setLocation(55, 50);
 		saveGame.setSize(80, 40);
 		saveGame.setText("Save Game");
-		toggleSound.setLocation(5, 80);
+		toggleSound.setLocation(55, 100);
 		toggleSound.setSize(80, 40);
 		toggleSound.setText("Sound");
-		quitGame.setLocation(5, 130);
+		quitGame.setLocation(55, 150);
 		quitGame.setSize(80, 40);
 		quitGame.setText("Quit Game");
 
+		//map.addButtons();
+		
 		this.add(saveGame);
 		this.add(quitGame);
 		this.add(toggleSound);

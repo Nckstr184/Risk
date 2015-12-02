@@ -16,7 +16,7 @@ public class Crescent extends Continent {
 		super(cName, cConquered);
 		cresTerr = new ArrayList<Territory>();
 		//WE NEED TO FIX THIS TO PULL IN THE CURRENT PLAYER
-		Player currentPlayer = new Human(cName, Color.RED, 0);//get current player
+		Player currentPlayer = null;//get current player
 		JButton button= new JButton("0");
 		// Sting name, Point tcoords, JButton tbutton, Player owner, int numOfUnits
 		cresTerr.add(0, new Territory("Scraptopia",new Point(580,430), button, currentPlayer, 0));
@@ -31,6 +31,21 @@ public class Crescent extends Continent {
 	
 	public ArrayList<Territory> getTerritories() {
 		return cresTerr;
+	}
+
+	@Override
+	public boolean isConquered() {
+		int count = 0;
+		String player = cresTerr.get(0).getOwner().getName();
+		for(int i=1;i<cresTerr.size();i++) {
+			if(cresTerr.get(i).getOwner().getName().equals(player)){
+				count++;
+			}
+		}
+		if(count == (cresTerr.size()-1))
+			return true;
+		
+		return false;
 	}
 	
 }
