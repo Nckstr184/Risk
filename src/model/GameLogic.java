@@ -1,9 +1,14 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class GameLogic {
+public class GameLogic implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -145536232043601557L;
 	private final int NUM_OF_TERRITORIES = 7;
 	public Random r;
 

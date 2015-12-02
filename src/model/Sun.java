@@ -7,6 +7,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class Sun extends Continent {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5727312925281385180L;
 	ArrayList<Territory> sunTerr;
 	public Sun(String cName, boolean cConquered) {
 		super(cName, cConquered);

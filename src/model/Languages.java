@@ -1,11 +1,16 @@
 package model;
 
 import java.awt.Point;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
 
-public class Languages extends Continent {
+public class Languages extends Continent implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7720760671760003295L;
 	ArrayList<Territory> LangTerr;
 	public Languages(String cName, boolean cConquered) {
 		super(cName,  cConquered);

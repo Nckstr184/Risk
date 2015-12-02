@@ -1,12 +1,17 @@
 package model;
 
 import java.awt.Point;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
 
-public class Dino extends Continent {
+public class Dino extends Continent implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5919495183647830521L;
 	ArrayList<Territory> dinoTerr;
 	public Dino(String cName, boolean cConquered) {
 		super(cName, cConquered);
