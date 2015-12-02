@@ -7,7 +7,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -21,11 +23,8 @@ import javax.swing.JTextField;
 
 import model.CardCollection;
 import model.Continent;
-
 import model.Player;
-
 import model.GameLogic;
-
 import model.Territory;
 
 public class GameBoard extends JPanel {
@@ -79,18 +78,31 @@ public class GameBoard extends JPanel {
 	JLabel picLanguageabel;
 	StartWindow startWindow;
 
-	OpenNewMenu newgame;
+	OpenNewMenu newgame1;
 
 	GameLogic newGame;
-
+	private FileInputStream fis;
+	private ObjectInputStream input;
 
 	public GameBoard() {
-		newgame= new OpenNewMenu();
-		while(newgame.isDisplayable()){
+		
+		try {
+			fis = new FileInputStream("saved");
+			input= new ObjectInputStream(fis);
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		newgame1= new OpenNewMenu();
+		while(newgame1.isDisplayable()){
 			System.out.print("");
 		
-		if(!newgame.isDisplayable()){
+		if(!newgame1.isDisplayable()&&newgame1.isClicked()==false){
 			System.out.print("");
+			
 
 		startWindow = new StartWindow();
 		// current = new Player();
@@ -131,10 +143,25 @@ public class GameBoard extends JPanel {
 					System.out.println("ERROR with map");
 					e.printStackTrace();
 				}
-
 			}
+			if(newgame1.isClicked()==true){
+				try {
+					newGame = (GameLogic) input.readObject();
+					input.close();
+
+				} catch (ClassNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			}
+			}
+		
 		}
-		}
+		
 		}
 
 	}

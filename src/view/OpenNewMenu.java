@@ -3,19 +3,27 @@ package view;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
+import model.GameLogic;
+
 public class OpenNewMenu extends JFrame{
 	
-JButton newgame;
-JButton oldgame;
-StartWindow startWindow;
+private JButton newgame;
+private JButton oldgame;
+private StartWindow startWindow;
 
+
+private boolean clicked;
 	public OpenNewMenu() {
+		clicked= false;
 		
-	
 
 		this.setSize(350, 350);
 		this.setTitle("New Game or Load Old Game");
@@ -29,13 +37,20 @@ StartWindow startWindow;
 		newgame = new JButton("NEW GAME");
 		newgame.addActionListener(new startNewGame());
 		oldgame= new JButton("LOAD OLD GAME");
+		oldgame.addActionListener(new loadOldGame());
 		
 		this.add(newgame);
 		this.add(oldgame);
 		
 		
 		this.setVisible(true);
+		
+		
 		}
+	public boolean isClicked(){
+		return clicked;
+		
+	}
 	private class startNewGame implements ActionListener {
 
 		@Override
@@ -45,4 +60,16 @@ StartWindow startWindow;
 		
 	}
 	}
+		private class loadOldGame implements ActionListener {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				clicked= true;
+				dispose();
+				
+			
+		}
+		}
+	
 }
