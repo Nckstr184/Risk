@@ -5,6 +5,14 @@ import java.util.ArrayList;
 
 public class PlayerCollection implements Serializable {
 
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4711605973947194211L;
+	/**
+	 * 
+	 */
 	ArrayList<Player> playerList;
 
 	public PlayerCollection() {

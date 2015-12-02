@@ -1,9 +1,14 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Dice {
+public class Dice implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -9128934455085698074L;
 	private int diceRolled, numOfDice;
 	private double tempDice;
 

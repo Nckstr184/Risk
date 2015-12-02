@@ -1,11 +1,19 @@
 package model;
 
 import java.awt.Color;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Player {
+public abstract class Player implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 637979960045413951L;
+	/**
+	 * 
+	 */
 	private String name;
 	private Color playerColor;
 	private ArrayList<Card> playerCards;
