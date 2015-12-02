@@ -38,6 +38,7 @@ public class Run6BotsFIX {
 			gameLogic.startGame();
 			while (!gameLogic.isGameComplete()) {
 				currPlayer = gameLogic.nextPlayer();
+				System.out.println("~~~~~~~~~~~~~~");
 				System.out.println(currPlayer.getName());
 				System.out.println("Number of Territories: " + currPlayer.getTerritories().size());
 
@@ -46,10 +47,10 @@ public class Run6BotsFIX {
 				 */
 
 				// ALL OF THE TURN IN CARD LOGIC MOVED TO GAMELOGIC
-				gameLogic.turnInCard();
+				//gameLogic.turnInCard();
 
 				// ALL REINFORCEMENT LOGIC MOVED TO GAMELOGIC
-				gameLogic.addReinforcements();
+				//gameLogic.addReinforcements();
 
 				// ALL OF DEPLOYING REINFORCEMENT ARMIES MOVED TO GAMELOGIC
 				gameLogic.deployAllArmies();
@@ -77,19 +78,27 @@ public class Run6BotsFIX {
 						} else {
 							attackerDiceNum = 3;
 						}
-
+						
+						System.out.println("Attacking Territory: " + attackingTerritory.getName());
+						System.out.println("Attacking Units at Territory: " + attackingTerritory.getUnits());
+						System.out.println("Defending Territory: " + defendingTerritory.getName());
+						System.out.println("Defending Units at Territory: " + defendingTerritory.getUnits());
+						
 						if (defendingTerritory.getUnits() <= 2) {
-							System.out.println("Defending Units at Territory: " + defendingTerritory.getUnits());
 							defenderDiceNum = defendingTerritory.getUnits();
 						} else
 							defenderDiceNum = 2;
 						
 						System.out.println("Attacking Dice: " + attackerDiceNum);
 						System.out.println("Defending Dice: " + defenderDiceNum);
+						
 						battleLogic.attackPlayer(attackerDiceNum, defenderDiceNum);
 						int[] unitsToLose = battleLogic.subtractArmies();
 
+						System.out.println("Num of Armies Attacker Lost: " + unitsToLose[0]);
+						System.out.println("Num of Armies Defender Lost: " + unitsToLose[1]);
 						gameLogic.attackLogic(attackingTerritory, defendingTerritory, unitsToLose);
+						
 					}
 				}
 

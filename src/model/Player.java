@@ -59,8 +59,8 @@ public abstract class Player {
 
 	public void removeTerritory(Territory removedTerritory) {
 		for (int index = 0; index < playerTerritories.size(); index++) {
-			String temp = playerTerritories.get(index).getname();
-			if (removedTerritory.getname().equals(temp)) {
+			String temp = playerTerritories.get(index).getName();
+			if (removedTerritory.getName().equals(temp)) {
 				playerTerritories.remove(index);
 			}
 		}
