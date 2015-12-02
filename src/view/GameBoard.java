@@ -82,6 +82,7 @@ public class GameBoard extends JPanel {
 	OpenNewMenu newgame;
 
 	GameLogic newGame;
+	JLabel playerTag, playerTag2;
 
 
 	public GameBoard() {
@@ -136,12 +137,13 @@ public class GameBoard extends JPanel {
 		}
 		}
 		}
+		
 
 	}
 
 	private void playerTags() {
 		int numberOfPlayers;
-		JLabel playerTag, playerTag2;
+		
 		numberOfPlayers = startWindow.getNumberOfPlayer();
 		Font font = new Font("Verdana", Font.BOLD, 18);
 		Font font2 = new Font("Verdana", Font.BOLD, 9);
@@ -2940,7 +2942,7 @@ public class GameBoard extends JPanel {
 					myLabel.setText(""+ javaUnits);
 					currPlayer.removeArmies(1);	
 					
-					playerTags();
+					newGame.nextPlayer();
 					//ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 				}
 			}
@@ -2954,13 +2956,39 @@ public class GameBoard extends JPanel {
 					myLabel.setText(""+ pythonUnits);
 					currPlayer.removeArmies(1);	
 					
-					playerTags();
+					newGame.nextPlayer();
 					//ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 				}
 			}
 		});
-		cLanguage.addActionListener(new buttonListener());
-		sqlLanguage.addActionListener(new buttonListener());
+		cLanguage.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if(currPlayer.getNumOfArmies() >= 1 && cLanguage.getName() == currPlayer.getName()){
+					cUnits +=1;
+					myLabel.setText(""+ cUnits);
+					currPlayer.removeArmies(1);	
+					
+					newGame.nextPlayer();
+					//ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		sqlLanguage.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if(currPlayer.getNumOfArmies() >= 1 && sqlLanguage.getName() == currPlayer.getName()){
+					sqlUnits +=1;
+					myLabel.setText(""+ sqlUnits);
+					currPlayer.removeArmies(1);	
+					
+					newGame.nextPlayer();
+					//ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
 		rubyLanguage.addActionListener(new buttonListener());
 		gitLanguage.addActionListener(new buttonListener());
 		perlLanguage.addActionListener(new buttonListener());
