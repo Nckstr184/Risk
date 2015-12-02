@@ -5,6 +5,10 @@ import java.util.ArrayList;
 
 public abstract class Continent implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6326245065173389315L;
 	String name;
 	boolean conquered = false;
 

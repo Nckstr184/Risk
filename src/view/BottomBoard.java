@@ -28,7 +28,7 @@ public class BottomBoard extends JPanel {
 		
 		
 		try {
-			bottomBoard = ImageIO.read(new File("./Pictures/gui1.png"));
+			bottomBoard = ImageIO.read(new File("./Pictures/bottomgui.png"));
 			JLabel picLabel = new JLabel(new ImageIcon(bottomBoard));
 			System.out.println("got piclabel");
 			

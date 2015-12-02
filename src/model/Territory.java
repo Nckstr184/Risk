@@ -1,12 +1,17 @@
 package model;
 
 import java.awt.Point;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
 
-public class Territory {
+public class Territory implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4684526188498628590L;
 	Point coords;
 	JButton button;
 	Player player;

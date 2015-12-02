@@ -1,11 +1,16 @@
 package model;
 
 import java.awt.Point;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
 
-public class Pizza extends Continent {
+public class Pizza extends Continent implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8269538985243499973L;
 	ArrayList<Territory> pizzaTerr;
 	public Pizza(String cName, boolean cConquered) {
 		super(cName, cConquered);

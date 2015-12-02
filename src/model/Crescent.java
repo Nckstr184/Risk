@@ -2,6 +2,7 @@ package model;
 
 import java.awt.Color;
 import java.awt.Point;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
@@ -10,7 +11,11 @@ import typesOfPlayers.Human;
 
 import java.util.ArrayList;
 
-public class Crescent extends Continent {
+public class Crescent extends Continent implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7404208371695091683L;
 	ArrayList<Territory> cresTerr;
 	public Crescent(String cName, boolean cConquered) {
 		super(cName, cConquered);
