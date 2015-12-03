@@ -6032,13 +6032,13 @@ public class GameBoard extends JPanel {
 		moniUnits = 1;
 		tsUnits = 1;
 
-		dinoLabel1 = new JLabel("" + pjUnits);
-		dinoLabel2 = new JLabel("" + domUnits);
-		dinoLabel3 = new JLabel("" + phUnits);
-		dinoLabel4 = new JLabel("" + bjUnits);
-		dinoLabel5 = new JLabel("" + hhUnits);
-		dinoLabel6 = new JLabel("" + bUnits);
-		dinoLabel7 = new JLabel("" + ppUnits);
+		dinoLabel1 = new JLabel("" + rawrUnits);
+		dinoLabel2 = new JLabel("" + eggUnits);
+		dinoLabel3 = new JLabel("" + dacUnits);
+		dinoLabel4 = new JLabel("" + danUnits);
+		dinoLabel5 = new JLabel("" + bbUnits);
+		dinoLabel6 = new JLabel("" + moniUnits);
+		dinoLabel7 = new JLabel("" + tsUnits);
 
 		rawrvilleDino.setSize(25, 25);
 		rawrvilleDino.setLocation(960, 224);
