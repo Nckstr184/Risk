@@ -48,8 +48,6 @@ public class EasyAI extends Player implements AIStrategy {
 	public boolean chooseRetreat(Territory currentTerr) {
 		// chooses whether to retreat in the middle of battle
 		if (currentTerr.getUnits() > 1) {
-			int rand = r.nextInt(2);
-			if (rand == 0)
 				return false;
 		}
 		return true;
