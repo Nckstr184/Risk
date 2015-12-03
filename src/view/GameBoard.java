@@ -114,13 +114,6 @@ public class GameBoard extends JPanel {
 
 					System.out.print("");
 
-					if (!newgame1.isDisplayable()) {
-						System.out.print("");
-
-						// startWindow = new StartWindow();
-						// current = new Player();
-						while (startWindow.isDisplayable()) {
-							System.out.print("");
 
 							if (!startWindow.isDisplayable()) {
 								System.out.print("");
@@ -162,8 +155,7 @@ public class GameBoard extends JPanel {
 					}
 					if (newgame1.isClicked() == true) {
 						try {
-							newGame = (GameLogic) input.readObject();
-							input.close();
+							
 
 							map = ImageIO.read(new File("./Pictures/map1.png"));
 
@@ -175,7 +167,7 @@ public class GameBoard extends JPanel {
 							JLabel bottomLabel = new JLabel(new ImageIcon(bottomDisplay));
 							JLabel leftLabel = new JLabel(new ImageIcon(leftDisplay));
 							JLabel rightLabel = new JLabel(new ImageIcon(rightDisplay));
-							System.out.println("NUMBER OF PLAYERS: " + startWindow.getNumberOfPlayer());
+						//	System.out.println("NUMBER OF PLAYERS: " + startWindow.getNumberOfPlayer());
 
 							this.setLayout(new BorderLayout());
 
@@ -184,6 +176,8 @@ public class GameBoard extends JPanel {
 							add(rightLabel, BorderLayout.EAST);
 
 							add(bottomLabel, BorderLayout.SOUTH);
+							newGame = (GameLogic) input.readObject();
+							input.close();
 
 						} catch (ClassNotFoundException e) {
 							// TODO Auto-generated catch block
@@ -198,9 +192,9 @@ public class GameBoard extends JPanel {
 
 			}
 
-		}
+		
 
-	}
+	
 
 	private void playerTags() {
 		int numberOfPlayers;
