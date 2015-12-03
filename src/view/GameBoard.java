@@ -81,25 +81,18 @@ public class GameBoard extends JPanel {
 	OpenNewMenu newgame1;
 
 	GameLogic newGame;
-<<<<<<< HEAD
+
 	JLabel playerTag, playerTag2, playerTag3, playerTag4, playerTag5, playerTag6, playerCount, playerCount2,
 			playerCount3, playerCount4, playerCount5, playerCount6;
-=======
 
 	private FileInputStream fis;
 	private ObjectInputStream input;
 
-	JLabel playerTag, playerTag2;
-
->>>>>>> 1419293ac8154449e55c3169e605873157c4e792
-
-
 	public GameBoard() {
-<<<<<<< HEAD
+
 		newgame = new OpenNewMenu();
 		while (newgame.isDisplayable()) {
-=======
-		
+
 		try {
 			fis = new FileInputStream("saved");
 			input= new ObjectInputStream(fis);
@@ -121,7 +114,7 @@ public class GameBoard extends JPanel {
 		startWindow = new StartWindow();
 		// current = new Player();
 		while (startWindow.isDisplayable()) {
->>>>>>> 1419293ac8154449e55c3169e605873157c4e792
+
 			System.out.print("");
 
 			if (!newgame.isDisplayable()) {
@@ -156,7 +149,7 @@ public class GameBoard extends JPanel {
 							addButtons();
 							currPlayer = newGame.getPlayerAt(0);
 
-<<<<<<< HEAD
+
 							add(picLabel, BorderLayout.CENTER);
 							add(leftLabel, BorderLayout.WEST);
 							add(rightLabel, BorderLayout.EAST);
@@ -170,7 +163,7 @@ public class GameBoard extends JPanel {
 
 					}
 				}
-=======
+
 				} catch (IOException e) {
 					System.out.println("ERROR with map");
 					e.printStackTrace();
@@ -189,17 +182,16 @@ public class GameBoard extends JPanel {
 					e.printStackTrace();
 				}
 				
->>>>>>> 1419293ac8154449e55c3169e605873157c4e792
+
 			}
-			}
-		
-		}
-<<<<<<< HEAD
-=======
-		
 		}
 		
->>>>>>> 1419293ac8154449e55c3169e605873157c4e792
+		}
+
+
+		
+		}
+
 
 	}
 
@@ -3292,16 +3284,21 @@ public class GameBoard extends JPanel {
 					cUnits += 1;
 					myLabel.setText("" + cUnits);
 					currPlayer.removeArmies(1);
-					if(startWindow.getPlayerAt(0)==currPlayer){playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(1)==currPlayer){playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(2)==currPlayer){playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(3)==currPlayer){playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(4)==currPlayer){playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(5)==currPlayer){playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-	
-					
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
 					currPlayer = newGame.nextPlayer();
-					
 
 					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 				}
@@ -3315,16 +3312,21 @@ public class GameBoard extends JPanel {
 					sqlUnits += 1;
 					myLabel.setText("" + sqlUnits);
 					currPlayer.removeArmies(1);
-					if(startWindow.getPlayerAt(0)==currPlayer){playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(1)==currPlayer){playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(2)==currPlayer){playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(3)==currPlayer){playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(4)==currPlayer){playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(5)==currPlayer){playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-	
-					
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
 					currPlayer = newGame.nextPlayer();
-					
 
 					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 				}
@@ -3338,16 +3340,21 @@ public class GameBoard extends JPanel {
 					rubyUnits += 1;
 					myLabel.setText("" + rubyUnits);
 					currPlayer.removeArmies(1);
-					if(startWindow.getPlayerAt(0)==currPlayer){playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(1)==currPlayer){playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(2)==currPlayer){playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(3)==currPlayer){playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(4)==currPlayer){playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(5)==currPlayer){playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-	
-					
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
 					currPlayer = newGame.nextPlayer();
-					
 
 					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 				}
@@ -3361,16 +3368,21 @@ public class GameBoard extends JPanel {
 					gitUnits += 1;
 					myLabel.setText("" + gitUnits);
 					currPlayer.removeArmies(1);
-					if(startWindow.getPlayerAt(0)==currPlayer){playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(1)==currPlayer){playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(2)==currPlayer){playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(3)==currPlayer){playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(4)==currPlayer){playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(5)==currPlayer){playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-	
-					
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
 					currPlayer = newGame.nextPlayer();
-					
 
 					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 				}
@@ -3384,16 +3396,21 @@ public class GameBoard extends JPanel {
 					perlUnits += 1;
 					myLabel.setText("" + perlUnits);
 					currPlayer.removeArmies(1);
-					if(startWindow.getPlayerAt(0)==currPlayer){playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(1)==currPlayer){playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(2)==currPlayer){playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(3)==currPlayer){playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(4)==currPlayer){playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(5)==currPlayer){playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-	
-					
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
 					currPlayer = newGame.nextPlayer();
-					
 
 					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 				}
