@@ -3973,55 +3973,65 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && javaLanguage.getName() == currPlayer.getName()) {
-					javaUnits += 1;
-					myLabel.setText("" + javaUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && javaLanguage.getName() == currPlayer.getName()) {
+						javaUnits += 1;
+						myLabel.setText("" + javaUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
+
 		});
+
 		pythonLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && pythonLanguage.getName() == currPlayer.getName()) {
-					pythonUnits += 1;
-					myLabel.setText("" + pythonUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && pythonLanguage.getName() == currPlayer.getName()) {
+						pythonUnits += 1;
+						myLabel.setText("" + pythonUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4029,27 +4039,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && cLanguage.getName() == currPlayer.getName()) {
-					cUnits += 1;
-					myLabel.setText("" + cUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && cLanguage.getName() == currPlayer.getName()) {
+						cUnits += 1;
+						myLabel.setText("" + cUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4057,27 +4070,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && sqlLanguage.getName() == currPlayer.getName()) {
-					sqlUnits += 1;
-					myLabel.setText("" + sqlUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && sqlLanguage.getName() == currPlayer.getName()) {
+						sqlUnits += 1;
+						myLabel.setText("" + sqlUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4085,27 +4101,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && rubyLanguage.getName() == currPlayer.getName()) {
-					rubyUnits += 1;
-					myLabel.setText("" + rubyUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && rubyLanguage.getName() == currPlayer.getName()) {
+						rubyUnits += 1;
+						myLabel.setText("" + rubyUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4113,27 +4132,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && gitLanguage.getName() == currPlayer.getName()) {
-					gitUnits += 1;
-					myLabel.setText("" + gitUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && gitLanguage.getName() == currPlayer.getName()) {
+						gitUnits += 1;
+						myLabel.setText("" + gitUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4141,27 +4163,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && perlLanguage.getName() == currPlayer.getName()) {
-					perlUnits += 1;
-					myLabel.setText("" + perlUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && perlLanguage.getName() == currPlayer.getName()) {
+						perlUnits += 1;
+						myLabel.setText("" + perlUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4169,27 +4194,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && wilberWildcat.getName() == currPlayer.getName()) {
-					wilberUnits += 1;
-					myLabel.setText("" + wilberUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && wilberWildcat.getName() == currPlayer.getName()) {
+						wilberUnits += 1;
+						myLabel.setText("" + wilberUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4197,27 +4225,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && wilmaWildcat.getName() == currPlayer.getName()) {
-					wilmaUnits += 1;
-					myLabel.setText("" + wilmaUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && wilmaWildcat.getName() == currPlayer.getName()) {
+						wilmaUnits += 1;
+						myLabel.setText("" + wilmaUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4225,27 +4256,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && richWildcat.getName() == currPlayer.getName()) {
-					richUnits += 1;
-					myLabel.setText("" + richUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && richWildcat.getName() == currPlayer.getName()) {
+						richUnits += 1;
+						myLabel.setText("" + richUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4253,27 +4287,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && javaLanguage.getName() == currPlayer.getName()) {
-					javaUnits += 1;
-					myLabel.setText("" + javaUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && javaLanguage.getName() == currPlayer.getName()) {
+						javaUnits += 1;
+						myLabel.setText("" + javaUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4281,27 +4318,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && javaLanguage.getName() == currPlayer.getName()) {
-					javaUnits += 1;
-					myLabel.setText("" + javaUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && javaLanguage.getName() == currPlayer.getName()) {
+						javaUnits += 1;
+						myLabel.setText("" + javaUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4309,27 +4349,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && mckaleWildcat.getName() == currPlayer.getName()) {
-					mckaleUnits += 1;
-					myLabel.setText("" + mckaleUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && mckaleWildcat.getName() == currPlayer.getName()) {
+						mckaleUnits += 1;
+						myLabel.setText("" + mckaleUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4337,27 +4380,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && zonaWildcat.getName() == currPlayer.getName()) {
-					zonaUnits += 1;
-					myLabel.setText("" + zonaUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && zonaWildcat.getName() == currPlayer.getName()) {
+						zonaUnits += 1;
+						myLabel.setText("" + zonaUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4365,27 +4411,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && papajohnsPizza.getName() == currPlayer.getName()) {
-					pjUnits += 1;
-					myLabel.setText("" + pjUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && papajohnsPizza.getName() == currPlayer.getName()) {
+						pjUnits += 1;
+						myLabel.setText("" + pjUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4393,27 +4442,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && dominosPizza.getName() == currPlayer.getName()) {
-					domUnits += 1;
-					myLabel.setText("" + domUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && dominosPizza.getName() == currPlayer.getName()) {
+						domUnits += 1;
+						myLabel.setText("" + domUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4421,27 +4473,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && pizzahutPizza.getName() == currPlayer.getName()) {
-					phUnits += 1;
-					myLabel.setText("" + phUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && pizzahutPizza.getName() == currPlayer.getName()) {
+						phUnits += 1;
+						myLabel.setText("" + phUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4449,27 +4504,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && blackjackPizza.getName() == currPlayer.getName()) {
-					bjUnits += 1;
-					myLabel.setText("" + bjUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && blackjackPizza.getName() == currPlayer.getName()) {
+						bjUnits += 1;
+						myLabel.setText("" + bjUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4477,27 +4535,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && hungryhowiesPizza.getName() == currPlayer.getName()) {
-					hhUnits += 1;
-					myLabel.setText("" + hhUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && hungryhowiesPizza.getName() == currPlayer.getName()) {
+						hhUnits += 1;
+						myLabel.setText("" + hhUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4505,27 +4566,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && brooklynPizza.getName() == currPlayer.getName()) {
-					bUnits += 1;
-					myLabel.setText("" + bUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && brooklynPizza.getName() == currPlayer.getName()) {
+						bUnits += 1;
+						myLabel.setText("" + bUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4533,27 +4597,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && pizzaplanetPizza.getName() == currPlayer.getName()) {
-					ppUnits += 1;
-					myLabel.setText("" + ppUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && pizzaplanetPizza.getName() == currPlayer.getName()) {
+						ppUnits += 1;
+						myLabel.setText("" + ppUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4561,27 +4628,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && apolloSun.getName() == currPlayer.getName()) {
-					apolloUnits += 1;
-					myLabel.setText("" + apolloUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && apolloSun.getName() == currPlayer.getName()) {
+						apolloUnits += 1;
+						myLabel.setText("" + apolloUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4589,27 +4659,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && raSun.getName() == currPlayer.getName()) {
-					raUnits += 1;
-					myLabel.setText("" + raUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && raSun.getName() == currPlayer.getName()) {
+						raUnits += 1;
+						myLabel.setText("" + raUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4617,27 +4690,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && heliosSun.getName() == currPlayer.getName()) {
-					heliosUnits += 1;
-					myLabel.setText("" + heliosUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && heliosSun.getName() == currPlayer.getName()) {
+						heliosUnits += 1;
+						myLabel.setText("" + heliosUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4645,27 +4721,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && intiSun.getName() == currPlayer.getName()) {
-					intiUnits += 1;
-					myLabel.setText("" + intiUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && intiSun.getName() == currPlayer.getName()) {
+						intiUnits += 1;
+						myLabel.setText("" + intiUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4673,27 +4752,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && horusSun.getName() == currPlayer.getName()) {
-					horusUnits += 1;
-					myLabel.setText("" + horusUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && horusSun.getName() == currPlayer.getName()) {
+						horusUnits += 1;
+						myLabel.setText("" + horusUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4701,27 +4783,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && tonatiuhSun.getName() == currPlayer.getName()) {
-					tonatiuhUnits += 1;
-					myLabel.setText("" + tonatiuhUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && tonatiuhSun.getName() == currPlayer.getName()) {
+						tonatiuhUnits += 1;
+						myLabel.setText("" + tonatiuhUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4729,27 +4814,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && amunSun.getName() == currPlayer.getName()) {
-					amunUnits += 1;
-					myLabel.setText("" + amunUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && amunSun.getName() == currPlayer.getName()) {
+						amunUnits += 1;
+						myLabel.setText("" + amunUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4757,27 +4845,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && rawrvilleDino.getName() == currPlayer.getName()) {
-					rawrUnits += 1;
-					myLabel.setText("" + rawrUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && rawrvilleDino.getName() == currPlayer.getName()) {
+						rawrUnits += 1;
+						myLabel.setText("" + rawrUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4785,27 +4876,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && laieggesDino.getName() == currPlayer.getName()) {
-					eggUnits += 1;
-					myLabel.setText("" + eggUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && laieggesDino.getName() == currPlayer.getName()) {
+						eggUnits += 1;
+						myLabel.setText("" + eggUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4813,27 +4907,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && dactilitoDino.getName() == currPlayer.getName()) {
-					dacUnits += 1;
-					myLabel.setText("" + dacUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && dactilitoDino.getName() == currPlayer.getName()) {
+						dacUnits += 1;
+						myLabel.setText("" + dacUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4841,27 +4938,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && dirtydanDino.getName() == currPlayer.getName()) {
-					danUnits += 1;
-					myLabel.setText("" + danUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && dirtydanDino.getName() == currPlayer.getName()) {
+						danUnits += 1;
+						myLabel.setText("" + danUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4869,27 +4969,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && blackbeardDino.getName() == currPlayer.getName()) {
-					bbUnits += 1;
-					myLabel.setText("" + bbUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && blackbeardDino.getName() == currPlayer.getName()) {
+						bbUnits += 1;
+						myLabel.setText("" + bbUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4897,27 +5000,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && monisaurusDino.getName() == currPlayer.getName()) {
-					moniUnits += 1;
-					myLabel.setText("" + moniUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && monisaurusDino.getName() == currPlayer.getName()) {
+						moniUnits += 1;
+						myLabel.setText("" + moniUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4925,27 +5031,30 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if (currPlayer.getNumOfArmies() >= 1 && toystoryDino.getName() == currPlayer.getName()) {
-					tsUnits += 1;
-					myLabel.setText("" + tsUnits);
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				if (reinforcementPhase == true) {
+					if (currPlayer.getNumOfArmies() >= 1 && toystoryDino.getName() == currPlayer.getName()) {
+						tsUnits += 1;
+						myLabel.setText("" + tsUnits);
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -4954,30 +5063,33 @@ public class GameBoard extends JPanel {
 
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
+				if (reinforcementPhase == true) {
 
-				if (currPlayer.getNumOfArmies() >= 1 && scraptopiaCresent.getName() == currPlayer.getName()) {
-					scrapUnits += 1;
-					myLabel.setText("" + scrapUnits);
+					if (currPlayer.getNumOfArmies() >= 1 && scraptopiaCresent.getName() == currPlayer.getName()) {
+						scrapUnits += 1;
+						myLabel.setText("" + scrapUnits);
 
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
-
+					checkIfReinforcementPhaseIsOver();
 				}
 
 			}
@@ -4987,37 +5099,40 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
+				if (reinforcementPhase == true) {
 
-				if (currPlayer.getNumOfArmies() >= 1 && landofzachCresent.getName() == currPlayer.getName()) {
-					zachUnits += 1;
-					myLabel.setText("" + zachUnits);
+					if (currPlayer.getNumOfArmies() >= 1 && landofzachCresent.getName() == currPlayer.getName()) {
+						zachUnits += 1;
+						myLabel.setText("" + zachUnits);
 
-					currPlayer.removeArmies(1);
-					if (startWindow.getPlayerAt(0) == currPlayer) {
-						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(1) == currPlayer) {
-						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(2) == currPlayer) {
-						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(3) == currPlayer) {
-						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(4) == currPlayer) {
-						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					} else if (startWindow.getPlayerAt(5) == currPlayer) {
-						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						currPlayer.removeArmies(1);
+						if (startWindow.getPlayerAt(0) == currPlayer) {
+							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(1) == currPlayer) {
+							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(2) == currPlayer) {
+							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(3) == currPlayer) {
+							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(4) == currPlayer) {
+							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						} else if (startWindow.getPlayerAt(5) == currPlayer) {
+							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+						}
+
+						currPlayer = newGame.nextPlayer();
+
+						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
-					currPlayer = newGame.nextPlayer();
-
-					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+					checkIfReinforcementPhaseIsOver();
 				}
-
 			}
 		});
 		giantCresent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
+				if (reinforcementPhase == true) {
 
 				if (currPlayer.getNumOfArmies() >= 1 && giantCresent.getName() == currPlayer.getName()) {
 					giantUnits += 1;
@@ -5041,6 +5156,8 @@ public class GameBoard extends JPanel {
 					currPlayer = newGame.nextPlayer();
 
 					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+				checkIfReinforcementPhaseIsOver();
 				}
 
 			}
@@ -5074,7 +5191,7 @@ public class GameBoard extends JPanel {
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
-
+					checkIfReinforcementPhaseIsOver();
 				}
 			}
 		});
@@ -5107,6 +5224,7 @@ public class GameBoard extends JPanel {
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
+					checkIfReinforcementPhaseIsOver();
 
 				}
 			}
@@ -5140,6 +5258,7 @@ public class GameBoard extends JPanel {
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
+					checkIfReinforcementPhaseIsOver();
 
 				}
 			}
@@ -5173,6 +5292,7 @@ public class GameBoard extends JPanel {
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
+					checkIfReinforcementPhaseIsOver();
 
 				}
 			}
@@ -5946,6 +6066,21 @@ public class GameBoard extends JPanel {
 		this.add(bloobawlCresent);
 		this.add(cresentcaptitalCresent);
 
+	}
+
+	private void checkIfReinforcementPhaseIsOver() {
+		int playersDone=0;
+		for(int i=0; i<newGame.getNumOfPlayers(); i++)
+		{
+			if(newGame.getPlayerAt(i).getNumOfArmies()==0)
+			{
+				playersDone++;
+			}
+		}
+		if(playersDone==newGame.getNumOfPlayers())
+		{
+			reinforcementPhase=false;
+		}
 	}
 
 	private class buttonListener implements ActionListener {
