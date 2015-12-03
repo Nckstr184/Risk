@@ -26,7 +26,7 @@ public class HardAI extends Player implements AIStrategy {
 		 * to make sure you are powerful enough to withstand an attack from any
 		 * angle
 		 */
-		int highestNumberOfArmies = 0;
+		int highestNumberOfArmies = 1;
 		int armySum;
 		int indexOfHighest = 0;
 		Player temp;
@@ -50,7 +50,7 @@ public class HardAI extends Player implements AIStrategy {
 				indexOfHighest = i;
 			}
 		}
-		System.out.println(getTerritories().size());
+		System.out.println("Number of Territories: " + getTerritories().size());
 		System.out.println(indexOfHighest);
 
 		returns.add(getTerritories().get(indexOfHighest));
@@ -81,7 +81,6 @@ public class HardAI extends Player implements AIStrategy {
 			for (int j = 0; j < neighbors.size(); j++) {
 				tempPlayer = neighbors.get(j).getOwner();
 				if (!temp.getName().equals(this.getName())) {
-
 					armySum += neighbors.get(j).getUnits();
 				}
 

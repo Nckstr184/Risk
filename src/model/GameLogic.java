@@ -58,6 +58,8 @@ public class GameLogic implements Serializable{
 		if (p6 != null) {
 			allPlayers.addPlayers(p6);
 		}
+		
+		playerTurn = allPlayers.getNumOfPlayers() - 1;
 
 		languages = new Languages("languages", false);
 		dino = new Dino("dino", false);
@@ -508,7 +510,7 @@ public class GameLogic implements Serializable{
 			ArrayList<Object> deployingList = currPlayer.deployArmy();
 			Territory tempTerr = (Territory) deployingList.get(0);
 			Integer tempInt = (Integer) deployingList.get(1);
-			if (tempTerr.getUnits() <= 5)
+			//if (tempTerr.getUnits() <= 10)
 				tempTerr.addUnits(tempInt);
 			currPlayer.removeArmies(tempInt);
 		}
@@ -528,9 +530,8 @@ public class GameLogic implements Serializable{
 			attacker.addTerritories(defendingTerr);
 			defendingTerr.setOwner(attacker);
 
-			int movingArmies = attackingTerr.getUnits() - 1;
-			attackingTerr.removeUnits(movingArmies);
-			while (defendingTerr.getUnits() <= movingArmies ) {
+			attackingTerr.removeUnits(1);
+			while (defendingTerr.getUnits() <= 1 ) {
 				defendingTerr.addUnits(1);
 			}
 
@@ -551,9 +552,10 @@ public class GameLogic implements Serializable{
 
 	public void fortifyPosition() {
 		Player currPlayer = allPlayers.getPlayer(playerTurn % (allPlayers.getNumOfPlayers()));
+		int rand = r.nextInt(currPlayer.getTerritories().size());
 
-		ArrayList<Object> fortifyReturn = currPlayer.fortifyPosition(currPlayer.getTerritories().get(0),
-				currPlayer.getTerritories().get(0).getNeighbors());
+		ArrayList<Object> fortifyReturn = currPlayer.fortifyPosition(currPlayer.getTerritories().get(rand),
+				currPlayer.getTerritories().get(rand).getNeighbors());
 
 		if (fortifyReturn != null && fortifyReturn.size() > 0) {
 			//System.out.println("Fortifying the territories of: " + currPlayer.getName());
@@ -561,7 +563,7 @@ public class GameLogic implements Serializable{
 			int armiesToAdd = (Integer) fortifyReturn.get(1);
 
 			territoryToFortify.addUnits(armiesToAdd);
-			currPlayer.getTerritories().get(0).removeUnits(armiesToAdd);
+			currPlayer.getTerritories().get(rand).removeUnits(armiesToAdd);
 		}
 	}
 
