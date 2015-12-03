@@ -29,6 +29,7 @@ import model.Territory;
 
 public class GameBoard extends JPanel {
 
+	boolean reinforcementPhase;
 	HashMap<JButton, JLabel> myMap;
 	ArrayList<Continent> continents;
 	ArrayList<Territory> territories;
@@ -95,7 +96,7 @@ public class GameBoard extends JPanel {
 
 
 	public GameBoard() {
-
+ 
 	
 		try {
 			fis = new FileInputStream("saved");
@@ -105,8 +106,8 @@ public class GameBoard extends JPanel {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
+		reinforcementPhase=true;
+
 		newgame1= new OpenNewMenu();
 		while(newgame1.isDisplayable()){
 			System.out.print("");
@@ -4980,11 +4981,22 @@ public class GameBoard extends JPanel {
 		});
 		scraptopiaCresent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
+
 				if (currPlayer.getNumOfArmies() >= 1 && scraptopiaCresent.getName() == currPlayer.getName()) {
 					scrapUnits += 1;
 					myLabel.setText("" + scrapUnits);
+
+				
+				if(reinforcementPhase==true)
+				{
+				if (currPlayer.getNumOfArmies() >= 1 && javaLanguage.getName() == currPlayer.getName()) {
+					javaUnits += 1;
+					myLabel.setText("" + javaUnits);
+
 					currPlayer.removeArmies(1);
 					if (startWindow.getPlayerAt(0) == currPlayer) {
 						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
@@ -5003,6 +5015,7 @@ public class GameBoard extends JPanel {
 					currPlayer = newGame.nextPlayer();
 
 					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
 				}
 			}
 		});
@@ -5010,9 +5023,17 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
+
 				if (currPlayer.getNumOfArmies() >= 1 && landofzachCresent.getName() == currPlayer.getName()) {
 					zachUnits += 1;
 					myLabel.setText("" + zachUnits);
+
+				if(reinforcementPhase==true)
+				{
+				if (currPlayer.getNumOfArmies() >= 1 && pythonLanguage.getName() == currPlayer.getName()) {
+					pythonUnits += 1;
+					myLabel.setText("" + pythonUnits);
+
 					currPlayer.removeArmies(1);
 					if (startWindow.getPlayerAt(0) == currPlayer) {
 						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
@@ -5032,15 +5053,24 @@ public class GameBoard extends JPanel {
 
 					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 				}
+			}
 			}
 		});
 		giantCresent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
+
 				if (currPlayer.getNumOfArmies() >= 1 && giantCresent.getName() == currPlayer.getName()) {
 					giantUnits += 1;
 					myLabel.setText("" + giantUnits);
+
+				if(reinforcementPhase==true)
+				{
+				if (currPlayer.getNumOfArmies() >= 1 && cLanguage.getName() == currPlayer.getName()) {
+					cUnits += 1;
+					myLabel.setText("" + cUnits);
+
 					currPlayer.removeArmies(1);
 					if (startWindow.getPlayerAt(0) == currPlayer) {
 						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
@@ -5060,15 +5090,24 @@ public class GameBoard extends JPanel {
 
 					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 				}
+			}
 			}
 		});
 		newlandofzachCresent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
+<<<<<<< HEAD
 				if (currPlayer.getNumOfArmies() >= 1 && newlandofzachCresent.getName() == currPlayer.getName()) {
 					newzachUnits += 1;
 					myLabel.setText("" + newzachUnits);
+
+				if(reinforcementPhase==true)
+				{
+				if (currPlayer.getNumOfArmies() >= 1 && sqlLanguage.getName() == currPlayer.getName()) {
+					sqlUnits += 1;
+					myLabel.setText("" + sqlUnits);
+
 					currPlayer.removeArmies(1);
 					if (startWindow.getPlayerAt(0) == currPlayer) {
 						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
@@ -5088,15 +5127,24 @@ public class GameBoard extends JPanel {
 
 					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 				}
+			}
 			}
 		});
 		southscraptopiaCresent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
+
 				if (currPlayer.getNumOfArmies() >= 1 && southscraptopiaCresent.getName() == currPlayer.getName()) {
 					southUnits += 1;
 					myLabel.setText("" + southUnits);
+
+				if(reinforcementPhase==true)
+				{
+				if (currPlayer.getNumOfArmies() >= 1 && rubyLanguage.getName() == currPlayer.getName()) {
+					rubyUnits += 1;
+					myLabel.setText("" + rubyUnits);
+
 					currPlayer.removeArmies(1);
 					if (startWindow.getPlayerAt(0) == currPlayer) {
 						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
@@ -5116,15 +5164,24 @@ public class GameBoard extends JPanel {
 
 					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 				}
+			}
 			}
 		});
 		bloobawlCresent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
+
 				if (currPlayer.getNumOfArmies() >= 1 && bloobawlCresent.getName() == currPlayer.getName()) {
 					blooUnits += 1;
 					myLabel.setText("" + blooUnits);
+
+				if(reinforcementPhase==true)
+				{
+				if (currPlayer.getNumOfArmies() >= 1 && gitLanguage.getName() == currPlayer.getName()) {
+					gitUnits += 1;
+					myLabel.setText("" + gitUnits);
+
 					currPlayer.removeArmies(1);
 					if (startWindow.getPlayerAt(0) == currPlayer) {
 						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
@@ -5145,14 +5202,23 @@ public class GameBoard extends JPanel {
 					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 				}
 			}
+			}
 		});
 		cresentcaptitalCresent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
+
 				if (currPlayer.getNumOfArmies() >= 1 && cresentcaptitalCresent.getName() == currPlayer.getName()) {
 					capUnits += 1;
 					myLabel.setText("" + capUnits);
+
+				if(reinforcementPhase==true)
+				{
+				if (currPlayer.getNumOfArmies() >= 1 && perlLanguage.getName() == currPlayer.getName()) {
+					perlUnits += 1;
+					myLabel.setText("" + perlUnits);
+
 					currPlayer.removeArmies(1);
 					if (startWindow.getPlayerAt(0) == currPlayer) {
 						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
@@ -5172,6 +5238,7 @@ public class GameBoard extends JPanel {
 
 					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 				}
+			}
 			}
 		});
 
