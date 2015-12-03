@@ -29,6 +29,7 @@ import model.Territory;
 
 public class GameBoard extends JPanel {
 
+	boolean reinforcementPhase;
 	HashMap<JButton, JLabel> myMap;
 	ArrayList<Continent> continents;
 	ArrayList<Territory> territories;
@@ -95,7 +96,7 @@ public class GameBoard extends JPanel {
 
 
 	public GameBoard() {
-
+ 
 	
 		try {
 			fis = new FileInputStream("saved");
@@ -105,8 +106,8 @@ public class GameBoard extends JPanel {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
+		reinforcementPhase=true;
+
 		newgame1= new OpenNewMenu();
 		while(newgame1.isDisplayable()){
 			System.out.print("");
@@ -3244,8 +3245,13 @@ public class GameBoard extends JPanel {
 
 		javaLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
+				
+				if(reinforcementPhase==true)
+				{
 				if (currPlayer.getNumOfArmies() >= 1 && javaLanguage.getName() == currPlayer.getName()) {
 					javaUnits += 1;
 					myLabel.setText("" + javaUnits);
@@ -3268,12 +3274,15 @@ public class GameBoard extends JPanel {
 
 					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 				}
+				}
 			}
 		});
 		pythonLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
+				if(reinforcementPhase==true)
+				{
 				if (currPlayer.getNumOfArmies() >= 1 && pythonLanguage.getName() == currPlayer.getName()) {
 					pythonUnits += 1;
 					myLabel.setText("" + pythonUnits);
@@ -3297,11 +3306,14 @@ public class GameBoard extends JPanel {
 					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 				}
 			}
+			}
 		});
 		cLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
+				if(reinforcementPhase==true)
+				{
 				if (currPlayer.getNumOfArmies() >= 1 && cLanguage.getName() == currPlayer.getName()) {
 					cUnits += 1;
 					myLabel.setText("" + cUnits);
@@ -3320,11 +3332,14 @@ public class GameBoard extends JPanel {
 					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 				}
 			}
+			}
 		});
 		sqlLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
+				if(reinforcementPhase==true)
+				{
 				if (currPlayer.getNumOfArmies() >= 1 && sqlLanguage.getName() == currPlayer.getName()) {
 					sqlUnits += 1;
 					myLabel.setText("" + sqlUnits);
@@ -3343,11 +3358,14 @@ public class GameBoard extends JPanel {
 					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 				}
 			}
+			}
 		});
 		rubyLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
+				if(reinforcementPhase==true)
+				{
 				if (currPlayer.getNumOfArmies() >= 1 && rubyLanguage.getName() == currPlayer.getName()) {
 					rubyUnits += 1;
 					myLabel.setText("" + rubyUnits);
@@ -3366,11 +3384,14 @@ public class GameBoard extends JPanel {
 					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 				}
 			}
+			}
 		});
 		gitLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
+				if(reinforcementPhase==true)
+				{
 				if (currPlayer.getNumOfArmies() >= 1 && gitLanguage.getName() == currPlayer.getName()) {
 					gitUnits += 1;
 					myLabel.setText("" + gitUnits);
@@ -3389,11 +3410,14 @@ public class GameBoard extends JPanel {
 					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 				}
 			}
+			}
 		});
 		perlLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
+				if(reinforcementPhase==true)
+				{
 				if (currPlayer.getNumOfArmies() >= 1 && perlLanguage.getName() == currPlayer.getName()) {
 					perlUnits += 1;
 					myLabel.setText("" + perlUnits);
@@ -3411,6 +3435,7 @@ public class GameBoard extends JPanel {
 
 					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 				}
+			}
 			}
 		});
 		wilberWildcat.addActionListener(new buttonListener());
