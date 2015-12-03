@@ -4362,9 +4362,9 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-				if (currPlayer.getNumOfArmies() >= 1 && javaLanguage.getName() == currPlayer.getName()) {
-					javaUnits += 1;
-					myLabel.setText("" + javaUnits);
+				if (currPlayer.getNumOfArmies() >= 1 && millerWildcat.getName() == currPlayer.getName()) {
+					millerUnits += 1;
+					myLabel.setText("" + millerUnits);
 					currPlayer.removeArmies(1);
 					if (startWindow.getPlayerAt(0) == currPlayer) {
 						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
@@ -4400,9 +4400,9 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-				if (currPlayer.getNumOfArmies() >= 1 && javaLanguage.getName() == currPlayer.getName()) {
-					javaUnits += 1;
-					myLabel.setText("" + javaUnits);
+				if (currPlayer.getNumOfArmies() >= 1 && scoobyWildcat.getName() == currPlayer.getName()) {
+					scoobyUnits += 1;
+					myLabel.setText("" + scoobyUnits);
 					currPlayer.removeArmies(1);
 					if (startWindow.getPlayerAt(0) == currPlayer) {
 						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
