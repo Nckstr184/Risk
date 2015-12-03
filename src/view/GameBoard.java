@@ -81,11 +81,22 @@ public class GameBoard extends JPanel {
 	OpenNewMenu newgame1;
 
 	GameLogic newGame;
+
+	JLabel playerTag, playerTag2, playerTag3, playerTag4, playerTag5, playerTag6, playerCount, playerCount2,
+			playerCount3, playerCount4, playerCount5, playerCount6;
+
+
 	private FileInputStream fis;
 	private ObjectInputStream input;
 
+
+
+
+
+
 	public GameBoard() {
-		
+
+	
 		try {
 			fis = new FileInputStream("saved");
 			input= new ObjectInputStream(fis);
@@ -107,19 +118,65 @@ public class GameBoard extends JPanel {
 		startWindow = new StartWindow();
 		// current = new Player();
 		while (startWindow.isDisplayable()) {
+
 			System.out.print("");
 
-			if (!startWindow.isDisplayable()) {
+			if (!newgame1.isDisplayable()) {
 				System.out.print("");
-				this.setSize(1300, 750);
-				this.setLocation(0, -5);
 
+				//startWindow = new StartWindow();
+				// current = new Player();
+				while (startWindow.isDisplayable()) {
+					System.out.print("");
+
+					if (!startWindow.isDisplayable()) {
+						System.out.print("");
+						this.setSize(1300, 750);
+						this.setLocation(0, -5);
+
+						try {
+							map = ImageIO.read(new File("./Pictures/map1.png"));
+
+							bottomDisplay = ImageIO.read(new File("./Pictures/bottomgui.png"));
+							leftDisplay = ImageIO.read(new File("./Pictures/gui2n.png"));
+							rightDisplay = ImageIO.read(new File("./Pictures/gui2n.png"));
+
+							JLabel picLabel = new JLabel(new ImageIcon(map));
+							JLabel bottomLabel = new JLabel(new ImageIcon(bottomDisplay));
+							JLabel leftLabel = new JLabel(new ImageIcon(leftDisplay));
+							JLabel rightLabel = new JLabel(new ImageIcon(rightDisplay));
+							System.out.println("NUMBER OF PLAYERS: " + startWindow.getNumberOfPlayer());
+
+							this.setLayout(new BorderLayout());
+							startNewGame();
+							playerTags();
+							addButtons();
+							currPlayer = newGame.getPlayerAt(0);
+
+
+							add(picLabel, BorderLayout.CENTER);
+							add(leftLabel, BorderLayout.WEST);
+							add(rightLabel, BorderLayout.EAST);
+
+							add(bottomLabel, BorderLayout.SOUTH);
+
+						} catch (IOException e) {
+							System.out.println("ERROR with map");
+							e.printStackTrace();
+						}
+
+					}
+				}
+			}
+			if(newgame1.isClicked()==true){
 				try {
+					newGame = (GameLogic) input.readObject();
+					input.close();
 					map = ImageIO.read(new File("./Pictures/map1.png"));
 
 					bottomDisplay = ImageIO.read(new File("./Pictures/bottomgui.png"));
-					leftDisplay = ImageIO.read(new File("./Pictures/gui2.png"));
-					rightDisplay = ImageIO.read(new File("./Pictures/gui2.png"));
+					leftDisplay = ImageIO.read(new File("./Pictures/gui2n.png"));
+					rightDisplay = ImageIO.read(new File("./Pictures/gui2n.png"));
 
 					JLabel picLabel = new JLabel(new ImageIcon(map));
 					JLabel bottomLabel = new JLabel(new ImageIcon(bottomDisplay));
@@ -128,10 +185,6 @@ public class GameBoard extends JPanel {
 					System.out.println("NUMBER OF PLAYERS: " + startWindow.getNumberOfPlayer());
 
 					this.setLayout(new BorderLayout());
-					startNewGame();
-					playerTags();
-					addButtons();
-					currPlayer = newGame.getPlayerAt(0);
 
 					add(picLabel, BorderLayout.CENTER);
 					add(leftLabel, BorderLayout.WEST);
@@ -139,15 +192,6 @@ public class GameBoard extends JPanel {
 
 					add(bottomLabel, BorderLayout.SOUTH);
 
-				} catch (IOException e) {
-					System.out.println("ERROR with map");
-					e.printStackTrace();
-				}
-			}
-			if(newgame1.isClicked()==true){
-				try {
-					newGame = (GameLogic) input.readObject();
-					input.close();
 
 				} catch (ClassNotFoundException e) {
 					// TODO Auto-generated catch block
@@ -157,40 +201,277 @@ public class GameBoard extends JPanel {
 					e.printStackTrace();
 				}
 				
+
 			}
 			}
 		
 		}
+
 		
 		}
+		
+
 
 	}
 
 	private void playerTags() {
 		int numberOfPlayers;
-		JLabel playerTag, playerTag2;
+
 		numberOfPlayers = startWindow.getNumberOfPlayer();
 		Font font = new Font("Verdana", Font.BOLD, 18);
 		Font font2 = new Font("Verdana", Font.BOLD, 9);
 		int count = 1;
 
-		for (int i = 0; i < numberOfPlayers; i++) {
-			playerTag = new JLabel(startWindow.getPlayerName(i));
-			playerTag2 = new JLabel("You have " + newGame.getPlayerAt(i).getNumOfArmies() + " units left to place!");
+		if (numberOfPlayers == 6) {
+			playerTag = new JLabel(startWindow.getPlayerName(0));
 			playerTag.setSize(150, 40);
-			playerTag.setLocation(170 * count, 600);
+			playerTag.setLocation(170, 600);
 			playerTag.setFont(font);
-			playerTag.setForeground(startWindow.getPlayerColor(i));
-			playerTag2.setSize(200, 40);
-			playerTag2.setLocation(165 * count, 620);
-			playerTag2.setFont(font2);
-			playerTag2.setForeground(startWindow.getPlayerColor(i));
+			playerTag.setForeground(startWindow.getPlayerColor(0));
 			add(playerTag);
+			playerCount = new JLabel("You have " + newGame.getPlayerAt(0).getNumOfArmies() + " units left to place!");
+			playerCount.setSize(200, 40);
+			playerCount.setLocation(130, 620);
+			playerCount.setFont(font2);
+			playerCount.setForeground(startWindow.getPlayerColor(0));
+			add(playerCount);
+			playerTag2 = new JLabel(startWindow.getPlayerName(1));
+			playerTag2.setSize(150, 40);
+			playerTag2.setLocation(340, 600);
+			playerTag2.setFont(font);
+			playerTag2.setForeground(startWindow.getPlayerColor(1));
 			add(playerTag2);
-			// add(playerTag, BorderLayout.SOUTH);
-			count++;
+			playerCount2 = new JLabel("You have " + newGame.getPlayerAt(1).getNumOfArmies() + " units left to place!");
+			playerCount2.setSize(200, 40);
+			playerCount2.setLocation(290, 620);
+			playerCount2.setFont(font2);
+			playerCount2.setForeground(startWindow.getPlayerColor(1));
+			add(playerCount2);
+			playerTag3 = new JLabel(startWindow.getPlayerName(2));
+			playerTag3.setSize(150, 40);
+			playerTag3.setLocation(490, 600);
+			playerTag3.setFont(font);
+			playerTag3.setForeground(startWindow.getPlayerColor(2));
+			add(playerTag3);
+			playerCount3 = new JLabel("You have " + newGame.getPlayerAt(2).getNumOfArmies() + " units left to place!");
+			playerCount3.setSize(200, 40);
+			playerCount3.setLocation(460, 620);
+			playerCount3.setFont(font2);
+			playerCount3.setForeground(startWindow.getPlayerColor(2));
+			add(playerCount3);
+			playerTag4 = new JLabel(startWindow.getPlayerName(3));
+			playerTag4.setSize(150, 40);
+			playerTag4.setLocation(660, 600);
+			playerTag4.setFont(font);
+			playerTag4.setForeground(startWindow.getPlayerColor(3));
+			add(playerTag4);
+			playerCount4 = new JLabel("You have " + newGame.getPlayerAt(3).getNumOfArmies() + " units left to place!");
+			playerCount4.setSize(200, 40);
+			playerCount4.setLocation(630, 620);
+			playerCount4.setFont(font2);
+			playerCount4.setForeground(startWindow.getPlayerColor(3));
+			add(playerCount4);
+			playerTag5 = new JLabel(startWindow.getPlayerName(4));
+			playerTag5.setSize(150, 40);
+			playerTag5.setLocation(830, 600);
+			playerTag5.setFont(font);
+			playerTag5.setForeground(startWindow.getPlayerColor(4));
+			add(playerTag5);
+			playerCount5 = new JLabel("You have " + newGame.getPlayerAt(4).getNumOfArmies() + " units left to place!");
+			playerCount5.setSize(200, 40);
+			playerCount5.setLocation(800, 620);
+			playerCount5.setFont(font2);
+			playerCount5.setForeground(startWindow.getPlayerColor(4));
+			add(playerCount5);
+			playerTag6 = new JLabel(startWindow.getPlayerName(5));
+			playerTag6.setSize(150, 40);
+			playerTag6.setLocation(1000, 600);
+			playerTag6.setFont(font);
+			playerTag6.setForeground(startWindow.getPlayerColor(5));
+			add(playerTag6);
+			playerCount6 = new JLabel("You have " + newGame.getPlayerAt(5).getNumOfArmies() + " units left to place!");
+			playerCount6.setSize(150, 40);
+			playerCount6.setLocation(970, 620);
+			playerCount6.setFont(font2);
+			playerCount6.setForeground(startWindow.getPlayerColor(5));
+			add(playerCount6);
 		}
-
+		if (numberOfPlayers == 5) {
+			playerTag = new JLabel(startWindow.getPlayerName(0));
+			playerTag.setSize(150, 40);
+			playerTag.setLocation(170, 600);
+			playerTag.setFont(font);
+			playerTag.setForeground(startWindow.getPlayerColor(0));
+			add(playerTag);
+			playerCount = new JLabel("You have " + newGame.getPlayerAt(0).getNumOfArmies() + " units left to place!");
+			playerCount.setSize(200, 40);
+			playerCount.setLocation(130, 620);
+			playerCount.setFont(font2);
+			playerCount.setForeground(startWindow.getPlayerColor(0));
+			add(playerCount);
+			playerTag2 = new JLabel(startWindow.getPlayerName(1));
+			playerTag2.setSize(150, 40);
+			playerTag2.setLocation(340, 600);
+			playerTag2.setFont(font);
+			playerTag2.setForeground(startWindow.getPlayerColor(1));
+			add(playerTag2);
+			playerCount2 = new JLabel("You have " + newGame.getPlayerAt(1).getNumOfArmies() + " units left to place!");
+			playerCount2.setSize(200, 40);
+			playerCount2.setLocation(290, 620);
+			playerCount2.setFont(font2);
+			playerCount2.setForeground(startWindow.getPlayerColor(1));
+			add(playerCount2);
+			playerTag3 = new JLabel(startWindow.getPlayerName(2));
+			playerTag3.setSize(150, 40);
+			playerTag3.setLocation(490, 600);
+			playerTag3.setFont(font);
+			playerTag3.setForeground(startWindow.getPlayerColor(2));
+			add(playerTag3);
+			playerCount3 = new JLabel("You have " + newGame.getPlayerAt(2).getNumOfArmies() + " units left to place!");
+			playerCount3.setSize(200, 40);
+			playerCount3.setLocation(460, 620);
+			playerCount3.setFont(font2);
+			playerCount3.setForeground(startWindow.getPlayerColor(2));
+			add(playerCount3);
+			playerTag4 = new JLabel(startWindow.getPlayerName(3));
+			playerTag4.setSize(150, 40);
+			playerTag4.setLocation(660, 600);
+			playerTag4.setFont(font);
+			playerTag4.setForeground(startWindow.getPlayerColor(3));
+			add(playerTag4);
+			playerCount4 = new JLabel("You have " + newGame.getPlayerAt(3).getNumOfArmies() + " units left to place!");
+			playerCount4.setSize(200, 40);
+			playerCount4.setLocation(630, 620);
+			playerCount4.setFont(font2);
+			playerCount4.setForeground(startWindow.getPlayerColor(3));
+			add(playerCount4);
+			playerTag5 = new JLabel(startWindow.getPlayerName(4));
+			playerTag5.setSize(150, 40);
+			playerTag5.setLocation(830, 600);
+			playerTag5.setFont(font);
+			playerTag5.setForeground(startWindow.getPlayerColor(4));
+			add(playerTag5);
+			playerCount5 = new JLabel("You have " + newGame.getPlayerAt(4).getNumOfArmies() + " units left to place!");
+			playerCount5.setSize(200, 40);
+			playerCount5.setLocation(800, 620);
+			playerCount5.setFont(font2);
+			playerCount5.setForeground(startWindow.getPlayerColor(4));
+			add(playerCount5);
+		}
+		if (numberOfPlayers == 4) {
+			playerTag = new JLabel(startWindow.getPlayerName(0));
+			playerTag.setSize(150, 40);
+			playerTag.setLocation(170, 600);
+			playerTag.setFont(font);
+			playerTag.setForeground(startWindow.getPlayerColor(0));
+			add(playerTag);
+			playerCount = new JLabel("You have " + newGame.getPlayerAt(0).getNumOfArmies() + " units left to place!");
+			playerCount.setSize(200, 40);
+			playerCount.setLocation(130, 620);
+			playerCount.setFont(font2);
+			playerCount.setForeground(startWindow.getPlayerColor(0));
+			add(playerCount);
+			playerTag2 = new JLabel(startWindow.getPlayerName(1));
+			playerTag2.setSize(150, 40);
+			playerTag2.setLocation(340, 600);
+			playerTag2.setFont(font);
+			playerTag2.setForeground(startWindow.getPlayerColor(1));
+			add(playerTag2);
+			playerCount2 = new JLabel("You have " + newGame.getPlayerAt(1).getNumOfArmies() + " units left to place!");
+			playerCount2.setSize(200, 40);
+			playerCount2.setLocation(290, 620);
+			playerCount2.setFont(font2);
+			playerCount2.setForeground(startWindow.getPlayerColor(1));
+			add(playerCount2);
+			playerTag3 = new JLabel(startWindow.getPlayerName(2));
+			playerTag3.setSize(150, 40);
+			playerTag3.setLocation(490, 600);
+			playerTag3.setFont(font);
+			playerTag3.setForeground(startWindow.getPlayerColor(2));
+			add(playerTag3);
+			playerCount3 = new JLabel("You have " + newGame.getPlayerAt(2).getNumOfArmies() + " units left to place!");
+			playerCount3.setSize(200, 40);
+			playerCount3.setLocation(460, 620);
+			playerCount3.setFont(font2);
+			playerCount3.setForeground(startWindow.getPlayerColor(2));
+			add(playerCount3);
+			playerTag4 = new JLabel(startWindow.getPlayerName(3));
+			playerTag4.setSize(150, 40);
+			playerTag4.setLocation(660, 600);
+			playerTag4.setFont(font);
+			playerTag4.setForeground(startWindow.getPlayerColor(3));
+			add(playerTag4);
+			playerCount4 = new JLabel("You have " + newGame.getPlayerAt(3).getNumOfArmies() + " units left to place!");
+			playerCount4.setSize(200, 40);
+			playerCount4.setLocation(630, 620);
+			playerCount4.setFont(font2);
+			playerCount4.setForeground(startWindow.getPlayerColor(3));
+			add(playerCount4);
+		}
+		if (numberOfPlayers == 3) {
+			playerTag = new JLabel(startWindow.getPlayerName(0));
+			playerTag.setSize(150, 40);
+			playerTag.setLocation(170, 600);
+			playerTag.setFont(font);
+			playerTag.setForeground(startWindow.getPlayerColor(0));
+			add(playerTag);
+			playerCount = new JLabel("You have " + newGame.getPlayerAt(0).getNumOfArmies() + " units left to place!");
+			playerCount.setSize(200, 40);
+			playerCount.setLocation(130, 620);
+			playerCount.setFont(font2);
+			playerCount.setForeground(startWindow.getPlayerColor(0));
+			add(playerCount);
+			playerTag2 = new JLabel(startWindow.getPlayerName(1));
+			playerTag2.setSize(150, 40);
+			playerTag2.setLocation(340, 600);
+			playerTag2.setFont(font);
+			playerTag2.setForeground(startWindow.getPlayerColor(1));
+			add(playerTag2);
+			playerCount2 = new JLabel("You have " + newGame.getPlayerAt(1).getNumOfArmies() + " units left to place!");
+			playerCount2.setSize(200, 40);
+			playerCount2.setLocation(290, 620);
+			playerCount2.setFont(font2);
+			playerCount2.setForeground(startWindow.getPlayerColor(1));
+			add(playerCount2);
+			playerTag3 = new JLabel(startWindow.getPlayerName(2));
+			playerTag3.setSize(150, 40);
+			playerTag3.setLocation(490, 600);
+			playerTag3.setFont(font);
+			playerTag3.setForeground(startWindow.getPlayerColor(2));
+			add(playerTag3);
+			playerCount3 = new JLabel("You have " + newGame.getPlayerAt(2).getNumOfArmies() + " units left to place!");
+			playerCount3.setSize(200, 40);
+			playerCount3.setLocation(460, 620);
+			playerCount3.setFont(font2);
+			playerCount3.setForeground(startWindow.getPlayerColor(2));
+			add(playerCount3);
+		}
+		if (numberOfPlayers == 2) {
+			playerTag = new JLabel(startWindow.getPlayerName(0));
+			playerTag.setSize(150, 40);
+			playerTag.setLocation(170, 600);
+			playerTag.setFont(font);
+			playerTag.setForeground(startWindow.getPlayerColor(0));
+			add(playerTag);
+			playerCount = new JLabel("You have " + newGame.getPlayerAt(0).getNumOfArmies() + " units left to place!");
+			playerCount.setSize(200, 40);
+			playerCount.setLocation(130, 620);
+			playerCount.setFont(font2);
+			playerCount.setForeground(startWindow.getPlayerColor(0));
+			add(playerCount);
+			playerTag2 = new JLabel(startWindow.getPlayerName(1));
+			playerTag2.setSize(150, 40);
+			playerTag2.setLocation(340, 600);
+			playerTag2.setFont(font);
+			playerTag2.setForeground(startWindow.getPlayerColor(1));
+			add(playerTag2);
+			playerCount2 = new JLabel("You have " + newGame.getPlayerAt(1).getNumOfArmies() + " units left to place!");
+			playerCount2.setSize(200, 40);
+			playerCount2.setLocation(290, 620);
+			playerCount2.setFont(font2);
+			playerCount2.setForeground(startWindow.getPlayerColor(1));
+			add(playerCount2);
+		}
 	}
 
 	public void startNewGame() {
@@ -2962,13 +3243,27 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if(currPlayer.getNumOfArmies() >= 1 && javaLanguage.getName() == currPlayer.getName()){
-					javaUnits +=1;
-					myLabel.setText(""+ javaUnits);
-					currPlayer.removeArmies(1);	
-					
-					playerTags();
-					//ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				if (currPlayer.getNumOfArmies() >= 1 && javaLanguage.getName() == currPlayer.getName()) {
+					javaUnits += 1;
+					myLabel.setText("" + javaUnits);
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 				}
 			}
 		});
@@ -2976,21 +3271,145 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				if(currPlayer.getNumOfArmies() >= 1 && pythonLanguage.getName() == currPlayer.getName()){
-					pythonUnits +=1;
-					myLabel.setText(""+ pythonUnits);
-					currPlayer.removeArmies(1);	
-					
-					playerTags();
-					//ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				if (currPlayer.getNumOfArmies() >= 1 && pythonLanguage.getName() == currPlayer.getName()) {
+					pythonUnits += 1;
+					myLabel.setText("" + pythonUnits);
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 				}
 			}
 		});
-		cLanguage.addActionListener(new buttonListener());
-		sqlLanguage.addActionListener(new buttonListener());
-		rubyLanguage.addActionListener(new buttonListener());
-		gitLanguage.addActionListener(new buttonListener());
-		perlLanguage.addActionListener(new buttonListener());
+		cLanguage.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && cLanguage.getName() == currPlayer.getName()) {
+					cUnits += 1;
+					myLabel.setText("" + cUnits);
+					currPlayer.removeArmies(1);
+					if(startWindow.getPlayerAt(0)==currPlayer){playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
+					else if(startWindow.getPlayerAt(1)==currPlayer){playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
+					else if(startWindow.getPlayerAt(2)==currPlayer){playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
+					else if(startWindow.getPlayerAt(3)==currPlayer){playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
+					else if(startWindow.getPlayerAt(4)==currPlayer){playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
+					else if(startWindow.getPlayerAt(5)==currPlayer){playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
+	
+					
+					currPlayer = newGame.nextPlayer();
+					
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		sqlLanguage.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && sqlLanguage.getName() == currPlayer.getName()) {
+					sqlUnits += 1;
+					myLabel.setText("" + sqlUnits);
+					currPlayer.removeArmies(1);
+					if(startWindow.getPlayerAt(0)==currPlayer){playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
+					else if(startWindow.getPlayerAt(1)==currPlayer){playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
+					else if(startWindow.getPlayerAt(2)==currPlayer){playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
+					else if(startWindow.getPlayerAt(3)==currPlayer){playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
+					else if(startWindow.getPlayerAt(4)==currPlayer){playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
+					else if(startWindow.getPlayerAt(5)==currPlayer){playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
+	
+					
+					currPlayer = newGame.nextPlayer();
+					
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		rubyLanguage.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && rubyLanguage.getName() == currPlayer.getName()) {
+					rubyUnits += 1;
+					myLabel.setText("" + rubyUnits);
+					currPlayer.removeArmies(1);
+					if(startWindow.getPlayerAt(0)==currPlayer){playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
+					else if(startWindow.getPlayerAt(1)==currPlayer){playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
+					else if(startWindow.getPlayerAt(2)==currPlayer){playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
+					else if(startWindow.getPlayerAt(3)==currPlayer){playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
+					else if(startWindow.getPlayerAt(4)==currPlayer){playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
+					else if(startWindow.getPlayerAt(5)==currPlayer){playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
+	
+					
+					currPlayer = newGame.nextPlayer();
+					
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		gitLanguage.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && gitLanguage.getName() == currPlayer.getName()) {
+					gitUnits += 1;
+					myLabel.setText("" + gitUnits);
+					currPlayer.removeArmies(1);
+					if(startWindow.getPlayerAt(0)==currPlayer){playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
+					else if(startWindow.getPlayerAt(1)==currPlayer){playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
+					else if(startWindow.getPlayerAt(2)==currPlayer){playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
+					else if(startWindow.getPlayerAt(3)==currPlayer){playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
+					else if(startWindow.getPlayerAt(4)==currPlayer){playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
+					else if(startWindow.getPlayerAt(5)==currPlayer){playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
+	
+					
+					currPlayer = newGame.nextPlayer();
+					
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		perlLanguage.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && perlLanguage.getName() == currPlayer.getName()) {
+					perlUnits += 1;
+					myLabel.setText("" + perlUnits);
+					currPlayer.removeArmies(1);
+					if(startWindow.getPlayerAt(0)==currPlayer){playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
+					else if(startWindow.getPlayerAt(1)==currPlayer){playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
+					else if(startWindow.getPlayerAt(2)==currPlayer){playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
+					else if(startWindow.getPlayerAt(3)==currPlayer){playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
+					else if(startWindow.getPlayerAt(4)==currPlayer){playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
+					else if(startWindow.getPlayerAt(5)==currPlayer){playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
+	
+					
+					currPlayer = newGame.nextPlayer();
+					
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
 		wilberWildcat.addActionListener(new buttonListener());
 		wilmaWildcat.addActionListener(new buttonListener());
 		richWildcat.addActionListener(new buttonListener());
@@ -3759,287 +4178,277 @@ public class GameBoard extends JPanel {
 		this.add(tonatiuhSun);
 		this.add(amunSun);
 
-		
-		
-		//ALL FOR DINO***
-				rawrUnits = 0;
-				eggUnits = 0;
-				dacUnits = 0;
-				danUnits = 0;
-				bbUnits = 0;
-				moniUnits = 0;
-				tsUnits = 0;
+		// ALL FOR DINO***
+		rawrUnits = 0;
+		eggUnits = 0;
+		dacUnits = 0;
+		danUnits = 0;
+		bbUnits = 0;
+		moniUnits = 0;
+		tsUnits = 0;
 
-				dinoLabel1 = new JLabel("" + pjUnits);
-				dinoLabel2 = new JLabel("" + domUnits);
-				dinoLabel3 = new JLabel("" + phUnits);
-				dinoLabel4 = new JLabel("" + bjUnits);
-				dinoLabel5 = new JLabel("" + hhUnits);
-				dinoLabel6 = new JLabel("" + bUnits);
-				dinoLabel7 = new JLabel("" + ppUnits);
+		dinoLabel1 = new JLabel("" + pjUnits);
+		dinoLabel2 = new JLabel("" + domUnits);
+		dinoLabel3 = new JLabel("" + phUnits);
+		dinoLabel4 = new JLabel("" + bjUnits);
+		dinoLabel5 = new JLabel("" + hhUnits);
+		dinoLabel6 = new JLabel("" + bUnits);
+		dinoLabel7 = new JLabel("" + ppUnits);
 
-			
+		rawrvilleDino.addActionListener(new buttonListener());
+		laieggesDino.addActionListener(new buttonListener());
+		dactilitoDino.addActionListener(new buttonListener());
+		dirtydanDino.addActionListener(new buttonListener());
+		blackbeardDino.addActionListener(new buttonListener());
+		monisaurusDino.addActionListener(new buttonListener());
+		toystoryDino.addActionListener(new buttonListener());
 
-				rawrvilleDino.addActionListener(new buttonListener());
-				laieggesDino.addActionListener(new buttonListener());
-				dactilitoDino.addActionListener(new buttonListener());
-				dirtydanDino.addActionListener(new buttonListener());
-				blackbeardDino.addActionListener(new buttonListener());
-				monisaurusDino.addActionListener(new buttonListener());
-				toystoryDino.addActionListener(new buttonListener());
+		rawrvilleDino.setSize(25, 25);
+		rawrvilleDino.setLocation(960, 224);
+		rawrvilleDino.setOpaque(false);
+		rawrvilleDino.setContentAreaFilled(false);
+		rawrvilleDino.setBorderPainted(false);
 
-				rawrvilleDino.setSize(25, 25);
-				rawrvilleDino.setLocation(960, 224);
-				rawrvilleDino.setOpaque(false);
-				rawrvilleDino.setContentAreaFilled(false);
-				rawrvilleDino.setBorderPainted(false);
+		dinoLabel1.setSize(25, 25);
+		dinoLabel1.setFont(font);
+		dinoLabel1.setForeground(Color.BLACK);
+		dinoLabel1.setLocation(968, 227);
+		dinoLabel1.setOpaque(false);
 
-				dinoLabel1.setSize(25, 25);
-				dinoLabel1.setFont(font);
-				dinoLabel1.setForeground(Color.WHITE);
-				dinoLabel1.setLocation(968, 227);
-				dinoLabel1.setOpaque(false);
+		laieggesDino.setSize(25, 25);
+		laieggesDino.setLocation(923, 241);
+		laieggesDino.setOpaque(false);
+		laieggesDino.setContentAreaFilled(false);
+		laieggesDino.setBorderPainted(false);
 
-				laieggesDino.setSize(25, 25);
-				laieggesDino.setLocation(923, 241);
-				laieggesDino.setOpaque(false);
-				laieggesDino.setContentAreaFilled(false);
-				laieggesDino.setBorderPainted(false);
+		dinoLabel2.setSize(25, 25);
+		dinoLabel2.setFont(font);
+		dinoLabel2.setForeground(Color.BLACK);
+		dinoLabel2.setLocation(931, 244);
+		dinoLabel2.setOpaque(false);
 
-				dinoLabel2.setSize(25, 25);
-				dinoLabel2.setFont(font);
-				dinoLabel2.setForeground(Color.WHITE);
-				dinoLabel2.setLocation(931, 244);
-				dinoLabel2.setOpaque(false);
+		dactilitoDino.setSize(25, 25);
+		dactilitoDino.setLocation(920, 325);
+		dactilitoDino.setOpaque(false);
+		dactilitoDino.setContentAreaFilled(false);
+		dactilitoDino.setBorderPainted(false);
 
-				dactilitoDino.setSize(25, 25);
-				dactilitoDino.setLocation(920, 325);
-				dactilitoDino.setOpaque(false);
-				dactilitoDino.setContentAreaFilled(false);
-				dactilitoDino.setBorderPainted(false);
+		dinoLabel3.setSize(25, 25);
+		dinoLabel3.setFont(font);
+		dinoLabel3.setForeground(Color.BLACK);
+		dinoLabel3.setLocation(928, 328);
+		dinoLabel3.setOpaque(false);
 
-				dinoLabel3.setSize(25, 25);
-				dinoLabel3.setFont(font);
-				dinoLabel3.setForeground(Color.WHITE);
-				dinoLabel3.setLocation(928, 328);
-				dinoLabel3.setOpaque(false);
+		dirtydanDino.setSize(25, 25);
+		dirtydanDino.setLocation(868, 315);
+		dirtydanDino.setOpaque(false);
+		dirtydanDino.setContentAreaFilled(false);
+		dirtydanDino.setBorderPainted(false);
 
-				dirtydanDino.setSize(25, 25);
-				dirtydanDino.setLocation(868, 315);
-				dirtydanDino.setOpaque(false);
-				dirtydanDino.setContentAreaFilled(false);
-				dirtydanDino.setBorderPainted(false);
+		dinoLabel4.setSize(25, 25);
+		dinoLabel4.setFont(font);
+		dinoLabel4.setForeground(Color.BLACK);
+		dinoLabel4.setLocation(875, 318);
+		dinoLabel4.setOpaque(false);
 
-				dinoLabel4.setSize(25, 25);
-				dinoLabel4.setFont(font);
-				dinoLabel4.setForeground(Color.WHITE);
-				dinoLabel4.setLocation(875, 318);
-				dinoLabel4.setOpaque(false);
+		blackbeardDino.setSize(25, 25);
+		blackbeardDino.setLocation(885, 358);
+		blackbeardDino.setOpaque(false);
+		blackbeardDino.setContentAreaFilled(false);
+		blackbeardDino.setBorderPainted(false);
 
-				blackbeardDino.setSize(25, 25);
-				blackbeardDino.setLocation(885, 358);
-				blackbeardDino.setOpaque(false);
-				blackbeardDino.setContentAreaFilled(false);
-				blackbeardDino.setBorderPainted(false);
+		dinoLabel5.setSize(25, 25);
+		dinoLabel5.setFont(font);
+		dinoLabel5.setForeground(Color.BLACK);
+		dinoLabel5.setLocation(893, 361);
+		dinoLabel5.setOpaque(false);
 
-				dinoLabel5.setSize(25, 25);
-				dinoLabel5.setFont(font);
-				dinoLabel5.setForeground(Color.WHITE);
-				dinoLabel5.setLocation(893, 361);
-				dinoLabel5.setOpaque(false);
+		monisaurusDino.setSize(25, 25);
+		monisaurusDino.setLocation(845, 383);
+		monisaurusDino.setOpaque(false);
+		monisaurusDino.setContentAreaFilled(false);
+		monisaurusDino.setBorderPainted(false);
 
-				monisaurusDino.setSize(25, 25);
-				monisaurusDino.setLocation(845, 383);
-				monisaurusDino.setOpaque(false);
-				monisaurusDino.setContentAreaFilled(false);
-				monisaurusDino.setBorderPainted(false);
+		dinoLabel6.setSize(25, 25);
+		dinoLabel6.setFont(font);
+		dinoLabel6.setForeground(Color.BLACK);
+		dinoLabel6.setLocation(853, 386);
+		dinoLabel6.setOpaque(false);
 
-				dinoLabel6.setSize(25, 25);
-				dinoLabel6.setFont(font);
-				dinoLabel6.setForeground(Color.WHITE);
-				dinoLabel6.setLocation(853, 386);
-				dinoLabel6.setOpaque(false);
+		toystoryDino.setSize(25, 25);
+		toystoryDino.setLocation(930, 408);
+		toystoryDino.setOpaque(false);
+		toystoryDino.setContentAreaFilled(false);
+		toystoryDino.setBorderPainted(false);
 
-				toystoryDino.setSize(25, 25);
-				toystoryDino.setLocation(930, 408);
-				toystoryDino.setOpaque(false);
-				toystoryDino.setContentAreaFilled(false);
-				toystoryDino.setBorderPainted(false);
+		// myMap = new HashMap<JButton, JLabel>();
+		myMap.put(rawrvilleDino, dinoLabel1);
+		myMap.put(laieggesDino, dinoLabel2);
+		myMap.put(dactilitoDino, dinoLabel3);
+		myMap.put(dirtydanDino, dinoLabel4);
+		myMap.put(blackbeardDino, dinoLabel5);
+		myMap.put(monisaurusDino, dinoLabel6);
+		myMap.put(toystoryDino, dinoLabel7);
 
-			//	myMap = new HashMap<JButton, JLabel>();
-				myMap.put(rawrvilleDino, dinoLabel1);
-				myMap.put(laieggesDino, dinoLabel2);
-				myMap.put(dactilitoDino, dinoLabel3);
-				myMap.put(dirtydanDino, dinoLabel4);
-				myMap.put(blackbeardDino, dinoLabel5);
-				myMap.put(monisaurusDino, dinoLabel6);
-				myMap.put(toystoryDino, dinoLabel7);
+		dinoLabel7.setSize(25, 25);
+		dinoLabel7.setFont(font);
+		dinoLabel7.setForeground(Color.BLACK);
+		dinoLabel7.setLocation(938, 411);
+		dinoLabel7.setOpaque(false);
 
-				dinoLabel7.setSize(25, 25);
-				dinoLabel7.setFont(font);
-				dinoLabel7.setForeground(Color.WHITE);
-				dinoLabel7.setLocation(938, 411);
-				dinoLabel7.setOpaque(false);
+		// add all lables
+		this.add(dinoLabel1);
+		this.add(dinoLabel2);
+		this.add(dinoLabel3);
+		this.add(dinoLabel4);
+		this.add(dinoLabel5);
+		this.add(dinoLabel6);
+		this.add(dinoLabel7);
 
-				// add all lables
-				this.add(dinoLabel1);
-				this.add(dinoLabel2);
-				this.add(dinoLabel3);
-				this.add(dinoLabel4);
-				this.add(dinoLabel5);
-				this.add(dinoLabel6);
-				this.add(dinoLabel7);
+		// add all buttons
+		this.add(rawrvilleDino);
+		this.add(laieggesDino);
+		this.add(dactilitoDino);
+		this.add(dirtydanDino);
+		this.add(blackbeardDino);
+		this.add(monisaurusDino);
+		this.add(toystoryDino);
 
-				// add all buttons
-				this.add(rawrvilleDino);
-				this.add(laieggesDino);
-				this.add(dactilitoDino);
-				this.add(dirtydanDino);
-				this.add(blackbeardDino);
-				this.add(monisaurusDino);
-				this.add(toystoryDino);
-				
-				
-				// ALL CRESENT**
-				scrapUnits = 0;
-				zachUnits = 0;
-				giantUnits = 0;
-				newzachUnits = 0;
-				southUnits = 0;
-				blooUnits = 0;
-				capUnits = 0;
+		// ALL CRESENT**
+		scrapUnits = 0;
+		zachUnits = 0;
+		giantUnits = 0;
+		newzachUnits = 0;
+		southUnits = 0;
+		blooUnits = 0;
+		capUnits = 0;
 
-				cresentLabel1 = new JLabel("" + scrapUnits);
-				cresentLabel2 = new JLabel("" + zachUnits);
-				cresentLabel3 = new JLabel("" + giantUnits);
-				cresentLabel4 = new JLabel("" + newzachUnits);
-				cresentLabel5 = new JLabel("" + southUnits);
-				cresentLabel6 = new JLabel("" + blooUnits);
-				cresentLabel7 = new JLabel("" + capUnits);
+		cresentLabel1 = new JLabel("" + scrapUnits);
+		cresentLabel2 = new JLabel("" + zachUnits);
+		cresentLabel3 = new JLabel("" + giantUnits);
+		cresentLabel4 = new JLabel("" + newzachUnits);
+		cresentLabel5 = new JLabel("" + southUnits);
+		cresentLabel6 = new JLabel("" + blooUnits);
+		cresentLabel7 = new JLabel("" + capUnits);
 
-				
+		scraptopiaCresent.addActionListener(new buttonListener());
+		landofzachCresent.addActionListener(new buttonListener());
+		giantCresent.addActionListener(new buttonListener());
+		newlandofzachCresent.addActionListener(new buttonListener());
+		southscraptopiaCresent.addActionListener(new buttonListener());
+		bloobawlCresent.addActionListener(new buttonListener());
+		cresentcaptitalCresent.addActionListener(new buttonListener());
 
-				scraptopiaCresent.addActionListener(new buttonListener());
-				landofzachCresent.addActionListener(new buttonListener());
-				giantCresent.addActionListener(new buttonListener());
-				newlandofzachCresent.addActionListener(new buttonListener());
-				southscraptopiaCresent.addActionListener(new buttonListener());
-				bloobawlCresent.addActionListener(new buttonListener());
-				cresentcaptitalCresent.addActionListener(new buttonListener());
+		scraptopiaCresent.setSize(25, 25);
+		scraptopiaCresent.setLocation(715, 334);
+		scraptopiaCresent.setOpaque(false);
+		scraptopiaCresent.setContentAreaFilled(false);
+		scraptopiaCresent.setBorderPainted(false);
 
-				scraptopiaCresent.setSize(25, 25);
-				scraptopiaCresent.setLocation(715, 334);
-				scraptopiaCresent.setOpaque(false);
-				scraptopiaCresent.setContentAreaFilled(false);
-				scraptopiaCresent.setBorderPainted(false);
+		cresentLabel1.setSize(25, 25);
+		cresentLabel1.setFont(font);
+		cresentLabel1.setForeground(Color.BLACK);
+		cresentLabel1.setLocation(723, 337);
+		cresentLabel1.setOpaque(false);
 
-				cresentLabel1.setSize(25, 25);
-				cresentLabel1.setFont(font);
-				cresentLabel1.setForeground(Color.WHITE);
-				cresentLabel1.setLocation(723, 337);
-				cresentLabel1.setOpaque(false);
+		landofzachCresent.setSize(25, 25);
+		landofzachCresent.setLocation(750, 335);
+		landofzachCresent.setOpaque(false);
+		landofzachCresent.setContentAreaFilled(false);
+		landofzachCresent.setBorderPainted(false);
 
-				landofzachCresent.setSize(25, 25);
-				landofzachCresent.setLocation(750, 335);
-				landofzachCresent.setOpaque(false);
-				landofzachCresent.setContentAreaFilled(false);
-				landofzachCresent.setBorderPainted(false);
+		cresentLabel2.setSize(25, 25);
+		cresentLabel2.setFont(font);
+		cresentLabel2.setForeground(Color.BLACK);
+		cresentLabel2.setLocation(758, 338);
+		cresentLabel2.setOpaque(false);
 
-				cresentLabel2.setSize(25, 25);
-				cresentLabel2.setFont(font);
-				cresentLabel2.setForeground(Color.WHITE);
-				cresentLabel2.setLocation(758, 338);
-				cresentLabel2.setOpaque(false);
+		giantCresent.setSize(25, 25);
+		giantCresent.setLocation(765, 298);
+		giantCresent.setOpaque(false);
+		giantCresent.setContentAreaFilled(false);
+		giantCresent.setBorderPainted(false);
 
-				giantCresent.setSize(25, 25);
-				giantCresent.setLocation(765, 298);
-				giantCresent.setOpaque(false);
-				giantCresent.setContentAreaFilled(false);
-				giantCresent.setBorderPainted(false);
+		cresentLabel3.setSize(25, 25);
+		cresentLabel3.setFont(font);
+		cresentLabel3.setForeground(Color.BLACK);
+		cresentLabel3.setLocation(773, 301);
+		cresentLabel3.setOpaque(false);
 
-				cresentLabel3.setSize(25, 25);
-				cresentLabel3.setFont(font);
-				cresentLabel3.setForeground(Color.WHITE);
-				cresentLabel3.setLocation(773, 301);
-				cresentLabel3.setOpaque(false);
+		newlandofzachCresent.setSize(25, 25);
+		newlandofzachCresent.setLocation(790, 350);
+		newlandofzachCresent.setOpaque(false);
+		newlandofzachCresent.setContentAreaFilled(false);
+		newlandofzachCresent.setBorderPainted(false);
 
-				newlandofzachCresent.setSize(25, 25);
-				newlandofzachCresent.setLocation(790, 350);
-				newlandofzachCresent.setOpaque(false);
-				newlandofzachCresent.setContentAreaFilled(false);
-				newlandofzachCresent.setBorderPainted(false);
+		cresentLabel4.setSize(25, 25);
+		cresentLabel4.setFont(font);
+		cresentLabel4.setForeground(Color.BLACK);
+		cresentLabel4.setLocation(798, 353);
+		cresentLabel4.setOpaque(false);
 
-				cresentLabel4.setSize(25, 25);
-				cresentLabel4.setFont(font);
-				cresentLabel4.setForeground(Color.WHITE);
-				cresentLabel4.setLocation(798, 353);
-				cresentLabel4.setOpaque(false);
+		southscraptopiaCresent.setSize(25, 25);
+		southscraptopiaCresent.setLocation(790, 320);
+		southscraptopiaCresent.setOpaque(false);
+		southscraptopiaCresent.setContentAreaFilled(false);
+		southscraptopiaCresent.setBorderPainted(false);
 
-				southscraptopiaCresent.setSize(25, 25);
-				southscraptopiaCresent.setLocation(790, 320);
-				southscraptopiaCresent.setOpaque(false);
-				southscraptopiaCresent.setContentAreaFilled(false);
-				southscraptopiaCresent.setBorderPainted(false);
+		cresentLabel5.setSize(25, 25);
+		cresentLabel5.setFont(font);
+		cresentLabel5.setForeground(Color.BLACK);
+		cresentLabel5.setLocation(798, 323);
+		cresentLabel5.setOpaque(false);
 
-				cresentLabel5.setSize(25, 25);
-				cresentLabel5.setFont(font);
-				cresentLabel5.setForeground(Color.WHITE);
-				cresentLabel5.setLocation(798, 323);
-				cresentLabel5.setOpaque(false);
+		bloobawlCresent.setSize(25, 25);
+		bloobawlCresent.setLocation(835, 310);
+		bloobawlCresent.setOpaque(false);
+		bloobawlCresent.setContentAreaFilled(false);
+		bloobawlCresent.setBorderPainted(false);
 
-				bloobawlCresent.setSize(25, 25);
-				bloobawlCresent.setLocation(835, 310);
-				bloobawlCresent.setOpaque(false);
-				bloobawlCresent.setContentAreaFilled(false);
-				bloobawlCresent.setBorderPainted(false);
+		cresentLabel6.setSize(25, 25);
+		cresentLabel6.setFont(font);
+		cresentLabel6.setForeground(Color.BLACK);
+		cresentLabel6.setLocation(843, 313);
+		cresentLabel6.setOpaque(false);
 
-				cresentLabel6.setSize(25, 25);
-				cresentLabel6.setFont(font);
-				cresentLabel6.setForeground(Color.WHITE);
-				cresentLabel6.setLocation(843, 313);
-				cresentLabel6.setOpaque(false);
+		cresentcaptitalCresent.setSize(25, 25);
+		cresentcaptitalCresent.setLocation(868, 285);
+		cresentcaptitalCresent.setOpaque(false);
+		cresentcaptitalCresent.setContentAreaFilled(false);
+		cresentcaptitalCresent.setBorderPainted(false);
 
-				cresentcaptitalCresent.setSize(25, 25);
-				cresentcaptitalCresent.setLocation(868, 285);
-				cresentcaptitalCresent.setOpaque(false);
-				cresentcaptitalCresent.setContentAreaFilled(false);
-				cresentcaptitalCresent.setBorderPainted(false);
+		// myMap = new HashMap<JButton, JLabel>();
+		myMap.put(scraptopiaCresent, cresentLabel1);
+		myMap.put(landofzachCresent, cresentLabel2);
+		myMap.put(giantCresent, cresentLabel3);
+		myMap.put(newlandofzachCresent, cresentLabel4);
+		myMap.put(southscraptopiaCresent, cresentLabel5);
+		myMap.put(bloobawlCresent, cresentLabel6);
+		myMap.put(cresentcaptitalCresent, cresentLabel7);
 
-	//			myMap = new HashMap<JButton, JLabel>();
-				myMap.put(scraptopiaCresent, cresentLabel1);
-				myMap.put(landofzachCresent, cresentLabel2);
-				myMap.put(giantCresent, cresentLabel3);
-				myMap.put(newlandofzachCresent, cresentLabel4);
-				myMap.put(southscraptopiaCresent, cresentLabel5);
-				myMap.put(bloobawlCresent, cresentLabel6);
-				myMap.put(cresentcaptitalCresent, cresentLabel7);
+		cresentLabel7.setSize(25, 25);
+		cresentLabel7.setFont(font);
+		cresentLabel7.setForeground(Color.BLACK);
+		cresentLabel7.setLocation(866, 288);
+		cresentLabel7.setOpaque(false);
 
-				cresentLabel7.setSize(25, 25);
-				cresentLabel7.setFont(font);
-				cresentLabel7.setForeground(Color.WHITE);
-				cresentLabel7.setLocation(866, 288);
-				cresentLabel7.setOpaque(false);
+		// add all lables
+		this.add(cresentLabel1);
+		this.add(cresentLabel2);
+		this.add(cresentLabel3);
+		this.add(cresentLabel4);
+		this.add(cresentLabel5);
+		this.add(cresentLabel6);
+		this.add(cresentLabel7);
 
-				// add all lables
-				this.add(cresentLabel1);
-				this.add(cresentLabel2);
-				this.add(cresentLabel3);
-				this.add(cresentLabel4);
-				this.add(cresentLabel5);
-				this.add(cresentLabel6);
-				this.add(cresentLabel7);
-
-				// add all buttons
-				this.add(scraptopiaCresent);
-				this.add(landofzachCresent);
-				this.add(giantCresent);
-				this.add(newlandofzachCresent);
-				this.add(southscraptopiaCresent);
-				this.add(bloobawlCresent);
-				this.add(cresentcaptitalCresent);
-				
-				
-			
+		// add all buttons
+		this.add(scraptopiaCresent);
+		this.add(landofzachCresent);
+		this.add(giantCresent);
+		this.add(newlandofzachCresent);
+		this.add(southscraptopiaCresent);
+		this.add(bloobawlCresent);
+		this.add(cresentcaptitalCresent);
 
 		// add all lables
 		this.add(dinoLabel1);
@@ -4078,7 +4487,6 @@ public class GameBoard extends JPanel {
 		this.add(cresentcaptitalCresent);
 
 	}
-	
 
 	private class buttonListener implements ActionListener {
 
