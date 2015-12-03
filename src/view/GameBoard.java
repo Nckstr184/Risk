@@ -29,6 +29,7 @@ import model.Territory;
 
 public class GameBoard extends JPanel {
 
+	boolean reinforcementPhase;
 	HashMap<JButton, JLabel> myMap;
 	ArrayList<Continent> continents;
 	ArrayList<Territory> territories;
@@ -95,7 +96,7 @@ public class GameBoard extends JPanel {
 
 
 	public GameBoard() {
-
+ 
 	
 		try {
 			fis = new FileInputStream("saved");
@@ -105,8 +106,8 @@ public class GameBoard extends JPanel {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
+		reinforcementPhase=true;
+
 		newgame1= new OpenNewMenu();
 		while(newgame1.isDisplayable()){
 			System.out.print("");
@@ -562,2338 +563,3094 @@ public class GameBoard extends JPanel {
 			for (Territory d : player1.getTerritories()) {
 				if (d.getName() == "Wilma") {
 					wilmaWildcat = new JButton(yellow);
+					wilmaWildcat.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Zona") {
 					zonaWildcat = new JButton(yellow);
+					zonaWildcat.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Wilber") {
 					wilberWildcat = new JButton(yellow);
+					wilberWildcat.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Rich") {
 					richWildcat = new JButton(yellow);
+					richWildcat.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Miller") {
 					millerWildcat = new JButton(yellow);
+					millerWildcat.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "McKale") {
 					mckaleWildcat = new JButton(yellow);
+					mckaleWildcat.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Scooby") {
 					scoobyWildcat = new JButton(yellow);
+					scoobyWildcat.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Java") {
 					javaLanguage = new JButton(yellow);
+					javaLanguage.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Python") {
 					pythonLanguage = new JButton(yellow);
+					pythonLanguage.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "C") {
 					cLanguage = new JButton(yellow);
+					cLanguage.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "SQL") {
 					sqlLanguage = new JButton(yellow);
+					sqlLanguage.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Ruby") {
 					rubyLanguage = new JButton(yellow);
+					rubyLanguage.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Perl") {
 					perlLanguage = new JButton(yellow);
+					perlLanguage.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Git") {
 					gitLanguage = new JButton(yellow);
+					gitLanguage.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Papa Johns") {
 					papajohnsPizza = new JButton(yellow);
+					papajohnsPizza.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Dominos") {
 					dominosPizza = new JButton(yellow);
+					dominosPizza.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "PizzaHut") {
 					pizzahutPizza = new JButton(yellow);
+					pizzahutPizza.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Black Jack") {
 					blackjackPizza = new JButton(yellow);
+					blackjackPizza.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Hungry Howie's") {
 					hungryhowiesPizza = new JButton(yellow);
+					hungryhowiesPizza.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Brooklyn's") {
 					brooklynPizza = new JButton(yellow);
+					brooklynPizza.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Pizza Planet") {
 					pizzaplanetPizza = new JButton(yellow);
+					pizzaplanetPizza.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Rawrville") {
 					rawrvilleDino = new JButton(yellow);
+					rawrvilleDino.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Laiegges") {
 					laieggesDino = new JButton(yellow);
+					laieggesDino.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Dactilito") {
 					dactilitoDino = new JButton(yellow);
+					dactilitoDino.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Dirtydan") {
 					dirtydanDino = new JButton(yellow);
+					dirtydanDino.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "BlackBeard") {
 					blackbeardDino = new JButton(yellow);
+					blackbeardDino.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Monisaurus") {
 					monisaurusDino = new JButton(yellow);
+					monisaurusDino.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "ToyStory") {
 					toystoryDino = new JButton(yellow);
+					toystoryDino.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Scraptopia") {
 					scraptopiaCresent = new JButton(yellow);
+					scraptopiaCresent.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Land of Zach") {
 					landofzachCresent = new JButton(yellow);
+					landofzachCresent.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Giant") {
 					giantCresent = new JButton(yellow);
+					giantCresent.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "New Land of Zach") {
 					newlandofzachCresent = new JButton(yellow);
+					newlandofzachCresent.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "South Scraptopia") {
 					southscraptopiaCresent = new JButton(yellow);
+					southscraptopiaCresent.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Bloo Bawl") {
 					bloobawlCresent = new JButton(yellow);
+					bloobawlCresent.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Cresent Capital") {
 					cresentcaptitalCresent = new JButton(yellow);
+					cresentcaptitalCresent.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Apollo") {
 					apolloSun = new JButton(yellow);
+					apolloSun.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Ra") {
 					raSun = new JButton(yellow);
+					raSun.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Helios") {
 					heliosSun = new JButton(yellow);
+					heliosSun.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Inti") {
 					intiSun = new JButton(yellow);
+					intiSun.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Horus") {
 					horusSun = new JButton(yellow);
+					horusSun.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Tonatiuh") {
 					tonatiuhSun = new JButton(yellow);
+					tonatiuhSun.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Amun") {
 					amunSun = new JButton(yellow);
+					amunSun.setName(startWindow.getPlayerName(0));
 				}
 
 			}
+		
 
 			for (Territory d : player2.getTerritories()) {
 				if (d.getName() == "Wilma") {
 					wilmaWildcat = new JButton(green);
+					wilmaWildcat.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Zona") {
 					zonaWildcat = new JButton(green);
+					zonaWildcat.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Wilber") {
 					wilberWildcat = new JButton(green);
+					wilberWildcat.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Rich") {
 					richWildcat = new JButton(green);
+					richWildcat.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Miller") {
 					millerWildcat = new JButton(green);
+					millerWildcat.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "McKale") {
 					mckaleWildcat = new JButton(green);
+					mckaleWildcat.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Scooby") {
 					scoobyWildcat = new JButton(green);
+					scoobyWildcat.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Java") {
 					javaLanguage = new JButton(green);
+					javaLanguage.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Python") {
 					pythonLanguage = new JButton(green);
+					pythonLanguage.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "C") {
 					cLanguage = new JButton(green);
+					cLanguage.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "SQL") {
 					sqlLanguage = new JButton(green);
+					sqlLanguage.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Ruby") {
 					rubyLanguage = new JButton(green);
+					rubyLanguage.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Perl") {
 					perlLanguage = new JButton(green);
+					perlLanguage.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Git") {
 					gitLanguage = new JButton(green);
+					gitLanguage.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Papa Johns") {
 					papajohnsPizza = new JButton(green);
+					papajohnsPizza.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Dominos") {
 					dominosPizza = new JButton(green);
+					dominosPizza.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "PizzaHut") {
 					pizzahutPizza = new JButton(green);
+					pizzahutPizza.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Black Jack") {
 					blackjackPizza = new JButton(green);
+					blackjackPizza.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Hungry Howie's") {
 					hungryhowiesPizza = new JButton(green);
+					hungryhowiesPizza.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Brooklyn's") {
 					brooklynPizza = new JButton(green);
+					brooklynPizza.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Pizza Planet") {
 					pizzaplanetPizza = new JButton(green);
+					pizzaplanetPizza.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Rawrville") {
 					rawrvilleDino = new JButton(green);
+					rawrvilleDino.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Laiegges") {
 					laieggesDino = new JButton(green);
+					laieggesDino.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Dactilito") {
 					dactilitoDino = new JButton(green);
+					dactilitoDino.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Dirtydan") {
 					dirtydanDino = new JButton(green);
+					dirtydanDino.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "BlackBeard") {
 					blackbeardDino = new JButton(green);
+					blackbeardDino.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Monisaurus") {
 					monisaurusDino = new JButton(green);
+					monisaurusDino.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "ToyStory") {
 					toystoryDino = new JButton(green);
+					toystoryDino.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Scraptopia") {
 					scraptopiaCresent = new JButton(green);
+					scraptopiaCresent.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Land of Zach") {
 					landofzachCresent = new JButton(green);
+					landofzachCresent.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Giant") {
 					giantCresent = new JButton(green);
+					giantCresent.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "New Land of Zach") {
 					newlandofzachCresent = new JButton(green);
+					newlandofzachCresent.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "South Scraptopia") {
 					southscraptopiaCresent = new JButton(green);
+					southscraptopiaCresent.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Bloo Bawl") {
 					bloobawlCresent = new JButton(green);
+					bloobawlCresent.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Cresent Capital") {
 					cresentcaptitalCresent = new JButton(green);
+					cresentcaptitalCresent.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Apollo") {
 					apolloSun = new JButton(green);
+					apolloSun.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Ra") {
 					raSun = new JButton(green);
+					raSun.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Helios") {
 					heliosSun = new JButton(green);
+					heliosSun.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Inti") {
 					intiSun = new JButton(green);
+					intiSun.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Horus") {
 					horusSun = new JButton(green);
+					horusSun.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Tonatiuh") {
-					tonatiuhSun = new JButton(yellow);
+					tonatiuhSun = new JButton(green);
+					tonatiuhSun.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Amun") {
 					amunSun = new JButton(green);
+					amunSun.setName(startWindow.getPlayerName(1));
 				}
-
 			}
-
 			for (Territory d : player3.getTerritories()) {
 				if (d.getName() == "Wilma") {
 					wilmaWildcat = new JButton(orange);
+					wilmaWildcat.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Zona") {
 					zonaWildcat = new JButton(orange);
+					zonaWildcat.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Wilber") {
 					wilberWildcat = new JButton(orange);
+					wilberWildcat.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Rich") {
 					richWildcat = new JButton(orange);
+					richWildcat.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Miller") {
 					millerWildcat = new JButton(orange);
+					millerWildcat.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "McKale") {
 					mckaleWildcat = new JButton(orange);
+					mckaleWildcat.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Scooby") {
 					scoobyWildcat = new JButton(orange);
+					scoobyWildcat.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Java") {
 					javaLanguage = new JButton(orange);
+					javaLanguage.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Python") {
 					pythonLanguage = new JButton(orange);
+					pythonLanguage.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "C") {
 					cLanguage = new JButton(orange);
+					cLanguage.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "SQL") {
 					sqlLanguage = new JButton(orange);
+					sqlLanguage.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Ruby") {
 					rubyLanguage = new JButton(orange);
+					rubyLanguage.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Perl") {
 					perlLanguage = new JButton(orange);
+					perlLanguage.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Git") {
 					gitLanguage = new JButton(orange);
+					gitLanguage.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Papa Johns") {
 					papajohnsPizza = new JButton(orange);
+					papajohnsPizza.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Dominos") {
 					dominosPizza = new JButton(orange);
+					dominosPizza.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "PizzaHut") {
 					pizzahutPizza = new JButton(orange);
+					pizzahutPizza.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Black Jack") {
 					blackjackPizza = new JButton(orange);
+					blackjackPizza.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Hungry Howie's") {
 					hungryhowiesPizza = new JButton(orange);
+					hungryhowiesPizza.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Brooklyn's") {
 					brooklynPizza = new JButton(orange);
+					brooklynPizza.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Pizza Planet") {
 					pizzaplanetPizza = new JButton(orange);
+					pizzaplanetPizza.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Rawrville") {
 					rawrvilleDino = new JButton(orange);
+					rawrvilleDino.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Laiegges") {
 					laieggesDino = new JButton(orange);
+					laieggesDino.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Dactilito") {
 					dactilitoDino = new JButton(orange);
+					dactilitoDino.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Dirtydan") {
 					dirtydanDino = new JButton(orange);
+					dirtydanDino.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "BlackBeard") {
 					blackbeardDino = new JButton(orange);
+					blackbeardDino.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Monisaurus") {
 					monisaurusDino = new JButton(orange);
+					monisaurusDino.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "ToyStory") {
 					toystoryDino = new JButton(orange);
+					toystoryDino.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Scraptopia") {
 					scraptopiaCresent = new JButton(orange);
+					scraptopiaCresent.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Land of Zach") {
 					landofzachCresent = new JButton(orange);
+					landofzachCresent.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Giant") {
 					giantCresent = new JButton(orange);
+					giantCresent.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "New Land of Zach") {
 					newlandofzachCresent = new JButton(orange);
+					newlandofzachCresent.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "South Scraptopia") {
 					southscraptopiaCresent = new JButton(orange);
+					southscraptopiaCresent.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Bloo Bawl") {
 					bloobawlCresent = new JButton(orange);
+					bloobawlCresent.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Cresent Capital") {
 					cresentcaptitalCresent = new JButton(orange);
+					cresentcaptitalCresent.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Apollo") {
 					apolloSun = new JButton(orange);
+					apolloSun.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Ra") {
 					raSun = new JButton(orange);
+					raSun.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Helios") {
 					heliosSun = new JButton(orange);
+					heliosSun.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Inti") {
 					intiSun = new JButton(orange);
+					intiSun.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Horus") {
 					horusSun = new JButton(orange);
+					horusSun.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Tonatiuh") {
 					tonatiuhSun = new JButton(orange);
+					tonatiuhSun.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Amun") {
 					amunSun = new JButton(orange);
+					amunSun.setName(startWindow.getPlayerName(2));
 				}
-
 			}
+
 			for (Territory d : player4.getTerritories()) {
-				if (d.getName() == "Wilma") {
-					wilmaWildcat = new JButton(red);
-				}
-				if (d.getName() == "Zona") {
-					zonaWildcat = new JButton(red);
-				}
-				if (d.getName() == "Wilber") {
-					wilberWildcat = new JButton(red);
-				}
-				if (d.getName() == "Rich") {
-					richWildcat = new JButton(red);
-				}
-				if (d.getName() == "Miller") {
-					millerWildcat = new JButton(red);
-				}
-				if (d.getName() == "McKale") {
-					mckaleWildcat = new JButton(red);
-				}
-				if (d.getName() == "Scooby") {
-					scoobyWildcat = new JButton(red);
-				}
-				if (d.getName() == "Java") {
-					javaLanguage = new JButton(red);
-				}
-				if (d.getName() == "Python") {
-					pythonLanguage = new JButton(red);
-				}
-				if (d.getName() == "C") {
-					cLanguage = new JButton(red);
-				}
-				if (d.getName() == "SQL") {
-					sqlLanguage = new JButton(red);
-				}
-				if (d.getName() == "Ruby") {
-					rubyLanguage = new JButton(red);
-				}
-				if (d.getName() == "Perl") {
-					perlLanguage = new JButton(red);
-				}
-				if (d.getName() == "Git") {
-					gitLanguage = new JButton(red);
-				}
-				if (d.getName() == "Papa Johns") {
-					papajohnsPizza = new JButton(red);
-				}
-				if (d.getName() == "Dominos") {
-					dominosPizza = new JButton(red);
-				}
-				if (d.getName() == "PizzaHut") {
-					pizzahutPizza = new JButton(red);
-				}
-				if (d.getName() == "Black Jack") {
-					blackjackPizza = new JButton(red);
-				}
-				if (d.getName() == "Hungry Howie's") {
-					hungryhowiesPizza = new JButton(red);
-				}
-				if (d.getName() == "Brooklyn's") {
-					brooklynPizza = new JButton(red);
-				}
-				if (d.getName() == "Pizza Planet") {
-					pizzaplanetPizza = new JButton(red);
-				}
-				if (d.getName() == "Rawrville") {
-					rawrvilleDino = new JButton(red);
-				}
-				if (d.getName() == "Laiegges") {
-					laieggesDino = new JButton(red);
-				}
-				if (d.getName() == "Dactilito") {
-					dactilitoDino = new JButton(red);
-				}
-				if (d.getName() == "Dirtydan") {
-					dirtydanDino = new JButton(red);
-				}
-				if (d.getName() == "BlackBeard") {
-					blackbeardDino = new JButton(red);
-				}
-				if (d.getName() == "Monisaurus") {
-					monisaurusDino = new JButton(red);
-				}
-				if (d.getName() == "ToyStory") {
-					toystoryDino = new JButton(red);
-				}
-				if (d.getName() == "Scraptopia") {
-					scraptopiaCresent = new JButton(red);
-				}
-				if (d.getName() == "Land of Zach") {
-					landofzachCresent = new JButton(red);
-				}
-				if (d.getName() == "Giant") {
-					giantCresent = new JButton(red);
-				}
-				if (d.getName() == "New Land of Zach") {
-					newlandofzachCresent = new JButton(red);
-				}
-				if (d.getName() == "South Scraptopia") {
-					southscraptopiaCresent = new JButton(red);
-				}
-				if (d.getName() == "Bloo Bawl") {
-					bloobawlCresent = new JButton(red);
-				}
-				if (d.getName() == "Cresent Capital") {
-					cresentcaptitalCresent = new JButton(red);
-				}
-				if (d.getName() == "Apollo") {
-					apolloSun = new JButton(red);
-				}
-				if (d.getName() == "Ra") {
-					raSun = new JButton(red);
-				}
-				if (d.getName() == "Helios") {
-					heliosSun = new JButton(red);
-				}
-				if (d.getName() == "Inti") {
-					intiSun = new JButton(red);
-				}
-				if (d.getName() == "Horus") {
-					horusSun = new JButton(red);
-				}
-				if (d.getName() == "Tonatiuh") {
-					tonatiuhSun = new JButton(red);
-				}
-				if (d.getName() == "Amun") {
-					amunSun = new JButton(red);
+		
+					if (d.getName() == "Wilma") {
+						wilmaWildcat = new JButton(red);
+						wilmaWildcat.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Zona") {
+						zonaWildcat = new JButton(red);
+						zonaWildcat.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Wilber") {
+						wilberWildcat = new JButton(red);
+						wilberWildcat.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Rich") {
+						richWildcat = new JButton(red);
+						richWildcat.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Miller") {
+						millerWildcat = new JButton(red);
+						millerWildcat.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "McKale") {
+						mckaleWildcat = new JButton(red);
+						mckaleWildcat.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Scooby") {
+						scoobyWildcat = new JButton(red);
+						scoobyWildcat.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Java") {
+						javaLanguage = new JButton(red);
+						javaLanguage.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Python") {
+						pythonLanguage = new JButton(red);
+						pythonLanguage.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "C") {
+						cLanguage = new JButton(red);
+						cLanguage.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "SQL") {
+						sqlLanguage = new JButton(red);
+						sqlLanguage.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Ruby") {
+						rubyLanguage = new JButton(red);
+						rubyLanguage.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Perl") {
+						perlLanguage = new JButton(red);
+						perlLanguage.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Git") {
+						gitLanguage = new JButton(red);
+						gitLanguage.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Papa Johns") {
+						papajohnsPizza = new JButton(red);
+						papajohnsPizza.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Dominos") {
+						dominosPizza = new JButton(red);
+						dominosPizza.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "PizzaHut") {
+						pizzahutPizza = new JButton(red);
+						pizzahutPizza.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Black Jack") {
+						blackjackPizza = new JButton(red);
+						blackjackPizza.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Hungry Howie's") {
+						hungryhowiesPizza = new JButton(red);
+						hungryhowiesPizza.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Brooklyn's") {
+						brooklynPizza = new JButton(red);
+						brooklynPizza.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Pizza Planet") {
+						pizzaplanetPizza = new JButton(red);
+						pizzaplanetPizza.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Rawrville") {
+						rawrvilleDino = new JButton(red);
+						rawrvilleDino.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Laiegges") {
+						laieggesDino = new JButton(red);
+						laieggesDino.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Dactilito") {
+						dactilitoDino = new JButton(red);
+						dactilitoDino.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Dirtydan") {
+						dirtydanDino = new JButton(red);
+						dirtydanDino.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "BlackBeard") {
+						blackbeardDino = new JButton(red);
+						blackbeardDino.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Monisaurus") {
+						monisaurusDino = new JButton(red);
+						monisaurusDino.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "ToyStory") {
+						toystoryDino = new JButton(red);
+						toystoryDino.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Scraptopia") {
+						scraptopiaCresent = new JButton(red);
+						scraptopiaCresent.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Land of Zach") {
+						landofzachCresent = new JButton(red);
+						landofzachCresent.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Giant") {
+						giantCresent = new JButton(red);
+						giantCresent.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "New Land of Zach") {
+						newlandofzachCresent = new JButton(red);
+						newlandofzachCresent.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "South Scraptopia") {
+						southscraptopiaCresent = new JButton(red);
+						southscraptopiaCresent.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Bloo Bawl") {
+						bloobawlCresent = new JButton(red);
+						bloobawlCresent.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Cresent Capital") {
+						cresentcaptitalCresent = new JButton(red);
+						cresentcaptitalCresent.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Apollo") {
+						apolloSun = new JButton(red);
+						apolloSun.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Ra") {
+						raSun = new JButton(red);
+						raSun.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Helios") {
+						heliosSun = new JButton(red);
+						heliosSun.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Inti") {
+						intiSun = new JButton(red);
+						intiSun.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Horus") {
+						horusSun = new JButton(red);
+						horusSun.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Tonatiuh") {
+						tonatiuhSun = new JButton(red);
+						tonatiuhSun.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Amun") {
+						amunSun = new JButton(red);
+						amunSun.setName(startWindow.getPlayerName(3));
+					}
 				}
 
-			}
+
+			
 			for (Territory d : player5.getTerritories()) {
-				if (d.getName() == "Wilma") {
-					wilmaWildcat = new JButton(purple);
-				}
-				if (d.getName() == "Zona") {
-					zonaWildcat = new JButton(purple);
-				}
-				if (d.getName() == "Wilber") {
-					wilberWildcat = new JButton(purple);
-				}
-				if (d.getName() == "Rich") {
-					richWildcat = new JButton(purple);
-				}
-				if (d.getName() == "Miller") {
-					millerWildcat = new JButton(purple);
-				}
-				if (d.getName() == "McKale") {
-					mckaleWildcat = new JButton(purple);
-				}
-				if (d.getName() == "Scooby") {
-					scoobyWildcat = new JButton(purple);
-				}
-				if (d.getName() == "Java") {
-					javaLanguage = new JButton(purple);
-				}
-				if (d.getName() == "Python") {
-					pythonLanguage = new JButton(purple);
-				}
-				if (d.getName() == "C") {
-					cLanguage = new JButton(purple);
-				}
-				if (d.getName() == "SQL") {
-					sqlLanguage = new JButton(purple);
-				}
-				if (d.getName() == "Ruby") {
-					rubyLanguage = new JButton(purple);
-				}
-				if (d.getName() == "Perl") {
-					perlLanguage = new JButton(purple);
-				}
-				if (d.getName() == "Git") {
-					gitLanguage = new JButton(purple);
-				}
-				if (d.getName() == "Papa Johns") {
-					papajohnsPizza = new JButton(purple);
-				}
-				if (d.getName() == "Dominos") {
-					dominosPizza = new JButton(purple);
-				}
-				if (d.getName() == "PizzaHut") {
-					pizzahutPizza = new JButton(purple);
-				}
-				if (d.getName() == "Black Jack") {
-					blackjackPizza = new JButton(purple);
-				}
-				if (d.getName() == "Hungry Howie's") {
-					hungryhowiesPizza = new JButton(purple);
-				}
-				if (d.getName() == "Brooklyn's") {
-					brooklynPizza = new JButton(purple);
-				}
-				if (d.getName() == "Pizza Planet") {
-					pizzaplanetPizza = new JButton(purple);
-				}
-				if (d.getName() == "Rawrville") {
-					rawrvilleDino = new JButton(purple);
-				}
-				if (d.getName() == "Laiegges") {
-					laieggesDino = new JButton(purple);
-				}
-				if (d.getName() == "Dactilito") {
-					dactilitoDino = new JButton(purple);
-				}
-				if (d.getName() == "Dirtydan") {
-					dirtydanDino = new JButton(purple);
-				}
-				if (d.getName() == "BlackBeard") {
-					blackbeardDino = new JButton(purple);
-				}
-				if (d.getName() == "Monisaurus") {
-					monisaurusDino = new JButton(purple);
-				}
-				if (d.getName() == "ToyStory") {
-					toystoryDino = new JButton(purple);
-				}
-				if (d.getName() == "Scraptopia") {
-					scraptopiaCresent = new JButton(purple);
-				}
-				if (d.getName() == "Land of Zach") {
-					landofzachCresent = new JButton(purple);
-				}
-				if (d.getName() == "Giant") {
-					giantCresent = new JButton(purple);
-				}
-				if (d.getName() == "New Land of Zach") {
-					newlandofzachCresent = new JButton(purple);
-				}
-				if (d.getName() == "South Scraptopia") {
-					southscraptopiaCresent = new JButton(purple);
-				}
-				if (d.getName() == "Bloo Bawl") {
-					bloobawlCresent = new JButton(purple);
-				}
-				if (d.getName() == "Cresent Capital") {
-					cresentcaptitalCresent = new JButton(purple);
-				}
-				if (d.getName() == "Apollo") {
-					apolloSun = new JButton(purple);
-				}
-				if (d.getName() == "Ra") {
-					raSun = new JButton(purple);
-				}
-				if (d.getName() == "Helios") {
-					heliosSun = new JButton(purple);
-				}
-				if (d.getName() == "Inti") {
-					intiSun = new JButton(purple);
-				}
-				if (d.getName() == "Horus") {
-					horusSun = new JButton(purple);
-				}
-				if (d.getName() == "Tonatiuh") {
-					tonatiuhSun = new JButton(purple);
-				}
-				if (d.getName() == "Amun") {
-					amunSun = new JButton(purple);
+					if (d.getName() == "Wilma") {
+						wilmaWildcat = new JButton(green);
+						wilmaWildcat.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Zona") {
+						zonaWildcat = new JButton(green);
+						zonaWildcat.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Wilber") {
+						wilberWildcat = new JButton(green);
+						wilberWildcat.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Rich") {
+						richWildcat = new JButton(green);
+						richWildcat.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Miller") {
+						millerWildcat = new JButton(green);
+						millerWildcat.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "McKale") {
+						mckaleWildcat = new JButton(green);
+						mckaleWildcat.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Scooby") {
+						scoobyWildcat = new JButton(green);
+						scoobyWildcat.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Java") {
+						javaLanguage = new JButton(green);
+						javaLanguage.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Python") {
+						pythonLanguage = new JButton(green);
+						pythonLanguage.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "C") {
+						cLanguage = new JButton(green);
+						cLanguage.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "SQL") {
+						sqlLanguage = new JButton(green);
+						sqlLanguage.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Ruby") {
+						rubyLanguage = new JButton(green);
+						rubyLanguage.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Perl") {
+						perlLanguage = new JButton(green);
+						perlLanguage.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Git") {
+						gitLanguage = new JButton(green);
+						gitLanguage.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Papa Johns") {
+						papajohnsPizza = new JButton(green);
+						papajohnsPizza.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Dominos") {
+						dominosPizza = new JButton(green);
+						dominosPizza.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "PizzaHut") {
+						pizzahutPizza = new JButton(green);
+						pizzahutPizza.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Black Jack") {
+						blackjackPizza = new JButton(green);
+						blackjackPizza.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Hungry Howie's") {
+						hungryhowiesPizza = new JButton(green);
+						hungryhowiesPizza.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Brooklyn's") {
+						brooklynPizza = new JButton(green);
+						brooklynPizza.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Pizza Planet") {
+						pizzaplanetPizza = new JButton(green);
+						pizzaplanetPizza.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Rawrville") {
+						rawrvilleDino = new JButton(green);
+						rawrvilleDino.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Laiegges") {
+						laieggesDino = new JButton(green);
+						laieggesDino.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Dactilito") {
+						dactilitoDino = new JButton(green);
+						dactilitoDino.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Dirtydan") {
+						dirtydanDino = new JButton(green);
+						dirtydanDino.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "BlackBeard") {
+						blackbeardDino = new JButton(green);
+						blackbeardDino.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Monisaurus") {
+						monisaurusDino = new JButton(green);
+						monisaurusDino.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "ToyStory") {
+						toystoryDino = new JButton(green);
+						toystoryDino.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Scraptopia") {
+						scraptopiaCresent = new JButton(green);
+						scraptopiaCresent.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Land of Zach") {
+						landofzachCresent = new JButton(green);
+						landofzachCresent.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Giant") {
+						giantCresent = new JButton(green);
+						giantCresent.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "New Land of Zach") {
+						newlandofzachCresent = new JButton(green);
+						newlandofzachCresent.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "South Scraptopia") {
+						southscraptopiaCresent = new JButton(green);
+						southscraptopiaCresent.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Bloo Bawl") {
+						bloobawlCresent = new JButton(green);
+						bloobawlCresent.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Cresent Capital") {
+						cresentcaptitalCresent = new JButton(green);
+						cresentcaptitalCresent.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Apollo") {
+						apolloSun = new JButton(green);
+						apolloSun.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Ra") {
+						raSun = new JButton(green);
+						raSun.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Helios") {
+						heliosSun = new JButton(green);
+						heliosSun.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Inti") {
+						intiSun = new JButton(green);
+						intiSun.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Horus") {
+						horusSun = new JButton(green);
+						horusSun.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Tonatiuh") {
+						tonatiuhSun = new JButton(green);
+						tonatiuhSun.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Amun") {
+						amunSun = new JButton(green);
+						amunSun.setName(startWindow.getPlayerName(4));
+					}
 				}
 
-			}
 			for (Territory d : player6.getTerritories()) {
 				if (d.getName() == "Wilma") {
 					wilmaWildcat = new JButton(blue);
+					wilmaWildcat.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Zona") {
 					zonaWildcat = new JButton(blue);
+					zonaWildcat.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Wilber") {
 					wilberWildcat = new JButton(blue);
+					wilberWildcat.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Rich") {
 					richWildcat = new JButton(blue);
+					richWildcat.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Miller") {
 					millerWildcat = new JButton(blue);
+					millerWildcat.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "McKale") {
 					mckaleWildcat = new JButton(blue);
+					mckaleWildcat.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Scooby") {
 					scoobyWildcat = new JButton(blue);
+					scoobyWildcat.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Java") {
 					javaLanguage = new JButton(blue);
+					javaLanguage.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Python") {
 					pythonLanguage = new JButton(blue);
+					pythonLanguage.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "C") {
 					cLanguage = new JButton(blue);
+					cLanguage.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "SQL") {
 					sqlLanguage = new JButton(blue);
+					sqlLanguage.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Ruby") {
 					rubyLanguage = new JButton(blue);
+					rubyLanguage.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Perl") {
 					perlLanguage = new JButton(blue);
+					perlLanguage.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Git") {
 					gitLanguage = new JButton(blue);
+					gitLanguage.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Papa Johns") {
 					papajohnsPizza = new JButton(blue);
+					papajohnsPizza.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Dominos") {
 					dominosPizza = new JButton(blue);
+					dominosPizza.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "PizzaHut") {
 					pizzahutPizza = new JButton(blue);
+					pizzahutPizza.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Black Jack") {
 					blackjackPizza = new JButton(blue);
+					blackjackPizza.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Hungry Howie's") {
 					hungryhowiesPizza = new JButton(blue);
+					hungryhowiesPizza.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Brooklyn's") {
 					brooklynPizza = new JButton(blue);
+					brooklynPizza.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Pizza Planet") {
 					pizzaplanetPizza = new JButton(blue);
+					pizzaplanetPizza.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Rawrville") {
 					rawrvilleDino = new JButton(blue);
+					rawrvilleDino.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Laiegges") {
 					laieggesDino = new JButton(blue);
+					laieggesDino.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Dactilito") {
 					dactilitoDino = new JButton(blue);
+					dactilitoDino.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Dirtydan") {
 					dirtydanDino = new JButton(blue);
+					dirtydanDino.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "BlackBeard") {
 					blackbeardDino = new JButton(blue);
+					blackbeardDino.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Monisaurus") {
 					monisaurusDino = new JButton(blue);
+					monisaurusDino.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "ToyStory") {
 					toystoryDino = new JButton(blue);
+					toystoryDino.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Scraptopia") {
 					scraptopiaCresent = new JButton(blue);
+					scraptopiaCresent.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Land of Zach") {
 					landofzachCresent = new JButton(blue);
+					landofzachCresent.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Giant") {
 					giantCresent = new JButton(blue);
+					giantCresent.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "New Land of Zach") {
 					newlandofzachCresent = new JButton(blue);
+					newlandofzachCresent.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "South Scraptopia") {
 					southscraptopiaCresent = new JButton(blue);
+					southscraptopiaCresent.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Bloo Bawl") {
 					bloobawlCresent = new JButton(blue);
+					bloobawlCresent.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Cresent Capital") {
 					cresentcaptitalCresent = new JButton(blue);
+					cresentcaptitalCresent.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Apollo") {
 					apolloSun = new JButton(blue);
+					apolloSun.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Ra") {
 					raSun = new JButton(blue);
+					raSun.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Helios") {
 					heliosSun = new JButton(blue);
+					heliosSun.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Inti") {
 					intiSun = new JButton(blue);
+					intiSun.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Horus") {
 					horusSun = new JButton(blue);
+					horusSun.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Tonatiuh") {
 					tonatiuhSun = new JButton(blue);
+					tonatiuhSun.setName(startWindow.getPlayerName(5));
 				}
 				if (d.getName() == "Amun") {
 					amunSun = new JButton(blue);
+					amunSun.setName(startWindow.getPlayerName(5));
 				}
-
 			}
 		}
 		if (startWindow.getNumberOfPlayer() == 5) {
 			for (Territory d : player1.getTerritories()) {
 				if (d.getName() == "Wilma") {
 					wilmaWildcat = new JButton(yellow);
+					wilmaWildcat.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Zona") {
 					zonaWildcat = new JButton(yellow);
+					zonaWildcat.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Wilber") {
 					wilberWildcat = new JButton(yellow);
+					wilberWildcat.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Rich") {
 					richWildcat = new JButton(yellow);
+					richWildcat.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Miller") {
 					millerWildcat = new JButton(yellow);
+					millerWildcat.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "McKale") {
 					mckaleWildcat = new JButton(yellow);
+					mckaleWildcat.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Scooby") {
 					scoobyWildcat = new JButton(yellow);
+					scoobyWildcat.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Java") {
 					javaLanguage = new JButton(yellow);
+					javaLanguage.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Python") {
 					pythonLanguage = new JButton(yellow);
+					pythonLanguage.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "C") {
 					cLanguage = new JButton(yellow);
+					cLanguage.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "SQL") {
 					sqlLanguage = new JButton(yellow);
+					sqlLanguage.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Ruby") {
 					rubyLanguage = new JButton(yellow);
+					rubyLanguage.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Perl") {
 					perlLanguage = new JButton(yellow);
+					perlLanguage.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Git") {
 					gitLanguage = new JButton(yellow);
+					gitLanguage.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Papa Johns") {
 					papajohnsPizza = new JButton(yellow);
+					papajohnsPizza.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Dominos") {
 					dominosPizza = new JButton(yellow);
+					dominosPizza.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "PizzaHut") {
 					pizzahutPizza = new JButton(yellow);
+					pizzahutPizza.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Black Jack") {
 					blackjackPizza = new JButton(yellow);
+					blackjackPizza.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Hungry Howie's") {
 					hungryhowiesPizza = new JButton(yellow);
+					hungryhowiesPizza.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Brooklyn's") {
 					brooklynPizza = new JButton(yellow);
+					brooklynPizza.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Pizza Planet") {
 					pizzaplanetPizza = new JButton(yellow);
+					pizzaplanetPizza.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Rawrville") {
 					rawrvilleDino = new JButton(yellow);
+					rawrvilleDino.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Laiegges") {
 					laieggesDino = new JButton(yellow);
+					laieggesDino.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Dactilito") {
 					dactilitoDino = new JButton(yellow);
+					dactilitoDino.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Dirtydan") {
 					dirtydanDino = new JButton(yellow);
+					dirtydanDino.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "BlackBeard") {
 					blackbeardDino = new JButton(yellow);
+					blackbeardDino.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Monisaurus") {
 					monisaurusDino = new JButton(yellow);
+					monisaurusDino.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "ToyStory") {
 					toystoryDino = new JButton(yellow);
+					toystoryDino.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Scraptopia") {
 					scraptopiaCresent = new JButton(yellow);
+					scraptopiaCresent.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Land of Zach") {
 					landofzachCresent = new JButton(yellow);
+					landofzachCresent.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Giant") {
 					giantCresent = new JButton(yellow);
+					giantCresent.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "New Land of Zach") {
 					newlandofzachCresent = new JButton(yellow);
+					newlandofzachCresent.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "South Scraptopia") {
 					southscraptopiaCresent = new JButton(yellow);
+					southscraptopiaCresent.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Bloo Bawl") {
 					bloobawlCresent = new JButton(yellow);
+					bloobawlCresent.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Cresent Capital") {
 					cresentcaptitalCresent = new JButton(yellow);
+					cresentcaptitalCresent.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Apollo") {
 					apolloSun = new JButton(yellow);
+					apolloSun.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Ra") {
 					raSun = new JButton(yellow);
+					raSun.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Helios") {
 					heliosSun = new JButton(yellow);
+					heliosSun.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Inti") {
 					intiSun = new JButton(yellow);
+					intiSun.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Horus") {
 					horusSun = new JButton(yellow);
+					horusSun.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Tonatiuh") {
 					tonatiuhSun = new JButton(yellow);
+					tonatiuhSun.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Amun") {
 					amunSun = new JButton(yellow);
+					amunSun.setName(startWindow.getPlayerName(0));
 				}
 
 			}
+		
 
 			for (Territory d : player2.getTerritories()) {
 				if (d.getName() == "Wilma") {
 					wilmaWildcat = new JButton(green);
+					wilmaWildcat.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Zona") {
 					zonaWildcat = new JButton(green);
+					zonaWildcat.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Wilber") {
 					wilberWildcat = new JButton(green);
+					wilberWildcat.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Rich") {
 					richWildcat = new JButton(green);
+					richWildcat.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Miller") {
 					millerWildcat = new JButton(green);
+					millerWildcat.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "McKale") {
 					mckaleWildcat = new JButton(green);
+					mckaleWildcat.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Scooby") {
 					scoobyWildcat = new JButton(green);
+					scoobyWildcat.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Java") {
 					javaLanguage = new JButton(green);
+					javaLanguage.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Python") {
 					pythonLanguage = new JButton(green);
+					pythonLanguage.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "C") {
 					cLanguage = new JButton(green);
+					cLanguage.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "SQL") {
 					sqlLanguage = new JButton(green);
+					sqlLanguage.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Ruby") {
 					rubyLanguage = new JButton(green);
+					rubyLanguage.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Perl") {
 					perlLanguage = new JButton(green);
+					perlLanguage.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Git") {
 					gitLanguage = new JButton(green);
+					gitLanguage.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Papa Johns") {
 					papajohnsPizza = new JButton(green);
+					papajohnsPizza.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Dominos") {
 					dominosPizza = new JButton(green);
+					dominosPizza.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "PizzaHut") {
 					pizzahutPizza = new JButton(green);
+					pizzahutPizza.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Black Jack") {
 					blackjackPizza = new JButton(green);
+					blackjackPizza.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Hungry Howie's") {
 					hungryhowiesPizza = new JButton(green);
+					hungryhowiesPizza.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Brooklyn's") {
 					brooklynPizza = new JButton(green);
+					brooklynPizza.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Pizza Planet") {
 					pizzaplanetPizza = new JButton(green);
+					pizzaplanetPizza.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Rawrville") {
 					rawrvilleDino = new JButton(green);
+					rawrvilleDino.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Laiegges") {
 					laieggesDino = new JButton(green);
+					laieggesDino.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Dactilito") {
 					dactilitoDino = new JButton(green);
+					dactilitoDino.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Dirtydan") {
 					dirtydanDino = new JButton(green);
+					dirtydanDino.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "BlackBeard") {
 					blackbeardDino = new JButton(green);
+					blackbeardDino.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Monisaurus") {
 					monisaurusDino = new JButton(green);
+					monisaurusDino.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "ToyStory") {
 					toystoryDino = new JButton(green);
+					toystoryDino.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Scraptopia") {
 					scraptopiaCresent = new JButton(green);
+					scraptopiaCresent.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Land of Zach") {
 					landofzachCresent = new JButton(green);
+					landofzachCresent.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Giant") {
 					giantCresent = new JButton(green);
+					giantCresent.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "New Land of Zach") {
 					newlandofzachCresent = new JButton(green);
+					newlandofzachCresent.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "South Scraptopia") {
 					southscraptopiaCresent = new JButton(green);
+					southscraptopiaCresent.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Bloo Bawl") {
 					bloobawlCresent = new JButton(green);
+					bloobawlCresent.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Cresent Capital") {
 					cresentcaptitalCresent = new JButton(green);
+					cresentcaptitalCresent.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Apollo") {
 					apolloSun = new JButton(green);
+					apolloSun.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Ra") {
 					raSun = new JButton(green);
+					raSun.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Helios") {
 					heliosSun = new JButton(green);
+					heliosSun.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Inti") {
 					intiSun = new JButton(green);
+					intiSun.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Horus") {
 					horusSun = new JButton(green);
+					horusSun.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Tonatiuh") {
-					tonatiuhSun = new JButton(yellow);
+					tonatiuhSun = new JButton(green);
+					tonatiuhSun.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Amun") {
 					amunSun = new JButton(green);
+					amunSun.setName(startWindow.getPlayerName(1));
 				}
-
 			}
-
 			for (Territory d : player3.getTerritories()) {
 				if (d.getName() == "Wilma") {
 					wilmaWildcat = new JButton(orange);
+					wilmaWildcat.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Zona") {
 					zonaWildcat = new JButton(orange);
+					zonaWildcat.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Wilber") {
 					wilberWildcat = new JButton(orange);
+					wilberWildcat.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Rich") {
 					richWildcat = new JButton(orange);
+					richWildcat.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Miller") {
 					millerWildcat = new JButton(orange);
+					millerWildcat.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "McKale") {
 					mckaleWildcat = new JButton(orange);
+					mckaleWildcat.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Scooby") {
 					scoobyWildcat = new JButton(orange);
+					scoobyWildcat.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Java") {
 					javaLanguage = new JButton(orange);
+					javaLanguage.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Python") {
 					pythonLanguage = new JButton(orange);
+					pythonLanguage.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "C") {
 					cLanguage = new JButton(orange);
+					cLanguage.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "SQL") {
 					sqlLanguage = new JButton(orange);
+					sqlLanguage.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Ruby") {
 					rubyLanguage = new JButton(orange);
+					rubyLanguage.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Perl") {
 					perlLanguage = new JButton(orange);
+					perlLanguage.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Git") {
 					gitLanguage = new JButton(orange);
+					gitLanguage.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Papa Johns") {
 					papajohnsPizza = new JButton(orange);
+					papajohnsPizza.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Dominos") {
 					dominosPizza = new JButton(orange);
+					dominosPizza.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "PizzaHut") {
 					pizzahutPizza = new JButton(orange);
+					pizzahutPizza.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Black Jack") {
 					blackjackPizza = new JButton(orange);
+					blackjackPizza.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Hungry Howie's") {
 					hungryhowiesPizza = new JButton(orange);
+					hungryhowiesPizza.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Brooklyn's") {
 					brooklynPizza = new JButton(orange);
+					brooklynPizza.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Pizza Planet") {
 					pizzaplanetPizza = new JButton(orange);
+					pizzaplanetPizza.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Rawrville") {
 					rawrvilleDino = new JButton(orange);
+					rawrvilleDino.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Laiegges") {
 					laieggesDino = new JButton(orange);
+					laieggesDino.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Dactilito") {
 					dactilitoDino = new JButton(orange);
+					dactilitoDino.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Dirtydan") {
 					dirtydanDino = new JButton(orange);
+					dirtydanDino.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "BlackBeard") {
 					blackbeardDino = new JButton(orange);
+					blackbeardDino.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Monisaurus") {
 					monisaurusDino = new JButton(orange);
+					monisaurusDino.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "ToyStory") {
 					toystoryDino = new JButton(orange);
+					toystoryDino.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Scraptopia") {
 					scraptopiaCresent = new JButton(orange);
+					scraptopiaCresent.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Land of Zach") {
 					landofzachCresent = new JButton(orange);
+					landofzachCresent.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Giant") {
 					giantCresent = new JButton(orange);
+					giantCresent.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "New Land of Zach") {
 					newlandofzachCresent = new JButton(orange);
+					newlandofzachCresent.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "South Scraptopia") {
 					southscraptopiaCresent = new JButton(orange);
+					southscraptopiaCresent.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Bloo Bawl") {
 					bloobawlCresent = new JButton(orange);
+					bloobawlCresent.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Cresent Capital") {
 					cresentcaptitalCresent = new JButton(orange);
+					cresentcaptitalCresent.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Apollo") {
 					apolloSun = new JButton(orange);
+					apolloSun.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Ra") {
 					raSun = new JButton(orange);
+					raSun.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Helios") {
 					heliosSun = new JButton(orange);
+					heliosSun.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Inti") {
 					intiSun = new JButton(orange);
+					intiSun.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Horus") {
 					horusSun = new JButton(orange);
+					horusSun.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Tonatiuh") {
 					tonatiuhSun = new JButton(orange);
+					tonatiuhSun.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Amun") {
 					amunSun = new JButton(orange);
+					amunSun.setName(startWindow.getPlayerName(2));
 				}
-
 			}
+
 			for (Territory d : player4.getTerritories()) {
-				if (d.getName() == "Wilma") {
-					wilmaWildcat = new JButton(red);
-				}
-				if (d.getName() == "Zona") {
-					zonaWildcat = new JButton(red);
-				}
-				if (d.getName() == "Wilber") {
-					wilberWildcat = new JButton(red);
-				}
-				if (d.getName() == "Rich") {
-					richWildcat = new JButton(red);
-				}
-				if (d.getName() == "Miller") {
-					millerWildcat = new JButton(red);
-				}
-				if (d.getName() == "McKale") {
-					mckaleWildcat = new JButton(red);
-				}
-				if (d.getName() == "Scooby") {
-					scoobyWildcat = new JButton(red);
-				}
-				if (d.getName() == "Java") {
-					javaLanguage = new JButton(red);
-				}
-				if (d.getName() == "Python") {
-					pythonLanguage = new JButton(red);
-				}
-				if (d.getName() == "C") {
-					cLanguage = new JButton(red);
-				}
-				if (d.getName() == "SQL") {
-					sqlLanguage = new JButton(red);
-				}
-				if (d.getName() == "Ruby") {
-					rubyLanguage = new JButton(red);
-				}
-				if (d.getName() == "Perl") {
-					perlLanguage = new JButton(red);
-				}
-				if (d.getName() == "Git") {
-					gitLanguage = new JButton(red);
-				}
-				if (d.getName() == "Papa Johns") {
-					papajohnsPizza = new JButton(red);
-				}
-				if (d.getName() == "Dominos") {
-					dominosPizza = new JButton(red);
-				}
-				if (d.getName() == "PizzaHut") {
-					pizzahutPizza = new JButton(red);
-				}
-				if (d.getName() == "Black Jack") {
-					blackjackPizza = new JButton(red);
-				}
-				if (d.getName() == "Hungry Howie's") {
-					hungryhowiesPizza = new JButton(red);
-				}
-				if (d.getName() == "Brooklyn's") {
-					brooklynPizza = new JButton(red);
-				}
-				if (d.getName() == "Pizza Planet") {
-					pizzaplanetPizza = new JButton(red);
-				}
-				if (d.getName() == "Rawrville") {
-					rawrvilleDino = new JButton(red);
-				}
-				if (d.getName() == "Laiegges") {
-					laieggesDino = new JButton(red);
-				}
-				if (d.getName() == "Dactilito") {
-					dactilitoDino = new JButton(red);
-				}
-				if (d.getName() == "Dirtydan") {
-					dirtydanDino = new JButton(red);
-				}
-				if (d.getName() == "BlackBeard") {
-					blackbeardDino = new JButton(red);
-				}
-				if (d.getName() == "Monisaurus") {
-					monisaurusDino = new JButton(red);
-				}
-				if (d.getName() == "ToyStory") {
-					toystoryDino = new JButton(red);
-				}
-				if (d.getName() == "Scraptopia") {
-					scraptopiaCresent = new JButton(red);
-				}
-				if (d.getName() == "Land of Zach") {
-					landofzachCresent = new JButton(red);
-				}
-				if (d.getName() == "Giant") {
-					giantCresent = new JButton(red);
-				}
-				if (d.getName() == "New Land of Zach") {
-					newlandofzachCresent = new JButton(red);
-				}
-				if (d.getName() == "South Scraptopia") {
-					southscraptopiaCresent = new JButton(red);
-				}
-				if (d.getName() == "Bloo Bawl") {
-					bloobawlCresent = new JButton(red);
-				}
-				if (d.getName() == "Cresent Capital") {
-					cresentcaptitalCresent = new JButton(red);
-				}
-				if (d.getName() == "Apollo") {
-					apolloSun = new JButton(red);
-				}
-				if (d.getName() == "Ra") {
-					raSun = new JButton(red);
-				}
-				if (d.getName() == "Helios") {
-					heliosSun = new JButton(red);
-				}
-				if (d.getName() == "Inti") {
-					intiSun = new JButton(red);
-				}
-				if (d.getName() == "Horus") {
-					horusSun = new JButton(red);
-				}
-				if (d.getName() == "Tonatiuh") {
-					tonatiuhSun = new JButton(red);
-				}
-				if (d.getName() == "Amun") {
-					amunSun = new JButton(red);
+		
+					if (d.getName() == "Wilma") {
+						wilmaWildcat = new JButton(red);
+						wilmaWildcat.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Zona") {
+						zonaWildcat = new JButton(red);
+						zonaWildcat.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Wilber") {
+						wilberWildcat = new JButton(red);
+						wilberWildcat.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Rich") {
+						richWildcat = new JButton(red);
+						richWildcat.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Miller") {
+						millerWildcat = new JButton(red);
+						millerWildcat.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "McKale") {
+						mckaleWildcat = new JButton(red);
+						mckaleWildcat.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Scooby") {
+						scoobyWildcat = new JButton(red);
+						scoobyWildcat.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Java") {
+						javaLanguage = new JButton(red);
+						javaLanguage.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Python") {
+						pythonLanguage = new JButton(red);
+						pythonLanguage.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "C") {
+						cLanguage = new JButton(red);
+						cLanguage.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "SQL") {
+						sqlLanguage = new JButton(red);
+						sqlLanguage.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Ruby") {
+						rubyLanguage = new JButton(red);
+						rubyLanguage.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Perl") {
+						perlLanguage = new JButton(red);
+						perlLanguage.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Git") {
+						gitLanguage = new JButton(red);
+						gitLanguage.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Papa Johns") {
+						papajohnsPizza = new JButton(red);
+						papajohnsPizza.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Dominos") {
+						dominosPizza = new JButton(red);
+						dominosPizza.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "PizzaHut") {
+						pizzahutPizza = new JButton(red);
+						pizzahutPizza.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Black Jack") {
+						blackjackPizza = new JButton(red);
+						blackjackPizza.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Hungry Howie's") {
+						hungryhowiesPizza = new JButton(red);
+						hungryhowiesPizza.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Brooklyn's") {
+						brooklynPizza = new JButton(red);
+						brooklynPizza.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Pizza Planet") {
+						pizzaplanetPizza = new JButton(red);
+						pizzaplanetPizza.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Rawrville") {
+						rawrvilleDino = new JButton(red);
+						rawrvilleDino.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Laiegges") {
+						laieggesDino = new JButton(red);
+						laieggesDino.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Dactilito") {
+						dactilitoDino = new JButton(red);
+						dactilitoDino.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Dirtydan") {
+						dirtydanDino = new JButton(red);
+						dirtydanDino.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "BlackBeard") {
+						blackbeardDino = new JButton(red);
+						blackbeardDino.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Monisaurus") {
+						monisaurusDino = new JButton(red);
+						monisaurusDino.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "ToyStory") {
+						toystoryDino = new JButton(red);
+						toystoryDino.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Scraptopia") {
+						scraptopiaCresent = new JButton(red);
+						scraptopiaCresent.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Land of Zach") {
+						landofzachCresent = new JButton(red);
+						landofzachCresent.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Giant") {
+						giantCresent = new JButton(red);
+						giantCresent.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "New Land of Zach") {
+						newlandofzachCresent = new JButton(red);
+						newlandofzachCresent.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "South Scraptopia") {
+						southscraptopiaCresent = new JButton(red);
+						southscraptopiaCresent.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Bloo Bawl") {
+						bloobawlCresent = new JButton(red);
+						bloobawlCresent.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Cresent Capital") {
+						cresentcaptitalCresent = new JButton(red);
+						cresentcaptitalCresent.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Apollo") {
+						apolloSun = new JButton(red);
+						apolloSun.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Ra") {
+						raSun = new JButton(red);
+						raSun.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Helios") {
+						heliosSun = new JButton(red);
+						heliosSun.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Inti") {
+						intiSun = new JButton(red);
+						intiSun.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Horus") {
+						horusSun = new JButton(red);
+						horusSun.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Tonatiuh") {
+						tonatiuhSun = new JButton(red);
+						tonatiuhSun.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Amun") {
+						amunSun = new JButton(red);
+						amunSun.setName(startWindow.getPlayerName(3));
+					}
 				}
 
-			}
+
+			
 			for (Territory d : player5.getTerritories()) {
-				if (d.getName() == "Wilma") {
-					wilmaWildcat = new JButton(purple);
+					if (d.getName() == "Wilma") {
+						wilmaWildcat = new JButton(green);
+						wilmaWildcat.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Zona") {
+						zonaWildcat = new JButton(green);
+						zonaWildcat.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Wilber") {
+						wilberWildcat = new JButton(green);
+						wilberWildcat.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Rich") {
+						richWildcat = new JButton(green);
+						richWildcat.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Miller") {
+						millerWildcat = new JButton(green);
+						millerWildcat.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "McKale") {
+						mckaleWildcat = new JButton(green);
+						mckaleWildcat.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Scooby") {
+						scoobyWildcat = new JButton(green);
+						scoobyWildcat.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Java") {
+						javaLanguage = new JButton(green);
+						javaLanguage.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Python") {
+						pythonLanguage = new JButton(green);
+						pythonLanguage.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "C") {
+						cLanguage = new JButton(green);
+						cLanguage.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "SQL") {
+						sqlLanguage = new JButton(green);
+						sqlLanguage.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Ruby") {
+						rubyLanguage = new JButton(green);
+						rubyLanguage.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Perl") {
+						perlLanguage = new JButton(green);
+						perlLanguage.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Git") {
+						gitLanguage = new JButton(green);
+						gitLanguage.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Papa Johns") {
+						papajohnsPizza = new JButton(green);
+						papajohnsPizza.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Dominos") {
+						dominosPizza = new JButton(green);
+						dominosPizza.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "PizzaHut") {
+						pizzahutPizza = new JButton(green);
+						pizzahutPizza.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Black Jack") {
+						blackjackPizza = new JButton(green);
+						blackjackPizza.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Hungry Howie's") {
+						hungryhowiesPizza = new JButton(green);
+						hungryhowiesPizza.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Brooklyn's") {
+						brooklynPizza = new JButton(green);
+						brooklynPizza.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Pizza Planet") {
+						pizzaplanetPizza = new JButton(green);
+						pizzaplanetPizza.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Rawrville") {
+						rawrvilleDino = new JButton(green);
+						rawrvilleDino.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Laiegges") {
+						laieggesDino = new JButton(green);
+						laieggesDino.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Dactilito") {
+						dactilitoDino = new JButton(green);
+						dactilitoDino.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Dirtydan") {
+						dirtydanDino = new JButton(green);
+						dirtydanDino.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "BlackBeard") {
+						blackbeardDino = new JButton(green);
+						blackbeardDino.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Monisaurus") {
+						monisaurusDino = new JButton(green);
+						monisaurusDino.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "ToyStory") {
+						toystoryDino = new JButton(green);
+						toystoryDino.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Scraptopia") {
+						scraptopiaCresent = new JButton(green);
+						scraptopiaCresent.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Land of Zach") {
+						landofzachCresent = new JButton(green);
+						landofzachCresent.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Giant") {
+						giantCresent = new JButton(green);
+						giantCresent.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "New Land of Zach") {
+						newlandofzachCresent = new JButton(green);
+						newlandofzachCresent.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "South Scraptopia") {
+						southscraptopiaCresent = new JButton(green);
+						southscraptopiaCresent.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Bloo Bawl") {
+						bloobawlCresent = new JButton(green);
+						bloobawlCresent.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Cresent Capital") {
+						cresentcaptitalCresent = new JButton(green);
+						cresentcaptitalCresent.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Apollo") {
+						apolloSun = new JButton(green);
+						apolloSun.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Ra") {
+						raSun = new JButton(green);
+						raSun.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Helios") {
+						heliosSun = new JButton(green);
+						heliosSun.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Inti") {
+						intiSun = new JButton(green);
+						intiSun.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Horus") {
+						horusSun = new JButton(green);
+						horusSun.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Tonatiuh") {
+						tonatiuhSun = new JButton(green);
+						tonatiuhSun.setName(startWindow.getPlayerName(4));
+					}
+					if (d.getName() == "Amun") {
+						amunSun = new JButton(green);
+						amunSun.setName(startWindow.getPlayerName(4));
+					}
 				}
-				if (d.getName() == "Zona") {
-					zonaWildcat = new JButton(purple);
-				}
-				if (d.getName() == "Wilber") {
-					wilberWildcat = new JButton(purple);
-				}
-				if (d.getName() == "Rich") {
-					richWildcat = new JButton(purple);
-				}
-				if (d.getName() == "Miller") {
-					millerWildcat = new JButton(purple);
-				}
-				if (d.getName() == "McKale") {
-					mckaleWildcat = new JButton(purple);
-				}
-				if (d.getName() == "Scooby") {
-					scoobyWildcat = new JButton(purple);
-				}
-				if (d.getName() == "Java") {
-					javaLanguage = new JButton(purple);
-				}
-				if (d.getName() == "Python") {
-					pythonLanguage = new JButton(purple);
-				}
-				if (d.getName() == "C") {
-					cLanguage = new JButton(purple);
-				}
-				if (d.getName() == "SQL") {
-					sqlLanguage = new JButton(purple);
-				}
-				if (d.getName() == "Ruby") {
-					rubyLanguage = new JButton(purple);
-				}
-				if (d.getName() == "Perl") {
-					perlLanguage = new JButton(purple);
-				}
-				if (d.getName() == "Git") {
-					gitLanguage = new JButton(purple);
-				}
-				if (d.getName() == "Papa Johns") {
-					papajohnsPizza = new JButton(purple);
-				}
-				if (d.getName() == "Dominos") {
-					dominosPizza = new JButton(purple);
-				}
-				if (d.getName() == "PizzaHut") {
-					pizzahutPizza = new JButton(purple);
-				}
-				if (d.getName() == "Black Jack") {
-					blackjackPizza = new JButton(purple);
-				}
-				if (d.getName() == "Hungry Howie's") {
-					hungryhowiesPizza = new JButton(purple);
-				}
-				if (d.getName() == "Brooklyn's") {
-					brooklynPizza = new JButton(purple);
-				}
-				if (d.getName() == "Pizza Planet") {
-					pizzaplanetPizza = new JButton(purple);
-				}
-				if (d.getName() == "Rawrville") {
-					rawrvilleDino = new JButton(purple);
-				}
-				if (d.getName() == "Laiegges") {
-					laieggesDino = new JButton(purple);
-				}
-				if (d.getName() == "Dactilito") {
-					dactilitoDino = new JButton(purple);
-				}
-				if (d.getName() == "Dirtydan") {
-					dirtydanDino = new JButton(purple);
-				}
-				if (d.getName() == "BlackBeard") {
-					blackbeardDino = new JButton(purple);
-				}
-				if (d.getName() == "Monisaurus") {
-					monisaurusDino = new JButton(purple);
-				}
-				if (d.getName() == "ToyStory") {
-					toystoryDino = new JButton(purple);
-				}
-				if (d.getName() == "Scraptopia") {
-					scraptopiaCresent = new JButton(purple);
-				}
-				if (d.getName() == "Land of Zach") {
-					landofzachCresent = new JButton(purple);
-				}
-				if (d.getName() == "Giant") {
-					giantCresent = new JButton(purple);
-				}
-				if (d.getName() == "New Land of Zach") {
-					newlandofzachCresent = new JButton(purple);
-				}
-				if (d.getName() == "South Scraptopia") {
-					southscraptopiaCresent = new JButton(purple);
-				}
-				if (d.getName() == "Bloo Bawl") {
-					bloobawlCresent = new JButton(purple);
-				}
-				if (d.getName() == "Cresent Capital") {
-					cresentcaptitalCresent = new JButton(purple);
-				}
-				if (d.getName() == "Apollo") {
-					apolloSun = new JButton(purple);
-				}
-				if (d.getName() == "Ra") {
-					raSun = new JButton(purple);
-				}
-				if (d.getName() == "Helios") {
-					heliosSun = new JButton(purple);
-				}
-				if (d.getName() == "Inti") {
-					intiSun = new JButton(purple);
-				}
-				if (d.getName() == "Horus") {
-					horusSun = new JButton(purple);
-				}
-				if (d.getName() == "Tonatiuh") {
-					tonatiuhSun = new JButton(purple);
-				}
-				if (d.getName() == "Amun") {
-					amunSun = new JButton(purple);
-				}
-
-			}
 		}
 		if (startWindow.getNumberOfPlayer() == 4) {
 			for (Territory d : player1.getTerritories()) {
 				if (d.getName() == "Wilma") {
 					wilmaWildcat = new JButton(yellow);
+					wilmaWildcat.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Zona") {
 					zonaWildcat = new JButton(yellow);
+					zonaWildcat.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Wilber") {
 					wilberWildcat = new JButton(yellow);
+					wilberWildcat.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Rich") {
 					richWildcat = new JButton(yellow);
+					richWildcat.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Miller") {
 					millerWildcat = new JButton(yellow);
+					millerWildcat.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "McKale") {
 					mckaleWildcat = new JButton(yellow);
+					mckaleWildcat.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Scooby") {
 					scoobyWildcat = new JButton(yellow);
+					scoobyWildcat.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Java") {
 					javaLanguage = new JButton(yellow);
+					javaLanguage.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Python") {
 					pythonLanguage = new JButton(yellow);
+					pythonLanguage.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "C") {
 					cLanguage = new JButton(yellow);
+					cLanguage.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "SQL") {
 					sqlLanguage = new JButton(yellow);
+					sqlLanguage.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Ruby") {
 					rubyLanguage = new JButton(yellow);
+					rubyLanguage.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Perl") {
 					perlLanguage = new JButton(yellow);
+					perlLanguage.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Git") {
 					gitLanguage = new JButton(yellow);
+					gitLanguage.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Papa Johns") {
 					papajohnsPizza = new JButton(yellow);
+					papajohnsPizza.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Dominos") {
 					dominosPizza = new JButton(yellow);
+					dominosPizza.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "PizzaHut") {
 					pizzahutPizza = new JButton(yellow);
+					pizzahutPizza.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Black Jack") {
 					blackjackPizza = new JButton(yellow);
+					blackjackPizza.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Hungry Howie's") {
 					hungryhowiesPizza = new JButton(yellow);
+					hungryhowiesPizza.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Brooklyn's") {
 					brooklynPizza = new JButton(yellow);
+					brooklynPizza.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Pizza Planet") {
 					pizzaplanetPizza = new JButton(yellow);
+					pizzaplanetPizza.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Rawrville") {
 					rawrvilleDino = new JButton(yellow);
+					rawrvilleDino.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Laiegges") {
 					laieggesDino = new JButton(yellow);
+					laieggesDino.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Dactilito") {
 					dactilitoDino = new JButton(yellow);
+					dactilitoDino.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Dirtydan") {
 					dirtydanDino = new JButton(yellow);
+					dirtydanDino.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "BlackBeard") {
 					blackbeardDino = new JButton(yellow);
+					blackbeardDino.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Monisaurus") {
 					monisaurusDino = new JButton(yellow);
+					monisaurusDino.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "ToyStory") {
 					toystoryDino = new JButton(yellow);
+					toystoryDino.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Scraptopia") {
 					scraptopiaCresent = new JButton(yellow);
+					scraptopiaCresent.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Land of Zach") {
 					landofzachCresent = new JButton(yellow);
+					landofzachCresent.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Giant") {
 					giantCresent = new JButton(yellow);
+					giantCresent.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "New Land of Zach") {
 					newlandofzachCresent = new JButton(yellow);
+					newlandofzachCresent.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "South Scraptopia") {
 					southscraptopiaCresent = new JButton(yellow);
+					southscraptopiaCresent.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Bloo Bawl") {
 					bloobawlCresent = new JButton(yellow);
+					bloobawlCresent.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Cresent Capital") {
 					cresentcaptitalCresent = new JButton(yellow);
+					cresentcaptitalCresent.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Apollo") {
 					apolloSun = new JButton(yellow);
+					apolloSun.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Ra") {
 					raSun = new JButton(yellow);
+					raSun.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Helios") {
 					heliosSun = new JButton(yellow);
+					heliosSun.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Inti") {
 					intiSun = new JButton(yellow);
+					intiSun.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Horus") {
 					horusSun = new JButton(yellow);
+					horusSun.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Tonatiuh") {
 					tonatiuhSun = new JButton(yellow);
+					tonatiuhSun.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Amun") {
 					amunSun = new JButton(yellow);
+					amunSun.setName(startWindow.getPlayerName(0));
 				}
 
 			}
+		
 
 			for (Territory d : player2.getTerritories()) {
 				if (d.getName() == "Wilma") {
 					wilmaWildcat = new JButton(green);
+					wilmaWildcat.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Zona") {
 					zonaWildcat = new JButton(green);
+					zonaWildcat.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Wilber") {
 					wilberWildcat = new JButton(green);
+					wilberWildcat.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Rich") {
 					richWildcat = new JButton(green);
+					richWildcat.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Miller") {
 					millerWildcat = new JButton(green);
+					millerWildcat.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "McKale") {
 					mckaleWildcat = new JButton(green);
+					mckaleWildcat.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Scooby") {
 					scoobyWildcat = new JButton(green);
+					scoobyWildcat.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Java") {
 					javaLanguage = new JButton(green);
+					javaLanguage.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Python") {
 					pythonLanguage = new JButton(green);
+					pythonLanguage.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "C") {
 					cLanguage = new JButton(green);
+					cLanguage.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "SQL") {
 					sqlLanguage = new JButton(green);
+					sqlLanguage.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Ruby") {
 					rubyLanguage = new JButton(green);
+					rubyLanguage.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Perl") {
 					perlLanguage = new JButton(green);
+					perlLanguage.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Git") {
 					gitLanguage = new JButton(green);
+					gitLanguage.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Papa Johns") {
 					papajohnsPizza = new JButton(green);
+					papajohnsPizza.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Dominos") {
 					dominosPizza = new JButton(green);
+					dominosPizza.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "PizzaHut") {
 					pizzahutPizza = new JButton(green);
+					pizzahutPizza.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Black Jack") {
 					blackjackPizza = new JButton(green);
+					blackjackPizza.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Hungry Howie's") {
 					hungryhowiesPizza = new JButton(green);
+					hungryhowiesPizza.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Brooklyn's") {
 					brooklynPizza = new JButton(green);
+					brooklynPizza.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Pizza Planet") {
 					pizzaplanetPizza = new JButton(green);
+					pizzaplanetPizza.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Rawrville") {
 					rawrvilleDino = new JButton(green);
+					rawrvilleDino.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Laiegges") {
 					laieggesDino = new JButton(green);
+					laieggesDino.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Dactilito") {
 					dactilitoDino = new JButton(green);
+					dactilitoDino.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Dirtydan") {
 					dirtydanDino = new JButton(green);
+					dirtydanDino.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "BlackBeard") {
 					blackbeardDino = new JButton(green);
+					blackbeardDino.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Monisaurus") {
 					monisaurusDino = new JButton(green);
+					monisaurusDino.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "ToyStory") {
 					toystoryDino = new JButton(green);
+					toystoryDino.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Scraptopia") {
 					scraptopiaCresent = new JButton(green);
+					scraptopiaCresent.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Land of Zach") {
 					landofzachCresent = new JButton(green);
+					landofzachCresent.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Giant") {
 					giantCresent = new JButton(green);
+					giantCresent.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "New Land of Zach") {
 					newlandofzachCresent = new JButton(green);
+					newlandofzachCresent.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "South Scraptopia") {
 					southscraptopiaCresent = new JButton(green);
+					southscraptopiaCresent.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Bloo Bawl") {
 					bloobawlCresent = new JButton(green);
+					bloobawlCresent.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Cresent Capital") {
 					cresentcaptitalCresent = new JButton(green);
+					cresentcaptitalCresent.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Apollo") {
 					apolloSun = new JButton(green);
+					apolloSun.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Ra") {
 					raSun = new JButton(green);
+					raSun.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Helios") {
 					heliosSun = new JButton(green);
+					heliosSun.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Inti") {
 					intiSun = new JButton(green);
+					intiSun.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Horus") {
 					horusSun = new JButton(green);
+					horusSun.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Tonatiuh") {
-					tonatiuhSun = new JButton(yellow);
+					tonatiuhSun = new JButton(green);
+					tonatiuhSun.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Amun") {
 					amunSun = new JButton(green);
+					amunSun.setName(startWindow.getPlayerName(1));
 				}
-
 			}
-
 			for (Territory d : player3.getTerritories()) {
 				if (d.getName() == "Wilma") {
 					wilmaWildcat = new JButton(orange);
+					wilmaWildcat.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Zona") {
 					zonaWildcat = new JButton(orange);
+					zonaWildcat.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Wilber") {
 					wilberWildcat = new JButton(orange);
+					wilberWildcat.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Rich") {
 					richWildcat = new JButton(orange);
+					richWildcat.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Miller") {
 					millerWildcat = new JButton(orange);
+					millerWildcat.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "McKale") {
 					mckaleWildcat = new JButton(orange);
+					mckaleWildcat.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Scooby") {
 					scoobyWildcat = new JButton(orange);
+					scoobyWildcat.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Java") {
 					javaLanguage = new JButton(orange);
+					javaLanguage.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Python") {
 					pythonLanguage = new JButton(orange);
+					pythonLanguage.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "C") {
 					cLanguage = new JButton(orange);
+					cLanguage.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "SQL") {
 					sqlLanguage = new JButton(orange);
+					sqlLanguage.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Ruby") {
 					rubyLanguage = new JButton(orange);
+					rubyLanguage.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Perl") {
 					perlLanguage = new JButton(orange);
+					perlLanguage.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Git") {
 					gitLanguage = new JButton(orange);
+					gitLanguage.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Papa Johns") {
 					papajohnsPizza = new JButton(orange);
+					papajohnsPizza.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Dominos") {
 					dominosPizza = new JButton(orange);
+					dominosPizza.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "PizzaHut") {
 					pizzahutPizza = new JButton(orange);
+					pizzahutPizza.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Black Jack") {
 					blackjackPizza = new JButton(orange);
+					blackjackPizza.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Hungry Howie's") {
 					hungryhowiesPizza = new JButton(orange);
+					hungryhowiesPizza.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Brooklyn's") {
 					brooklynPizza = new JButton(orange);
+					brooklynPizza.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Pizza Planet") {
 					pizzaplanetPizza = new JButton(orange);
+					pizzaplanetPizza.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Rawrville") {
 					rawrvilleDino = new JButton(orange);
+					rawrvilleDino.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Laiegges") {
 					laieggesDino = new JButton(orange);
+					laieggesDino.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Dactilito") {
 					dactilitoDino = new JButton(orange);
+					dactilitoDino.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Dirtydan") {
 					dirtydanDino = new JButton(orange);
+					dirtydanDino.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "BlackBeard") {
 					blackbeardDino = new JButton(orange);
+					blackbeardDino.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Monisaurus") {
 					monisaurusDino = new JButton(orange);
+					monisaurusDino.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "ToyStory") {
 					toystoryDino = new JButton(orange);
+					toystoryDino.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Scraptopia") {
 					scraptopiaCresent = new JButton(orange);
+					scraptopiaCresent.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Land of Zach") {
 					landofzachCresent = new JButton(orange);
+					landofzachCresent.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Giant") {
 					giantCresent = new JButton(orange);
+					giantCresent.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "New Land of Zach") {
 					newlandofzachCresent = new JButton(orange);
+					newlandofzachCresent.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "South Scraptopia") {
 					southscraptopiaCresent = new JButton(orange);
+					southscraptopiaCresent.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Bloo Bawl") {
 					bloobawlCresent = new JButton(orange);
+					bloobawlCresent.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Cresent Capital") {
 					cresentcaptitalCresent = new JButton(orange);
+					cresentcaptitalCresent.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Apollo") {
 					apolloSun = new JButton(orange);
+					apolloSun.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Ra") {
 					raSun = new JButton(orange);
+					raSun.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Helios") {
 					heliosSun = new JButton(orange);
+					heliosSun.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Inti") {
 					intiSun = new JButton(orange);
+					intiSun.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Horus") {
 					horusSun = new JButton(orange);
+					horusSun.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Tonatiuh") {
 					tonatiuhSun = new JButton(orange);
+					tonatiuhSun.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Amun") {
 					amunSun = new JButton(orange);
+					amunSun.setName(startWindow.getPlayerName(2));
 				}
-
 			}
+
 			for (Territory d : player4.getTerritories()) {
-				if (d.getName() == "Wilma") {
-					wilmaWildcat = new JButton(red);
-				}
-				if (d.getName() == "Zona") {
-					zonaWildcat = new JButton(red);
-				}
-				if (d.getName() == "Wilber") {
-					wilberWildcat = new JButton(red);
-				}
-				if (d.getName() == "Rich") {
-					richWildcat = new JButton(red);
-				}
-				if (d.getName() == "Miller") {
-					millerWildcat = new JButton(red);
-				}
-				if (d.getName() == "McKale") {
-					mckaleWildcat = new JButton(red);
-				}
-				if (d.getName() == "Scooby") {
-					scoobyWildcat = new JButton(red);
-				}
-				if (d.getName() == "Java") {
-					javaLanguage = new JButton(red);
-				}
-				if (d.getName() == "Python") {
-					pythonLanguage = new JButton(red);
-				}
-				if (d.getName() == "C") {
-					cLanguage = new JButton(red);
-				}
-				if (d.getName() == "SQL") {
-					sqlLanguage = new JButton(red);
-				}
-				if (d.getName() == "Ruby") {
-					rubyLanguage = new JButton(red);
-				}
-				if (d.getName() == "Perl") {
-					perlLanguage = new JButton(red);
-				}
-				if (d.getName() == "Git") {
-					gitLanguage = new JButton(red);
-				}
-				if (d.getName() == "Papa Johns") {
-					papajohnsPizza = new JButton(red);
-				}
-				if (d.getName() == "Dominos") {
-					dominosPizza = new JButton(red);
-				}
-				if (d.getName() == "PizzaHut") {
-					pizzahutPizza = new JButton(red);
-				}
-				if (d.getName() == "Black Jack") {
-					blackjackPizza = new JButton(red);
-				}
-				if (d.getName() == "Hungry Howie's") {
-					hungryhowiesPizza = new JButton(red);
-				}
-				if (d.getName() == "Brooklyn's") {
-					brooklynPizza = new JButton(red);
-				}
-				if (d.getName() == "Pizza Planet") {
-					pizzaplanetPizza = new JButton(red);
-				}
-				if (d.getName() == "Rawrville") {
-					rawrvilleDino = new JButton(red);
-				}
-				if (d.getName() == "Laiegges") {
-					laieggesDino = new JButton(red);
-				}
-				if (d.getName() == "Dactilito") {
-					dactilitoDino = new JButton(red);
-				}
-				if (d.getName() == "Dirtydan") {
-					dirtydanDino = new JButton(red);
-				}
-				if (d.getName() == "BlackBeard") {
-					blackbeardDino = new JButton(red);
-				}
-				if (d.getName() == "Monisaurus") {
-					monisaurusDino = new JButton(red);
-				}
-				if (d.getName() == "ToyStory") {
-					toystoryDino = new JButton(red);
-				}
-				if (d.getName() == "Scraptopia") {
-					scraptopiaCresent = new JButton(red);
-				}
-				if (d.getName() == "Land of Zach") {
-					landofzachCresent = new JButton(red);
-				}
-				if (d.getName() == "Giant") {
-					giantCresent = new JButton(red);
-				}
-				if (d.getName() == "New Land of Zach") {
-					newlandofzachCresent = new JButton(red);
-				}
-				if (d.getName() == "South Scraptopia") {
-					southscraptopiaCresent = new JButton(red);
-				}
-				if (d.getName() == "Bloo Bawl") {
-					bloobawlCresent = new JButton(red);
-				}
-				if (d.getName() == "Cresent Capital") {
-					cresentcaptitalCresent = new JButton(red);
-				}
-				if (d.getName() == "Apollo") {
-					apolloSun = new JButton(red);
-				}
-				if (d.getName() == "Ra") {
-					raSun = new JButton(red);
-				}
-				if (d.getName() == "Helios") {
-					heliosSun = new JButton(red);
-				}
-				if (d.getName() == "Inti") {
-					intiSun = new JButton(red);
-				}
-				if (d.getName() == "Horus") {
-					horusSun = new JButton(red);
-				}
-				if (d.getName() == "Tonatiuh") {
-					tonatiuhSun = new JButton(red);
-				}
-				if (d.getName() == "Amun") {
-					amunSun = new JButton(red);
+		
+					if (d.getName() == "Wilma") {
+						wilmaWildcat = new JButton(red);
+						wilmaWildcat.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Zona") {
+						zonaWildcat = new JButton(red);
+						zonaWildcat.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Wilber") {
+						wilberWildcat = new JButton(red);
+						wilberWildcat.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Rich") {
+						richWildcat = new JButton(red);
+						richWildcat.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Miller") {
+						millerWildcat = new JButton(red);
+						millerWildcat.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "McKale") {
+						mckaleWildcat = new JButton(red);
+						mckaleWildcat.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Scooby") {
+						scoobyWildcat = new JButton(red);
+						scoobyWildcat.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Java") {
+						javaLanguage = new JButton(red);
+						javaLanguage.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Python") {
+						pythonLanguage = new JButton(red);
+						pythonLanguage.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "C") {
+						cLanguage = new JButton(red);
+						cLanguage.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "SQL") {
+						sqlLanguage = new JButton(red);
+						sqlLanguage.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Ruby") {
+						rubyLanguage = new JButton(red);
+						rubyLanguage.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Perl") {
+						perlLanguage = new JButton(red);
+						perlLanguage.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Git") {
+						gitLanguage = new JButton(red);
+						gitLanguage.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Papa Johns") {
+						papajohnsPizza = new JButton(red);
+						papajohnsPizza.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Dominos") {
+						dominosPizza = new JButton(red);
+						dominosPizza.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "PizzaHut") {
+						pizzahutPizza = new JButton(red);
+						pizzahutPizza.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Black Jack") {
+						blackjackPizza = new JButton(red);
+						blackjackPizza.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Hungry Howie's") {
+						hungryhowiesPizza = new JButton(red);
+						hungryhowiesPizza.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Brooklyn's") {
+						brooklynPizza = new JButton(red);
+						brooklynPizza.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Pizza Planet") {
+						pizzaplanetPizza = new JButton(red);
+						pizzaplanetPizza.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Rawrville") {
+						rawrvilleDino = new JButton(red);
+						rawrvilleDino.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Laiegges") {
+						laieggesDino = new JButton(red);
+						laieggesDino.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Dactilito") {
+						dactilitoDino = new JButton(red);
+						dactilitoDino.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Dirtydan") {
+						dirtydanDino = new JButton(red);
+						dirtydanDino.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "BlackBeard") {
+						blackbeardDino = new JButton(red);
+						blackbeardDino.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Monisaurus") {
+						monisaurusDino = new JButton(red);
+						monisaurusDino.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "ToyStory") {
+						toystoryDino = new JButton(red);
+						toystoryDino.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Scraptopia") {
+						scraptopiaCresent = new JButton(red);
+						scraptopiaCresent.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Land of Zach") {
+						landofzachCresent = new JButton(red);
+						landofzachCresent.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Giant") {
+						giantCresent = new JButton(red);
+						giantCresent.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "New Land of Zach") {
+						newlandofzachCresent = new JButton(red);
+						newlandofzachCresent.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "South Scraptopia") {
+						southscraptopiaCresent = new JButton(red);
+						southscraptopiaCresent.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Bloo Bawl") {
+						bloobawlCresent = new JButton(red);
+						bloobawlCresent.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Cresent Capital") {
+						cresentcaptitalCresent = new JButton(red);
+						cresentcaptitalCresent.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Apollo") {
+						apolloSun = new JButton(red);
+						apolloSun.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Ra") {
+						raSun = new JButton(red);
+						raSun.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Helios") {
+						heliosSun = new JButton(red);
+						heliosSun.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Inti") {
+						intiSun = new JButton(red);
+						intiSun.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Horus") {
+						horusSun = new JButton(red);
+						horusSun.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Tonatiuh") {
+						tonatiuhSun = new JButton(red);
+						tonatiuhSun.setName(startWindow.getPlayerName(3));
+					}
+					if (d.getName() == "Amun") {
+						amunSun = new JButton(red);
+						amunSun.setName(startWindow.getPlayerName(3));
+					}
 				}
 
-			}
 		}
 		if (startWindow.getNumberOfPlayer() == 3) {
 			for (Territory d : player1.getTerritories()) {
 				if (d.getName() == "Wilma") {
 					wilmaWildcat = new JButton(yellow);
+					wilmaWildcat.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Zona") {
 					zonaWildcat = new JButton(yellow);
+					zonaWildcat.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Wilber") {
 					wilberWildcat = new JButton(yellow);
+					wilberWildcat.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Rich") {
 					richWildcat = new JButton(yellow);
+					richWildcat.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Miller") {
 					millerWildcat = new JButton(yellow);
+					millerWildcat.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "McKale") {
 					mckaleWildcat = new JButton(yellow);
+					mckaleWildcat.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Scooby") {
 					scoobyWildcat = new JButton(yellow);
+					scoobyWildcat.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Java") {
 					javaLanguage = new JButton(yellow);
+					javaLanguage.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Python") {
 					pythonLanguage = new JButton(yellow);
+					pythonLanguage.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "C") {
 					cLanguage = new JButton(yellow);
+					cLanguage.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "SQL") {
 					sqlLanguage = new JButton(yellow);
+					sqlLanguage.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Ruby") {
 					rubyLanguage = new JButton(yellow);
+					rubyLanguage.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Perl") {
 					perlLanguage = new JButton(yellow);
+					perlLanguage.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Git") {
 					gitLanguage = new JButton(yellow);
+					gitLanguage.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Papa Johns") {
 					papajohnsPizza = new JButton(yellow);
+					papajohnsPizza.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Dominos") {
 					dominosPizza = new JButton(yellow);
+					dominosPizza.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "PizzaHut") {
 					pizzahutPizza = new JButton(yellow);
+					pizzahutPizza.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Black Jack") {
 					blackjackPizza = new JButton(yellow);
+					blackjackPizza.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Hungry Howie's") {
 					hungryhowiesPizza = new JButton(yellow);
+					hungryhowiesPizza.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Brooklyn's") {
 					brooklynPizza = new JButton(yellow);
+					brooklynPizza.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Pizza Planet") {
 					pizzaplanetPizza = new JButton(yellow);
+					pizzaplanetPizza.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Rawrville") {
 					rawrvilleDino = new JButton(yellow);
+					rawrvilleDino.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Laiegges") {
 					laieggesDino = new JButton(yellow);
+					laieggesDino.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Dactilito") {
 					dactilitoDino = new JButton(yellow);
+					dactilitoDino.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Dirtydan") {
 					dirtydanDino = new JButton(yellow);
+					dirtydanDino.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "BlackBeard") {
 					blackbeardDino = new JButton(yellow);
+					blackbeardDino.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Monisaurus") {
 					monisaurusDino = new JButton(yellow);
+					monisaurusDino.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "ToyStory") {
 					toystoryDino = new JButton(yellow);
+					toystoryDino.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Scraptopia") {
 					scraptopiaCresent = new JButton(yellow);
+					scraptopiaCresent.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Land of Zach") {
 					landofzachCresent = new JButton(yellow);
+					landofzachCresent.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Giant") {
 					giantCresent = new JButton(yellow);
+					giantCresent.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "New Land of Zach") {
 					newlandofzachCresent = new JButton(yellow);
+					newlandofzachCresent.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "South Scraptopia") {
 					southscraptopiaCresent = new JButton(yellow);
+					southscraptopiaCresent.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Bloo Bawl") {
 					bloobawlCresent = new JButton(yellow);
+					bloobawlCresent.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Cresent Capital") {
 					cresentcaptitalCresent = new JButton(yellow);
+					cresentcaptitalCresent.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Apollo") {
 					apolloSun = new JButton(yellow);
+					apolloSun.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Ra") {
 					raSun = new JButton(yellow);
+					raSun.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Helios") {
 					heliosSun = new JButton(yellow);
+					heliosSun.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Inti") {
 					intiSun = new JButton(yellow);
+					intiSun.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Horus") {
 					horusSun = new JButton(yellow);
+					horusSun.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Tonatiuh") {
 					tonatiuhSun = new JButton(yellow);
+					tonatiuhSun.setName(startWindow.getPlayerName(0));
 				}
 				if (d.getName() == "Amun") {
 					amunSun = new JButton(yellow);
+					amunSun.setName(startWindow.getPlayerName(0));
 				}
 
 			}
+		
 
 			for (Territory d : player2.getTerritories()) {
 				if (d.getName() == "Wilma") {
 					wilmaWildcat = new JButton(green);
+					wilmaWildcat.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Zona") {
 					zonaWildcat = new JButton(green);
+					zonaWildcat.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Wilber") {
 					wilberWildcat = new JButton(green);
+					wilberWildcat.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Rich") {
 					richWildcat = new JButton(green);
+					richWildcat.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Miller") {
 					millerWildcat = new JButton(green);
+					millerWildcat.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "McKale") {
 					mckaleWildcat = new JButton(green);
+					mckaleWildcat.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Scooby") {
 					scoobyWildcat = new JButton(green);
+					scoobyWildcat.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Java") {
 					javaLanguage = new JButton(green);
+					javaLanguage.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Python") {
 					pythonLanguage = new JButton(green);
+					pythonLanguage.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "C") {
 					cLanguage = new JButton(green);
+					cLanguage.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "SQL") {
 					sqlLanguage = new JButton(green);
+					sqlLanguage.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Ruby") {
 					rubyLanguage = new JButton(green);
+					rubyLanguage.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Perl") {
 					perlLanguage = new JButton(green);
+					perlLanguage.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Git") {
 					gitLanguage = new JButton(green);
+					gitLanguage.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Papa Johns") {
 					papajohnsPizza = new JButton(green);
+					papajohnsPizza.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Dominos") {
 					dominosPizza = new JButton(green);
+					dominosPizza.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "PizzaHut") {
 					pizzahutPizza = new JButton(green);
+					pizzahutPizza.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Black Jack") {
 					blackjackPizza = new JButton(green);
+					blackjackPizza.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Hungry Howie's") {
 					hungryhowiesPizza = new JButton(green);
+					hungryhowiesPizza.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Brooklyn's") {
 					brooklynPizza = new JButton(green);
+					brooklynPizza.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Pizza Planet") {
 					pizzaplanetPizza = new JButton(green);
+					pizzaplanetPizza.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Rawrville") {
 					rawrvilleDino = new JButton(green);
+					rawrvilleDino.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Laiegges") {
 					laieggesDino = new JButton(green);
+					laieggesDino.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Dactilito") {
 					dactilitoDino = new JButton(green);
+					dactilitoDino.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Dirtydan") {
 					dirtydanDino = new JButton(green);
+					dirtydanDino.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "BlackBeard") {
 					blackbeardDino = new JButton(green);
+					blackbeardDino.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Monisaurus") {
 					monisaurusDino = new JButton(green);
+					monisaurusDino.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "ToyStory") {
 					toystoryDino = new JButton(green);
+					toystoryDino.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Scraptopia") {
 					scraptopiaCresent = new JButton(green);
+					scraptopiaCresent.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Land of Zach") {
 					landofzachCresent = new JButton(green);
+					landofzachCresent.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Giant") {
 					giantCresent = new JButton(green);
+					giantCresent.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "New Land of Zach") {
 					newlandofzachCresent = new JButton(green);
+					newlandofzachCresent.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "South Scraptopia") {
 					southscraptopiaCresent = new JButton(green);
+					southscraptopiaCresent.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Bloo Bawl") {
 					bloobawlCresent = new JButton(green);
+					bloobawlCresent.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Cresent Capital") {
 					cresentcaptitalCresent = new JButton(green);
+					cresentcaptitalCresent.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Apollo") {
 					apolloSun = new JButton(green);
+					apolloSun.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Ra") {
 					raSun = new JButton(green);
+					raSun.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Helios") {
 					heliosSun = new JButton(green);
+					heliosSun.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Inti") {
 					intiSun = new JButton(green);
+					intiSun.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Horus") {
 					horusSun = new JButton(green);
+					horusSun.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Tonatiuh") {
-					tonatiuhSun = new JButton(yellow);
+					tonatiuhSun = new JButton(green);
+					tonatiuhSun.setName(startWindow.getPlayerName(1));
 				}
 				if (d.getName() == "Amun") {
 					amunSun = new JButton(green);
+					amunSun.setName(startWindow.getPlayerName(1));
 				}
-
 			}
-
 			for (Territory d : player3.getTerritories()) {
 				if (d.getName() == "Wilma") {
 					wilmaWildcat = new JButton(orange);
+					wilmaWildcat.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Zona") {
 					zonaWildcat = new JButton(orange);
+					zonaWildcat.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Wilber") {
 					wilberWildcat = new JButton(orange);
+					wilberWildcat.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Rich") {
 					richWildcat = new JButton(orange);
+					richWildcat.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Miller") {
 					millerWildcat = new JButton(orange);
+					millerWildcat.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "McKale") {
 					mckaleWildcat = new JButton(orange);
+					mckaleWildcat.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Scooby") {
 					scoobyWildcat = new JButton(orange);
+					scoobyWildcat.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Java") {
 					javaLanguage = new JButton(orange);
+					javaLanguage.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Python") {
 					pythonLanguage = new JButton(orange);
+					pythonLanguage.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "C") {
 					cLanguage = new JButton(orange);
+					cLanguage.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "SQL") {
 					sqlLanguage = new JButton(orange);
+					sqlLanguage.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Ruby") {
 					rubyLanguage = new JButton(orange);
+					rubyLanguage.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Perl") {
 					perlLanguage = new JButton(orange);
+					perlLanguage.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Git") {
 					gitLanguage = new JButton(orange);
+					gitLanguage.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Papa Johns") {
 					papajohnsPizza = new JButton(orange);
+					papajohnsPizza.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Dominos") {
 					dominosPizza = new JButton(orange);
+					dominosPizza.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "PizzaHut") {
 					pizzahutPizza = new JButton(orange);
+					pizzahutPizza.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Black Jack") {
 					blackjackPizza = new JButton(orange);
+					blackjackPizza.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Hungry Howie's") {
 					hungryhowiesPizza = new JButton(orange);
+					hungryhowiesPizza.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Brooklyn's") {
 					brooklynPizza = new JButton(orange);
+					brooklynPizza.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Pizza Planet") {
 					pizzaplanetPizza = new JButton(orange);
+					pizzaplanetPizza.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Rawrville") {
 					rawrvilleDino = new JButton(orange);
+					rawrvilleDino.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Laiegges") {
 					laieggesDino = new JButton(orange);
+					laieggesDino.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Dactilito") {
 					dactilitoDino = new JButton(orange);
+					dactilitoDino.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Dirtydan") {
 					dirtydanDino = new JButton(orange);
+					dirtydanDino.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "BlackBeard") {
 					blackbeardDino = new JButton(orange);
+					blackbeardDino.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Monisaurus") {
 					monisaurusDino = new JButton(orange);
+					monisaurusDino.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "ToyStory") {
 					toystoryDino = new JButton(orange);
+					toystoryDino.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Scraptopia") {
 					scraptopiaCresent = new JButton(orange);
+					scraptopiaCresent.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Land of Zach") {
 					landofzachCresent = new JButton(orange);
+					landofzachCresent.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Giant") {
 					giantCresent = new JButton(orange);
+					giantCresent.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "New Land of Zach") {
 					newlandofzachCresent = new JButton(orange);
+					newlandofzachCresent.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "South Scraptopia") {
 					southscraptopiaCresent = new JButton(orange);
+					southscraptopiaCresent.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Bloo Bawl") {
 					bloobawlCresent = new JButton(orange);
+					bloobawlCresent.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Cresent Capital") {
 					cresentcaptitalCresent = new JButton(orange);
+					cresentcaptitalCresent.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Apollo") {
 					apolloSun = new JButton(orange);
+					apolloSun.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Ra") {
 					raSun = new JButton(orange);
+					raSun.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Helios") {
 					heliosSun = new JButton(orange);
+					heliosSun.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Inti") {
 					intiSun = new JButton(orange);
+					intiSun.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Horus") {
 					horusSun = new JButton(orange);
+					horusSun.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Tonatiuh") {
 					tonatiuhSun = new JButton(orange);
+					tonatiuhSun.setName(startWindow.getPlayerName(2));
 				}
 				if (d.getName() == "Amun") {
 					amunSun = new JButton(orange);
+					amunSun.setName(startWindow.getPlayerName(2));
 				}
-
 			}
 		}
 		if (startWindow.getNumberOfPlayer() == 2) {
@@ -3306,16 +4063,21 @@ public class GameBoard extends JPanel {
 					cUnits += 1;
 					myLabel.setText("" + cUnits);
 					currPlayer.removeArmies(1);
-					if(startWindow.getPlayerAt(0)==currPlayer){playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(1)==currPlayer){playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(2)==currPlayer){playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(3)==currPlayer){playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(4)==currPlayer){playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(5)==currPlayer){playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-	
-					
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
 					currPlayer = newGame.nextPlayer();
-					
 
 					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 				}
@@ -3329,16 +4091,21 @@ public class GameBoard extends JPanel {
 					sqlUnits += 1;
 					myLabel.setText("" + sqlUnits);
 					currPlayer.removeArmies(1);
-					if(startWindow.getPlayerAt(0)==currPlayer){playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(1)==currPlayer){playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(2)==currPlayer){playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(3)==currPlayer){playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(4)==currPlayer){playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(5)==currPlayer){playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-	
-					
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
 					currPlayer = newGame.nextPlayer();
-					
 
 					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 				}
@@ -3352,16 +4119,21 @@ public class GameBoard extends JPanel {
 					rubyUnits += 1;
 					myLabel.setText("" + rubyUnits);
 					currPlayer.removeArmies(1);
-					if(startWindow.getPlayerAt(0)==currPlayer){playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(1)==currPlayer){playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(2)==currPlayer){playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(3)==currPlayer){playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(4)==currPlayer){playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(5)==currPlayer){playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-	
-					
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
 					currPlayer = newGame.nextPlayer();
-					
 
 					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 				}
@@ -3375,16 +4147,21 @@ public class GameBoard extends JPanel {
 					gitUnits += 1;
 					myLabel.setText("" + gitUnits);
 					currPlayer.removeArmies(1);
-					if(startWindow.getPlayerAt(0)==currPlayer){playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(1)==currPlayer){playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(2)==currPlayer){playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(3)==currPlayer){playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(4)==currPlayer){playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(5)==currPlayer){playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-	
-					
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
 					currPlayer = newGame.nextPlayer();
-					
 
 					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 				}
@@ -3398,56 +4175,1072 @@ public class GameBoard extends JPanel {
 					perlUnits += 1;
 					myLabel.setText("" + perlUnits);
 					currPlayer.removeArmies(1);
-					if(startWindow.getPlayerAt(0)==currPlayer){playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(1)==currPlayer){playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(2)==currPlayer){playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(3)==currPlayer){playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(4)==currPlayer){playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-					else if(startWindow.getPlayerAt(5)==currPlayer){playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");}
-	
-					
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
 					currPlayer = newGame.nextPlayer();
-					
 
 					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 				}
 			}
 		});
-		wilberWildcat.addActionListener(new buttonListener());
-		wilmaWildcat.addActionListener(new buttonListener());
-		richWildcat.addActionListener(new buttonListener());
-		millerWildcat.addActionListener(new buttonListener());
-		scoobyWildcat.addActionListener(new buttonListener());
-		mckaleWildcat.addActionListener(new buttonListener());
-		zonaWildcat.addActionListener(new buttonListener());
-		papajohnsPizza.addActionListener(new buttonListener());
-		dominosPizza.addActionListener(new buttonListener());
-		pizzahutPizza.addActionListener(new buttonListener());
-		blackjackPizza.addActionListener(new buttonListener());
-		hungryhowiesPizza.addActionListener(new buttonListener());
-		brooklynPizza.addActionListener(new buttonListener());
-		pizzaplanetPizza.addActionListener(new buttonListener());
-		apolloSun.addActionListener(new buttonListener());
-		raSun.addActionListener(new buttonListener());
-		heliosSun.addActionListener(new buttonListener());
-		intiSun.addActionListener(new buttonListener());
-		horusSun.addActionListener(new buttonListener());
-		tonatiuhSun.addActionListener(new buttonListener());
-		amunSun.addActionListener(new buttonListener());
-		rawrvilleDino.addActionListener(new buttonListener());
-		laieggesDino.addActionListener(new buttonListener());
-		dactilitoDino.addActionListener(new buttonListener());
-		dirtydanDino.addActionListener(new buttonListener());
-		blackbeardDino.addActionListener(new buttonListener());
-		monisaurusDino.addActionListener(new buttonListener());
-		toystoryDino.addActionListener(new buttonListener());
-		scraptopiaCresent.addActionListener(new buttonListener());
-		landofzachCresent.addActionListener(new buttonListener());
-		giantCresent.addActionListener(new buttonListener());
-		newlandofzachCresent.addActionListener(new buttonListener());
-		southscraptopiaCresent.addActionListener(new buttonListener());
-		bloobawlCresent.addActionListener(new buttonListener());
-		cresentcaptitalCresent.addActionListener(new buttonListener());
+		wilberWildcat.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && wilberWildcat.getName() == currPlayer.getName()) {
+					wilberUnits += 1;
+					myLabel.setText("" + wilberUnits);
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		wilmaWildcat.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && wilmaWildcat.getName() == currPlayer.getName()) {
+					wilmaUnits += 1;
+					myLabel.setText("" + wilmaUnits);
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		richWildcat.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && richWildcat.getName() == currPlayer.getName()) {
+					richUnits += 1;
+					myLabel.setText("" + richUnits);
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		millerWildcat.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && javaLanguage.getName() == currPlayer.getName()) {
+					javaUnits += 1;
+					myLabel.setText("" + javaUnits);
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		scoobyWildcat.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && javaLanguage.getName() == currPlayer.getName()) {
+					javaUnits += 1;
+					myLabel.setText("" + javaUnits);
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		mckaleWildcat.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && mckaleWildcat.getName() == currPlayer.getName()) {
+					mckaleUnits += 1;
+					myLabel.setText("" + mckaleUnits);
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		zonaWildcat.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && zonaWildcat.getName() == currPlayer.getName()) {
+					zonaUnits += 1;
+					myLabel.setText("" + zonaUnits);
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		papajohnsPizza.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && papajohnsPizza.getName() == currPlayer.getName()) {
+					pjUnits += 1;
+					myLabel.setText("" + pjUnits);
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		dominosPizza.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && dominosPizza.getName() == currPlayer.getName()) {
+					domUnits += 1;
+					myLabel.setText("" + domUnits);
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		pizzahutPizza.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && pizzahutPizza.getName() == currPlayer.getName()) {
+					phUnits += 1;
+					myLabel.setText("" + phUnits);
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		blackjackPizza.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && blackjackPizza.getName() == currPlayer.getName()) {
+					bjUnits += 1;
+					myLabel.setText("" + bjUnits);
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		hungryhowiesPizza.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && hungryhowiesPizza.getName() == currPlayer.getName()) {
+					hhUnits += 1;
+					myLabel.setText("" + hhUnits);
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		brooklynPizza.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && brooklynPizza.getName() == currPlayer.getName()) {
+					bUnits += 1;
+					myLabel.setText("" + bUnits);
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		pizzaplanetPizza.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && pizzaplanetPizza.getName() == currPlayer.getName()) {
+					ppUnits += 1;
+					myLabel.setText("" + ppUnits);
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		apolloSun.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && apolloSun.getName() == currPlayer.getName()) {
+					apolloUnits += 1;
+					myLabel.setText("" + apolloUnits);
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		raSun.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && raSun.getName() == currPlayer.getName()) {
+					raUnits += 1;
+					myLabel.setText("" + raUnits);
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		heliosSun.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && heliosSun.getName() == currPlayer.getName()) {
+					heliosUnits += 1;
+					myLabel.setText("" + heliosUnits);
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		intiSun.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && intiSun.getName() == currPlayer.getName()) {
+					intiUnits += 1;
+					myLabel.setText("" + intiUnits);
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		horusSun.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && horusSun.getName() == currPlayer.getName()) {
+					horusUnits += 1;
+					myLabel.setText("" + horusUnits);
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		tonatiuhSun.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && tonatiuhSun.getName() == currPlayer.getName()) {
+					tonatiuhUnits += 1;
+					myLabel.setText("" + tonatiuhUnits);
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		amunSun.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && amunSun.getName() == currPlayer.getName()) {
+					amunUnits += 1;
+					myLabel.setText("" + amunUnits);
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		rawrvilleDino.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && rawrvilleDino.getName() == currPlayer.getName()) {
+					rawrUnits += 1;
+					myLabel.setText("" + rawrUnits);
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		laieggesDino.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && laieggesDino.getName() == currPlayer.getName()) {
+					eggUnits += 1;
+					myLabel.setText("" + eggUnits);
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		dactilitoDino.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && dactilitoDino.getName() == currPlayer.getName()) {
+					dacUnits += 1;
+					myLabel.setText("" + dacUnits);
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		dirtydanDino.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && dirtydanDino.getName() == currPlayer.getName()) {
+					danUnits += 1;
+					myLabel.setText("" + danUnits);
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		blackbeardDino.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && blackbeardDino.getName() == currPlayer.getName()) {
+					bbUnits += 1;
+					myLabel.setText("" + bbUnits);
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		monisaurusDino.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && monisaurusDino.getName() == currPlayer.getName()) {
+					moniUnits += 1;
+					myLabel.setText("" + moniUnits);
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		toystoryDino.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+				if (currPlayer.getNumOfArmies() >= 1 && toystoryDino.getName() == currPlayer.getName()) {
+					tsUnits += 1;
+					myLabel.setText("" + tsUnits);
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+		});
+		scraptopiaCresent.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+
+				if (currPlayer.getNumOfArmies() >= 1 && scraptopiaCresent.getName() == currPlayer.getName()) {
+					scrapUnits += 1;
+					myLabel.setText("" + scrapUnits);
+
+				
+				if(reinforcementPhase==true)
+				{
+				if (currPlayer.getNumOfArmies() >= 1 && javaLanguage.getName() == currPlayer.getName()) {
+					javaUnits += 1;
+					myLabel.setText("" + javaUnits);
+
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+				}
+			}
+		});
+		landofzachCresent.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+
+				if (currPlayer.getNumOfArmies() >= 1 && landofzachCresent.getName() == currPlayer.getName()) {
+					zachUnits += 1;
+					myLabel.setText("" + zachUnits);
+
+				if(reinforcementPhase==true)
+				{
+				if (currPlayer.getNumOfArmies() >= 1 && pythonLanguage.getName() == currPlayer.getName()) {
+					pythonUnits += 1;
+					myLabel.setText("" + pythonUnits);
+
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+			}
+		});
+		giantCresent.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+
+				if (currPlayer.getNumOfArmies() >= 1 && giantCresent.getName() == currPlayer.getName()) {
+					giantUnits += 1;
+					myLabel.setText("" + giantUnits);
+
+				if(reinforcementPhase==true)
+				{
+				if (currPlayer.getNumOfArmies() >= 1 && cLanguage.getName() == currPlayer.getName()) {
+					cUnits += 1;
+					myLabel.setText("" + cUnits);
+
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+			}
+		});
+		newlandofzachCresent.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+<<<<<<< HEAD
+				if (currPlayer.getNumOfArmies() >= 1 && newlandofzachCresent.getName() == currPlayer.getName()) {
+					newzachUnits += 1;
+					myLabel.setText("" + newzachUnits);
+
+				if(reinforcementPhase==true)
+				{
+				if (currPlayer.getNumOfArmies() >= 1 && sqlLanguage.getName() == currPlayer.getName()) {
+					sqlUnits += 1;
+					myLabel.setText("" + sqlUnits);
+
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+			}
+		});
+		southscraptopiaCresent.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+
+				if (currPlayer.getNumOfArmies() >= 1 && southscraptopiaCresent.getName() == currPlayer.getName()) {
+					southUnits += 1;
+					myLabel.setText("" + southUnits);
+
+				if(reinforcementPhase==true)
+				{
+				if (currPlayer.getNumOfArmies() >= 1 && rubyLanguage.getName() == currPlayer.getName()) {
+					rubyUnits += 1;
+					myLabel.setText("" + rubyUnits);
+
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+			}
+		});
+		bloobawlCresent.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+
+				if (currPlayer.getNumOfArmies() >= 1 && bloobawlCresent.getName() == currPlayer.getName()) {
+					blooUnits += 1;
+					myLabel.setText("" + blooUnits);
+
+				if(reinforcementPhase==true)
+				{
+				if (currPlayer.getNumOfArmies() >= 1 && gitLanguage.getName() == currPlayer.getName()) {
+					gitUnits += 1;
+					myLabel.setText("" + gitUnits);
+
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+			}
+		});
+		cresentcaptitalCresent.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JButton myButton = (JButton) e.getSource();
+				JLabel myLabel = myMap.get(myButton);
+
+				if (currPlayer.getNumOfArmies() >= 1 && cresentcaptitalCresent.getName() == currPlayer.getName()) {
+					capUnits += 1;
+					myLabel.setText("" + capUnits);
+
+				if(reinforcementPhase==true)
+				{
+				if (currPlayer.getNumOfArmies() >= 1 && perlLanguage.getName() == currPlayer.getName()) {
+					perlUnits += 1;
+					myLabel.setText("" + perlUnits);
+
+					currPlayer.removeArmies(1);
+					if (startWindow.getPlayerAt(0) == currPlayer) {
+						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(1) == currPlayer) {
+						playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(2) == currPlayer) {
+						playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(3) == currPlayer) {
+						playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(4) == currPlayer) {
+						playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					} else if (startWindow.getPlayerAt(5) == currPlayer) {
+						playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					}
+
+					currPlayer = newGame.nextPlayer();
+
+					// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+				}
+			}
+			}
+		});
 
 		/// ALL OF LAUNGUAGE***
 		javaUnits = 1;
@@ -4181,124 +5974,7 @@ public class GameBoard extends JPanel {
 		this.add(tonatiuhSun);
 		this.add(amunSun);
 
-		// ALL FOR DINO***
-		rawrUnits = 0;
-		eggUnits = 0;
-		dacUnits = 0;
-		danUnits = 0;
-		bbUnits = 0;
-		moniUnits = 0;
-		tsUnits = 0;
-
-		dinoLabel1 = new JLabel("" + pjUnits);
-		dinoLabel2 = new JLabel("" + domUnits);
-		dinoLabel3 = new JLabel("" + phUnits);
-		dinoLabel4 = new JLabel("" + bjUnits);
-		dinoLabel5 = new JLabel("" + hhUnits);
-		dinoLabel6 = new JLabel("" + bUnits);
-		dinoLabel7 = new JLabel("" + ppUnits);
-
-		rawrvilleDino.addActionListener(new buttonListener());
-		laieggesDino.addActionListener(new buttonListener());
-		dactilitoDino.addActionListener(new buttonListener());
-		dirtydanDino.addActionListener(new buttonListener());
-		blackbeardDino.addActionListener(new buttonListener());
-		monisaurusDino.addActionListener(new buttonListener());
-		toystoryDino.addActionListener(new buttonListener());
-
-		rawrvilleDino.setSize(25, 25);
-		rawrvilleDino.setLocation(960, 224);
-		rawrvilleDino.setOpaque(false);
-		rawrvilleDino.setContentAreaFilled(false);
-		rawrvilleDino.setBorderPainted(false);
-
-		dinoLabel1.setSize(25, 25);
-		dinoLabel1.setFont(font);
-		dinoLabel1.setForeground(Color.BLACK);
-		dinoLabel1.setLocation(968, 227);
-		dinoLabel1.setOpaque(false);
-
-		laieggesDino.setSize(25, 25);
-		laieggesDino.setLocation(923, 241);
-		laieggesDino.setOpaque(false);
-		laieggesDino.setContentAreaFilled(false);
-		laieggesDino.setBorderPainted(false);
-
-		dinoLabel2.setSize(25, 25);
-		dinoLabel2.setFont(font);
-		dinoLabel2.setForeground(Color.BLACK);
-		dinoLabel2.setLocation(931, 244);
-		dinoLabel2.setOpaque(false);
-
-		dactilitoDino.setSize(25, 25);
-		dactilitoDino.setLocation(920, 325);
-		dactilitoDino.setOpaque(false);
-		dactilitoDino.setContentAreaFilled(false);
-		dactilitoDino.setBorderPainted(false);
-
-		dinoLabel3.setSize(25, 25);
-		dinoLabel3.setFont(font);
-		dinoLabel3.setForeground(Color.BLACK);
-		dinoLabel3.setLocation(928, 328);
-		dinoLabel3.setOpaque(false);
-
-		dirtydanDino.setSize(25, 25);
-		dirtydanDino.setLocation(868, 315);
-		dirtydanDino.setOpaque(false);
-		dirtydanDino.setContentAreaFilled(false);
-		dirtydanDino.setBorderPainted(false);
-
-		dinoLabel4.setSize(25, 25);
-		dinoLabel4.setFont(font);
-		dinoLabel4.setForeground(Color.BLACK);
-		dinoLabel4.setLocation(875, 318);
-		dinoLabel4.setOpaque(false);
-
-		blackbeardDino.setSize(25, 25);
-		blackbeardDino.setLocation(885, 358);
-		blackbeardDino.setOpaque(false);
-		blackbeardDino.setContentAreaFilled(false);
-		blackbeardDino.setBorderPainted(false);
-
-		dinoLabel5.setSize(25, 25);
-		dinoLabel5.setFont(font);
-		dinoLabel5.setForeground(Color.BLACK);
-		dinoLabel5.setLocation(893, 361);
-		dinoLabel5.setOpaque(false);
-
-		monisaurusDino.setSize(25, 25);
-		monisaurusDino.setLocation(845, 383);
-		monisaurusDino.setOpaque(false);
-		monisaurusDino.setContentAreaFilled(false);
-		monisaurusDino.setBorderPainted(false);
-
-		dinoLabel6.setSize(25, 25);
-		dinoLabel6.setFont(font);
-		dinoLabel6.setForeground(Color.BLACK);
-		dinoLabel6.setLocation(853, 386);
-		dinoLabel6.setOpaque(false);
-
-		toystoryDino.setSize(25, 25);
-		toystoryDino.setLocation(930, 408);
-		toystoryDino.setOpaque(false);
-		toystoryDino.setContentAreaFilled(false);
-		toystoryDino.setBorderPainted(false);
-
-		// myMap = new HashMap<JButton, JLabel>();
-		myMap.put(rawrvilleDino, dinoLabel1);
-		myMap.put(laieggesDino, dinoLabel2);
-		myMap.put(dactilitoDino, dinoLabel3);
-		myMap.put(dirtydanDino, dinoLabel4);
-		myMap.put(blackbeardDino, dinoLabel5);
-		myMap.put(monisaurusDino, dinoLabel6);
-		myMap.put(toystoryDino, dinoLabel7);
-
-		dinoLabel7.setSize(25, 25);
-		dinoLabel7.setFont(font);
-		dinoLabel7.setForeground(Color.BLACK);
-		dinoLabel7.setLocation(938, 411);
-		dinoLabel7.setOpaque(false);
-
+		
 		// add all lables
 		this.add(dinoLabel1);
 		this.add(dinoLabel2);
@@ -4317,124 +5993,7 @@ public class GameBoard extends JPanel {
 		this.add(monisaurusDino);
 		this.add(toystoryDino);
 
-		// ALL CRESENT**
-		scrapUnits = 0;
-		zachUnits = 0;
-		giantUnits = 0;
-		newzachUnits = 0;
-		southUnits = 0;
-		blooUnits = 0;
-		capUnits = 0;
-
-		cresentLabel1 = new JLabel("" + scrapUnits);
-		cresentLabel2 = new JLabel("" + zachUnits);
-		cresentLabel3 = new JLabel("" + giantUnits);
-		cresentLabel4 = new JLabel("" + newzachUnits);
-		cresentLabel5 = new JLabel("" + southUnits);
-		cresentLabel6 = new JLabel("" + blooUnits);
-		cresentLabel7 = new JLabel("" + capUnits);
-
-		scraptopiaCresent.addActionListener(new buttonListener());
-		landofzachCresent.addActionListener(new buttonListener());
-		giantCresent.addActionListener(new buttonListener());
-		newlandofzachCresent.addActionListener(new buttonListener());
-		southscraptopiaCresent.addActionListener(new buttonListener());
-		bloobawlCresent.addActionListener(new buttonListener());
-		cresentcaptitalCresent.addActionListener(new buttonListener());
-
-		scraptopiaCresent.setSize(25, 25);
-		scraptopiaCresent.setLocation(715, 334);
-		scraptopiaCresent.setOpaque(false);
-		scraptopiaCresent.setContentAreaFilled(false);
-		scraptopiaCresent.setBorderPainted(false);
-
-		cresentLabel1.setSize(25, 25);
-		cresentLabel1.setFont(font);
-		cresentLabel1.setForeground(Color.BLACK);
-		cresentLabel1.setLocation(723, 337);
-		cresentLabel1.setOpaque(false);
-
-		landofzachCresent.setSize(25, 25);
-		landofzachCresent.setLocation(750, 335);
-		landofzachCresent.setOpaque(false);
-		landofzachCresent.setContentAreaFilled(false);
-		landofzachCresent.setBorderPainted(false);
-
-		cresentLabel2.setSize(25, 25);
-		cresentLabel2.setFont(font);
-		cresentLabel2.setForeground(Color.BLACK);
-		cresentLabel2.setLocation(758, 338);
-		cresentLabel2.setOpaque(false);
-
-		giantCresent.setSize(25, 25);
-		giantCresent.setLocation(765, 298);
-		giantCresent.setOpaque(false);
-		giantCresent.setContentAreaFilled(false);
-		giantCresent.setBorderPainted(false);
-
-		cresentLabel3.setSize(25, 25);
-		cresentLabel3.setFont(font);
-		cresentLabel3.setForeground(Color.BLACK);
-		cresentLabel3.setLocation(773, 301);
-		cresentLabel3.setOpaque(false);
-
-		newlandofzachCresent.setSize(25, 25);
-		newlandofzachCresent.setLocation(790, 350);
-		newlandofzachCresent.setOpaque(false);
-		newlandofzachCresent.setContentAreaFilled(false);
-		newlandofzachCresent.setBorderPainted(false);
-
-		cresentLabel4.setSize(25, 25);
-		cresentLabel4.setFont(font);
-		cresentLabel4.setForeground(Color.BLACK);
-		cresentLabel4.setLocation(798, 353);
-		cresentLabel4.setOpaque(false);
-
-		southscraptopiaCresent.setSize(25, 25);
-		southscraptopiaCresent.setLocation(790, 320);
-		southscraptopiaCresent.setOpaque(false);
-		southscraptopiaCresent.setContentAreaFilled(false);
-		southscraptopiaCresent.setBorderPainted(false);
-
-		cresentLabel5.setSize(25, 25);
-		cresentLabel5.setFont(font);
-		cresentLabel5.setForeground(Color.BLACK);
-		cresentLabel5.setLocation(798, 323);
-		cresentLabel5.setOpaque(false);
-
-		bloobawlCresent.setSize(25, 25);
-		bloobawlCresent.setLocation(835, 310);
-		bloobawlCresent.setOpaque(false);
-		bloobawlCresent.setContentAreaFilled(false);
-		bloobawlCresent.setBorderPainted(false);
-
-		cresentLabel6.setSize(25, 25);
-		cresentLabel6.setFont(font);
-		cresentLabel6.setForeground(Color.BLACK);
-		cresentLabel6.setLocation(843, 313);
-		cresentLabel6.setOpaque(false);
-
-		cresentcaptitalCresent.setSize(25, 25);
-		cresentcaptitalCresent.setLocation(868, 285);
-		cresentcaptitalCresent.setOpaque(false);
-		cresentcaptitalCresent.setContentAreaFilled(false);
-		cresentcaptitalCresent.setBorderPainted(false);
-
-		// myMap = new HashMap<JButton, JLabel>();
-		myMap.put(scraptopiaCresent, cresentLabel1);
-		myMap.put(landofzachCresent, cresentLabel2);
-		myMap.put(giantCresent, cresentLabel3);
-		myMap.put(newlandofzachCresent, cresentLabel4);
-		myMap.put(southscraptopiaCresent, cresentLabel5);
-		myMap.put(bloobawlCresent, cresentLabel6);
-		myMap.put(cresentcaptitalCresent, cresentLabel7);
-
-		cresentLabel7.setSize(25, 25);
-		cresentLabel7.setFont(font);
-		cresentLabel7.setForeground(Color.BLACK);
-		cresentLabel7.setLocation(866, 288);
-		cresentLabel7.setOpaque(false);
-
+		
 		// add all lables
 		this.add(cresentLabel1);
 		this.add(cresentLabel2);
@@ -4453,41 +6012,7 @@ public class GameBoard extends JPanel {
 		this.add(bloobawlCresent);
 		this.add(cresentcaptitalCresent);
 
-		// add all lables
-		this.add(dinoLabel1);
-		this.add(dinoLabel2);
-		this.add(dinoLabel3);
-		this.add(dinoLabel4);
-		this.add(dinoLabel5);
-		this.add(dinoLabel6);
-		this.add(dinoLabel7);
 
-		// add all buttons
-		this.add(rawrvilleDino);
-		this.add(laieggesDino);
-		this.add(dactilitoDino);
-		this.add(dirtydanDino);
-		this.add(blackbeardDino);
-		this.add(monisaurusDino);
-		this.add(toystoryDino);
-
-		// add all lables
-		this.add(cresentLabel1);
-		this.add(cresentLabel2);
-		this.add(cresentLabel3);
-		this.add(cresentLabel4);
-		this.add(cresentLabel5);
-		this.add(cresentLabel6);
-		this.add(cresentLabel7);
-
-		// add all buttons
-		this.add(scraptopiaCresent);
-		this.add(landofzachCresent);
-		this.add(giantCresent);
-		this.add(newlandofzachCresent);
-		this.add(southscraptopiaCresent);
-		this.add(bloobawlCresent);
-		this.add(cresentcaptitalCresent);
 
 	}
 
@@ -4501,28 +6026,7 @@ public class GameBoard extends JPanel {
 			JLabel myLabel = myMap.get(myButton);
 
 			System.out.println(player1.getNumOfArmies());
-			// myButton.setIcon(red);
-			// add colors
-			// if(player1.deployArmy(territories) != null){
-			// myButton.setIcon(red);
-			// }
-			// if(startWindow.pCollection.getPlayer(2)){
-			// myButton.setIcon(blue);
-			// }
-			// if(startWindow.pCollection.getPlayer(3)){
-			// myButton.setIcon(purple);
-			// }
-			// if(startWindow.pCollection.getPlayer(4)){
-			// myButton.setIcon(orange);
-			// }
-			// if(startWindow.pCollection.getPlayer(5)){
-			// myButton.setIcon(yellow);
-			// }
-			// if(startWindow.pCollection.getPlayer(6)){
-			// myButton.setIcon(green);
-			// }
-			//
-
+			
 			if (myLabel != null) {
 				String curr = myLabel.getText();
 
