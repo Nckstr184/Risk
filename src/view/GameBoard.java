@@ -172,6 +172,9 @@ public class GameBoard extends JPanel {
 				try {
 					newGame = (GameLogic) input.readObject();
 					input.close();
+					
+					
+					
 					map = ImageIO.read(new File("./Pictures/map1.png"));
 
 					bottomDisplay = ImageIO.read(new File("./Pictures/bottomgui.png"));
