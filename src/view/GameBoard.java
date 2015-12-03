@@ -81,13 +81,8 @@ public class GameBoard extends JPanel {
 	OpenNewMenu newgame1;
 
 	GameLogic newGame;
-
 	private FileInputStream fis;
 	private ObjectInputStream input;
-
-	JLabel playerTag, playerTag2;
-
-
 
 	public GameBoard() {
 		
@@ -123,8 +118,8 @@ public class GameBoard extends JPanel {
 					map = ImageIO.read(new File("./Pictures/map1.png"));
 
 					bottomDisplay = ImageIO.read(new File("./Pictures/bottomgui.png"));
-					leftDisplay = ImageIO.read(new File("./Pictures/gui2n.png"));
-					rightDisplay = ImageIO.read(new File("./Pictures/gui2n.png"));
+					leftDisplay = ImageIO.read(new File("./Pictures/gui2.png"));
+					rightDisplay = ImageIO.read(new File("./Pictures/gui2.png"));
 
 					JLabel picLabel = new JLabel(new ImageIcon(map));
 					JLabel bottomLabel = new JLabel(new ImageIcon(bottomDisplay));
@@ -168,13 +163,12 @@ public class GameBoard extends JPanel {
 		}
 		
 		}
-		
 
 	}
 
 	private void playerTags() {
 		int numberOfPlayers;
-		
+		JLabel playerTag, playerTag2;
 		numberOfPlayers = startWindow.getNumberOfPlayer();
 		Font font = new Font("Verdana", Font.BOLD, 18);
 		Font font2 = new Font("Verdana", Font.BOLD, 9);
@@ -2972,10 +2966,8 @@ public class GameBoard extends JPanel {
 					javaUnits +=1;
 					myLabel.setText(""+ javaUnits);
 					currPlayer.removeArmies(1);	
-					System.out.println(currPlayer.getName().toString());
 					
-					newGame.nextPlayer();
-					System.out.println(currPlayer.getName().toString());
+					playerTags();
 					//ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 				}
 			}
@@ -2989,44 +2981,13 @@ public class GameBoard extends JPanel {
 					myLabel.setText(""+ pythonUnits);
 					currPlayer.removeArmies(1);	
 					
-					System.out.println(currPlayer.getName());
-					
-					newGame.nextPlayer();
-					System.out.println(currPlayer.getName());
+					playerTags();
 					//ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 				}
 			}
 		});
-		cLanguage.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JButton myButton = (JButton) e.getSource();
-				JLabel myLabel = myMap.get(myButton);
-				if(currPlayer.getNumOfArmies() >= 1 && cLanguage.getName() == currPlayer.getName()){
-					cUnits +=1;
-					myLabel.setText(""+ cUnits);
-					currPlayer.removeArmies(1);	
-					
-					System.out.println(currPlayer.getName());
-					
-					newGame.nextPlayer();
-					System.out.println(currPlayer.getName());
-				}
-			}
-		});
-		sqlLanguage.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JButton myButton = (JButton) e.getSource();
-				JLabel myLabel = myMap.get(myButton);
-				if(currPlayer.getNumOfArmies() >= 1 && sqlLanguage.getName() == currPlayer.getName()){
-					sqlUnits +=1;
-					myLabel.setText(""+ sqlUnits);
-					currPlayer.removeArmies(1);	
-					
-					newGame.nextPlayer();
-					//ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
-				}
-			}
-		});
+		cLanguage.addActionListener(new buttonListener());
+		sqlLanguage.addActionListener(new buttonListener());
 		rubyLanguage.addActionListener(new buttonListener());
 		gitLanguage.addActionListener(new buttonListener());
 		perlLanguage.addActionListener(new buttonListener());
@@ -3835,7 +3796,7 @@ public class GameBoard extends JPanel {
 
 				dinoLabel1.setSize(25, 25);
 				dinoLabel1.setFont(font);
-				dinoLabel1.setForeground(Color.BLACK);
+				dinoLabel1.setForeground(Color.WHITE);
 				dinoLabel1.setLocation(968, 227);
 				dinoLabel1.setOpaque(false);
 
@@ -3847,7 +3808,7 @@ public class GameBoard extends JPanel {
 
 				dinoLabel2.setSize(25, 25);
 				dinoLabel2.setFont(font);
-				dinoLabel2.setForeground(Color.BLACK);
+				dinoLabel2.setForeground(Color.WHITE);
 				dinoLabel2.setLocation(931, 244);
 				dinoLabel2.setOpaque(false);
 
@@ -3859,7 +3820,7 @@ public class GameBoard extends JPanel {
 
 				dinoLabel3.setSize(25, 25);
 				dinoLabel3.setFont(font);
-				dinoLabel3.setForeground(Color.BLACK);
+				dinoLabel3.setForeground(Color.WHITE);
 				dinoLabel3.setLocation(928, 328);
 				dinoLabel3.setOpaque(false);
 
@@ -3871,7 +3832,7 @@ public class GameBoard extends JPanel {
 
 				dinoLabel4.setSize(25, 25);
 				dinoLabel4.setFont(font);
-				dinoLabel4.setForeground(Color.BLACK);
+				dinoLabel4.setForeground(Color.WHITE);
 				dinoLabel4.setLocation(875, 318);
 				dinoLabel4.setOpaque(false);
 
@@ -3883,7 +3844,7 @@ public class GameBoard extends JPanel {
 
 				dinoLabel5.setSize(25, 25);
 				dinoLabel5.setFont(font);
-				dinoLabel5.setForeground(Color.BLACK);
+				dinoLabel5.setForeground(Color.WHITE);
 				dinoLabel5.setLocation(893, 361);
 				dinoLabel5.setOpaque(false);
 
@@ -3895,7 +3856,7 @@ public class GameBoard extends JPanel {
 
 				dinoLabel6.setSize(25, 25);
 				dinoLabel6.setFont(font);
-				dinoLabel6.setForeground(Color.BLACK);
+				dinoLabel6.setForeground(Color.WHITE);
 				dinoLabel6.setLocation(853, 386);
 				dinoLabel6.setOpaque(false);
 
@@ -3916,7 +3877,7 @@ public class GameBoard extends JPanel {
 
 				dinoLabel7.setSize(25, 25);
 				dinoLabel7.setFont(font);
-				dinoLabel7.setForeground(Color.BLACK);
+				dinoLabel7.setForeground(Color.WHITE);
 				dinoLabel7.setLocation(938, 411);
 				dinoLabel7.setOpaque(false);
 
@@ -3974,7 +3935,7 @@ public class GameBoard extends JPanel {
 
 				cresentLabel1.setSize(25, 25);
 				cresentLabel1.setFont(font);
-				cresentLabel1.setForeground(Color.BLACK);
+				cresentLabel1.setForeground(Color.WHITE);
 				cresentLabel1.setLocation(723, 337);
 				cresentLabel1.setOpaque(false);
 
@@ -3986,7 +3947,7 @@ public class GameBoard extends JPanel {
 
 				cresentLabel2.setSize(25, 25);
 				cresentLabel2.setFont(font);
-				cresentLabel2.setForeground(Color.BLACK);
+				cresentLabel2.setForeground(Color.WHITE);
 				cresentLabel2.setLocation(758, 338);
 				cresentLabel2.setOpaque(false);
 
@@ -3998,7 +3959,7 @@ public class GameBoard extends JPanel {
 
 				cresentLabel3.setSize(25, 25);
 				cresentLabel3.setFont(font);
-				cresentLabel3.setForeground(Color.BLACK);
+				cresentLabel3.setForeground(Color.WHITE);
 				cresentLabel3.setLocation(773, 301);
 				cresentLabel3.setOpaque(false);
 
@@ -4010,7 +3971,7 @@ public class GameBoard extends JPanel {
 
 				cresentLabel4.setSize(25, 25);
 				cresentLabel4.setFont(font);
-				cresentLabel4.setForeground(Color.BLACK);
+				cresentLabel4.setForeground(Color.WHITE);
 				cresentLabel4.setLocation(798, 353);
 				cresentLabel4.setOpaque(false);
 
@@ -4022,7 +3983,7 @@ public class GameBoard extends JPanel {
 
 				cresentLabel5.setSize(25, 25);
 				cresentLabel5.setFont(font);
-				cresentLabel5.setForeground(Color.BLACK);
+				cresentLabel5.setForeground(Color.WHITE);
 				cresentLabel5.setLocation(798, 323);
 				cresentLabel5.setOpaque(false);
 
@@ -4034,7 +3995,7 @@ public class GameBoard extends JPanel {
 
 				cresentLabel6.setSize(25, 25);
 				cresentLabel6.setFont(font);
-				cresentLabel6.setForeground(Color.BLACK);
+				cresentLabel6.setForeground(Color.WHITE);
 				cresentLabel6.setLocation(843, 313);
 				cresentLabel6.setOpaque(false);
 
@@ -4055,7 +4016,7 @@ public class GameBoard extends JPanel {
 
 				cresentLabel7.setSize(25, 25);
 				cresentLabel7.setFont(font);
-				cresentLabel7.setForeground(Color.BLACK);
+				cresentLabel7.setForeground(Color.WHITE);
 				cresentLabel7.setLocation(866, 288);
 				cresentLabel7.setOpaque(false);
 
