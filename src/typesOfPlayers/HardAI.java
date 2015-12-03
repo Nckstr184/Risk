@@ -30,21 +30,19 @@ public class HardAI extends Player implements AIStrategy {
 		int armySum;
 		int indexOfHighest = 0;
 		Player temp;
-		ArrayList<Territory> neighbors= new ArrayList<Territory>();
-		ArrayList<Object> returns=new ArrayList<Object>();
+		ArrayList<Territory> neighbors = new ArrayList<Territory>();
+		ArrayList<Object> returns = new ArrayList<Object>();
 		for (int i = 0; i < getTerritories().size(); i++) {
 			neighbors = getTerritories().get(i).getNeighbors();
 			armySum = 0;
 			for (int j = 0; j < neighbors.size(); j++) {
-				temp=neighbors.get(j).getOwner();
-				if(!temp.getName().equals(this.getName()))
-				{
+				temp = neighbors.get(j).getOwner();
+				if (!temp.getName().equals(this.getName())) {
 					for (int neighborIndex = 0; neighborIndex < neighbors.size(); neighborIndex++) {
-						if(temp.getName().equals(neighbors.get(neighborIndex).getName()))
-						{
-						armySum += neighbors.get(j).getUnits();
+						if (temp.getName().equals(neighbors.get(neighborIndex).getName())) {
+							armySum += neighbors.get(j).getUnits();
 						}
-				}
+					}
 				}
 			}
 			if (highestNumberOfArmies < armySum) {
@@ -54,13 +52,13 @@ public class HardAI extends Player implements AIStrategy {
 		}
 		System.out.println(getTerritories().size());
 		System.out.println(indexOfHighest);
-		
+
 		returns.add(getTerritories().get(indexOfHighest));
 		returns.add(highestNumberOfArmies);
-		
+
 		return returns;
 	}
-	
+
 	private ArrayList<Object> deployArmy(ArrayList<Territory> territories) {
 		/*
 		 * Use the total number of enemy armies surrounding the territory to
@@ -71,36 +69,37 @@ public class HardAI extends Player implements AIStrategy {
 		int highestNumberOfArmies = 0;
 		int armySum;
 		int indexOfHighest = 0;
-		Player temp;
-		ArrayList<Territory> neighbors= new ArrayList<Territory>();
-		ArrayList<Object> returns=new ArrayList<Object>();
+		int armyDifference=0;
+		Territory temp;
+		Player tempPlayer;
+		ArrayList<Territory> neighbors = new ArrayList<Territory>();
+		ArrayList<Object> returns = new ArrayList<Object>();
 		for (int i = 0; i < territories.size(); i++) {
-			neighbors = territories.get(i).getNeighbors();
+			temp=territories.get(i);
+			neighbors = temp.getNeighbors();
 			armySum = 0;
 			for (int j = 0; j < neighbors.size(); j++) {
-				temp=neighbors.get(j).getOwner();
-				if(!temp.getName().equals(this.getName()))
-				{
-					for (int neighborIndex = 0; neighborIndex < neighbors.size(); neighborIndex++) {
-						if(temp.getName().equals(neighbors.get(neighborIndex).getName()))
-						{
-						armySum += neighbors.get(j).getUnits();
-						}
+				tempPlayer = neighbors.get(j).getOwner();
+				if (!temp.getName().equals(this.getName())) {
+
+					armySum += neighbors.get(j).getUnits();
 				}
-				}
+
 			}
-			if (highestNumberOfArmies < armySum) {
-				highestNumberOfArmies = armySum;
+			armyDifference=armySum-temp.getUnits();
+
+			if (highestNumberOfArmies < armyDifference) {
+				highestNumberOfArmies = armyDifference;
 				indexOfHighest = i;
 			}
 		}
-		System.out.println(territories.size());
-		System.out.println(indexOfHighest);
 		
+
 		returns.add(territories.get(indexOfHighest));
 		returns.add(highestNumberOfArmies);
-		
+
 		return returns;
+
 	}
 
 	@Override
@@ -136,11 +135,15 @@ public class HardAI extends Player implements AIStrategy {
 		 */
 		int lowestNumberOfArmies = 0;
 		int indexOfLowest = 0;
-
+		Territory temp;
 		for (int i = 0; i < connected.size(); i++) {
-			if (lowestNumberOfArmies < connected.get(i).getUnits()) {
+			temp=connected.get(i);
+			if (lowestNumberOfArmies < temp.getUnits()&&!(temp.getName().equals(currentTerr.getOwner().getName()))) {
+				if(temp.getUnits()<currentTerr.getUnits())
+				{
 				lowestNumberOfArmies = connected.get(i).getUnits();
 				indexOfLowest = i;
+				}
 			}
 		}
 
@@ -170,25 +173,39 @@ public class HardAI extends Player implements AIStrategy {
 		 * territoryAndArmyNum.add(NumberOfArmiesToMove);
 		 */
 		ArrayList<Territory> friendlyConnected = new ArrayList<Territory>();
-		ArrayList<Object> territoryAndArmyNum = new ArrayList<Object>();
-		ArrayList<Object> deployTerrAndArmy= new ArrayList<Object>();
+		ArrayList<Object> deployTerrAndArmy = new ArrayList<Object>();
+		ArrayList<Territory> enemies = new ArrayList<Territory>();
+
 
 		for (int i = 0; i < connected.size(); i++) {
 			if (connected.get(i).getOwner().getName().equals(currentTerr.getOwner().getName())) {
 				friendlyConnected.add(connected.get(i));
 			}
-		}
-
-		
-		deployTerrAndArmy = deployArmy(friendlyConnected);
-
-		Territory checkNumAtTerr = attackTerritory(currentTerr, friendlyConnected);
-		if (checkNumAtTerr != null) {
-			if (currentTerr.getUnits() - checkNumAtTerr.getUnits() > 3) {
-
+			if(!connected.get(i).getOwner().getName().equals(currentTerr.getOwner().getName())&&!enemies.contains(connected.get(i)))
+			{
+				enemies.add(connected.get(i));
 			}
 		}
-		return territoryAndArmyNum;
+
+		deployTerrAndArmy = deployArmy(friendlyConnected);
+		int totalEnemiesSorrounding;
+		Player currentEnemy;
+		for (int i = 0; i < enemies.size(); i++) {
+			currentEnemy=enemies.get(i).getOwner();
+			int totalEnemyUnits=0;
+			for (int j = 0; j < enemies.size(); j++) {
+			if(currentEnemy.getName().equals(enemies.get(j)))
+			{
+				totalEnemyUnits+=enemies.get(j).getUnits();
+			}
+				
+			}
+			if(currentTerr.getUnits()<totalEnemyUnits)
+			{
+				deployTerrAndArmy.set(1, 0);
+			}
+		}
+		return deployTerrAndArmy;
 	}
 
 }
