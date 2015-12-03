@@ -4362,9 +4362,9 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-				if (currPlayer.getNumOfArmies() >= 1 && javaLanguage.getName() == currPlayer.getName()) {
-					javaUnits += 1;
-					myLabel.setText("" + javaUnits);
+				if (currPlayer.getNumOfArmies() >= 1 && millerWildcat.getName() == currPlayer.getName()) {
+					millerUnits += 1;
+					myLabel.setText("" + millerUnits);
 					currPlayer.removeArmies(1);
 					if (startWindow.getPlayerAt(0) == currPlayer) {
 						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
@@ -4400,9 +4400,9 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-				if (currPlayer.getNumOfArmies() >= 1 && javaLanguage.getName() == currPlayer.getName()) {
-					javaUnits += 1;
-					myLabel.setText("" + javaUnits);
+				if (currPlayer.getNumOfArmies() >= 1 && scoobyWildcat.getName() == currPlayer.getName()) {
+					scoobyUnits += 1;
+					myLabel.setText("" + scoobyUnits);
 					currPlayer.removeArmies(1);
 					if (startWindow.getPlayerAt(0) == currPlayer) {
 						playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
@@ -6032,13 +6032,13 @@ public class GameBoard extends JPanel {
 		moniUnits = 1;
 		tsUnits = 1;
 
-		dinoLabel1 = new JLabel("" + pjUnits);
-		dinoLabel2 = new JLabel("" + domUnits);
-		dinoLabel3 = new JLabel("" + phUnits);
-		dinoLabel4 = new JLabel("" + bjUnits);
-		dinoLabel5 = new JLabel("" + hhUnits);
-		dinoLabel6 = new JLabel("" + bUnits);
-		dinoLabel7 = new JLabel("" + ppUnits);
+		dinoLabel1 = new JLabel("" + rawrUnits);
+		dinoLabel2 = new JLabel("" + eggUnits);
+		dinoLabel3 = new JLabel("" + dacUnits);
+		dinoLabel4 = new JLabel("" + danUnits);
+		dinoLabel5 = new JLabel("" + bbUnits);
+		dinoLabel6 = new JLabel("" + moniUnits);
+		dinoLabel7 = new JLabel("" + tsUnits);
 
 		rawrvilleDino.setSize(25, 25);
 		rawrvilleDino.setLocation(960, 224);
