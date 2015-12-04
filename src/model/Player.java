@@ -69,8 +69,11 @@ public abstract class Player implements Serializable{
 	public void removeTerritory(Territory removedTerritory) {
 		for (int index = 0; index < playerTerritories.size(); index++) {
 			String temp = playerTerritories.get(index).getName();
+			if(temp!=null)
+			{
 			if (removedTerritory.getName().equals(temp)) {
 				playerTerritories.remove(index);
+			}
 			}
 		}
 	}

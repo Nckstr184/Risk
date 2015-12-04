@@ -32,6 +32,7 @@ public class PlayerTest {
 		assertEquals(1, tList.size());
 		assertEquals(1, cList.size());
 		test.removeTerritory(tempT);
+		tList=test.getTerritories();
 		assertEquals(0, tList.size());
 		assertEquals(0, cList.size());
 		test.setDiceRoll(1);

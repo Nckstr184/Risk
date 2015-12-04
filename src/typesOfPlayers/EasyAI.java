@@ -9,6 +9,10 @@ import model.Territory;
 
 public class EasyAI extends Player implements AIStrategy {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7374548339574929945L;
 	Random r;
 	int randomChoice, numOfArmies;
 	ArrayList<Territory> territories;
