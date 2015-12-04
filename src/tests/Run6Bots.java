@@ -26,7 +26,7 @@ public class Run6Bots {
 		Player ai5 = new HardAI("hard5", Color.CYAN, 20);
 		Player ai6 = new HardAI("hard6", Color.GRAY, 20);
 
-		GameLogic gameLogic = new GameLogic();
+		GameLogic gameLogic = new GameLogic(ai1, ai2, ai3, ai4, ai5, ai6);
 		BattleLogic battleLogic;
 		gameLogic.addPlayers(ai6);
 		gameLogic.addPlayers(ai5);
