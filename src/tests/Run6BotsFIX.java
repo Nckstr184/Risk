@@ -49,7 +49,7 @@ public class Run6BotsFIX {
 			Player hard5 = new HardAI("hard5", Color.RED, 0);
 			Player hard6 = new HardAI("hard6", Color.RED, 0);
 			Player currPlayer = null;
-			GameLogic gameLogic = new GameLogic(easy1, easy2, easy3, medium4, medium5, medium6);
+			GameLogic gameLogic = new GameLogic(easy1, easy2, medium3, medium4, hard5, hard6);
 			BattleLogic battleLogic;
 			int turnCount = -1;
 
@@ -148,8 +148,8 @@ public class Run6BotsFIX {
 				}
 			}
 
-			if(i == 249 || i == 499 || i == 749 || i > 993)
-				System.out.println("Game " + i+1 + " Over!");
+			if (i == 249 || i == 499 || i == 749 || i > 993)
+				System.out.println("Game " + i + 1 + " Over!");
 
 			/*
 			 * if (currPlayer.getName().equals("easy1") ||
@@ -160,17 +160,16 @@ public class Run6BotsFIX {
 			 * currPlayer.getName().equals("medium3")) { mediumCount++; }
 			 */
 
-			if (playerIndexOfHighestTerr == 0 || playerIndexOfHighestTerr == 1 || playerIndexOfHighestTerr == 2) {
+			if (playerIndexOfHighestTerr == 0 || playerIndexOfHighestTerr == 1) {
 				easyCount++;
 			}
-			if (/* playerIndexOfHighestTerr == 2 || */playerIndexOfHighestTerr == 3 || playerIndexOfHighestTerr == 4
-					|| playerIndexOfHighestTerr == 5) {
+			if (playerIndexOfHighestTerr == 2 || playerIndexOfHighestTerr == 3) {
 				mediumCount++;
 			}
-			/*
-			 * if(playerIndexOfHighestTerr == 4 || playerIndexOfHighestTerr ==
-			 * 5) { hardCount++; }
-			 */
+
+			if (playerIndexOfHighestTerr == 4 || playerIndexOfHighestTerr == 5) {
+				hardCount++;
+			}
 
 		}
 
