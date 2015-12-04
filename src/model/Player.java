@@ -142,19 +142,11 @@ public abstract class Player implements Serializable{
 	public void startGame() {
 	}
 
-	public ArrayList<Object> deployArmy() {
-		return null;
-	}
+	abstract public ArrayList<Object> deployArmy();
 
-	public boolean chooseRetreat(Territory currentTerr) {
-		return false;
-	}
+	abstract public boolean chooseRetreat(Territory currentTerr);
 
-	public Territory attackTerritory(Territory currentTerr, ArrayList<Territory> connected) {
-		return null;
-	}
+	abstract public Territory attackTerritory(Territory currentTerr, ArrayList<Territory> connected);
 
-	public ArrayList<Object> fortifyPosition(Territory currentTerr, ArrayList<Territory> connected) {
-		return null;
-	}
+	abstract public ArrayList<Object> fortifyPosition(Territory currentTerr, ArrayList<Territory> connected);
 }

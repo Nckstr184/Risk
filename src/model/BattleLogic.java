@@ -17,7 +17,26 @@ public class BattleLogic {
 		this.attackingTerritory = attackingTerritory;
 		this.defendingTerritory = defendingTerritory;
 	}
+	
+	public Player getAttacker()
+	{
+		return this.attacker;
+	}
 
+	public Player getDefender()
+	{
+		return this.defender;
+	}
+	
+	public Territory getAttackingTerritory()
+	{
+		return this.attackingTerritory;
+	}
+
+	public Territory getDefendingTerritory()
+	{
+		return this.defendingTerritory;
+	}
 	public void attackPlayer(int numOfAttackDice, int numOfDefendDice) {
 
 		this.numOfAttackDice = numOfAttackDice;

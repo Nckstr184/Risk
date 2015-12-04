@@ -38,16 +38,12 @@ public class GameLogicTest {
 		GameLogic logic= new GameLogic(human, human2, human3, human4, null, null);
 		
 		cTerritories=logic.getTerritories();
-		logic.addPlayers(human);
-		logic.addPlayers(human2);
-		logic.addPlayers(human3);
-		logic.addPlayers(human4);
 		assertEquals(42, cTerritories.size());
 		assertEquals(human, logic.getPlayerAt(0));
 		logic.startGame();
 		assertEquals(human, logic.getPlayerAt(0));
 		
-		assertEquals(logic.getNumOfPlayers(), 4);
+		assertEquals(4, logic.getNumOfPlayers());
 		logic.removePlayer(human);
 		assertEquals(logic.getNumOfPlayers(), 3);
 	}
