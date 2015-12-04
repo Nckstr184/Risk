@@ -29,7 +29,7 @@ import model.Territory;
 
 public class GameBoard extends JPanel {
 
-	boolean reinforcementPhase;
+	boolean reinforcementPhase, attackPhase;
 	HashMap<JButton, JLabel> myMap;
 	ArrayList<Continent> continents;
 	ArrayList<Territory> territories;
@@ -100,6 +100,7 @@ public class GameBoard extends JPanel {
 			e.printStackTrace();
 		}
 		reinforcementPhase = true;
+		attackPhase = false;
 
 		newgame1 = new OpenNewMenu();
 		while (newgame1.isDisplayable()) {
@@ -174,6 +175,7 @@ public class GameBoard extends JPanel {
 							add(picLabel, BorderLayout.CENTER);
 							add(leftLabel, BorderLayout.WEST);
 							add(rightLabel, BorderLayout.EAST);
+							
 
 							add(bottomLabel, BorderLayout.SOUTH);
 							newGame = (GameLogic) input.readObject();
@@ -473,7 +475,9 @@ public class GameBoard extends JPanel {
 			add(playerCount2);
 		}
 	}
-
+public void startOldGame(){
+	
+}
 	public void startNewGame() {
 		newGame = new GameLogic(startWindow.playerOne, startWindow.playerTwo, startWindow.playerThree,
 				startWindow.playerFour, startWindow.playerFive, startWindow.playerSix);
@@ -6378,6 +6382,7 @@ System.out.println(currPlayer.getName());
 		if(playersDone==newGame.getNumOfPlayers())
 		{
 			reinforcementPhase=false;
+			attackPhase = true;
 		}
 		
 	}
