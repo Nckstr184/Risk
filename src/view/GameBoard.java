@@ -174,6 +174,7 @@ public class GameBoard extends JPanel {
 							add(picLabel, BorderLayout.CENTER);
 							add(leftLabel, BorderLayout.WEST);
 							add(rightLabel, BorderLayout.EAST);
+							
 
 							add(bottomLabel, BorderLayout.SOUTH);
 							newGame = (GameLogic) input.readObject();
@@ -455,7 +456,9 @@ public class GameBoard extends JPanel {
 			add(playerCount2);
 		}
 	}
-
+public void startOldGame(){
+	
+}
 	public void startNewGame() {
 		newGame = new GameLogic(startWindow.playerOne, startWindow.playerTwo, startWindow.playerThree,
 				startWindow.playerFour, startWindow.playerFive, startWindow.playerSix);
