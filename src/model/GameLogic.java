@@ -59,7 +59,7 @@ public class GameLogic implements Serializable{
 			allPlayers.addPlayers(p6);
 		}
 		
-		playerTurn = allPlayers.getNumOfPlayers() - 1;
+		playerTurn = allPlayers.getNumOfPlayers()-1;
 
 		languages = new Languages("languages", false);
 		dino = new Dino("dino", false);
