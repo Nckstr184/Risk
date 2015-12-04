@@ -3992,6 +3992,10 @@ public void startOldGame(){
 
 		}
 currPlayer = newGame.nextPlayer();
+
+
+
+
 		javaLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
