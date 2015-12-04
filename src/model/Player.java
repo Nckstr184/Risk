@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Player implements Serializable{
+public abstract class Player implements Serializable {
 
 	/**
 	 * 
@@ -40,9 +40,10 @@ public abstract class Player implements Serializable{
 	public void addArmies(int numArmies) {
 		numOfArmies += numArmies;
 	}
-	
+
 	public void removeArmies(int numArmies) {
-		//System.out.println("This should print as many times as the number above");
+		// System.out.println("This should print as many times as the number
+		// above");
 		numOfArmies -= numArmies;
 	}
 
@@ -69,15 +70,14 @@ public abstract class Player implements Serializable{
 	public void removeTerritory(Territory removedTerritory) {
 		for (int index = 0; index < playerTerritories.size(); index++) {
 			String temp = playerTerritories.get(index).getName();
-			if(temp!=null)
-			{
-			if (removedTerritory.getName().equals(temp)) {
-				playerTerritories.remove(index);
-			}
+			if (temp != null) {
+				if (removedTerritory.getName().equals(temp)) {
+					playerTerritories.remove(index);
+				}
 			}
 		}
 	}
-	
+
 	public void removeCard(List<Card> removeTheseCards) {
 		for (int i = 0; i < removeTheseCards.size(); i++) {
 			int index = playerCards.indexOf(removeTheseCards.get(i));
@@ -142,8 +142,7 @@ public abstract class Player implements Serializable{
 		return false;
 	}
 
-	public void startGame() {
-	}
+	abstract public void startGame();
 
 	abstract public ArrayList<Object> deployArmy();
 

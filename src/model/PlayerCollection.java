@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 public class PlayerCollection implements Serializable {
 
-	
 	/**
 	 * 
 	 */
@@ -22,6 +21,7 @@ public class PlayerCollection implements Serializable {
 	public void removePlayer(Player player) {
 		playerList.remove(playerList.indexOf(player));
 	}
+
 	public boolean addPlayers(Player player) {
 		if (playerList.size() < 6) {
 			playerList.add(player);
@@ -33,11 +33,11 @@ public class PlayerCollection implements Serializable {
 	public Player getPlayer(int index) {
 		return playerList.get(index);
 	}
-	
+
 	public void setPlayerList(ArrayList<Player> playerList) {
 		this.playerList = playerList;
 	}
-	
+
 	public int getNumOfPlayers() {
 		return playerList.size();
 	}

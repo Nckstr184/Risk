@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import javax.swing.JButton;
 
-public class Territory implements Serializable{
+public class Territory implements Serializable {
 
 	/**
 	 * 
@@ -78,9 +78,9 @@ public class Territory implements Serializable{
 	}
 
 	public void removeUnits(int unitNum) {
-		//System.out.print(tname + "'s units have changed from " + units);
+		// System.out.print(tname + "'s units have changed from " + units);
 		units -= unitNum;
-		//System.out.println(" to " + units);
+		// System.out.println(" to " + units);
 	}
 
 	public int getUnits() {

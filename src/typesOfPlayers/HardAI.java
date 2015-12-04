@@ -74,13 +74,13 @@ public class HardAI extends Player implements AIStrategy {
 		int highestNumberOfArmies = 0;
 		int armySum;
 		int indexOfHighest = 0;
-		int armyDifference=0;
+		int armyDifference = 0;
 		Territory temp;
 		Player tempPlayer;
 		ArrayList<Territory> neighbors = new ArrayList<Territory>();
 		ArrayList<Object> returns = new ArrayList<Object>();
 		for (int i = 0; i < territories.size(); i++) {
-			temp=territories.get(i);
+			temp = territories.get(i);
 			neighbors = temp.getNeighbors();
 			armySum = 0;
 			for (int j = 0; j < neighbors.size(); j++) {
@@ -90,14 +90,13 @@ public class HardAI extends Player implements AIStrategy {
 				}
 
 			}
-			armyDifference=armySum-temp.getUnits();
+			armyDifference = armySum - temp.getUnits();
 
 			if (highestNumberOfArmies < armyDifference) {
 				highestNumberOfArmies = armyDifference;
 				indexOfHighest = i;
 			}
 		}
-		
 
 		returns.add(territories.get(indexOfHighest));
 		returns.add(highestNumberOfArmies);
@@ -141,12 +140,11 @@ public class HardAI extends Player implements AIStrategy {
 		int indexOfLowest = 0;
 		Territory temp;
 		for (int i = 0; i < connected.size(); i++) {
-			temp=connected.get(i);
-			if (lowestNumberOfArmies < temp.getUnits()&&!(temp.getName().equals(currentTerr.getOwner().getName()))) {
-				if(temp.getUnits()<currentTerr.getUnits())
-				{
-				lowestNumberOfArmies = connected.get(i).getUnits();
-				indexOfLowest = i;
+			temp = connected.get(i);
+			if (lowestNumberOfArmies < temp.getUnits() && !(temp.getName().equals(currentTerr.getOwner().getName()))) {
+				if (temp.getUnits() < currentTerr.getUnits()) {
+					lowestNumberOfArmies = connected.get(i).getUnits();
+					indexOfLowest = i;
 				}
 			}
 		}
@@ -180,13 +178,12 @@ public class HardAI extends Player implements AIStrategy {
 		ArrayList<Object> deployTerrAndArmy = new ArrayList<Object>();
 		ArrayList<Territory> enemies = new ArrayList<Territory>();
 
-
 		for (int i = 0; i < connected.size(); i++) {
 			if (connected.get(i).getOwner().getName().equals(currentTerr.getOwner().getName())) {
 				friendlyConnected.add(connected.get(i));
 			}
-			if(!connected.get(i).getOwner().getName().equals(currentTerr.getOwner().getName())&&!enemies.contains(connected.get(i)))
-			{
+			if (!connected.get(i).getOwner().getName().equals(currentTerr.getOwner().getName())
+					&& !enemies.contains(connected.get(i))) {
 				enemies.add(connected.get(i));
 			}
 		}
@@ -195,21 +192,25 @@ public class HardAI extends Player implements AIStrategy {
 		int totalEnemiesSorrounding;
 		Player currentEnemy;
 		for (int i = 0; i < enemies.size(); i++) {
-			currentEnemy=enemies.get(i).getOwner();
-			int totalEnemyUnits=0;
+			currentEnemy = enemies.get(i).getOwner();
+			int totalEnemyUnits = 0;
 			for (int j = 0; j < enemies.size(); j++) {
-			if(currentEnemy.getName().equals(enemies.get(j)))
-			{
-				totalEnemyUnits+=enemies.get(j).getUnits();
+				if (currentEnemy.getName().equals(enemies.get(j))) {
+					totalEnemyUnits += enemies.get(j).getUnits();
+				}
+
 			}
-				
-			}
-			if(currentTerr.getUnits()<totalEnemyUnits)
-			{
+			if (currentTerr.getUnits() < totalEnemyUnits) {
 				deployTerrAndArmy.set(1, 0);
 			}
 		}
 		return deployTerrAndArmy;
+	}
+
+	@Override
+	public void startGame() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

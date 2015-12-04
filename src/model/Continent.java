@@ -23,6 +23,7 @@ public abstract class Continent implements Serializable {
 	}
 
 	public abstract ArrayList<Territory> getTerritories();
+
 	public abstract boolean isConquered();
 
 	public void setConquered(boolean conquered) {

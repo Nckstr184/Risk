@@ -8,17 +8,13 @@ import javax.swing.JTextField;
 import model.Player;
 
 public class BattleBoard extends JFrame {
-	
+
 	JButton attack, retreat, autoAttack;
 	JTextField updateField;
 	JLabel battleArea;
-	
-	
-	public BattleBoard(Player attacker, Player defender){
-		
-		
+
+	public BattleBoard(Player attacker, Player defender) {
+
 	}
-	
-	
 
 }
