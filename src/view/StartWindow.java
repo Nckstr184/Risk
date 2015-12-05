@@ -184,6 +184,7 @@ public class StartWindow extends JFrame {
 			player3Name = player3.getText();
 			player4Name = player4.getText();
 			player5Name = player5.getText();
+			System.out.println(";;;"+player5Name+";;;");
 			player6Name = player6.getText();
 			count = 0;
 

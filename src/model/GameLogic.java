@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class GameLogic implements Serializable{
+public class GameLogic implements Serializable {
 	/**
 	 * 
 	 */
@@ -58,8 +58,8 @@ public class GameLogic implements Serializable{
 		if (p6 != null) {
 			allPlayers.addPlayers(p6);
 		}
-		
-		playerTurn = allPlayers.getNumOfPlayers()-1;
+
+		playerTurn = allPlayers.getNumOfPlayers() - 1;
 
 		languages = new Languages("languages", false);
 		dino = new Dino("dino", false);
@@ -397,11 +397,11 @@ public class GameLogic implements Serializable{
 		while (!tempTerrs.isEmpty()) {
 			for (int i = 0; i < allPlayers.getNumOfPlayers(); i++) {
 				if (!tempTerrs.isEmpty()) {
-					//System.out.println(count++);
+					// System.out.println(count++);
 					randomIndex = r.nextInt(tempTerrs.size());
 					tempTerritory = tempTerrs.get(randomIndex);
 					tempPlayer = allPlayers.getPlayer(i);
-					//System.out.println(tempTerritory.getOwner());
+					// System.out.println(tempTerritory.getOwner());
 					if (tempPlayer.getNumOfArmies() > 0) {
 						tempPlayer.addTerritories(tempTerritory);
 						tempTerritory.setOwner(tempPlayer);
@@ -414,7 +414,8 @@ public class GameLogic implements Serializable{
 		}
 
 		for (int i = 0; i < allTerritories.size(); i++) {
-			//System.out.println(allTerritories.get(i).getName() + " has " + allTerritories.get(i).getUnits() + " units");
+			// System.out.println(allTerritories.get(i).getName() + " has " +
+			// allTerritories.get(i).getUnits() + " units");
 		}
 	}
 
@@ -499,7 +500,7 @@ public class GameLogic implements Serializable{
 			currPlayer.addArmies((int) (totalNumOfTerritories / 3));
 		}
 
-		//System.out.println(currPlayer.getNumOfArmies());
+		// System.out.println(currPlayer.getNumOfArmies());
 	}
 
 	public void deployAllArmies() {
@@ -510,8 +511,8 @@ public class GameLogic implements Serializable{
 			ArrayList<Object> deployingList = currPlayer.deployArmy();
 			Territory tempTerr = (Territory) deployingList.get(0);
 			Integer tempInt = (Integer) deployingList.get(1);
-			//if (tempTerr.getUnits() <= 10)
-				tempTerr.addUnits(tempInt);
+			// if (tempTerr.getUnits() <= 10)
+			tempTerr.addUnits(tempInt);
 			currPlayer.removeArmies(tempInt);
 		}
 	}
@@ -519,19 +520,19 @@ public class GameLogic implements Serializable{
 	public void attackLogic(Territory attackingTerr, Territory defendingTerr, int[] unitsToLose) {
 		Player attacker = attackingTerr.getOwner();
 		Player defender = defendingTerr.getOwner();
-		//System.out.println("Defender: " + defender.getName());
+		// System.out.println("Defender: " + defender.getName());
 
 		attackingTerr.removeUnits(unitsToLose[0]);
 		defendingTerr.removeUnits(unitsToLose[1]);
 
 		if (defendingTerr.getUnits() <= 0) {
-			//System.out.println("Attacker won!");
+			// System.out.println("Attacker won!");
 			defender.removeTerritory(defendingTerr);
 			attacker.addTerritories(defendingTerr);
 			defendingTerr.setOwner(attacker);
 
 			attackingTerr.removeUnits(1);
-			while (defendingTerr.getUnits() <= 1 ) {
+			while (defendingTerr.getUnits() <= 1) {
 				defendingTerr.addUnits(1);
 			}
 
@@ -541,7 +542,8 @@ public class GameLogic implements Serializable{
 				nextCard++;
 			}
 
-			//System.out.println("Should be the attacker's name -> " + defendingTerr.getOwner().getName());
+			// System.out.println("Should be the attacker's name -> " +
+			// defendingTerr.getOwner().getName());
 
 			if (defender.getTerritories().size() == 0) {
 				allPlayers.removePlayer(defender);
@@ -558,7 +560,8 @@ public class GameLogic implements Serializable{
 				currPlayer.getTerritories().get(rand).getNeighbors());
 
 		if (fortifyReturn != null && fortifyReturn.size() > 0) {
-			//System.out.println("Fortifying the territories of: " + currPlayer.getName());
+			// System.out.println("Fortifying the territories of: " +
+			// currPlayer.getName());
 			Territory territoryToFortify = (Territory) fortifyReturn.get(0);
 			int armiesToAdd = (Integer) fortifyReturn.get(1);
 
