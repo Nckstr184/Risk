@@ -116,7 +116,7 @@ public class Run6BotsFIX {
 						} else
 							defenderDiceNum = 2;
 
-						 System.out.println(currPlayer.getName());
+						 System.out.println(defendingTerritory.getUnits()); 
 						 System.out.println("Attacking Dice: " +
 						 attackerDiceNum);
 						 System.out.println("Defending Dice: " +
