@@ -56,7 +56,6 @@ public class HardAI extends Player implements AIStrategy {
 			}
 		}
 		System.out.println("Number of Territories: " + getTerritories().size());
-		System.out.println(1);
 
 		returns.add(getTerritories().get(indexOfHighest));
 		returns.add(1);
@@ -98,6 +97,8 @@ public class HardAI extends Player implements AIStrategy {
 			}
 		}
 
+		//System.out.println(highestNumberOfArmies);
+		
 		returns.add(territories.get(indexOfHighest));
 		returns.add(highestNumberOfArmies);
 
@@ -177,7 +178,7 @@ public class HardAI extends Player implements AIStrategy {
 		ArrayList<Territory> friendlyConnected = new ArrayList<Territory>();
 		ArrayList<Object> deployTerrAndArmy = new ArrayList<Object>();
 		ArrayList<Territory> enemies = new ArrayList<Territory>();
-
+System.out.println(connected.size());
 		for (int i = 0; i < connected.size(); i++) {
 			if (connected.get(i).getOwner().getName().equals(currentTerr.getOwner().getName())) {
 				friendlyConnected.add(connected.get(i));
@@ -187,7 +188,12 @@ public class HardAI extends Player implements AIStrategy {
 				enemies.add(connected.get(i));
 			}
 		}
+System.out.println(friendlyConnected.size());
 
+
+		//System.out.println(friendlyConnected.size());
+if(friendlyConnected.size()!=0)
+{
 		deployTerrAndArmy = deployArmy(friendlyConnected);
 		int totalEnemiesSorrounding;
 		Player currentEnemy;
@@ -204,6 +210,13 @@ public class HardAI extends Player implements AIStrategy {
 				deployTerrAndArmy.set(1, 0);
 			}
 		}
+}
+else
+{
+	deployTerrAndArmy.add(currentTerr);
+	deployTerrAndArmy.add(0);
+}
+	//	System.out.println(deployTerrAndArmy.get(1));
 		return deployTerrAndArmy;
 	}
 
