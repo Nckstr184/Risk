@@ -467,7 +467,7 @@ public class GameLogic implements Serializable {
 		// converts Player[] to ArrayList<Player>
 		ArrayList<Player> temp = new ArrayList<Player>();
 		for (int k = 0; k < objects.length; k++) {
-			System.out.println(objects[k]);
+			// System.out.println(objects[k]);
 			temp.add((Player) objects[k]);
 		}
 
@@ -505,12 +505,13 @@ public class GameLogic implements Serializable {
 
 	public void deployAllArmies() {
 		Player currPlayer = allPlayers.getPlayer(indexOfPlayerTurn);
-		// System.out.println("Current player being deployed: " +
-		// currPlayer.getName());
-		while (currPlayer.getNumOfArmies() > 0) {
-			ArrayList<Object> deployingList = currPlayer.deployArmy();
+		//System.out.println("Current player being deployed: " + currPlayer.getName());
+
+		ArrayList<Object> deployingList = currPlayer.deployArmy();
+		if (deployingList != null) {
 			Territory tempTerr = (Territory) deployingList.get(0);
 			Integer tempInt = (Integer) deployingList.get(1);
+
 			// if (tempTerr.getUnits() <= 10)
 			tempTerr.addUnits(tempInt);
 			currPlayer.removeArmies(tempInt);
@@ -559,14 +560,16 @@ public class GameLogic implements Serializable {
 		ArrayList<Object> fortifyReturn = currPlayer.fortifyPosition(currPlayer.getTerritories().get(rand),
 				currPlayer.getTerritories().get(rand).getNeighbors());
 
-		if (fortifyReturn != null && fortifyReturn.size() > 0) {
-			// System.out.println("Fortifying the territories of: " +
-			// currPlayer.getName());
+		if (fortifyReturn != null && fortifyReturn.size() == 2) {
 			Territory territoryToFortify = (Territory) fortifyReturn.get(0);
 			int armiesToAdd = (Integer) fortifyReturn.get(1);
 
 			territoryToFortify.addUnits(armiesToAdd);
+			//System.out.println("The player that is fortifying: " + currPlayer.getName());
+			//System.out.println("Number of Units at currTerr: " + currPlayer.getTerritories().get(rand).getUnits());
+			//System.out.println("Number of Units leaving currTerr: " + armiesToAdd);
 			currPlayer.getTerritories().get(rand).removeUnits(armiesToAdd);
+			//System.out.println("Units at territory after fortify: " + currPlayer.getTerritories().get(rand).getUnits());
 		}
 	}
 

@@ -40,8 +40,9 @@ public class MainGUI extends JFrame {
 	JButton toggleSound, quitGame, saveGame;
 
 	GameLogic allgame;
-	FileOutputStream fos;
-	ObjectOutputStream output;
+
+	private FileOutputStream outputStream;
+	private ObjectOutputStream objectOutput;
 
 	public static void main(String[] args) {
 		MainGUI window = new MainGUI();
@@ -50,14 +51,6 @@ public class MainGUI extends JFrame {
 	}
 
 	public MainGUI() {
-
-		try {
-			fos = new FileOutputStream("saved");
-			output = new ObjectOutputStream(fos);
-
-		} catch (Exception e1) {
-			e1.printStackTrace();
-		}
 
 		map = new GameBoard();
 
@@ -101,16 +94,6 @@ public class MainGUI extends JFrame {
 
 	}
 
-	private class buttonListener implements ActionListener {
-
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			// gray = new ImageIcon("./Pictures/bcircle.png");
-
-		}
-
-	}
-
 	private class saveGameListener implements ActionListener {
 
 		@Override
@@ -118,11 +101,19 @@ public class MainGUI extends JFrame {
 			System.out.println("Saving Game");
 
 			try {
-				output.writeObject(allgame);
-				output.close();
+				outputStream = new FileOutputStream("savedGame");
+				objectOutput = new ObjectOutputStream(outputStream);
 
+			} catch (Exception e1) {
+				e1.printStackTrace();
+				System.out.println("opening output stream failed");
+			}
+
+			try {
+				objectOutput.writeObject(map.getGameLogic());
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
+				System.out.println("writing game logic failed");
 				e1.printStackTrace();
 			}
 

@@ -74,7 +74,8 @@ public class Run6BotsFIX {
 					gameLogic.addReinforcements();
 
 				// ALL OF DEPLOYING REINFORCEMENT ARMIES MOVED TO GAMELOGIC
-				gameLogic.deployAllArmies();
+				while (currPlayer.getNumOfArmies() > 0)
+					gameLogic.deployAllArmies();
 
 				/*
 				 * ~~~~~~~~~~~~~~~~~~~ ATTACK ARMIES LOGIC ~~~~~~~~~~~~~~~~~~~
@@ -116,11 +117,11 @@ public class Run6BotsFIX {
 						} else
 							defenderDiceNum = 2;
 
-						 System.out.println(defendingTerritory.getUnits()); 
-						 System.out.println("Attacking Dice: " +
-						 attackerDiceNum);
-						 System.out.println("Defending Dice: " +
-						 defenderDiceNum);
+						// System.out.println(defendingTerritory.getUnits());
+						// System.out.println("Attacking Dice: " +
+						// attackerDiceNum);
+						//System.out.println("Defender: " + defendingTerritory.getOwner().getName());
+						//System.out.println("Defending Dice: " + defenderDiceNum);
 
 						battleLogic.attackPlayer(attackerDiceNum, defenderDiceNum);
 						int[] unitsToLose = battleLogic.subtractArmies();
@@ -137,7 +138,7 @@ public class Run6BotsFIX {
 				 * ~~~~~~~~~~~~~~~ FORTIFY POSITION LOGIC ~~~~~~~~~~~~~~~~~
 				 */
 
-				//gameLogic.fortifyPosition();
+				 //gameLogic.fortifyPosition();
 			}
 			int highestNumOfTerritories = 0;
 			int playerIndexOfHighestTerr = 0;
@@ -158,8 +159,8 @@ public class Run6BotsFIX {
 					|| winner.getName().equals("easy3")) {
 				easyCount++;
 			}
-			if (winner.getName().equals("medium3") || winner.getName().equals("medium4") || winner.getName().equals("medium5")
-					|| winner.getName().equals("medium6")) {
+			if (winner.getName().equals("medium3") || winner.getName().equals("medium4")
+					|| winner.getName().equals("medium5") || winner.getName().equals("medium6")) {
 				mediumCount++;
 			}
 			if (winner.getName().equals("hard4") || winner.getName().equals("hard5")
