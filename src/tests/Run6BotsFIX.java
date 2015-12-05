@@ -136,7 +136,7 @@ public class Run6BotsFIX {
 				 * ~~~~~~~~~~~~~~~ FORTIFY POSITION LOGIC ~~~~~~~~~~~~~~~~~
 				 */
 
-				gameLogic.fortifyPosition();
+				//gameLogic.fortifyPosition();
 			}
 			int highestNumOfTerritories = 0;
 			int playerIndexOfHighestTerr = 0;
@@ -148,26 +148,21 @@ public class Run6BotsFIX {
 				}
 			}
 
+			Player winner = gameLogic.getPlayerAt(playerIndexOfHighestTerr);
+
 			if (i == 249 || i == 499 || i == 749 || i > 993)
-				System.out.println("Game " + i + 1 + " Over!");
+				System.out.println("Game " + (i + 1) + " Over!");
 
-			/*
-			 * if (currPlayer.getName().equals("easy1") ||
-			 * currPlayer.getName().equals("easy2") ||
-			 * currPlayer.getName().equals("easy3")) { easyCount++; } if
-			 * (currPlayer.getName().equals("medium1") ||
-			 * currPlayer.getName().equals("medium2") ||
-			 * currPlayer.getName().equals("medium3")) { mediumCount++; }
-			 */
-
-			if (playerIndexOfHighestTerr == 0 || playerIndexOfHighestTerr == 1) {
+			if (winner.getName().equals("easy1") || winner.getName().equals("easy2")
+					|| winner.getName().equals("easy3")) {
 				easyCount++;
 			}
-			if (playerIndexOfHighestTerr == 2 || playerIndexOfHighestTerr == 3) {
+			if (winner.getName().equals("medium3") || winner.getName().equals("medium4") || winner.getName().equals("medium5")
+					|| winner.getName().equals("medium6")) {
 				mediumCount++;
 			}
-
-			if (playerIndexOfHighestTerr == 4 || playerIndexOfHighestTerr == 5) {
+			if (winner.getName().equals("hard4") || winner.getName().equals("hard5")
+					|| winner.getName().equals("hard6")) {
 				hardCount++;
 			}
 

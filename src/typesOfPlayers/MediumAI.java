@@ -42,7 +42,7 @@ public class MediumAI extends Player implements AIStrategy {
 
 	@Override
 	public boolean chooseRetreat(Territory currentTerr) {
-		if (currentTerr.getUnits() < 3)
+		if (currentTerr.getUnits() <= 3)
 			return true;
 
 		return false;
@@ -56,7 +56,7 @@ public class MediumAI extends Player implements AIStrategy {
 	@Override
 	public Territory attackTerritory(Territory currentTerr, ArrayList<Territory> connected) {
 		int smallestNumOfArmies, indexOfSmallestArmies = -1;
-		smallestNumOfArmies = 0;
+		smallestNumOfArmies = 1000000;
 
 		for (int i = 0; i < connected.size(); i++) {
 			if (smallestNumOfArmies > connected.get(i).getUnits()
@@ -66,7 +66,7 @@ public class MediumAI extends Player implements AIStrategy {
 			}
 		}
 
-		if (currentTerr.getUnits() - smallestNumOfArmies > 2 && indexOfSmallestArmies != -1) {
+		if (currentTerr.getUnits() - smallestNumOfArmies >= 2 && indexOfSmallestArmies != -1) {
 			return connected.get(indexOfSmallestArmies);
 		}
 
