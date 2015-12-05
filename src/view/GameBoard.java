@@ -29,7 +29,7 @@ import model.Territory;
 
 public class GameBoard extends JPanel {
 
-	boolean reinforcementPhase, attackPhase;
+	boolean reinforcementPhase, attackPhase, javaAttacking, pythonAttacking, cAttacking, sqlAttacking, rubyAttacking, gitAttacking, perlAttacking, horiusAttacking, giantAttacking;
 	HashMap<JButton, JLabel> myMap;
 	ArrayList<Continent> continents;
 	ArrayList<Territory> territories;
@@ -123,30 +123,16 @@ public class GameBoard extends JPanel {
 							JLabel bottomLabel = new JLabel(new ImageIcon(bottomDisplay));
 							JLabel leftLabel = new JLabel(new ImageIcon(leftDisplay));
 							JLabel rightLabel = new JLabel(new ImageIcon(rightDisplay));
-							System.out.println("NUMBER OF PLAYERS: " + startWindow.getNumberOfPlayer());
 
 							this.setLayout(new BorderLayout());
-							if (newgame1.isClicked() == false) {
-								startNewGame();
-							} else {
-								try {
-									inputStream = new FileInputStream("savedGame");
-									objectInput = new ObjectInputStream(inputStream);
 
-								} catch (IOException e) {
-									// TODO Auto-generated catch block
-									e.printStackTrace();
-								}
-								try {
-									importGameLogic((GameLogic) objectInput.readObject());
-								} catch (ClassNotFoundException e) {
-									// TODO Auto-generated catch block
-									e.printStackTrace();
-								}
-								objectInput.close();
-							}
+							startNewGame();
+							System.out.println("NUMBER OF PLAYERS: " + newGame.getNumOfPlayers());
+
+
 							playerTags();
 							addButtons();
+
 							currPlayer = newGame.getPlayerAt(0);
 
 							add(picLabel, BorderLayout.CENTER);
@@ -182,7 +168,7 @@ public class GameBoard extends JPanel {
 		turnMarker.setFont(plyrCountFont);
 		turnMarker.setSize(100, 20);
 		turnMarker.setLocation(150, 590);
-		gameStatus.setText("Assign Defense");
+		gameStatus.setText("Deploy");
 		gameStatus.setForeground(Color.white);
 		gameStatus.setBackground(Color.BLACK);
 		gameStatus.setFont(gameStatusFont);
@@ -455,12 +441,6 @@ public class GameBoard extends JPanel {
 		newDeck.shuffle();
 
 		if (startWindow.getNumberOfPlayer() == 6) {
-			newGame.addPlayers(startWindow.playerOne);
-			newGame.addPlayers(startWindow.playerTwo);
-			newGame.addPlayers(startWindow.playerThree);
-			newGame.addPlayers(startWindow.playerFour);
-			newGame.addPlayers(startWindow.playerFive);
-			newGame.addPlayers(startWindow.playerSix);
 
 			player1 = newGame.getPlayerAt(0);
 			player2 = newGame.getPlayerAt(1);
@@ -470,11 +450,6 @@ public class GameBoard extends JPanel {
 			player6 = newGame.getPlayerAt(5);
 		}
 		if (startWindow.getNumberOfPlayer() == 5) {
-			newGame.addPlayers(startWindow.playerOne);
-			newGame.addPlayers(startWindow.playerTwo);
-			newGame.addPlayers(startWindow.playerThree);
-			newGame.addPlayers(startWindow.playerFour);
-			newGame.addPlayers(startWindow.playerFive);
 
 			player1 = newGame.getPlayerAt(0);
 			player2 = newGame.getPlayerAt(1);
@@ -484,10 +459,6 @@ public class GameBoard extends JPanel {
 
 		}
 		if (startWindow.getNumberOfPlayer() == 4) {
-			newGame.addPlayers(startWindow.playerOne);
-			newGame.addPlayers(startWindow.playerTwo);
-			newGame.addPlayers(startWindow.playerThree);
-			newGame.addPlayers(startWindow.playerFour);
 
 			player1 = newGame.getPlayerAt(0);
 			player2 = newGame.getPlayerAt(1);
@@ -496,9 +467,6 @@ public class GameBoard extends JPanel {
 
 		}
 		if (startWindow.getNumberOfPlayer() == 3) {
-			newGame.addPlayers(startWindow.playerOne);
-			newGame.addPlayers(startWindow.playerTwo);
-			newGame.addPlayers(startWindow.playerThree);
 
 			player1 = newGame.getPlayerAt(0);
 			player2 = newGame.getPlayerAt(1);
@@ -506,8 +474,6 @@ public class GameBoard extends JPanel {
 
 		}
 		if (startWindow.getNumberOfPlayer() == 2) {
-			newGame.addPlayers(startWindow.playerOne);
-			newGame.addPlayers(startWindow.playerTwo);
 
 			player1 = newGame.getPlayerAt(0);
 			player2 = newGame.getPlayerAt(1);
@@ -3974,6 +3940,7 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
+				javaAttacking = false;
 				if (reinforcementPhase == true) {
 					if (currPlayer.getNumOfArmies() >= 1 && javaLanguage.getName() == currPlayer.getName()) {
 						javaUnits += 1;
@@ -3999,13 +3966,42 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						System.out.println(currPlayer.getName());
 						currPlayer = newGame.nextPlayer();
-						System.out.println(currPlayer.getName());
 
-						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				///////////////////////////////// Start Attack
+				///////////////////////////////// Phase//////////////////////////////////////////
+				if (attackPhase == true) {
+					if ((javaLanguage.getName() == currPlayer.getName()) && (javaUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						javaAttacking = true;
+						attackPhase = false;
+
+					}
+				}
+				if (pythonAttacking == true && (currPlayer.getName() != javaLanguage.getName())) {
+					System.out.println("Java was attacked by python");
+					pythonAttacking = false;
+					attackPhase = true;
+				}
+
+				if (sqlAttacking == true && (currPlayer.getName() != javaLanguage.getName())) {
+					System.out.println("Java was attacked by sql");
+					sqlAttacking = false;
+					attackPhase = true;
+				}
+				if (cAttacking == true && (currPlayer.getName() != javaLanguage.getName())) {
+					System.out.println("Java was attacked by c");
+					cAttacking = false;
+					attackPhase = true;
+				}
+				if (horiusAttacking == true && (currPlayer.getName() != javaLanguage.getName())) {
+					System.out.println("Java was attacked by Horius");
+					horiusAttacking = false;
+					attackPhase = true;
 				}
 			}
 
@@ -4015,6 +4011,7 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
+
 				if (reinforcementPhase == true) {
 					if (currPlayer.getNumOfArmies() >= 1 && pythonLanguage.getName() == currPlayer.getName()) {
 						pythonUnits += 1;
@@ -4039,14 +4036,52 @@ public class GameBoard extends JPanel {
 							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
 							turnMarker.setLocation(150, 590);
 						}
-						System.out.println(currPlayer.getName());
 						currPlayer = newGame.nextPlayer();
-						System.out.println(currPlayer.getName());
-						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 
 					checkIfReinforcementPhaseIsOver();
+
 				}
+
+				///////////////////////////////// Start Attack
+				///////////////////////////////// Phase//////////////////////////////////////////
+				if (attackPhase == true) {
+					if ((pythonLanguage.getName() == currPlayer.getName()) && (pythonUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						pythonAttacking = true;
+						attackPhase = false;
+
+					}
+				}
+
+				if (javaAttacking == true && (currPlayer.getName() != pythonLanguage.getName())) {
+					System.out.println("Python was attacked");
+					javaAttacking = false;
+					attackPhase = true;
+				}
+				if (sqlAttacking == true && (currPlayer.getName() != pythonLanguage.getName())) {
+					System.out.println("Python was attacked by sql");
+					sqlAttacking = false;
+					attackPhase = true;
+				}
+				if (cAttacking == true && (currPlayer.getName() != pythonLanguage.getName())) {
+					System.out.println("Python was attacked by c");
+					cAttacking = false;
+					attackPhase = true;
+				}
+				if (gitAttacking == true && (currPlayer.getName() != pythonLanguage.getName())) {
+					System.out.println("Python was attacked by git");
+					gitAttacking = false;
+					attackPhase = true;
+				}
+				if (perlAttacking == true && (currPlayer.getName() != pythonLanguage.getName())) {
+					System.out.println("Python was attacked by perl");
+					perlAttacking = false;
+					attackPhase = true;
+				}
+				
+			
 			}
 		});
 		cLanguage.addActionListener(new ActionListener() {
@@ -4077,13 +4112,43 @@ public class GameBoard extends JPanel {
 							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
 							turnMarker.setLocation(150, 590);
 						}
-						System.out.println(currPlayer.getName());
 
 						currPlayer = newGame.nextPlayer();
-						System.out.println(currPlayer.getName());
-						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
+
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				///////////////////////////////// Start Attack
+				///////////////////////////////// Phase//////////////////////////////////////////
+				if (attackPhase == true) {
+					if ((cLanguage.getName() == currPlayer.getName()) && (cUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						cAttacking = true;
+						attackPhase = false;
+
+					}
+				}
+
+				if (javaAttacking == true && (currPlayer.getName() != cLanguage.getName())) {
+					System.out.println("C was attacked by java");
+					javaAttacking = false;
+					attackPhase = true;
+				}
+				if (sqlAttacking == true && (currPlayer.getName() != cLanguage.getName())) {
+					System.out.println("C was attacked by sql");
+					sqlAttacking = false;
+					attackPhase = true;
+				}
+				if (pythonAttacking == true && (currPlayer.getName() != cLanguage.getName())) {
+					System.out.println("c was attacked by python");
+					cAttacking = false;
+					attackPhase = true;
+				}
+				if (rubyAttacking == true && (currPlayer.getName() != cLanguage.getName())) {
+					System.out.println("c was attacked by ruby");
+					rubyAttacking = false;
+					attackPhase = true;
 				}
 			}
 		});
@@ -4118,9 +4183,45 @@ public class GameBoard extends JPanel {
 
 						currPlayer = newGame.nextPlayer();
 
-						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				///////////////////////////////// Start Attack
+				///////////////////////////////// Phase//////////////////////////////////////////
+				if (attackPhase == true) {
+					if ((sqlLanguage.getName() == currPlayer.getName()) && (sqlUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						sqlAttacking = true;
+						attackPhase = false;
+
+					}
+				}
+
+				if (javaAttacking == true && (currPlayer.getName() != sqlLanguage.getName())) {
+					System.out.println("SQl was attacked by java");
+					javaAttacking = false;
+					attackPhase = true;
+				}
+				if (pythonAttacking == true && (currPlayer.getName() != sqlLanguage.getName())) {
+					System.out.println("SQl was attacked by python");
+					pythonAttacking = false;
+					attackPhase = true;
+				}
+				if (cAttacking == true && (currPlayer.getName() != sqlLanguage.getName())) {
+					System.out.println("SQl was attacked by c");
+					cAttacking = false;
+					attackPhase = true;
+				}
+				if (rubyAttacking == true && (currPlayer.getName() != sqlLanguage.getName())) {
+					System.out.println("SQl was attacked by ruby");
+					rubyAttacking = false;
+					attackPhase = true;
+				}
+				if (gitAttacking == true && (currPlayer.getName() != sqlLanguage.getName())) {
+					System.out.println("SQl was attacked by git");
+					gitAttacking = false;
+					attackPhase = true;
 				}
 			}
 		});
@@ -4155,10 +4256,40 @@ public class GameBoard extends JPanel {
 
 						currPlayer = newGame.nextPlayer();
 
-						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+				///////////////////////////////// Start Attack
+				///////////////////////////////// Phase//////////////////////////////////////////
+				if (attackPhase == true) {
+					if ((rubyLanguage.getName() == currPlayer.getName()) && (rubyUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						rubyAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (cAttacking == true && (currPlayer.getName() != rubyLanguage.getName())) {
+					System.out.println("ruby was attacked by c");
+					cAttacking = false;
+					attackPhase = true;
+				}
+				if (sqlAttacking == true && (currPlayer.getName() != rubyLanguage.getName())) {
+					System.out.println("ruby was attacked by sql");
+					sqlAttacking = false;
+					attackPhase = true;
+				}
+				if (gitAttacking == true && (currPlayer.getName() != rubyLanguage.getName())) {
+					System.out.println("ruby was attacked by git");
+					gitAttacking = false;
+					attackPhase = true;
+				}
+				if (giantAttacking == true && (currPlayer.getName() != rubyLanguage.getName())) {
+					System.out.println("ruby was attacked by giant");
+					giantAttacking = false;
+					attackPhase = true;
+				}
+
 			}
 		});
 		gitLanguage.addActionListener(new ActionListener() {
@@ -4196,6 +4327,36 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+				///////////////////////////////// Start Attack
+				///////////////////////////////// Phase//////////////////////////////////////////
+				if (attackPhase == true) {
+					if ((gitLanguage.getName() == currPlayer.getName()) && (gitUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						gitAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (pythonAttacking == true && (currPlayer.getName() != gitLanguage.getName())) {
+					System.out.println("git was attacked by python");
+					pythonAttacking = false;
+					attackPhase = true;
+				}
+				if (sqlAttacking == true && (currPlayer.getName() != gitLanguage.getName())) {
+					System.out.println("git was attacked by sql");
+					sqlAttacking = false;
+					attackPhase = true;
+				}
+				if (rubyAttacking == true && (currPlayer.getName() != gitLanguage.getName())) {
+					System.out.println("git was attacked by ruby");
+					rubyAttacking = false;
+					attackPhase = true;
+				}
+				if (giantAttacking == true && (currPlayer.getName() != gitLanguage.getName())) {
+					System.out.println("git was attacked by giant");
+					giantAttacking = false;
+					attackPhase = true;
+				}
 			}
 		});
 		perlLanguage.addActionListener(new ActionListener() {
@@ -4232,6 +4393,26 @@ public class GameBoard extends JPanel {
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				///////////////////////////////// Start Attack
+				///////////////////////////////// Phase//////////////////////////////////////////
+				if (attackPhase == true) {
+					if ((perlLanguage.getName() == currPlayer.getName()) && (perlUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						perlAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (pythonAttacking == true && (currPlayer.getName() != perlLanguage.getName())) {
+					System.out.println("perl was attacked by python");
+					pythonAttacking = false;
+					attackPhase = true;
+				}
+				if (gitAttacking == true && (currPlayer.getName() != perlLanguage.getName())) {
+					System.out.println("perl was attacked by git");
+					gitAttacking = false;
+					attackPhase = true;
 				}
 			}
 		});
@@ -6333,6 +6514,37 @@ public class GameBoard extends JPanel {
 		if (playersDone == newGame.getNumOfPlayers()) {
 			reinforcementPhase = false;
 			attackPhase = true;
+			gameStatus.setText("Attack");
+			if (newGame.getNumOfPlayers() == 6) {
+				playerCount.setText("Select Territory to attack from");
+				playerCount2.setText("");
+				playerCount3.setText("");
+				playerCount4.setText("");
+				playerCount5.setText("");
+				playerCount6.setText("");
+			} else if (newGame.getNumOfPlayers() == 5) {
+				playerCount.setText("Select Territory to attack from");
+				playerCount2.setText("");
+				playerCount3.setText("");
+				playerCount4.setText("");
+				playerCount5.setText("");
+
+			} else if (newGame.getNumOfPlayers() == 4) {
+				playerCount.setText("Select Territory to attack from");
+				playerCount2.setText("");
+				playerCount3.setText("");
+				playerCount4.setText("");
+
+			} else if (newGame.getNumOfPlayers() == 3) {
+				playerCount.setText("Select Territory to attack from");
+				playerCount2.setText("");
+				playerCount3.setText("");
+
+			} else if (newGame.getNumOfPlayers() == 2) {
+				playerCount.setText("Select Territory to attack from");
+				playerCount2.setText("");
+
+			}
 		}
 
 	}
