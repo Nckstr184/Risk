@@ -45,6 +45,18 @@ public class MainGUI extends JFrame {
 
 	public static void main(String[] args) {
 		MainGUI window = new MainGUI();
+		
+		FileOutputStream fos = new FileOutputStream("saveGame");
+		ObjectOutputStream oos = new ObjectOutputStream(fos);
+		oos.writeObject(mb);
+		oos.close();
+
+		// read object from file
+		FileInputStream fis = new FileInputStream("saveGame");
+		ObjectInputStream ois = new ObjectInputStream(fis);
+		MyBean result = (MyBean) ois.readObject();
+		ois.close();
+
 		window.setVisible(true);
 
 	}
