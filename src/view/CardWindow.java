@@ -5,18 +5,15 @@ import javax.swing.JLabel;
 import model.CardCollection;
 
 public class CardWindow extends JLabel {
-	
-	
+
 	JLabel cardHand;
-	
-	public CardWindow(){
-		
-		
+
+	public CardWindow() {
+
 	}
-	
-	public void setUpCollection(CardCollection collection){
-		
-		
+
+	public void setUpCollection(CardCollection collection) {
+
 	}
 
 }

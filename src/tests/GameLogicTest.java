@@ -23,34 +23,29 @@ public class GameLogicTest {
 
 	@Test
 	public void test() {
-		ArrayList<Territory> cTerritories=new ArrayList<Territory>();
-		Continent Crescent=new Crescent("Crescent", false);
-		Continent Dino=new Dino("Dino", false);
-		Continent Pizza=new Pizza("Pizza", false);
-		Continent Sun=new Sun("Sun", false);
-		Continent Languages=new Languages("Languages", false);
-		Continent Wildcat=new Wildcat("Wildcat",false);
-		Player human= new Human("human", Color.RED, 0);
+		ArrayList<Territory> cTerritories = new ArrayList<Territory>();
+		Continent Crescent = new Crescent("Crescent", false);
+		Continent Dino = new Dino("Dino", false);
+		Continent Pizza = new Pizza("Pizza", false);
+		Continent Sun = new Sun("Sun", false);
+		Continent Languages = new Languages("Languages", false);
+		Continent Wildcat = new Wildcat("Wildcat", false);
+		Player human = new Human("human", Color.RED, 0);
 		Player human2 = new Human("human2", Color.BLACK, 0);
 		Player human3 = new Human("human3", Color.BLACK, 0);
 		Player human4 = new Human("human4", Color.BLACK, 0);
 
-		GameLogic logic= new GameLogic(human, human2, human3, human4, null, null);
-		
-		cTerritories=logic.getTerritories();
-		logic.addPlayers(human);
-		logic.addPlayers(human2);
-		logic.addPlayers(human3);
-		logic.addPlayers(human4);
+		GameLogic logic = new GameLogic(human, human2, human3, human4, null, null);
+
+		cTerritories = logic.getTerritories();
 		assertEquals(42, cTerritories.size());
 		assertEquals(human, logic.getPlayerAt(0));
 		logic.startGame();
 		assertEquals(human, logic.getPlayerAt(0));
-		
-		assertEquals(logic.getNumOfPlayers(), 4);
+
+		assertEquals(4, logic.getNumOfPlayers());
 		logic.removePlayer(human);
 		assertEquals(logic.getNumOfPlayers(), 3);
 	}
-	
 
 }

@@ -3,7 +3,7 @@ package model;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Dice implements Serializable{
+public class Dice implements Serializable {
 
 	/**
 	 * 
@@ -18,6 +18,7 @@ public class Dice implements Serializable{
 
 	public Dice(int numOfDiceRolled) {
 		this.numOfDice = numOfDiceRolled;
+		System.out.println(numOfDiceRolled);
 		diceListArray = new Integer[numOfDiceRolled];
 
 		if (numOfDice == 3) {

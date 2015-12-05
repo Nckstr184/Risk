@@ -54,7 +54,6 @@ public class StartWindow extends JFrame {
 		player5 = new JTextField();
 		player6 = new JTextField();
 
-
 		enterName = new JLabel();
 
 		enterName.setText("Enter Player Names in Text Fields");
@@ -74,12 +73,12 @@ public class StartWindow extends JFrame {
 		String[] player4Choice = { "Select A.I", "None", "Human", "Easy AI", "Medium AI", "Hard AI" };
 		String[] player5Choice = { "Select A.I", "None", "Human", "Easy AI", "Medium AI", "Hard AI" };
 		String[] player6Choice = { "Select A.I", "None", "Human", "Easy AI", "Medium AI", "Hard AI" };
-		 diff1 = new JComboBox<String>(player1Choice);
-		 diff2 = new JComboBox<String>(player2Choice);
-		 diff3 = new JComboBox<String>(player3Choice);
+		diff1 = new JComboBox<String>(player1Choice);
+		diff2 = new JComboBox<String>(player2Choice);
+		diff3 = new JComboBox<String>(player3Choice);
 		diff4 = new JComboBox<String>(player4Choice);
-		 diff5 = new JComboBox<String>(player5Choice);
-	diff6 = new JComboBox<String>(player6Choice);
+		diff5 = new JComboBox<String>(player5Choice);
+		diff6 = new JComboBox<String>(player6Choice);
 
 		player1.setLocation(10, 10);
 		player1.setSize(75, 30);
@@ -296,9 +295,9 @@ public class StartWindow extends JFrame {
 			if (selectedDiff6 == "Easy AI") {
 				playerSix = new EasyAI(player6Name, Color.blue, 0);
 				pCollection.addPlayers(playerSix);
-				count++;	
+				count++;
 			}
-			
+
 			if (selectedDiff6 == "Medium AI") {
 				playerSix = new MediumAI(player6Name, Color.blue, 0);
 				pCollection.addPlayers(playerSix);
@@ -332,10 +331,10 @@ public class StartWindow extends JFrame {
 		return playerName;
 
 	}
-	
-	public Player getPlayerAt(int index){
+
+	public Player getPlayerAt(int index) {
 		return pCollection.getPlayer(index);
-		
+
 	}
 
 	public void setPlayerColor(Color color) {
