@@ -165,7 +165,7 @@ public class GameLogic implements Serializable {
 
 		Ruby.addNeighbors(C);
 		Ruby.addNeighbors(SQL);
-		Ruby.addNeighbors(Ruby);
+		Ruby.addNeighbors(Git);
 		Ruby.addNeighbors(Giant);
 
 		Git.addNeighbors(Python);
@@ -560,14 +560,16 @@ public class GameLogic implements Serializable {
 		ArrayList<Object> fortifyReturn = currPlayer.fortifyPosition(currPlayer.getTerritories().get(rand),
 				currPlayer.getTerritories().get(rand).getNeighbors());
 
-		if (fortifyReturn != null && fortifyReturn.size() > 0) {
-			// System.out.println("Fortifying the territories of: " +
-			// currPlayer.getName());
+		if (fortifyReturn != null && fortifyReturn.size() == 2) {
 			Territory territoryToFortify = (Territory) fortifyReturn.get(0);
 			int armiesToAdd = (Integer) fortifyReturn.get(1);
 
 			territoryToFortify.addUnits(armiesToAdd);
+			//System.out.println("The player that is fortifying: " + currPlayer.getName());
+			//System.out.println("Number of Units at currTerr: " + currPlayer.getTerritories().get(rand).getUnits());
+			//System.out.println("Number of Units leaving currTerr: " + armiesToAdd);
 			currPlayer.getTerritories().get(rand).removeUnits(armiesToAdd);
+			//System.out.println("Units at territory after fortify: " + currPlayer.getTerritories().get(rand).getUnits());
 		}
 	}
 

@@ -120,8 +120,8 @@ public class Run6BotsFIX {
 						// System.out.println(defendingTerritory.getUnits());
 						// System.out.println("Attacking Dice: " +
 						// attackerDiceNum);
-						// System.out.println("Defending Dice: " +
-						// defenderDiceNum);
+						//System.out.println("Defender: " + defendingTerritory.getOwner().getName());
+						//System.out.println("Defending Dice: " + defenderDiceNum);
 
 						battleLogic.attackPlayer(attackerDiceNum, defenderDiceNum);
 						int[] unitsToLose = battleLogic.subtractArmies();
@@ -138,7 +138,7 @@ public class Run6BotsFIX {
 				 * ~~~~~~~~~~~~~~~ FORTIFY POSITION LOGIC ~~~~~~~~~~~~~~~~~
 				 */
 
-				// gameLogic.fortifyPosition();
+				 //gameLogic.fortifyPosition();
 			}
 			int highestNumOfTerritories = 0;
 			int playerIndexOfHighestTerr = 0;
