@@ -9,6 +9,10 @@ import model.Territory;
 
 public class EasyAI extends Player implements AIStrategy {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7374548339574929945L;
 	Random r;
 	int randomChoice, numOfArmies;
 	ArrayList<Territory> territories;
@@ -48,7 +52,7 @@ public class EasyAI extends Player implements AIStrategy {
 	public boolean chooseRetreat(Territory currentTerr) {
 		// chooses whether to retreat in the middle of battle
 		if (currentTerr.getUnits() > 1) {
-				return false;
+			return false;
 		}
 		return true;
 	}
@@ -62,20 +66,19 @@ public class EasyAI extends Player implements AIStrategy {
 		int count = 0;
 		ArrayList<Territory> availableTerritories = new ArrayList<Territory>(connected);
 
-			do {
-				rand = r.nextInt(connected.size());
-				if (availableTerritories.indexOf(connected.get(rand)) != -1) {
-					availableTerritories.remove(availableTerritories.indexOf(connected.get(rand)));
-				}
-				if (availableTerritories.size() == 0 && availableTerritories.indexOf(connected.get(rand)) == -1) {
-					return null;
-				}
-			} while (connected.get(rand).getOwner().getName().equals(this.getName())
-					&& availableTerritories.size() > 0);
+		do {
+			rand = r.nextInt(connected.size());
+			if (availableTerritories.indexOf(connected.get(rand)) != -1) {
+				availableTerritories.remove(availableTerritories.indexOf(connected.get(rand)));
+			}
+			if (availableTerritories.size() == 0 && availableTerritories.indexOf(connected.get(rand)) == -1) {
+				return null;
+			}
+		} while (connected.get(rand).getOwner().getName().equals(this.getName()) && availableTerritories.size() > 0);
 
-			// System.out.println("Returning territory");
-			if (!connected.get(rand).getOwner().getName().equals(this.getName()))
-				return connected.get(rand);
+		// System.out.println("Returning territory");
+		if (!connected.get(rand).getOwner().getName().equals(this.getName()))
+			return connected.get(rand);
 		// returns null if it decides to not attack
 		System.out.println("Returning null");
 		return null;

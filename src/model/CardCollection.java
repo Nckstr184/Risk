@@ -17,11 +17,11 @@ public class CardCollection implements Serializable {
 	private static final long serialVersionUID = -6250934081881949608L;
 	ArrayList<Card> cardCollection, cardCollectionShuffled;
 	Image C1T1, C1T2, C1T3, C1T4, C1T5, C1T6, C1T7, C2T1, C2T2, C2T3, C2T4, C2T5, C2T6, C2T7, C3T1, C3T2, C3T3, C3T4,
-			C3T5, C3T6, C3T7, C4T1, C4T2, C4T3, C4T4, C4T5, C4T6, C4T7, C5T1, C5T2, C5T3, C5T4, C5T5, C5T6, C5T7, C6T1, C6T2,
-			C6T3, C6T4, C6T5, C6T6, C6T7, wildCard1, wildCard2;
+			C3T5, C3T6, C3T7, C4T1, C4T2, C4T3, C4T4, C4T5, C4T6, C4T7, C5T1, C5T2, C5T3, C5T4, C5T5, C5T6, C5T7, C6T1,
+			C6T2, C6T3, C6T4, C6T5, C6T6, C6T7, wildCard1, wildCard2;
 
 	public CardCollection() {
-		
+
 		try {
 			C1T1 = ImageIO.read(new File("./Pictures/C1T1.png"));
 			C1T2 = ImageIO.read(new File("./Pictures/C1T2.png"));
@@ -65,13 +65,13 @@ public class CardCollection implements Serializable {
 			C6T5 = ImageIO.read(new File("./Pictures/C6T5.png"));
 			C6T6 = ImageIO.read(new File("./Pictures/C6T6.png"));
 			C6T7 = ImageIO.read(new File("./Pictures/C6T7.png"));
-			
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			System.out.println("ERROR!!!");
 			e.printStackTrace();
 		}
-		
+
 		cardCollection = new ArrayList<Card>();
 		cardCollection.add(new RiskCard("Java", CardType.SPONGEBOB, C1T1));
 		cardCollection.add(new RiskCard("Python", CardType.PATRICK, C1T2));
@@ -97,7 +97,7 @@ public class CardCollection implements Serializable {
 		cardCollection.add(new RiskCard("RawrVille", CardType.SPONGEBOB, C4T1));
 		cardCollection.add(new RiskCard("Laiegges", CardType.PATRICK, C4T2));
 		cardCollection.add(new RiskCard("Dactilito", CardType.GARY, C4T3));
-		cardCollection.add(new RiskCard("Miller",CardType.PATRICK,C4T4));
+		cardCollection.add(new RiskCard("Miller", CardType.PATRICK, C4T4));
 		cardCollection.add(new RiskCard("DirtyDan", CardType.SPONGEBOB, C4T5));
 		cardCollection.add(new RiskCard("BlackBeard", CardType.PATRICK, C4T6));
 		cardCollection.add(new RiskCard("Monisaurus", CardType.GARY, C4T7));
@@ -115,8 +115,8 @@ public class CardCollection implements Serializable {
 		cardCollection.add(new RiskCard("Horus", CardType.SPONGEBOB, C6T5));
 		cardCollection.add(new RiskCard("Tonatiuh", CardType.PATRICK, C6T6));
 		cardCollection.add(new RiskCard("Amun", CardType.GARY, C6T7));
-		cardCollection.add(new WildCard(CardType.WILD,wildCard1));
-		cardCollection.add(new WildCard(CardType.WILD,wildCard2));
+		cardCollection.add(new WildCard(CardType.WILD, wildCard1));
+		cardCollection.add(new WildCard(CardType.WILD, wildCard2));
 
 	}
 

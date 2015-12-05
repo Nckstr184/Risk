@@ -38,7 +38,7 @@ public class MainGUI extends JFrame {
 
 	JTextField updateDisplay;
 	JButton toggleSound, quitGame, saveGame;
-	
+
 	GameLogic allgame;
 	FileOutputStream fos;
 	ObjectOutputStream output;
@@ -50,25 +50,21 @@ public class MainGUI extends JFrame {
 	}
 
 	public MainGUI() {
-		
-		try{
+
+		try {
 			fos = new FileOutputStream("saved");
-			output= new ObjectOutputStream(fos);
-			
-		}catch (Exception e1){
+			output = new ObjectOutputStream(fos);
+
+		} catch (Exception e1) {
 			e1.printStackTrace();
 		}
-		
-		
-		
+
 		map = new GameBoard();
 
-		//JPanel bottomeDisplay = new JPanel();
-		//JPanel sideDisplay = new JPanel();
+		// JPanel bottomeDisplay = new JPanel();
+		// JPanel sideDisplay = new JPanel();
 
 		this.setLayout(new BorderLayout());
-
-	
 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(1300, 750);
@@ -92,8 +88,8 @@ public class MainGUI extends JFrame {
 		quitGame.setSize(80, 40);
 		quitGame.setText("Quit Game");
 
-		//map.addButtons();
-		
+		// map.addButtons();
+
 		this.add(saveGame);
 		this.add(quitGame);
 		this.add(toggleSound);
@@ -120,7 +116,7 @@ public class MainGUI extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			System.out.println("Saving Game");
-			
+
 			try {
 				output.writeObject(allgame);
 				output.close();
@@ -129,7 +125,6 @@ public class MainGUI extends JFrame {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-			
 
 		}
 
@@ -155,50 +150,49 @@ public class MainGUI extends JFrame {
 
 	}
 
-	
-	  public class myWindowListener implements WindowListener{
+	public class myWindowListener implements WindowListener {
 
 		@Override
 		public void windowActivated(WindowEvent e) {
 			// TODO Auto-generated method stub
-			
+
 		}
 
 		@Override
 		public void windowClosed(WindowEvent e) {
 			// TODO Auto-generated method stub
-			
+
 		}
 
 		@Override
 		public void windowClosing(WindowEvent e) {
 			// TODO Auto-generated method stub
-			
+
 		}
 
 		@Override
 		public void windowDeactivated(WindowEvent e) {
 			// TODO Auto-generated method stub
-			
+
 		}
 
 		@Override
 		public void windowDeiconified(WindowEvent e) {
 			// TODO Auto-generated method stub
-			
+
 		}
 
 		@Override
 		public void windowIconified(WindowEvent e) {
 			// TODO Auto-generated method stub
-			
+
 		}
 
 		@Override
 		public void windowOpened(WindowEvent e) {
 			// TODO Auto-generated method stub
-			
+
 		}
-		
+
 	}
 }

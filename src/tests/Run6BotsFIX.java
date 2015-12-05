@@ -116,10 +116,11 @@ public class Run6BotsFIX {
 						} else
 							defenderDiceNum = 2;
 
-						// System.out.println("Attacking Dice: " +
-						// attackerDiceNum);
-						// System.out.println("Defending Dice: " +
-						// defenderDiceNum);
+						 System.out.println(defendingTerritory.getUnits()); 
+						 System.out.println("Attacking Dice: " +
+						 attackerDiceNum);
+						 System.out.println("Defending Dice: " +
+						 defenderDiceNum);
 
 						battleLogic.attackPlayer(attackerDiceNum, defenderDiceNum);
 						int[] unitsToLose = battleLogic.subtractArmies();

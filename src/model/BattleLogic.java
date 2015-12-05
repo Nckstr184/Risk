@@ -11,11 +11,27 @@ public class BattleLogic {
 	private int numOfAttackDice, numOfDefendDice, leastDiceOnField;
 
 	public BattleLogic(Player attacker, Player defender, Territory attackingTerritory, Territory defendingTerritory) {
-		
+
 		this.attacker = attacker;
 		this.defender = defender;
 		this.attackingTerritory = attackingTerritory;
 		this.defendingTerritory = defendingTerritory;
+	}
+
+	public Player getAttacker() {
+		return this.attacker;
+	}
+
+	public Player getDefender() {
+		return this.defender;
+	}
+
+	public Territory getAttackingTerritory() {
+		return this.attackingTerritory;
+	}
+
+	public Territory getDefendingTerritory() {
+		return this.defendingTerritory;
 	}
 
 	public void attackPlayer(int numOfAttackDice, int numOfDefendDice) {
@@ -36,17 +52,16 @@ public class BattleLogic {
 		subtractArmies();
 	}
 
-
 	public int[] subtractArmies() {
-		
+
 		int countAttack = 0;
 		int countDefend = 0;
-		
+
 		int[] unitsToLose = new int[2];
 
 		for (int i = 0; i < leastDiceOnField; i++) {
-			//System.out.println("Attack Dice"+attackDice.getDice().size() );
-			//System.out.println("Defend Dice"+defendDice.getDice().size() );
+			// System.out.println("Attack Dice"+attackDice.getDice().size() );
+			// System.out.println("Defend Dice"+defendDice.getDice().size() );
 
 			if (attackDice.getDice().get(i) <= defendDice.getDice().get(i))
 				countAttack++;
