@@ -1,178 +1,211 @@
-package tests;
+package typesOfPlayers;
 
 import java.awt.Color;
-import java.util.Random;
+import java.util.ArrayList;
 
-import model.BattleLogic;
-import model.GameLogic;
 import model.Player;
 import model.Territory;
-import typesOfPlayers.EasyAI;
-import typesOfPlayers.HardAI;
-import typesOfPlayers.MediumAI;
 
-public class Run6BotsFIX {
+public class HardAI extends Player implements AIStrategy {
 	/*
-	 * TODO LIST
-	 * 
-	 * TODO: Fix HardAI to actually function and not have an empty if statement
-	 * (CAUSING IOB ERROR CURRENTLY) TODO: Check attack logic a few more times
-	 * to make sure corner cases are covered TODO: Try to move some of the
-	 * battle logic stuff somewhere else, there is too much here
+	 * Basically this entire AI is developed on making sure you are more
+	 * powerful than the territories surrounding you. HardAI probably won't
+	 * attack much and takes more of a defensive stand, letting Easy, Medium,
+	 * and Human kill each other off and weaken each other
 	 */
 
-	public static void main(String[] args) {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7811415056177163383L;
 
-		Random r = new Random();
-		int easyCount = 0;
-		int mediumCount = 0;
-		int hardCount = 0;
-		for (int i = 0; i < 1000; i++) {
-			Player easy1 = new EasyAI("easy1", Color.RED, 0);
-			Player easy2 = new EasyAI("easy2", Color.BLACK, 0);
-			Player easy3 = new EasyAI("easy3", Color.CYAN, 0);
-			Player easy4 = new EasyAI("easy4", Color.RED, 0);
-			Player easy5 = new EasyAI("easy5", Color.BLACK, 0);
-			Player easy6 = new EasyAI("easy6", Color.CYAN, 0);
+	public HardAI(String name, Color color, int numOfArmies) {
+		super(name, color, numOfArmies);
+	}
 
-			Player medium1 = new EasyAI("medium1", Color.RED, 0);
-			Player medium2 = new EasyAI("medium2", Color.BLACK, 0);
-			Player medium3 = new EasyAI("medium3", Color.CYAN, 0);
-			Player medium4 = new MediumAI("medium4", Color.BLUE, 0);
-			Player medium5 = new MediumAI("medium5", Color.PINK, 0);
-			Player medium6 = new MediumAI("medium6", Color.PINK, 0);
+	@Override
+	public ArrayList<Object> deployArmy() {
+		/*
+		 * Use the total number of enemy armies surrounding the territory to
+		 * figure out how many armies to place in a certain territory. You want
+		 * to make sure you are powerful enough to withstand an attack from any
+		 * angle
+		 */
+		int highestArmyDifference = 0;
+		int armySum;
+		int indexOfHighest = 0;
+		Player temp;
+		ArrayList<Territory> neighbors = new ArrayList<Territory>();
+		ArrayList<Object> returns = new ArrayList<Object>();
+		for (int i = 0; i < getTerritories().size(); i++) {
+			neighbors = getTerritories().get(i).getNeighbors();
+			armySum = 0;
+			for (int j = 0; j < neighbors.size(); j++) {
+				temp = neighbors.get(j).getOwner();
+				if (!temp.getName().equals(this.getName())) {
+					int armyDiff = neighbors.get(j).getUnits() - getTerritories().get(i).getUnits();
+					if (highestArmyDifference < armyDiff) {
+						highestArmyDifference = armyDiff;
+						indexOfHighest = i;
+					}
+				}
+			}
+		}
+		returns.add(getTerritories().get(indexOfHighest));
+		returns.add(1);
 
-			Player hard1 = new EasyAI("hard1", Color.RED, 0);
-			Player hard2 = new EasyAI("hard2", Color.BLACK, 0);
-			Player hard3 = new EasyAI("hard3", Color.CYAN, 0);
-			Player hard4 = new EasyAI("hard1", Color.RED, 0);
-			Player hard5 = new HardAI("hard5", Color.RED, 0);
-			Player hard6 = new HardAI("hard6", Color.RED, 0);
-			Player currPlayer = null;
-			GameLogic gameLogic = new GameLogic(easy1, easy2, medium3, medium4, hard5, hard6);
-			BattleLogic battleLogic;
-			int turnCount = -1;
+		return returns;
+	}
 
-			gameLogic.startGame();
-			while (gameLogic.getNumOfPlayers() > 1 && turnCount < 360) {
-				turnCount++;
-				currPlayer = gameLogic.nextPlayer();
-				// System.out.println("~~~~~~~~~~~~~~");
-				// System.out.println(currPlayer.getName());
-				// System.out.println("Number of Territories: " +
-				// currPlayer.getTerritories().size());
-
-				/*
-				 * ~~~~~~~~~~~~~~~~~~~ DEPLOY ARMIES LOGIC ~~~~~~~~~~~~~~~~~~~
-				 */
-
-				// ALL OF THE TURN IN CARD LOGIC MOVED TO GAMELOGIC
-				gameLogic.turnInCard();
-
-				// ALL REINFORCEMENT LOGIC MOVED TO GAMELOGIC
-				if (turnCount >= gameLogic.getNumOfPlayers())
-					gameLogic.addReinforcements();
-
-				// ALL OF DEPLOYING REINFORCEMENT ARMIES MOVED TO GAMELOGIC
-				while (currPlayer.getNumOfArmies() > 0)
-					gameLogic.deployAllArmies();
-
-				/*
-				 * ~~~~~~~~~~~~~~~~~~~ ATTACK ARMIES LOGIC ~~~~~~~~~~~~~~~~~~~
-				 */
-
-				Territory attackingTerritory = currPlayer.getTerritories()
-						.get(r.nextInt(currPlayer.getTerritories().size()));
-				Territory defendingTerritory = currPlayer.attackTerritory(attackingTerritory,
-						attackingTerritory.getNeighbors());
-
-				if (defendingTerritory != null) {
-
-					battleLogic = new BattleLogic(currPlayer, defendingTerritory.getOwner(), attackingTerritory,
-							defendingTerritory);
-
-					// FIGURE OUT HOW MANY DICE TO ROLL
-
-					// System.out.println("Units in attacking territory: " +
-					// attackingTerritory.getUnits());
-					while (currPlayer.chooseRetreat(attackingTerritory) && attackingTerritory.getUnits() > 1) {
-						int attackerDiceNum, defenderDiceNum;
-						if (attackingTerritory.getUnits() <= 3) {
-							attackerDiceNum = attackingTerritory.getUnits() - 1;
-						} else {
-							attackerDiceNum = 3;
-						}
-
-						// System.out.println("Attacking Territory: " +
-						// attackingTerritory.getName());
-						// System.out.println("Attacking Units at Territory: " +
-						// attackingTerritory.getUnits());
-						// System.out.println("Defending Territory: " +
-						// defendingTerritory.getName());
-						// System.out.println("Defending Units at Territory: " +
-						// defendingTerritory.getUnits());
-
-						if (defendingTerritory.getUnits() <= 2) {
-							defenderDiceNum = defendingTerritory.getUnits();
-						} else
-							defenderDiceNum = 2;
-
-						// System.out.println(defendingTerritory.getUnits());
-						// System.out.println("Attacking Dice: " +
-						// attackerDiceNum);
-						// System.out.println("Defending Dice: " +
-						// defenderDiceNum);
-
-						battleLogic.attackPlayer(attackerDiceNum, defenderDiceNum);
-						int[] unitsToLose = battleLogic.subtractArmies();
-
-						// System.out.println("Num of Armies Attacker Lost: " +
-						// unitsToLose[0]);
-						// System.out.println("Num of Armies Defender Lost: " +
-						// unitsToLose[1]);
-						gameLogic.attackLogic(attackingTerritory, defendingTerritory, unitsToLose);
+	private ArrayList<Object> deployArmy(ArrayList<Territory> territories) {
+		/*
+		 * Use the total number of enemy armies surrounding the territory to
+		 * figure out how many armies to place in a certain territory. You want
+		 * to make sure you are powerful enough to withstand an attack from any
+		 * angle
+		 */
+		int highestNumberOfArmies = 0;
+		int indexOfHighest = 0;
+		int armyDifference = 0;
+		Territory temp;
+		Player tempPlayer;
+		ArrayList<Territory> neighbors = new ArrayList<Territory>();
+		ArrayList<Object> returns = new ArrayList<Object>();
+		for (int i = 0; i < territories.size(); i++) {
+			temp = territories.get(i);
+			neighbors = temp.getNeighbors();
+			for (int j = 0; j < neighbors.size(); j++) {
+				tempPlayer = neighbors.get(j).getOwner();
+				if (!tempPlayer.getName().equals(this.getName())) {
+					if (highestNumberOfArmies < neighbors.get(j).getUnits()) {
+						highestNumberOfArmies = neighbors.get(j).getUnits();
 					}
 				}
 
-				/*
-				 * ~~~~~~~~~~~~~~~ FORTIFY POSITION LOGIC ~~~~~~~~~~~~~~~~~
-				 */
-
-				// gameLogic.fortifyPosition();
 			}
-			int highestNumOfTerritories = 0;
-			int playerIndexOfHighestTerr = 0;
+			armyDifference = highestNumberOfArmies - temp.getUnits();
 
-			for (int j = 0; j < gameLogic.getNumOfPlayers(); j++) {
-				if (highestNumOfTerritories < gameLogic.getPlayerAt(j).getTerritories().size()) {
-					highestNumOfTerritories = gameLogic.getPlayerAt(j).getTerritories().size();
-					playerIndexOfHighestTerr = j;
-				}
+			if (armyDifference > 1) {
+				indexOfHighest = i;
 			}
-
-			Player winner = gameLogic.getPlayerAt(playerIndexOfHighestTerr);
-
-			if (i == 249 || i == 499 || i == 749 || i > 993)
-				System.out.println("Game " + (i + 1) + " Over!");
-
-			if (winner.getName().equals("easy1") || winner.getName().equals("easy2")
-					|| winner.getName().equals("easy3")) {
-				easyCount++;
-			}
-			if (winner.getName().equals("medium3") || winner.getName().equals("medium4")
-					|| winner.getName().equals("medium5") || winner.getName().equals("medium6")) {
-				mediumCount++;
-			}
-			if (winner.getName().equals("hard4") || winner.getName().equals("hard5")
-					|| winner.getName().equals("hard6")) {
-				hardCount++;
-			}
-
 		}
 
-		System.out.println("Easy Wins: " + easyCount);
-		System.out.println("Medium Wins: " + mediumCount);
-		System.out.println("Hard Winds: " + hardCount);
+		// System.out.println(highestNumberOfArmies);
+
+		returns.add(territories.get(indexOfHighest));
+		returns.add(highestNumberOfArmies);
+
+		return returns;
+
+	}
+
+	@Override
+	public boolean chooseRetreat(Territory currentTerr) {
+		/*
+		 * Use the total highest of enemy armies surrounding the territory to
+		 * determine whether or not to retreat
+		 */
+
+		ArrayList<Territory> neighbors = currentTerr.getNeighbors();
+		int highestArmies = 0;
+		for (int j = 0; j < neighbors.size(); j++) {
+			if (highestArmies < neighbors.get(j).getUnits()
+					&& !neighbors.get(j).getOwner().getName().equals(currentTerr.getOwner().getName())) {
+				highestArmies = neighbors.get(j).getUnits();
+			}
+		}
+		if (currentTerr.getUnits() - highestArmies > 3) {
+			return false;
+		}
+
+		return true;
+	}
+
+	@Override
+	public Territory attackTerritory(Territory currentTerr, ArrayList<Territory> connected) {
+		/*
+		 * Choose the territory with the biggest difference in armies in order
+		 * to win the easiest and get a card. chooseRetreat will take care of
+		 * stopping attacking
+		 * 
+		 * Returns null if no armies can be attacked
+		 */
+		int lowestNumberOfArmies = 0;
+		int indexOfLowest = 0;
+		Territory temp;
+		for (int i = 0; i < connected.size(); i++) {
+			temp = connected.get(i);
+			if (lowestNumberOfArmies < temp.getUnits() && !(temp.getName().equals(currentTerr.getOwner().getName()))) {
+				if (temp.getUnits() < currentTerr.getUnits()) {
+					lowestNumberOfArmies = connected.get(i).getUnits();
+					indexOfLowest = i;
+				}
+			}
+		}
+
+		if (currentTerr.getUnits() - lowestNumberOfArmies > 3) {
+			return connected.get(indexOfLowest);
+		}
+
+		return null;
+	}
+
+	@Override
+	public ArrayList<Object> fortifyPosition(Territory currentTerr, ArrayList<Territory> connected) {
+		/*
+		 * Same idea as the rest, make sure that you fortify if one of your
+		 * connected territories doesn't have enough. But make sure you don't
+		 * weaken yourself while doing this.
+		 * 
+		 * Use deploy army to check each friendly location's numOfArmies
+		 * surrounding it and find which has the lowest. Then compare that to
+		 * how many you have surrounding yourself. If you can't spare sending
+		 * armies then don't
+		 * 
+		 * RETURN AN ARRAY LIST WITH THE FIRST INDEX BEING THE TERRITORY AND THE
+		 * SECOND BEING AN INT.
+		 * 
+		 */
+		ArrayList<Territory> friendlyConnected = new ArrayList<Territory>();
+		ArrayList<Object> deployTerrAndArmy = new ArrayList<Object>();
+		ArrayList<Territory> enemies = new ArrayList<Territory>();
+		for (int i = 0; i < connected.size(); i++) {
+			if (connected.get(i).getOwner().getName().equals(currentTerr.getOwner().getName())) {
+				friendlyConnected.add(connected.get(i));
+			}
+			if (!connected.get(i).getOwner().getName().equals(currentTerr.getOwner().getName())
+					&& !enemies.contains(connected.get(i))) {
+				enemies.add(connected.get(i));
+			}
+		}
+		// System.out.println(friendlyConnected.size());
+
+		if (friendlyConnected.size() > 0) {
+			deployTerrAndArmy = deployArmy(friendlyConnected);
+			int totalEnemiesSorrounding;
+			Player currentEnemy;
+			for (int i = 0; i < enemies.size(); i++) {
+				currentEnemy = enemies.get(i).getOwner();
+				int totalEnemyUnits = 0;
+				for (int j = 0; j < enemies.size(); j++) {
+					if (currentEnemy.getName().equals(enemies.get(j))) {
+						totalEnemyUnits += enemies.get(j).getUnits();
+					}
+
+				}
+				if (currentTerr.getUnits() < totalEnemyUnits) {
+					deployTerrAndArmy.set(1, 0);
+				}
+			}
+			return deployTerrAndArmy;
+		}
+		return null;
+	}
+
+	@Override
+	public void startGame() {
+		// TODO Auto-generated method stub
+
 	}
 
 }

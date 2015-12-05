@@ -467,7 +467,7 @@ public class GameLogic implements Serializable {
 		// converts Player[] to ArrayList<Player>
 		ArrayList<Player> temp = new ArrayList<Player>();
 		for (int k = 0; k < objects.length; k++) {
-			System.out.println(objects[k]);
+			// System.out.println(objects[k]);
 			temp.add((Player) objects[k]);
 		}
 
@@ -505,12 +505,13 @@ public class GameLogic implements Serializable {
 
 	public void deployAllArmies() {
 		Player currPlayer = allPlayers.getPlayer(indexOfPlayerTurn);
-		// System.out.println("Current player being deployed: " +
-		// currPlayer.getName());
-		while (currPlayer.getNumOfArmies() > 0) {
-			ArrayList<Object> deployingList = currPlayer.deployArmy();
+		//System.out.println("Current player being deployed: " + currPlayer.getName());
+
+		ArrayList<Object> deployingList = currPlayer.deployArmy();
+		if (deployingList != null) {
 			Territory tempTerr = (Territory) deployingList.get(0);
 			Integer tempInt = (Integer) deployingList.get(1);
+
 			// if (tempTerr.getUnits() <= 10)
 			tempTerr.addUnits(tempInt);
 			currPlayer.removeArmies(tempInt);
