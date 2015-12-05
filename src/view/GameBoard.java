@@ -86,19 +86,11 @@ public class GameBoard extends JPanel {
 	JLabel playerTag, playerTag2, playerTag3, playerTag4, playerTag5, playerTag6, playerCount, playerCount2,
 			playerCount3, playerCount4, playerCount5, playerCount6, turnMarker, gameStatus;
 
-	private FileInputStream fis;
-	private ObjectInputStream input;
+	private FileInputStream inputStream;
+	private ObjectInputStream objectInput;
 
 	public GameBoard() {
 
-		try {
-			fis = new FileInputStream("saved");
-			input = new ObjectInputStream(fis);
-
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		reinforcementPhase = true;
 		attackPhase = false;
 
@@ -106,7 +98,7 @@ public class GameBoard extends JPanel {
 		while (newgame1.isDisplayable()) {
 			System.out.print("");
 
-			if (!newgame1.isDisplayable() && newgame1.isClicked() == false) {
+			if (!newgame1.isDisplayable()) {
 				System.out.print("");
 
 				startWindow = new StartWindow();
@@ -134,7 +126,25 @@ public class GameBoard extends JPanel {
 							System.out.println("NUMBER OF PLAYERS: " + startWindow.getNumberOfPlayer());
 
 							this.setLayout(new BorderLayout());
-							startNewGame();
+							if (newgame1.isClicked() == false) {
+								startNewGame();
+							} else {
+								try {
+									inputStream = new FileInputStream("savedGame");
+									objectInput = new ObjectInputStream(inputStream);
+
+								} catch (IOException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								try {
+									importGameLogic((GameLogic) objectInput.readObject());
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								objectInput.close();
+							}
 							playerTags();
 							addButtons();
 							currPlayer = newGame.getPlayerAt(0);
@@ -152,41 +162,6 @@ public class GameBoard extends JPanel {
 
 					}
 				}
-			}
-			if (newgame1.isClicked() == true) {
-				try {
-
-					map = ImageIO.read(new File("./Pictures/map1.png"));
-
-					bottomDisplay = ImageIO.read(new File("./Pictures/bottomgui.png"));
-					leftDisplay = ImageIO.read(new File("./Pictures/gui2n.png"));
-					rightDisplay = ImageIO.read(new File("./Pictures/gui2n.png"));
-
-					JLabel picLabel = new JLabel(new ImageIcon(map));
-					JLabel bottomLabel = new JLabel(new ImageIcon(bottomDisplay));
-					JLabel leftLabel = new JLabel(new ImageIcon(leftDisplay));
-					JLabel rightLabel = new JLabel(new ImageIcon(rightDisplay));
-					// System.out.println("NUMBER OF PLAYERS: " +
-					// startWindow.getNumberOfPlayer());
-
-					this.setLayout(new BorderLayout());
-
-					add(picLabel, BorderLayout.CENTER);
-					add(leftLabel, BorderLayout.WEST);
-					add(rightLabel, BorderLayout.EAST);
-
-					add(bottomLabel, BorderLayout.SOUTH);
-					newGame = (GameLogic) input.readObject();
-					input.close();
-
-				} catch (ClassNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-
 			}
 		}
 
@@ -541,6 +516,14 @@ public class GameBoard extends JPanel {
 
 		newGame.startGame();
 
+	}
+
+	public GameLogic getGameLogic() {
+		return newGame;
+	}
+
+	public void importGameLogic(GameLogic newGameLogic) {
+		newGame = newGameLogic;
 	}
 
 	public void addButtons() {
