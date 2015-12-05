@@ -120,8 +120,10 @@ public class Run6BotsFIX {
 						// System.out.println(defendingTerritory.getUnits());
 						// System.out.println("Attacking Dice: " +
 						// attackerDiceNum);
-						//System.out.println("Defender: " + defendingTerritory.getOwner().getName());
-						//System.out.println("Defending Dice: " + defenderDiceNum);
+						// System.out.println("Defender: " +
+						// defendingTerritory.getOwner().getName());
+						// System.out.println("Defending Dice: " +
+						// defenderDiceNum);
 
 						battleLogic.attackPlayer(attackerDiceNum, defenderDiceNum);
 						int[] unitsToLose = battleLogic.subtractArmies();
@@ -138,7 +140,7 @@ public class Run6BotsFIX {
 				 * ~~~~~~~~~~~~~~~ FORTIFY POSITION LOGIC ~~~~~~~~~~~~~~~~~
 				 */
 
-				 //gameLogic.fortifyPosition();
+				gameLogic.fortifyPosition();
 			}
 			int highestNumOfTerritories = 0;
 			int playerIndexOfHighestTerr = 0;
@@ -152,8 +154,14 @@ public class Run6BotsFIX {
 
 			Player winner = gameLogic.getPlayerAt(playerIndexOfHighestTerr);
 
-			if (i == 249 || i == 499 || i == 749 || i > 993)
+			if (i == 249 || i == 499 || i == 749) {
 				System.out.println("Game " + (i + 1) + " Over!");
+				System.out.println("Easy Wins: " + easyCount);
+				System.out.println("Medium Wins: " + mediumCount);
+				System.out.println("Hard Winds: " + hardCount);
+				System.out.println("Still playing more games");
+				System.out.println();
+			}
 
 			if (winner.getName().equals("easy1") || winner.getName().equals("easy2")
 					|| winner.getName().equals("easy3")) {
