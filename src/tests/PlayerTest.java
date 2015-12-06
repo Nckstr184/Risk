@@ -67,7 +67,7 @@ public class PlayerTest {
 		test.removeArmies(5);
 		assertEquals(0, test.getNumOfArmies());
 		assertEquals("test", test.toString());
-		
+
 	}
 
 }

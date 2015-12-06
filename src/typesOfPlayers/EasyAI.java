@@ -80,7 +80,7 @@ public class EasyAI extends Player implements AIStrategy {
 		if (!connected.get(rand).getOwner().getName().equals(this.getName()))
 			return connected.get(rand);
 		// returns null if it decides to not attack
-		//System.out.println("Returning null");
+		// System.out.println("Returning null");
 		return null;
 	}
 

@@ -30,6 +30,7 @@ import model.Continent;
 import model.GameLogic;
 import model.Languages;
 import model.Player;
+import model.PlayerCollection;
 import model.Territory;
 
 public class GameBoard extends JPanel {
@@ -114,8 +115,7 @@ public class GameBoard extends JPanel {
 				System.out.print("");
 
 				startWindow = new StartWindow();
-				if(newgame1.isClicked())
-				{
+				if (newgame1.isClicked()) {
 					startWindow.dispose();
 				}
 				// current = new Player();
@@ -142,28 +142,32 @@ public class GameBoard extends JPanel {
 
 							this.setLayout(new BorderLayout());
 
-							if(!newgame1.isClicked())
-							{
-							startNewGame();
+							if (!newgame1.isClicked()) {
+								startNewGame();
 							}
 							startWindow.dispose();
-							if(newgame1.isClicked())
-							{
-								GameLogic tempLogic=null;
+							if (newgame1.isClicked()) {
+								PlayerCollection tempPlayers=null;
+								CardCollection tempCards=null;
+								ArrayList<Territory> tempTerritories=null;
+								ArrayList<Continent> tempContinents=null;
 								try {
-									inputStream= new FileInputStream("savedGame");
-									objectInput= new ObjectInputStream(inputStream);
-									tempLogic=(GameLogic) objectInput.readObject();
-									System.out.println(tempLogic.getNumOfPlayers());
+									inputStream = new FileInputStream("savedGame");
+									objectInput = new ObjectInputStream(inputStream);
+									tempPlayers = (PlayerCollection) objectInput.readObject();
+									tempCards = (CardCollection) objectInput.readObject();
+									tempTerritories = (ArrayList<Territory>) objectInput.readObject();
+									tempContinents = (ArrayList<Continent>) objectInput.readObject();
+
+									System.out.println(tempPlayers.getNumOfPlayers());
 								} catch (ClassNotFoundException e) {
 									// TODO Auto-generated catch block
 									System.out.println("reading did not work");
 									e.printStackTrace();
 								}
-								this.importGameLogic(tempLogic);
+								this.importGameLogic(tempPlayers, tempCards, tempContinents, tempTerritories);
 							}
-							
-							
+
 							System.out.println("NUMBER OF PLAYERS: " + newGame.getNumOfPlayers());
 
 							playerTags();
@@ -525,9 +529,29 @@ public class GameBoard extends JPanel {
 		return newGame;
 	}
 
-	public void importGameLogic(GameLogic newGameLogic) {
-		newGame = newGameLogic;
+	public void importGameLogic(PlayerCollection newPlayers, CardCollection newCards, ArrayList<Continent> newContinets, ArrayList<Territory> newTerritories) {
+		newGame.setPlayerList(newPlayers);
+		newGame.setCards(newCards);
+		newGame.setTerritory(newTerritories);
+		newGame.setContinents(newContinets);
 	}
+
+	public PlayerCollection getPlayers() {
+		return newGame.getPlayerList();
+	}
+
+	public CardCollection getCards() {
+		return newGame.getCards();
+	}
+
+	public ArrayList<Continent> getContinents() {
+		return newGame.getContinents();
+	}
+
+	public ArrayList<Territory> getTerritories() {
+		return newGame.getTerritories();
+	}
+	
 
 	public void addButtons() {
 
@@ -4318,7 +4342,7 @@ public class GameBoard extends JPanel {
 					if ((rubyLanguage.getName() == currPlayer.getName()) && (rubyUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
-						
+
 						rubyAttacking = true;
 						attackPhase = false;
 					}

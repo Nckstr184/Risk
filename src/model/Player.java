@@ -38,11 +38,11 @@ public abstract class Player implements Serializable {
 	public ArrayList<Card> getCards() {
 		return playerCards;
 	}
-	
+
 	public void setIsAI(boolean isAI) {
 		this.isAI = isAI;
 	}
-	
+
 	public boolean isAI() {
 		return isAI;
 	}

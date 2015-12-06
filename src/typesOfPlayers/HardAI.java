@@ -140,7 +140,7 @@ public class HardAI extends Player implements AIStrategy {
 
 	@Override
 	public ArrayList<Object> fortifyPosition(Territory currentTerr, ArrayList<Territory> connected) {
-		
+
 		/*
 		 * Same idea as the rest, make sure that you fortify if one of your
 		 * connected territories doesn't have enough. But make sure you don't
@@ -155,7 +155,7 @@ public class HardAI extends Player implements AIStrategy {
 		 * SECOND BEING AN INT.
 		 * 
 		 */
-		
+
 		Territory deployTerr;
 		int highestNumOfArmies = 0;
 		int armiesToMove;
@@ -171,7 +171,7 @@ public class HardAI extends Player implements AIStrategy {
 
 		if (friendlyConnected.size() > 0) {
 			deployTerr = deployArmy(friendlyConnected);
-			
+
 			/*
 			 * Checks surrounding enemies to see how many armies HardAI can
 			 * spare for it's ally
@@ -184,14 +184,14 @@ public class HardAI extends Player implements AIStrategy {
 					}
 			}
 			armiesToMove = currentTerr.getUnits() - highestNumOfArmies - 2;
-			if(armiesToMove > 0) {
+			if (armiesToMove > 0) {
 				deployTerrAndArmy.add(deployTerr);
 				deployTerrAndArmy.add(armiesToMove);
-				
+
 				return deployTerrAndArmy;
 			}
 		}
-	return null;
+		return null;
 	}
 
 	@Override

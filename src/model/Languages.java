@@ -34,9 +34,10 @@ public class Languages extends Continent implements Serializable {
 	public ArrayList<Territory> getTerritories() {
 		return LangTerr;
 	}
+
 	public Territory getTerritory(int i) {
 		return LangTerr.get(i);
-		}
+	}
 
 	@Override
 	public boolean isConquered() {
