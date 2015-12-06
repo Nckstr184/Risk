@@ -111,9 +111,9 @@ public class MainGUI extends JFrame {
 
 			try {
 				objectOutput.writeObject(map.getPlayers());
-				objectOutput.writeObject(map.getContinents());
+				//objectOutput.writeObject(map.getContinents());
 				objectOutput.writeObject(map.getTerritories());
-				objectOutput.writeObject(map.getCards());
+				//objectOutput.writeObject(map.getCards());
 
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
