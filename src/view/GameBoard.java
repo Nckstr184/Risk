@@ -7516,13 +7516,14 @@ public class GameBoard extends JPanel {
 			gameBoardAttack(attackingTerritory, defendingTerritory);
 
 		} else if (turnPhase == 2) {
-
+			currPlayer.deployArmy();
 		}
 	}
 
 	private void gameBoardAttack(Territory attackingTerr, Territory defendingTerr) {
 		BattleLogic battleLogic = new BattleLogic(attackingTerr.getOwner(), defendingTerr.getOwner(), attackingTerr,
 				defendingTerr);
+		Random r = new Random();
 
 		// Create the number of dice for each player
 		int attackerDiceNum, defenderDiceNum;
@@ -7546,6 +7547,14 @@ public class GameBoard extends JPanel {
 
 		if (!defendingTerr.getOwner().isAI()) {
 			// SEND ALL THE INFO TO JOPTIONPANE HERE AND CHECK FOR RETREAT
+			
+		}
+		else if(!currPlayer.chooseRetreat(attackingTerr)) {
+			Territory attackingTerritory = currPlayer.getTerritories()
+					.get(r.nextInt(currPlayer.getTerritories().size()));
+			Territory defendingTerritory = currPlayer.attackTerritory(attackingTerritory,
+					attackingTerritory.getNeighbors());
+			gameBoardAttack(attackingTerritory, defendingTerritory);
 		}
 	}
 

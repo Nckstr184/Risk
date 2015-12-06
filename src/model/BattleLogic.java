@@ -49,7 +49,6 @@ public class BattleLogic {
 
 		// roll the defending dice (1-2)
 		defendDice = new Dice(numOfDefendDice);
-		subtractArmies();
 	}
 
 	public int[] subtractArmies() {
