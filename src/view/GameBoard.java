@@ -9,6 +9,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -113,6 +114,10 @@ public class GameBoard extends JPanel {
 				System.out.print("");
 
 				startWindow = new StartWindow();
+				if(newgame1.isClicked())
+				{
+					startWindow.dispose();
+				}
 				// current = new Player();
 				while (startWindow.isDisplayable()) {
 
@@ -137,7 +142,28 @@ public class GameBoard extends JPanel {
 
 							this.setLayout(new BorderLayout());
 
+							if(!newgame1.isClicked())
+							{
 							startNewGame();
+							}
+							startWindow.dispose();
+							if(newgame1.isClicked())
+							{
+								GameLogic tempLogic=null;
+								try {
+									inputStream= new FileInputStream("savedGame");
+									objectInput= new ObjectInputStream(inputStream);
+									tempLogic=(GameLogic) objectInput.readObject();
+									System.out.println(tempLogic.getNumOfPlayers());
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									System.out.println("reading did not work");
+									e.printStackTrace();
+								}
+								this.importGameLogic(tempLogic);
+							}
+							
+							
 							System.out.println("NUMBER OF PLAYERS: " + newGame.getNumOfPlayers());
 
 							playerTags();
