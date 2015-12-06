@@ -147,10 +147,10 @@ public class GameBoard extends JPanel {
 							}
 							startWindow.dispose();
 							if (newgame1.isClicked()) {
-								PlayerCollection tempPlayers=null;
-								CardCollection tempCards=null;
-								ArrayList<Territory> tempTerritories=null;
-								ArrayList<Continent> tempContinents=null;
+								PlayerCollection tempPlayers = null;
+								CardCollection tempCards = null;
+								ArrayList<Territory> tempTerritories = null;
+								ArrayList<Continent> tempContinents = null;
 								try {
 									inputStream = new FileInputStream("savedGame");
 									objectInput = new ObjectInputStream(inputStream);
@@ -529,7 +529,8 @@ public class GameBoard extends JPanel {
 		return newGame;
 	}
 
-	public void importGameLogic(PlayerCollection newPlayers, CardCollection newCards, ArrayList<Continent> newContinets, ArrayList<Territory> newTerritories) {
+	public void importGameLogic(PlayerCollection newPlayers, CardCollection newCards, ArrayList<Continent> newContinets,
+			ArrayList<Territory> newTerritories) {
 		newGame.setPlayerList(newPlayers);
 		newGame.setCards(newCards);
 		newGame.setTerritory(newTerritories);
@@ -551,7 +552,6 @@ public class GameBoard extends JPanel {
 	public ArrayList<Territory> getTerritories() {
 		return newGame.getTerritories();
 	}
-	
 
 	public void addButtons() {
 
@@ -7718,27 +7718,37 @@ public class GameBoard extends JPanel {
 	public void nextPlayer() {
 		currPlayer = newGame.nextPlayer();
 		if (currPlayer.isAI()) {
-			AITurn(0);
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			if (!reinforcementPhase) {
+				newGame.turnInCard();
+				newGame.addReinforcements();
+				AITurn(0);
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				updateLabels();
+
+				AITurn(1);
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				updateLabels();
+
+				AITurn(2);
+				updateLabels();
+			} else {
+				AITurn(0);
+				updateLabels();
 			}
-			updateLabels();
-			
-			AITurn(1);
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			updateLabels();
-			
-			AITurn(2);
-			updateLabels();
+
 		}
+
+		nextPlayer();
 	}
 
 	public void AITurn(int turnPhase) {
@@ -7750,8 +7760,6 @@ public class GameBoard extends JPanel {
 		Random r = new Random();
 
 		if (turnPhase == 0) {
-			newGame.turnInCard();
-			newGame.addReinforcements();
 			currPlayer.deployArmy();
 		} else if (turnPhase == 1) {
 			Territory attackingTerritory = currPlayer.getTerritories()
