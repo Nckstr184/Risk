@@ -7745,10 +7745,9 @@ public class GameBoard extends JPanel {
 				AITurn(0);
 				updateLabels();
 			}
-
+			nextPlayer();
 		}
 
-		nextPlayer();
 	}
 
 	public void AITurn(int turnPhase) {
