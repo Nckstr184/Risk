@@ -173,6 +173,7 @@ public class GameBoard extends JPanel {
 							playerTags();
 							addButtons();
 
+							// Goes to the first Player
 							currPlayer = newGame.getPlayerAt(0);
 
 							add(picLabel, BorderLayout.CENTER);
@@ -3995,7 +3996,6 @@ public class GameBoard extends JPanel {
 			}
 
 		}
-		nextPlayer();
 
 		javaLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -7716,34 +7716,72 @@ public class GameBoard extends JPanel {
 	}
 
 	public void nextPlayer() {
+
 		currPlayer = newGame.nextPlayer();
+
+		if (reinforcementPhase) {
+			if (startWindow.getPlayerAt(0) == currPlayer) {
+				playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				turnMarker.setLocation(150, 590);
+			} else if (startWindow.getPlayerAt(1) == currPlayer) {
+				playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				turnMarker.setLocation(320, 590);
+			} else if (startWindow.getPlayerAt(2) == currPlayer) {
+				playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				turnMarker.setLocation(470, 590);
+			} else if (startWindow.getPlayerAt(3) == currPlayer) {
+				playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				turnMarker.setLocation(640, 590);
+			} else if (startWindow.getPlayerAt(4) == currPlayer) {
+				playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				turnMarker.setLocation(810, 590);
+			} else if (startWindow.getPlayerAt(5) == currPlayer) {
+				playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				turnMarker.setLocation(980, 590);
+			}
+		}
+
+		System.out.println("Current Player: " + currPlayer.getName());
+		System.out.println("AI?: " + currPlayer.isAI());
+
 		if (currPlayer.isAI()) {
+			System.out.println("Detecting AI");
 			if (!reinforcementPhase) {
+				System.out.println("Not in reinforcement phase");
 				newGame.turnInCard();
 				newGame.addReinforcements();
 				AITurn(0);
 				try {
-					Thread.sleep(1000);
+					Thread.sleep(2000);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				updateLabels();
+				// updateLabels();
 
 				AITurn(1);
 				try {
-					Thread.sleep(1000);
+					Thread.sleep(2000);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				updateLabels();
+				// updateLabels();
 
 				AITurn(2);
-				updateLabels();
+				// updateLabels();
 			} else {
+				System.out.println("In reinforcement phase");
+
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
 				AITurn(0);
-				updateLabels();
+				// updateLabels();
 			}
 			nextPlayer();
 		}
@@ -7759,6 +7797,7 @@ public class GameBoard extends JPanel {
 		Random r = new Random();
 
 		if (turnPhase == 0) {
+			System.out.println("Deploing AI army");
 			currPlayer.deployArmy();
 		} else if (turnPhase == 1) {
 			Territory attackingTerritory = currPlayer.getTerritories()
