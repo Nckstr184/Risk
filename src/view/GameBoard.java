@@ -3995,7 +3995,7 @@ public class GameBoard extends JPanel {
 			}
 
 		}
-		currPlayer = newGame.nextPlayer();
+		nextPlayer();
 
 		javaLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -4026,7 +4026,7 @@ public class GameBoard extends JPanel {
 							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
 							turnMarker.setLocation(150, 590);
 						}
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 					}
 					checkIfReinforcementPhaseIsOver();
@@ -4100,7 +4100,7 @@ public class GameBoard extends JPanel {
 							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
 							turnMarker.setLocation(150, 590);
 						}
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 					}
 
 					checkIfReinforcementPhaseIsOver();
@@ -4181,7 +4181,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 					}
 					checkIfReinforcementPhaseIsOver();
@@ -4253,7 +4253,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 					}
 					checkIfReinforcementPhaseIsOver();
@@ -4331,7 +4331,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 					}
 					checkIfReinforcementPhaseIsOver();
@@ -4403,7 +4403,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -4474,7 +4474,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -4533,7 +4533,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -4622,7 +4622,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -4687,7 +4687,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -4764,7 +4764,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -4833,7 +4833,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -4908,7 +4908,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -4977,7 +4977,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -5034,7 +5034,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -5109,7 +5109,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -5184,7 +5184,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -5253,7 +5253,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -5316,7 +5316,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -5386,7 +5386,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -5462,7 +5462,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -5526,7 +5526,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -5597,7 +5597,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 
 						}
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 					}
 
 					checkIfReinforcementPhaseIsOver();
@@ -5660,7 +5660,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -5735,7 +5735,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -5792,7 +5792,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -5861,7 +5861,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -5936,7 +5936,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -6011,7 +6011,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -6067,7 +6067,7 @@ public class GameBoard extends JPanel {
 							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
 							turnMarker.setLocation(150, 590);
 						}
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -6136,7 +6136,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -6211,7 +6211,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -6299,7 +6299,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -6368,7 +6368,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -6437,7 +6437,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -6503,7 +6503,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 					}
 					checkIfReinforcementPhaseIsOver();
@@ -6562,7 +6562,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -6627,7 +6627,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -6699,7 +6699,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -6776,7 +6776,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -6836,7 +6836,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -6908,7 +6908,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
