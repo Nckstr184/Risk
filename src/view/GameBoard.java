@@ -6463,7 +6463,7 @@ public class GameBoard extends JPanel {
 							turnMarker.setLocation(150, 590);
 						}
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
