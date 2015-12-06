@@ -17,7 +17,7 @@ public class PlayerCollectionTest {
 	public void test() {
 		PlayerCollection collectionTest = new PlayerCollection();
 		ArrayList<Player> playerList = new ArrayList<Player>();
-		Player newP = new Human("plaer", Color.RED, 0);
+		Player newP = new Human("plaer", Color.RED, 0, false);
 		assertEquals(0, collectionTest.getNumOfPlayers());
 		assertEquals(true, collectionTest.addPlayers(newP));
 		assertEquals(1, collectionTest.getNumOfPlayers());

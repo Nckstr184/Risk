@@ -30,10 +30,10 @@ public class GameLogicTest {
 		Continent Sun = new Sun("Sun", false);
 		Continent Languages = new Languages("Languages", false);
 		Continent Wildcat = new Wildcat("Wildcat", false);
-		Player human = new Human("human", Color.RED, 0);
-		Player human2 = new Human("human2", Color.BLACK, 0);
-		Player human3 = new Human("human3", Color.BLACK, 0);
-		Player human4 = new Human("human4", Color.BLACK, 0);
+		Player human = new Human("human", Color.RED, 0, false);
+		Player human2 = new Human("human2", Color.BLACK, 0, false);
+		Player human3 = new Human("human3", Color.BLACK, 0, false);
+		Player human4 = new Human("human4", Color.BLACK, 0, false);
 
 		GameLogic logic = new GameLogic(human, human2, human3, human4, null, null);
 

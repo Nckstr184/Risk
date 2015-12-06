@@ -20,11 +20,13 @@ public abstract class Player implements Serializable {
 	private ArrayList<Territory> playerTerritories;
 	private int numOfArmies;
 	private int diceRoll;
+	private boolean isAI;
 
-	public Player(String name, Color color, int numOfArmies) {
+	public Player(String name, Color color, int numOfArmies, boolean isAI) {
 		this.name = name;
 		this.playerColor = color;
 		this.numOfArmies = numOfArmies;
+		this.isAI = isAI;
 		playerCards = new ArrayList<Card>();
 		playerTerritories = new ArrayList<Territory>();
 	}
@@ -35,6 +37,14 @@ public abstract class Player implements Serializable {
 
 	public ArrayList<Card> getCards() {
 		return playerCards;
+	}
+	
+	public void setIsAI(boolean isAI) {
+		this.isAI = isAI;
+	}
+	
+	public boolean isAI() {
+		return isAI;
 	}
 
 	public void addArmies(int numArmies) {

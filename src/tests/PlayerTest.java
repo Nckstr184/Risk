@@ -19,7 +19,7 @@ public class PlayerTest {
 
 	@Test
 	public void test() {
-		Player test = new Human("test", Color.BLACK, 0);
+		Player test = new Human("test", Color.BLACK, 0, false);
 		Card temp = new RiskCard("Card1", CardType.GARY, null);
 		Card temp1 = new RiskCard("Card2", CardType.GARY, null);
 		Card temp2 = new RiskCard("Card3", CardType.GARY, null);

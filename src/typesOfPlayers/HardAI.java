@@ -19,8 +19,8 @@ public class HardAI extends Player implements AIStrategy {
 	 */
 	private static final long serialVersionUID = -7811415056177163383L;
 
-	public HardAI(String name, Color color, int numOfArmies) {
-		super(name, color, numOfArmies);
+	public HardAI(String name, Color color, int numOfArmies, boolean isAI) {
+		super(name, color, numOfArmies, isAI);
 	}
 
 	@Override

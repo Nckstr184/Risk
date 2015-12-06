@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -21,6 +22,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import model.BattleLogic;
 import model.CardCollection;
 import model.Continent;
 import model.Player;
@@ -29,7 +31,8 @@ import model.Territory;
 
 public class GameBoard extends JPanel {
 
-	boolean reinforcementPhase, attackPhase, javaAttacking, pythonAttacking, cAttacking, sqlAttacking, rubyAttacking, gitAttacking, perlAttacking, horiusAttacking, giantAttacking;
+	boolean reinforcementPhase, attackPhase, javaAttacking, pythonAttacking, cAttacking, sqlAttacking, rubyAttacking,
+			gitAttacking, perlAttacking, horiusAttacking, giantAttacking;
 	HashMap<JButton, JLabel> myMap;
 	ArrayList<Continent> continents;
 	ArrayList<Territory> territories;
@@ -128,7 +131,6 @@ public class GameBoard extends JPanel {
 
 							startNewGame();
 							System.out.println("NUMBER OF PLAYERS: " + newGame.getNumOfPlayers());
-
 
 							playerTags();
 							addButtons();
@@ -3965,7 +3967,6 @@ public class GameBoard extends JPanel {
 							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
 							turnMarker.setLocation(150, 590);
 						}
-
 						currPlayer = newGame.nextPlayer();
 
 					}
@@ -4080,8 +4081,7 @@ public class GameBoard extends JPanel {
 					perlAttacking = false;
 					attackPhase = true;
 				}
-				
-			
+
 			}
 		});
 		cLanguage.addActionListener(new ActionListener() {
@@ -6502,6 +6502,61 @@ public class GameBoard extends JPanel {
 		this.add(bloobawlCresent);
 		this.add(cresentcaptitalCresent);
 
+	}
+
+	public void AITurn(int turnPhase) {
+		/*
+		 * Lots of Run6Bots stuff
+		 * 
+		 * 0 >>> Deploy
+		 * 1 >>> Attack
+		 * 2 >>> Fortify
+		 */
+		Random r = new Random();
+
+		if (turnPhase == 0) {
+			newGame.turnInCard();
+			newGame.addReinforcements();
+			currPlayer.deployArmy();
+		} else if (turnPhase == 1) {
+			Territory attackingTerritory = currPlayer.getTerritories()
+					.get(r.nextInt(currPlayer.getTerritories().size()));
+			Territory defendingTerritory = currPlayer.attackTerritory(attackingTerritory,
+					attackingTerritory.getNeighbors());
+			gameBoardAttack(attackingTerritory, defendingTerritory);
+
+		} else if (turnPhase == 2) {
+
+		}
+	}
+
+	private void gameBoardAttack(Territory attackingTerr, Territory defendingTerr) {
+		BattleLogic battleLogic = new BattleLogic(attackingTerr.getOwner(), defendingTerr.getOwner(), attackingTerr,
+				defendingTerr);
+
+		// Create the number of dice for each player
+		int attackerDiceNum, defenderDiceNum;
+		if (attackingTerr.getUnits() <= 3) {
+			attackerDiceNum = attackingTerr.getUnits() - 1;
+		} else {
+			attackerDiceNum = 3;
+		}
+
+		if (defendingTerr.getUnits() <= 2) {
+			defenderDiceNum = defendingTerr.getUnits();
+		} else
+			defenderDiceNum = 2;
+
+		// compare the dice
+		battleLogic.attackPlayer(attackerDiceNum, defenderDiceNum);
+		int[] armiesLost = battleLogic.subtractArmies();
+
+		// subtract the armies
+		newGame.attackLogic(attackingTerr, defendingTerr, armiesLost);
+
+		if (!defendingTerr.getOwner().isAI()) {
+			// SEND ALL THE INFO TO JOPTIONPANE HERE AND CHECK FOR RETREAT
+		}
 	}
 
 	private void checkIfReinforcementPhaseIsOver() {
