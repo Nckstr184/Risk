@@ -611,4 +611,34 @@ public class GameLogic implements Serializable {
 			currPlayer.addArmies(numOfRewardArmies);
 		}
 	}
+
+	public void setPlayerList(PlayerCollection newPlayers) {
+		// TODO Auto-generated method stub
+		this.allPlayers=newPlayers;
+	}
+
+	public void setCards(CardCollection newCards) {
+		// TODO Auto-generated method stub
+		this.allCards=newCards;
+	}
+
+	public void setTerritory(ArrayList<Territory> newTerritories) {
+		// TODO Auto-generated method stub
+		this.allTerritories=newTerritories;
+	}
+
+	public void setContinents(ArrayList<Continent> newContinents) {
+		// TODO Auto-generated method stub
+		this.allContinents=newContinents;
+	}
+
+	public CardCollection getCards() {
+		// TODO Auto-generated method stub
+		return this.allCards;
+	}
+
+	public ArrayList<Continent> getContinents() {
+		// TODO Auto-generated method stub
+		return this.allContinents;
+	}
 }

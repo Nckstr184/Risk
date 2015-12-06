@@ -115,12 +115,12 @@ public class GameBoard extends JPanel {
 				System.out.print("");
 
 				startWindow = new StartWindow();
-				if (newgame1.isClicked()) {
-					startWindow.dispose();
-				}
+				
 				// current = new Player();
 				while (startWindow.isDisplayable()) {
-
+					if (newgame1.isClicked()) {
+						startWindow.dispose();
+					}
 					System.out.print("");
 
 					if (!startWindow.isDisplayable()) {
@@ -145,19 +145,23 @@ public class GameBoard extends JPanel {
 							if (!newgame1.isClicked()) {
 								startNewGame();
 							}
+							System.out.println("Load GAME WAS CLICKED");
+
 							startWindow.dispose();
 							if (newgame1.isClicked()) {
-								PlayerCollection tempPlayers = null;
-								CardCollection tempCards = null;
-								ArrayList<Territory> tempTerritories = null;
-								ArrayList<Continent> tempContinents = null;
+								System.out.println("Load GAME WAS CLICKED");
+								PlayerCollection tempPlayers=null;
+								CardCollection tempCards=null;
+								ArrayList<Territory> tempTerritories=null;
+								ArrayList<Continent> tempContinents=null;
+
 								try {
 									inputStream = new FileInputStream("savedGame");
 									objectInput = new ObjectInputStream(inputStream);
 									tempPlayers = (PlayerCollection) objectInput.readObject();
-									tempCards = (CardCollection) objectInput.readObject();
-									tempTerritories = (ArrayList<Territory>) objectInput.readObject();
 									tempContinents = (ArrayList<Continent>) objectInput.readObject();
+									tempTerritories = (ArrayList<Territory>) objectInput.readObject();
+									tempCards = (CardCollection) objectInput.readObject();
 
 									System.out.println(tempPlayers.getNumOfPlayers());
 								} catch (ClassNotFoundException e) {
