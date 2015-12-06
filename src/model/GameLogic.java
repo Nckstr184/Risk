@@ -355,6 +355,8 @@ public class GameLogic implements Serializable {
 		Amun.addNeighbors(Horus);
 		Amun.addNeighbors(Tonatiuh);
 	}
+	
+	
 
 	public ArrayList<Territory> getTerritories() {
 		return allTerritories;
@@ -422,7 +424,7 @@ public class GameLogic implements Serializable {
 		if (allPlayers.getNumOfPlayers() == 3) {
 			for (int i = 0; i < 3; i++) {
 				Player temp = allPlayers.getPlayer(i);
-				temp.addArmies(35);
+				temp.addArmies(3);
 			}
 		}
 		if (allPlayers.getNumOfPlayers() == 4) {
@@ -477,34 +479,6 @@ public class GameLogic implements Serializable {
 		return allPlayers;
 	}
 
-	public CardCollection getCards() {
-		return allCards;
-	}
-
-	public ArrayList<Continent> getContinents() {
-		return allContinents;
-	}
-
-	public ArrayList<Territory> getTerritory() {
-		return allTerritories;
-	}
-
-	public void setPlayerList(PlayerCollection newPlayers) {
-		allPlayers = newPlayers;
-	}
-
-	public void setCards(CardCollection newCards) {
-		allCards = newCards;
-	}
-
-	public void setContinents(ArrayList<Continent> newContinents) {
-		allContinents = newContinents;
-	}
-
-	public void setTerritory(ArrayList<Territory> newTerritories) {
-		allTerritories = newTerritories;
-	}
-
 	public boolean isGameComplete() {
 		if (languages.cConquered())
 			if (dino.cConquered())
@@ -532,8 +506,7 @@ public class GameLogic implements Serializable {
 
 	public void deployAllArmies() {
 		Player currPlayer = allPlayers.getPlayer(indexOfPlayerTurn);
-		// System.out.println("Current player being deployed: " +
-		// currPlayer.getName());
+		//System.out.println("Current player being deployed: " + currPlayer.getName());
 
 		ArrayList<Object> deployingList = currPlayer.deployArmy();
 		if (deployingList != null) {
@@ -559,6 +532,7 @@ public class GameLogic implements Serializable {
 			defender.removeTerritory(defendingTerr);
 			attacker.addTerritories(defendingTerr);
 			defendingTerr.setOwner(attacker);
+			
 
 			attackingTerr.removeUnits(1);
 			while (defendingTerr.getUnits() <= 1) {
@@ -593,15 +567,11 @@ public class GameLogic implements Serializable {
 			int armiesToAdd = (Integer) fortifyReturn.get(1);
 
 			territoryToFortify.addUnits(armiesToAdd);
-			// System.out.println("The player that is fortifying: " +
-			// currPlayer.getName());
-			// System.out.println("Number of Units at currTerr: " +
-			// currPlayer.getTerritories().get(rand).getUnits());
-			// System.out.println("Number of Units leaving currTerr: " +
-			// armiesToAdd);
+			//System.out.println("The player that is fortifying: " + currPlayer.getName());
+			//System.out.println("Number of Units at currTerr: " + currPlayer.getTerritories().get(rand).getUnits());
+			//System.out.println("Number of Units leaving currTerr: " + armiesToAdd);
 			currPlayer.getTerritories().get(rand).removeUnits(armiesToAdd);
-			// System.out.println("Units at territory after fortify: " +
-			// currPlayer.getTerritories().get(rand).getUnits());
+			//System.out.println("Units at territory after fortify: " + currPlayer.getTerritories().get(rand).getUnits());
 		}
 	}
 
