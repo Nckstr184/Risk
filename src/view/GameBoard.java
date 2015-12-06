@@ -4292,7 +4292,7 @@ public class GameBoard extends JPanel {
 					if ((rubyLanguage.getName() == currPlayer.getName()) && (rubyUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
-						
+
 						rubyAttacking = true;
 						attackPhase = false;
 					}
@@ -7663,6 +7663,30 @@ public class GameBoard extends JPanel {
 		this.add(bloobawlCresent);
 		this.add(cresentcaptitalCresent);
 
+	}
+
+	public void nextPlayer() {
+		currPlayer = newGame.nextPlayer();
+		if (currPlayer.isAI()) {
+			AITurn(0);
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			updateLabels();
+			
+			AITurn(1);
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			AITurn(2);
+		}
 	}
 
 	public void AITurn(int turnPhase) {
