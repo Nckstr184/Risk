@@ -7,9 +7,9 @@ import model.BattleLogic;
 import model.GameLogic;
 import model.Player;
 import model.Territory;
-import typesOfPlayers.EasyAI;
-import typesOfPlayers.HardAI;
 import typesOfPlayers.MediumAI;
+import typesOfPlayers.HardAI;
+import typesOfPlayers.EasyAI;
 
 public class Run6BotsFIX {
 	/*
@@ -27,29 +27,32 @@ public class Run6BotsFIX {
 		int easyCount = 0;
 		int mediumCount = 0;
 		int hardCount = 0;
+		System.out.println("Loading bar");
+		System.out.println("0%\t10%\t20%\t30%\t40%\t50%\t60%\t70%\t80%\t90%\t100%");
+		System.out.print("*\t");
 		for (int i = 0; i < 1000; i++) {
-			Player easy1 = new EasyAI("easy1", Color.RED, 0);
-			Player easy2 = new EasyAI("easy2", Color.BLACK, 0);
-			Player easy3 = new EasyAI("easy3", Color.CYAN, 0);
-			Player easy4 = new EasyAI("easy4", Color.RED, 0);
-			Player easy5 = new EasyAI("easy5", Color.BLACK, 0);
-			Player easy6 = new EasyAI("easy6", Color.CYAN, 0);
+			Player easy1 = new MediumAI("easy1", Color.RED, 0);
+			Player easy2 = new MediumAI("easy2", Color.BLACK, 0);
+			Player easy3 = new MediumAI("easy3", Color.CYAN, 0);
+			Player easy4 = new MediumAI("easy4", Color.RED, 0);
+			Player easy5 = new MediumAI("easy5", Color.BLACK, 0);
+			Player easy6 = new MediumAI("easy6", Color.CYAN, 0);
 
-			Player medium1 = new EasyAI("medium1", Color.RED, 0);
-			Player medium2 = new EasyAI("medium2", Color.BLACK, 0);
-			Player medium3 = new EasyAI("medium3", Color.CYAN, 0);
-			Player medium4 = new MediumAI("medium4", Color.BLUE, 0);
-			Player medium5 = new MediumAI("medium5", Color.PINK, 0);
-			Player medium6 = new MediumAI("medium6", Color.PINK, 0);
+			Player medium1 = new MediumAI("medium1", Color.RED, 0);
+			Player medium2 = new MediumAI("medium2", Color.BLACK, 0);
+			Player medium3 = new MediumAI("medium3", Color.CYAN, 0);
+			Player medium4 = new EasyAI("medium4", Color.BLUE, 0);
+			Player medium5 = new EasyAI("medium5", Color.PINK, 0);
+			Player medium6 = new EasyAI("medium6", Color.PINK, 0);
 
-			Player hard1 = new EasyAI("hard1", Color.RED, 0);
-			Player hard2 = new EasyAI("hard2", Color.BLACK, 0);
-			Player hard3 = new EasyAI("hard3", Color.CYAN, 0);
-			Player hard4 = new EasyAI("hard1", Color.RED, 0);
+			Player hard1 = new MediumAI("hard1", Color.RED, 0);
+			Player hard2 = new MediumAI("hard2", Color.BLACK, 0);
+			Player hard3 = new MediumAI("hard3", Color.CYAN, 0);
+			Player hard4 = new MediumAI("hard1", Color.RED, 0);
 			Player hard5 = new HardAI("hard5", Color.RED, 0);
 			Player hard6 = new HardAI("hard6", Color.RED, 0);
 			Player currPlayer = null;
-			GameLogic gameLogic = new GameLogic(easy1, easy2, medium3, medium4, hard5, hard6);
+			GameLogic gameLogic = new GameLogic(easy1, easy2, easy3, medium4, medium5, medium6);
 			BattleLogic battleLogic;
 			int turnCount = -1;
 
@@ -140,7 +143,7 @@ public class Run6BotsFIX {
 				 * ~~~~~~~~~~~~~~~ FORTIFY POSITION LOGIC ~~~~~~~~~~~~~~~~~
 				 */
 
-				gameLogic.fortifyPosition();
+				// gameLogic.fortifyPosition();
 			}
 			int highestNumOfTerritories = 0;
 			int playerIndexOfHighestTerr = 0;
@@ -154,14 +157,20 @@ public class Run6BotsFIX {
 
 			Player winner = gameLogic.getPlayerAt(playerIndexOfHighestTerr);
 
-			if (i == 249 || i == 499 || i == 749) {
-				System.out.println("Game " + (i + 1) + " Over!");
-				System.out.println("Easy Wins: " + easyCount);
-				System.out.println("Medium Wins: " + mediumCount);
-				System.out.println("Hard Winds: " + hardCount);
-				System.out.println("Still playing more games");
-				System.out.println();
+			if ((i+1) % 100 == 0) {
+				System.out.print("*\t");
 			}
+
+			if (i == 999)
+				System.out.println();
+			/*
+			 * if (i == 249 || i == 499 || i == 749) { System.out.println(
+			 * "Game " + (i + 1) + " Over!"); System.out.println("Easy Wins: " +
+			 * easyCount); System.out.println("Medium Wins: " + mediumCount);
+			 * System.out.println("Hard Winds: " + hardCount);
+			 * System.out.println("Still playing more games");
+			 * System.out.println(); }
+			 */
 
 			if (winner.getName().equals("easy1") || winner.getName().equals("easy2")
 					|| winner.getName().equals("easy3")) {
