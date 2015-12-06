@@ -32,7 +32,13 @@ import model.Territory;
 public class GameBoard extends JPanel {
 
 	boolean reinforcementPhase, attackPhase, javaAttacking, pythonAttacking, cAttacking, sqlAttacking, rubyAttacking,
-			gitAttacking, perlAttacking, horiusAttacking, giantAttacking;
+			gitAttacking, perlAttacking, wilmaAttacking, wilberAttacking, millerAttacking, richAttacking,
+			scoobyAttacking, zonaAttacking, mckaleAttacking, papaAttacking, dominosAttacking, brooklynsAttacking,
+			pizzahutAttacking, blackjackAttacking, hungryhowiesAttacking, pizzaplanetAttacking, tonatiuhAttacking,
+			apolloAttacking, horusAttacking, raAttacking, intiAttacking, heliosAttacking, amunAttacking,
+			giantAttacking, scraptopiaAttacking, monisaurusAttacking, rawrvilleAttacking, laieggesAttacking,
+			dactilitoAttacking, dirtydanAttacking, toystoryAttacking, blackbeardAttacking, crescentcapitalAttacking,
+			newlandofzachAttacking, bloobawlAttacking, landofzachAttacking, southscraptopiaAttacking;
 	HashMap<JButton, JLabel> myMap;
 	ArrayList<Continent> continents;
 	ArrayList<Territory> territories;
@@ -3999,9 +4005,9 @@ public class GameBoard extends JPanel {
 					cAttacking = false;
 					attackPhase = true;
 				}
-				if (horiusAttacking == true && (currPlayer.getName() != javaLanguage.getName())) {
+				if (horusAttacking == true && (currPlayer.getName() != javaLanguage.getName())) {
 					System.out.println("Java was attacked by Horius");
-					horiusAttacking = false;
+					horusAttacking = false;
 					attackPhase = true;
 				}
 			}
@@ -4451,6 +4457,51 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+				///////////////////////////////// Start Attack
+				///////////////////////////////// Phase//////////////////////////////////////////
+				if (attackPhase == true) {
+					if ((wilberWildcat.getName() == currPlayer.getName()) && (wilberUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						wilberAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (wilmaAttacking == true && (currPlayer.getName() != wilberWildcat.getName())) {
+					System.out.println("wilber was attacked by python");
+					wilmaAttacking = false;
+					attackPhase = true;
+				}
+				if (richAttacking == true && (currPlayer.getName() != wilberWildcat.getName())) {
+					System.out.println("wilber was attacked by python");
+					richAttacking = false;
+					attackPhase = true;
+				}
+				if (scoobyAttacking == true && (currPlayer.getName() != wilberWildcat.getName())) {
+					System.out.println("wilber was attacked by python");
+					scoobyAttacking = false;
+					attackPhase = true;
+				}
+				if (papaAttacking == true && (currPlayer.getName() != wilberWildcat.getName())) {
+					System.out.println("wilber was attacked by python");
+					papaAttacking = false;
+					attackPhase = true;
+				}
+				if (dominosAttacking == true && (currPlayer.getName() != wilberWildcat.getName())) {
+					System.out.println("wilber was attacked by python");
+					dominosAttacking = false;
+					attackPhase = true;
+				}
+				if (brooklynsAttacking == true && (currPlayer.getName() != wilberWildcat.getName())) {
+					System.out.println("wilber was attacked by python");
+					brooklynsAttacking = false;
+					attackPhase = true;
+				}
+				if (tonatiuhAttacking == true && (currPlayer.getName() != wilberWildcat.getName())) {
+					System.out.println("wilber was attacked by python");
+					tonatiuhAttacking = false;
+					attackPhase = true;
+				}
 			}
 		});
 		wilmaWildcat.addActionListener(new ActionListener() {
@@ -4487,6 +4538,31 @@ public class GameBoard extends JPanel {
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				///////////////////////////////// Start Attack
+				///////////////////////////////// Phase//////////////////////////////////////////
+				if (attackPhase == true) {
+					if ((wilmaWildcat.getName() == currPlayer.getName()) && (wilmaUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						wilmaAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (wilberAttacking == true && (currPlayer.getName() != wilmaWildcat.getName())) {
+					System.out.println("wilma was attacked by python");
+					wilberAttacking = false;
+					attackPhase = true;
+				}
+				if (richAttacking == true && (currPlayer.getName() != wilmaWildcat.getName())) {
+					System.out.println("wilma was attacked by python");
+					richAttacking = false;
+					attackPhase = true;
+				}
+				if (millerAttacking == true && (currPlayer.getName() != wilmaWildcat.getName())) {
+					System.out.println("wilma was attacked by python");
+					millerAttacking = false;
+					attackPhase = true;
 				}
 			}
 		});
@@ -4525,6 +4601,41 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+				///////////////////////////////// Start Attack
+				///////////////////////////////// Phase//////////////////////////////////////////
+				if (attackPhase == true) {
+					if ((richWildcat.getName() == currPlayer.getName()) && (richUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						richAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (wilberAttacking == true && (currPlayer.getName() != richWildcat.getName())) {
+					System.out.println("rich was attacked by python");
+					wilberAttacking = false;
+					attackPhase = true;
+				}
+				if (wilmaAttacking == true && (currPlayer.getName() != richWildcat.getName())) {
+					System.out.println("rich was attacked by python");
+					wilmaAttacking = false;
+					attackPhase = true;
+				}
+				if (millerAttacking == true && (currPlayer.getName() != richWildcat.getName())) {
+					System.out.println("rich was attacked by python");
+					millerAttacking = false;
+					attackPhase = true;
+				}
+				if (scoobyAttacking == true && (currPlayer.getName() != richWildcat.getName())) {
+					System.out.println("rich was attacked by python");
+					scoobyAttacking = false;
+					attackPhase = true;
+				}
+				if (mckaleAttacking == true && (currPlayer.getName() != richWildcat.getName())) {
+					System.out.println("rich was attacked by python");
+					mckaleAttacking = false;
+					attackPhase = true;
+				}
 			}
 		});
 		millerWildcat.addActionListener(new ActionListener() {
@@ -4561,6 +4672,34 @@ public class GameBoard extends JPanel {
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if (attackPhase == true) {
+					if ((millerWildcat.getName() == currPlayer.getName()) && (millerUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						millerAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (wilmaAttacking == true && (currPlayer.getName() != millerWildcat.getName())) {
+					System.out.println("miller was attacked by python");
+					wilmaAttacking = false;
+					attackPhase = true;
+				}
+				if (richAttacking == true && (currPlayer.getName() != millerWildcat.getName())) {
+					System.out.println("miller was attacked by python");
+					richAttacking = false;
+					attackPhase = true;
+				}
+				if (mckaleAttacking == true && (currPlayer.getName() != millerWildcat.getName())) {
+					System.out.println("miller was attacked by python");
+					mckaleAttacking = false;
+					attackPhase = true;
+				}
+				if (scraptopiaAttacking == true && (currPlayer.getName() != millerWildcat.getName())) {
+					System.out.println("miller was attacked by python");
+					scraptopiaAttacking = false;
+					attackPhase = true;
 				}
 			}
 		});
@@ -4599,6 +4738,39 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+				if (attackPhase == true) {
+					if ((scoobyWildcat.getName() == currPlayer.getName()) && (scoobyUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						scoobyAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (wilberAttacking == true && (currPlayer.getName() != scoobyWildcat.getName())) {
+					System.out.println("scooby was attacked by python");
+					wilberAttacking = false;
+					attackPhase = true;
+				}
+				if (richAttacking == true && (currPlayer.getName() != scoobyWildcat.getName())) {
+					System.out.println("scooby was attacked by python");
+					richAttacking = false;
+					attackPhase = true;
+				}
+				if (mckaleAttacking == true && (currPlayer.getName() != scoobyWildcat.getName())) {
+					System.out.println("scooby was attacked by python");
+					mckaleAttacking = false;
+					attackPhase = true;
+				}
+				if (zonaAttacking == true && (currPlayer.getName() != scoobyWildcat.getName())) {
+					System.out.println("scooby was attacked by python");
+					zonaAttacking = false;
+					attackPhase = true;
+				}
+				if (papaAttacking == true && (currPlayer.getName() != scoobyWildcat.getName())) {
+					System.out.println("scooby was attacked by python");
+					papaAttacking = false;
+					attackPhase = true;
+				}
 			}
 		});
 		mckaleWildcat.addActionListener(new ActionListener() {
@@ -4635,6 +4807,34 @@ public class GameBoard extends JPanel {
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if (attackPhase == true) {
+					if ((mckaleWildcat.getName() == currPlayer.getName()) && (mckaleUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						mckaleAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (richAttacking == true && (currPlayer.getName() != mckaleWildcat.getName())) {
+					System.out.println("mckale was attacked by python");
+					richAttacking = false;
+					attackPhase = true;
+				}
+				if (millerAttacking == true && (currPlayer.getName() != mckaleWildcat.getName())) {
+					System.out.println("mckale was attacked by python");
+					millerAttacking = false;
+					attackPhase = true;
+				}
+				if (scoobyAttacking == true && (currPlayer.getName() != mckaleWildcat.getName())) {
+					System.out.println("mckale was attacked by python");
+					scoobyAttacking = false;
+					attackPhase = true;
+				}
+				if (zonaAttacking == true && (currPlayer.getName() != mckaleWildcat.getName())) {
+					System.out.println("mckale was attacked by python");
+					zonaAttacking = false;
+					attackPhase = true;
 				}
 			}
 		});
@@ -4673,6 +4873,24 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+				if (attackPhase == true) {
+					if ((zonaWildcat.getName() == currPlayer.getName()) && (zonaUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						zonaAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (scoobyAttacking == true && (currPlayer.getName() != zonaWildcat.getName())) {
+					System.out.println("zona was attacked by python");
+					scoobyAttacking = false;
+					attackPhase = true;
+				}
+				if (mckaleAttacking == true && (currPlayer.getName() != zonaWildcat.getName())) {
+					System.out.println("zona was attacked by python");
+					mckaleAttacking = false;
+					attackPhase = true;
+				}
 			}
 		});
 		papajohnsPizza.addActionListener(new ActionListener() {
@@ -4709,6 +4927,39 @@ public class GameBoard extends JPanel {
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if (attackPhase == true) {
+					if ((papajohnsPizza.getName() == currPlayer.getName()) && (pjUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						papaAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (dominosAttacking == true && (currPlayer.getName() != papajohnsPizza.getName())) {
+					System.out.println("papajohns was attacked by python");
+					dominosAttacking = false;
+					attackPhase = true;
+				}
+				if (pizzahutAttacking == true && (currPlayer.getName() != papajohnsPizza.getName())) {
+					System.out.println("papa was attacked by python");
+					pizzahutAttacking = false;
+					attackPhase = true;
+				}
+				if (blackjackAttacking == true && (currPlayer.getName() != papajohnsPizza.getName())) {
+					System.out.println("dpapa was attacked by python");
+					blackjackAttacking = false;
+					attackPhase = true;
+				}
+				if (wilberAttacking == true && (currPlayer.getName() != papajohnsPizza.getName())) {
+					System.out.println("papa was attacked by python");
+					wilberAttacking = false;
+					attackPhase = true;
+				}
+				if (scoobyAttacking == true && (currPlayer.getName() != papajohnsPizza.getName())) {
+					System.out.println("papa was attacked by python");
+					scoobyAttacking = false;
+					attackPhase = true;
 				}
 			}
 		});
@@ -4747,6 +4998,39 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+				if (attackPhase == true) {
+					if ((dominosPizza.getName() == currPlayer.getName()) && (domUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						dominosAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (papaAttacking == true && (currPlayer.getName() != dominosPizza.getName())) {
+					System.out.println("dom was attacked by python");
+					papaAttacking = false;
+					attackPhase = true;
+				}
+				if (pizzahutAttacking == true && (currPlayer.getName() != dominosPizza.getName())) {
+					System.out.println("dom was attacked by python");
+					pizzahutAttacking = false;
+					attackPhase = true;
+				}
+				if (hungryhowiesAttacking == true && (currPlayer.getName() != dominosPizza.getName())) {
+					System.out.println("domy how was attacked by python");
+					hungryhowiesAttacking = false;
+					attackPhase = true;
+				}
+				if (brooklynsAttacking == true && (currPlayer.getName() != dominosPizza.getName())) {
+					System.out.println("dom was attacked by python");
+					brooklynsAttacking = false;
+					attackPhase = true;
+				}
+				if (wilberAttacking == true && (currPlayer.getName() != dominosPizza.getName())) {
+					System.out.println("dom was attacked by python");
+					wilberAttacking = false;
+					attackPhase = true;
+				}
 			}
 		});
 		pizzahutPizza.addActionListener(new ActionListener() {
@@ -4783,6 +5067,34 @@ public class GameBoard extends JPanel {
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if (attackPhase == true) {
+					if ((pizzahutPizza.getName() == currPlayer.getName()) && (phUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						pizzahutAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (papaAttacking == true && (currPlayer.getName() != pizzahutPizza.getName())) {
+					System.out.println("pizzhut was attacked by python");
+					papaAttacking = false;
+					attackPhase = true;
+				}
+				if (dominosAttacking == true && (currPlayer.getName() != pizzahutPizza.getName())) {
+					System.out.println("pizza was attacked by python");
+					dominosAttacking = false;
+					attackPhase = true;
+				}
+				if (blackjackAttacking == true && (currPlayer.getName() != pizzahutPizza.getName())) {
+					System.out.println("pizzhut was attacked by python");
+					blackjackAttacking = false;
+					attackPhase = true;
+				}
+				if (hungryhowiesAttacking == true && (currPlayer.getName() != pizzahutPizza.getName())) {
+					System.out.println("pizzhut was attacked by python");
+					hungryhowiesAttacking = false;
+					attackPhase = true;
 				}
 			}
 		});
@@ -4821,6 +5133,29 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+				if (attackPhase == true) {
+					if ((blackjackPizza.getName() == currPlayer.getName()) && (bjUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						blackjackAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (papaAttacking == true && (currPlayer.getName() != blackjackPizza.getName())) {
+					System.out.println("blackjack was attacked by python");
+					papaAttacking = false;
+					attackPhase = true;
+				}
+				if (dominosAttacking == true && (currPlayer.getName() != blackjackPizza.getName())) {
+					System.out.println("blackjack was attacked by python");
+					dominosAttacking = false;
+					attackPhase = true;
+				}
+				if (pizzahutAttacking == true && (currPlayer.getName() != blackjackPizza.getName())) {
+					System.out.println("blackjack was attacked by python");
+					pizzahutAttacking = false;
+					attackPhase = true;
+				}
 			}
 		});
 		hungryhowiesPizza.addActionListener(new ActionListener() {
@@ -4858,6 +5193,35 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+				if (attackPhase == true) {
+					if ((hungryhowiesPizza.getName() == currPlayer.getName()) && (hhUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						hungryhowiesAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (dominosAttacking == true && (currPlayer.getName() != hungryhowiesPizza.getName())) {
+					System.out.println("hungryHowies was attacked by python");
+					dominosAttacking = false;
+					attackPhase = true;
+				}
+				if (pizzahutAttacking == true && (currPlayer.getName() != hungryhowiesPizza.getName())) {
+					System.out.println("hungryHowies was attacked by python");
+					pizzahutAttacking = false;
+					attackPhase = true;
+				}
+				if (blackjackAttacking == true && (currPlayer.getName() != hungryhowiesPizza.getName())) {
+					System.out.println("hungryHowies was attacked by python");
+					blackjackAttacking = false;
+					attackPhase = true;
+				}
+				if (brooklynsAttacking == true && (currPlayer.getName() != hungryhowiesPizza.getName())) {
+					System.out.println("hungryHowies was attacked by python");
+					brooklynsAttacking = false;
+					attackPhase = true;
+				}
+
 			}
 		});
 		brooklynPizza.addActionListener(new ActionListener() {
@@ -4895,6 +5259,40 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+				if (attackPhase == true) {
+					if ((brooklynPizza.getName() == currPlayer.getName()) && (bUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						brooklynsAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (dominosAttacking == true && (currPlayer.getName() != brooklynPizza.getName())) {
+					System.out.println("brookl was attacked by python");
+					dominosAttacking = false;
+					attackPhase = true;
+				}
+				if (hungryhowiesAttacking == true && (currPlayer.getName() != brooklynPizza.getName())) {
+					System.out.println("brookl was attacked by python");
+					hungryhowiesAttacking = false;
+					attackPhase = true;
+				}
+				if (pizzaplanetAttacking == true && (currPlayer.getName() != brooklynPizza.getName())) {
+					System.out.println("brookl was attacked by python");
+					pizzaplanetAttacking = false;
+					attackPhase = true;
+				}
+				if (wilberAttacking == true && (currPlayer.getName() != brooklynPizza.getName())) {
+					System.out.println("brookl was attacked by python");
+					wilberAttacking = false;
+					attackPhase = true;
+				}
+				if (tonatiuhAttacking == true && (currPlayer.getName() != brooklynPizza.getName())) {
+					System.out.println("brookl was attacked by python");
+					tonatiuhAttacking = false;
+					attackPhase = true;
+				}
+
 			}
 		});
 		pizzaplanetPizza.addActionListener(new ActionListener() {
@@ -4931,6 +5329,29 @@ public class GameBoard extends JPanel {
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if (attackPhase == true) {
+					if ((pizzaplanetPizza.getName() == currPlayer.getName()) && (ppUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						pizzaplanetAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (brooklynsAttacking == true && (currPlayer.getName() != pizzaplanetPizza.getName())) {
+					System.out.println("pizzaplanet was attacked by python");
+					brooklynsAttacking = false;
+					attackPhase = true;
+				}
+				if (apolloAttacking == true && (currPlayer.getName() != pizzaplanetPizza.getName())) {
+					System.out.println("pizzaplanet was attacked by python");
+					apolloAttacking = false;
+					attackPhase = true;
+				}
+				if (tonatiuhAttacking == true && (currPlayer.getName() != pizzaplanetPizza.getName())) {
+					System.out.println("pizzaplanet was attacked by python");
+					tonatiuhAttacking = false;
+					attackPhase = true;
 				}
 			}
 		});
@@ -4970,6 +5391,34 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 
 				}
+				if (attackPhase == true) {
+					if ((apolloSun.getName() == currPlayer.getName()) && (apolloUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						apolloAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (raAttacking == true && (currPlayer.getName() != apolloSun.getName())) {
+					System.out.println("apollo was attacked by python");
+					raAttacking = false;
+					attackPhase = true;
+				}
+				if (tonatiuhAttacking == true && (currPlayer.getName() != apolloSun.getName())) {
+					System.out.println("apollo was attacked by python");
+					tonatiuhAttacking = false;
+					attackPhase = true;
+				}
+				if (amunAttacking == true && (currPlayer.getName() != apolloSun.getName())) {
+					System.out.println("apollo was attacked by python");
+					amunAttacking = false;
+					attackPhase = true;
+				}
+				if (pizzaplanetAttacking == true && (currPlayer.getName() != apolloSun.getName())) {
+					System.out.println("apollo was attacked by python");
+					pizzaplanetAttacking = false;
+					attackPhase = true;
+				}
 			}
 		});
 
@@ -5006,6 +5455,29 @@ public class GameBoard extends JPanel {
 					}
 
 					checkIfReinforcementPhaseIsOver();
+				}
+				if (attackPhase == true) {
+					if ((raSun.getName() == currPlayer.getName()) && (raUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						raAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (apolloAttacking == true && (currPlayer.getName() != raSun.getName())) {
+					System.out.println("ra was attacked by python");
+					apolloAttacking = false;
+					attackPhase = true;
+				}
+				if (heliosAttacking == true && (currPlayer.getName() != raSun.getName())) {
+					System.out.println("ra was attacked by python");
+					heliosAttacking = false;
+					attackPhase = true;
+				}
+				if (amunAttacking == true && (currPlayer.getName() != raSun.getName())) {
+					System.out.println("ra was attacked by python");
+					amunAttacking = false;
+					attackPhase = true;
 				}
 			}
 		});
@@ -5045,6 +5517,39 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+				if (attackPhase == true) {
+					if ((heliosSun.getName() == currPlayer.getName()) && (heliosUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						heliosAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (raAttacking == true && (currPlayer.getName() != heliosSun.getName())) {
+					System.out.println("helios was attacked by python");
+					raAttacking = false;
+					attackPhase = true;
+				}
+				if (intiAttacking == true && (currPlayer.getName() != heliosSun.getName())) {
+					System.out.println("helios was attacked by python");
+					intiAttacking = false;
+					attackPhase = true;
+				}
+				if (horusAttacking == true && (currPlayer.getName() != heliosSun.getName())) {
+					System.out.println("helios was attacked by python");
+					horusAttacking = false;
+					attackPhase = true;
+				}
+				if (amunAttacking == true && (currPlayer.getName() != heliosSun.getName())) {
+					System.out.println("helios was attacked by python");
+					amunAttacking = false;
+					attackPhase = true;
+				}
+				if (javaAttacking == true && (currPlayer.getName() != heliosSun.getName())) {
+					System.out.println("helios was attacked by python");
+					javaAttacking = false;
+					attackPhase = true;
+				}
 			}
 		});
 		intiSun.addActionListener(new ActionListener() {
@@ -5081,6 +5586,24 @@ public class GameBoard extends JPanel {
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if (attackPhase == true) {
+					if ((intiSun.getName() == currPlayer.getName()) && (intiUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						intiAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (heliosAttacking == true && (currPlayer.getName() != intiSun.getName())) {
+					System.out.println("inti was attacked by python");
+					heliosAttacking = false;
+					attackPhase = true;
+				}
+				if (horusAttacking == true && (currPlayer.getName() != intiSun.getName())) {
+					System.out.println("inti was attacked by python");
+					horusAttacking = false;
+					attackPhase = true;
 				}
 			}
 		});
@@ -5119,6 +5642,34 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+				if (attackPhase == true) {
+					if ((horusSun.getName() == currPlayer.getName()) && (horusUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						horusAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (heliosAttacking == true && (currPlayer.getName() != horusSun.getName())) {
+					System.out.println("horus was attacked by python");
+					heliosAttacking = false;
+					attackPhase = true;
+				}
+				if (tonatiuhAttacking == true && (currPlayer.getName() != horusSun.getName())) {
+					System.out.println("horus was attacked by python");
+					tonatiuhAttacking = false;
+					attackPhase = true;
+				}
+				if (intiAttacking == true && (currPlayer.getName() != horusSun.getName())) {
+					System.out.println("horus was attacked by python");
+					intiAttacking = false;
+					attackPhase = true;
+				}
+				if (amunAttacking == true && (currPlayer.getName() != horusSun.getName())) {
+					System.out.println("horus was attacked by python");
+					amunAttacking = false;
+					attackPhase = true;
+				}
 			}
 		});
 		tonatiuhSun.addActionListener(new ActionListener() {
@@ -5155,6 +5706,39 @@ public class GameBoard extends JPanel {
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if (attackPhase == true) {
+					if ((tonatiuhSun.getName() == currPlayer.getName()) && (tonatiuhUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						tonatiuhAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (apolloAttacking == true && (currPlayer.getName() != tonatiuhSun.getName())) {
+					System.out.println("tonatiuh was attacked by python");
+					apolloAttacking = false;
+					attackPhase = true;
+				}
+				if (horusAttacking == true && (currPlayer.getName() != tonatiuhSun.getName())) {
+					System.out.println("tonatiuh was attacked by python");
+					horusAttacking = false;
+					attackPhase = true;
+				}
+				if (amunAttacking == true && (currPlayer.getName() != tonatiuhSun.getName())) {
+					System.out.println("tonatiuh was attacked by python");
+					amunAttacking = false;
+					attackPhase = true;
+				}
+				if (brooklynsAttacking == true && (currPlayer.getName() != tonatiuhSun.getName())) {
+					System.out.println("tonatiuh was attacked by python");
+					brooklynsAttacking = false;
+					attackPhase = true;
+				}
+				if (pizzaplanetAttacking == true && (currPlayer.getName() != tonatiuhSun.getName())) {
+					System.out.println("tonatiuh was attacked by python");
+					pizzaplanetAttacking = false;
+					attackPhase = true;
 				}
 			}
 		});
@@ -5193,6 +5777,39 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+				if (attackPhase == true) {
+					if ((amunSun.getName() == currPlayer.getName()) && (amunUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						amunAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (apolloAttacking == true && (currPlayer.getName() != amunSun.getName())) {
+					System.out.println("amun was attacked by python");
+					apolloAttacking = false;
+					attackPhase = true;
+				}
+				if (raAttacking == true && (currPlayer.getName() != amunSun.getName())) {
+					System.out.println("amun was attacked by python");
+					raAttacking = false;
+					attackPhase = true;
+				}
+				if (heliosAttacking == true && (currPlayer.getName() != amunSun.getName())) {
+					System.out.println("amun was attacked by python");
+					heliosAttacking = false;
+					attackPhase = true;
+				}
+				if (horusAttacking == true && (currPlayer.getName() != amunSun.getName())) {
+					System.out.println("amun was attacked by python");
+					horusAttacking = false;
+					attackPhase = true;
+				}
+				if (tonatiuhAttacking == true && (currPlayer.getName() != amunSun.getName())) {
+					System.out.println("amun was attacked by python");
+					tonatiuhAttacking = false;
+					attackPhase = true;
+				}
 			}
 		});
 		rawrvilleDino.addActionListener(new ActionListener() {
@@ -5230,6 +5847,24 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+				if (attackPhase == true) {
+					if ((rawrvilleDino.getName() == currPlayer.getName()) && (rawrUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						rawrvilleAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (laieggesAttacking == true && (currPlayer.getName() != rawrvilleDino.getName())) {
+					System.out.println("rawr was attacked by python");
+					laieggesAttacking = false;
+					attackPhase = true;
+				}
+				if (dactilitoAttacking == true && (currPlayer.getName() != rawrvilleDino.getName())) {
+					System.out.println("rawr was attacked by python");
+					dactilitoAttacking = false;
+					attackPhase = true;
+				}
 			}
 		});
 		laieggesDino.addActionListener(new ActionListener() {
@@ -5265,6 +5900,34 @@ public class GameBoard extends JPanel {
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if (attackPhase == true) {
+					if ((laieggesDino.getName() == currPlayer.getName()) && (eggUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						laieggesAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (rawrvilleAttacking == true && (currPlayer.getName() != laieggesDino.getName())) {
+					System.out.println("laiegges was attacked by python");
+					rawrvilleAttacking = false;
+					attackPhase = true;
+				}
+				if (dactilitoAttacking == true && (currPlayer.getName() != laieggesDino.getName())) {
+					System.out.println("laiegges was attacked by python");
+					dactilitoAttacking = false;
+					attackPhase = true;
+				}
+				if (dirtydanAttacking == true && (currPlayer.getName() != laieggesDino.getName())) {
+					System.out.println("laiegges was attacked by python");
+					dirtydanAttacking = false;
+					attackPhase = true;
+				}
+				if (crescentcapitalAttacking == true && (currPlayer.getName() != laieggesDino.getName())) {
+					System.out.println("laiegges was attacked by python");
+					crescentcapitalAttacking = false;
+					attackPhase = true;
 				}
 			}
 		});
@@ -5303,6 +5966,39 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+				if (attackPhase == true) {
+					if ((dactilitoDino.getName() == currPlayer.getName()) && (dacUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						dactilitoAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (rawrvilleAttacking == true && (currPlayer.getName() != dactilitoDino.getName())) {
+					System.out.println("dactilito was attacked by python");
+					rawrvilleAttacking = false;
+					attackPhase = true;
+				}
+				if (laieggesAttacking == true && (currPlayer.getName() != dactilitoDino.getName())) {
+					System.out.println("dactilito was attacked by python");
+					laieggesAttacking = false;
+					attackPhase = true;
+				}
+				if (dirtydanAttacking == true && (currPlayer.getName() != dactilitoDino.getName())) {
+					System.out.println("dactilito was attacked by python");
+					dirtydanAttacking = false;
+					attackPhase = true;
+				}
+				if (blackbeardAttacking == true && (currPlayer.getName() != dactilitoDino.getName())) {
+					System.out.println("dactilito was attacked by python");
+					blackbeardAttacking = false;
+					attackPhase = true;
+				}
+				if (toystoryAttacking == true && (currPlayer.getName() != dactilitoDino.getName())) {
+					System.out.println("dactilito was attacked by python");
+					toystoryAttacking = false;
+					attackPhase = true;
+				}
 			}
 		});
 		dirtydanDino.addActionListener(new ActionListener() {
@@ -5340,6 +6036,50 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+				if (attackPhase == true) {
+					if ((dirtydanDino.getName() == currPlayer.getName()) && (danUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						dirtydanAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (laieggesAttacking == true && (currPlayer.getName() != dirtydanDino.getName())) {
+					System.out.println("dirty dan was attacked by python");
+					laieggesAttacking = false;
+					attackPhase = true;
+				}
+				if (dactilitoAttacking == true && (currPlayer.getName() != dirtydanDino.getName())) {
+					System.out.println("dirty dan was attacked by python");
+					dactilitoAttacking = false;
+					attackPhase = true;
+				}
+				if (blackbeardAttacking == true && (currPlayer.getName() != dirtydanDino.getName())) {
+					System.out.println("dirty dan was attacked by python");
+					blackbeardAttacking = false;
+					attackPhase = true;
+				}
+				if (monisaurusAttacking == true && (currPlayer.getName() != dirtydanDino.getName())) {
+					System.out.println("dirty dan was attacked by python");
+					monisaurusAttacking = false;
+					attackPhase = true;
+				}
+				if (newlandofzachAttacking == true && (currPlayer.getName() != dirtydanDino.getName())) {
+					System.out.println("dirty dan was attacked by python");
+					newlandofzachAttacking = false;
+					attackPhase = true;
+				}
+				if (bloobawlAttacking == true && (currPlayer.getName() != dirtydanDino.getName())) {
+					System.out.println("dirty dan was attacked by python");
+					bloobawlAttacking = false;
+					attackPhase = true;
+				}
+				if (crescentcapitalAttacking == true && (currPlayer.getName() != dirtydanDino.getName())) {
+					System.out.println("dirty dan was attacked by python");
+					crescentcapitalAttacking = false;
+					attackPhase = true;
+				}
+
 			}
 		});
 		blackbeardDino.addActionListener(new ActionListener() {
@@ -5376,6 +6116,34 @@ public class GameBoard extends JPanel {
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if (attackPhase == true) {
+					if ((blackbeardDino.getName() == currPlayer.getName()) && (bbUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						blackbeardAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (dactilitoAttacking == true && (currPlayer.getName() != blackbeardDino.getName())) {
+					System.out.println("blackbeard was attacked by python");
+					dactilitoAttacking = false;
+					attackPhase = true;
+				}
+				if (dirtydanAttacking == true && (currPlayer.getName() != blackbeardDino.getName())) {
+					System.out.println("blackbeard was attacked by python");
+					dirtydanAttacking = false;
+					attackPhase = true;
+				}
+				if (monisaurusAttacking == true && (currPlayer.getName() != blackbeardDino.getName())) {
+					System.out.println("blackbeard was attacked by python");
+					monisaurusAttacking = false;
+					attackPhase = true;
+				}
+				if (toystoryAttacking == true && (currPlayer.getName() != blackbeardDino.getName())) {
+					System.out.println("blackbeard was attacked by python");
+					toystoryAttacking = false;
+					attackPhase = true;
 				}
 			}
 		});
@@ -5414,6 +6182,34 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+				if (attackPhase == true) {
+					if ((monisaurusDino.getName() == currPlayer.getName()) && (moniUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						monisaurusAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (dirtydanAttacking == true && (currPlayer.getName() != monisaurusDino.getName())) {
+					System.out.println("moni was attacked by python");
+					dirtydanAttacking = false;
+					attackPhase = true;
+				}
+				if (blackjackAttacking == true && (currPlayer.getName() != monisaurusDino.getName())) {
+					System.out.println("moni was attacked by python");
+					blackjackAttacking = false;
+					attackPhase = true;
+				}
+				if (toystoryAttacking == true && (currPlayer.getName() != monisaurusDino.getName())) {
+					System.out.println("moni was attacked by python");
+					toystoryAttacking = false;
+					attackPhase = true;
+				}
+				if (newlandofzachAttacking == true && (currPlayer.getName() != monisaurusDino.getName())) {
+					System.out.println("moni was attacked by python");
+					newlandofzachAttacking = false;
+					attackPhase = true;
+				}
 			}
 		});
 		toystoryDino.addActionListener(new ActionListener() {
@@ -5451,6 +6247,29 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+				if (attackPhase == true) {
+					if ((toystoryDino.getName() == currPlayer.getName()) && (tsUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						toystoryAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (dactilitoAttacking == true && (currPlayer.getName() != toystoryDino.getName())) {
+					System.out.println("toystory was attacked by python");
+					dactilitoAttacking = false;
+					attackPhase = true;
+				}
+				if (blackbeardAttacking == true && (currPlayer.getName() != toystoryDino.getName())) {
+					System.out.println("toystory was attacked by python");
+					blackbeardAttacking = false;
+					attackPhase = true;
+				}
+				if (toystoryAttacking == true && (currPlayer.getName() != toystoryDino.getName())) {
+					System.out.println("toystory was attacked by python");
+					blackbeardAttacking = false;
+					attackPhase = true;
+				}
 			}
 		});
 		scraptopiaCresent.addActionListener(new ActionListener() {
@@ -5487,10 +6306,27 @@ public class GameBoard extends JPanel {
 
 						currPlayer = newGame.nextPlayer();
 
-						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
-
+				
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if (attackPhase == true) {
+					if ((scraptopiaCresent.getName() == currPlayer.getName()) && (scrapUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						scraptopiaAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (landofzachAttacking == true && (currPlayer.getName() != scraptopiaCresent.getName())) {
+					System.out.println("scraptopia was attacked by python");
+					scraptopiaAttacking = false;
+					attackPhase = true;
+				}
+				if (millerAttacking == true && (currPlayer.getName() != scraptopiaCresent.getName())) {
+					System.out.println("scraptopia was attacked by python");
+					millerAttacking = false;
+					attackPhase = true;
 				}
 
 			}
@@ -5532,6 +6368,29 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+				if (attackPhase == true) {
+					if ((landofzachCresent.getName() == currPlayer.getName()) && (zachUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						landofzachAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (scraptopiaAttacking == true && (currPlayer.getName() != landofzachCresent.getName())) {
+					System.out.println("landofzach was attacked by python");
+					scraptopiaAttacking = false;
+					attackPhase = true;
+				}
+				if (giantAttacking == true && (currPlayer.getName() != landofzachCresent.getName())) {
+					System.out.println("landofzach was attacked by python");
+					giantAttacking = false;
+					attackPhase = true;
+				}
+				if (newlandofzachAttacking == true && (currPlayer.getName() != landofzachCresent.getName())) {
+					System.out.println("landofzach was attacked by python");
+					newlandofzachAttacking = false;
+					attackPhase = true;
+				}
 			}
 		});
 		giantCresent.addActionListener(new ActionListener() {
@@ -5570,6 +6429,34 @@ public class GameBoard extends JPanel {
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if (attackPhase == true) {
+					if ((giantCresent.getName() == currPlayer.getName()) && (giantUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						giantAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (landofzachAttacking == true && (currPlayer.getName() != giantCresent.getName())) {
+					System.out.println("giant was attacked by python");
+					landofzachAttacking = false;
+					attackPhase = true;
+				}
+				if (southscraptopiaAttacking == true && (currPlayer.getName() != giantCresent.getName())) {
+					System.out.println("giant was attacked by python");
+					southscraptopiaAttacking = false;
+					attackPhase = true;
+				}
+				if (bloobawlAttacking == true && (currPlayer.getName() != giantCresent.getName())) {
+					System.out.println("giant was attacked by python");
+					bloobawlAttacking = false;
+					attackPhase = true;
+				}
+				if (rubyAttacking == true && (currPlayer.getName() != giantCresent.getName())) {
+					System.out.println("giant was attacked by python");
+					rubyAttacking = false;
+					attackPhase = true;
 				}
 
 			}
@@ -5611,6 +6498,39 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+				if (attackPhase == true) {
+					if ((newlandofzachCresent.getName() == currPlayer.getName()) && (newzachUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						newlandofzachAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (landofzachAttacking == true && (currPlayer.getName() != newlandofzachCresent.getName())) {
+					System.out.println("new land of zach was attacked by python");
+					landofzachAttacking = false;
+					attackPhase = true;
+				}
+				if (southscraptopiaAttacking == true && (currPlayer.getName() != newlandofzachCresent.getName())) {
+					System.out.println("new land of zach was attacked by python");
+					southscraptopiaAttacking = false;
+					attackPhase = true;
+				}
+				if (bloobawlAttacking == true && (currPlayer.getName() != newlandofzachCresent.getName())) {
+					System.out.println("new land of zach was attacked by python");
+					bloobawlAttacking = false;
+					attackPhase = true;
+				}
+				if (dirtydanAttacking == true && (currPlayer.getName() != newlandofzachCresent.getName())) {
+					System.out.println("new land of zach was attacked by python");
+					dirtydanAttacking = false;
+					attackPhase = true;
+				}
+				if (monisaurusAttacking == true && (currPlayer.getName() != newlandofzachCresent.getName())) {
+					System.out.println("new land of zach was attacked by python");
+					monisaurusAttacking = false;
+					attackPhase = true;
+				}
 			}
 		});
 		southscraptopiaCresent.addActionListener(new ActionListener() {
@@ -5650,6 +6570,24 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 
+				}
+				if (attackPhase == true) {
+					if ((southscraptopiaCresent.getName() == currPlayer.getName()) && (southUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						southscraptopiaAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (giantAttacking == true && (currPlayer.getName() != southscraptopiaCresent.getName())) {
+					System.out.println("southscraptopia was attacked by python");
+					giantAttacking = false;
+					attackPhase = true;
+				}
+				if (newlandofzachAttacking == true && (currPlayer.getName() != southscraptopiaCresent.getName())) {
+					System.out.println("southscraptopia was attacked by python");
+					newlandofzachAttacking = false;
+					attackPhase = true;
 				}
 			}
 		});
@@ -5691,6 +6629,34 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 
 				}
+				if (attackPhase == true) {
+					if ((bloobawlCresent.getName() == currPlayer.getName()) && (blooUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						bloobawlAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (giantAttacking == true && (currPlayer.getName() != bloobawlCresent.getName())) {
+					System.out.println("bloobawl was attacked by python");
+					giantAttacking = false;
+					attackPhase = true;
+				}
+				if (newlandofzachAttacking == true && (currPlayer.getName() != bloobawlCresent.getName())) {
+					System.out.println("bloobawl was attacked by python");
+					newlandofzachAttacking = false;
+					attackPhase = true;
+				}
+				if (crescentcapitalAttacking == true && (currPlayer.getName() != bloobawlCresent.getName())) {
+					System.out.println("bloobawl was attacked by python");
+					crescentcapitalAttacking = false;
+					attackPhase = true;
+				}
+				if (dirtydanAttacking == true && (currPlayer.getName() != bloobawlCresent.getName())) {
+					System.out.println("bloobawl was attacked by python");
+					dirtydanAttacking = false;
+					attackPhase = true;
+				}
 			}
 		});
 		cresentcaptitalCresent.addActionListener(new ActionListener() {
@@ -5731,6 +6697,30 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 
 				}
+				if (attackPhase == true) {
+					if ((cresentcaptitalCresent.getName() == currPlayer.getName()) && (capUnits >= 2)) {
+						System.out.println("ATTACK PHASE");
+						playerCount.setText("Choose Territory to attack");
+						crescentcapitalAttacking = true;
+						attackPhase = false;
+					}
+				}
+				if (bloobawlAttacking == true && (currPlayer.getName() != cresentcaptitalCresent.getName())) {
+					System.out.println("crescent capital was attacked by python");
+					bloobawlAttacking = false;
+					attackPhase = true;
+				}
+				if (laieggesAttacking == true && (currPlayer.getName() != cresentcaptitalCresent.getName())) {
+					System.out.println("crescent capital was attacked by python");
+					laieggesAttacking = false;
+					attackPhase = true;
+				}
+				if (dirtydanAttacking == true && (currPlayer.getName() != cresentcaptitalCresent.getName())) {
+					System.out.println("crescent capital was attacked by python");
+					dirtydanAttacking = false;
+					attackPhase = true;
+				}
+				
 			}
 		});
 
