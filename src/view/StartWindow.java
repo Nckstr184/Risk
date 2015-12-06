@@ -14,10 +14,10 @@ import javax.swing.JTextField;
 
 import model.Player;
 import model.PlayerCollection;
-import typesOfPlayers.MediumAI;
+import typesOfPlayers.EasyAI;
 import typesOfPlayers.HardAI;
 import typesOfPlayers.Human;
-import typesOfPlayers.EasyAI;
+import typesOfPlayers.MediumAI;
 
 public class StartWindow extends JFrame {
 	JComboBox<String> diff1, diff2, diff3, diff4, diff5, diff6;
@@ -28,8 +28,8 @@ public class StartWindow extends JFrame {
 	public PlayerCollection pCollection;
 	Player playerOne, playerTwo, playerThree, playerFour, playerFive, playerSix;
 	Human human1, human2, human3, human4, human5, human6;
-	MediumAI easy1, easy2, easy3, easy4, easy5, easy6;
-	EasyAI med1, med2, med3, med4, med5, med6;
+	EasyAI easy1, easy2, easy3, easy4, easy5, easy6;
+	MediumAI med1, med2, med3, med4, med5, med6;
 	HardAI hard1, hard2, hard3, hard4, hard5, hard6;
 	ArrayList<Player> pList;
 	String playerName, player1Name, player2Name, player3Name, player4Name, player5Name, player6Name, selectedDiff1,
@@ -193,12 +193,12 @@ public class StartWindow extends JFrame {
 				count++;
 			}
 			if (selectedDiff1 == "Easy AI") {
-				playerOne = new MediumAI(player1Name, Color.yellow, 0);
+				playerOne = new EasyAI(player1Name, Color.yellow, 0);
 				pCollection.addPlayers(playerOne);
 				count++;
 			}
 			if (selectedDiff1 == "Medium AI") {
-				playerOne = new EasyAI(player1Name, Color.yellow, 0);
+				playerOne = new MediumAI(player1Name, Color.yellow, 0);
 				pCollection.addPlayers(playerOne);
 				count++;
 			}
@@ -213,12 +213,12 @@ public class StartWindow extends JFrame {
 				count++;
 			}
 			if (selectedDiff2 == "Easy AI") {
-				playerTwo = new MediumAI(player2Name, Color.green, 0);
+				playerTwo = new EasyAI(player2Name, Color.green, 0);
 				pCollection.addPlayers(playerTwo);
 				count++;
 			}
 			if (selectedDiff2 == "Medium AI") {
-				playerTwo = new EasyAI(player2Name, Color.green, 0);
+				playerTwo = new MediumAI(player2Name, Color.green, 0);
 				pCollection.addPlayers(playerTwo);
 				count++;
 			}
@@ -233,12 +233,12 @@ public class StartWindow extends JFrame {
 				count++;
 			}
 			if (selectedDiff3 == "Easy AI") {
-				playerThree = new MediumAI(player3Name, Color.orange, 0);
+				playerThree = new EasyAI(player3Name, Color.orange, 0);
 				pCollection.addPlayers(playerThree);
 				count++;
 			}
 			if (selectedDiff3 == "Medium AI") {
-				playerThree = new EasyAI(player3Name, Color.orange, 0);
+				playerThree = new MediumAI(player3Name, Color.orange, 0);
 				pCollection.addPlayers(playerThree);
 				count++;
 			}
@@ -253,12 +253,12 @@ public class StartWindow extends JFrame {
 				count++;
 			}
 			if (selectedDiff4 == "Easy AI") {
-				playerFour = new MediumAI(player4Name, Color.red, 0);
+				playerFour = new EasyAI(player4Name, Color.red, 0);
 				pCollection.addPlayers(playerFour);
 				count++;
 			}
 			if (selectedDiff4 == "Medium AI") {
-				playerFour = new EasyAI(player4Name, Color.red, 0);
+				playerFour = new MediumAI(player4Name, Color.red, 0);
 				pCollection.addPlayers(playerFour);
 				count++;
 			}
@@ -273,12 +273,12 @@ public class StartWindow extends JFrame {
 				count++;
 			}
 			if (selectedDiff5 == "Easy AI") {
-				playerFive = new MediumAI(player5Name, Color.pink, 0);
+				playerFive = new EasyAI(player5Name, Color.pink, 0);
 				pCollection.addPlayers(playerFive);
 				count++;
 			}
 			if (selectedDiff5 == "Medium AI") {
-				playerFive = new EasyAI(player5Name, Color.pink, 0);
+				playerFive = new MediumAI(player5Name, Color.pink, 0);
 				pCollection.addPlayers(playerFive);
 				count++;
 			}
@@ -293,13 +293,13 @@ public class StartWindow extends JFrame {
 				count++;
 			}
 			if (selectedDiff6 == "Easy AI") {
-				playerSix = new MediumAI(player6Name, Color.blue, 0);
+				playerSix = new EasyAI(player6Name, Color.blue, 0);
 				pCollection.addPlayers(playerSix);
 				count++;
 			}
 
 			if (selectedDiff6 == "Medium AI") {
-				playerSix = new EasyAI(player6Name, Color.blue, 0);
+				playerSix = new MediumAI(player6Name, Color.blue, 0);
 				pCollection.addPlayers(playerSix);
 				count++;
 			}

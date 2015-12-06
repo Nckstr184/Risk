@@ -9,108 +9,104 @@ import model.Territory;
 
 public class EasyAI extends Player implements AIStrategy {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7374548339574929945L;
+	Random r;
+	int randomChoice, numOfArmies;
 	ArrayList<Territory> territories;
 
 	public EasyAI(String name, Color color, int numOfArmies) {
 		super(name, color, numOfArmies);
+		r = new Random();
 	}
 
-	// returns the territory with the least amount of armies
+	public void startGame() {
+		// use list from GameLogic to know what territories are open
+		territories = getTerritories();
+		int count = 0;
+		Territory current = territories.get(count);
+		while (current != null) {
+
+		}
+	}
+
+	public ArrayList<Territory> returnTerritories() {
+		return territories;
+	}
+
 	@Override
 	public ArrayList<Object> deployArmy() {
-		// System.out.println("Infinite?");
-		ArrayList<Object> mediumInfo = new ArrayList<Object>();
-		int smallestNumOfArmies, indexOfSmallestArmies = 0;
-		smallestNumOfArmies = getTerritories().get(0).getUnits();
-
-		for (int i = 1; i < getTerritories().size(); i++) {
-			if (smallestNumOfArmies > getTerritories().get(i).getUnits()) {
-				smallestNumOfArmies = getTerritories().get(i).getUnits();
-				indexOfSmallestArmies = i;
-			}
-		}
-		mediumInfo.add(getTerritories().get(indexOfSmallestArmies));
-
-		mediumInfo.add(1);
-		return mediumInfo;
-
+		// choose random territories to add reward units
+		// System.out.println(territories.size());
+		ArrayList<Object> random = new ArrayList<Object>();
+		int rand = r.nextInt(getTerritories().size());
+		Territory temp = getTerritories().get(rand);
+		random.add(temp);
+		random.add(1);
+		return random;
 	}
-
-	// If this number of territories in the current Territory is less than 3, it
-	// returns true in order to retreat. BattleLogic will be listening for the
-	// boolean after every attack.
 
 	@Override
 	public boolean chooseRetreat(Territory currentTerr) {
-		if (currentTerr.getUnits() <= 3)
-			return true;
-
-		return false;
+		// chooses whether to retreat in the middle of battle
+		if (currentTerr.getUnits() > 1) {
+			return false;
+		}
+		return true;
 	}
-
-	// checks the neighbors of a territory and finds the one with the smallest
-	// number of armies. If the difference is greater than 2, then it attacks.
-	// If it does not satisfy this, then it returns a null (flag to not attack
-	// anything)
 
 	@Override
 	public Territory attackTerritory(Territory currentTerr, ArrayList<Territory> connected) {
-		int smallestNumOfArmies, indexOfSmallestArmies = -1;
-		smallestNumOfArmies = 1000000;
+		// System.out.println("AttackTerritory call");
+		// chooses a random connected territory to attack, as long
+		// as there is more than one army in it
+		int rand = r.nextInt(2);
+		int count = 0;
+		ArrayList<Territory> availableTerritories = new ArrayList<Territory>(connected);
 
-		for (int i = 0; i < connected.size(); i++) {
-			if (smallestNumOfArmies > connected.get(i).getUnits()
-					&& !connected.get(i).getOwner().getName().equals(currentTerr.getOwner().getName())) {
-				smallestNumOfArmies = connected.get(i).getUnits();
-				indexOfSmallestArmies = i;
+		do {
+			rand = r.nextInt(connected.size());
+			if (availableTerritories.indexOf(connected.get(rand)) != -1) {
+				availableTerritories.remove(availableTerritories.indexOf(connected.get(rand)));
 			}
-		}
+			if (availableTerritories.size() == 0 && availableTerritories.indexOf(connected.get(rand)) == -1) {
+				return null;
+			}
+		} while (connected.get(rand).getOwner().getName().equals(this.getName()) && availableTerritories.size() > 0);
 
-		if (currentTerr.getUnits() - smallestNumOfArmies >= 2 && indexOfSmallestArmies != -1) {
-			return connected.get(indexOfSmallestArmies);
-		}
-
+		// System.out.println("Returning territory");
+		if (!connected.get(rand).getOwner().getName().equals(this.getName()))
+			return connected.get(rand);
+		// returns null if it decides to not attack
+		//System.out.println("Returning null");
 		return null;
-
 	}
-	// finds the friendly connected territory with the least amount of armies.
-	// If the current Territory has more than 3 armies, it moves its current
-	// amount of armies minus 3. If no friendly connected territory has less
-	// armies than the current Territory, then no armies are moved.
-	// SHOULD ONLY BE CALLED ONCE MAX AT THE END OF THE TURN
 
 	@Override
 	public ArrayList<Object> fortifyPosition(Territory currentTerr, ArrayList<Territory> connected) {
-		int smallestNumOfArmies, indexOfSmallestArmies = -1;
+		// randomly decides to move armies to friendly connected territory
+		int rand = r.nextInt(2);
 		ArrayList<Object> territoryAndArmyNum = new ArrayList<Object>();
-		smallestNumOfArmies = currentTerr.getUnits();
-		for (int i = 0; i < connected.size(); i++) {
-			if (connected.get(i).getOwner().getName().equals(currentTerr.getOwner().getName())) {
-				if (smallestNumOfArmies > connected.get(i).getUnits()) {
-					smallestNumOfArmies = connected.get(i).getUnits();
-					indexOfSmallestArmies = i;
-				}
-			}
-		}
 
-		int armiesToMove = 0;
-		if (indexOfSmallestArmies != -1) {
-			territoryAndArmyNum.add(connected.get(indexOfSmallestArmies));
-			if (currentTerr.getUnits() > 3) {
-				armiesToMove = currentTerr.getUnits() - 3;
+		Territory temp = null;
+		if (rand == 0) {
+			for (int i = 0; i < connected.size(); i++) {
+				temp = connected.get(i);
+				if (!temp.getOwner().getName().equals(this.getName()))
+					break;
 			}
-			territoryAndArmyNum.add(armiesToMove);
-		}
-		if (territoryAndArmyNum.size() == 2)
+			territoryAndArmyNum.add(temp);
+
+			int armySize = currentTerr.getUnits();
+			if (armySize > 1) {
+				rand = r.nextInt(armySize - 1);
+			}
+			territoryAndArmyNum.add(rand);
 			return territoryAndArmyNum;
-
+		}
 		return null;
-	}
-
-	@Override
-	public void startGame() {
-		// TODO Auto-generated method stub
-		
 	}
 
 }
