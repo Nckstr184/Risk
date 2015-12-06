@@ -110,7 +110,7 @@ public class MediumAI extends Player implements AIStrategy {
 	@Override
 	public void startGame() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

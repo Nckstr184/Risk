@@ -157,7 +157,7 @@ public class Run6BotsFIX {
 
 			Player winner = gameLogic.getPlayerAt(playerIndexOfHighestTerr);
 
-			if ((i+1) % 100 == 0) {
+			if ((i + 1) % 100 == 0) {
 				System.out.print("*\t");
 			}
 

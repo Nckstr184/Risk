@@ -183,7 +183,7 @@ public class StartWindow extends JFrame {
 			player3Name = player3.getText();
 			player4Name = player4.getText();
 			player5Name = player5.getText();
-			System.out.println(";;;"+player5Name+";;;");
+			System.out.println(";;;" + player5Name + ";;;");
 			player6Name = player6.getText();
 			count = 0;
 
@@ -207,7 +207,7 @@ public class StartWindow extends JFrame {
 				pCollection.addPlayers(playerOne);
 				count++;
 			}
-			if (selectedDiff2 == "Human") { 
+			if (selectedDiff2 == "Human") {
 				playerTwo = new Human(player2Name, Color.green, 0, false);
 				pCollection.addPlayers(playerTwo);
 				count++;

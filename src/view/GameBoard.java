@@ -9,6 +9,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,6 +30,7 @@ import model.Continent;
 import model.GameLogic;
 import model.Languages;
 import model.Player;
+import model.PlayerCollection;
 import model.Territory;
 
 public class GameBoard extends JPanel {
@@ -113,6 +115,9 @@ public class GameBoard extends JPanel {
 				System.out.print("");
 
 				startWindow = new StartWindow();
+				if (newgame1.isClicked()) {
+					startWindow.dispose();
+				}
 				// current = new Player();
 				while (startWindow.isDisplayable()) {
 
@@ -137,7 +142,32 @@ public class GameBoard extends JPanel {
 
 							this.setLayout(new BorderLayout());
 
-							startNewGame();
+							if (!newgame1.isClicked()) {
+								startNewGame();
+							}
+							startWindow.dispose();
+							if (newgame1.isClicked()) {
+								PlayerCollection tempPlayers=null;
+								CardCollection tempCards=null;
+								ArrayList<Territory> tempTerritories=null;
+								ArrayList<Continent> tempContinents=null;
+								try {
+									inputStream = new FileInputStream("savedGame");
+									objectInput = new ObjectInputStream(inputStream);
+									tempPlayers = (PlayerCollection) objectInput.readObject();
+									tempCards = (CardCollection) objectInput.readObject();
+									tempTerritories = (ArrayList<Territory>) objectInput.readObject();
+									tempContinents = (ArrayList<Continent>) objectInput.readObject();
+
+									System.out.println(tempPlayers.getNumOfPlayers());
+								} catch (ClassNotFoundException e) {
+									// TODO Auto-generated catch block
+									System.out.println("reading did not work");
+									e.printStackTrace();
+								}
+								this.importGameLogic(tempPlayers, tempCards, tempContinents, tempTerritories);
+							}
+
 							System.out.println("NUMBER OF PLAYERS: " + newGame.getNumOfPlayers());
 
 							playerTags();
@@ -499,9 +529,29 @@ public class GameBoard extends JPanel {
 		return newGame;
 	}
 
-	public void importGameLogic(GameLogic newGameLogic) {
-		newGame = newGameLogic;
+	public void importGameLogic(PlayerCollection newPlayers, CardCollection newCards, ArrayList<Continent> newContinets, ArrayList<Territory> newTerritories) {
+		newGame.setPlayerList(newPlayers);
+		newGame.setCards(newCards);
+		newGame.setTerritory(newTerritories);
+		newGame.setContinents(newContinets);
 	}
+
+	public PlayerCollection getPlayers() {
+		return newGame.getPlayerList();
+	}
+
+	public CardCollection getCards() {
+		return newGame.getCards();
+	}
+
+	public ArrayList<Continent> getContinents() {
+		return newGame.getContinents();
+	}
+
+	public ArrayList<Territory> getTerritories() {
+		return newGame.getTerritories();
+	}
+	
 
 	public void addButtons() {
 
