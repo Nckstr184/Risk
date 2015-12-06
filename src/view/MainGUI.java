@@ -100,26 +100,26 @@ public class MainGUI extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			System.out.println("Saving Game");
 
-			try {
-				outputStream = new FileOutputStream("savedGame");
-				objectOutput = new ObjectOutputStream(outputStream);
-
-			} catch (Exception e1) {
-				e1.printStackTrace();
-				System.out.println("opening output stream failed");
-			}
-
-			try {
-				objectOutput.writeObject(map.getPlayers());
-				objectOutput.writeObject(map.getContinents());
-				objectOutput.writeObject(map.getTerritories());
-				objectOutput.writeObject(map.getCards());
-
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				System.out.println("writing game logic failed");
-				e1.printStackTrace();
-			}
+//			try {
+//				outputStream = new FileOutputStream("savedGame");
+//				objectOutput = new ObjectOutputStream(outputStream);
+//
+//			} catch (Exception e1) {
+//				e1.printStackTrace();
+//				System.out.println("opening output stream failed");
+//			}
+//
+//			try {
+//				objectOutput.writeObject(map.getPlayers());
+//				objectOutput.writeObject(map.getContinents());
+//				objectOutput.writeObject(map.getTerritories());
+//				objectOutput.writeObject(map.getCards());
+//
+//			} catch (IOException e1) {
+//				// TODO Auto-generated catch block
+//				System.out.println("writing game logic failed");
+//				e1.printStackTrace();
+//			}
 
 		}
 
