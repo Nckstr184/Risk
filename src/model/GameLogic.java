@@ -424,7 +424,7 @@ public class GameLogic implements Serializable {
 		if (allPlayers.getNumOfPlayers() == 3) {
 			for (int i = 0; i < 3; i++) {
 				Player temp = allPlayers.getPlayer(i);
-				temp.addArmies(35);
+				temp.addArmies(3);
 			}
 		}
 		if (allPlayers.getNumOfPlayers() == 4) {
@@ -526,12 +526,13 @@ public class GameLogic implements Serializable {
 
 		attackingTerr.removeUnits(unitsToLose[0]);
 		defendingTerr.removeUnits(unitsToLose[1]);
-
+		System.out.println(attacker.getTerritories().toString());
 		if (defendingTerr.getUnits() <= 0) {
 			// System.out.println("Attacker won!");
 			defender.removeTerritory(defendingTerr);
 			attacker.addTerritories(defendingTerr);
 			defendingTerr.setOwner(attacker);
+			System.out.println(attacker.getTerritories().toString());
 
 			attackingTerr.removeUnits(1);
 			while (defendingTerr.getUnits() <= 1) {
