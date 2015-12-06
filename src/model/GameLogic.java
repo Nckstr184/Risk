@@ -355,6 +355,8 @@ public class GameLogic implements Serializable {
 		Amun.addNeighbors(Horus);
 		Amun.addNeighbors(Tonatiuh);
 	}
+	
+	
 
 	public ArrayList<Territory> getTerritories() {
 		return allTerritories;
