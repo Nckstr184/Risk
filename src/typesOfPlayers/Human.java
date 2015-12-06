@@ -44,7 +44,7 @@ public class Human extends Player {
 	@Override
 	public void startGame() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
