@@ -15,8 +15,8 @@ public class BattleLogicTest {
 
 	@Test
 	public void test() {
-		Player Test1 = new Human("Test1", Color.RED, 0);
-		Player Test2 = new Human("Test2", Color.BLACK, 0);
+		Player Test1 = new Human("Test1", Color.RED, 0, false);
+		Player Test2 = new Human("Test2", Color.BLACK, 0, false);
 		Territory terrTest1 = new Territory("Terr1", null, null, Test1, 5);
 		Territory terrTest2 = new Territory("Terr1", null, null, Test2, 5);
 		BattleLogic battleTest = new BattleLogic(Test1, Test2, terrTest1, terrTest2);

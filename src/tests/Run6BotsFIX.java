@@ -31,26 +31,26 @@ public class Run6BotsFIX {
 		System.out.println("0%\t10%\t20%\t30%\t40%\t50%\t60%\t70%\t80%\t90%\t100%");
 		System.out.print("*\t");
 		for (int i = 0; i < 1000; i++) {
-			Player easy1 = new EasyAI("easy1", Color.RED, 0);
-			Player easy2 = new EasyAI("easy2", Color.BLACK, 0);
-			Player easy3 = new EasyAI("easy3", Color.CYAN, 0);
-			Player easy4 = new EasyAI("easy4", Color.RED, 0);
-			Player easy5 = new EasyAI("easy5", Color.BLACK, 0);
-			Player easy6 = new EasyAI("easy6", Color.CYAN, 0);
+			Player easy1 = new EasyAI("easy1", Color.RED, 0, true);
+			Player easy2 = new EasyAI("easy2", Color.BLACK, 0, true);
+			Player easy3 = new EasyAI("easy3", Color.CYAN, 0, true);
+			Player easy4 = new EasyAI("easy4", Color.RED, 0, true);
+			Player easy5 = new EasyAI("easy5", Color.BLACK, 0, true);
+			Player easy6 = new EasyAI("easy6", Color.CYAN, 0, true);
 
-			Player medium1 = new MediumAI("medium1", Color.RED, 0);
-			Player medium2 = new MediumAI("medium2", Color.BLACK, 0);
-			Player medium3 = new MediumAI("medium3", Color.CYAN, 0);
-			Player medium4 = new MediumAI("medium4", Color.BLUE, 0);
-			Player medium5 = new MediumAI("medium5", Color.PINK, 0);
-			Player medium6 = new MediumAI("medium6", Color.PINK, 0);
+			Player medium1 = new MediumAI("medium1", Color.RED, 0, true);
+			Player medium2 = new MediumAI("medium2", Color.BLACK, 0, true);
+			Player medium3 = new MediumAI("medium3", Color.CYAN, 0, true);
+			Player medium4 = new MediumAI("medium4", Color.BLUE, 0, true);
+			Player medium5 = new MediumAI("medium5", Color.PINK, 0, true);
+			Player medium6 = new MediumAI("medium6", Color.PINK, 0, true);
 
-			Player hard1 = new HardAI("hard1", Color.RED, 0);
-			Player hard2 = new HardAI("hard2", Color.BLACK, 0);
-			Player hard3 = new HardAI("hard3", Color.CYAN, 0);
-			Player hard4 = new HardAI("hard1", Color.RED, 0);
-			Player hard5 = new HardAI("hard5", Color.RED, 0);
-			Player hard6 = new HardAI("hard6", Color.RED, 0);
+			Player hard1 = new HardAI("hard1", Color.RED, 0, true);
+			Player hard2 = new HardAI("hard2", Color.BLACK, 0, true);
+			Player hard3 = new HardAI("hard3", Color.CYAN, 0, true);
+			Player hard4 = new HardAI("hard1", Color.RED, 0, true);
+			Player hard5 = new HardAI("hard5", Color.RED, 0, true);
+			Player hard6 = new HardAI("hard6", Color.RED, 0, true);
 			Player currPlayer = null;
 			GameLogic gameLogic = new GameLogic(hard1, medium2, easy3, hard4, medium5, easy6);
 			BattleLogic battleLogic;

@@ -17,8 +17,8 @@ public class EasyAI extends Player implements AIStrategy {
 	int randomChoice, numOfArmies;
 	ArrayList<Territory> territories;
 
-	public EasyAI(String name, Color color, int numOfArmies) {
-		super(name, color, numOfArmies);
+	public EasyAI(String name, Color color, int numOfArmies, boolean isAI) {
+		super(name, color, numOfArmies, isAI);
 		r = new Random();
 	}
 

@@ -13,8 +13,8 @@ public class Human extends Player {
 	 */
 	private static final long serialVersionUID = -2317731050682682626L;
 
-	public Human(String name, Color color, int numOfArmies) {
-		super(name, color, numOfArmies);
+	public Human(String name, Color color, int numOfArmies, boolean isAI) {
+		super(name, color, numOfArmies, isAI);
 	}
 
 	@Override

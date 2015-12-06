@@ -11,8 +11,8 @@ public class MediumAI extends Player implements AIStrategy {
 
 	ArrayList<Territory> territories;
 
-	public MediumAI(String name, Color color, int numOfArmies) {
-		super(name, color, numOfArmies);
+	public MediumAI(String name, Color color, int numOfArmies, boolean isAI) {
+		super(name, color, numOfArmies, isAI);
 	}
 
 	// returns the territory with the least amount of armies

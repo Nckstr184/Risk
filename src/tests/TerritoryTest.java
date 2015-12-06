@@ -16,7 +16,7 @@ public class TerritoryTest {
 
 	@Test
 	public void test() {
-		Player temp = new Human("Player", null, 0);
+		Player temp = new Human("Player", null, 0, false);
 		JButton button = new JButton();
 		Point point = new Point(0, 0);
 		Territory terr = new Territory("terr", point, button, temp, 0);

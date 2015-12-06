@@ -22,8 +22,8 @@ public class ContinentTest {
 
 	@Test
 	public void test() {
-		Player Test1 = new Human("Test1", Color.BLACK, 10);
-		Player Test2 = new Human("Test2", Color.BLACK, 10);
+		Player Test1 = new Human("Test1", Color.BLACK, 10, false);
+		Player Test2 = new Human("Test2", Color.BLACK, 10, false);
 
 		ArrayList<Territory> cTerritories = new ArrayList<Territory>();
 		Continent Crescent = new Crescent("Crescent", false);
