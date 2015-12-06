@@ -173,6 +173,7 @@ public class GameBoard extends JPanel {
 							playerTags();
 							addButtons();
 
+							// Goes to the first Player
 							currPlayer = newGame.getPlayerAt(0);
 
 							add(picLabel, BorderLayout.CENTER);
@@ -6566,7 +6567,6 @@ public class GameBoard extends JPanel {
 
 			}
 		});
-
 		/// ALL OF LAUNGUAGE***
 		javaUnits = 1;
 		pythonUnits = 1;
@@ -7336,141 +7336,7 @@ public class GameBoard extends JPanel {
 
 	}
 
-	public void AITurn(int turnPhase) {
-		/*
-		 * Lots of Run6Bots stuff
-		 * 
-		 * 0 >>> Deploy 1 >>> Attack 2 >>> Fortify
-		 */
-		Random r = new Random();
-
-		if (turnPhase == 0) {
-			newGame.turnInCard();
-			newGame.addReinforcements();
-			currPlayer.deployArmy();
-		} else if (turnPhase == 1) {
-			Territory attackingTerritory = currPlayer.getTerritories()
-					.get(r.nextInt(currPlayer.getTerritories().size()));
-			Territory defendingTerritory = currPlayer.attackTerritory(attackingTerritory,
-					attackingTerritory.getNeighbors());
-			gameBoardAttack(attackingTerritory, defendingTerritory);
-
-		} else if (turnPhase == 2) {
-			currPlayer.deployArmy();
-		}
-	}
-
-	private void gameBoardAttack(Territory attackingTerr, Territory defendingTerr) {
-		if (attackingTerr.getUnits() >= 2) {
-			BattleLogic battleLogic = new BattleLogic(attackingTerr.getOwner(), defendingTerr.getOwner(), attackingTerr,
-					defendingTerr);
-			Random r = new Random();
-
-			// Create the number of dice for each player
-			int attackerDiceNum, defenderDiceNum;
-			if (attackingTerr.getUnits() <= 3) {
-				attackerDiceNum = attackingTerr.getUnits() - 1;
-			} else {
-				attackerDiceNum = 3;
-			}
-
-			if (defendingTerr.getUnits() <= 2) {
-				defenderDiceNum = defendingTerr.getUnits();
-			} else
-				defenderDiceNum = 2;
-
-			// compare the dice
-			battleLogic.attackPlayer(attackerDiceNum, defenderDiceNum);
-			int[] armiesLost = battleLogic.subtractArmies();
-			String attackerName = attackingTerr.getOwner().getName();
-			String defenderName = defendingTerr.getOwner().getName();
-
-			// subtract the armies
-			newGame.attackLogic(attackingTerr, defendingTerr, armiesLost);
-
-			nextPlayer();
-
-			if (!defendingTerr.getOwner().isAI()) {
-				// SEND ALL THE INFO TO JOPTIONPANE HERE AND CHECK FOR RETREAT
-				String[] options;
-				String optionPaneMessage = "Attacker: " + attackerName + "\nDefender: " + defenderName + "\n\n"
-						+ attackerName + " lost " + armiesLost[0] + " armies." + "\n" + defenderName + " lost "
-						+ armiesLost[1] + " armies.";
-
-				if (!defendingTerr.getOwner().getName().equals(defenderName)) {
-					optionPaneMessage += ("\n\n" + defenderName + " lost " + defendingTerr + " to " + attackerName);
-					options = new String[1];
-					options[0] = "OK";
-					updateLabels();
-					JOptionPane.showOptionDialog(null, optionPaneMessage, "Battle Results", JOptionPane.OK_OPTION,
-							JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
-				} else {
-					optionPaneMessage += ("\n\n" + attackingTerr.getName() + " now has " + attackingTerr.getUnits()
-							+ "\n" + defendingTerr.getName() + " now has " + defendingTerr.getUnits());
-					System.out.println(optionPaneMessage);
-					options = new String[2];
-					options[0] = "Retreat?";
-					options[1] = "Attack Again!";
-					updateLabels();
-					int choice = JOptionPane.showOptionDialog(null, optionPaneMessage, "Battle Results",
-							JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[1]);
-
-					if (choice == JOptionPane.NO_OPTION) {
-						gameBoardAttack(attackingTerr, defendingTerr);
-					}
-				}
-			} else if (!currPlayer.chooseRetreat(attackingTerr)) {
-				updateLabels();
-				gameBoardAttack(attackingTerr, defendingTerr);
-			}
-		}
-	}
-
-	private void checkIfReinforcementPhaseIsOver() {
-		int playersDone = 0;
-		for (int i = 0; i < newGame.getNumOfPlayers(); i++) {
-			if (newGame.getPlayerAt(i).getNumOfArmies() == 0) {
-				playersDone++;
-			}
-		}
-		if (playersDone == newGame.getNumOfPlayers()) {
-			reinforcementPhase = false;
-			attackPhase = true;
-			gameStatus.setText("Attack");
-			if (newGame.getNumOfPlayers() == 6) {
-				playerCount.setText("Select Territory to attack from");
-				playerCount2.setText("");
-				playerCount3.setText("");
-				playerCount4.setText("");
-				playerCount5.setText("");
-				playerCount6.setText("");
-			} else if (newGame.getNumOfPlayers() == 5) {
-				playerCount.setText("Select Territory to attack from");
-				playerCount2.setText("");
-				playerCount3.setText("");
-				playerCount4.setText("");
-				playerCount5.setText("");
-
-			} else if (newGame.getNumOfPlayers() == 4) {
-				playerCount.setText("Select Territory to attack from");
-				playerCount2.setText("");
-				playerCount3.setText("");
-				playerCount4.setText("");
-
-			} else if (newGame.getNumOfPlayers() == 3) {
-				playerCount.setText("Select Territory to attack from");
-				playerCount2.setText("");
-				playerCount3.setText("");
-
-			} else if (newGame.getNumOfPlayers() == 2) {
-				playerCount.setText("Select Territory to attack from");
-				playerCount2.setText("");
-
-			}
-		}
-
-	}
-
+	
 	private void updateLabels() {
 
 		javaUnits = territories.get(0).getUnits();
@@ -10313,39 +10179,207 @@ public class GameBoard extends JPanel {
 	}
 
 	public void nextPlayer() {
+
 		currPlayer = newGame.nextPlayer();
+
+		if (reinforcementPhase) {
+			if (startWindow.getPlayerAt(0) == currPlayer) {
+				playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				turnMarker.setLocation(150, 590);
+			} else if (startWindow.getPlayerAt(1) == currPlayer) {
+				playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				turnMarker.setLocation(320, 590);
+			} else if (startWindow.getPlayerAt(2) == currPlayer) {
+				playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				turnMarker.setLocation(470, 590);
+			} else if (startWindow.getPlayerAt(3) == currPlayer) {
+				playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				turnMarker.setLocation(640, 590);
+			} else if (startWindow.getPlayerAt(4) == currPlayer) {
+				playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				turnMarker.setLocation(810, 590);
+			} else if (startWindow.getPlayerAt(5) == currPlayer) {
+				playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+				turnMarker.setLocation(980, 590);
+			}
+		}
+
+		System.out.println("Current Player: " + currPlayer.getName());
+		System.out.println("AI?: " + currPlayer.isAI());
+
 		if (currPlayer.isAI()) {
+			System.out.println("Detecting AI");
 			if (!reinforcementPhase) {
+				System.out.println("Not in reinforcement phase");
 				newGame.turnInCard();
 				newGame.addReinforcements();
 				AITurn(0);
 				try {
-					Thread.sleep(1000);
+					Thread.sleep(2000);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				updateLabels();
+				// updateLabels();
 
 				AITurn(1);
 				try {
-					Thread.sleep(1000);
+					Thread.sleep(2000);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				updateLabels();
+				// updateLabels();
 
 				AITurn(2);
-				updateLabels();
+				// updateLabels();
 			} else {
+				System.out.println("In reinforcement phase");
+
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
 				AITurn(0);
-				updateLabels();
+				// updateLabels();
 			}
 			nextPlayer();
 		}
 
 	}
+
+
+	public void AITurn(int turnPhase) {
+		/*
+		 * Lots of Run6Bots stuff
+		 * 
+		 * 0 >>> Deploy 1 >>> Attack 2 >>> Fortify
+		 */
+		Random r = new Random();
+
+		if (turnPhase == 0) {
+			System.out.println("Deploing AI army");
+			currPlayer.deployArmy();
+		} else if (turnPhase == 1) {
+			Territory attackingTerritory = currPlayer.getTerritories()
+					.get(r.nextInt(currPlayer.getTerritories().size()));
+			Territory defendingTerritory = currPlayer.attackTerritory(attackingTerritory,
+					attackingTerritory.getNeighbors());
+			gameBoardAttack(attackingTerritory, defendingTerritory);
+
+		} else if (turnPhase == 2) {
+			currPlayer.deployArmy();
+		}
+	}
+
+	private void gameBoardAttack(Territory attackingTerr, Territory defendingTerr) {
+		if (attackingTerr.getUnits() >= 2) {
+			BattleLogic battleLogic = new BattleLogic(attackingTerr.getOwner(), defendingTerr.getOwner(), attackingTerr,
+					defendingTerr);
+			Random r = new Random();
+
+			// Create the number of dice for each player
+			int attackerDiceNum, defenderDiceNum;
+			if (attackingTerr.getUnits() <= 3) {
+				attackerDiceNum = attackingTerr.getUnits() - 1;
+			} else {
+				attackerDiceNum = 3;
+			}
+
+			if (defendingTerr.getUnits() <= 2) {
+				defenderDiceNum = defendingTerr.getUnits();
+			} else
+				defenderDiceNum = 2;
+
+			// compare the dice
+			battleLogic.attackPlayer(attackerDiceNum, defenderDiceNum);
+			int[] armiesLost = battleLogic.subtractArmies();
+			String attackerName = attackingTerr.getOwner().getName();
+			String defenderName = defendingTerr.getOwner().getName();
+
+			// subtract the armies
+			newGame.attackLogic(attackingTerr, defendingTerr, armiesLost);
+
+			if (!defendingTerr.getOwner().isAI()) {
+				// SEND ALL THE INFO TO JOPTIONPANE HERE AND CHECK FOR RETREAT
+				String[] options;
+				String optionPaneMessage = "Attacker: " + attackerName + "\nDefender: " + defenderName + "\n\n"
+						+ attackerName + " lost " + armiesLost[0] + " armies." + "\n" + defenderName + " lost "
+						+ armiesLost[1] + " armies.";
+
+				if (!defendingTerr.getOwner().getName().equals(defenderName)) {
+					optionPaneMessage += ("\n\n" + defenderName + " lost " + defendingTerr + " to " + attackerName);
+					options = new String[1];
+					options[0] = "OK";
+					JOptionPane.showOptionDialog(null, optionPaneMessage, "Battle Results", JOptionPane.OK_OPTION,
+							JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+				} else {
+					optionPaneMessage += ("\n\n" + attackingTerr.getName() + " now has " + attackingTerr.getUnits()
+							+ "\n" + defendingTerr.getName() + " now has " + defendingTerr.getUnits());
+					options = new String[2];
+					options[0] = "Retreat?";
+					options[1] = "Attack Again!";
+					int choice = JOptionPane.showOptionDialog(null, optionPaneMessage, "Battle Results",
+							JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[1]);
+
+					if (choice == JOptionPane.NO_OPTION) {
+						gameBoardAttack(attackingTerr, defendingTerr);
+					}
+				}
+			} else if (!currPlayer.chooseRetreat(attackingTerr)) {
+				gameBoardAttack(attackingTerr, defendingTerr);
+			}
+		}
+	}
+
+	private void checkIfReinforcementPhaseIsOver() {
+		int playersDone = 0;
+		for (int i = 0; i < newGame.getNumOfPlayers(); i++) {
+			if (newGame.getPlayerAt(i).getNumOfArmies() == 0) {
+				playersDone++;
+			}
+		}
+		if (playersDone == newGame.getNumOfPlayers()) {
+			reinforcementPhase = false;
+			attackPhase = true;
+			gameStatus.setText("Attack");
+			if (newGame.getNumOfPlayers() == 6) {
+				playerCount.setText("Select Territory to attack from");
+				playerCount2.setText("");
+				playerCount3.setText("");
+				playerCount4.setText("");
+				playerCount5.setText("");
+				playerCount6.setText("");
+			} else if (newGame.getNumOfPlayers() == 5) {
+				playerCount.setText("Select Territory to attack from");
+				playerCount2.setText("");
+				playerCount3.setText("");
+				playerCount4.setText("");
+				playerCount5.setText("");
+
+			} else if (newGame.getNumOfPlayers() == 4) {
+				playerCount.setText("Select Territory to attack from");
+				playerCount2.setText("");
+				playerCount3.setText("");
+				playerCount4.setText("");
+
+			} else if (newGame.getNumOfPlayers() == 3) {
+				playerCount.setText("Select Territory to attack from");
+				playerCount2.setText("");
+				playerCount3.setText("");
+
+			} else if (newGame.getNumOfPlayers() == 2) {
+				playerCount.setText("Select Territory to attack from");
+				playerCount2.setText("");
+
+			}
+		}
+
+	}
+
 
 	private class buttonListener implements ActionListener {
 
