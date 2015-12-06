@@ -276,7 +276,6 @@ public class GameLogic implements Serializable {
 
 		HungryHowies.addNeighbors(Dominos);
 		HungryHowies.addNeighbors(PizzaHut);
-		HungryHowies.addNeighbors(BlackJack);
 		HungryHowies.addNeighbors(Brooklyns);
 
 		Brooklyns.addNeighbors(Dominos);
