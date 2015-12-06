@@ -7734,8 +7734,10 @@ public class GameBoard extends JPanel {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			updateLabels();
 			
 			AITurn(2);
+			updateLabels();
 		}
 	}
 
