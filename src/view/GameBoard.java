@@ -19,6 +19,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -36,10 +37,10 @@ public class GameBoard extends JPanel {
 			gitAttacking, perlAttacking, wilmaAttacking, wilberAttacking, millerAttacking, richAttacking,
 			scoobyAttacking, zonaAttacking, mckaleAttacking, papaAttacking, dominosAttacking, brooklynsAttacking,
 			pizzahutAttacking, blackjackAttacking, hungryhowiesAttacking, pizzaplanetAttacking, tonatiuhAttacking,
-			apolloAttacking, horusAttacking, raAttacking, intiAttacking, heliosAttacking, amunAttacking,
-			giantAttacking, scraptopiaAttacking, monisaurusAttacking, rawrvilleAttacking, laieggesAttacking,
-			dactilitoAttacking, dirtydanAttacking, toystoryAttacking, blackbeardAttacking, crescentcapitalAttacking,
-			newlandofzachAttacking, bloobawlAttacking, landofzachAttacking, southscraptopiaAttacking;
+			apolloAttacking, horusAttacking, raAttacking, intiAttacking, heliosAttacking, amunAttacking, giantAttacking,
+			scraptopiaAttacking, monisaurusAttacking, rawrvilleAttacking, laieggesAttacking, dactilitoAttacking,
+			dirtydanAttacking, toystoryAttacking, blackbeardAttacking, crescentcapitalAttacking, newlandofzachAttacking,
+			bloobawlAttacking, landofzachAttacking, southscraptopiaAttacking;
 	HashMap<JButton, JLabel> myMap;
 	ArrayList<Continent> continents;
 	ArrayList<Territory> territories;
@@ -6454,7 +6455,6 @@ public class GameBoard extends JPanel {
 
 						currPlayer = newGame.nextPlayer();
 
-				
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
@@ -6891,7 +6891,7 @@ public class GameBoard extends JPanel {
 					dirtydanAttacking = false;
 					attackPhase = true;
 				}
-				
+
 			}
 		});
 
@@ -7669,9 +7669,7 @@ public class GameBoard extends JPanel {
 		/*
 		 * Lots of Run6Bots stuff
 		 * 
-		 * 0 >>> Deploy
-		 * 1 >>> Attack
-		 * 2 >>> Fortify
+		 * 0 >>> Deploy 1 >>> Attack 2 >>> Fortify
 		 */
 		Random r = new Random();
 
@@ -7692,40 +7690,62 @@ public class GameBoard extends JPanel {
 	}
 
 	private void gameBoardAttack(Territory attackingTerr, Territory defendingTerr) {
-		BattleLogic battleLogic = new BattleLogic(attackingTerr.getOwner(), defendingTerr.getOwner(), attackingTerr,
-				defendingTerr);
-		Random r = new Random();
+		if (attackingTerr.getUnits() >= 2) {
+			BattleLogic battleLogic = new BattleLogic(attackingTerr.getOwner(), defendingTerr.getOwner(), attackingTerr,
+					defendingTerr);
+			Random r = new Random();
 
-		// Create the number of dice for each player
-		int attackerDiceNum, defenderDiceNum;
-		if (attackingTerr.getUnits() <= 3) {
-			attackerDiceNum = attackingTerr.getUnits() - 1;
-		} else {
-			attackerDiceNum = 3;
-		}
+			// Create the number of dice for each player
+			int attackerDiceNum, defenderDiceNum;
+			if (attackingTerr.getUnits() <= 3) {
+				attackerDiceNum = attackingTerr.getUnits() - 1;
+			} else {
+				attackerDiceNum = 3;
+			}
 
-		if (defendingTerr.getUnits() <= 2) {
-			defenderDiceNum = defendingTerr.getUnits();
-		} else
-			defenderDiceNum = 2;
+			if (defendingTerr.getUnits() <= 2) {
+				defenderDiceNum = defendingTerr.getUnits();
+			} else
+				defenderDiceNum = 2;
 
-		// compare the dice
-		battleLogic.attackPlayer(attackerDiceNum, defenderDiceNum);
-		int[] armiesLost = battleLogic.subtractArmies();
+			// compare the dice
+			battleLogic.attackPlayer(attackerDiceNum, defenderDiceNum);
+			int[] armiesLost = battleLogic.subtractArmies();
+			String attackerName = attackingTerr.getOwner().getName();
+			String defenderName = defendingTerr.getOwner().getName();
 
-		// subtract the armies
-		newGame.attackLogic(attackingTerr, defendingTerr, armiesLost);
+			// subtract the armies
+			newGame.attackLogic(attackingTerr, defendingTerr, armiesLost);
 
-		if (!defendingTerr.getOwner().isAI()) {
-			// SEND ALL THE INFO TO JOPTIONPANE HERE AND CHECK FOR RETREAT
-			
-		}
-		else if(!currPlayer.chooseRetreat(attackingTerr)) {
-			Territory attackingTerritory = currPlayer.getTerritories()
-					.get(r.nextInt(currPlayer.getTerritories().size()));
-			Territory defendingTerritory = currPlayer.attackTerritory(attackingTerritory,
-					attackingTerritory.getNeighbors());
-			gameBoardAttack(attackingTerritory, defendingTerritory);
+			if (!defendingTerr.getOwner().isAI()) {
+				// SEND ALL THE INFO TO JOPTIONPANE HERE AND CHECK FOR RETREAT
+				String[] options;
+				String optionPaneMessage = "Attacker: " + attackerName + "\nDefender: " + defenderName + "\n\n"
+						+ attackerName + " lost " + armiesLost[0] + " armies." + "\n" + defenderName + " lost "
+						+ armiesLost[1] + " armies.";
+
+				if (!defendingTerr.getOwner().getName().equals(defenderName)) {
+					optionPaneMessage += ("\n\n" + defenderName + " lost " + defendingTerr + " to " + attackerName);
+					options = new String[1];
+					options[0] = "OK";
+					JOptionPane.showOptionDialog(null, optionPaneMessage, "Battle Results", JOptionPane.OK_OPTION,
+							JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+				} else {
+					optionPaneMessage += ("\n\n" + attackingTerr.getName() + " now has " + attackingTerr.getUnits()
+							+ "\n" + defendingTerr.getName() + " now has " + defendingTerr.getUnits());
+					options = new String[2];
+					options[0] = "Retreat?";
+					options[1] = "Attack Again!";
+					int choice = JOptionPane.showOptionDialog(null, optionPaneMessage, "Battle Results",
+							JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[1]);
+
+					if (choice == JOptionPane.NO_OPTION) {
+						gameBoardAttack(attackingTerr, defendingTerr);
+					}
+				}
+			} else if (!currPlayer.chooseRetreat(attackingTerr)) {
+				gameBoardAttack(attackingTerr, defendingTerr);
+			}
 		}
 	}
 
