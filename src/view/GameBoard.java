@@ -518,10 +518,6 @@ public class GameBoard extends JPanel {
 	}
 
 	public void startOldGame() {
-<<<<<<< HEAD
-
-=======
->>>>>>> c9cd37f60cd05ad18fdfb438ffbc7efb31a85162
 		int numberOfPlayers=newGame.getNumOfPlayers();
 		System.out.println(numberOfPlayers);
 
