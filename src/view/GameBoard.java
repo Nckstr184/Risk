@@ -36,14 +36,14 @@ import model.Territory;
 
 public class GameBoard extends JPanel {
 
-	boolean reinforcementPhase, attackPhase, javaAttacking, pythonAttacking, cAttacking, sqlAttacking, rubyAttacking,
+	boolean reinforcementPhase, attackPhase, fortifyPhase, javaAttacking, pythonAttacking, cAttacking, sqlAttacking, rubyAttacking,
 			gitAttacking, perlAttacking, wilmaAttacking, wilberAttacking, millerAttacking, richAttacking,
 			scoobyAttacking, zonaAttacking, mckaleAttacking, papaAttacking, dominosAttacking, brooklynsAttacking,
 			pizzahutAttacking, blackjackAttacking, hungryhowiesAttacking, pizzaplanetAttacking, tonatiuhAttacking,
 			apolloAttacking, horusAttacking, raAttacking, intiAttacking, heliosAttacking, amunAttacking, giantAttacking,
 			scraptopiaAttacking, monisaurusAttacking, rawrvilleAttacking, laieggesAttacking, dactilitoAttacking,
 			dirtydanAttacking, toystoryAttacking, blackbeardAttacking, crescentcapitalAttacking, newlandofzachAttacking,
-			bloobawlAttacking, landofzachAttacking, southscraptopiaAttacking;
+			bloobawlAttacking, landofzachAttacking, southscraptopiaAttacking, pythonFortify;
 	HashMap<JButton, JLabel> myMap;
 	ArrayList<Continent> continents;
 	ArrayList<Territory> territories;
@@ -101,7 +101,8 @@ public class GameBoard extends JPanel {
 
 	JLabel playerTag, playerTag2, playerTag3, playerTag4, playerTag5, playerTag6, playerCount, playerCount2,
 			playerCount3, playerCount4, playerCount5, playerCount6, turnMarker, gameStatus;
-
+	
+	private int fortifyCount;
 	private FileInputStream inputStream;
 	private ObjectInputStream objectInput;
 
@@ -109,6 +110,8 @@ public class GameBoard extends JPanel {
 
 		reinforcementPhase = true;
 		attackPhase = false;
+		fortifyPhase = false;
+		fortifyCount = 0;
 
 		newgame1 = new OpenNewMenu();
 		while (newgame1.isDisplayable()) {
@@ -574,7 +577,17 @@ public class GameBoard extends JPanel {
 		endTurnButton.setSize(150,40);
 		endTurnButton.setText("End Turn");
 		endTurnButton.setLocation(1110, 460);
-
+		
+		fortifyButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				fortifyCount += 1;
+				if(fortifyCount <=1){
+				attackPhase = false;
+				fortifyPhase = true;
+				playerCount.setText("Fortify your armies!");
+				}
+			}
+		});
 		this.add(fortifyButton);
 		this.add(endTurnButton);
 
@@ -4130,7 +4143,16 @@ public class GameBoard extends JPanel {
 					perlAttacking = false;
 					attackPhase = true;
 				}
-
+				
+				if(fortifyPhase == true){
+					if(currPlayer.getName() == pythonLanguage.getName()){
+					System.out.println("fortify from python!!!");
+					territories.get(1).removeUnits(1);
+					updateLabels();
+					fortifyPhase = false;
+					pythonFortify = true;
+					}
+				}
 			}
 		});
 		cLanguage.addActionListener(new ActionListener() {
@@ -4186,6 +4208,12 @@ public class GameBoard extends JPanel {
 					rubyAttacking = false;
 					attackPhase = true;
 				}
+				if((pythonFortify == true) && (currPlayer.getName() == cLanguage.getName())){
+					territories.get(2).addUnits(1);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+				}
+				
 			}
 		});
 		sqlLanguage.addActionListener(new ActionListener() {
