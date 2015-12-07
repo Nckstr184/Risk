@@ -24,6 +24,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
+import demoSongPlayer.Play1Song;
 import model.GameLogic;
 
 public class OpenNewMenu extends JFrame {
@@ -35,11 +36,16 @@ public class OpenNewMenu extends JFrame {
 	ImageIcon new1, old, about, background;
 	Cursor star;
 	Image starImage;
+	Play1Song playsong;
+	String song;
 
 	private boolean clicked;
 
 	public OpenNewMenu() {
 		clicked = false;
+		song= "./songs/menusong.aiff";
+		playsong= new Play1Song(song);
+		
 
 		this.setSize(360, 360);
 		this.setTitle("New Game or Load Old Game");
@@ -109,6 +115,7 @@ public class OpenNewMenu extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			// startWindow = new StartWindow();
 			dispose();
+			
 
 		}
 	}

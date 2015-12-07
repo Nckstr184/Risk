@@ -176,7 +176,7 @@ public class GameBoard extends JPanel {
 									tempTerritories = (ArrayList<Territory>) objectInput.readObject();
 									tempContinents = (ArrayList<Continent>) objectInput.readObject();
 									tempPlayer = (Player) objectInput.readObject();
-									reinforcementPhaseImport = (boolean) objectInput.readObject();
+							//		reinforcementPhaseImport = (boolean) objectInput.readObject();
 
 									printPlayersAndTheirTerritories(tempPlayers);
 
