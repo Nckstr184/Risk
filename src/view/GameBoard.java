@@ -112,8 +112,8 @@ public class GameBoard extends JPanel {
 	private int fortifyCount, unitsFortified;
 	private FileInputStream inputStream;
 	private ObjectInputStream objectInput;
-	//Play1Song playsong;
-	//String song;
+	Play1Song playsong;
+	String song;
 
 	public GameBoard() {
 
@@ -121,6 +121,7 @@ public class GameBoard extends JPanel {
 		attackPhase = false;
 		fortifyPhase = false;
 		fortifyCount = 0;
+		song= "./songs/Johnc.aiff";
 
 		newgame1 = new OpenNewMenu();
 		while (newgame1.isDisplayable()) {
@@ -143,8 +144,8 @@ public class GameBoard extends JPanel {
 						System.out.print("");
 						this.setSize(1300, 750);
 						this.setLocation(0, -5);
-						//song= "./songs/Johnc.aiff";
-						//playsong= new Play1Song(song);
+						
+						playsong= new Play1Song(song);
 						try {
 							map = ImageIO.read(new File("./Pictures/mapwithlines.png"));
 							
