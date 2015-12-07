@@ -7038,27 +7038,6 @@ public class GameBoard extends JPanel {
 		System.out.println("AI?: " + currPlayer.isAI());
 
 		if (currPlayer.isAI()) {
-			if (reinforcementPhase) {
-				if (startWindow.getPlayerAt(0) == currPlayer) {
-					playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					turnMarker.setLocation(150, 590);
-				} else if (startWindow.getPlayerAt(1) == currPlayer) {
-					playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					turnMarker.setLocation(320, 590);
-				} else if (startWindow.getPlayerAt(2) == currPlayer) {
-					playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					turnMarker.setLocation(470, 590);
-				} else if (startWindow.getPlayerAt(3) == currPlayer) {
-					playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					turnMarker.setLocation(640, 590);
-				} else if (startWindow.getPlayerAt(4) == currPlayer) {
-					playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					turnMarker.setLocation(810, 590);
-				} else if (startWindow.getPlayerAt(5) == currPlayer) {
-					playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-					turnMarker.setLocation(980, 590);
-				}
-			}
 			System.out.println("Detecting AI");
 			if (!reinforcementPhase) {
 				System.out.println("Not in reinforcement phase");
@@ -7071,7 +7050,7 @@ public class GameBoard extends JPanel {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				// updateLabels();
+				updateLabels();
 
 				AITurn(1);
 				try {
@@ -7080,10 +7059,10 @@ public class GameBoard extends JPanel {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				// updateLabels();
+				updateLabels();
 
 				AITurn(2);
-				// updateLabels();
+				updateLabels();
 			} else {
 				System.out.println("In reinforcement phase");
 
@@ -7095,7 +7074,8 @@ public class GameBoard extends JPanel {
 				}
 
 				AITurn(0);
-				// updateLabels();
+				updateLabels();
+				moveTurnLabel();
 			}
 			nextPlayer();
 		}
