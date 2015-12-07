@@ -8948,7 +8948,7 @@ public class GameBoard extends JPanel {
 		currPlayer = newGame.nextPlayer();
 
 		moveTurnLabel();
-		
+		newGame.addReinforcements();
 		System.out.println("Current Player: " + currPlayer.getName());
 		System.out.println("AI?: " + currPlayer.isAI());
 
@@ -8957,7 +8957,6 @@ public class GameBoard extends JPanel {
 			if (!reinforcementPhase) {
 				System.out.println("Not in reinforcement phase");
 				newGame.turnInCard();
-				newGame.addReinforcements();
 				AITurn(0);
 				try {
 					Thread.sleep(2000);
