@@ -9085,7 +9085,7 @@ public class GameBoard extends JPanel {
 		/*
 		 * Lots of Run6Bots stuff
 		 * 
-		 * 0 >>> Deploy 1 >>> Attack 2 >>> Fortify
+		 * 0 >>> Deploy | 1 >>> Attack | 2 >>> Fortify
 		 */
 		Random r = new Random();
 
