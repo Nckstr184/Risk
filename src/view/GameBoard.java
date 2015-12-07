@@ -9056,9 +9056,11 @@ public class GameBoard extends JPanel {
 
 	public void nextPlayer() {
 
+		Random r = new Random();
 		currPlayer = newGame.nextPlayer();
-
+		
 		moveTurnLabel();
+		
 		if (!reinforcementPhase) {
 			newGame.addReinforcements();
 		}
@@ -9066,35 +9068,73 @@ public class GameBoard extends JPanel {
 		System.out.println("AI?: " + currPlayer.isAI());
 
 		if (currPlayer.isAI()) {
-			System.out.println("Detecting AI");
-			if (!reinforcementPhase) {
-				System.out.println("Not in reinforcement phase");
-				newGame.turnInCard();
-				AITurn(0);
-				try {
-					Thread.sleep(2000);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				updateLabels();
-
-				AITurn(1);
-				try {
-					Thread.sleep(2000);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				updateLabels();
-
-				AITurn(2);
-				updateLabels();
-			} else {
-				System.out.println("In reinforcement phase");
-				AITurn(0);
+			String log = currPlayer.getName() + "'s Turn Log\n\n";
+			// initial deploy
+			if(reinforcementPhase) {
+				log += "-Placed 1 army for initial deployment phase";
+				newGame.deployAllArmies();
 				updateLabels();
 			}
+			else {
+				// turn in card
+				if(newGame.turnInCard()) {
+					log += "-Successful card turn in\n";
+				}
+				else {
+					log += "-Unsuccessful card turn in\n";
+				}
+				
+				// deploy until empty
+				int count = 0;
+				while(currPlayer.getNumOfArmies() >= 1) {
+					count++;
+					newGame.deployAllArmies();
+					updateLabels();
+				}
+				
+				log += "-Deployed " + count + " armies in deploy phase\n";
+				
+				// attack
+				Territory attackingTerritory = currPlayer.getTerritories()
+						.get(r.nextInt(currPlayer.getTerritories().size()));
+				Territory defendingTerritory = currPlayer.attackTerritory(attackingTerritory,
+						attackingTerritory.getNeighbors());
+
+				if (defendingTerritory != null) {
+
+					BattleLogic battleLogic = new BattleLogic(currPlayer, defendingTerritory.getOwner(), attackingTerritory,
+							defendingTerritory);
+					
+					while (currPlayer.chooseRetreat(attackingTerritory) && attackingTerritory.getUnits() > 1) {
+						int attackerDiceNum, defenderDiceNum;
+						if (attackingTerritory.getUnits() <= 3) {
+							attackerDiceNum = attackingTerritory.getUnits() - 1;
+						} else {
+							attackerDiceNum = 3;
+						}
+
+
+						if (defendingTerritory.getUnits() <= 2) {
+							defenderDiceNum = defendingTerritory.getUnits();
+						} else
+							defenderDiceNum = 2;
+
+						battleLogic.attackPlayer(attackerDiceNum, defenderDiceNum);
+						int[] unitsToLose = battleLogic.subtractArmies();
+						
+						log += "-Attacked " + defendingTerritory.getName() + " from " + attackingTerritory.getName() + "\n";
+						
+						newGame.attackLogic(attackingTerritory, defendingTerritory, unitsToLose);
+						updateLabels();
+					}
+				}
+				
+				// fortify
+				newGame.fortifyPosition();
+				updateLabels();
+			}
+			log += "\nEnd of Log";
+			JOptionPane.showMessageDialog(null, log);
 			nextPlayer();
 		}
 
