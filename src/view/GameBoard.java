@@ -6338,6 +6338,12 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 
 				}
+				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(apolloSun.getName() == currPlayer.getName())){
+					apolloUnits +=1;
+					territories.get(35).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
+				}
 				if (attackPhase == true) {
 					if ((apolloSun.getName() == currPlayer.getName()) && (apolloUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
@@ -6432,6 +6438,12 @@ public class GameBoard extends JPanel {
 
 					checkIfReinforcementPhaseIsOver();
 				}
+				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(raSun.getName() == currPlayer.getName())){
+					raUnits +=1;
+					territories.get(36).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
+				}
 				if (attackPhase == true) {
 					if ((raSun.getName() == currPlayer.getName()) && (raUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
@@ -6515,6 +6527,12 @@ public class GameBoard extends JPanel {
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(heliosSun.getName() == currPlayer.getName())){
+					heliosUnits +=1;
+					territories.get(37).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
 				}
 				if (attackPhase == true) {
 					if ((heliosSun.getName() == currPlayer.getName()) && (heliosUnits >= 2)) {
@@ -6623,6 +6641,12 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(intiSun.getName() == currPlayer.getName())){
+					intiUnits +=1;
+					territories.get(38).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
+				}
 				if (attackPhase == true) {
 					if ((intiSun.getName() == currPlayer.getName()) && (intiUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
@@ -6693,6 +6717,12 @@ public class GameBoard extends JPanel {
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(horusSun.getName() == currPlayer.getName())){
+					horusUnits +=1;
+					territories.get(39).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
 				}
 				if (attackPhase == true) {
 					if ((horusSun.getName() == currPlayer.getName()) && (horusUnits >= 2)) {
