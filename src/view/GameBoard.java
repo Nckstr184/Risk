@@ -592,8 +592,10 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				fortifyCount = 0;
 				fortifyPhase = false;
-				reinforcementPhase = true;
+				attackPhase = true;
+				reinforcementPhase = false;
 				nextPlayer();
+				moveTurnLabel();
 			}
 		});
 		this.add(fortifyButton);

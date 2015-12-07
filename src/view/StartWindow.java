@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -61,9 +62,9 @@ public class StartWindow extends JFrame {
 		enterName.setText("Enter Player Names Here");
 		
 
-		player1.setText("Rick Mercer");
-		player2.setText("Jeremy Mowrey");
-		player3.setText("Daniel Vaughn");
+		player1.setText("Rick");
+		player2.setText("Jeremy");
+		player3.setText("Daniel");
 		player4.setText("");
 		player5.setText("");
 		player6.setText("");
@@ -285,7 +286,19 @@ public class StartWindow extends JFrame {
 			}
 
 			setNumberOfPlayers(count);
-
+			
+			String message = "Welcome to RISK"
+					+ "\n\nRules:"
+					+ "\n\t-Turns have 3 phases: deploy, attack, and fortify"
+					+ "\n\t-You can only attack if you have more than 1 army at that territory"
+					+ "\n\t-You can only fortify once per turn"
+					+ "\n\t-If you lose all your territories, you are removed from the game"
+					+ "\n\t-After 60 rounds of play, the player with the most territories wins"
+					+ "\n\nNotes:"
+					+ "\n\t-AIs will only show battle dialog if the defender is a Human player"
+					+ "\n\t-During battles, dice ties go to the defender"
+					+ "\n\nCreated by: Four Blind Mice <3";
+			JOptionPane.showMessageDialog(null, message, "About", 1);
 			dispose();
 
 		}
