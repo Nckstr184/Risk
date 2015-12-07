@@ -35,15 +35,21 @@ import model.Territory;
 
 public class GameBoard extends JPanel {
 
-	boolean beginReinforcementPhase, reinforcementPhase, attackPhase, fortifyPhase, javaAttacking, pythonAttacking, cAttacking, sqlAttacking, rubyAttacking,
-			gitAttacking, perlAttacking, wilmaAttacking, wilberAttacking, millerAttacking, richAttacking,
-			scoobyAttacking, zonaAttacking, mckaleAttacking, papaAttacking, dominosAttacking, brooklynsAttacking,
-			pizzahutAttacking, blackjackAttacking, hungryhowiesAttacking, pizzaplanetAttacking, tonatiuhAttacking,
-			apolloAttacking, horusAttacking, raAttacking, intiAttacking, heliosAttacking, amunAttacking, giantAttacking,
-			scraptopiaAttacking, monisaurusAttacking, rawrvilleAttacking, laieggesAttacking, dactilitoAttacking,
-			dirtydanAttacking, toystoryAttacking, blackbeardAttacking, crescentcapitalAttacking, newlandofzachAttacking,
-			bloobawlAttacking, landofzachAttacking, southscraptopiaAttacking, pythonFortify, cFortify, sqlFortify,
-			perlFortify, javaFortify, rubyFortify, gitFortify, giantFortify, horusFortify;
+	boolean beginReinforcementPhase, reinforcementPhase, attackPhase, fortifyPhase, javaAttacking, pythonAttacking,
+			cAttacking, sqlAttacking, rubyAttacking, gitAttacking, perlAttacking, wilmaAttacking, wilberAttacking,
+			millerAttacking, richAttacking, scoobyAttacking, zonaAttacking, mckaleAttacking, papaAttacking,
+			dominosAttacking, brooklynsAttacking, pizzahutAttacking, blackjackAttacking, hungryhowiesAttacking,
+			pizzaplanetAttacking, tonatiuhAttacking, apolloAttacking, horusAttacking, raAttacking, intiAttacking,
+			heliosAttacking, amunAttacking, giantAttacking, scraptopiaAttacking, monisaurusAttacking,
+			rawrvilleAttacking, laieggesAttacking, dactilitoAttacking, dirtydanAttacking, toystoryAttacking,
+			blackbeardAttacking, crescentcapitalAttacking, newlandofzachAttacking, bloobawlAttacking,
+			landofzachAttacking, southscraptopiaAttacking, pythonFortify, cFortify, sqlFortify, perlFortify,
+			javaFortify, rubyFortify, gitFortify, giantFortify, horusFortify, wilberFortify, wilmaFortify, zonaFortify,
+			richFortify, scoobyFortify, millerFortify, mckaleFortify, papaFortify, dominosFortify, pizzahutFortify,
+			toystoryFortify, pizzaplanetFortify, blackjackFortify, hungryhowiesFortify, brooklynFortify, amunFortify,
+			apolloFortify, heliosFortify, intiFortify, tonatiuhFortify, rawrFortify, laieggesFortify, dirtydanFortify,
+			blackbeardFortify, dactilitoFortify, monisaurusFortify, landofzachFortify, newlandofzachFortify,
+			scraptopiaFortify, southscraptopiaFortify, bloobawlFortify, crescentcapitalFortify;
 	HashMap<JButton, JLabel> myMap;
 	ArrayList<Continent> continents;
 	ArrayList<Territory> territories;
@@ -589,7 +595,7 @@ public class GameBoard extends JPanel {
 				}
 			}
 		});
-		
+
 		endTurnButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				fortifyCount = 0;
@@ -4803,6 +4809,23 @@ public class GameBoard extends JPanel {
 					tonatiuhAttacking = false;
 					attackPhase = true;
 				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == wilberWildcat.getName()) {
+						System.out.println("fortify from wilber!!!");
+						Object[] range = new Object[territories.get(14).getUnits()];
+						for (int i = 1; i < territories.get(14).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(14).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						wilberFortify = true;
+					}
+				}
 			}
 		});
 		wilmaWildcat.addActionListener(new ActionListener() {
@@ -4850,6 +4873,23 @@ public class GameBoard extends JPanel {
 					gameBoardAttack(territories.get(17), territories.get(15));
 					millerAttacking = false;
 					attackPhase = true;
+				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == wilmaWildcat.getName()) {
+						System.out.println("fortify from wilma!!!");
+						Object[] range = new Object[territories.get(15).getUnits()];
+						for (int i = 1; i < territories.get(15).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(15).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						wilmaFortify = true;
+					}
 				}
 			}
 		});
@@ -4911,6 +4951,23 @@ public class GameBoard extends JPanel {
 					mckaleAttacking = false;
 					attackPhase = true;
 				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == richWildcat.getName()) {
+						System.out.println("fortify from wilber!!!");
+						Object[] range = new Object[territories.get(16).getUnits()];
+						for (int i = 1; i < territories.get(16).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(16).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						richFortify = true;
+					}
+				}
 			}
 		});
 		millerWildcat.addActionListener(new ActionListener() {
@@ -4962,6 +5019,23 @@ public class GameBoard extends JPanel {
 					gameBoardAttack(territories.get(28), territories.get(17));
 					scraptopiaAttacking = false;
 					attackPhase = true;
+				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == millerWildcat.getName()) {
+						System.out.println("fortify from miller!!!");
+						Object[] range = new Object[territories.get(17).getUnits()];
+						for (int i = 1; i < territories.get(17).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(17).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						millerFortify = true;
+					}
 				}
 			}
 		});
@@ -5021,6 +5095,23 @@ public class GameBoard extends JPanel {
 					papaAttacking = false;
 					attackPhase = true;
 				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == scoobyWildcat.getName()) {
+						System.out.println("fortify from scooby!!!");
+						Object[] range = new Object[territories.get(18).getUnits()];
+						for (int i = 1; i < territories.get(18).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(18).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						scoobyFortify = true;
+					}
+				}
 			}
 		});
 		mckaleWildcat.addActionListener(new ActionListener() {
@@ -5073,6 +5164,23 @@ public class GameBoard extends JPanel {
 					zonaAttacking = false;
 					attackPhase = true;
 				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == mckaleWildcat.getName()) {
+						System.out.println("fortify from miller!!!");
+						Object[] range = new Object[territories.get(19).getUnits()];
+						for (int i = 1; i < territories.get(19).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(19).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						mckaleFortify = true;
+					}
+				}
 			}
 		});
 		zonaWildcat.addActionListener(new ActionListener() {
@@ -5112,6 +5220,23 @@ public class GameBoard extends JPanel {
 					gameBoardAttack(territories.get(19), territories.get(20));
 					mckaleAttacking = false;
 					attackPhase = true;
+				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == zonaWildcat.getName()) {
+						System.out.println("fortify from zona!!!");
+						Object[] range = new Object[territories.get(20).getUnits()];
+						for (int i = 1; i < territories.get(20).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(20).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						zonaFortify = true;
+					}
 				}
 			}
 		});
@@ -5171,6 +5296,23 @@ public class GameBoard extends JPanel {
 					scoobyAttacking = false;
 					attackPhase = true;
 				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == papajohnsPizza.getName()) {
+						System.out.println("fortify from papa!!!");
+						Object[] range = new Object[territories.get(21).getUnits()];
+						for (int i = 1; i < territories.get(21).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(21).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						papaFortify = true;
+					}
+				}
 			}
 		});
 		dominosPizza.addActionListener(new ActionListener() {
@@ -5229,6 +5371,23 @@ public class GameBoard extends JPanel {
 					wilberAttacking = false;
 					attackPhase = true;
 				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == dominosPizza.getName()) {
+						System.out.println("fortify from dominos!!!");
+						Object[] range = new Object[territories.get(22).getUnits()];
+						for (int i = 1; i < territories.get(22).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(22).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						dominosFortify = true;
+					}
+				}
 			}
 		});
 		pizzahutPizza.addActionListener(new ActionListener() {
@@ -5281,6 +5440,23 @@ public class GameBoard extends JPanel {
 					hungryhowiesAttacking = false;
 					attackPhase = true;
 				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == pizzahutPizza.getName()) {
+						System.out.println("fortify from hut!!!");
+						Object[] range = new Object[territories.get(23).getUnits()];
+						for (int i = 1; i < territories.get(23).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(23).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						pizzahutFortify = true;
+					}
+				}
 			}
 		});
 		blackjackPizza.addActionListener(new ActionListener() {
@@ -5326,6 +5502,23 @@ public class GameBoard extends JPanel {
 					gameBoardAttack(territories.get(23), territories.get(24));
 					pizzahutAttacking = false;
 					attackPhase = true;
+				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == blackjackPizza.getName()) {
+						System.out.println("fortify from blackj!!!");
+						Object[] range = new Object[territories.get(24).getUnits()];
+						for (int i = 1; i < territories.get(24).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(24).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						blackjackFortify = true;
+					}
 				}
 			}
 		});
@@ -5378,6 +5571,23 @@ public class GameBoard extends JPanel {
 					gameBoardAttack(territories.get(26), territories.get(25));
 					brooklynsAttacking = false;
 					attackPhase = true;
+				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == hungryhowiesPizza.getName()) {
+						System.out.println("fortify from hungryhowies!!!");
+						Object[] range = new Object[territories.get(25).getUnits()];
+						for (int i = 1; i < territories.get(25).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(25).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						hungryhowiesFortify = true;
+					}
 				}
 
 			}
@@ -5438,6 +5648,23 @@ public class GameBoard extends JPanel {
 					tonatiuhAttacking = false;
 					attackPhase = true;
 				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == brooklynPizza.getName()) {
+						System.out.println("fortify from brook!!!");
+						Object[] range = new Object[territories.get(26).getUnits()];
+						for (int i = 1; i < territories.get(26).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(26).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						brooklynFortify = true;
+					}
+				}
 
 			}
 		});
@@ -5485,6 +5712,23 @@ public class GameBoard extends JPanel {
 					gameBoardAttack(territories.get(40), territories.get(27));
 					tonatiuhAttacking = false;
 					attackPhase = true;
+				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == pizzaplanetPizza.getName()) {
+						System.out.println("fortify from pizzaplanet!!!");
+						Object[] range = new Object[territories.get(27).getUnits()];
+						for (int i = 1; i < territories.get(27).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(27).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						pizzaplanetFortify = true;
+					}
 				}
 			}
 		});
@@ -5539,6 +5783,23 @@ public class GameBoard extends JPanel {
 					pizzaplanetAttacking = false;
 					attackPhase = true;
 				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == apolloSun.getName()) {
+						System.out.println("fortify from apollo!!");
+						Object[] range = new Object[territories.get(35).getUnits()];
+						for (int i = 1; i < territories.get(35).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(35).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						apolloFortify = true;
+					}
+				}
 			}
 		});
 
@@ -5583,6 +5844,23 @@ public class GameBoard extends JPanel {
 					gameBoardAttack(territories.get(41), territories.get(36));
 					amunAttacking = false;
 					attackPhase = true;
+				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == amunSun.getName()) {
+						System.out.println("fortify from amun!!");
+						Object[] range = new Object[territories.get(36).getUnits()];
+						for (int i = 1; i < territories.get(36).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(36).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						amunFortify = true;
+					}
 				}
 			}
 		});
@@ -5643,6 +5921,23 @@ public class GameBoard extends JPanel {
 					javaAttacking = false;
 					attackPhase = true;
 				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == heliosSun.getName()) {
+						System.out.println("fortify from helios!!");
+						Object[] range = new Object[territories.get(37).getUnits()];
+						for (int i = 1; i < territories.get(37).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(37).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						heliosFortify = true;
+					}
+				}
 			}
 		});
 		intiSun.addActionListener(new ActionListener() {
@@ -5682,6 +5977,23 @@ public class GameBoard extends JPanel {
 					gameBoardAttack(territories.get(39), territories.get(38));
 					horusAttacking = false;
 					attackPhase = true;
+				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == intiSun.getName()) {
+						System.out.println("fortify from inti!!");
+						Object[] range = new Object[territories.get(38).getUnits()];
+						for (int i = 1; i < territories.get(38).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(38).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						intiFortify = true;
+					}
 				}
 			}
 		});
@@ -5734,6 +6046,23 @@ public class GameBoard extends JPanel {
 					gameBoardAttack(territories.get(41), territories.get(39));
 					amunAttacking = false;
 					attackPhase = true;
+				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == horusSun.getName()) {
+						System.out.println("fortify from horus!!");
+						Object[] range = new Object[territories.get(39).getUnits()];
+						for (int i = 1; i < territories.get(39).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(39).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						horusFortify = true;
+					}
 				}
 			}
 		});
@@ -5793,6 +6122,23 @@ public class GameBoard extends JPanel {
 					pizzaplanetAttacking = false;
 					attackPhase = true;
 				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == tonatiuhSun.getName()) {
+						System.out.println("fortify from ton!!");
+						Object[] range = new Object[territories.get(40).getUnits()];
+						for (int i = 1; i < territories.get(40).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(40).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						tonatiuhFortify = true;
+					}
+				}
 			}
 		});
 		amunSun.addActionListener(new ActionListener() {
@@ -5851,6 +6197,23 @@ public class GameBoard extends JPanel {
 					tonatiuhAttacking = false;
 					attackPhase = true;
 				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == amunSun.getName()) {
+						System.out.println("fortify from amun!!");
+						Object[] range = new Object[territories.get(41).getUnits()];
+						for (int i = 1; i < territories.get(41).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(41).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						amunFortify = true;
+					}
+				}
 			}
 		});
 		rawrvilleDino.addActionListener(new ActionListener() {
@@ -5890,6 +6253,23 @@ public class GameBoard extends JPanel {
 					gameBoardAttack(territories.get(9), territories.get(7));
 					dactilitoAttacking = false;
 					attackPhase = true;
+				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == rawrvilleDino.getName()) {
+						System.out.println("fortify from rawr!!");
+						Object[] range = new Object[territories.get(7).getUnits()];
+						for (int i = 1; i < territories.get(7).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(7).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						rawrFortify = true;
+					}
 				}
 			}
 		});
@@ -5941,6 +6321,23 @@ public class GameBoard extends JPanel {
 					gameBoardAttack(territories.get(34), territories.get(8));
 					crescentcapitalAttacking = false;
 					attackPhase = true;
+				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == laieggesDino.getName()) {
+						System.out.println("fortify from laieeges!!");
+						Object[] range = new Object[territories.get(8).getUnits()];
+						for (int i = 1; i < territories.get(8).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(8).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						laieggesFortify = true;
+					}
 				}
 			}
 		});
@@ -5999,6 +6396,23 @@ public class GameBoard extends JPanel {
 					gameBoardAttack(territories.get(13), territories.get(9));
 					toystoryAttacking = false;
 					attackPhase = true;
+				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == dactilitoDino.getName()) {
+						System.out.println("fortify from dac!!");
+						Object[] range = new Object[territories.get(9).getUnits()];
+						for (int i = 1; i < territories.get(9).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(9).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						dactilitoFortify = true;
+					}
 				}
 			}
 		});
@@ -6070,6 +6484,23 @@ public class GameBoard extends JPanel {
 					crescentcapitalAttacking = false;
 					attackPhase = true;
 				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == dirtydanDino.getName()) {
+						System.out.println("fortify from dirty!!");
+						Object[] range = new Object[territories.get(10).getUnits()];
+						for (int i = 1; i < territories.get(10).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(10).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						dirtydanFortify = true;
+					}
+				}
 
 			}
 		});
@@ -6123,6 +6554,23 @@ public class GameBoard extends JPanel {
 					toystoryAttacking = false;
 					attackPhase = true;
 				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == blackbeardDino.getName()) {
+						System.out.println("fortify from black!!");
+						Object[] range = new Object[territories.get(11).getUnits()];
+						for (int i = 1; i < territories.get(11).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(11).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						blackbeardFortify = true;
+					}
+				}
 			}
 		});
 		monisaurusDino.addActionListener(new ActionListener() {
@@ -6175,6 +6623,23 @@ public class GameBoard extends JPanel {
 					newlandofzachAttacking = false;
 					attackPhase = true;
 				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == monisaurusDino.getName()) {
+						System.out.println("fortify from moni!!");
+						Object[] range = new Object[territories.get(12).getUnits()];
+						for (int i = 1; i < territories.get(12).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(12).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						monisaurusFortify = true;
+					}
+				}
 			}
 		});
 		toystoryDino.addActionListener(new ActionListener() {
@@ -6221,6 +6686,23 @@ public class GameBoard extends JPanel {
 					blackbeardAttacking = false;
 					attackPhase = true;
 				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == toystoryDino.getName()) {
+						System.out.println("fortify from toystroy!!");
+						Object[] range = new Object[territories.get(13).getUnits()];
+						for (int i = 1; i < territories.get(13).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(13).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						toystoryFortify = true;
+					}
+				}
 			}
 		});
 		scraptopiaCresent.addActionListener(new ActionListener() {
@@ -6262,6 +6744,23 @@ public class GameBoard extends JPanel {
 					gameBoardAttack(territories.get(17), territories.get(28));
 					millerAttacking = false;
 					attackPhase = true;
+				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == scraptopiaCresent.getName()) {
+						System.out.println("fortify from scrap!!");
+						Object[] range = new Object[territories.get(28).getUnits()];
+						for (int i = 1; i < territories.get(28).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(28).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						scraptopiaFortify = true;
+					}
 				}
 
 			}
@@ -6311,6 +6810,23 @@ public class GameBoard extends JPanel {
 					gameBoardAttack(territories.get(31), territories.get(29));
 					newlandofzachAttacking = false;
 					attackPhase = true;
+				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == landofzachCresent.getName()) {
+						System.out.println("fortify from lozach!!");
+						Object[] range = new Object[territories.get(29).getUnits()];
+						for (int i = 1; i < territories.get(29).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(29).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						landofzachFortify = true;
+					}
 				}
 			}
 		});
@@ -6365,6 +6881,23 @@ public class GameBoard extends JPanel {
 					gameBoardAttack(territories.get(4), territories.get(30));
 					rubyAttacking = false;
 					attackPhase = true;
+				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == giantCresent.getName()) {
+						System.out.println("fortify from giant!!");
+						Object[] range = new Object[territories.get(30).getUnits()];
+						for (int i = 1; i < territories.get(30).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(30).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						giantFortify = true;
+					}
 				}
 
 			}
@@ -6427,6 +6960,23 @@ public class GameBoard extends JPanel {
 					monisaurusAttacking = false;
 					attackPhase = true;
 				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == newlandofzachCresent.getName()) {
+						System.out.println("fortify from newland!!");
+						Object[] range = new Object[territories.get(31).getUnits()];
+						for (int i = 1; i < territories.get(31).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(31).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						newlandofzachFortify = true;
+					}
+				}
 			}
 		});
 		southscraptopiaCresent.addActionListener(new ActionListener() {
@@ -6469,6 +7019,23 @@ public class GameBoard extends JPanel {
 					gameBoardAttack(territories.get(31), territories.get(32));
 					newlandofzachAttacking = false;
 					attackPhase = true;
+				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == southscraptopiaCresent.getName()) {
+						System.out.println("fortify from southscrap!!");
+						Object[] range = new Object[territories.get(32).getUnits()];
+						for (int i = 1; i < territories.get(32).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(32).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						southscraptopiaFortify = true;
+					}
 				}
 			}
 		});
@@ -6525,6 +7092,23 @@ public class GameBoard extends JPanel {
 					dirtydanAttacking = false;
 					attackPhase = true;
 				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == bloobawlCresent.getName()) {
+						System.out.println("fortify from bloo!!");
+						Object[] range = new Object[territories.get(33).getUnits()];
+						for (int i = 1; i < territories.get(33).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(33).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						bloobawlFortify = true;
+					}
+				}
 			}
 		});
 		cresentcaptitalCresent.addActionListener(new ActionListener() {
@@ -6573,6 +7157,23 @@ public class GameBoard extends JPanel {
 					gameBoardAttack(territories.get(10), territories.get(34));
 					dirtydanAttacking = false;
 					attackPhase = true;
+				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == cresentcaptitalCresent.getName()) {
+						System.out.println("fortify from scrap!!");
+						Object[] range = new Object[territories.get(34).getUnits()];
+						for (int i = 1; i < territories.get(34).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(34).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						crescentcapitalFortify = true;
+					}
 				}
 
 			}
