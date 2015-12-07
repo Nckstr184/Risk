@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -61,19 +62,19 @@ public class StartWindow extends JFrame {
 		enterName.setText("Enter Player Names Here");
 		
 
-		player1.setText("");
-		player2.setText("");
-		player3.setText("");
+		player1.setText("Rick");
+		player2.setText("Jeremy");
+		player3.setText("Daniel");
 		player4.setText("");
 		player5.setText("");
 		player6.setText("");
 
-		String[] player1Choice = { "Select A.I", "Human", "Easy AI", "Medium AI", "Hard AI" };
-		String[] player2Choice = { "Select A.I", "Easy AI", "Medium AI", "Hard AI", "Human" };
-		String[] player3Choice = { "Select A.I", "Easy AI", "Medium AI", "Hard AI", "Human" };
-		String[] player4Choice = { "Select A.I", "None", "Human", "Easy AI", "Medium AI", "Hard AI" };
-		String[] player5Choice = { "Select A.I", "None", "Human", "Easy AI", "Medium AI", "Hard AI" };
-		String[] player6Choice = { "Select A.I", "None", "Human", "Easy AI", "Medium AI", "Hard AI" };
+		String[] player1Choice = { "Select Player", "Human", "Easy AI", "Medium AI", "Hard AI" };
+		String[] player2Choice = { "Select Player", "Human", "Easy AI", "Medium AI", "Hard AI"};
+		String[] player3Choice = { "Select Player", "Human", "Easy AI", "Medium AI", "Hard AI"};
+		String[] player4Choice = { "Select Player", "Human", "Easy AI", "Medium AI", "Hard AI" };
+		String[] player5Choice = { "Select Player", "Human", "Easy AI", "Medium AI", "Hard AI" };
+		String[] player6Choice = { "Select Player", "Human", "Easy AI", "Medium AI", "Hard AI" };
 		diff1 = new JComboBox<String>(player1Choice);
 		diff2 = new JComboBox<String>(player2Choice);
 		diff3 = new JComboBox<String>(player3Choice);
@@ -159,7 +160,6 @@ public class StartWindow extends JFrame {
 			player3Name = player3.getText();
 			player4Name = player4.getText();
 			player5Name = player5.getText();
-			System.out.println(";;;" + player5Name + ";;;");
 			player6Name = player6.getText();
 			count = 0;
 
@@ -286,7 +286,19 @@ public class StartWindow extends JFrame {
 			}
 
 			setNumberOfPlayers(count);
-
+			
+			String message = "Welcome to RISK"
+					+ "\n\nRules:"
+					+ "\n\t-Turns have 3 phases: deploy, attack, and fortify"
+					+ "\n\t-You can only attack if you have more than 1 army at that territory"
+					+ "\n\t-You can only fortify once per turn"
+					+ "\n\t-If you lose all your territories, you are removed from the game"
+					+ "\n\t-After 60 rounds of play, the player with the most territories wins"
+					+ "\n\nNotes:"
+					+ "\n\t-AIs will only show battle dialog if the defender is a Human player"
+					+ "\n\t-During battles, dice ties go to the defender"
+					+ "\n\nCreated by: Four Blind Mice <3";
+			JOptionPane.showMessageDialog(null, message, "About", 1);
 			dispose();
 
 		}
