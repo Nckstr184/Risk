@@ -629,6 +629,32 @@ public class GameLogic implements Serializable {
 		attackingTerr.removeUnits(1);
 		defendingTerr.addUnits(1);
 	}
+	
+	public ArrayList<Territory> getFriendlyTerritories(Territory currTerr) {
+		ArrayList<Territory> neighbors = currTerr.getNeighbors();
+		ArrayList<Territory> friendlies = new ArrayList<Territory>();
+		
+		for(int i=0; i<neighbors.size();i++) {
+			if(currTerr.getOwner().getName().equals(neighbors.get(i).getOwner().getName())) {
+				friendlies.add(neighbors.get(i));
+			}
+		}
+		
+		return friendlies;
+	}
+	
+	public ArrayList<Territory> getEnemyTerritories(Territory currTerr) {
+		ArrayList<Territory> neighbors = currTerr.getNeighbors();
+		ArrayList<Territory> enemies = new ArrayList<Territory>();
+		
+		for(int i=0; i<neighbors.size();i++) {
+			if(!currTerr.getOwner().getName().equals(neighbors.get(i).getOwner().getName())) {
+				enemies.add(neighbors.get(i));
+			}
+		}
+		
+		return enemies;
+	}
 
 	// CARD LOGIC SECTION
 
