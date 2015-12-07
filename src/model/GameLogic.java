@@ -494,6 +494,8 @@ public class GameLogic implements Serializable {
 	}
 
 	public void setCards(ArrayList<String> newCards) {
+		allCards=new CardCollection();
+		System.out.println(allCards.getCardCollection().size());
 		allCards.setLoadedCardOrder(newCards);
 	}
 
