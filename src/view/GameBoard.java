@@ -4139,11 +4139,14 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(javaLanguage.getName() == currPlayer.getName())){
+					javaUnits +=1;
+					territories.get(0).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
+				}
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
-				
-				
-				
 				if (attackPhase == true) {
 					if ((javaLanguage.getName() == currPlayer.getName()) && (javaUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
@@ -4153,6 +4156,7 @@ public class GameBoard extends JPanel {
 
 					}
 				}
+				
 				
 				
 				if (pythonAttacking == true && (currPlayer.getName() != javaLanguage.getName())) {
@@ -4244,6 +4248,12 @@ public class GameBoard extends JPanel {
 
 					checkIfReinforcementPhaseIsOver();
 
+				}
+				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(pythonLanguage.getName() == currPlayer.getName())){
+					pythonUnits +=1;
+					territories.get(1).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
 				}
 
 				///////////////////////////////// Start Attack
@@ -4355,6 +4365,12 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(cLanguage.getName() == currPlayer.getName())){
+					cUnits +=1;
+					territories.get(2).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
+				}
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
 				if (attackPhase == true) {
@@ -4452,6 +4468,11 @@ public class GameBoard extends JPanel {
 
 					}
 					checkIfReinforcementPhaseIsOver();
+				}	if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(sqlLanguage.getName() == currPlayer.getName())){
+					sqlUnits +=1;
+					territories.get(3).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
 				}
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
@@ -4562,6 +4583,11 @@ public class GameBoard extends JPanel {
 
 					}
 					checkIfReinforcementPhaseIsOver();
+				}if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(rubyLanguage.getName() == currPlayer.getName())){
+					rubyUnits +=1;
+					territories.get(4).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
 				}
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
@@ -4659,6 +4685,12 @@ public class GameBoard extends JPanel {
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(gitLanguage.getName() == currPlayer.getName())){
+					gitUnits +=1;
+					territories.get(5).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
 				}
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
@@ -4769,6 +4801,13 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+
+				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(perlLanguage.getName() == currPlayer.getName())){
+					perlUnits +=1;
+					territories.get(6).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
+				}
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
 				if (attackPhase == true) {
@@ -4839,6 +4878,12 @@ public class GameBoard extends JPanel {
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(wilberWildcat.getName() == currPlayer.getName())){
+					wilberUnits +=1;
+					territories.get(14).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
 				}
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
@@ -4972,6 +5017,12 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(wilmaWildcat.getName() == currPlayer.getName())){
+					wilmaUnits +=1;
+					territories.get(15).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
+				}
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
 				if (attackPhase == true) {
@@ -5055,6 +5106,12 @@ public class GameBoard extends JPanel {
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(richWildcat.getName() == currPlayer.getName())){
+					richUnits +=1;
+					territories.get(16).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
 				}
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
@@ -5164,6 +5221,12 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(millerWildcat.getName() == currPlayer.getName())){
+					millerUnits +=1;
+					territories.get(17).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
+				}
 				if (attackPhase == true) {
 					if ((millerWildcat.getName() == currPlayer.getName()) && (millerUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
@@ -5258,6 +5321,11 @@ public class GameBoard extends JPanel {
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(scoobyWildcat.getName() == currPlayer.getName())){
+					scoobyUnits +=1;
+					territories.get(18).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
 				}
 				if (attackPhase == true) {
 					if ((scoobyWildcat.getName() == currPlayer.getName()) && (scoobyUnits >= 2)) {
@@ -5366,6 +5434,14 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+
+				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(mckaleWildcat.getName() == currPlayer.getName())){
+					mckaleUnits +=1;
+					territories.get(19).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
+				}
+
 				if (attackPhase == true) {
 					if ((mckaleWildcat.getName() == currPlayer.getName()) && (mckaleUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
@@ -5461,6 +5537,12 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(zonaWildcat.getName() == currPlayer.getName())){
+					zonaUnits +=1;
+					territories.get(20).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
+				}
 				if (attackPhase == true) {
 					if ((zonaWildcat.getName() == currPlayer.getName()) && (zonaUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
@@ -5529,6 +5611,12 @@ public class GameBoard extends JPanel {
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(papajohnsPizza.getName() == currPlayer.getName())){
+					pjUnits +=1;
+					territories.get(21).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
 				}
 				if (attackPhase == true) {
 					if ((papajohnsPizza.getName() == currPlayer.getName()) && (pjUnits >= 2)) {
@@ -5637,6 +5725,12 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(dominosPizza.getName() == currPlayer.getName())){
+					domUnits +=1;
+					territories.get(22).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
+				}
 				if (attackPhase == true) {
 					if ((dominosPizza.getName() == currPlayer.getName()) && (domUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
@@ -5742,6 +5836,12 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(pizzahutPizza.getName() == currPlayer.getName())){
+					phUnits +=1;
+					territories.get(23).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
+				}
 				if (attackPhase == true) {
 					if ((pizzahutPizza.getName() == currPlayer.getName()) && (phUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
@@ -5836,6 +5936,12 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(blackjackPizza.getName() == currPlayer.getName())){
+					bjUnits +=1;
+					territories.get(24).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
+				}
 				if (attackPhase == true) {
 					if ((blackjackPizza.getName() == currPlayer.getName()) && (bjUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
@@ -5920,6 +6026,12 @@ public class GameBoard extends JPanel {
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(hungryhowiesPizza.getName() == currPlayer.getName())){
+					hhUnits +=1;
+					territories.get(25).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
 				}
 				if (attackPhase == true) {
 					if ((hungryhowiesPizza.getName() == currPlayer.getName()) && (hhUnits >= 2)) {
@@ -6016,6 +6128,12 @@ public class GameBoard extends JPanel {
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(brooklynPizza.getName() == currPlayer.getName())){
+					bUnits +=1;
+					territories.get(26).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
 				}
 				if (attackPhase == true) {
 					if ((brooklynPizza.getName() == currPlayer.getName()) && (bUnits >= 2)) {
@@ -6124,6 +6242,12 @@ public class GameBoard extends JPanel {
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(pizzaplanetPizza.getName() == currPlayer.getName())){
+					ppUnits +=1;
+					territories.get(27).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
 				}
 				if (attackPhase == true) {
 					if ((pizzaplanetPizza.getName() == currPlayer.getName()) && (ppUnits >= 2)) {
@@ -9079,7 +9203,7 @@ public class GameBoard extends JPanel {
 		currPlayer = newGame.nextPlayer();
 
 		moveTurnLabel();
-		newGame.addReinforcements();
+		
 		System.out.println("Current Player: " + currPlayer.getName());
 		System.out.println("AI?: " + currPlayer.isAI());
 
@@ -9088,6 +9212,7 @@ public class GameBoard extends JPanel {
 			if (!reinforcementPhase) {
 				System.out.println("Not in reinforcement phase");
 				newGame.turnInCard();
+				newGame.addReinforcements();
 				AITurn(0);
 				try {
 					Thread.sleep(2000);
