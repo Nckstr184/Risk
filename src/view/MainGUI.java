@@ -100,6 +100,7 @@ public class MainGUI extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			System.out.println("Saving Game");
 
+
 			try {
 				outputStream = new FileOutputStream("savedGame");
 				objectOutput = new ObjectOutputStream(outputStream);

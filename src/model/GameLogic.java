@@ -561,7 +561,7 @@ public class GameLogic implements Serializable {
 			defendingTerr.setOwner(attacker);
 
 			attackingTerr.removeUnits(1);
-			while (defendingTerr.getUnits() <= 1) {
+			while (defendingTerr.getUnits() <= 0) {
 				defendingTerr.addUnits(1);
 			}
 
