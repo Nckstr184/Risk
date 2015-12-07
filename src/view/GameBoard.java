@@ -164,8 +164,8 @@ public class GameBoard extends JPanel {
 								ArrayList<String> tempCards = null;
 								ArrayList<Territory> tempTerritories = null;
 								ArrayList<Continent> tempContinents = null;
-								Player tempPlayer=null;
-								boolean reinforcementPhaseImport=true;
+								Player tempPlayer = null;
+								boolean reinforcementPhaseImport = true;
 								try {
 									inputStream = new FileInputStream("savedGame");
 									objectInput = new ObjectInputStream(inputStream);
@@ -176,13 +176,13 @@ public class GameBoard extends JPanel {
 									tempPlayer = (Player) objectInput.readObject();
 									reinforcementPhaseImport = (boolean) objectInput.readObject();
 
-
 								} catch (ClassNotFoundException e) {
 									// TODO Auto-generated catch block
 									System.out.println("reading did not work");
 									e.printStackTrace();
 								}
-								this.importGameLogic(tempPlayers, tempCards, tempContinents, tempTerritories, tempPlayer, reinforcementPhaseImport);
+								this.importGameLogic(tempPlayers, tempCards, tempContinents, tempTerritories,
+										tempPlayer, reinforcementPhaseImport);
 							}
 
 							System.out.println("NUMBER OF PLAYERS: " + newGame.getNumOfPlayers());
@@ -488,7 +488,7 @@ public class GameBoard extends JPanel {
 	}
 
 	public void startOldGame() {
-		int numberOfPlayers=newGame.getNumOfPlayers();
+		int numberOfPlayers = newGame.getNumOfPlayers();
 		if (numberOfPlayers == 6) {
 
 			player1 = newGame.getPlayerAt(0);
@@ -589,21 +589,22 @@ public class GameBoard extends JPanel {
 	}
 
 	public void importGameLogic(PlayerCollection newPlayers, ArrayList<String> newCards,
-			ArrayList<Continent> newContinets, ArrayList<Territory> newTerritories, Player tempPlayer, boolean reinforcemnetPhaseImport) {
+			ArrayList<Continent> newContinets, ArrayList<Territory> newTerritories, Player tempPlayer,
+			boolean reinforcemnetPhaseImport) {
 		newGame = new GameLogic(null, null, null, null, null, null);
 		newGame.setPlayerList(newPlayers);
 		newGame.setCards(newCards);
 		newGame.setTerritory(newTerritories);
 		newGame.setContinents(newContinets);
-		currPlayer=tempPlayer;
-		reinforcementPhase=reinforcemnetPhaseImport;
+		currPlayer = tempPlayer;
+		reinforcementPhase = reinforcemnetPhaseImport;
 		newGame.startLoadedGame();
 	}
 
-	public Player getCurrentPlayer()
-	{
+	public Player getCurrentPlayer() {
 		return currPlayer;
 	}
+
 	public PlayerCollection getPlayers() {
 		return newGame.getPlayerList();
 	}
@@ -649,9 +650,8 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				String message = "";
 				Object[] options = { "Turn in", "Return" };
-				int choice = JOptionPane.showOptionDialog(null, currPlayer.getCards(),
-						"Current Player's Cards", JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE, null, options,
-						options[0]);
+				int choice = JOptionPane.showOptionDialog(null, currPlayer.getCards(), "Current Player's Cards",
+						JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
 				if (choice == 0) {
 					if (newGame.turnInCard()) {
 						message = "Cards successfully turned in";
@@ -4133,7 +4133,7 @@ public class GameBoard extends JPanel {
 						territories.get(0).addUnits(1);
 						languageLabel1.setText("" + javaUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 						nextPlayer();
 
 					}
@@ -4233,7 +4233,7 @@ public class GameBoard extends JPanel {
 						territories.get(1).addUnits(1);
 						myLabel.setText("" + pythonUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 						nextPlayer();
 					}
 
@@ -4344,8 +4344,7 @@ public class GameBoard extends JPanel {
 						territories.get(2).addUnits(1);
 						myLabel.setText("" + cUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
-
+						
 						nextPlayer();
 
 					}
@@ -4442,7 +4441,7 @@ public class GameBoard extends JPanel {
 						territories.get(3).addUnits(1);
 						myLabel.setText("" + sqlUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -4552,7 +4551,7 @@ public class GameBoard extends JPanel {
 						territories.get(4).addUnits(1);
 						myLabel.setText("" + rubyUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -4648,7 +4647,7 @@ public class GameBoard extends JPanel {
 						territories.get(5).addUnits(1);
 						myLabel.setText("" + gitUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -4757,7 +4756,7 @@ public class GameBoard extends JPanel {
 						territories.get(6).addUnits(1);
 						myLabel.setText("" + perlUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -4828,7 +4827,7 @@ public class GameBoard extends JPanel {
 						territories.get(14).addUnits(1);
 						myLabel.setText("" + wilberUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -4960,7 +4959,7 @@ public class GameBoard extends JPanel {
 						territories.get(15).addUnits(1);
 						myLabel.setText("" + wilmaUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -5044,7 +5043,7 @@ public class GameBoard extends JPanel {
 						territories.get(16).addUnits(1);
 						myLabel.setText("" + richUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -5152,7 +5151,7 @@ public class GameBoard extends JPanel {
 						territories.get(17).addUnits(1);
 						myLabel.setText("" + millerUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -5247,7 +5246,7 @@ public class GameBoard extends JPanel {
 						territories.get(18).addUnits(1);
 						myLabel.setText("" + scoobyUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -5354,7 +5353,7 @@ public class GameBoard extends JPanel {
 						territories.get(19).addUnits(1);
 						myLabel.setText("" + mckaleUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -5449,7 +5448,7 @@ public class GameBoard extends JPanel {
 						territories.get(20).addUnits(1);
 						myLabel.setText("" + zonaUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -5518,7 +5517,7 @@ public class GameBoard extends JPanel {
 						territories.get(21).addUnits(1);
 						myLabel.setText("" + pjUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -5625,7 +5624,7 @@ public class GameBoard extends JPanel {
 						territories.get(22).addUnits(1);
 						myLabel.setText("" + domUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -5730,7 +5729,7 @@ public class GameBoard extends JPanel {
 						territories.get(23).addUnits(1);
 						myLabel.setText("" + phUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -5824,7 +5823,7 @@ public class GameBoard extends JPanel {
 						territories.get(24).addUnits(1);
 						myLabel.setText("" + bjUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -5909,7 +5908,7 @@ public class GameBoard extends JPanel {
 						territories.get(25).addUnits(1);
 						myLabel.setText("" + hhUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -6005,7 +6004,7 @@ public class GameBoard extends JPanel {
 						territories.get(26).addUnits(1);
 						myLabel.setText("" + bUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -6113,7 +6112,7 @@ public class GameBoard extends JPanel {
 						territories.get(27).addUnits(1);
 						myLabel.setText("" + ppUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -6197,7 +6196,7 @@ public class GameBoard extends JPanel {
 						territories.get(35).addUnits(1);
 						myLabel.setText("" + apolloUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -6205,6 +6204,12 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 
+				}
+				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(apolloSun.getName() == currPlayer.getName())){
+					apolloUnits +=1;
+					territories.get(35).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
 				}
 				if (attackPhase == true) {
 					if ((apolloSun.getName() == currPlayer.getName()) && (apolloUnits >= 2)) {
@@ -6294,11 +6299,17 @@ public class GameBoard extends JPanel {
 						territories.get(36).addUnits(1);
 						myLabel.setText("" + raUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 						nextPlayer();
 					}
 
 					checkIfReinforcementPhaseIsOver();
+				}
+				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(raSun.getName() == currPlayer.getName())){
+					raUnits +=1;
+					territories.get(36).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
 				}
 				if (attackPhase == true) {
 					if ((raSun.getName() == currPlayer.getName()) && (raUnits >= 2)) {
@@ -6376,13 +6387,19 @@ public class GameBoard extends JPanel {
 						territories.get(37).addUnits(1);
 						myLabel.setText("" + heliosUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(heliosSun.getName() == currPlayer.getName())){
+					heliosUnits +=1;
+					territories.get(37).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
 				}
 				if (attackPhase == true) {
 					if ((heliosSun.getName() == currPlayer.getName()) && (heliosUnits >= 2)) {
@@ -6483,13 +6500,19 @@ public class GameBoard extends JPanel {
 						territories.get(38).addUnits(1);
 						myLabel.setText("" + intiUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(intiSun.getName() == currPlayer.getName())){
+					intiUnits +=1;
+					territories.get(38).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
 				}
 				if (attackPhase == true) {
 					if ((intiSun.getName() == currPlayer.getName()) && (intiUnits >= 2)) {
@@ -6554,13 +6577,19 @@ public class GameBoard extends JPanel {
 						territories.get(39).addUnits(1);
 						myLabel.setText("" + horusUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(horusSun.getName() == currPlayer.getName())){
+					horusUnits +=1;
+					territories.get(39).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
 				}
 				if (attackPhase == true) {
 					if ((horusSun.getName() == currPlayer.getName()) && (horusUnits >= 2)) {
@@ -6651,7 +6680,7 @@ public class GameBoard extends JPanel {
 						territories.get(40).addUnits(1);
 						myLabel.setText("" + tonatiuhUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -6758,8 +6787,7 @@ public class GameBoard extends JPanel {
 						territories.get(41).addUnits(1);
 						myLabel.setText("" + amunUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
-
+						
 						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
@@ -6865,7 +6893,7 @@ public class GameBoard extends JPanel {
 						territories.get(7).addUnits(1);
 						myLabel.setText("" + rawrUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -6936,7 +6964,7 @@ public class GameBoard extends JPanel {
 						territories.get(8).addUnits(1);
 						myLabel.setText("" + eggUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
@@ -7030,7 +7058,7 @@ public class GameBoard extends JPanel {
 						territories.get(9).addUnits(1);
 						myLabel.setText("" + dacUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -7136,7 +7164,7 @@ public class GameBoard extends JPanel {
 						territories.get(10).addUnits(1);
 						myLabel.setText("" + danUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -7268,7 +7296,7 @@ public class GameBoard extends JPanel {
 						territories.get(11).addUnits(1);
 						myLabel.setText("" + bbUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -7363,7 +7391,7 @@ public class GameBoard extends JPanel {
 						territories.get(12).addUnits(1);
 						myLabel.setText("" + moniUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -7458,7 +7486,7 @@ public class GameBoard extends JPanel {
 						territories.get(13).addUnits(1);
 						myLabel.setText("" + tsUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -7544,7 +7572,7 @@ public class GameBoard extends JPanel {
 						myLabel.setText("" + scrapUnits);
 
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -7616,7 +7644,7 @@ public class GameBoard extends JPanel {
 						territories.get(29).addUnits(1);
 						myLabel.setText("" + zachUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -7700,7 +7728,7 @@ public class GameBoard extends JPanel {
 						myLabel.setText("" + giantUnits);
 
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -7790,7 +7818,7 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-
+				
 				if (reinforcementPhase == true) {
 					if (currPlayer.getNumOfArmies() >= 1 && newlandofzachCresent.getName() == currPlayer.getName()) {
 						newzachUnits += 1;
@@ -7798,7 +7826,7 @@ public class GameBoard extends JPanel {
 						myLabel.setText("" + newzachUnits);
 
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -7899,7 +7927,7 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-
+				
 				if (reinforcementPhase == true) {
 					if (currPlayer.getNumOfArmies() >= 1 && southscraptopiaCresent.getName() == currPlayer.getName()) {
 						southUnits += 1;
@@ -7907,7 +7935,7 @@ public class GameBoard extends JPanel {
 						myLabel.setText("" + southUnits);
 
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -7973,7 +8001,7 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-
+				
 				if (reinforcementPhase == true) {
 					if (currPlayer.getNumOfArmies() >= 1 && bloobawlCresent.getName() == currPlayer.getName()) {
 						blooUnits += 1;
@@ -7981,7 +8009,7 @@ public class GameBoard extends JPanel {
 						myLabel.setText("" + blooUnits);
 
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+						
 
 						nextPlayer();
 
@@ -8070,6 +8098,7 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 
+				
 				if (reinforcementPhase == true) {
 					if (currPlayer.getNumOfArmies() >= 1 && cresentcaptitalCresent.getName() == currPlayer.getName()) {
 						capUnits += 1;
@@ -8077,7 +8106,6 @@ public class GameBoard extends JPanel {
 						myLabel.setText("" + capUnits);
 
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
@@ -8926,22 +8954,22 @@ public class GameBoard extends JPanel {
 	public void moveTurnLabel() {
 		if (newGame.getPlayerAt(0) == currPlayer) {
 			playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-			turnMarker.setLocation(320, 590);
+			turnMarker.setLocation(150, 590);
 		} else if (newGame.getPlayerAt(1) == currPlayer) {
 			playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-			turnMarker.setLocation(470, 590);
+			turnMarker.setLocation(320, 590);
 		} else if (newGame.getPlayerAt(2) == currPlayer) {
 			playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-			turnMarker.setLocation(640, 590);
+			turnMarker.setLocation(470, 590);
 		} else if (newGame.getPlayerAt(3) == currPlayer) {
 			playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-			turnMarker.setLocation(810, 590);
+			turnMarker.setLocation(640, 590);
 		} else if (newGame.getPlayerAt(4) == currPlayer) {
 			playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-			turnMarker.setLocation(980, 590);
+			turnMarker.setLocation(810, 590);
 		} else if (newGame.getPlayerAt(5) == currPlayer) {
 			playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-			turnMarker.setLocation(150, 590);
+			turnMarker.setLocation(980, 590);
 		}
 	}
 
@@ -8949,6 +8977,8 @@ public class GameBoard extends JPanel {
 
 		currPlayer = newGame.nextPlayer();
 
+		moveTurnLabel();
+		
 		System.out.println("Current Player: " + currPlayer.getName());
 		System.out.println("AI?: " + currPlayer.isAI());
 
@@ -8977,13 +9007,11 @@ public class GameBoard extends JPanel {
 				updateLabels();
 
 				AITurn(2);
-				moveTurnLabel();
 				updateLabels();
 			} else {
 				System.out.println("In reinforcement phase");
 				AITurn(0);
 				updateLabels();
-				moveTurnLabel();
 			}
 			nextPlayer();
 		}
@@ -9100,7 +9128,7 @@ public class GameBoard extends JPanel {
 				gameBoardAttack(attackingTerritory, defendingTerritory);
 				updateLabels();
 			}
-		
+
 		} else if (turnPhase == 2) {
 			currPlayer.deployArmy();
 		}
