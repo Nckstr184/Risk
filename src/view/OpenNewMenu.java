@@ -1,7 +1,11 @@
 package view;
 
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.GridLayout;
+import java.awt.Image;
+import java.awt.Point;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
@@ -10,6 +14,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -27,7 +33,8 @@ public class OpenNewMenu extends JFrame {
 	private JButton aboutgame;
 	private StartWindow startWindow;
 	ImageIcon new1, old, about, background;
-	
+	Cursor star;
+	Image starImage;
 
 	private boolean clicked;
 
@@ -41,6 +48,16 @@ public class OpenNewMenu extends JFrame {
 		
 
 		this.setLocation(350, 100);
+		
+		Toolkit tools1 = Toolkit.getDefaultToolkit();
+		
+		
+			starImage = tools1.getImage("./Pictures/Starugh.png");
+		
+		star = tools1.createCustomCursor(starImage, new Point(0,0), "img");//i hope this works
+		
+		
+		
 			new1 = new ImageIcon("./Pictures/newgamelabel.png");
 			old = new ImageIcon("./Pictures/oldgamelabel.png");
 			about = new ImageIcon("./Pictures/aboutlabel.png");
@@ -69,10 +86,13 @@ public class OpenNewMenu extends JFrame {
 			aboutgame.setContentAreaFilled(false);
 			aboutgame.setBorderPainted(false);
 			
-
+			newgame.setCursor(star);
+			oldgame.setCursor(star);
+			aboutgame.setCursor(star);
 		this.add(newgame);
 		this.add(oldgame);
 		this.add(aboutgame);
+		
 
 		this.setVisible(true);
 
