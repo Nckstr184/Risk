@@ -111,6 +111,10 @@ public class MainGUI extends JFrame {
 			}
 
 			try {
+				if(map.getPlayers()==null&&map.getCards()==null&&map.getTerritories()==null&&map.getContinents()==null)
+				{
+					System.out.println("ITs NULL MAN");
+				}
 				objectOutput.writeObject(map.getPlayers());
 				objectOutput.writeObject(map.getCards());
 				objectOutput.writeObject(map.getTerritories());
