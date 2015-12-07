@@ -1,11 +1,16 @@
 package view;
 
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.GridLayout;
+import java.awt.Image;
+import java.awt.Point;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -36,7 +41,8 @@ public class StartWindow extends JFrame {
 	ArrayList<Player> pList;
 	String playerName, player1Name, player2Name, player3Name, player4Name, player5Name, player6Name, selectedDiff1,
 			selectedDiff2, selectedDiff3, selectedDiff4, selectedDiff5, selectedDiff6;
-
+	Cursor star;
+	
 	private int count;
 	public int numOfPlayers;
 
@@ -61,6 +67,11 @@ public class StartWindow extends JFrame {
 
 		enterName.setText("Enter Player Names Here");
 		
+		Toolkit tools = Toolkit.getDefaultToolkit();
+		ImageIcon starimg = new ImageIcon("./Pictures/mercer.png");
+		
+		star = tools.createCustomCursor(starimg.getImage(), new Point(0,0), "img");//i hope this works
+		player1.setCursor(star);
 
 		player1.setText("Rick");
 		player2.setText("Jeremy");
@@ -68,6 +79,8 @@ public class StartWindow extends JFrame {
 		player4.setText("");
 		player5.setText("");
 		player6.setText("");
+		
+		
 
 		String[] player1Choice = { "Select Player", "Human"};
 		String[] player2Choice = { "Select Player", "Human", "Easy AI", "Medium AI", "Hard AI"};
