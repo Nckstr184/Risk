@@ -112,8 +112,13 @@ public class GameBoard extends JPanel {
 	private int fortifyCount, unitsFortified;
 	private FileInputStream inputStream;
 	private ObjectInputStream objectInput;
+
 	Play1Song playsong;
 	String song;
+
+	
+	private int turnCount = 0;
+
 
 	public GameBoard() {
 

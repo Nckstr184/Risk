@@ -151,6 +151,22 @@ public abstract class Player implements Serializable {
 		// if there is no card able to be turned in then it returns false
 		return false;
 	}
+	
+	public int getConqueredContinents(GameLogic gl) {
+		ArrayList<Continent> allContinents = gl.getContinents();
+		ArrayList<Territory> allTerritories = gl.getTerritories();
+		int numOfCont = 0;
+		
+		for(int i=0;i<allContinents.size();i++) {
+			if(allContinents.get(i).getTerritories().get(0).getOwner().getName() == name) {
+				if(allContinents.get(i).isConquered()) {
+					numOfCont++;
+				}
+			}
+		}
+		
+		return numOfCont;
+	}
 
 	abstract public void startGame();
 
