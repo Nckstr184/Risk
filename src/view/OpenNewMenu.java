@@ -16,6 +16,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 import model.GameLogic;
 
@@ -26,44 +27,48 @@ public class OpenNewMenu extends JFrame {
 	private JButton aboutgame;
 	private StartWindow startWindow;
 	ImageIcon new1, old, about, background;
+	
 
 	private boolean clicked;
 
 	public OpenNewMenu() {
 		clicked = false;
 
-		this.setSize(350, 350);
+		this.setSize(360, 360);
 		this.setTitle("New Game or Load Old Game");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(new GridLayout(3, 1, 0, 0));
+		
 
 		this.setLocation(350, 100);
-		new1 = new ImageIcon("./Pictures/newgamelabel.png");
-		old = new ImageIcon("./Pictures/oldgamelabel.png");
-		about = new ImageIcon("./Pictures/aboutlabel.png");
-		background = new ImageIcon("./Pictures/openmenu.png");// might have to
-																// make a
-																// buffered
-																// image label
+			new1 = new ImageIcon("./Pictures/newgamelabel.png");
+			old = new ImageIcon("./Pictures/oldgamelabel.png");
+			about = new ImageIcon("./Pictures/aboutlabel.png");
+			background = new ImageIcon("./Pictures/openmenu.png");//might have to make a buffered image label
 
-		newgame = new JButton(new1);
-		newgame.addActionListener(new startNewGame());
-		oldgame = new JButton(old);
-		oldgame.addActionListener(new loadOldGame());
-		aboutgame = new JButton(about);
-		// add listener for about
+			
+			
+			newgame = new JButton(new1);
+			newgame.addActionListener(new startNewGame());
+			oldgame = new JButton(old);
+			oldgame.addActionListener(new loadOldGame());
+			aboutgame= new JButton(about);
+			aboutgame.addActionListener(new aboutGame());
+			//add listener for about
 
-		newgame.setOpaque(false);
-		newgame.setContentAreaFilled(false);
-		newgame.setBorderPainted(false);
-
-		oldgame.setOpaque(false);
-		oldgame.setContentAreaFilled(false);
-		oldgame.setBorderPainted(false);
-
-		aboutgame.setOpaque(false);
-		aboutgame.setContentAreaFilled(false);
-		aboutgame.setBorderPainted(false);
+			
+			newgame.setOpaque(false);
+			newgame.setContentAreaFilled(false);
+			newgame.setBorderPainted(false);
+			
+			oldgame.setOpaque(false);
+			oldgame.setContentAreaFilled(false);
+			oldgame.setBorderPainted(false);
+			
+			aboutgame.setOpaque(false);
+			aboutgame.setContentAreaFilled(false);
+			aboutgame.setBorderPainted(false);
+			
 
 		this.add(newgame);
 		this.add(oldgame);
@@ -99,4 +104,21 @@ public class OpenNewMenu extends JFrame {
 		}
 	}
 
+	private class aboutGame implements ActionListener {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			String message = "Welcome to RISK"
+					+ "\n\nRules:"
+					+ "\n\t-Turns have 3 phases: deploy, attack, and fortify"
+					+ "\n\t-You can only attack if you have more than 1 army at that territory"
+					+ "\n\t-You can only fortify once per turn"
+					+ "\n\t-If you lose all your territories, you are removed from the game"
+					+ "\n\t-After 60 rounds of play, the player with the most territories wins"
+					+ "\n\nNotes:"
+					+ "\n\t-AIs will only show battle dialog if the defender is a Human player"
+					+ "\n\t-During battles, dice ties go to the defender"
+					+ "\n\nCreated by: Four Blind Mice <3";
+			JOptionPane.showMessageDialog(null, message, "About", 1);
+		}
+	}
 }
