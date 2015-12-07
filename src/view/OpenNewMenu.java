@@ -16,6 +16,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 import model.GameLogic;
 
@@ -52,6 +53,7 @@ public class OpenNewMenu extends JFrame {
 			oldgame = new JButton(old);
 			oldgame.addActionListener(new loadOldGame());
 			aboutgame= new JButton(about);
+			aboutgame.addActionListener(new aboutGame());
 			//add listener for about
 
 			
@@ -102,4 +104,21 @@ public class OpenNewMenu extends JFrame {
 		}
 	}
 
+	private class aboutGame implements ActionListener {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			String message = "Welcome to RISK"
+					+ "\n\nRules:"
+					+ "\n\t-Turns have 3 phases: deploy, attack, and fortify"
+					+ "\n\t-You can only attack if you have more than 1 army at that territory"
+					+ "\n\t-You can only fortify once per turn"
+					+ "\n\t-If you lose all your territories, you are removed from the game"
+					+ "\n\t-After 60 rounds of play, the player with the most territories wins"
+					+ "\n\nNotes:"
+					+ "\n\t-AIs will only show battle dialog if the defender is a Human player"
+					+ "\n\t-During battles, dice ties go to the defender"
+					+ "\n\nCreated by: Four Blind Mice <3";
+			JOptionPane.showMessageDialog(null, message, "About", 1);
+		}
+	}
 }
