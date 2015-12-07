@@ -108,6 +108,8 @@ public class GameBoard extends JPanel {
 
 	JLabel playerTag, playerTag2, playerTag3, playerTag4, playerTag5, playerTag6, playerCount, playerCount2,
 			playerCount3, playerCount4, playerCount5, playerCount6, turnMarker, gameStatus, neighborsLabel;
+	
+	JLabel turnCountLabel;
 
 	private int fortifyCount, unitsFortified;
 	private FileInputStream inputStream;
@@ -117,7 +119,7 @@ public class GameBoard extends JPanel {
 	String john, coin;
 
 	
-	private int turnCount = 0;
+	private int turnCount;
 
 
 	public GameBoard() {
@@ -185,7 +187,7 @@ public class GameBoard extends JPanel {
 									tempTerritories = (ArrayList<Territory>) objectInput.readObject();
 									tempContinents = (ArrayList<Continent>) objectInput.readObject();
 									tempPlayer = (Player) objectInput.readObject();
-							//		reinforcementPhaseImport = (boolean) objectInput.readObject();
+									reinforcementPhaseImport = (boolean) objectInput.readObject();
 
 									printPlayersAndTheirTerritories(tempPlayers);
 
@@ -200,6 +202,7 @@ public class GameBoard extends JPanel {
 
 							System.out.println("NUMBER OF PLAYERS: " + newGame.getNumOfPlayers());
 
+							turnCount = newGame.getNumOfPlayers() * 20;
 							if (!newgame1.isClicked()) {
 								playerTags();
 							}
@@ -223,7 +226,7 @@ public class GameBoard extends JPanel {
 				}
 			}
 		}
-
+		updateLabels();
 	}
 
 	private void printPlayersAndTheirTerritories(PlayerCollection tempPlayers) {
@@ -252,6 +255,7 @@ public class GameBoard extends JPanel {
 		turnMarker = new JLabel();
 		gameStatus = new JLabel();
 		neighborsLabel = new JLabel();
+		turnCountLabel = new JLabel();
 		turnMarker.setText("IT'S YOUR TURN!!!");
 		turnMarker.setForeground(Color.white);
 		turnMarker.setFont(plyrCountFont);
@@ -270,7 +274,14 @@ public class GameBoard extends JPanel {
 		neighborsLabel.setLocation(250,20);
 		neighborsLabel.setForeground(Color.WHITE);
 		
+		turnCountLabel.setSize(200,300);
+		turnCountLabel.setFont(neighborsFont);
+		turnCountLabel.setLocation(55, 300);
+		turnCountLabel.setForeground(Color.WHITE);
+		turnCountLabel.setText("Turns Left: " + turnCount);
 		
+		
+		add(turnCountLabel);
 		add(neighborsLabel);
 		add(gameStatus);
 		add(turnMarker);
@@ -689,6 +700,7 @@ public class GameBoard extends JPanel {
 		endTurnButton.setSize(150, 40);
 		endTurnButton.setText("End Turn");
 		endTurnButton.setLocation(1110, 460);
+		endTurnButton.setEnabled(false);
 		
 		
 		
@@ -3819,13 +3831,16 @@ public class GameBoard extends JPanel {
 				}
 			}
 		}
-		nextPlayer();
+		
+		if (!newgame1.isClicked()) {
+			nextPlayer();
+		}
 		
 		javaLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				playsong= new Play1Song(coin);
+				
 				javaAttacking = false;
 				if (reinforcementPhase == true) {
 					if (currPlayer.getNumOfArmies() >= 1 && javaLanguage.getName() == currPlayer.getName()) {
@@ -3833,7 +3848,7 @@ public class GameBoard extends JPanel {
 						territories.get(0).addUnits(1);
 						languageLabel1.setText("" + javaUnits);
 						currPlayer.removeArmies(1);
-
+						playsong= new Play1Song(coin);
 						nextPlayer();
 
 					}
@@ -3946,7 +3961,6 @@ public class GameBoard extends JPanel {
 		pythonLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
-				playsong= new Play1Song(coin);
 				JLabel myLabel = myMap.get(myButton);
 
 				if (reinforcementPhase == true) {
@@ -3955,7 +3969,11 @@ public class GameBoard extends JPanel {
 						territories.get(1).addUnits(1);
 						myLabel.setText("" + pythonUnits);
 						currPlayer.removeArmies(1);
+<<<<<<< HEAD
 						
+=======
+						playsong= new Play1Song(coin);
+>>>>>>> 15fcc93030f4411dfdbbba5b56c8ed21521f3417
 
 						nextPlayer();
 					}
@@ -4069,13 +4087,13 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				playsong= new Play1Song(coin);
 				if (reinforcementPhase == true) {
 					if (currPlayer.getNumOfArmies() >= 1 && cLanguage.getName() == currPlayer.getName()) {
 						cUnits += 1;
 						territories.get(2).addUnits(1);
 						myLabel.setText("" + cUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -4174,7 +4192,6 @@ public class GameBoard extends JPanel {
 		sqlLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
-				playsong= new Play1Song(coin);
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
 					if (currPlayer.getNumOfArmies() >= 1 && sqlLanguage.getName() == currPlayer.getName()) {
@@ -4182,6 +4199,7 @@ public class GameBoard extends JPanel {
 						territories.get(3).addUnits(1);
 						myLabel.setText("" + sqlUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -4291,7 +4309,6 @@ public class GameBoard extends JPanel {
 		rubyLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
-				playsong= new Play1Song(coin);
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
 					if (currPlayer.getNumOfArmies() >= 1 && rubyLanguage.getName() == currPlayer.getName()) {
@@ -4299,6 +4316,7 @@ public class GameBoard extends JPanel {
 						territories.get(4).addUnits(1);
 						myLabel.setText("" + rubyUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -4394,7 +4412,6 @@ public class GameBoard extends JPanel {
 		gitLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
-				playsong= new Play1Song(coin);
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
 					if (currPlayer.getNumOfArmies() >= 1 && gitLanguage.getName() == currPlayer.getName()) {
@@ -4402,6 +4419,7 @@ public class GameBoard extends JPanel {
 						territories.get(5).addUnits(1);
 						myLabel.setText("" + gitUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -4512,13 +4530,13 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				playsong= new Play1Song(coin);
 				if (reinforcementPhase == true) {
 					if (currPlayer.getNumOfArmies() >= 1 && perlLanguage.getName() == currPlayer.getName()) {
 						perlUnits += 1;
 						territories.get(6).addUnits(1);
 						myLabel.setText("" + perlUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -4598,6 +4616,7 @@ public class GameBoard extends JPanel {
 						territories.get(14).addUnits(1);
 						myLabel.setText("" + wilberUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -4737,6 +4756,7 @@ public class GameBoard extends JPanel {
 						territories.get(15).addUnits(1);
 						myLabel.setText("" + wilmaUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -4828,6 +4848,7 @@ public class GameBoard extends JPanel {
 						territories.get(16).addUnits(1);
 						myLabel.setText("" + richUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -4943,6 +4964,7 @@ public class GameBoard extends JPanel {
 						territories.get(17).addUnits(1);
 						myLabel.setText("" + millerUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -5045,6 +5067,7 @@ public class GameBoard extends JPanel {
 						territories.get(18).addUnits(1);
 						myLabel.setText("" + scoobyUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -5158,6 +5181,7 @@ public class GameBoard extends JPanel {
 						territories.get(19).addUnits(1);
 						myLabel.setText("" + mckaleUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -5262,6 +5286,7 @@ public class GameBoard extends JPanel {
 						territories.get(20).addUnits(1);
 						myLabel.setText("" + zonaUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -5338,6 +5363,7 @@ public class GameBoard extends JPanel {
 						territories.get(21).addUnits(1);
 						myLabel.setText("" + pjUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -5452,6 +5478,7 @@ public class GameBoard extends JPanel {
 						territories.get(22).addUnits(1);
 						myLabel.setText("" + domUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -5564,6 +5591,7 @@ public class GameBoard extends JPanel {
 						territories.get(23).addUnits(1);
 						myLabel.setText("" + phUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -5665,6 +5693,7 @@ public class GameBoard extends JPanel {
 						territories.get(24).addUnits(1);
 						myLabel.setText("" + bjUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -5757,6 +5786,7 @@ public class GameBoard extends JPanel {
 						territories.get(25).addUnits(1);
 						myLabel.setText("" + hhUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -5860,6 +5890,7 @@ public class GameBoard extends JPanel {
 						territories.get(26).addUnits(1);
 						myLabel.setText("" + bUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -5975,6 +6006,7 @@ public class GameBoard extends JPanel {
 						territories.get(27).addUnits(1);
 						myLabel.setText("" + ppUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -6066,6 +6098,7 @@ public class GameBoard extends JPanel {
 						territories.get(35).addUnits(1);
 						myLabel.setText("" + apolloUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -6171,6 +6204,7 @@ public class GameBoard extends JPanel {
 						territories.get(36).addUnits(1);
 						myLabel.setText("" + raUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 					}
@@ -6262,6 +6296,7 @@ public class GameBoard extends JPanel {
 						territories.get(37).addUnits(1);
 						myLabel.setText("" + heliosUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -6377,6 +6412,7 @@ public class GameBoard extends JPanel {
 						territories.get(38).addUnits(1);
 						myLabel.setText("" + intiUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -6456,6 +6492,7 @@ public class GameBoard extends JPanel {
 						territories.get(39).addUnits(1);
 						myLabel.setText("" + horusUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -6561,6 +6598,7 @@ public class GameBoard extends JPanel {
 						territories.get(40).addUnits(1);
 						myLabel.setText("" + tonatiuhUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -6676,6 +6714,7 @@ public class GameBoard extends JPanel {
 						territories.get(41).addUnits(1);
 						myLabel.setText("" + amunUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -6791,6 +6830,7 @@ public class GameBoard extends JPanel {
 						territories.get(7).addUnits(1);
 						myLabel.setText("" + rawrUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -6870,6 +6910,7 @@ public class GameBoard extends JPanel {
 						territories.get(8).addUnits(1);
 						myLabel.setText("" + eggUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -6973,6 +7014,7 @@ public class GameBoard extends JPanel {
 						territories.get(9).addUnits(1);
 						myLabel.setText("" + dacUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -7087,6 +7129,7 @@ public class GameBoard extends JPanel {
 						territories.get(10).addUnits(1);
 						myLabel.setText("" + danUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -7227,6 +7270,7 @@ public class GameBoard extends JPanel {
 						territories.get(11).addUnits(1);
 						myLabel.setText("" + bbUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -7330,6 +7374,7 @@ public class GameBoard extends JPanel {
 						territories.get(12).addUnits(1);
 						myLabel.setText("" + moniUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -7433,6 +7478,7 @@ public class GameBoard extends JPanel {
 						territories.get(13).addUnits(1);
 						myLabel.setText("" + tsUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -7525,6 +7571,7 @@ public class GameBoard extends JPanel {
 						scrapUnits += 1;
 						territories.get(28).addUnits(1);
 						myLabel.setText("" + scrapUnits);
+						playsong= new Play1Song(coin);
 
 						currPlayer.removeArmies(1);
 
@@ -7607,6 +7654,7 @@ public class GameBoard extends JPanel {
 						territories.get(29).addUnits(1);
 						myLabel.setText("" + zachUnits);
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -7699,6 +7747,7 @@ public class GameBoard extends JPanel {
 						myLabel.setText("" + giantUnits);
 
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -7805,6 +7854,7 @@ public class GameBoard extends JPanel {
 						myLabel.setText("" + newzachUnits);
 
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -7920,6 +7970,7 @@ public class GameBoard extends JPanel {
 						southUnits += 1;
 						territories.get(32).addUnits(1);
 						myLabel.setText("" + southUnits);
+						playsong= new Play1Song(coin);
 
 						currPlayer.removeArmies(1);
 
@@ -8004,6 +8055,7 @@ public class GameBoard extends JPanel {
 						myLabel.setText("" + blooUnits);
 
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -8108,6 +8160,7 @@ public class GameBoard extends JPanel {
 						myLabel.setText("" + capUnits);
 
 						currPlayer.removeArmies(1);
+						playsong= new Play1Song(coin);
 
 						nextPlayer();
 
@@ -8988,10 +9041,13 @@ public class GameBoard extends JPanel {
 
 		Random r = new Random();
 		currPlayer = newGame.nextPlayer();
+
+		turnCountLabel.setText("Turns Left: " + turnCount);
 		
 		moveTurnLabel();
 		if (!reinforcementPhase) {
 			newGame.addReinforcements();
+			turnCount--;
 		}
 
 		System.out.println("Current Player: " + currPlayer.getName());
@@ -9159,6 +9215,7 @@ public class GameBoard extends JPanel {
 		cresentLabel5.setText("" + southUnits);
 		cresentLabel6.setText("" + blooUnits);
 		cresentLabel7.setText("" + capUnits);
+		
 	}
 
 	public void AITurn(int turnPhase) {
@@ -12358,6 +12415,7 @@ public class GameBoard extends JPanel {
 		}
 		if (playersDone == newGame.getNumOfPlayers()) {
 			reinforcementPhase = false;
+			endTurnButton.setEnabled(true);
 			attackPhase = true;
 			gameStatus.setText("Attack");
 			if (newGame.getNumOfPlayers() == 6) {
