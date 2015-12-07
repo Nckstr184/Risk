@@ -108,7 +108,7 @@ public class GameBoard extends JPanel {
 
 	JLabel playerTag, playerTag2, playerTag3, playerTag4, playerTag5, playerTag6, playerCount, playerCount2,
 			playerCount3, playerCount4, playerCount5, playerCount6, turnMarker, gameStatus, neighborsLabel;
-	
+
 	JLabel turnCountLabel;
 
 	private int fortifyCount, unitsFortified;
@@ -118,9 +118,7 @@ public class GameBoard extends JPanel {
 	Play1Song playsong;
 	String john, coin;
 
-	
 	private int turnCount;
-
 
 	public GameBoard() {
 
@@ -128,8 +126,8 @@ public class GameBoard extends JPanel {
 		attackPhase = false;
 		fortifyPhase = false;
 		fortifyCount = 0;
-		john= "./songs/Johnc.aiff";
-		coin= "./songs/coin.aiff";
+		john = "./songs/Johnc.aiff";
+		coin = "./songs/coin.aiff";
 
 		newgame1 = new OpenNewMenu();
 		while (newgame1.isDisplayable()) {
@@ -152,11 +150,11 @@ public class GameBoard extends JPanel {
 						System.out.print("");
 						this.setSize(1300, 750);
 						this.setLocation(0, -5);
-						
-						playsong= new Play1Song(john);
+
+						playsong = new Play1Song(john);
 						try {
 							map = ImageIO.read(new File("./Pictures/mapwithlines.png"));
-							
+
 							bottomDisplay = ImageIO.read(new File("./Pictures/bottomgui.png"));
 							leftDisplay = ImageIO.read(new File("./Pictures/gui2n.png"));
 							rightDisplay = ImageIO.read(new File("./Pictures/gui2n.png"));
@@ -231,13 +229,11 @@ public class GameBoard extends JPanel {
 
 	private void printPlayersAndTheirTerritories(PlayerCollection tempPlayers) {
 		// TODO Auto-generated method stub
-		for(int i=0; i<tempPlayers.getNumOfPlayers(); i++)
-		{
-			Player temp=tempPlayers.getPlayer(i);
-			System.out.println("PLAYER "+temp.getName());
-			for(int j=0; j<temp.getTerritories().size(); j++)
-			{
-				Territory tempT=temp.getTerritories().get(j);
+		for (int i = 0; i < tempPlayers.getNumOfPlayers(); i++) {
+			Player temp = tempPlayers.getPlayer(i);
+			System.out.println("PLAYER " + temp.getName());
+			for (int j = 0; j < temp.getTerritories().size(); j++) {
+				Territory tempT = temp.getTerritories().get(j);
 				System.out.println(tempT.getName());
 			}
 		}
@@ -267,25 +263,22 @@ public class GameBoard extends JPanel {
 		gameStatus.setFont(gameStatusFont);
 		gameStatus.setSize(200, 50);
 		gameStatus.setLocation(1110, 40);
-		
-		
-		neighborsLabel.setSize(500,100);
+
+		neighborsLabel.setSize(500, 100);
 		neighborsLabel.setFont(neighborsFont);
-		neighborsLabel.setLocation(250,20);
+		neighborsLabel.setLocation(250, 20);
 		neighborsLabel.setForeground(Color.WHITE);
-		
-		turnCountLabel.setSize(200,300);
+
+		turnCountLabel.setSize(200, 300);
 		turnCountLabel.setFont(neighborsFont);
 		turnCountLabel.setLocation(55, 300);
 		turnCountLabel.setForeground(Color.WHITE);
 		turnCountLabel.setText("Turns Left: " + turnCount);
-		
-		
+
 		add(turnCountLabel);
 		add(neighborsLabel);
 		add(gameStatus);
 		add(turnMarker);
-		
 
 		if (numberOfPlayers == 6) {
 			playerTag = new JLabel(newGame.getPlayerAt(0).getName());
@@ -540,7 +533,7 @@ public class GameBoard extends JPanel {
 	}
 
 	public void startOldGame() {
-		int numberOfPlayers=newGame.getNumOfPlayers();
+		int numberOfPlayers = newGame.getNumOfPlayers();
 		System.out.println(numberOfPlayers);
 
 		if (numberOfPlayers == 6) {
@@ -701,9 +694,7 @@ public class GameBoard extends JPanel {
 		endTurnButton.setText("End Turn");
 		endTurnButton.setLocation(1110, 460);
 		endTurnButton.setEnabled(false);
-		
-		
-		
+
 		turnInCardsButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String message = "";
@@ -892,7 +883,7 @@ public class GameBoard extends JPanel {
 					apolloSun = new JButton(yellow);
 					apolloSun.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName().equals("Ra")){
+				if (d.getName().equals("Ra")) {
 					raSun = new JButton(yellow);
 					raSun.setName(newGame.getPlayerAt(0).getName());
 				}
@@ -1919,7 +1910,7 @@ public class GameBoard extends JPanel {
 					apolloSun = new JButton(yellow);
 					apolloSun.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName().equals("Ra")){
+				if (d.getName().equals("Ra")) {
 					raSun = new JButton(yellow);
 					raSun.setName(newGame.getPlayerAt(0).getName());
 				}
@@ -2777,7 +2768,7 @@ public class GameBoard extends JPanel {
 					apolloSun = new JButton(yellow);
 					apolloSun.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName().equals("Ra")){
+				if (d.getName().equals("Ra")) {
 					raSun = new JButton(yellow);
 					raSun.setName(newGame.getPlayerAt(0).getName());
 				}
@@ -3463,7 +3454,7 @@ public class GameBoard extends JPanel {
 					apolloSun = new JButton(yellow);
 					apolloSun.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName().equals("Ra")){
+				if (d.getName().equals("Ra")) {
 					raSun = new JButton(yellow);
 					raSun.setName(newGame.getPlayerAt(0).getName());
 				}
@@ -3831,16 +3822,16 @@ public class GameBoard extends JPanel {
 				}
 			}
 		}
-		
+
 		if (!newgame1.isClicked()) {
 			nextPlayer();
 		}
-		
+
 		javaLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				
+
 				javaAttacking = false;
 				if (reinforcementPhase == true) {
 					if (currPlayer.getNumOfArmies() >= 1 && javaLanguage.getName() == currPlayer.getName()) {
@@ -3848,18 +3839,19 @@ public class GameBoard extends JPanel {
 						territories.get(0).addUnits(1);
 						languageLabel1.setText("" + javaUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 						nextPlayer();
 
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
-				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(javaLanguage.getName() == currPlayer.getName())){
-					javaUnits +=1;
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (javaLanguage.getName() == currPlayer.getName())) {
+					javaUnits += 1;
 					territories.get(0).addUnits(1);
 					updateLabels();
 					moveTurnLabel();
-					currPlayer.removeArmies(1);			
+					currPlayer.removeArmies(1);
 				}
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
@@ -3873,9 +3865,7 @@ public class GameBoard extends JPanel {
 
 					}
 				}
-				
-				
-				
+
 				if (pythonAttacking == true && (currPlayer.getName() != javaLanguage.getName())) {
 					System.out.println("Java was attacked by python");
 					gameBoardAttack(territories.get(1), territories.get(0));
@@ -3959,7 +3949,7 @@ public class GameBoard extends JPanel {
 						territories.get(1).addUnits(1);
 						myLabel.setText("" + pythonUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 					}
@@ -3967,12 +3957,13 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 
 				}
-				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(pythonLanguage.getName() == currPlayer.getName())){
-					pythonUnits +=1;
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (pythonLanguage.getName() == currPlayer.getName())) {
+					pythonUnits += 1;
 					territories.get(1).addUnits(1);
 					updateLabels();
 					moveTurnLabel();
-					currPlayer.removeArmies(1);			
+					currPlayer.removeArmies(1);
 				}
 
 				///////////////////////////////// Start Attack
@@ -4078,19 +4069,20 @@ public class GameBoard extends JPanel {
 						territories.get(2).addUnits(1);
 						myLabel.setText("" + cUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
-				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(cLanguage.getName() == currPlayer.getName())){
-					cUnits +=1;
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (cLanguage.getName() == currPlayer.getName())) {
+					cUnits += 1;
 					territories.get(2).addUnits(1);
 					updateLabels();
 					moveTurnLabel();
-					currPlayer.removeArmies(1);			
+					currPlayer.removeArmies(1);
 				}
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
@@ -4183,18 +4175,20 @@ public class GameBoard extends JPanel {
 						territories.get(3).addUnits(1);
 						myLabel.setText("" + sqlUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
 					}
 					checkIfReinforcementPhaseIsOver();
-				}	if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(sqlLanguage.getName() == currPlayer.getName())){
-					sqlUnits +=1;
+				}
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (sqlLanguage.getName() == currPlayer.getName())) {
+					sqlUnits += 1;
 					territories.get(3).addUnits(1);
 					updateLabels();
 					moveTurnLabel();
-					currPlayer.removeArmies(1);			
+					currPlayer.removeArmies(1);
 				}
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
@@ -4299,18 +4293,20 @@ public class GameBoard extends JPanel {
 						territories.get(4).addUnits(1);
 						myLabel.setText("" + rubyUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
 					}
 					checkIfReinforcementPhaseIsOver();
-				}if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(rubyLanguage.getName() == currPlayer.getName())){
-					rubyUnits +=1;
+				}
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (rubyLanguage.getName() == currPlayer.getName())) {
+					rubyUnits += 1;
 					territories.get(4).addUnits(1);
 					updateLabels();
 					moveTurnLabel();
-					currPlayer.removeArmies(1);			
+					currPlayer.removeArmies(1);
 				}
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
@@ -4401,7 +4397,7 @@ public class GameBoard extends JPanel {
 						territories.get(5).addUnits(1);
 						myLabel.setText("" + gitUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -4409,12 +4405,13 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
-				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(gitLanguage.getName() == currPlayer.getName())){
-					gitUnits +=1;
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (gitLanguage.getName() == currPlayer.getName())) {
+					gitUnits += 1;
 					territories.get(5).addUnits(1);
 					updateLabels();
 					moveTurnLabel();
-					currPlayer.removeArmies(1);			
+					currPlayer.removeArmies(1);
 				}
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
@@ -4517,7 +4514,7 @@ public class GameBoard extends JPanel {
 						territories.get(6).addUnits(1);
 						myLabel.setText("" + perlUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -4526,12 +4523,13 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 
-				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(perlLanguage.getName() == currPlayer.getName())){
-					perlUnits +=1;
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (perlLanguage.getName() == currPlayer.getName())) {
+					perlUnits += 1;
 					territories.get(6).addUnits(1);
 					updateLabels();
 					moveTurnLabel();
-					currPlayer.removeArmies(1);			
+					currPlayer.removeArmies(1);
 				}
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
@@ -4596,7 +4594,7 @@ public class GameBoard extends JPanel {
 						territories.get(14).addUnits(1);
 						myLabel.setText("" + wilberUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -4604,12 +4602,13 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
-				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(wilberWildcat.getName() == currPlayer.getName())){
-					wilberUnits +=1;
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (wilberWildcat.getName() == currPlayer.getName())) {
+					wilberUnits += 1;
 					territories.get(14).addUnits(1);
 					updateLabels();
 					moveTurnLabel();
-					currPlayer.removeArmies(1);			
+					currPlayer.removeArmies(1);
 				}
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
@@ -4735,7 +4734,7 @@ public class GameBoard extends JPanel {
 						territories.get(15).addUnits(1);
 						myLabel.setText("" + wilmaUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -4743,12 +4742,13 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
-				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(wilmaWildcat.getName() == currPlayer.getName())){
-					wilmaUnits +=1;
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (wilmaWildcat.getName() == currPlayer.getName())) {
+					wilmaUnits += 1;
 					territories.get(15).addUnits(1);
 					updateLabels();
 					moveTurnLabel();
-					currPlayer.removeArmies(1);			
+					currPlayer.removeArmies(1);
 				}
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
@@ -4826,7 +4826,7 @@ public class GameBoard extends JPanel {
 						territories.get(16).addUnits(1);
 						myLabel.setText("" + richUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -4834,12 +4834,13 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
-				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(richWildcat.getName() == currPlayer.getName())){
-					richUnits +=1;
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (richWildcat.getName() == currPlayer.getName())) {
+					richUnits += 1;
 					territories.get(16).addUnits(1);
 					updateLabels();
 					moveTurnLabel();
-					currPlayer.removeArmies(1);			
+					currPlayer.removeArmies(1);
 				}
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
@@ -4941,7 +4942,7 @@ public class GameBoard extends JPanel {
 						territories.get(17).addUnits(1);
 						myLabel.setText("" + millerUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -4949,14 +4950,14 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
-				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(millerWildcat.getName() == currPlayer.getName())){
-					millerUnits +=1;
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (millerWildcat.getName() == currPlayer.getName())) {
+					millerUnits += 1;
 					territories.get(17).addUnits(1);
 					updateLabels();
 					moveTurnLabel();
-					currPlayer.removeArmies(1);			
-				}
-				else if (attackPhase == true) {
+					currPlayer.removeArmies(1);
+				} else if (attackPhase == true) {
 					if ((millerWildcat.getName() == currPlayer.getName()) && (millerUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -5043,21 +5044,22 @@ public class GameBoard extends JPanel {
 						territories.get(18).addUnits(1);
 						myLabel.setText("" + scoobyUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
-				}if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(scoobyWildcat.getName() == currPlayer.getName())){
-					scoobyUnits +=1;
+				}
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (scoobyWildcat.getName() == currPlayer.getName())) {
+					scoobyUnits += 1;
 					territories.get(18).addUnits(1);
 					updateLabels();
 					moveTurnLabel();
-					currPlayer.removeArmies(1);			
-				}
-				else if (attackPhase == true) {
+					currPlayer.removeArmies(1);
+				} else if (attackPhase == true) {
 					if ((scoobyWildcat.getName() == currPlayer.getName()) && (scoobyUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -5156,7 +5158,7 @@ public class GameBoard extends JPanel {
 						territories.get(19).addUnits(1);
 						myLabel.setText("" + mckaleUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -5165,12 +5167,13 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 
-				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(mckaleWildcat.getName() == currPlayer.getName())){
-					mckaleUnits +=1;
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (mckaleWildcat.getName() == currPlayer.getName())) {
+					mckaleUnits += 1;
 					territories.get(19).addUnits(1);
 					updateLabels();
 					moveTurnLabel();
-					currPlayer.removeArmies(1);			
+					currPlayer.removeArmies(1);
 				}
 
 				else if (attackPhase == true) {
@@ -5260,7 +5263,7 @@ public class GameBoard extends JPanel {
 						territories.get(20).addUnits(1);
 						myLabel.setText("" + zonaUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -5268,14 +5271,14 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
-				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(zonaWildcat.getName() == currPlayer.getName())){
-					zonaUnits +=1;
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (zonaWildcat.getName() == currPlayer.getName())) {
+					zonaUnits += 1;
 					territories.get(20).addUnits(1);
 					updateLabels();
 					moveTurnLabel();
-					currPlayer.removeArmies(1);			
-				}
-				else if (attackPhase == true) {
+					currPlayer.removeArmies(1);
+				} else if (attackPhase == true) {
 					if ((zonaWildcat.getName() == currPlayer.getName()) && (zonaUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -5336,7 +5339,7 @@ public class GameBoard extends JPanel {
 						territories.get(21).addUnits(1);
 						myLabel.setText("" + pjUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -5344,14 +5347,14 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
-				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(papajohnsPizza.getName() == currPlayer.getName())){
-					pjUnits +=1;
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (papajohnsPizza.getName() == currPlayer.getName())) {
+					pjUnits += 1;
 					territories.get(21).addUnits(1);
 					updateLabels();
 					moveTurnLabel();
-					currPlayer.removeArmies(1);			
-				}
-				else if (attackPhase == true) {
+					currPlayer.removeArmies(1);
+				} else if (attackPhase == true) {
 					if ((papajohnsPizza.getName() == currPlayer.getName()) && (pjUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -5450,7 +5453,7 @@ public class GameBoard extends JPanel {
 						territories.get(22).addUnits(1);
 						myLabel.setText("" + domUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -5458,14 +5461,14 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
-				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(dominosPizza.getName() == currPlayer.getName())){
-					domUnits +=1;
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (dominosPizza.getName() == currPlayer.getName())) {
+					domUnits += 1;
 					territories.get(22).addUnits(1);
 					updateLabels();
 					moveTurnLabel();
-					currPlayer.removeArmies(1);			
-				}
-				else if (attackPhase == true) {
+					currPlayer.removeArmies(1);
+				} else if (attackPhase == true) {
 					if ((dominosPizza.getName() == currPlayer.getName()) && (domUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -5562,7 +5565,7 @@ public class GameBoard extends JPanel {
 						territories.get(23).addUnits(1);
 						myLabel.setText("" + phUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -5570,14 +5573,14 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
-				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(pizzahutPizza.getName() == currPlayer.getName())){
-					phUnits +=1;
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (pizzahutPizza.getName() == currPlayer.getName())) {
+					phUnits += 1;
 					territories.get(23).addUnits(1);
 					updateLabels();
 					moveTurnLabel();
-					currPlayer.removeArmies(1);			
-				}
-				else if (attackPhase == true) {
+					currPlayer.removeArmies(1);
+				} else if (attackPhase == true) {
 					if ((pizzahutPizza.getName() == currPlayer.getName()) && (phUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -5663,7 +5666,7 @@ public class GameBoard extends JPanel {
 						territories.get(24).addUnits(1);
 						myLabel.setText("" + bjUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -5671,14 +5674,14 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
-				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(blackjackPizza.getName() == currPlayer.getName())){
-					bjUnits +=1;
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (blackjackPizza.getName() == currPlayer.getName())) {
+					bjUnits += 1;
 					territories.get(24).addUnits(1);
 					updateLabels();
 					moveTurnLabel();
-					currPlayer.removeArmies(1);			
-				}
-				else if (attackPhase == true) {
+					currPlayer.removeArmies(1);
+				} else if (attackPhase == true) {
 					if ((blackjackPizza.getName() == currPlayer.getName()) && (bjUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -5755,7 +5758,7 @@ public class GameBoard extends JPanel {
 						territories.get(25).addUnits(1);
 						myLabel.setText("" + hhUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -5763,14 +5766,14 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
-				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(hungryhowiesPizza.getName() == currPlayer.getName())){
-					hhUnits +=1;
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (hungryhowiesPizza.getName() == currPlayer.getName())) {
+					hhUnits += 1;
 					territories.get(25).addUnits(1);
 					updateLabels();
 					moveTurnLabel();
-					currPlayer.removeArmies(1);			
-				}
-				else if (attackPhase == true) {
+					currPlayer.removeArmies(1);
+				} else if (attackPhase == true) {
 					if ((hungryhowiesPizza.getName() == currPlayer.getName()) && (hhUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -5858,7 +5861,7 @@ public class GameBoard extends JPanel {
 						territories.get(26).addUnits(1);
 						myLabel.setText("" + bUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -5866,14 +5869,14 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
-				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(brooklynPizza.getName() == currPlayer.getName())){
-					bUnits +=1;
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (brooklynPizza.getName() == currPlayer.getName())) {
+					bUnits += 1;
 					territories.get(26).addUnits(1);
 					updateLabels();
 					moveTurnLabel();
-					currPlayer.removeArmies(1);			
-				}
-				else if (attackPhase == true) {
+					currPlayer.removeArmies(1);
+				} else if (attackPhase == true) {
 					if ((brooklynPizza.getName() == currPlayer.getName()) && (bUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -5973,7 +5976,7 @@ public class GameBoard extends JPanel {
 						territories.get(27).addUnits(1);
 						myLabel.setText("" + ppUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -5981,14 +5984,14 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
-				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(pizzaplanetPizza.getName() == currPlayer.getName())){
-					ppUnits +=1;
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (pizzaplanetPizza.getName() == currPlayer.getName())) {
+					ppUnits += 1;
 					territories.get(27).addUnits(1);
 					updateLabels();
 					moveTurnLabel();
-					currPlayer.removeArmies(1);			
-				}
-				else if (attackPhase == true) {
+					currPlayer.removeArmies(1);
+				} else if (attackPhase == true) {
 					if ((pizzaplanetPizza.getName() == currPlayer.getName()) && (ppUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -6064,7 +6067,7 @@ public class GameBoard extends JPanel {
 						territories.get(35).addUnits(1);
 						myLabel.setText("" + apolloUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -6080,8 +6083,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					moveTurnLabel();
 					currPlayer.removeArmies(1);
-				}
-				else if (attackPhase == true) {
+				} else if (attackPhase == true) {
 					if ((apolloSun.getName() == currPlayer.getName()) && (apolloUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -6169,7 +6171,7 @@ public class GameBoard extends JPanel {
 						territories.get(36).addUnits(1);
 						myLabel.setText("" + raUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 					}
@@ -6183,8 +6185,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					moveTurnLabel();
 					currPlayer.removeArmies(1);
-				}
-				else if (attackPhase == true) {
+				} else if (attackPhase == true) {
 					if ((raSun.getName() == currPlayer.getName()) && (raUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -6260,7 +6261,7 @@ public class GameBoard extends JPanel {
 						territories.get(37).addUnits(1);
 						myLabel.setText("" + heliosUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -6275,8 +6276,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					moveTurnLabel();
 					currPlayer.removeArmies(1);
-				}
-				else if (attackPhase == true) {
+				} else if (attackPhase == true) {
 					if ((heliosSun.getName() == currPlayer.getName()) && (heliosUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -6375,7 +6375,7 @@ public class GameBoard extends JPanel {
 						territories.get(38).addUnits(1);
 						myLabel.setText("" + intiUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -6390,8 +6390,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					moveTurnLabel();
 					currPlayer.removeArmies(1);
-				}
-				else if (attackPhase == true) {
+				} else if (attackPhase == true) {
 					if ((intiSun.getName() == currPlayer.getName()) && (intiUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -6454,7 +6453,7 @@ public class GameBoard extends JPanel {
 						territories.get(39).addUnits(1);
 						myLabel.setText("" + horusUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -6469,8 +6468,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					moveTurnLabel();
 					currPlayer.removeArmies(1);
-				}
-				else if (attackPhase == true) {
+				} else if (attackPhase == true) {
 					if ((horusSun.getName() == currPlayer.getName()) && (horusUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -6559,7 +6557,7 @@ public class GameBoard extends JPanel {
 						territories.get(40).addUnits(1);
 						myLabel.setText("" + tonatiuhUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -6574,8 +6572,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					moveTurnLabel();
 					currPlayer.removeArmies(1);
-				}
-				else if (attackPhase == true) {
+				} else if (attackPhase == true) {
 					if ((tonatiuhSun.getName() == currPlayer.getName()) && (tonatiuhUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -6674,7 +6671,7 @@ public class GameBoard extends JPanel {
 						territories.get(41).addUnits(1);
 						myLabel.setText("" + amunUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -6689,8 +6686,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					moveTurnLabel();
 					currPlayer.removeArmies(1);
-				}
-				else if (attackPhase == true) {
+				} else if (attackPhase == true) {
 					if ((amunSun.getName() == currPlayer.getName()) && (amunUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -6789,7 +6785,7 @@ public class GameBoard extends JPanel {
 						territories.get(7).addUnits(1);
 						myLabel.setText("" + rawrUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -6804,8 +6800,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					moveTurnLabel();
 					currPlayer.removeArmies(1);
-				}
-				else if (attackPhase == true) {
+				} else if (attackPhase == true) {
 					if ((rawrvilleDino.getName() == currPlayer.getName()) && (rawrUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -6868,7 +6863,7 @@ public class GameBoard extends JPanel {
 						territories.get(8).addUnits(1);
 						myLabel.setText("" + eggUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -6883,8 +6878,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					moveTurnLabel();
 					currPlayer.removeArmies(1);
-				}
-				else if (attackPhase == true) {
+				} else if (attackPhase == true) {
 					if ((laieggesDino.getName() == currPlayer.getName()) && (eggUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -6971,7 +6965,7 @@ public class GameBoard extends JPanel {
 						territories.get(9).addUnits(1);
 						myLabel.setText("" + dacUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -6986,8 +6980,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					moveTurnLabel();
 					currPlayer.removeArmies(1);
-				}
-				else if (attackPhase == true) {
+				} else if (attackPhase == true) {
 					if ((dactilitoDino.getName() == currPlayer.getName()) && (dacUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -7085,7 +7078,7 @@ public class GameBoard extends JPanel {
 						territories.get(10).addUnits(1);
 						myLabel.setText("" + danUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -7100,8 +7093,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					moveTurnLabel();
 					currPlayer.removeArmies(1);
-				}
-				else if (attackPhase == true) {
+				} else if (attackPhase == true) {
 					if ((dirtydanDino.getName() == currPlayer.getName()) && (danUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -7225,7 +7217,7 @@ public class GameBoard extends JPanel {
 						territories.get(11).addUnits(1);
 						myLabel.setText("" + bbUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -7240,8 +7232,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					moveTurnLabel();
 					currPlayer.removeArmies(1);
-				}
-				else if (attackPhase == true) {
+				} else if (attackPhase == true) {
 					if ((blackbeardDino.getName() == currPlayer.getName()) && (bbUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -7328,7 +7319,7 @@ public class GameBoard extends JPanel {
 						territories.get(12).addUnits(1);
 						myLabel.setText("" + moniUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -7343,8 +7334,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					moveTurnLabel();
 					currPlayer.removeArmies(1);
-				}
-				else if (attackPhase == true) {
+				} else if (attackPhase == true) {
 					if ((monisaurusDino.getName() == currPlayer.getName()) && (moniUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -7431,7 +7421,7 @@ public class GameBoard extends JPanel {
 						territories.get(13).addUnits(1);
 						myLabel.setText("" + tsUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -7446,8 +7436,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					moveTurnLabel();
 					currPlayer.removeArmies(1);
-				}
-				else if (attackPhase == true) {
+				} else if (attackPhase == true) {
 					if ((toystoryDino.getName() == currPlayer.getName()) && (tsUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -7523,7 +7512,7 @@ public class GameBoard extends JPanel {
 						scrapUnits += 1;
 						territories.get(28).addUnits(1);
 						myLabel.setText("" + scrapUnits);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						currPlayer.removeArmies(1);
 
@@ -7539,8 +7528,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					moveTurnLabel();
 					currPlayer.removeArmies(1);
-				}
-				else if (attackPhase == true) {
+				} else if (attackPhase == true) {
 					if ((scraptopiaCresent.getName() == currPlayer.getName()) && (scrapUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -7605,7 +7593,7 @@ public class GameBoard extends JPanel {
 						territories.get(29).addUnits(1);
 						myLabel.setText("" + zachUnits);
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -7620,8 +7608,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					moveTurnLabel();
 					currPlayer.removeArmies(1);
-				}
-				else if (attackPhase == true) {
+				} else if (attackPhase == true) {
 					if ((landofzachCresent.getName() == currPlayer.getName()) && (zachUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -7697,7 +7684,7 @@ public class GameBoard extends JPanel {
 						myLabel.setText("" + giantUnits);
 
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -7712,8 +7699,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					moveTurnLabel();
 					currPlayer.removeArmies(1);
-				}
-				else if (attackPhase == true) {
+				} else if (attackPhase == true) {
 					if ((giantCresent.getName() == currPlayer.getName()) && (giantUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -7803,7 +7789,7 @@ public class GameBoard extends JPanel {
 						myLabel.setText("" + newzachUnits);
 
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -7818,8 +7804,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					moveTurnLabel();
 					currPlayer.removeArmies(1);
-				}
-				else if (attackPhase == true) {
+				} else if (attackPhase == true) {
 					if ((newlandofzachCresent.getName() == currPlayer.getName()) && (newzachUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -7918,7 +7903,7 @@ public class GameBoard extends JPanel {
 						southUnits += 1;
 						territories.get(32).addUnits(1);
 						myLabel.setText("" + southUnits);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						currPlayer.removeArmies(1);
 
@@ -7936,8 +7921,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					moveTurnLabel();
 					currPlayer.removeArmies(1);
-				}
-				else if (attackPhase == true) {
+				} else if (attackPhase == true) {
 					if ((southscraptopiaCresent.getName() == currPlayer.getName()) && (southUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -8002,7 +7986,7 @@ public class GameBoard extends JPanel {
 						myLabel.setText("" + blooUnits);
 
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -8018,8 +8002,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					moveTurnLabel();
 					currPlayer.removeArmies(1);
-				}
-				else if (attackPhase == true) {
+				} else if (attackPhase == true) {
 					if ((bloobawlCresent.getName() == currPlayer.getName()) && (blooUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -8106,7 +8089,7 @@ public class GameBoard extends JPanel {
 						myLabel.setText("" + capUnits);
 
 						currPlayer.removeArmies(1);
-						playsong= new Play1Song(coin);
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 
@@ -8122,8 +8105,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					moveTurnLabel();
 					currPlayer.removeArmies(1);
-				}
-				else if (attackPhase == true) {
+				} else if (attackPhase == true) {
 					if ((cresentcaptitalCresent.getName() == currPlayer.getName()) && (capUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -8988,7 +8970,7 @@ public class GameBoard extends JPanel {
 		currPlayer = newGame.nextPlayer();
 
 		turnCountLabel.setText("Turns Left: " + turnCount);
-		
+
 		moveTurnLabel();
 		if (!reinforcementPhase) {
 			newGame.addReinforcements();
@@ -9001,30 +8983,30 @@ public class GameBoard extends JPanel {
 		if (currPlayer.isAI()) {
 			String log = currPlayer.getName() + "'s Turn Log\n\n";
 			// initial deploy
-			if(reinforcementPhase) {
+			if (reinforcementPhase) {
 				log += "-Placed 1 army for initial deployment phase";
 				newGame.deployAllArmies();
+				moveTurnLabel();
 				updateLabels();
-			}
-			else {
+			} else {
 				// turn in card
-				if(newGame.turnInCard()) {
+				if (newGame.turnInCard()) {
 					log += "-Successful card turn in\n";
-				}
-				else {
+				} else {
 					log += "-Unsuccessful card turn in\n";
 				}
-				
+
 				// deploy until empty
 				int count = 0;
-				while(currPlayer.getNumOfArmies() >= 1) {
+				while (currPlayer.getNumOfArmies() >= 1) {
 					count++;
 					newGame.deployAllArmies();
+					moveTurnLabel();
 					updateLabels();
 				}
-				
+
 				log += "-Deployed " + count + " armies in deploy phase\n";
-				
+
 				// attack
 				Territory attackingTerritory = currPlayer.getTerritories()
 						.get(r.nextInt(currPlayer.getTerritories().size()));
@@ -9033,9 +9015,9 @@ public class GameBoard extends JPanel {
 
 				if (defendingTerritory != null) {
 
-					BattleLogic battleLogic = new BattleLogic(currPlayer, defendingTerritory.getOwner(), attackingTerritory,
-							defendingTerritory);
-					
+					BattleLogic battleLogic = new BattleLogic(currPlayer, defendingTerritory.getOwner(),
+							attackingTerritory, defendingTerritory);
+
 					while (currPlayer.chooseRetreat(attackingTerritory) && attackingTerritory.getUnits() > 1) {
 						int attackerDiceNum, defenderDiceNum;
 						if (attackingTerritory.getUnits() <= 3) {
@@ -9044,7 +9026,6 @@ public class GameBoard extends JPanel {
 							attackerDiceNum = 3;
 						}
 
-
 						if (defendingTerritory.getUnits() <= 2) {
 							defenderDiceNum = defendingTerritory.getUnits();
 						} else
@@ -9052,23 +9033,48 @@ public class GameBoard extends JPanel {
 
 						battleLogic.attackPlayer(attackerDiceNum, defenderDiceNum);
 						int[] unitsToLose = battleLogic.subtractArmies();
-						
-						log += "-Attacked " + defendingTerritory.getName() + " from " + attackingTerritory.getName() + "\n";
-						
+
+						log += "-Attacked " + defendingTerritory.getName() + " from " + attackingTerritory.getName()
+								+ "\n";
+
 						newGame.attackLogic(attackingTerritory, defendingTerritory, unitsToLose);
+						moveTurnLabel();
 						updateLabels();
 					}
 				}
-				
+
 				// fortify
 				newGame.fortifyPosition();
+				moveTurnLabel();
 				updateLabels();
 			}
 			log += "\nEnd of Log";
 			JOptionPane.showMessageDialog(null, log);
-			nextPlayer();
+			if (turnCount >= 0)
+				nextPlayer();
+			else {
+				gameOver();
+			}
 		}
 
+	}
+	
+	public void gameOver() {
+		Player winner = null;
+		int highestNumOfTerritories = 0;
+		for(int i=0;i<newGame.getNumOfPlayers();i++) {
+			if(highestNumOfTerritories < newGame.getPlayerAt(i).getTerritories().size()) {
+				winner = newGame.getPlayerAt(i);
+				highestNumOfTerritories = newGame.getPlayerAt(i).getTerritories().size();
+			}
+		}
+		
+		String message = "The Winner Is: " + winner.getName() + "!\n"
+				+ "They had " + highestNumOfTerritories + "!";
+		
+		JOptionPane.showMessageDialog(null, message);
+		
+		System.exit(0);
 	}
 
 	private void updateLabels() {
@@ -9160,7 +9166,7 @@ public class GameBoard extends JPanel {
 		cresentLabel5.setText("" + southUnits);
 		cresentLabel6.setText("" + blooUnits);
 		cresentLabel7.setText("" + capUnits);
-		
+
 	}
 
 	public void AITurn(int turnPhase) {
@@ -9249,8 +9255,7 @@ public class GameBoard extends JPanel {
 			}
 		} else {
 			if (!attackingTerr.getOwner().isAI()) {
-				JOptionPane.showConfirmDialog(null, "Sorry, you do not have enough armies to attack",
-						"Not Strong Enough", 1);
+				JOptionPane.showMessageDialog(null, "Sorry, you do not have enough armies to attack");
 			}
 		}
 	}
