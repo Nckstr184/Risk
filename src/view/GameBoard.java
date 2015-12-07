@@ -164,6 +164,8 @@ public class GameBoard extends JPanel {
 								ArrayList<String> tempCards = null;
 								ArrayList<Territory> tempTerritories = null;
 								ArrayList<Continent> tempContinents = null;
+								Player tempPlayer=null;
+								boolean reinforcementPhaseImport=true;
 								try {
 									inputStream = new FileInputStream("savedGame");
 									objectInput = new ObjectInputStream(inputStream);
@@ -171,12 +173,16 @@ public class GameBoard extends JPanel {
 									tempCards = (ArrayList<String>) objectInput.readObject();
 									tempTerritories = (ArrayList<Territory>) objectInput.readObject();
 									tempContinents = (ArrayList<Continent>) objectInput.readObject();
+									tempPlayer = (Player) objectInput.readObject();
+									reinforcementPhaseImport = (boolean) objectInput.readObject();
+
+
 								} catch (ClassNotFoundException e) {
 									// TODO Auto-generated catch block
 									System.out.println("reading did not work");
 									e.printStackTrace();
 								}
-								this.importGameLogic(tempPlayers, tempCards, tempContinents, tempTerritories);
+								this.importGameLogic(tempPlayers, tempCards, tempContinents, tempTerritories, tempPlayer, reinforcementPhaseImport);
 							}
 
 							System.out.println("NUMBER OF PLAYERS: " + newGame.getNumOfPlayers());
@@ -207,7 +213,7 @@ public class GameBoard extends JPanel {
 	private void playerTags() {
 		int numberOfPlayers;
 
-		numberOfPlayers = startWindow.getNumberOfPlayer();
+		numberOfPlayers = newGame.getNumOfPlayers();
 		Font plyrTagFont = new Font("Verdana", Font.BOLD, 18);
 		Font plyrCountFont = new Font("Verdana", Font.BOLD, 9);
 		Font gameStatusFont = new Font("Verdana", Font.BOLD, 36);
@@ -482,11 +488,8 @@ public class GameBoard extends JPanel {
 	}
 
 	public void startOldGame() {
-		newGame = new GameLogic(startWindow.playerOne, startWindow.playerTwo, startWindow.playerThree,
-				startWindow.playerFour, startWindow.playerFive, startWindow.playerSix);
-		CardCollection newDeck = new CardCollection();
-
-		if (startWindow.getNumberOfPlayer() == 6) {
+		int numberOfPlayers=newGame.getNumOfPlayers();
+		if (numberOfPlayers == 6) {
 
 			player1 = newGame.getPlayerAt(0);
 			player2 = newGame.getPlayerAt(1);
@@ -495,7 +498,7 @@ public class GameBoard extends JPanel {
 			player5 = newGame.getPlayerAt(4);
 			player6 = newGame.getPlayerAt(5);
 		}
-		if (startWindow.getNumberOfPlayer() == 5) {
+		if (numberOfPlayers == 5) {
 
 			player1 = newGame.getPlayerAt(0);
 			player2 = newGame.getPlayerAt(1);
@@ -504,7 +507,7 @@ public class GameBoard extends JPanel {
 			player5 = newGame.getPlayerAt(4);
 
 		}
-		if (startWindow.getNumberOfPlayer() == 4) {
+		if (numberOfPlayers == 4) {
 
 			player1 = newGame.getPlayerAt(0);
 			player2 = newGame.getPlayerAt(1);
@@ -512,21 +515,21 @@ public class GameBoard extends JPanel {
 			player4 = newGame.getPlayerAt(3);
 
 		}
-		if (startWindow.getNumberOfPlayer() == 3) {
+		if (numberOfPlayers == 3) {
 
 			player1 = newGame.getPlayerAt(0);
 			player2 = newGame.getPlayerAt(1);
 			player3 = newGame.getPlayerAt(2);
 
 		}
-		if (startWindow.getNumberOfPlayer() == 2) {
+		if (numberOfPlayers == 2) {
 
 			player1 = newGame.getPlayerAt(0);
 			player2 = newGame.getPlayerAt(1);
 
 		}
 
-		newGame.startGame();
+		newGame.startLoadedGame();
 		territories = newGame.getTerritories();
 	}
 
@@ -586,14 +589,21 @@ public class GameBoard extends JPanel {
 	}
 
 	public void importGameLogic(PlayerCollection newPlayers, ArrayList<String> newCards,
-			ArrayList<Continent> newContinets, ArrayList<Territory> newTerritories) {
+			ArrayList<Continent> newContinets, ArrayList<Territory> newTerritories, Player tempPlayer, boolean reinforcemnetPhaseImport) {
 		newGame = new GameLogic(null, null, null, null, null, null);
 		newGame.setPlayerList(newPlayers);
 		newGame.setCards(newCards);
 		newGame.setTerritory(newTerritories);
 		newGame.setContinents(newContinets);
+		currPlayer=tempPlayer;
+		reinforcementPhase=reinforcemnetPhaseImport;
+		newGame.startLoadedGame();
 	}
 
+	public Player getCurrentPlayer()
+	{
+		return currPlayer;
+	}
 	public PlayerCollection getPlayers() {
 		return newGame.getPlayerList();
 	}

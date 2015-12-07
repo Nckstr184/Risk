@@ -384,6 +384,11 @@ public class GameLogic implements Serializable {
 		disperseNumberOfArmies();
 		startUpPlaceReinforcementPhase();
 	}
+	
+	public void startLoadedGame() {
+		numOfPlayers = allPlayers.getNumOfPlayers();
+		
+	}
 
 	private void startUpPlaceReinforcementPhase() {
 		// make temp list of territories
@@ -491,6 +496,7 @@ public class GameLogic implements Serializable {
 
 	public void setPlayerList(PlayerCollection newPlayers) {
 		allPlayers = newPlayers;
+		
 	}
 
 	public void setCards(ArrayList<String> newCards) {
