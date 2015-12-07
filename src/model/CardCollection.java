@@ -132,5 +132,34 @@ public class CardCollection implements Serializable {
 	public Card getCard(int i) {
 		return cardCollection.get(i);
 	}
+	
+	public ArrayList<String> getNamesOfCards()
+	{
+		ArrayList<String> names= new ArrayList<String>();
+		for(int i=0; i<42; i++)
+		{
+			names.add(((RiskCard) cardCollection.get(i)).getTerritory());
+		}
+		return names;
+	}
+	
+	public void setLoadedCardOrder(ArrayList<String> oldCards)
+	{
+		String name="";
+		for(int i=0; i<42; i++)
+		{
+			Card temp=null;
+			name=oldCards.get(i);
+			for(int j=0; j<42; j++)
+			{
+				if(((RiskCard) this.getCard(j)).getTerritory().equals(name))
+				{
+					temp=cardCollection.get(i);
+					cardCollection.set(i, cardCollection.get(j));
+					cardCollection.set(j, temp);
+				}
+			}
+		}
+		}
 
 }
