@@ -9305,1027 +9305,1031 @@ public class GameBoard extends JPanel {
 			}
 
 			for (Territory d : player2.getTerritories()) {
-				if (d.getName() == "Wilma") {
-					wilmaWildcat.setIcon(green);
+				if (d.getName().equals("Wilma")) {
 					wilmaWildcat.setName(newGame.getPlayerAt(1).getName());
+					wilmaWildcat.setIcon(yellow);
 				}
-				if (d.getName() == "Zona") {
-					zonaWildcat.setIcon(green);
+				if (d.getName().equals("Zona")) {
+					zonaWildcat.setIcon(yellow);
 					zonaWildcat.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Wilber") {
-					wilberWildcat.setIcon(green);
+				if (d.getName().equals("Wilber")) {
+					wilberWildcat.setIcon(yellow);
 					wilberWildcat.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Rich") {
-					richWildcat.setIcon(green);
+				if (d.getName().equals("Rich")) {
+					richWildcat.setIcon(yellow);
 					richWildcat.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Miller") {
-					millerWildcat.setIcon(green);
+				if (d.getName().equals("Miller")) {
+					millerWildcat.setIcon(yellow);
 					millerWildcat.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "McKale") {
-					mckaleWildcat.setIcon(green);
+				if (d.getName().equals("McKale")) {
+					mckaleWildcat.setIcon(yellow);
 					mckaleWildcat.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Scooby") {
-					scoobyWildcat.setIcon(green);
+				if (d.getName().equals("Scooby")) {
+					scoobyWildcat.setIcon(yellow);
 					scoobyWildcat.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Java") {
-					javaLanguage.setIcon(green);
+				if (d.getName().equals("Java")) {
+					javaLanguage.setIcon(yellow);
 					javaLanguage.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Python") {
-					pythonLanguage.setIcon(green);
+				if (d.getName().equals("Python")) {
+					pythonLanguage.setIcon(yellow);
 					pythonLanguage.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "C") {
-					cLanguage.setIcon(green);
+				if (d.getName().equals("C")) {
+					cLanguage.setIcon(yellow);
 					cLanguage.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "SQL") {
-					sqlLanguage.setIcon(green);
+				if (d.getName().equals("SQL")) {
+					sqlLanguage.setIcon(yellow);
 					sqlLanguage.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Ruby") {
-					rubyLanguage.setIcon(green);
+				if (d.getName().equals("Ruby")) {
+					rubyLanguage.setIcon(yellow);
 					rubyLanguage.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Perl") {
-					perlLanguage.setIcon(green);
+				if (d.getName().equals("Perl")) {
+					perlLanguage.setIcon(yellow);
 					perlLanguage.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Git") {
-					gitLanguage.setIcon(green);
+				if (d.getName().equals("Git")) {
+					gitLanguage.setIcon(yellow);
 					gitLanguage.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Papa Johns") {
-					papajohnsPizza.setIcon(green);
+				if (d.getName().equals("Papa Johns")) {
+					papajohnsPizza.setIcon(yellow);
 					papajohnsPizza.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Dominos") {
-					dominosPizza.setIcon(green);
+				if (d.getName().equals("Dominos")) {
+					dominosPizza.setIcon(yellow);
 					dominosPizza.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "PizzaHut") {
-					pizzahutPizza.setIcon(green);
+				if (d.getName().equals("PizzaHut")) {
+					pizzahutPizza.setIcon(yellow);
 					pizzahutPizza.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Black Jack") {
-					blackjackPizza.setIcon(green);
+				if (d.getName().equals("Black Jack")) {
+					blackjackPizza.setIcon(yellow);
 					blackjackPizza.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Hungry Howie's") {
-					hungryhowiesPizza.setIcon(green);
+				if (d.getName().equals("Hungry Howie's")) {
+					hungryhowiesPizza.setIcon(yellow);
 					hungryhowiesPizza.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Brooklyn's") {
-					brooklynPizza.setIcon(green);
+				if (d.getName().equals("Brooklyn's")) {
+					brooklynPizza.setIcon(yellow);
 					brooklynPizza.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Pizza Planet") {
-					pizzaplanetPizza.setIcon(green);
+				if (d.getName().equals("Pizza Planet")) {
+					pizzaplanetPizza.setIcon(yellow);
 					pizzaplanetPizza.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Rawrville") {
-					rawrvilleDino.setIcon(green);
+				if (d.getName().equals("Rawrville")) {
+					rawrvilleDino.setIcon(yellow);
 					rawrvilleDino.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Laiegges") {
-					laieggesDino.setIcon(green);
+				if (d.getName().equals("Laiegges")) {
+					laieggesDino.setIcon(yellow);
 					laieggesDino.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Dactilito") {
-					dactilitoDino.setIcon(green);
+				if (d.getName().equals("Dactilito")) {
+					dactilitoDino.setIcon(yellow);
 					dactilitoDino.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Dirtydan") {
-					dirtydanDino.setIcon(green);
+				if (d.getName().equals("Dirtydan")) {
+					dirtydanDino.setIcon(yellow);
 					dirtydanDino.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "BlackBeard") {
-					blackbeardDino.setIcon(green);
+				if (d.getName().equals("BlackBeard")) {
+					blackbeardDino.setIcon(yellow);
 					blackbeardDino.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Monisaurus") {
-					monisaurusDino.setIcon(green);
+				if (d.getName().equals("Monisaurus")) {
+					monisaurusDino.setIcon(yellow);
 					monisaurusDino.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "ToyStory") {
-					toystoryDino.setIcon(green);
+				if (d.getName().equals("ToyStory")) {
+					toystoryDino.setIcon(yellow);
 					toystoryDino.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Scraptopia") {
-					scraptopiaCresent.setIcon(green);
+				if (d.getName().equals("Scraptopia")) {
+					scraptopiaCresent.setIcon(yellow);
 					scraptopiaCresent.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Land of Zach") {
-					landofzachCresent.setIcon(green);
+				if (d.getName().equals("Land of Zach")) {
+					landofzachCresent.setIcon(yellow);
 					landofzachCresent.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Giant") {
-					giantCresent.setIcon(green);
+				if (d.getName().equals("Giant")) {
+					giantCresent.setIcon(yellow);
 					giantCresent.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "New Land of Zach") {
-					newlandofzachCresent.setIcon(green);
+				if (d.getName().equals("New Land of Zach")) {
+					newlandofzachCresent.setIcon(yellow);
 					newlandofzachCresent.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "South Scraptopia") {
-					southscraptopiaCresent.setIcon(green);
+				if (d.getName().equals("South Scraptopia")) {
+					southscraptopiaCresent.setIcon(yellow);
 					southscraptopiaCresent.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Bloo Bawl") {
-					bloobawlCresent.setIcon(green);
+				if (d.getName().equals("Bloo Bawl")) {
+					bloobawlCresent.setIcon(yellow);
 					bloobawlCresent.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Cresent Capital") {
-					cresentcaptitalCresent.setIcon(green);
+				if (d.getName().equals("Cresent Capital")) {
+					cresentcaptitalCresent.setIcon(yellow);
 					cresentcaptitalCresent.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Apollo") {
-					apolloSun.setIcon(green);
+				if (d.getName().equals("Apollo")) {
+					apolloSun.setIcon(yellow);
 					apolloSun.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Ra") {
-					raSun.setIcon(green);
+				if (d.getName().equals("Ra")) {
+					raSun.setIcon(yellow);
 					raSun.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Helios") {
-					heliosSun.setIcon(green);
+				if (d.getName().equals("Helios")) {
+					heliosSun.setIcon(yellow);
 					heliosSun.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Inti") {
-					intiSun.setIcon(green);
+				if (d.getName().equals("Inti")) {
+					intiSun.setIcon(yellow);
 					intiSun.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Horus") {
-					horusSun.setIcon(green);
+				if (d.getName().equals("Horus")) {
+					horusSun.setIcon(yellow);
 					horusSun.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Tonatiuh") {
-					tonatiuhSun.setIcon(green);
+				if (d.getName().equals("Tonatiuh")) {
+					tonatiuhSun.setIcon(yellow);
 					tonatiuhSun.setName(newGame.getPlayerAt(1).getName());
 				}
-				if (d.getName() == "Amun") {
-					amunSun.setIcon(green);
+				if (d.getName().equals("Amun")) {
+					amunSun.setIcon(yellow);
 					amunSun.setName(newGame.getPlayerAt(1).getName());
 				}
+
 			}
 			for (Territory d : player3.getTerritories()) {
-				if (d.getName() == "Wilma") {
-					wilmaWildcat.setIcon(orange);
+				if (d.getName().equals("Wilma")) {
 					wilmaWildcat.setName(newGame.getPlayerAt(2).getName());
+					wilmaWildcat.setIcon(yellow);
 				}
-				if (d.getName() == "Zona") {
-					zonaWildcat.setIcon(orange);
+				if (d.getName().equals("Zona")) {
+					zonaWildcat.setIcon(yellow);
 					zonaWildcat.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Wilber") {
-					wilberWildcat.setIcon(orange);
+				if (d.getName().equals("Wilber")) {
+					wilberWildcat.setIcon(yellow);
 					wilberWildcat.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Rich") {
-					richWildcat.setIcon(orange);
+				if (d.getName().equals("Rich")) {
+					richWildcat.setIcon(yellow);
 					richWildcat.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Miller") {
-					millerWildcat.setIcon(orange);
+				if (d.getName().equals("Miller")) {
+					millerWildcat.setIcon(yellow);
 					millerWildcat.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "McKale") {
-					mckaleWildcat.setIcon(orange);
+				if (d.getName().equals("McKale")) {
+					mckaleWildcat.setIcon(yellow);
 					mckaleWildcat.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Scooby") {
-					scoobyWildcat.setIcon(orange);
+				if (d.getName().equals("Scooby")) {
+					scoobyWildcat.setIcon(yellow);
 					scoobyWildcat.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Java") {
-					javaLanguage.setIcon(orange);
+				if (d.getName().equals("Java")) {
+					javaLanguage.setIcon(yellow);
 					javaLanguage.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Python") {
-					pythonLanguage.setIcon(orange);
+				if (d.getName().equals("Python")) {
+					pythonLanguage.setIcon(yellow);
 					pythonLanguage.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "C") {
-					cLanguage.setIcon(orange);
+				if (d.getName().equals("C")) {
+					cLanguage.setIcon(yellow);
 					cLanguage.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "SQL") {
-					sqlLanguage.setIcon(orange);
+				if (d.getName().equals("SQL")) {
+					sqlLanguage.setIcon(yellow);
 					sqlLanguage.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Ruby") {
-					rubyLanguage.setIcon(orange);
+				if (d.getName().equals("Ruby")) {
+					rubyLanguage.setIcon(yellow);
 					rubyLanguage.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Perl") {
-					perlLanguage.setIcon(orange);
+				if (d.getName().equals("Perl")) {
+					perlLanguage.setIcon(yellow);
 					perlLanguage.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Git") {
-					gitLanguage.setIcon(orange);
+				if (d.getName().equals("Git")) {
+					gitLanguage.setIcon(yellow);
 					gitLanguage.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Papa Johns") {
-					papajohnsPizza.setIcon(orange);
+				if (d.getName().equals("Papa Johns")) {
+					papajohnsPizza.setIcon(yellow);
 					papajohnsPizza.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Dominos") {
-					dominosPizza.setIcon(orange);
+				if (d.getName().equals("Dominos")) {
+					dominosPizza.setIcon(yellow);
 					dominosPizza.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "PizzaHut") {
-					pizzahutPizza.setIcon(orange);
+				if (d.getName().equals("PizzaHut")) {
+					pizzahutPizza.setIcon(yellow);
 					pizzahutPizza.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Black Jack") {
-					blackjackPizza.setIcon(orange);
+				if (d.getName().equals("Black Jack")) {
+					blackjackPizza.setIcon(yellow);
 					blackjackPizza.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Hungry Howie's") {
-					hungryhowiesPizza.setIcon(orange);
+				if (d.getName().equals("Hungry Howie's")) {
+					hungryhowiesPizza.setIcon(yellow);
 					hungryhowiesPizza.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Brooklyn's") {
-					brooklynPizza.setIcon(orange);
+				if (d.getName().equals("Brooklyn's")) {
+					brooklynPizza.setIcon(yellow);
 					brooklynPizza.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Pizza Planet") {
-					pizzaplanetPizza.setIcon(orange);
+				if (d.getName().equals("Pizza Planet")) {
+					pizzaplanetPizza.setIcon(yellow);
 					pizzaplanetPizza.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Rawrville") {
-					rawrvilleDino.setIcon(orange);
+				if (d.getName().equals("Rawrville")) {
+					rawrvilleDino.setIcon(yellow);
 					rawrvilleDino.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Laiegges") {
-					laieggesDino.setIcon(orange);
+				if (d.getName().equals("Laiegges")) {
+					laieggesDino.setIcon(yellow);
 					laieggesDino.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Dactilito") {
-					dactilitoDino.setIcon(orange);
+				if (d.getName().equals("Dactilito")) {
+					dactilitoDino.setIcon(yellow);
 					dactilitoDino.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Dirtydan") {
-					dirtydanDino.setIcon(orange);
+				if (d.getName().equals("Dirtydan")) {
+					dirtydanDino.setIcon(yellow);
 					dirtydanDino.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "BlackBeard") {
-					blackbeardDino.setIcon(orange);
+				if (d.getName().equals("BlackBeard")) {
+					blackbeardDino.setIcon(yellow);
 					blackbeardDino.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Monisaurus") {
-					monisaurusDino.setIcon(orange);
+				if (d.getName().equals("Monisaurus")) {
+					monisaurusDino.setIcon(yellow);
 					monisaurusDino.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "ToyStory") {
-					toystoryDino.setIcon(orange);
+				if (d.getName().equals("ToyStory")) {
+					toystoryDino.setIcon(yellow);
 					toystoryDino.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Scraptopia") {
-					scraptopiaCresent.setIcon(orange);
+				if (d.getName().equals("Scraptopia")) {
+					scraptopiaCresent.setIcon(yellow);
 					scraptopiaCresent.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Land of Zach") {
-					landofzachCresent.setIcon(orange);
+				if (d.getName().equals("Land of Zach")) {
+					landofzachCresent.setIcon(yellow);
 					landofzachCresent.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Giant") {
-					giantCresent.setIcon(orange);
+				if (d.getName().equals("Giant")) {
+					giantCresent.setIcon(yellow);
 					giantCresent.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "New Land of Zach") {
-					newlandofzachCresent.setIcon(orange);
+				if (d.getName().equals("New Land of Zach")) {
+					newlandofzachCresent.setIcon(yellow);
 					newlandofzachCresent.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "South Scraptopia") {
-					southscraptopiaCresent.setIcon(orange);
+				if (d.getName().equals("South Scraptopia")) {
+					southscraptopiaCresent.setIcon(yellow);
 					southscraptopiaCresent.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Bloo Bawl") {
-					bloobawlCresent.setIcon(orange);
+				if (d.getName().equals("Bloo Bawl")) {
+					bloobawlCresent.setIcon(yellow);
 					bloobawlCresent.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Cresent Capital") {
-					cresentcaptitalCresent.setIcon(orange);
+				if (d.getName().equals("Cresent Capital")) {
+					cresentcaptitalCresent.setIcon(yellow);
 					cresentcaptitalCresent.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Apollo") {
-					apolloSun.setIcon(orange);
+				if (d.getName().equals("Apollo")) {
+					apolloSun.setIcon(yellow);
 					apolloSun.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Ra") {
-					raSun.setIcon(orange);
+				if (d.getName().equals("Ra")) {
+					raSun.setIcon(yellow);
 					raSun.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Helios") {
-					heliosSun.setIcon(orange);
+				if (d.getName().equals("Helios")) {
+					heliosSun.setIcon(yellow);
 					heliosSun.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Inti") {
-					intiSun.setIcon(orange);
+				if (d.getName().equals("Inti")) {
+					intiSun.setIcon(yellow);
 					intiSun.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Horus") {
-					horusSun.setIcon(orange);
+				if (d.getName().equals("Horus")) {
+					horusSun.setIcon(yellow);
 					horusSun.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Tonatiuh") {
-					tonatiuhSun.setIcon(orange);
+				if (d.getName().equals("Tonatiuh")) {
+					tonatiuhSun.setIcon(yellow);
 					tonatiuhSun.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Amun") {
-					amunSun.setIcon(orange);
+				if (d.getName().equals("Amun")) {
+					amunSun.setIcon(yellow);
 					amunSun.setName(newGame.getPlayerAt(2).getName());
 				}
+
 			}
 
 			for (Territory d : player4.getTerritories()) {
-
-				if (d.getName() == "Wilma") {
-					wilmaWildcat.setIcon(red);
+				if (d.getName().equals("Wilma")) {
 					wilmaWildcat.setName(newGame.getPlayerAt(3).getName());
+					wilmaWildcat.setIcon(yellow);
 				}
-				if (d.getName() == "Zona") {
-					zonaWildcat.setIcon(red);
+				if (d.getName().equals("Zona")) {
+					zonaWildcat.setIcon(yellow);
 					zonaWildcat.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Wilber") {
-					wilberWildcat.setIcon(red);
+				if (d.getName().equals("Wilber")) {
+					wilberWildcat.setIcon(yellow);
 					wilberWildcat.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Rich") {
-					richWildcat.setIcon(red);
+				if (d.getName().equals("Rich")) {
+					richWildcat.setIcon(yellow);
 					richWildcat.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Miller") {
-					millerWildcat.setIcon(red);
+				if (d.getName().equals("Miller")) {
+					millerWildcat.setIcon(yellow);
 					millerWildcat.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "McKale") {
-					mckaleWildcat.setIcon(red);
+				if (d.getName().equals("McKale")) {
+					mckaleWildcat.setIcon(yellow);
 					mckaleWildcat.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Scooby") {
-					scoobyWildcat.setIcon(red);
+				if (d.getName().equals("Scooby")) {
+					scoobyWildcat.setIcon(yellow);
 					scoobyWildcat.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Java") {
-					javaLanguage.setIcon(red);
+				if (d.getName().equals("Java")) {
+					javaLanguage.setIcon(yellow);
 					javaLanguage.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Python") {
-					pythonLanguage.setIcon(red);
+				if (d.getName().equals("Python")) {
+					pythonLanguage.setIcon(yellow);
 					pythonLanguage.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "C") {
-					cLanguage.setIcon(red);
+				if (d.getName().equals("C")) {
+					cLanguage.setIcon(yellow);
 					cLanguage.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "SQL") {
-					sqlLanguage.setIcon(red);
+				if (d.getName().equals("SQL")) {
+					sqlLanguage.setIcon(yellow);
 					sqlLanguage.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Ruby") {
-					rubyLanguage.setIcon(red);
+				if (d.getName().equals("Ruby")) {
+					rubyLanguage.setIcon(yellow);
 					rubyLanguage.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Perl") {
-					perlLanguage.setIcon(red);
+				if (d.getName().equals("Perl")) {
+					perlLanguage.setIcon(yellow);
 					perlLanguage.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Git") {
-					gitLanguage.setIcon(red);
+				if (d.getName().equals("Git")) {
+					gitLanguage.setIcon(yellow);
 					gitLanguage.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Papa Johns") {
-					papajohnsPizza.setIcon(red);
+				if (d.getName().equals("Papa Johns")) {
+					papajohnsPizza.setIcon(yellow);
 					papajohnsPizza.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Dominos") {
-					dominosPizza.setIcon(red);
+				if (d.getName().equals("Dominos")) {
+					dominosPizza.setIcon(yellow);
 					dominosPizza.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "PizzaHut") {
-					pizzahutPizza.setIcon(red);
+				if (d.getName().equals("PizzaHut")) {
+					pizzahutPizza.setIcon(yellow);
 					pizzahutPizza.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Black Jack") {
-					blackjackPizza.setIcon(red);
+				if (d.getName().equals("Black Jack")) {
+					blackjackPizza.setIcon(yellow);
 					blackjackPizza.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Hungry Howie's") {
-					hungryhowiesPizza.setIcon(red);
+				if (d.getName().equals("Hungry Howie's")) {
+					hungryhowiesPizza.setIcon(yellow);
 					hungryhowiesPizza.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Brooklyn's") {
-					brooklynPizza.setIcon(red);
+				if (d.getName().equals("Brooklyn's")) {
+					brooklynPizza.setIcon(yellow);
 					brooklynPizza.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Pizza Planet") {
-					pizzaplanetPizza.setIcon(red);
+				if (d.getName().equals("Pizza Planet")) {
+					pizzaplanetPizza.setIcon(yellow);
 					pizzaplanetPizza.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Rawrville") {
-					rawrvilleDino.setIcon(red);
+				if (d.getName().equals("Rawrville")) {
+					rawrvilleDino.setIcon(yellow);
 					rawrvilleDino.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Laiegges") {
-					laieggesDino.setIcon(red);
+				if (d.getName().equals("Laiegges")) {
+					laieggesDino.setIcon(yellow);
 					laieggesDino.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Dactilito") {
-					dactilitoDino.setIcon(red);
+				if (d.getName().equals("Dactilito")) {
+					dactilitoDino.setIcon(yellow);
 					dactilitoDino.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Dirtydan") {
-					dirtydanDino.setIcon(red);
+				if (d.getName().equals("Dirtydan")) {
+					dirtydanDino.setIcon(yellow);
 					dirtydanDino.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "BlackBeard") {
-					blackbeardDino.setIcon(red);
+				if (d.getName().equals("BlackBeard")) {
+					blackbeardDino.setIcon(yellow);
 					blackbeardDino.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Monisaurus") {
-					monisaurusDino.setIcon(red);
+				if (d.getName().equals("Monisaurus")) {
+					monisaurusDino.setIcon(yellow);
 					monisaurusDino.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "ToyStory") {
-					toystoryDino.setIcon(red);
+				if (d.getName().equals("ToyStory")) {
+					toystoryDino.setIcon(yellow);
 					toystoryDino.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Scraptopia") {
-					scraptopiaCresent.setIcon(red);
+				if (d.getName().equals("Scraptopia")) {
+					scraptopiaCresent.setIcon(yellow);
 					scraptopiaCresent.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Land of Zach") {
-					landofzachCresent.setIcon(red);
+				if (d.getName().equals("Land of Zach")) {
+					landofzachCresent.setIcon(yellow);
 					landofzachCresent.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Giant") {
-					giantCresent.setIcon(red);
+				if (d.getName().equals("Giant")) {
+					giantCresent.setIcon(yellow);
 					giantCresent.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "New Land of Zach") {
-					newlandofzachCresent.setIcon(red);
+				if (d.getName().equals("New Land of Zach")) {
+					newlandofzachCresent.setIcon(yellow);
 					newlandofzachCresent.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "South Scraptopia") {
-					southscraptopiaCresent.setIcon(red);
+				if (d.getName().equals("South Scraptopia")) {
+					southscraptopiaCresent.setIcon(yellow);
 					southscraptopiaCresent.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Bloo Bawl") {
-					bloobawlCresent.setIcon(red);
+				if (d.getName().equals("Bloo Bawl")) {
+					bloobawlCresent.setIcon(yellow);
 					bloobawlCresent.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Cresent Capital") {
-					cresentcaptitalCresent.setIcon(red);
+				if (d.getName().equals("Cresent Capital")) {
+					cresentcaptitalCresent.setIcon(yellow);
 					cresentcaptitalCresent.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Apollo") {
-					apolloSun.setIcon(red);
+				if (d.getName().equals("Apollo")) {
+					apolloSun.setIcon(yellow);
 					apolloSun.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Ra") {
-					raSun.setIcon(red);
+				if (d.getName().equals("Ra")) {
+					raSun.setIcon(yellow);
 					raSun.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Helios") {
-					heliosSun.setIcon(red);
+				if (d.getName().equals("Helios")) {
+					heliosSun.setIcon(yellow);
 					heliosSun.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Inti") {
-					intiSun.setIcon(red);
+				if (d.getName().equals("Inti")) {
+					intiSun.setIcon(yellow);
 					intiSun.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Horus") {
-					horusSun.setIcon(red);
+				if (d.getName().equals("Horus")) {
+					horusSun.setIcon(yellow);
 					horusSun.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Tonatiuh") {
-					tonatiuhSun.setIcon(red);
+				if (d.getName().equals("Tonatiuh")) {
+					tonatiuhSun.setIcon(yellow);
 					tonatiuhSun.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Amun") {
-					amunSun.setIcon(red);
+				if (d.getName().equals("Amun")) {
+					amunSun.setIcon(yellow);
 					amunSun.setName(newGame.getPlayerAt(3).getName());
 				}
+
 			}
 
 			for (Territory d : player5.getTerritories()) {
-				if (d.getName() == "Wilma") {
-					wilmaWildcat.setIcon(purple);
+				if (d.getName().equals("Wilma")) {
 					wilmaWildcat.setName(newGame.getPlayerAt(4).getName());
+					wilmaWildcat.setIcon(yellow);
 				}
-				if (d.getName() == "Zona") {
-					zonaWildcat.setIcon(purple);
+				if (d.getName().equals("Zona")) {
+					zonaWildcat.setIcon(yellow);
 					zonaWildcat.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Wilber") {
-					wilberWildcat.setIcon(purple);
+				if (d.getName().equals("Wilber")) {
+					wilberWildcat.setIcon(yellow);
 					wilberWildcat.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Rich") {
-					richWildcat.setIcon(purple);
+				if (d.getName().equals("Rich")) {
+					richWildcat.setIcon(yellow);
 					richWildcat.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Miller") {
-					millerWildcat.setIcon(purple);
+				if (d.getName().equals("Miller")) {
+					millerWildcat.setIcon(yellow);
 					millerWildcat.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "McKale") {
-					mckaleWildcat.setIcon(purple);
+				if (d.getName().equals("McKale")) {
+					mckaleWildcat.setIcon(yellow);
 					mckaleWildcat.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Scooby") {
-					scoobyWildcat.setIcon(purple);
+				if (d.getName().equals("Scooby")) {
+					scoobyWildcat.setIcon(yellow);
 					scoobyWildcat.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Java") {
-					javaLanguage.setIcon(purple);
+				if (d.getName().equals("Java")) {
+					javaLanguage.setIcon(yellow);
 					javaLanguage.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Python") {
-					pythonLanguage.setIcon(purple);
+				if (d.getName().equals("Python")) {
+					pythonLanguage.setIcon(yellow);
 					pythonLanguage.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "C") {
-					cLanguage.setIcon(purple);
+				if (d.getName().equals("C")) {
+					cLanguage.setIcon(yellow);
 					cLanguage.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "SQL") {
-					sqlLanguage.setIcon(purple);
+				if (d.getName().equals("SQL")) {
+					sqlLanguage.setIcon(yellow);
 					sqlLanguage.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Ruby") {
-					rubyLanguage.setIcon(purple);
+				if (d.getName().equals("Ruby")) {
+					rubyLanguage.setIcon(yellow);
 					rubyLanguage.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Perl") {
-					perlLanguage.setIcon(purple);
+				if (d.getName().equals("Perl")) {
+					perlLanguage.setIcon(yellow);
 					perlLanguage.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Git") {
-					gitLanguage.setIcon(purple);
+				if (d.getName().equals("Git")) {
+					gitLanguage.setIcon(yellow);
 					gitLanguage.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Papa Johns") {
-					papajohnsPizza.setIcon(purple);
+				if (d.getName().equals("Papa Johns")) {
+					papajohnsPizza.setIcon(yellow);
 					papajohnsPizza.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Dominos") {
-					dominosPizza.setIcon(purple);
+				if (d.getName().equals("Dominos")) {
+					dominosPizza.setIcon(yellow);
 					dominosPizza.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "PizzaHut") {
-					pizzahutPizza.setIcon(purple);
+				if (d.getName().equals("PizzaHut")) {
+					pizzahutPizza.setIcon(yellow);
 					pizzahutPizza.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Black Jack") {
-					blackjackPizza.setIcon(purple);
+				if (d.getName().equals("Black Jack")) {
+					blackjackPizza.setIcon(yellow);
 					blackjackPizza.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Hungry Howie's") {
-					hungryhowiesPizza.setIcon(purple);
+				if (d.getName().equals("Hungry Howie's")) {
+					hungryhowiesPizza.setIcon(yellow);
 					hungryhowiesPizza.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Brooklyn's") {
-					brooklynPizza.setIcon(purple);
+				if (d.getName().equals("Brooklyn's")) {
+					brooklynPizza.setIcon(yellow);
 					brooklynPizza.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Pizza Planet") {
-					pizzaplanetPizza.setIcon(purple);
+				if (d.getName().equals("Pizza Planet")) {
+					pizzaplanetPizza.setIcon(yellow);
 					pizzaplanetPizza.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Rawrville") {
-					rawrvilleDino.setIcon(purple);
+				if (d.getName().equals("Rawrville")) {
+					rawrvilleDino.setIcon(yellow);
 					rawrvilleDino.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Laiegges") {
-					laieggesDino.setIcon(purple);
+				if (d.getName().equals("Laiegges")) {
+					laieggesDino.setIcon(yellow);
 					laieggesDino.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Dactilito") {
-					dactilitoDino.setIcon(purple);
+				if (d.getName().equals("Dactilito")) {
+					dactilitoDino.setIcon(yellow);
 					dactilitoDino.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Dirtydan") {
-					dirtydanDino.setIcon(purple);
+				if (d.getName().equals("Dirtydan")) {
+					dirtydanDino.setIcon(yellow);
 					dirtydanDino.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "BlackBeard") {
-					blackbeardDino.setIcon(purple);
+				if (d.getName().equals("BlackBeard")) {
+					blackbeardDino.setIcon(yellow);
 					blackbeardDino.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Monisaurus") {
-					monisaurusDino.setIcon(purple);
+				if (d.getName().equals("Monisaurus")) {
+					monisaurusDino.setIcon(yellow);
 					monisaurusDino.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "ToyStory") {
-					toystoryDino.setIcon(purple);
+				if (d.getName().equals("ToyStory")) {
+					toystoryDino.setIcon(yellow);
 					toystoryDino.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Scraptopia") {
-					scraptopiaCresent.setIcon(purple);
+				if (d.getName().equals("Scraptopia")) {
+					scraptopiaCresent.setIcon(yellow);
 					scraptopiaCresent.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Land of Zach") {
-					landofzachCresent.setIcon(purple);
+				if (d.getName().equals("Land of Zach")) {
+					landofzachCresent.setIcon(yellow);
 					landofzachCresent.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Giant") {
-					giantCresent.setIcon(purple);
+				if (d.getName().equals("Giant")) {
+					giantCresent.setIcon(yellow);
 					giantCresent.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "New Land of Zach") {
-					newlandofzachCresent.setIcon(purple);
+				if (d.getName().equals("New Land of Zach")) {
+					newlandofzachCresent.setIcon(yellow);
 					newlandofzachCresent.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "South Scraptopia") {
-					southscraptopiaCresent.setIcon(purple);
+				if (d.getName().equals("South Scraptopia")) {
+					southscraptopiaCresent.setIcon(yellow);
 					southscraptopiaCresent.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Bloo Bawl") {
-					bloobawlCresent.setIcon(purple);
+				if (d.getName().equals("Bloo Bawl")) {
+					bloobawlCresent.setIcon(yellow);
 					bloobawlCresent.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Cresent Capital") {
-					cresentcaptitalCresent.setIcon(purple);
+				if (d.getName().equals("Cresent Capital")) {
+					cresentcaptitalCresent.setIcon(yellow);
 					cresentcaptitalCresent.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Apollo") {
-					apolloSun.setIcon(purple);
+				if (d.getName().equals("Apollo")) {
+					apolloSun.setIcon(yellow);
 					apolloSun.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Ra") {
-					raSun.setIcon(purple);
+				if (d.getName().equals("Ra")) {
+					raSun.setIcon(yellow);
 					raSun.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Helios") {
-					heliosSun.setIcon(purple);
+				if (d.getName().equals("Helios")) {
+					heliosSun.setIcon(yellow);
 					heliosSun.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Inti") {
-					intiSun.setIcon(purple);
+				if (d.getName().equals("Inti")) {
+					intiSun.setIcon(yellow);
 					intiSun.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Horus") {
-					horusSun.setIcon(purple);
+				if (d.getName().equals("Horus")) {
+					horusSun.setIcon(yellow);
 					horusSun.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Tonatiuh") {
-					tonatiuhSun.setIcon(purple);
+				if (d.getName().equals("Tonatiuh")) {
+					tonatiuhSun.setIcon(yellow);
 					tonatiuhSun.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Amun") {
-					amunSun.setIcon(purple);
+				if (d.getName().equals("Amun")) {
+					amunSun.setIcon(yellow);
 					amunSun.setName(newGame.getPlayerAt(4).getName());
 				}
+
 			}
 
 			for (Territory d : player6.getTerritories()) {
-				if (d.getName() == "Wilma") {
-					wilmaWildcat.setIcon(blue);
+				if (d.getName().equals("Wilma")) {
 					wilmaWildcat.setName(newGame.getPlayerAt(5).getName());
+					wilmaWildcat.setIcon(yellow);
 				}
-				if (d.getName() == "Zona") {
-					zonaWildcat.setIcon(blue);
+				if (d.getName().equals("Zona")) {
+					zonaWildcat.setIcon(yellow);
 					zonaWildcat.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Wilber") {
-					wilberWildcat.setIcon(blue);
+				if (d.getName().equals("Wilber")) {
+					wilberWildcat.setIcon(yellow);
 					wilberWildcat.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Rich") {
-					richWildcat.setIcon(blue);
+				if (d.getName().equals("Rich")) {
+					richWildcat.setIcon(yellow);
 					richWildcat.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Miller") {
-					millerWildcat.setIcon(blue);
+				if (d.getName().equals("Miller")) {
+					millerWildcat.setIcon(yellow);
 					millerWildcat.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "McKale") {
-					mckaleWildcat.setIcon(blue);
+				if (d.getName().equals("McKale")) {
+					mckaleWildcat.setIcon(yellow);
 					mckaleWildcat.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Scooby") {
-					scoobyWildcat.setIcon(blue);
+				if (d.getName().equals("Scooby")) {
+					scoobyWildcat.setIcon(yellow);
 					scoobyWildcat.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Java") {
-					javaLanguage.setIcon(blue);
+				if (d.getName().equals("Java")) {
+					javaLanguage.setIcon(yellow);
 					javaLanguage.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Python") {
-					pythonLanguage.setIcon(blue);
+				if (d.getName().equals("Python")) {
+					pythonLanguage.setIcon(yellow);
 					pythonLanguage.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "C") {
-					cLanguage.setIcon(blue);
+				if (d.getName().equals("C")) {
+					cLanguage.setIcon(yellow);
 					cLanguage.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "SQL") {
-					sqlLanguage.setIcon(blue);
+				if (d.getName().equals("SQL")) {
+					sqlLanguage.setIcon(yellow);
 					sqlLanguage.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Ruby") {
-					rubyLanguage.setIcon(blue);
+				if (d.getName().equals("Ruby")) {
+					rubyLanguage.setIcon(yellow);
 					rubyLanguage.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Perl") {
-					perlLanguage.setIcon(blue);
+				if (d.getName().equals("Perl")) {
+					perlLanguage.setIcon(yellow);
 					perlLanguage.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Git") {
-					gitLanguage.setIcon(blue);
+				if (d.getName().equals("Git")) {
+					gitLanguage.setIcon(yellow);
 					gitLanguage.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Papa Johns") {
-					papajohnsPizza.setIcon(blue);
+				if (d.getName().equals("Papa Johns")) {
+					papajohnsPizza.setIcon(yellow);
 					papajohnsPizza.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Dominos") {
-					dominosPizza.setIcon(blue);
+				if (d.getName().equals("Dominos")) {
+					dominosPizza.setIcon(yellow);
 					dominosPizza.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "PizzaHut") {
-					pizzahutPizza.setIcon(blue);
+				if (d.getName().equals("PizzaHut")) {
+					pizzahutPizza.setIcon(yellow);
 					pizzahutPizza.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Black Jack") {
-					blackjackPizza.setIcon(blue);
+				if (d.getName().equals("Black Jack")) {
+					blackjackPizza.setIcon(yellow);
 					blackjackPizza.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Hungry Howie's") {
-					hungryhowiesPizza.setIcon(blue);
+				if (d.getName().equals("Hungry Howie's")) {
+					hungryhowiesPizza.setIcon(yellow);
 					hungryhowiesPizza.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Brooklyn's") {
-					brooklynPizza.setIcon(blue);
+				if (d.getName().equals("Brooklyn's")) {
+					brooklynPizza.setIcon(yellow);
 					brooklynPizza.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Pizza Planet") {
-					pizzaplanetPizza.setIcon(blue);
+				if (d.getName().equals("Pizza Planet")) {
+					pizzaplanetPizza.setIcon(yellow);
 					pizzaplanetPizza.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Rawrville") {
-					rawrvilleDino.setIcon(blue);
+				if (d.getName().equals("Rawrville")) {
+					rawrvilleDino.setIcon(yellow);
 					rawrvilleDino.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Laiegges") {
-					laieggesDino.setIcon(blue);
+				if (d.getName().equals("Laiegges")) {
+					laieggesDino.setIcon(yellow);
 					laieggesDino.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Dactilito") {
-					dactilitoDino.setIcon(blue);
+				if (d.getName().equals("Dactilito")) {
+					dactilitoDino.setIcon(yellow);
 					dactilitoDino.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Dirtydan") {
-					dirtydanDino.setIcon(blue);
+				if (d.getName().equals("Dirtydan")) {
+					dirtydanDino.setIcon(yellow);
 					dirtydanDino.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "BlackBeard") {
-					blackbeardDino.setIcon(blue);
+				if (d.getName().equals("BlackBeard")) {
+					blackbeardDino.setIcon(yellow);
 					blackbeardDino.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Monisaurus") {
-					monisaurusDino.setIcon(blue);
+				if (d.getName().equals("Monisaurus")) {
+					monisaurusDino.setIcon(yellow);
 					monisaurusDino.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "ToyStory") {
-					toystoryDino.setIcon(blue);
+				if (d.getName().equals("ToyStory")) {
+					toystoryDino.setIcon(yellow);
 					toystoryDino.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Scraptopia") {
-					scraptopiaCresent.setIcon(blue);
+				if (d.getName().equals("Scraptopia")) {
+					scraptopiaCresent.setIcon(yellow);
 					scraptopiaCresent.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Land of Zach") {
-					landofzachCresent.setIcon(blue);
+				if (d.getName().equals("Land of Zach")) {
+					landofzachCresent.setIcon(yellow);
 					landofzachCresent.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Giant") {
-					giantCresent.setIcon(blue);
+				if (d.getName().equals("Giant")) {
+					giantCresent.setIcon(yellow);
 					giantCresent.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "New Land of Zach") {
-					newlandofzachCresent.setIcon(blue);
+				if (d.getName().equals("New Land of Zach")) {
+					newlandofzachCresent.setIcon(yellow);
 					newlandofzachCresent.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "South Scraptopia") {
-					southscraptopiaCresent.setIcon(blue);
+				if (d.getName().equals("South Scraptopia")) {
+					southscraptopiaCresent.setIcon(yellow);
 					southscraptopiaCresent.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Bloo Bawl") {
-					bloobawlCresent.setIcon(blue);
+				if (d.getName().equals("Bloo Bawl")) {
+					bloobawlCresent.setIcon(yellow);
 					bloobawlCresent.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Cresent Capital") {
-					cresentcaptitalCresent.setIcon(blue);
+				if (d.getName().equals("Cresent Capital")) {
+					cresentcaptitalCresent.setIcon(yellow);
 					cresentcaptitalCresent.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Apollo") {
-					apolloSun.setIcon(blue);
+				if (d.getName().equals("Apollo")) {
+					apolloSun.setIcon(yellow);
 					apolloSun.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Ra") {
-					raSun.setIcon(blue);
+				if (d.getName().equals("Ra")) {
+					raSun.setIcon(yellow);
 					raSun.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Helios") {
-					heliosSun.setIcon(blue);
+				if (d.getName().equals("Helios")) {
+					heliosSun.setIcon(yellow);
 					heliosSun.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Inti") {
-					intiSun.setIcon(blue);
+				if (d.getName().equals("Inti")) {
+					intiSun.setIcon(yellow);
 					intiSun.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Horus") {
-					horusSun.setIcon(blue);
+				if (d.getName().equals("Horus")) {
+					horusSun.setIcon(yellow);
 					horusSun.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Tonatiuh") {
-					tonatiuhSun.setIcon(blue);
+				if (d.getName().equals("Tonatiuh")) {
+					tonatiuhSun.setIcon(yellow);
 					tonatiuhSun.setName(newGame.getPlayerAt(5).getName());
 				}
-				if (d.getName() == "Amun") {
-					amunSun.setIcon(blue);
+				if (d.getName().equals("Amun")) {
+					amunSun.setIcon(yellow);
 					amunSun.setName(newGame.getPlayerAt(5).getName());
 				}
+
 			}
 		}
 		if (newGame.getNumOfPlayers() == 5) {
 			for (Territory d : player1.getTerritories()) {
-				if (d.getName() == "Wilma") {
+				if (d.getName().equals("Wilma")) {
 					wilmaWildcat.setName(newGame.getPlayerAt(0).getName());
 					wilmaWildcat.setIcon(yellow);
 				}
-				if (d.getName() == "Zona") {
+				if (d.getName().equals("Zona")) {
 					zonaWildcat.setIcon(yellow);
 					zonaWildcat.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Wilber") {
+				if (d.getName().equals("Wilber")) {
 					wilberWildcat.setIcon(yellow);
 					wilberWildcat.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Rich") {
+				if (d.getName().equals("Rich")) {
 					richWildcat.setIcon(yellow);
 					richWildcat.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Miller") {
+				if (d.getName().equals("Miller")) {
 					millerWildcat.setIcon(yellow);
 					millerWildcat.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "McKale") {
+				if (d.getName().equals("McKale")) {
 					mckaleWildcat.setIcon(yellow);
 					mckaleWildcat.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Scooby") {
+				if (d.getName().equals("Scooby")) {
 					scoobyWildcat.setIcon(yellow);
 					scoobyWildcat.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Java") {
+				if (d.getName().equals("Java")) {
 					javaLanguage.setIcon(yellow);
 					javaLanguage.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Python") {
+				if (d.getName().equals("Python")) {
 					pythonLanguage.setIcon(yellow);
 					pythonLanguage.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "C") {
+				if (d.getName().equals("C")) {
 					cLanguage.setIcon(yellow);
 					cLanguage.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "SQL") {
+				if (d.getName().equals("SQL")) {
 					sqlLanguage.setIcon(yellow);
 					sqlLanguage.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Ruby") {
+				if (d.getName().equals("Ruby")) {
 					rubyLanguage.setIcon(yellow);
 					rubyLanguage.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Perl") {
+				if (d.getName().equals("Perl")) {
 					perlLanguage.setIcon(yellow);
 					perlLanguage.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Git") {
+				if (d.getName().equals("Git")) {
 					gitLanguage.setIcon(yellow);
 					gitLanguage.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Papa Johns") {
+				if (d.getName().equals("Papa Johns")) {
 					papajohnsPizza.setIcon(yellow);
 					papajohnsPizza.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Dominos") {
+				if (d.getName().equals("Dominos")) {
 					dominosPizza.setIcon(yellow);
 					dominosPizza.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "PizzaHut") {
+				if (d.getName().equals("PizzaHut")) {
 					pizzahutPizza.setIcon(yellow);
 					pizzahutPizza.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Black Jack") {
+				if (d.getName().equals("Black Jack")) {
 					blackjackPizza.setIcon(yellow);
 					blackjackPizza.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Hungry Howie's") {
+				if (d.getName().equals("Hungry Howie's")) {
 					hungryhowiesPizza.setIcon(yellow);
 					hungryhowiesPizza.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Brooklyn's") {
+				if (d.getName().equals("Brooklyn's")) {
 					brooklynPizza.setIcon(yellow);
 					brooklynPizza.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Pizza Planet") {
+				if (d.getName().equals("Pizza Planet")) {
 					pizzaplanetPizza.setIcon(yellow);
 					pizzaplanetPizza.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Rawrville") {
+				if (d.getName().equals("Rawrville")) {
 					rawrvilleDino.setIcon(yellow);
 					rawrvilleDino.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Laiegges") {
+				if (d.getName().equals("Laiegges")) {
 					laieggesDino.setIcon(yellow);
 					laieggesDino.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Dactilito") {
+				if (d.getName().equals("Dactilito")) {
 					dactilitoDino.setIcon(yellow);
 					dactilitoDino.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Dirtydan") {
+				if (d.getName().equals("Dirtydan")) {
 					dirtydanDino.setIcon(yellow);
 					dirtydanDino.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "BlackBeard") {
+				if (d.getName().equals("BlackBeard")) {
 					blackbeardDino.setIcon(yellow);
 					blackbeardDino.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Monisaurus") {
+				if (d.getName().equals("Monisaurus")) {
 					monisaurusDino.setIcon(yellow);
 					monisaurusDino.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "ToyStory") {
+				if (d.getName().equals("ToyStory")) {
 					toystoryDino.setIcon(yellow);
 					toystoryDino.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Scraptopia") {
+				if (d.getName().equals("Scraptopia")) {
 					scraptopiaCresent.setIcon(yellow);
 					scraptopiaCresent.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Land of Zach") {
+				if (d.getName().equals("Land of Zach")) {
 					landofzachCresent.setIcon(yellow);
 					landofzachCresent.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Giant") {
+				if (d.getName().equals("Giant")) {
 					giantCresent.setIcon(yellow);
 					giantCresent.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "New Land of Zach") {
+				if (d.getName().equals("New Land of Zach")) {
 					newlandofzachCresent.setIcon(yellow);
 					newlandofzachCresent.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "South Scraptopia") {
+				if (d.getName().equals("South Scraptopia")) {
 					southscraptopiaCresent.setIcon(yellow);
 					southscraptopiaCresent.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Bloo Bawl") {
+				if (d.getName().equals("Bloo Bawl")) {
 					bloobawlCresent.setIcon(yellow);
 					bloobawlCresent.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Cresent Capital") {
+				if (d.getName().equals("Cresent Capital")) {
 					cresentcaptitalCresent.setIcon(yellow);
 					cresentcaptitalCresent.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Apollo") {
+				if (d.getName().equals("Apollo")) {
 					apolloSun.setIcon(yellow);
 					apolloSun.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Ra") {
+				if (d.getName().equals("Ra")) {
 					raSun.setIcon(yellow);
 					raSun.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Helios") {
+				if (d.getName().equals("Helios")) {
 					heliosSun.setIcon(yellow);
 					heliosSun.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Inti") {
+				if (d.getName().equals("Inti")) {
 					intiSun.setIcon(yellow);
 					intiSun.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Horus") {
+				if (d.getName().equals("Horus")) {
 					horusSun.setIcon(yellow);
 					horusSun.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Tonatiuh") {
+				if (d.getName().equals("Tonatiuh")) {
 					tonatiuhSun.setIcon(yellow);
 					tonatiuhSun.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Amun") {
+				if (d.getName().equals("Amun")) {
 					amunSun.setIcon(yellow);
 					amunSun.setName(newGame.getPlayerAt(0).getName());
 				}
@@ -10503,686 +10507,688 @@ public class GameBoard extends JPanel {
 				}
 			}
 			for (Territory d : player3.getTerritories()) {
-				if (d.getName() == "Wilma") {
-					wilmaWildcat.setIcon(orange);
+				if (d.getName().equals("Wilma")) {
 					wilmaWildcat.setName(newGame.getPlayerAt(2).getName());
+					wilmaWildcat.setIcon(yellow);
 				}
-				if (d.getName() == "Zona") {
-					zonaWildcat.setIcon(orange);
+				if (d.getName().equals("Zona")) {
+					zonaWildcat.setIcon(yellow);
 					zonaWildcat.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Wilber") {
-					wilberWildcat.setIcon(orange);
+				if (d.getName().equals("Wilber")) {
+					wilberWildcat.setIcon(yellow);
 					wilberWildcat.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Rich") {
-					richWildcat.setIcon(orange);
+				if (d.getName().equals("Rich")) {
+					richWildcat.setIcon(yellow);
 					richWildcat.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Miller") {
-					millerWildcat.setIcon(orange);
+				if (d.getName().equals("Miller")) {
+					millerWildcat.setIcon(yellow);
 					millerWildcat.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "McKale") {
-					mckaleWildcat.setIcon(orange);
+				if (d.getName().equals("McKale")) {
+					mckaleWildcat.setIcon(yellow);
 					mckaleWildcat.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Scooby") {
-					scoobyWildcat.setIcon(orange);
+				if (d.getName().equals("Scooby")) {
+					scoobyWildcat.setIcon(yellow);
 					scoobyWildcat.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Java") {
-					javaLanguage.setIcon(orange);
+				if (d.getName().equals("Java")) {
+					javaLanguage.setIcon(yellow);
 					javaLanguage.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Python") {
-					pythonLanguage.setIcon(orange);
+				if (d.getName().equals("Python")) {
+					pythonLanguage.setIcon(yellow);
 					pythonLanguage.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "C") {
-					cLanguage.setIcon(orange);
+				if (d.getName().equals("C")) {
+					cLanguage.setIcon(yellow);
 					cLanguage.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "SQL") {
-					sqlLanguage.setIcon(orange);
+				if (d.getName().equals("SQL")) {
+					sqlLanguage.setIcon(yellow);
 					sqlLanguage.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Ruby") {
-					rubyLanguage.setIcon(orange);
+				if (d.getName().equals("Ruby")) {
+					rubyLanguage.setIcon(yellow);
 					rubyLanguage.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Perl") {
-					perlLanguage.setIcon(orange);
+				if (d.getName().equals("Perl")) {
+					perlLanguage.setIcon(yellow);
 					perlLanguage.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Git") {
-					gitLanguage.setIcon(orange);
+				if (d.getName().equals("Git")) {
+					gitLanguage.setIcon(yellow);
 					gitLanguage.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Papa Johns") {
-					papajohnsPizza.setIcon(orange);
+				if (d.getName().equals("Papa Johns")) {
+					papajohnsPizza.setIcon(yellow);
 					papajohnsPizza.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Dominos") {
-					dominosPizza.setIcon(orange);
+				if (d.getName().equals("Dominos")) {
+					dominosPizza.setIcon(yellow);
 					dominosPizza.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "PizzaHut") {
-					pizzahutPizza.setIcon(orange);
+				if (d.getName().equals("PizzaHut")) {
+					pizzahutPizza.setIcon(yellow);
 					pizzahutPizza.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Black Jack") {
-					blackjackPizza.setIcon(orange);
+				if (d.getName().equals("Black Jack")) {
+					blackjackPizza.setIcon(yellow);
 					blackjackPizza.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Hungry Howie's") {
-					hungryhowiesPizza.setIcon(orange);
+				if (d.getName().equals("Hungry Howie's")) {
+					hungryhowiesPizza.setIcon(yellow);
 					hungryhowiesPizza.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Brooklyn's") {
-					brooklynPizza.setIcon(orange);
+				if (d.getName().equals("Brooklyn's")) {
+					brooklynPizza.setIcon(yellow);
 					brooklynPizza.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Pizza Planet") {
-					pizzaplanetPizza.setIcon(orange);
+				if (d.getName().equals("Pizza Planet")) {
+					pizzaplanetPizza.setIcon(yellow);
 					pizzaplanetPizza.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Rawrville") {
-					rawrvilleDino.setIcon(orange);
+				if (d.getName().equals("Rawrville")) {
+					rawrvilleDino.setIcon(yellow);
 					rawrvilleDino.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Laiegges") {
-					laieggesDino.setIcon(orange);
+				if (d.getName().equals("Laiegges")) {
+					laieggesDino.setIcon(yellow);
 					laieggesDino.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Dactilito") {
-					dactilitoDino.setIcon(orange);
+				if (d.getName().equals("Dactilito")) {
+					dactilitoDino.setIcon(yellow);
 					dactilitoDino.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Dirtydan") {
-					dirtydanDino.setIcon(orange);
+				if (d.getName().equals("Dirtydan")) {
+					dirtydanDino.setIcon(yellow);
 					dirtydanDino.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "BlackBeard") {
-					blackbeardDino.setIcon(orange);
+				if (d.getName().equals("BlackBeard")) {
+					blackbeardDino.setIcon(yellow);
 					blackbeardDino.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Monisaurus") {
-					monisaurusDino.setIcon(orange);
+				if (d.getName().equals("Monisaurus")) {
+					monisaurusDino.setIcon(yellow);
 					monisaurusDino.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "ToyStory") {
-					toystoryDino.setIcon(orange);
+				if (d.getName().equals("ToyStory")) {
+					toystoryDino.setIcon(yellow);
 					toystoryDino.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Scraptopia") {
-					scraptopiaCresent.setIcon(orange);
+				if (d.getName().equals("Scraptopia")) {
+					scraptopiaCresent.setIcon(yellow);
 					scraptopiaCresent.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Land of Zach") {
-					landofzachCresent.setIcon(orange);
+				if (d.getName().equals("Land of Zach")) {
+					landofzachCresent.setIcon(yellow);
 					landofzachCresent.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Giant") {
-					giantCresent.setIcon(orange);
+				if (d.getName().equals("Giant")) {
+					giantCresent.setIcon(yellow);
 					giantCresent.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "New Land of Zach") {
-					newlandofzachCresent.setIcon(orange);
+				if (d.getName().equals("New Land of Zach")) {
+					newlandofzachCresent.setIcon(yellow);
 					newlandofzachCresent.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "South Scraptopia") {
-					southscraptopiaCresent.setIcon(orange);
+				if (d.getName().equals("South Scraptopia")) {
+					southscraptopiaCresent.setIcon(yellow);
 					southscraptopiaCresent.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Bloo Bawl") {
-					bloobawlCresent.setIcon(orange);
+				if (d.getName().equals("Bloo Bawl")) {
+					bloobawlCresent.setIcon(yellow);
 					bloobawlCresent.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Cresent Capital") {
-					cresentcaptitalCresent.setIcon(orange);
+				if (d.getName().equals("Cresent Capital")) {
+					cresentcaptitalCresent.setIcon(yellow);
 					cresentcaptitalCresent.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Apollo") {
-					apolloSun.setIcon(orange);
+				if (d.getName().equals("Apollo")) {
+					apolloSun.setIcon(yellow);
 					apolloSun.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Ra") {
-					raSun.setIcon(orange);
+				if (d.getName().equals("Ra")) {
+					raSun.setIcon(yellow);
 					raSun.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Helios") {
-					heliosSun.setIcon(orange);
+				if (d.getName().equals("Helios")) {
+					heliosSun.setIcon(yellow);
 					heliosSun.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Inti") {
-					intiSun.setIcon(orange);
+				if (d.getName().equals("Inti")) {
+					intiSun.setIcon(yellow);
 					intiSun.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Horus") {
-					horusSun.setIcon(orange);
+				if (d.getName().equals("Horus")) {
+					horusSun.setIcon(yellow);
 					horusSun.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Tonatiuh") {
-					tonatiuhSun.setIcon(orange);
+				if (d.getName().equals("Tonatiuh")) {
+					tonatiuhSun.setIcon(yellow);
 					tonatiuhSun.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Amun") {
-					amunSun.setIcon(orange);
+				if (d.getName().equals("Amun")) {
+					amunSun.setIcon(yellow);
 					amunSun.setName(newGame.getPlayerAt(2).getName());
 				}
+
 			}
 
 			for (Territory d : player4.getTerritories()) {
-
-				if (d.getName() == "Wilma") {
-					wilmaWildcat.setIcon(red);
+				if (d.getName().equals("Wilma")) {
 					wilmaWildcat.setName(newGame.getPlayerAt(3).getName());
+					wilmaWildcat.setIcon(yellow);
 				}
-				if (d.getName() == "Zona") {
-					zonaWildcat.setIcon(red);
+				if (d.getName().equals("Zona")) {
+					zonaWildcat.setIcon(yellow);
 					zonaWildcat.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Wilber") {
-					wilberWildcat.setIcon(red);
+				if (d.getName().equals("Wilber")) {
+					wilberWildcat.setIcon(yellow);
 					wilberWildcat.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Rich") {
-					richWildcat.setIcon(red);
+				if (d.getName().equals("Rich")) {
+					richWildcat.setIcon(yellow);
 					richWildcat.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Miller") {
-					millerWildcat.setIcon(red);
+				if (d.getName().equals("Miller")) {
+					millerWildcat.setIcon(yellow);
 					millerWildcat.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "McKale") {
-					mckaleWildcat.setIcon(red);
+				if (d.getName().equals("McKale")) {
+					mckaleWildcat.setIcon(yellow);
 					mckaleWildcat.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Scooby") {
-					scoobyWildcat.setIcon(red);
+				if (d.getName().equals("Scooby")) {
+					scoobyWildcat.setIcon(yellow);
 					scoobyWildcat.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Java") {
-					javaLanguage.setIcon(red);
+				if (d.getName().equals("Java")) {
+					javaLanguage.setIcon(yellow);
 					javaLanguage.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Python") {
-					pythonLanguage.setIcon(red);
+				if (d.getName().equals("Python")) {
+					pythonLanguage.setIcon(yellow);
 					pythonLanguage.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "C") {
-					cLanguage.setIcon(red);
+				if (d.getName().equals("C")) {
+					cLanguage.setIcon(yellow);
 					cLanguage.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "SQL") {
-					sqlLanguage.setIcon(red);
+				if (d.getName().equals("SQL")) {
+					sqlLanguage.setIcon(yellow);
 					sqlLanguage.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Ruby") {
-					rubyLanguage.setIcon(red);
+				if (d.getName().equals("Ruby")) {
+					rubyLanguage.setIcon(yellow);
 					rubyLanguage.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Perl") {
-					perlLanguage.setIcon(red);
+				if (d.getName().equals("Perl")) {
+					perlLanguage.setIcon(yellow);
 					perlLanguage.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Git") {
-					gitLanguage.setIcon(red);
+				if (d.getName().equals("Git")) {
+					gitLanguage.setIcon(yellow);
 					gitLanguage.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Papa Johns") {
-					papajohnsPizza.setIcon(red);
+				if (d.getName().equals("Papa Johns")) {
+					papajohnsPizza.setIcon(yellow);
 					papajohnsPizza.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Dominos") {
-					dominosPizza.setIcon(red);
+				if (d.getName().equals("Dominos")) {
+					dominosPizza.setIcon(yellow);
 					dominosPizza.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "PizzaHut") {
-					pizzahutPizza.setIcon(red);
+				if (d.getName().equals("PizzaHut")) {
+					pizzahutPizza.setIcon(yellow);
 					pizzahutPizza.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Black Jack") {
-					blackjackPizza.setIcon(red);
+				if (d.getName().equals("Black Jack")) {
+					blackjackPizza.setIcon(yellow);
 					blackjackPizza.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Hungry Howie's") {
-					hungryhowiesPizza.setIcon(red);
+				if (d.getName().equals("Hungry Howie's")) {
+					hungryhowiesPizza.setIcon(yellow);
 					hungryhowiesPizza.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Brooklyn's") {
-					brooklynPizza.setIcon(red);
+				if (d.getName().equals("Brooklyn's")) {
+					brooklynPizza.setIcon(yellow);
 					brooklynPizza.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Pizza Planet") {
-					pizzaplanetPizza.setIcon(red);
+				if (d.getName().equals("Pizza Planet")) {
+					pizzaplanetPizza.setIcon(yellow);
 					pizzaplanetPizza.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Rawrville") {
-					rawrvilleDino.setIcon(red);
+				if (d.getName().equals("Rawrville")) {
+					rawrvilleDino.setIcon(yellow);
 					rawrvilleDino.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Laiegges") {
-					laieggesDino.setIcon(red);
+				if (d.getName().equals("Laiegges")) {
+					laieggesDino.setIcon(yellow);
 					laieggesDino.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Dactilito") {
-					dactilitoDino.setIcon(red);
+				if (d.getName().equals("Dactilito")) {
+					dactilitoDino.setIcon(yellow);
 					dactilitoDino.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Dirtydan") {
-					dirtydanDino.setIcon(red);
+				if (d.getName().equals("Dirtydan")) {
+					dirtydanDino.setIcon(yellow);
 					dirtydanDino.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "BlackBeard") {
-					blackbeardDino.setIcon(red);
+				if (d.getName().equals("BlackBeard")) {
+					blackbeardDino.setIcon(yellow);
 					blackbeardDino.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Monisaurus") {
-					monisaurusDino.setIcon(red);
+				if (d.getName().equals("Monisaurus")) {
+					monisaurusDino.setIcon(yellow);
 					monisaurusDino.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "ToyStory") {
-					toystoryDino.setIcon(red);
+				if (d.getName().equals("ToyStory")) {
+					toystoryDino.setIcon(yellow);
 					toystoryDino.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Scraptopia") {
-					scraptopiaCresent.setIcon(red);
+				if (d.getName().equals("Scraptopia")) {
+					scraptopiaCresent.setIcon(yellow);
 					scraptopiaCresent.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Land of Zach") {
-					landofzachCresent.setIcon(red);
+				if (d.getName().equals("Land of Zach")) {
+					landofzachCresent.setIcon(yellow);
 					landofzachCresent.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Giant") {
-					giantCresent.setIcon(red);
+				if (d.getName().equals("Giant")) {
+					giantCresent.setIcon(yellow);
 					giantCresent.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "New Land of Zach") {
-					newlandofzachCresent.setIcon(red);
+				if (d.getName().equals("New Land of Zach")) {
+					newlandofzachCresent.setIcon(yellow);
 					newlandofzachCresent.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "South Scraptopia") {
-					southscraptopiaCresent.setIcon(red);
+				if (d.getName().equals("South Scraptopia")) {
+					southscraptopiaCresent.setIcon(yellow);
 					southscraptopiaCresent.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Bloo Bawl") {
-					bloobawlCresent.setIcon(red);
+				if (d.getName().equals("Bloo Bawl")) {
+					bloobawlCresent.setIcon(yellow);
 					bloobawlCresent.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Cresent Capital") {
-					cresentcaptitalCresent.setIcon(red);
+				if (d.getName().equals("Cresent Capital")) {
+					cresentcaptitalCresent.setIcon(yellow);
 					cresentcaptitalCresent.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Apollo") {
-					apolloSun.setIcon(red);
+				if (d.getName().equals("Apollo")) {
+					apolloSun.setIcon(yellow);
 					apolloSun.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Ra") {
-					raSun.setIcon(red);
+				if (d.getName().equals("Ra")) {
+					raSun.setIcon(yellow);
 					raSun.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Helios") {
-					heliosSun.setIcon(red);
+				if (d.getName().equals("Helios")) {
+					heliosSun.setIcon(yellow);
 					heliosSun.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Inti") {
-					intiSun.setIcon(red);
+				if (d.getName().equals("Inti")) {
+					intiSun.setIcon(yellow);
 					intiSun.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Horus") {
-					horusSun.setIcon(red);
+				if (d.getName().equals("Horus")) {
+					horusSun.setIcon(yellow);
 					horusSun.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Tonatiuh") {
-					tonatiuhSun.setIcon(red);
+				if (d.getName().equals("Tonatiuh")) {
+					tonatiuhSun.setIcon(yellow);
 					tonatiuhSun.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Amun") {
-					amunSun.setIcon(red);
+				if (d.getName().equals("Amun")) {
+					amunSun.setIcon(yellow);
 					amunSun.setName(newGame.getPlayerAt(3).getName());
 				}
+
 			}
 
 			for (Territory d : player5.getTerritories()) {
-				if (d.getName() == "Wilma") {
-					wilmaWildcat.setIcon(purple);
+				if (d.getName().equals("Wilma")) {
 					wilmaWildcat.setName(newGame.getPlayerAt(4).getName());
+					wilmaWildcat.setIcon(yellow);
 				}
-				if (d.getName() == "Zona") {
-					zonaWildcat.setIcon(purple);
+				if (d.getName().equals("Zona")) {
+					zonaWildcat.setIcon(yellow);
 					zonaWildcat.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Wilber") {
-					wilberWildcat.setIcon(purple);
+				if (d.getName().equals("Wilber")) {
+					wilberWildcat.setIcon(yellow);
 					wilberWildcat.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Rich") {
-					richWildcat.setIcon(purple);
+				if (d.getName().equals("Rich")) {
+					richWildcat.setIcon(yellow);
 					richWildcat.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Miller") {
-					millerWildcat.setIcon(purple);
+				if (d.getName().equals("Miller")) {
+					millerWildcat.setIcon(yellow);
 					millerWildcat.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "McKale") {
-					mckaleWildcat.setIcon(purple);
+				if (d.getName().equals("McKale")) {
+					mckaleWildcat.setIcon(yellow);
 					mckaleWildcat.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Scooby") {
-					scoobyWildcat.setIcon(purple);
+				if (d.getName().equals("Scooby")) {
+					scoobyWildcat.setIcon(yellow);
 					scoobyWildcat.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Java") {
-					javaLanguage.setIcon(purple);
+				if (d.getName().equals("Java")) {
+					javaLanguage.setIcon(yellow);
 					javaLanguage.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Python") {
-					pythonLanguage.setIcon(purple);
+				if (d.getName().equals("Python")) {
+					pythonLanguage.setIcon(yellow);
 					pythonLanguage.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "C") {
-					cLanguage.setIcon(purple);
+				if (d.getName().equals("C")) {
+					cLanguage.setIcon(yellow);
 					cLanguage.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "SQL") {
-					sqlLanguage.setIcon(purple);
+				if (d.getName().equals("SQL")) {
+					sqlLanguage.setIcon(yellow);
 					sqlLanguage.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Ruby") {
-					rubyLanguage.setIcon(purple);
+				if (d.getName().equals("Ruby")) {
+					rubyLanguage.setIcon(yellow);
 					rubyLanguage.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Perl") {
-					perlLanguage.setIcon(purple);
+				if (d.getName().equals("Perl")) {
+					perlLanguage.setIcon(yellow);
 					perlLanguage.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Git") {
-					gitLanguage.setIcon(purple);
+				if (d.getName().equals("Git")) {
+					gitLanguage.setIcon(yellow);
 					gitLanguage.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Papa Johns") {
-					papajohnsPizza.setIcon(purple);
+				if (d.getName().equals("Papa Johns")) {
+					papajohnsPizza.setIcon(yellow);
 					papajohnsPizza.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Dominos") {
-					dominosPizza.setIcon(purple);
+				if (d.getName().equals("Dominos")) {
+					dominosPizza.setIcon(yellow);
 					dominosPizza.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "PizzaHut") {
-					pizzahutPizza.setIcon(purple);
+				if (d.getName().equals("PizzaHut")) {
+					pizzahutPizza.setIcon(yellow);
 					pizzahutPizza.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Black Jack") {
-					blackjackPizza.setIcon(purple);
+				if (d.getName().equals("Black Jack")) {
+					blackjackPizza.setIcon(yellow);
 					blackjackPizza.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Hungry Howie's") {
-					hungryhowiesPizza.setIcon(purple);
+				if (d.getName().equals("Hungry Howie's")) {
+					hungryhowiesPizza.setIcon(yellow);
 					hungryhowiesPizza.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Brooklyn's") {
-					brooklynPizza.setIcon(purple);
+				if (d.getName().equals("Brooklyn's")) {
+					brooklynPizza.setIcon(yellow);
 					brooklynPizza.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Pizza Planet") {
-					pizzaplanetPizza.setIcon(purple);
+				if (d.getName().equals("Pizza Planet")) {
+					pizzaplanetPizza.setIcon(yellow);
 					pizzaplanetPizza.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Rawrville") {
-					rawrvilleDino.setIcon(purple);
+				if (d.getName().equals("Rawrville")) {
+					rawrvilleDino.setIcon(yellow);
 					rawrvilleDino.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Laiegges") {
-					laieggesDino.setIcon(purple);
+				if (d.getName().equals("Laiegges")) {
+					laieggesDino.setIcon(yellow);
 					laieggesDino.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Dactilito") {
-					dactilitoDino.setIcon(purple);
+				if (d.getName().equals("Dactilito")) {
+					dactilitoDino.setIcon(yellow);
 					dactilitoDino.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Dirtydan") {
-					dirtydanDino.setIcon(purple);
+				if (d.getName().equals("Dirtydan")) {
+					dirtydanDino.setIcon(yellow);
 					dirtydanDino.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "BlackBeard") {
-					blackbeardDino.setIcon(purple);
+				if (d.getName().equals("BlackBeard")) {
+					blackbeardDino.setIcon(yellow);
 					blackbeardDino.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Monisaurus") {
-					monisaurusDino.setIcon(purple);
+				if (d.getName().equals("Monisaurus")) {
+					monisaurusDino.setIcon(yellow);
 					monisaurusDino.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "ToyStory") {
-					toystoryDino.setIcon(purple);
+				if (d.getName().equals("ToyStory")) {
+					toystoryDino.setIcon(yellow);
 					toystoryDino.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Scraptopia") {
-					scraptopiaCresent.setIcon(purple);
+				if (d.getName().equals("Scraptopia")) {
+					scraptopiaCresent.setIcon(yellow);
 					scraptopiaCresent.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Land of Zach") {
-					landofzachCresent.setIcon(purple);
+				if (d.getName().equals("Land of Zach")) {
+					landofzachCresent.setIcon(yellow);
 					landofzachCresent.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Giant") {
-					giantCresent.setIcon(purple);
+				if (d.getName().equals("Giant")) {
+					giantCresent.setIcon(yellow);
 					giantCresent.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "New Land of Zach") {
-					newlandofzachCresent.setIcon(purple);
+				if (d.getName().equals("New Land of Zach")) {
+					newlandofzachCresent.setIcon(yellow);
 					newlandofzachCresent.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "South Scraptopia") {
-					southscraptopiaCresent.setIcon(purple);
+				if (d.getName().equals("South Scraptopia")) {
+					southscraptopiaCresent.setIcon(yellow);
 					southscraptopiaCresent.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Bloo Bawl") {
-					bloobawlCresent.setIcon(purple);
+				if (d.getName().equals("Bloo Bawl")) {
+					bloobawlCresent.setIcon(yellow);
 					bloobawlCresent.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Cresent Capital") {
-					cresentcaptitalCresent.setIcon(purple);
+				if (d.getName().equals("Cresent Capital")) {
+					cresentcaptitalCresent.setIcon(yellow);
 					cresentcaptitalCresent.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Apollo") {
-					apolloSun.setIcon(purple);
+				if (d.getName().equals("Apollo")) {
+					apolloSun.setIcon(yellow);
 					apolloSun.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Ra") {
-					raSun.setIcon(purple);
+				if (d.getName().equals("Ra")) {
+					raSun.setIcon(yellow);
 					raSun.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Helios") {
-					heliosSun.setIcon(purple);
+				if (d.getName().equals("Helios")) {
+					heliosSun.setIcon(yellow);
 					heliosSun.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Inti") {
-					intiSun.setIcon(purple);
+				if (d.getName().equals("Inti")) {
+					intiSun.setIcon(yellow);
 					intiSun.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Horus") {
-					horusSun.setIcon(purple);
+				if (d.getName().equals("Horus")) {
+					horusSun.setIcon(yellow);
 					horusSun.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Tonatiuh") {
-					tonatiuhSun.setIcon(purple);
+				if (d.getName().equals("Tonatiuh")) {
+					tonatiuhSun.setIcon(yellow);
 					tonatiuhSun.setName(newGame.getPlayerAt(4).getName());
 				}
-				if (d.getName() == "Amun") {
-					amunSun.setIcon(purple);
+				if (d.getName().equals("Amun")) {
+					amunSun.setIcon(yellow);
 					amunSun.setName(newGame.getPlayerAt(4).getName());
 				}
+
 			}
 		}
 		if (newGame.getNumOfPlayers() == 4) {
 			for (Territory d : player1.getTerritories()) {
-				if (d.getName() == "Wilma") {
+				if (d.getName().equals("Wilma")) {
 					wilmaWildcat.setName(newGame.getPlayerAt(0).getName());
 					wilmaWildcat.setIcon(yellow);
 				}
-				if (d.getName() == "Zona") {
+				if (d.getName().equals("Zona")) {
 					zonaWildcat.setIcon(yellow);
 					zonaWildcat.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Wilber") {
+				if (d.getName().equals("Wilber")) {
 					wilberWildcat.setIcon(yellow);
 					wilberWildcat.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Rich") {
+				if (d.getName().equals("Rich")) {
 					richWildcat.setIcon(yellow);
 					richWildcat.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Miller") {
+				if (d.getName().equals("Miller")) {
 					millerWildcat.setIcon(yellow);
 					millerWildcat.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "McKale") {
+				if (d.getName().equals("McKale")) {
 					mckaleWildcat.setIcon(yellow);
 					mckaleWildcat.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Scooby") {
+				if (d.getName().equals("Scooby")) {
 					scoobyWildcat.setIcon(yellow);
 					scoobyWildcat.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Java") {
+				if (d.getName().equals("Java")) {
 					javaLanguage.setIcon(yellow);
 					javaLanguage.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Python") {
+				if (d.getName().equals("Python")) {
 					pythonLanguage.setIcon(yellow);
 					pythonLanguage.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "C") {
+				if (d.getName().equals("C")) {
 					cLanguage.setIcon(yellow);
 					cLanguage.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "SQL") {
+				if (d.getName().equals("SQL")) {
 					sqlLanguage.setIcon(yellow);
 					sqlLanguage.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Ruby") {
+				if (d.getName().equals("Ruby")) {
 					rubyLanguage.setIcon(yellow);
 					rubyLanguage.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Perl") {
+				if (d.getName().equals("Perl")) {
 					perlLanguage.setIcon(yellow);
 					perlLanguage.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Git") {
+				if (d.getName().equals("Git")) {
 					gitLanguage.setIcon(yellow);
 					gitLanguage.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Papa Johns") {
+				if (d.getName().equals("Papa Johns")) {
 					papajohnsPizza.setIcon(yellow);
 					papajohnsPizza.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Dominos") {
+				if (d.getName().equals("Dominos")) {
 					dominosPizza.setIcon(yellow);
 					dominosPizza.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "PizzaHut") {
+				if (d.getName().equals("PizzaHut")) {
 					pizzahutPizza.setIcon(yellow);
 					pizzahutPizza.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Black Jack") {
+				if (d.getName().equals("Black Jack")) {
 					blackjackPizza.setIcon(yellow);
 					blackjackPizza.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Hungry Howie's") {
+				if (d.getName().equals("Hungry Howie's")) {
 					hungryhowiesPizza.setIcon(yellow);
 					hungryhowiesPizza.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Brooklyn's") {
+				if (d.getName().equals("Brooklyn's")) {
 					brooklynPizza.setIcon(yellow);
 					brooklynPizza.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Pizza Planet") {
+				if (d.getName().equals("Pizza Planet")) {
 					pizzaplanetPizza.setIcon(yellow);
 					pizzaplanetPizza.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Rawrville") {
+				if (d.getName().equals("Rawrville")) {
 					rawrvilleDino.setIcon(yellow);
 					rawrvilleDino.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Laiegges") {
+				if (d.getName().equals("Laiegges")) {
 					laieggesDino.setIcon(yellow);
 					laieggesDino.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Dactilito") {
+				if (d.getName().equals("Dactilito")) {
 					dactilitoDino.setIcon(yellow);
 					dactilitoDino.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Dirtydan") {
+				if (d.getName().equals("Dirtydan")) {
 					dirtydanDino.setIcon(yellow);
 					dirtydanDino.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "BlackBeard") {
+				if (d.getName().equals("BlackBeard")) {
 					blackbeardDino.setIcon(yellow);
 					blackbeardDino.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Monisaurus") {
+				if (d.getName().equals("Monisaurus")) {
 					monisaurusDino.setIcon(yellow);
 					monisaurusDino.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "ToyStory") {
+				if (d.getName().equals("ToyStory")) {
 					toystoryDino.setIcon(yellow);
 					toystoryDino.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Scraptopia") {
+				if (d.getName().equals("Scraptopia")) {
 					scraptopiaCresent.setIcon(yellow);
 					scraptopiaCresent.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Land of Zach") {
+				if (d.getName().equals("Land of Zach")) {
 					landofzachCresent.setIcon(yellow);
 					landofzachCresent.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Giant") {
+				if (d.getName().equals("Giant")) {
 					giantCresent.setIcon(yellow);
 					giantCresent.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "New Land of Zach") {
+				if (d.getName().equals("New Land of Zach")) {
 					newlandofzachCresent.setIcon(yellow);
 					newlandofzachCresent.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "South Scraptopia") {
+				if (d.getName().equals("South Scraptopia")) {
 					southscraptopiaCresent.setIcon(yellow);
 					southscraptopiaCresent.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Bloo Bawl") {
+				if (d.getName().equals("Bloo Bawl")) {
 					bloobawlCresent.setIcon(yellow);
 					bloobawlCresent.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Cresent Capital") {
+				if (d.getName().equals("Cresent Capital")) {
 					cresentcaptitalCresent.setIcon(yellow);
 					cresentcaptitalCresent.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Apollo") {
+				if (d.getName().equals("Apollo")) {
 					apolloSun.setIcon(yellow);
 					apolloSun.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Ra") {
+				if (d.getName().equals("Ra")) {
 					raSun.setIcon(yellow);
 					raSun.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Helios") {
+				if (d.getName().equals("Helios")) {
 					heliosSun.setIcon(yellow);
 					heliosSun.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Inti") {
+				if (d.getName().equals("Inti")) {
 					intiSun.setIcon(yellow);
 					intiSun.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Horus") {
+				if (d.getName().equals("Horus")) {
 					horusSun.setIcon(yellow);
 					horusSun.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Tonatiuh") {
+				if (d.getName().equals("Tonatiuh")) {
 					tonatiuhSun.setIcon(yellow);
 					tonatiuhSun.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Amun") {
+				if (d.getName().equals("Amun")) {
 					amunSun.setIcon(yellow);
 					amunSun.setName(newGame.getPlayerAt(0).getName());
 				}
@@ -11360,516 +11366,516 @@ public class GameBoard extends JPanel {
 				}
 			}
 			for (Territory d : player3.getTerritories()) {
-				if (d.getName() == "Wilma") {
-					wilmaWildcat.setIcon(orange);
+				if (d.getName().equals("Wilma")) {
 					wilmaWildcat.setName(newGame.getPlayerAt(2).getName());
+					wilmaWildcat.setIcon(yellow);
 				}
-				if (d.getName() == "Zona") {
-					zonaWildcat.setIcon(orange);
+				if (d.getName().equals("Zona")) {
+					zonaWildcat.setIcon(yellow);
 					zonaWildcat.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Wilber") {
-					wilberWildcat.setIcon(orange);
+				if (d.getName().equals("Wilber")) {
+					wilberWildcat.setIcon(yellow);
 					wilberWildcat.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Rich") {
-					richWildcat.setIcon(orange);
+				if (d.getName().equals("Rich")) {
+					richWildcat.setIcon(yellow);
 					richWildcat.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Miller") {
-					millerWildcat.setIcon(orange);
+				if (d.getName().equals("Miller")) {
+					millerWildcat.setIcon(yellow);
 					millerWildcat.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "McKale") {
-					mckaleWildcat.setIcon(orange);
+				if (d.getName().equals("McKale")) {
+					mckaleWildcat.setIcon(yellow);
 					mckaleWildcat.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Scooby") {
-					scoobyWildcat.setIcon(orange);
+				if (d.getName().equals("Scooby")) {
+					scoobyWildcat.setIcon(yellow);
 					scoobyWildcat.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Java") {
-					javaLanguage.setIcon(orange);
+				if (d.getName().equals("Java")) {
+					javaLanguage.setIcon(yellow);
 					javaLanguage.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Python") {
-					pythonLanguage.setIcon(orange);
+				if (d.getName().equals("Python")) {
+					pythonLanguage.setIcon(yellow);
 					pythonLanguage.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "C") {
-					cLanguage.setIcon(orange);
+				if (d.getName().equals("C")) {
+					cLanguage.setIcon(yellow);
 					cLanguage.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "SQL") {
-					sqlLanguage.setIcon(orange);
+				if (d.getName().equals("SQL")) {
+					sqlLanguage.setIcon(yellow);
 					sqlLanguage.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Ruby") {
-					rubyLanguage.setIcon(orange);
+				if (d.getName().equals("Ruby")) {
+					rubyLanguage.setIcon(yellow);
 					rubyLanguage.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Perl") {
-					perlLanguage.setIcon(orange);
+				if (d.getName().equals("Perl")) {
+					perlLanguage.setIcon(yellow);
 					perlLanguage.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Git") {
-					gitLanguage.setIcon(orange);
+				if (d.getName().equals("Git")) {
+					gitLanguage.setIcon(yellow);
 					gitLanguage.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Papa Johns") {
-					papajohnsPizza.setIcon(orange);
+				if (d.getName().equals("Papa Johns")) {
+					papajohnsPizza.setIcon(yellow);
 					papajohnsPizza.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Dominos") {
-					dominosPizza.setIcon(orange);
+				if (d.getName().equals("Dominos")) {
+					dominosPizza.setIcon(yellow);
 					dominosPizza.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "PizzaHut") {
-					pizzahutPizza.setIcon(orange);
+				if (d.getName().equals("PizzaHut")) {
+					pizzahutPizza.setIcon(yellow);
 					pizzahutPizza.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Black Jack") {
-					blackjackPizza.setIcon(orange);
+				if (d.getName().equals("Black Jack")) {
+					blackjackPizza.setIcon(yellow);
 					blackjackPizza.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Hungry Howie's") {
-					hungryhowiesPizza.setIcon(orange);
+				if (d.getName().equals("Hungry Howie's")) {
+					hungryhowiesPizza.setIcon(yellow);
 					hungryhowiesPizza.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Brooklyn's") {
-					brooklynPizza.setIcon(orange);
+				if (d.getName().equals("Brooklyn's")) {
+					brooklynPizza.setIcon(yellow);
 					brooklynPizza.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Pizza Planet") {
-					pizzaplanetPizza.setIcon(orange);
+				if (d.getName().equals("Pizza Planet")) {
+					pizzaplanetPizza.setIcon(yellow);
 					pizzaplanetPizza.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Rawrville") {
-					rawrvilleDino.setIcon(orange);
+				if (d.getName().equals("Rawrville")) {
+					rawrvilleDino.setIcon(yellow);
 					rawrvilleDino.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Laiegges") {
-					laieggesDino.setIcon(orange);
+				if (d.getName().equals("Laiegges")) {
+					laieggesDino.setIcon(yellow);
 					laieggesDino.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Dactilito") {
-					dactilitoDino.setIcon(orange);
+				if (d.getName().equals("Dactilito")) {
+					dactilitoDino.setIcon(yellow);
 					dactilitoDino.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Dirtydan") {
-					dirtydanDino.setIcon(orange);
+				if (d.getName().equals("Dirtydan")) {
+					dirtydanDino.setIcon(yellow);
 					dirtydanDino.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "BlackBeard") {
-					blackbeardDino.setIcon(orange);
+				if (d.getName().equals("BlackBeard")) {
+					blackbeardDino.setIcon(yellow);
 					blackbeardDino.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Monisaurus") {
-					monisaurusDino.setIcon(orange);
+				if (d.getName().equals("Monisaurus")) {
+					monisaurusDino.setIcon(yellow);
 					monisaurusDino.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "ToyStory") {
-					toystoryDino.setIcon(orange);
+				if (d.getName().equals("ToyStory")) {
+					toystoryDino.setIcon(yellow);
 					toystoryDino.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Scraptopia") {
-					scraptopiaCresent.setIcon(orange);
+				if (d.getName().equals("Scraptopia")) {
+					scraptopiaCresent.setIcon(yellow);
 					scraptopiaCresent.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Land of Zach") {
-					landofzachCresent.setIcon(orange);
+				if (d.getName().equals("Land of Zach")) {
+					landofzachCresent.setIcon(yellow);
 					landofzachCresent.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Giant") {
-					giantCresent.setIcon(orange);
+				if (d.getName().equals("Giant")) {
+					giantCresent.setIcon(yellow);
 					giantCresent.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "New Land of Zach") {
-					newlandofzachCresent.setIcon(orange);
+				if (d.getName().equals("New Land of Zach")) {
+					newlandofzachCresent.setIcon(yellow);
 					newlandofzachCresent.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "South Scraptopia") {
-					southscraptopiaCresent.setIcon(orange);
+				if (d.getName().equals("South Scraptopia")) {
+					southscraptopiaCresent.setIcon(yellow);
 					southscraptopiaCresent.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Bloo Bawl") {
-					bloobawlCresent.setIcon(orange);
+				if (d.getName().equals("Bloo Bawl")) {
+					bloobawlCresent.setIcon(yellow);
 					bloobawlCresent.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Cresent Capital") {
-					cresentcaptitalCresent.setIcon(orange);
+				if (d.getName().equals("Cresent Capital")) {
+					cresentcaptitalCresent.setIcon(yellow);
 					cresentcaptitalCresent.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Apollo") {
-					apolloSun.setIcon(orange);
+				if (d.getName().equals("Apollo")) {
+					apolloSun.setIcon(yellow);
 					apolloSun.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Ra") {
-					raSun.setIcon(orange);
+				if (d.getName().equals("Ra")) {
+					raSun.setIcon(yellow);
 					raSun.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Helios") {
-					heliosSun.setIcon(orange);
+				if (d.getName().equals("Helios")) {
+					heliosSun.setIcon(yellow);
 					heliosSun.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Inti") {
-					intiSun.setIcon(orange);
+				if (d.getName().equals("Inti")) {
+					intiSun.setIcon(yellow);
 					intiSun.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Horus") {
-					horusSun.setIcon(orange);
+				if (d.getName().equals("Horus")) {
+					horusSun.setIcon(yellow);
 					horusSun.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Tonatiuh") {
-					tonatiuhSun.setIcon(orange);
+				if (d.getName().equals("Tonatiuh")) {
+					tonatiuhSun.setIcon(yellow);
 					tonatiuhSun.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Amun") {
-					amunSun.setIcon(orange);
+				if (d.getName().equals("Amun")) {
+					amunSun.setIcon(yellow);
 					amunSun.setName(newGame.getPlayerAt(2).getName());
 				}
+
 			}
 
 			for (Territory d : player4.getTerritories()) {
-
-				if (d.getName() == "Wilma") {
-					wilmaWildcat.setIcon(red);
+				if (d.getName().equals("Wilma")) {
 					wilmaWildcat.setName(newGame.getPlayerAt(3).getName());
+					wilmaWildcat.setIcon(yellow);
 				}
-				if (d.getName() == "Zona") {
-					zonaWildcat.setIcon(red);
+				if (d.getName().equals("Zona")) {
+					zonaWildcat.setIcon(yellow);
 					zonaWildcat.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Wilber") {
-					wilberWildcat.setIcon(red);
+				if (d.getName().equals("Wilber")) {
+					wilberWildcat.setIcon(yellow);
 					wilberWildcat.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Rich") {
-					richWildcat.setIcon(red);
+				if (d.getName().equals("Rich")) {
+					richWildcat.setIcon(yellow);
 					richWildcat.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Miller") {
-					millerWildcat.setIcon(red);
+				if (d.getName().equals("Miller")) {
+					millerWildcat.setIcon(yellow);
 					millerWildcat.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "McKale") {
-					mckaleWildcat.setIcon(red);
+				if (d.getName().equals("McKale")) {
+					mckaleWildcat.setIcon(yellow);
 					mckaleWildcat.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Scooby") {
-					scoobyWildcat.setIcon(red);
+				if (d.getName().equals("Scooby")) {
+					scoobyWildcat.setIcon(yellow);
 					scoobyWildcat.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Java") {
-					
-					javaLanguage.setIcon(red);
+				if (d.getName().equals("Java")) {
+					javaLanguage.setIcon(yellow);
 					javaLanguage.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Python") {
-					pythonLanguage.setIcon(red);
+				if (d.getName().equals("Python")) {
+					pythonLanguage.setIcon(yellow);
 					pythonLanguage.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "C") {
-					cLanguage.setIcon(red);
+				if (d.getName().equals("C")) {
+					cLanguage.setIcon(yellow);
 					cLanguage.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "SQL") {
-					sqlLanguage.setIcon(red);
+				if (d.getName().equals("SQL")) {
+					sqlLanguage.setIcon(yellow);
 					sqlLanguage.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Ruby") {
-					rubyLanguage.setIcon(red);
+				if (d.getName().equals("Ruby")) {
+					rubyLanguage.setIcon(yellow);
 					rubyLanguage.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Perl") {
-					perlLanguage.setIcon(red);
+				if (d.getName().equals("Perl")) {
+					perlLanguage.setIcon(yellow);
 					perlLanguage.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Git") {
-					gitLanguage.setIcon(red);
+				if (d.getName().equals("Git")) {
+					gitLanguage.setIcon(yellow);
 					gitLanguage.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Papa Johns") {
-					papajohnsPizza.setIcon(red);
+				if (d.getName().equals("Papa Johns")) {
+					papajohnsPizza.setIcon(yellow);
 					papajohnsPizza.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Dominos") {
-					dominosPizza.setIcon(red);
+				if (d.getName().equals("Dominos")) {
+					dominosPizza.setIcon(yellow);
 					dominosPizza.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "PizzaHut") {
-					pizzahutPizza.setIcon(red);
+				if (d.getName().equals("PizzaHut")) {
+					pizzahutPizza.setIcon(yellow);
 					pizzahutPizza.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Black Jack") {
-					blackjackPizza.setIcon(red);
+				if (d.getName().equals("Black Jack")) {
+					blackjackPizza.setIcon(yellow);
 					blackjackPizza.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Hungry Howie's") {
-					hungryhowiesPizza.setIcon(red);
+				if (d.getName().equals("Hungry Howie's")) {
+					hungryhowiesPizza.setIcon(yellow);
 					hungryhowiesPizza.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Brooklyn's") {
-					brooklynPizza.setIcon(red);
+				if (d.getName().equals("Brooklyn's")) {
+					brooklynPizza.setIcon(yellow);
 					brooklynPizza.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Pizza Planet") {
-					pizzaplanetPizza.setIcon(red);
+				if (d.getName().equals("Pizza Planet")) {
+					pizzaplanetPizza.setIcon(yellow);
 					pizzaplanetPizza.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Rawrville") {
-					rawrvilleDino.setIcon(red);
+				if (d.getName().equals("Rawrville")) {
+					rawrvilleDino.setIcon(yellow);
 					rawrvilleDino.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Laiegges") {
-					laieggesDino.setIcon(red);
+				if (d.getName().equals("Laiegges")) {
+					laieggesDino.setIcon(yellow);
 					laieggesDino.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Dactilito") {
-					dactilitoDino.setIcon(red);
+				if (d.getName().equals("Dactilito")) {
+					dactilitoDino.setIcon(yellow);
 					dactilitoDino.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Dirtydan") {
-					dirtydanDino.setIcon(red);
+				if (d.getName().equals("Dirtydan")) {
+					dirtydanDino.setIcon(yellow);
 					dirtydanDino.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "BlackBeard") {
-					blackbeardDino.setIcon(red);
+				if (d.getName().equals("BlackBeard")) {
+					blackbeardDino.setIcon(yellow);
 					blackbeardDino.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Monisaurus") {
-					monisaurusDino.setIcon(red);
+				if (d.getName().equals("Monisaurus")) {
+					monisaurusDino.setIcon(yellow);
 					monisaurusDino.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "ToyStory") {
-					toystoryDino.setIcon(red);
+				if (d.getName().equals("ToyStory")) {
+					toystoryDino.setIcon(yellow);
 					toystoryDino.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Scraptopia") {
-					scraptopiaCresent.setIcon(red);
+				if (d.getName().equals("Scraptopia")) {
+					scraptopiaCresent.setIcon(yellow);
 					scraptopiaCresent.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Land of Zach") {
-					landofzachCresent.setIcon(red);
+				if (d.getName().equals("Land of Zach")) {
+					landofzachCresent.setIcon(yellow);
 					landofzachCresent.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Giant") {
-					giantCresent.setIcon(red);
+				if (d.getName().equals("Giant")) {
+					giantCresent.setIcon(yellow);
 					giantCresent.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "New Land of Zach") {
-					newlandofzachCresent.setIcon(red);
+				if (d.getName().equals("New Land of Zach")) {
+					newlandofzachCresent.setIcon(yellow);
 					newlandofzachCresent.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "South Scraptopia") {
-					southscraptopiaCresent.setIcon(red);
+				if (d.getName().equals("South Scraptopia")) {
+					southscraptopiaCresent.setIcon(yellow);
 					southscraptopiaCresent.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Bloo Bawl") {
-					bloobawlCresent.setIcon(red);
+				if (d.getName().equals("Bloo Bawl")) {
+					bloobawlCresent.setIcon(yellow);
 					bloobawlCresent.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Cresent Capital") {
-					cresentcaptitalCresent.setIcon(red);
+				if (d.getName().equals("Cresent Capital")) {
+					cresentcaptitalCresent.setIcon(yellow);
 					cresentcaptitalCresent.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Apollo") {
-					apolloSun.setIcon(red);
+				if (d.getName().equals("Apollo")) {
+					apolloSun.setIcon(yellow);
 					apolloSun.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Ra") {
-					raSun.setIcon(red);
+				if (d.getName().equals("Ra")) {
+					raSun.setIcon(yellow);
 					raSun.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Helios") {
-					heliosSun.setIcon(red);
+				if (d.getName().equals("Helios")) {
+					heliosSun.setIcon(yellow);
 					heliosSun.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Inti") {
-					intiSun.setIcon(red);
+				if (d.getName().equals("Inti")) {
+					intiSun.setIcon(yellow);
 					intiSun.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Horus") {
-					horusSun.setIcon(red);
+				if (d.getName().equals("Horus")) {
+					horusSun.setIcon(yellow);
 					horusSun.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Tonatiuh") {
-					tonatiuhSun.setIcon(red);
+				if (d.getName().equals("Tonatiuh")) {
+					tonatiuhSun.setIcon(yellow);
 					tonatiuhSun.setName(newGame.getPlayerAt(3).getName());
 				}
-				if (d.getName() == "Amun") {
-					amunSun.setIcon(red);
+				if (d.getName().equals("Amun")) {
+					amunSun.setIcon(yellow);
 					amunSun.setName(newGame.getPlayerAt(3).getName());
 				}
+
 			}
 		}
 		if (newGame.getNumOfPlayers() == 3) {
 			for (Territory d : player1.getTerritories()) {
-				if (d.getName() == "Wilma") {
+				if (d.getName().equals("Wilma")) {
 					wilmaWildcat.setName(newGame.getPlayerAt(0).getName());
 					wilmaWildcat.setIcon(yellow);
 				}
-				if (d.getName() == "Zona") {
+				if (d.getName().equals("Zona")) {
 					zonaWildcat.setIcon(yellow);
 					zonaWildcat.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Wilber") {
+				if (d.getName().equals("Wilber")) {
 					wilberWildcat.setIcon(yellow);
 					wilberWildcat.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Rich") {
+				if (d.getName().equals("Rich")) {
 					richWildcat.setIcon(yellow);
 					richWildcat.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Miller") {
+				if (d.getName().equals("Miller")) {
 					millerWildcat.setIcon(yellow);
 					millerWildcat.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "McKale") {
+				if (d.getName().equals("McKale")) {
 					mckaleWildcat.setIcon(yellow);
 					mckaleWildcat.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Scooby") {
+				if (d.getName().equals("Scooby")) {
 					scoobyWildcat.setIcon(yellow);
 					scoobyWildcat.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Java") {
+				if (d.getName().equals("Java")) {
 					javaLanguage.setIcon(yellow);
 					javaLanguage.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Python") {
+				if (d.getName().equals("Python")) {
 					pythonLanguage.setIcon(yellow);
 					pythonLanguage.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "C") {
+				if (d.getName().equals("C")) {
 					cLanguage.setIcon(yellow);
 					cLanguage.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "SQL") {
+				if (d.getName().equals("SQL")) {
 					sqlLanguage.setIcon(yellow);
 					sqlLanguage.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Ruby") {
+				if (d.getName().equals("Ruby")) {
 					rubyLanguage.setIcon(yellow);
 					rubyLanguage.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Perl") {
+				if (d.getName().equals("Perl")) {
 					perlLanguage.setIcon(yellow);
 					perlLanguage.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Git") {
+				if (d.getName().equals("Git")) {
 					gitLanguage.setIcon(yellow);
 					gitLanguage.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Papa Johns") {
+				if (d.getName().equals("Papa Johns")) {
 					papajohnsPizza.setIcon(yellow);
 					papajohnsPizza.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Dominos") {
+				if (d.getName().equals("Dominos")) {
 					dominosPizza.setIcon(yellow);
 					dominosPizza.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "PizzaHut") {
+				if (d.getName().equals("PizzaHut")) {
 					pizzahutPizza.setIcon(yellow);
 					pizzahutPizza.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Black Jack") {
+				if (d.getName().equals("Black Jack")) {
 					blackjackPizza.setIcon(yellow);
 					blackjackPizza.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Hungry Howie's") {
+				if (d.getName().equals("Hungry Howie's")) {
 					hungryhowiesPizza.setIcon(yellow);
 					hungryhowiesPizza.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Brooklyn's") {
+				if (d.getName().equals("Brooklyn's")) {
 					brooklynPizza.setIcon(yellow);
 					brooklynPizza.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Pizza Planet") {
+				if (d.getName().equals("Pizza Planet")) {
 					pizzaplanetPizza.setIcon(yellow);
 					pizzaplanetPizza.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Rawrville") {
+				if (d.getName().equals("Rawrville")) {
 					rawrvilleDino.setIcon(yellow);
 					rawrvilleDino.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Laiegges") {
+				if (d.getName().equals("Laiegges")) {
 					laieggesDino.setIcon(yellow);
 					laieggesDino.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Dactilito") {
+				if (d.getName().equals("Dactilito")) {
 					dactilitoDino.setIcon(yellow);
 					dactilitoDino.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Dirtydan") {
+				if (d.getName().equals("Dirtydan")) {
 					dirtydanDino.setIcon(yellow);
 					dirtydanDino.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "BlackBeard") {
+				if (d.getName().equals("BlackBeard")) {
 					blackbeardDino.setIcon(yellow);
 					blackbeardDino.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Monisaurus") {
+				if (d.getName().equals("Monisaurus")) {
 					monisaurusDino.setIcon(yellow);
 					monisaurusDino.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "ToyStory") {
+				if (d.getName().equals("ToyStory")) {
 					toystoryDino.setIcon(yellow);
 					toystoryDino.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Scraptopia") {
+				if (d.getName().equals("Scraptopia")) {
 					scraptopiaCresent.setIcon(yellow);
 					scraptopiaCresent.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Land of Zach") {
+				if (d.getName().equals("Land of Zach")) {
 					landofzachCresent.setIcon(yellow);
 					landofzachCresent.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Giant") {
+				if (d.getName().equals("Giant")) {
 					giantCresent.setIcon(yellow);
 					giantCresent.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "New Land of Zach") {
+				if (d.getName().equals("New Land of Zach")) {
 					newlandofzachCresent.setIcon(yellow);
 					newlandofzachCresent.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "South Scraptopia") {
+				if (d.getName().equals("South Scraptopia")) {
 					southscraptopiaCresent.setIcon(yellow);
 					southscraptopiaCresent.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Bloo Bawl") {
+				if (d.getName().equals("Bloo Bawl")) {
 					bloobawlCresent.setIcon(yellow);
 					bloobawlCresent.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Cresent Capital") {
+				if (d.getName().equals("Cresent Capital")) {
 					cresentcaptitalCresent.setIcon(yellow);
 					cresentcaptitalCresent.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Apollo") {
+				if (d.getName().equals("Apollo")) {
 					apolloSun.setIcon(yellow);
 					apolloSun.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Ra") {
+				if (d.getName().equals("Ra")) {
 					raSun.setIcon(yellow);
 					raSun.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Helios") {
+				if (d.getName().equals("Helios")) {
 					heliosSun.setIcon(yellow);
 					heliosSun.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Inti") {
+				if (d.getName().equals("Inti")) {
 					intiSun.setIcon(yellow);
 					intiSun.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Horus") {
+				if (d.getName().equals("Horus")) {
 					horusSun.setIcon(yellow);
 					horusSun.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Tonatiuh") {
+				if (d.getName().equals("Tonatiuh")) {
 					tonatiuhSun.setIcon(yellow);
 					tonatiuhSun.setName(newGame.getPlayerAt(0).getName());
 				}
-				if (d.getName() == "Amun") {
+				if (d.getName().equals("Amun")) {
 					amunSun.setIcon(yellow);
 					amunSun.setName(newGame.getPlayerAt(0).getName());
 				}
@@ -12047,174 +12053,175 @@ public class GameBoard extends JPanel {
 				}
 			}
 			for (Territory d : player3.getTerritories()) {
-				if (d.getName() == "Wilma") {
-					wilmaWildcat.setIcon(orange);
+				if (d.getName().equals("Wilma")) {
 					wilmaWildcat.setName(newGame.getPlayerAt(2).getName());
+					wilmaWildcat.setIcon(yellow);
 				}
-				if (d.getName() == "Zona") {
-					zonaWildcat.setIcon(orange);
+				if (d.getName().equals("Zona")) {
+					zonaWildcat.setIcon(yellow);
 					zonaWildcat.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Wilber") {
-					wilberWildcat.setIcon(orange);
+				if (d.getName().equals("Wilber")) {
+					wilberWildcat.setIcon(yellow);
 					wilberWildcat.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Rich") {
-					richWildcat.setIcon(orange);
+				if (d.getName().equals("Rich")) {
+					richWildcat.setIcon(yellow);
 					richWildcat.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Miller") {
-					millerWildcat.setIcon(orange);
+				if (d.getName().equals("Miller")) {
+					millerWildcat.setIcon(yellow);
 					millerWildcat.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "McKale") {
-					mckaleWildcat.setIcon(orange);
+				if (d.getName().equals("McKale")) {
+					mckaleWildcat.setIcon(yellow);
 					mckaleWildcat.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Scooby") {
-					scoobyWildcat.setIcon(orange);
+				if (d.getName().equals("Scooby")) {
+					scoobyWildcat.setIcon(yellow);
 					scoobyWildcat.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Java") {
-					javaLanguage.setIcon(orange);
+				if (d.getName().equals("Java")) {
+					javaLanguage.setIcon(yellow);
 					javaLanguage.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Python") {
-					pythonLanguage.setIcon(orange);
+				if (d.getName().equals("Python")) {
+					pythonLanguage.setIcon(yellow);
 					pythonLanguage.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "C") {
-					cLanguage.setIcon(orange);
+				if (d.getName().equals("C")) {
+					cLanguage.setIcon(yellow);
 					cLanguage.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "SQL") {
-					sqlLanguage.setIcon(orange);
+				if (d.getName().equals("SQL")) {
+					sqlLanguage.setIcon(yellow);
 					sqlLanguage.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Ruby") {
-					rubyLanguage.setIcon(orange);
+				if (d.getName().equals("Ruby")) {
+					rubyLanguage.setIcon(yellow);
 					rubyLanguage.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Perl") {
-					perlLanguage.setIcon(orange);
+				if (d.getName().equals("Perl")) {
+					perlLanguage.setIcon(yellow);
 					perlLanguage.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Git") {
-					gitLanguage.setIcon(orange);
+				if (d.getName().equals("Git")) {
+					gitLanguage.setIcon(yellow);
 					gitLanguage.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Papa Johns") {
-					papajohnsPizza.setIcon(orange);
+				if (d.getName().equals("Papa Johns")) {
+					papajohnsPizza.setIcon(yellow);
 					papajohnsPizza.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Dominos") {
-					dominosPizza.setIcon(orange);
+				if (d.getName().equals("Dominos")) {
+					dominosPizza.setIcon(yellow);
 					dominosPizza.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "PizzaHut") {
-					pizzahutPizza.setIcon(orange);
+				if (d.getName().equals("PizzaHut")) {
+					pizzahutPizza.setIcon(yellow);
 					pizzahutPizza.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Black Jack") {
-					blackjackPizza.setIcon(orange);
+				if (d.getName().equals("Black Jack")) {
+					blackjackPizza.setIcon(yellow);
 					blackjackPizza.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Hungry Howie's") {
-					hungryhowiesPizza.setIcon(orange);
+				if (d.getName().equals("Hungry Howie's")) {
+					hungryhowiesPizza.setIcon(yellow);
 					hungryhowiesPizza.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Brooklyn's") {
-					brooklynPizza.setIcon(orange);
+				if (d.getName().equals("Brooklyn's")) {
+					brooklynPizza.setIcon(yellow);
 					brooklynPizza.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Pizza Planet") {
-					pizzaplanetPizza.setIcon(orange);
+				if (d.getName().equals("Pizza Planet")) {
+					pizzaplanetPizza.setIcon(yellow);
 					pizzaplanetPizza.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Rawrville") {
-					rawrvilleDino.setIcon(orange);
+				if (d.getName().equals("Rawrville")) {
+					rawrvilleDino.setIcon(yellow);
 					rawrvilleDino.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Laiegges") {
-					laieggesDino.setIcon(orange);
+				if (d.getName().equals("Laiegges")) {
+					laieggesDino.setIcon(yellow);
 					laieggesDino.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Dactilito") {
-					dactilitoDino.setIcon(orange);
+				if (d.getName().equals("Dactilito")) {
+					dactilitoDino.setIcon(yellow);
 					dactilitoDino.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Dirtydan") {
-					dirtydanDino.setIcon(orange);
+				if (d.getName().equals("Dirtydan")) {
+					dirtydanDino.setIcon(yellow);
 					dirtydanDino.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "BlackBeard") {
-					blackbeardDino.setIcon(orange);
+				if (d.getName().equals("BlackBeard")) {
+					blackbeardDino.setIcon(yellow);
 					blackbeardDino.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Monisaurus") {
-					monisaurusDino.setIcon(orange);
+				if (d.getName().equals("Monisaurus")) {
+					monisaurusDino.setIcon(yellow);
 					monisaurusDino.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "ToyStory") {
-					toystoryDino.setIcon(orange);
+				if (d.getName().equals("ToyStory")) {
+					toystoryDino.setIcon(yellow);
 					toystoryDino.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Scraptopia") {
-					scraptopiaCresent.setIcon(orange);
+				if (d.getName().equals("Scraptopia")) {
+					scraptopiaCresent.setIcon(yellow);
 					scraptopiaCresent.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Land of Zach") {
-					landofzachCresent.setIcon(orange);
+				if (d.getName().equals("Land of Zach")) {
+					landofzachCresent.setIcon(yellow);
 					landofzachCresent.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Giant") {
-					giantCresent.setIcon(orange);
+				if (d.getName().equals("Giant")) {
+					giantCresent.setIcon(yellow);
 					giantCresent.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "New Land of Zach") {
-					newlandofzachCresent.setIcon(orange);
+				if (d.getName().equals("New Land of Zach")) {
+					newlandofzachCresent.setIcon(yellow);
 					newlandofzachCresent.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "South Scraptopia") {
-					southscraptopiaCresent.setIcon(orange);
+				if (d.getName().equals("South Scraptopia")) {
+					southscraptopiaCresent.setIcon(yellow);
 					southscraptopiaCresent.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Bloo Bawl") {
-					bloobawlCresent.setIcon(orange);
+				if (d.getName().equals("Bloo Bawl")) {
+					bloobawlCresent.setIcon(yellow);
 					bloobawlCresent.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Cresent Capital") {
-					cresentcaptitalCresent.setIcon(orange);
+				if (d.getName().equals("Cresent Capital")) {
+					cresentcaptitalCresent.setIcon(yellow);
 					cresentcaptitalCresent.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Apollo") {
-					apolloSun.setIcon(orange);
+				if (d.getName().equals("Apollo")) {
+					apolloSun.setIcon(yellow);
 					apolloSun.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Ra") {
-					raSun.setIcon(orange);
+				if (d.getName().equals("Ra")) {
+					raSun.setIcon(yellow);
 					raSun.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Helios") {
-					heliosSun.setIcon(orange);
+				if (d.getName().equals("Helios")) {
+					heliosSun.setIcon(yellow);
 					heliosSun.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Inti") {
-					intiSun.setIcon(orange);
+				if (d.getName().equals("Inti")) {
+					intiSun.setIcon(yellow);
 					intiSun.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Horus") {
-					horusSun.setIcon(orange);
+				if (d.getName().equals("Horus")) {
+					horusSun.setIcon(yellow);
 					horusSun.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Tonatiuh") {
-					tonatiuhSun.setIcon(orange);
+				if (d.getName().equals("Tonatiuh")) {
+					tonatiuhSun.setIcon(yellow);
 					tonatiuhSun.setName(newGame.getPlayerAt(2).getName());
 				}
-				if (d.getName() == "Amun") {
-					amunSun.setIcon(orange);
+				if (d.getName().equals("Amun")) {
+					amunSun.setIcon(yellow);
 					amunSun.setName(newGame.getPlayerAt(2).getName());
 				}
+
 			}
 		}
 	}
