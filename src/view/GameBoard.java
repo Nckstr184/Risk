@@ -35,8 +35,8 @@ import model.Territory;
 
 public class GameBoard extends JPanel {
 
-	boolean reinforcementPhase, attackPhase, fortifyPhase, javaAttacking, pythonAttacking, cAttacking, sqlAttacking,
-			rubyAttacking, gitAttacking, perlAttacking, wilmaAttacking, wilberAttacking, millerAttacking, richAttacking,
+	boolean beginReinforcementPhase, reinforcementPhase, attackPhase, fortifyPhase, javaAttacking, pythonAttacking, cAttacking, sqlAttacking, rubyAttacking,
+			gitAttacking, perlAttacking, wilmaAttacking, wilberAttacking, millerAttacking, richAttacking,
 			scoobyAttacking, zonaAttacking, mckaleAttacking, papaAttacking, dominosAttacking, brooklynsAttacking,
 			pizzahutAttacking, blackjackAttacking, hungryhowiesAttacking, pizzaplanetAttacking, tonatiuhAttacking,
 			apolloAttacking, horusAttacking, raAttacking, intiAttacking, heliosAttacking, amunAttacking, giantAttacking,
@@ -585,6 +585,15 @@ public class GameBoard extends JPanel {
 					fortifyPhase = true;
 					playerCount.setText("Fortify your armies!");
 				}
+			}
+		});
+		
+		endTurnButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				fortifyCount = 0;
+				fortifyPhase = false;
+				reinforcementPhase = true;
+				nextPlayer();
 			}
 		});
 		this.add(fortifyButton);

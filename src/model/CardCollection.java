@@ -115,8 +115,8 @@ public class CardCollection implements Serializable {
 		cardCollection.add(new RiskCard("Horus", CardType.SPONGEBOB, C6T5));
 		cardCollection.add(new RiskCard("Tonatiuh", CardType.PATRICK, C6T6));
 		cardCollection.add(new RiskCard("Amun", CardType.GARY, C6T7));
-		cardCollection.add(new WildCard(CardType.WILD, wildCard1));
-		cardCollection.add(new WildCard(CardType.WILD, wildCard2));
+		cardCollection.add(new WildCard("wild1", CardType.WILD, wildCard1));
+		cardCollection.add(new WildCard("wild2", CardType.WILD, wildCard2));
 
 	}
 
@@ -135,10 +135,12 @@ public class CardCollection implements Serializable {
 	
 	public ArrayList<String> getNamesOfCards()
 	{
+		Card temp=null;
 		ArrayList<String> names= new ArrayList<String>();
 		for(int i=0; i<42; i++)
 		{
-			names.add(((RiskCard) cardCollection.get(i)).getTerritory());
+			temp=cardCollection.get(i);
+			names.add(temp.getTerritory());
 		}
 		return names;
 	}
