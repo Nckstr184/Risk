@@ -41,7 +41,7 @@ public class StartWindow extends JFrame {
 	ArrayList<Player> pList;
 	String playerName, player1Name, player2Name, player3Name, player4Name, player5Name, player6Name, selectedDiff1,
 			selectedDiff2, selectedDiff3, selectedDiff4, selectedDiff5, selectedDiff6;
-	Cursor star;
+	Cursor mercer, jeremy, daniel;
 	
 	private int count;
 	public int numOfPlayers;
@@ -51,7 +51,7 @@ public class StartWindow extends JFrame {
 		this.setSize(350, 350);
 		this.setTitle("Start Window");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setLayout(new GridLayout(8, 2, 10, 10) );
+		this.setLayout(new GridLayout(8, 2, 10, 10));
 
 		this.setLocation(350, 100);
 
@@ -63,15 +63,24 @@ public class StartWindow extends JFrame {
 		player6 = new JTextField();
 
 		enterName = new JLabel();
-		blank= new JLabel("");
+		blank = new JLabel("");
 
 		enterName.setText("Enter Player Names Here");
 		
-		Toolkit tools = Toolkit.getDefaultToolkit();
-		ImageIcon starimg = new ImageIcon("./Pictures/mercer.png");
+		Toolkit tools1 = Toolkit.getDefaultToolkit();
+		ImageIcon mercerhead = new ImageIcon("./Pictures/mercer.png");
+		ImageIcon jeremyhead= new ImageIcon("./Pictures/jeremy.png");
+		ImageIcon danielhead =new ImageIcon("./Pictures/daniel.png");
 		
-		star = tools.createCustomCursor(starimg.getImage(), new Point(0,0), "img");//i hope this works
-		player1.setCursor(star);
+		mercer = tools1.createCustomCursor(mercerhead.getImage(), new Point(0,0), "img");//i hope this works
+		player1.setCursor(mercer);
+		jeremy= tools1.createCustomCursor(jeremyhead.getImage(), new Point(0,0), "img");
+
+		player2.setCursor(jeremy);
+		daniel=  tools1.createCustomCursor(danielhead.getImage(), new Point(0,0), "img");
+		
+		player3.setCursor(daniel);
+		
 
 		player1.setText("Rick");
 		player2.setText("Jeremy");
@@ -80,8 +89,6 @@ public class StartWindow extends JFrame {
 		player5.setText("");
 		player6.setText("");
 		
-		
-
 		String[] player1Choice = { "Select Player", "Human"};
 		String[] player2Choice = { "Select Player", "Human", "Easy AI", "Medium AI", "Hard AI"};
 		String[] player3Choice = { "Select Player", "Human", "Easy AI", "Medium AI", "Hard AI"};
@@ -95,14 +102,11 @@ public class StartWindow extends JFrame {
 		diff5 = new JComboBox<String>(player5Choice);
 		diff6 = new JComboBox<String>(player6Choice);
 
-		
-
 		diff1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				selectedDiff1 = (String) diff1.getSelectedItem();
 			}
 		});
-
 
 		diff2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -116,14 +120,12 @@ public class StartWindow extends JFrame {
 			}
 		});
 
-		
 		diff4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				selectedDiff4 = (String) diff4.getSelectedItem();
 			}
 		});
 
-		
 		diff5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				selectedDiff5 = (String) diff5.getSelectedItem();
@@ -138,7 +140,7 @@ public class StartWindow extends JFrame {
 
 		startGame = new JButton();
 		startGame.addActionListener(new startGameListener());
-		
+
 		startGame.setText("Start the Battle!!!");
 
 		this.add(enterName);
@@ -299,18 +301,14 @@ public class StartWindow extends JFrame {
 			}
 
 			setNumberOfPlayers(count);
-			
-			String message = "Welcome to RISK"
-					+ "\n\nRules:"
-					+ "\n\t-Turns have 3 phases: deploy, attack, and fortify"
+
+			String message = "Welcome to RISK" + "\n\nRules:" + "\n\t-Turns have 3 phases: deploy, attack, and fortify"
 					+ "\n\t-You can only attack if you have more than 1 army at that territory"
 					+ "\n\t-You can only fortify once per turn"
 					+ "\n\t-If you lose all your territories, you are removed from the game"
-					+ "\n\t-After 60 rounds of play, the player with the most territories wins"
-					+ "\n\nNotes:"
+					+ "\n\t-After 60 rounds of play, the player with the most territories wins" + "\n\nNotes:"
 					+ "\n\t-AIs will only show battle dialog if the defender is a Human player"
-					+ "\n\t-During battles, dice ties go to the defender"
-					+ "\n\nCreated by: Four Blind Mice <3";
+					+ "\n\t-During battles, dice ties go to the defender" + "\n\nCreated by: Four Blind Mice <3";
 			JOptionPane.showMessageDialog(null, message, "About", 1);
 			dispose();
 

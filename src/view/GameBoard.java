@@ -49,7 +49,7 @@ public class GameBoard extends JPanel {
 			toystoryFortify, pizzaplanetFortify, blackjackFortify, hungryhowiesFortify, brooklynFortify, amunFortify,
 			apolloFortify, heliosFortify, intiFortify, tonatiuhFortify, rawrFortify, laieggesFortify, dirtydanFortify,
 			blackbeardFortify, dactilitoFortify, monisaurusFortify, landofzachFortify, newlandofzachFortify,
-			scraptopiaFortify, southscraptopiaFortify, bloobawlFortify, crescentcapitalFortify;
+			scraptopiaFortify, southscraptopiaFortify, bloobawlFortify, crescentcapitalFortify, raFortify;
 	HashMap<JButton, JLabel> myMap;
 	ArrayList<Continent> continents;
 	ArrayList<Territory> territories;
@@ -165,14 +165,12 @@ public class GameBoard extends JPanel {
 								ArrayList<Territory> tempTerritories = null;
 								ArrayList<Continent> tempContinents = null;
 								try {
-									System.out.println("READING SHIT IN FROM THE FILE");
 									inputStream = new FileInputStream("savedGame");
 									objectInput = new ObjectInputStream(inputStream);
 									tempPlayers = (PlayerCollection) objectInput.readObject();
 									tempCards = (ArrayList<String>) objectInput.readObject();
 									tempTerritories = (ArrayList<Territory>) objectInput.readObject();
 									tempContinents = (ArrayList<Continent>) objectInput.readObject();
-									System.out.println(tempPlayers.getNumOfPlayers());
 								} catch (ClassNotFoundException e) {
 									// TODO Auto-generated catch block
 									System.out.println("reading did not work");
@@ -484,7 +482,52 @@ public class GameBoard extends JPanel {
 	}
 
 	public void startOldGame() {
+		newGame = new GameLogic(startWindow.playerOne, startWindow.playerTwo, startWindow.playerThree,
+				startWindow.playerFour, startWindow.playerFive, startWindow.playerSix);
+		CardCollection newDeck = new CardCollection();
 
+		if (startWindow.getNumberOfPlayer() == 6) {
+
+			player1 = newGame.getPlayerAt(0);
+			player2 = newGame.getPlayerAt(1);
+			player3 = newGame.getPlayerAt(2);
+			player4 = newGame.getPlayerAt(3);
+			player5 = newGame.getPlayerAt(4);
+			player6 = newGame.getPlayerAt(5);
+		}
+		if (startWindow.getNumberOfPlayer() == 5) {
+
+			player1 = newGame.getPlayerAt(0);
+			player2 = newGame.getPlayerAt(1);
+			player3 = newGame.getPlayerAt(2);
+			player4 = newGame.getPlayerAt(3);
+			player5 = newGame.getPlayerAt(4);
+
+		}
+		if (startWindow.getNumberOfPlayer() == 4) {
+
+			player1 = newGame.getPlayerAt(0);
+			player2 = newGame.getPlayerAt(1);
+			player3 = newGame.getPlayerAt(2);
+			player4 = newGame.getPlayerAt(3);
+
+		}
+		if (startWindow.getNumberOfPlayer() == 3) {
+
+			player1 = newGame.getPlayerAt(0);
+			player2 = newGame.getPlayerAt(1);
+			player3 = newGame.getPlayerAt(2);
+
+		}
+		if (startWindow.getNumberOfPlayer() == 2) {
+
+			player1 = newGame.getPlayerAt(0);
+			player2 = newGame.getPlayerAt(1);
+
+		}
+
+		newGame.startGame();
+		territories = newGame.getTerritories();
 	}
 
 	public void startNewGame() {
@@ -4836,6 +4879,49 @@ public class GameBoard extends JPanel {
 					tonatiuhAttacking = false;
 					attackPhase = true;
 				}
+				
+				if ((tonatiuhFortify == true) && (currPlayer.getName() == wilberWildcat.getName())) {
+					territories.get(14).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					tonatiuhFortify = false;
+				}
+				if ((brooklynFortify == true) && (currPlayer.getName() == wilberWildcat.getName())) {
+					territories.get(14).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					brooklynFortify = false;
+				}
+				if ((dominosFortify == true) && (currPlayer.getName() == wilberWildcat.getName())) {
+					territories.get(14).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					dominosFortify = false;
+				}
+				if ((papaFortify == true) && (currPlayer.getName() == wilberWildcat.getName())) {
+					territories.get(14).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					papaFortify = false;
+				}
+				if ((scoobyFortify == true) && (currPlayer.getName() == wilberWildcat.getName())) {
+					territories.get(14).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					scoobyFortify = false;
+				}
+				if ((richFortify == true) && (currPlayer.getName() == wilberWildcat.getName())) {
+					territories.get(14).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					richFortify = false;
+				}
+				if ((wilmaFortify == true) && (currPlayer.getName() == wilberWildcat.getName())) {
+					territories.get(14).addUnits(unitsFortified);
+					updateLabels();
+					wilmaFortify = false;
+				}
+				
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == wilberWildcat.getName()) {
 						System.out.println("fortify from wilber!!!");
@@ -4900,6 +4986,25 @@ public class GameBoard extends JPanel {
 					gameBoardAttack(territories.get(17), territories.get(15));
 					millerAttacking = false;
 					attackPhase = true;
+				}
+				
+				if ((wilberFortify == true) && (currPlayer.getName() == wilmaWildcat.getName())) {
+					territories.get(15).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					wilberFortify = false;
+				}
+				if ((richFortify == true) && (currPlayer.getName() == wilmaWildcat.getName())) {
+					territories.get(15).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					richFortify = false;
+				}
+				if ((millerFortify == true) && (currPlayer.getName() == wilmaWildcat.getName())) {
+					territories.get(15).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					millerFortify = false;
 				}
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == wilmaWildcat.getName()) {
@@ -4978,6 +5083,37 @@ public class GameBoard extends JPanel {
 					mckaleAttacking = false;
 					attackPhase = true;
 				}
+				
+				if ((wilberFortify == true) && (currPlayer.getName() == richWildcat.getName())) {
+					territories.get(16).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					wilberFortify = false;
+				}
+				if ((wilmaFortify == true) && (currPlayer.getName() == richWildcat.getName())) {
+					territories.get(16).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					wilmaFortify = false;
+				}
+				if ((millerFortify == true) && (currPlayer.getName() == richWildcat.getName())) {
+					territories.get(16).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					millerFortify = false;
+				}
+				if ((scoobyFortify == true) && (currPlayer.getName() == richWildcat.getName())) {
+					territories.get(16).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					scoobyFortify = false;
+				}
+				if ((mckaleFortify == true) && (currPlayer.getName() == richWildcat.getName())) {
+					territories.get(16).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					mckaleFortify = false;
+				}
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == richWildcat.getName()) {
 						System.out.println("fortify from wilber!!!");
@@ -5047,6 +5183,32 @@ public class GameBoard extends JPanel {
 					scraptopiaAttacking = false;
 					attackPhase = true;
 				}
+				
+				if ((wilmaFortify == true) && (currPlayer.getName() == millerWildcat.getName())) {
+					territories.get(17).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					wilmaFortify = false;
+				}
+				if ((scraptopiaFortify == true) && (currPlayer.getName() == millerWildcat.getName())) {
+					territories.get(17).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					scraptopiaFortify = false;
+				}
+				if ((mckaleFortify == true) && (currPlayer.getName() == millerWildcat.getName())) {
+					territories.get(17).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					mckaleFortify = false;
+				}
+				if ((richFortify == true) && (currPlayer.getName() == millerWildcat.getName())) {
+					territories.get(17).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					richFortify = false;
+				}
+				
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == millerWildcat.getName()) {
 						System.out.println("fortify from miller!!!");
@@ -5122,6 +5284,39 @@ public class GameBoard extends JPanel {
 					papaAttacking = false;
 					attackPhase = true;
 				}
+				
+				if ((papaFortify == true) && (currPlayer.getName() == scoobyWildcat.getName())) {
+					territories.get(18).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					papaFortify = false;
+				}
+				if ((zonaFortify == true) && (currPlayer.getName() == scoobyWildcat.getName())) {
+					territories.get(18).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					zonaFortify = false;
+				}
+				if ((mckaleFortify == true) && (currPlayer.getName() == scoobyWildcat.getName())) {
+					territories.get(18).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					mckaleFortify = false;
+				}
+				if ((richFortify == true) && (currPlayer.getName() == scoobyWildcat.getName())) {
+					territories.get(18).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					richFortify = false;
+				}
+				if ((wilberFortify == true) && (currPlayer.getName() == scoobyWildcat.getName())) {
+					territories.get(18).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					wilberFortify = false;
+				}
+				
+				
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == scoobyWildcat.getName()) {
 						System.out.println("fortify from scooby!!!");
@@ -5191,6 +5386,33 @@ public class GameBoard extends JPanel {
 					zonaAttacking = false;
 					attackPhase = true;
 				}
+				
+				if ((zonaFortify == true) && (currPlayer.getName() == mckaleWildcat.getName())) {
+					territories.get(19).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					zonaFortify = false;
+				}
+				if ((scoobyFortify == true) && (currPlayer.getName() == mckaleWildcat.getName())) {
+					territories.get(19).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					scoobyFortify = false;
+				}
+				if ((millerFortify == true) && (currPlayer.getName() == mckaleWildcat.getName())) {
+					territories.get(19).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					millerFortify = false;
+				}
+				if ((richFortify == true) && (currPlayer.getName() == mckaleWildcat.getName())) {
+					territories.get(19).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					richFortify = false;
+				}
+				
+				
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == mckaleWildcat.getName()) {
 						System.out.println("fortify from miller!!!");
@@ -5265,6 +5487,18 @@ public class GameBoard extends JPanel {
 						zonaFortify = true;
 					}
 				}
+				if ((mckaleFortify == true) && (currPlayer.getName() == zonaWildcat.getName())) {
+					territories.get(20).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					mckaleFortify = false;
+				}
+				if ((scoobyFortify == true) && (currPlayer.getName() == zonaWildcat.getName())) {
+					territories.get(20).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					scoobyFortify = false;
+				}
 			}
 		});
 		papajohnsPizza.addActionListener(new ActionListener() {
@@ -5323,6 +5557,39 @@ public class GameBoard extends JPanel {
 					scoobyAttacking = false;
 					attackPhase = true;
 				}
+				
+				if ((scoobyFortify == true) && (currPlayer.getName() == papajohnsPizza.getName())) {
+					territories.get(21).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					scoobyFortify = false;
+				}
+				if ((wilberFortify == true) && (currPlayer.getName() == papajohnsPizza.getName())) {
+					territories.get(21).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					wilberFortify = false;
+				}
+				if ((blackjackFortify == true) && (currPlayer.getName() == papajohnsPizza.getName())) {
+					territories.get(21).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					blackjackFortify = false;
+				}
+				if ((pizzahutFortify == true) && (currPlayer.getName() == papajohnsPizza.getName())) {
+					territories.get(21).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					pizzahutFortify = false;
+				}
+				if ((dominosFortify == true) && (currPlayer.getName() == papajohnsPizza.getName())) {
+					territories.get(21).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					dominosFortify = false;
+				}
+				
+				
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == papajohnsPizza.getName()) {
 						System.out.println("fortify from papa!!!");
@@ -5398,6 +5665,36 @@ public class GameBoard extends JPanel {
 					wilberAttacking = false;
 					attackPhase = true;
 				}
+				if ((wilberFortify == true) && (currPlayer.getName() == dominosPizza.getName())) {
+					territories.get(22).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					wilberFortify = false;
+				}
+				if ((brooklynFortify == true) && (currPlayer.getName() == dominosPizza.getName())) {
+					territories.get(22).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					brooklynFortify = false;
+				}
+				if ((hungryhowiesFortify == true) && (currPlayer.getName() == dominosPizza.getName())) {
+					territories.get(22).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					hungryhowiesFortify = false;
+				}
+				if ((pizzahutFortify == true) && (currPlayer.getName() == dominosPizza.getName())) {
+					territories.get(22).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					pizzahutFortify = false;
+				}
+				if ((papaFortify == true) && (currPlayer.getName() == dominosPizza.getName())) {
+					territories.get(22).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					papaFortify = false;
+				}
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == dominosPizza.getName()) {
 						System.out.println("fortify from dominos!!!");
@@ -5467,6 +5764,31 @@ public class GameBoard extends JPanel {
 					hungryhowiesAttacking = false;
 					attackPhase = true;
 				}
+				if ((hungryhowiesFortify == true) && (currPlayer.getName() == pizzahutPizza.getName())) {
+					territories.get(23).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					hungryhowiesFortify = false;
+				}
+				if ((blackjackFortify == true) && (currPlayer.getName() == pizzahutPizza.getName())) {
+					territories.get(23).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					blackjackFortify = false;
+				}
+				if ((dominosFortify == true) && (currPlayer.getName() == pizzahutPizza.getName())) {
+					territories.get(23).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					dominosFortify = false;
+				}
+				if ((papaFortify == true) && (currPlayer.getName() == pizzahutPizza.getName())) {
+					territories.get(23).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					papaFortify = false;
+				}
+				
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == pizzahutPizza.getName()) {
 						System.out.println("fortify from hut!!!");
@@ -5530,6 +5852,31 @@ public class GameBoard extends JPanel {
 					pizzahutAttacking = false;
 					attackPhase = true;
 				}
+				
+				if ((pizzahutFortify == true) && (currPlayer.getName() == blackjackPizza.getName())) {
+					territories.get(24).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					pizzahutFortify = false;
+				}
+				
+				if ((dominosFortify == true) && (currPlayer.getName() == blackjackPizza.getName())) {
+					territories.get(24).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					dominosFortify = false;
+				}
+				
+				
+				if ((papaFortify == true) && (currPlayer.getName() == blackjackPizza.getName())) {
+					territories.get(24).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					papaFortify = false;
+				}
+				
+				
+				
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == blackjackPizza.getName()) {
 						System.out.println("fortify from blackj!!!");
@@ -5599,6 +5946,34 @@ public class GameBoard extends JPanel {
 					brooklynsAttacking = false;
 					attackPhase = true;
 				}
+				
+				
+				if ((brooklynFortify == true) && (currPlayer.getName() == hungryhowiesPizza.getName())) {
+					territories.get(25).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					brooklynFortify = false;
+				}
+				if ((blackjackFortify == true) && (currPlayer.getName() == hungryhowiesPizza.getName())) {
+					territories.get(25).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					blackjackFortify = false;
+				}
+				if ((pizzahutFortify == true) && (currPlayer.getName() == hungryhowiesPizza.getName())) {
+					territories.get(25).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					pizzahutFortify = false;
+				}
+				if ((dominosFortify == true) && (currPlayer.getName() == hungryhowiesPizza.getName())) {
+					territories.get(25).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					dominosFortify = false;
+				}
+				
+				
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == hungryhowiesPizza.getName()) {
 						System.out.println("fortify from hungryhowies!!!");
@@ -5675,6 +6050,40 @@ public class GameBoard extends JPanel {
 					tonatiuhAttacking = false;
 					attackPhase = true;
 				}
+				
+				if ((tonatiuhFortify == true) && (currPlayer.getName() == brooklynPizza.getName())) {
+					territories.get(26).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					tonatiuhFortify = false;
+				}
+				if ((wilberFortify == true) && (currPlayer.getName() == brooklynPizza.getName())) {
+					territories.get(26).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					wilberFortify = false;
+				}
+				if ((pizzaplanetFortify == true) && (currPlayer.getName() == brooklynPizza.getName())) {
+					territories.get(26).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					pizzaplanetFortify = false;
+				}
+				if ((hungryhowiesFortify == true) && (currPlayer.getName() == brooklynPizza.getName())) {
+					territories.get(26).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					hungryhowiesFortify = false;
+				}
+				if ((dominosFortify == true) && (currPlayer.getName() == brooklynPizza.getName())) {
+					territories.get(26).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					dominosFortify = false;
+				}
+				
+				
+				
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == brooklynPizza.getName()) {
 						System.out.println("fortify from brook!!!");
@@ -5740,6 +6149,26 @@ public class GameBoard extends JPanel {
 					tonatiuhAttacking = false;
 					attackPhase = true;
 				}
+				
+				if ((tonatiuhFortify == true) && (currPlayer.getName() == pizzaplanetPizza.getName())) {
+					territories.get(27).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					tonatiuhFortify = false;
+				}
+				if ((apolloFortify == true) && (currPlayer.getName() == pizzaplanetPizza.getName())) {
+					territories.get(27).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					apolloFortify = false;
+				}
+				if ((brooklynFortify == true) && (currPlayer.getName() == pizzaplanetPizza.getName())) {
+					territories.get(27).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					brooklynFortify = false;
+				}
+				
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == pizzaplanetPizza.getName()) {
 						System.out.println("fortify from pizzaplanet!!!");
@@ -5810,6 +6239,32 @@ public class GameBoard extends JPanel {
 					pizzaplanetAttacking = false;
 					attackPhase = true;
 				}
+				
+				if ((pizzaplanetFortify == true) && (currPlayer.getName() == apolloSun.getName())) {
+					territories.get(35).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					pizzaplanetFortify = false;
+				}
+				if ((amunFortify == true) && (currPlayer.getName() == apolloSun.getName())) {
+					territories.get(35).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					amunFortify = false;
+				}
+				if ((tonatiuhFortify == true) && (currPlayer.getName() == apolloSun.getName())) {
+					territories.get(35).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					tonatiuhFortify = false;
+				}
+				if ((raFortify == true) && (currPlayer.getName() == apolloSun.getName())) {
+					territories.get(35).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					raFortify = false;
+				}
+				
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == apolloSun.getName()) {
 						System.out.println("fortify from apollo!!");
@@ -5872,6 +6327,26 @@ public class GameBoard extends JPanel {
 					amunAttacking = false;
 					attackPhase = true;
 				}
+				
+				if ((amunFortify == true) && (currPlayer.getName() == raSun.getName())) {
+					territories.get(36).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					amunFortify = false;
+				}
+				if ((heliosFortify == true) && (currPlayer.getName() == raSun.getName())) {
+					territories.get(36).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					heliosFortify = false;
+				}
+				if ((apolloFortify == true) && (currPlayer.getName() == raSun.getName())) {
+					territories.get(36).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					apolloFortify = false;
+				}
+				
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == amunSun.getName()) {
 						System.out.println("fortify from amun!!");
@@ -5948,6 +6423,39 @@ public class GameBoard extends JPanel {
 					javaAttacking = false;
 					attackPhase = true;
 				}
+				
+				if ((javaFortify == true) && (currPlayer.getName() == heliosSun.getName())) {
+					territories.get(37).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					javaFortify = false;
+				}
+				if ((amunFortify == true) && (currPlayer.getName() == heliosSun.getName())) {
+					territories.get(37).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					amunFortify = false;
+				}
+				if ((horusFortify == true) && (currPlayer.getName() == heliosSun.getName())) {
+					territories.get(37).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					horusFortify = false;
+				}
+				if ((intiFortify == true) && (currPlayer.getName() == heliosSun.getName())) {
+					territories.get(37).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					intiFortify = false;
+				}
+				if ((raFortify == true) && (currPlayer.getName() == heliosSun.getName())) {
+					territories.get(37).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					raFortify = false;
+				}
+				
+				
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == heliosSun.getName()) {
 						System.out.println("fortify from helios!!");
@@ -6005,6 +6513,20 @@ public class GameBoard extends JPanel {
 					horusAttacking = false;
 					attackPhase = true;
 				}
+				
+				if ((horusFortify == true) && (currPlayer.getName() == intiSun.getName())) {
+					territories.get(38).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					horusFortify = false;
+				}
+				if ((heliosFortify == true) && (currPlayer.getName() == intiSun.getName())) {
+					territories.get(38).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					heliosFortify = false;
+				}
+				
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == intiSun.getName()) {
 						System.out.println("fortify from inti!!");
@@ -6074,6 +6596,36 @@ public class GameBoard extends JPanel {
 					amunAttacking = false;
 					attackPhase = true;
 				}
+				
+				if ((amunFortify == true) && (currPlayer.getName() == horusSun.getName())) {
+					territories.get(39).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					amunFortify = false;
+				}
+				if ((intiFortify == true) && (currPlayer.getName() == horusSun.getName())) {
+					territories.get(39).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					intiFortify = false;
+				}
+				
+				if ((tonatiuhFortify == true) && (currPlayer.getName() == horusSun.getName())) {
+					territories.get(39).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					tonatiuhFortify = false;
+				}
+				
+				if ((heliosFortify == true) && (currPlayer.getName() == horusSun.getName())) {
+					territories.get(39).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					heliosFortify = false;
+				}
+				
+				
+				
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == horusSun.getName()) {
 						System.out.println("fortify from horus!!");
@@ -6149,6 +6701,39 @@ public class GameBoard extends JPanel {
 					pizzaplanetAttacking = false;
 					attackPhase = true;
 				}
+				
+				
+				if ((pizzaplanetFortify == true) && (currPlayer.getName() == tonatiuhSun.getName())) {
+					territories.get(40).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					pizzaplanetFortify = false;
+				}
+				if ((brooklynFortify == true) && (currPlayer.getName() == tonatiuhSun.getName())) {
+					territories.get(40).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					brooklynFortify = false;
+				}
+				if ((amunFortify == true) && (currPlayer.getName() == tonatiuhSun.getName())) {
+					territories.get(40).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					amunFortify = false;
+				}
+				if ((horusFortify == true) && (currPlayer.getName() == tonatiuhSun.getName())) {
+					territories.get(40).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					horusFortify = false;
+				}
+				if ((apolloFortify == true) && (currPlayer.getName() == tonatiuhSun.getName())) {
+					territories.get(40).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					apolloFortify = false;
+				}
+				
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == tonatiuhSun.getName()) {
 						System.out.println("fortify from ton!!");
@@ -6224,6 +6809,39 @@ public class GameBoard extends JPanel {
 					tonatiuhAttacking = false;
 					attackPhase = true;
 				}
+				
+				
+				if ((tonatiuhFortify == true) && (currPlayer.getName() == amunSun.getName())) {
+					territories.get(41).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					tonatiuhFortify = false;
+				}
+				if ((horusFortify == true) && (currPlayer.getName() == amunSun.getName())) {
+					territories.get(41).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					horusFortify = false;
+				}
+				if ((heliosFortify == true) && (currPlayer.getName() == amunSun.getName())) {
+					territories.get(41).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					heliosFortify = false;
+				}
+				if ((raFortify == true) && (currPlayer.getName() == amunSun.getName())) {
+					territories.get(41).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					raFortify = false;
+				}
+				if ((apolloFortify == true) && (currPlayer.getName() == amunSun.getName())) {
+					territories.get(41).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					apolloFortify = false;
+				}
+				
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == amunSun.getName()) {
 						System.out.println("fortify from amun!!");
@@ -6281,6 +6899,20 @@ public class GameBoard extends JPanel {
 					dactilitoAttacking = false;
 					attackPhase = true;
 				}
+				
+				if ((dactilitoFortify == true) && (currPlayer.getName() == rawrvilleDino.getName())) {
+					territories.get(7).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					dactilitoFortify = false;
+				}
+				if ((laieggesFortify == true) && (currPlayer.getName() == rawrvilleDino.getName())) {
+					territories.get(7).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					laieggesFortify = false;
+				}
+				
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == rawrvilleDino.getName()) {
 						System.out.println("fortify from rawr!!");
@@ -6349,6 +6981,34 @@ public class GameBoard extends JPanel {
 					crescentcapitalAttacking = false;
 					attackPhase = true;
 				}
+				
+				if ((crescentcapitalFortify == true) && (currPlayer.getName() == laieggesDino.getName())) {
+					territories.get(8).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					crescentcapitalFortify = false;
+				}
+				if ((dirtydanFortify == true) && (currPlayer.getName() == laieggesDino.getName())) {
+					territories.get(8).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					dirtydanFortify = false;
+				}
+				if ((dactilitoFortify == true) && (currPlayer.getName() == laieggesDino.getName())) {
+					territories.get(8).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					dactilitoFortify = false;
+				}
+				if ((rawrFortify == true) && (currPlayer.getName() == laieggesDino.getName())) {
+					territories.get(8).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					rawrFortify = false;
+				}
+				
+				
+				
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == laieggesDino.getName()) {
 						System.out.println("fortify from laieeges!!");
@@ -6424,6 +7084,38 @@ public class GameBoard extends JPanel {
 					toystoryAttacking = false;
 					attackPhase = true;
 				}
+				if ((toystoryFortify == true) && (currPlayer.getName() == dactilitoDino.getName())) {
+					territories.get(9).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					toystoryFortify = false;
+				}
+				if ((blackbeardFortify == true) && (currPlayer.getName() == dactilitoDino.getName())) {
+					territories.get(9).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					blackbeardFortify = false;
+				}
+				if ((dirtydanFortify == true) && (currPlayer.getName() == dactilitoDino.getName())) {
+					territories.get(9).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					dirtydanFortify = false;
+				}
+				if ((rawrFortify == true) && (currPlayer.getName() == dactilitoDino.getName())) {
+					territories.get(9).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					rawrFortify = false;
+				}
+				if ((laieggesFortify == true) && (currPlayer.getName() == dactilitoDino.getName())) {
+					territories.get(9).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					laieggesFortify = false;
+				}
+				
+				
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == dactilitoDino.getName()) {
 						System.out.println("fortify from dac!!");
@@ -6511,6 +7203,51 @@ public class GameBoard extends JPanel {
 					crescentcapitalAttacking = false;
 					attackPhase = true;
 				}
+				
+				if ((crescentcapitalFortify == true) && (currPlayer.getName() == dirtydanDino.getName())) {
+					territories.get(10).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					crescentcapitalFortify = false;
+				}
+				if ((newlandofzachFortify == true) && (currPlayer.getName() == dirtydanDino.getName())) {
+					territories.get(10).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					newlandofzachFortify = false;
+				}
+				if ((bloobawlFortify == true) && (currPlayer.getName() == dirtydanDino.getName())) {
+					territories.get(10).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					bloobawlFortify = false;
+				}
+				if ((monisaurusFortify == true) && (currPlayer.getName() == dirtydanDino.getName())) {
+					territories.get(10).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					monisaurusFortify = false;
+				}
+				if ((blackbeardFortify == true) && (currPlayer.getName() == dirtydanDino.getName())) {
+					territories.get(10).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					blackbeardFortify = false;
+				}
+				if ((dactilitoFortify == true) && (currPlayer.getName() == dirtydanDino.getName())) {
+					territories.get(10).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					dactilitoFortify = false;
+				}
+				if ((laieggesFortify == true) && (currPlayer.getName() == dirtydanDino.getName())) {
+					territories.get(10).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					laieggesFortify = false;
+				}
+				
+				
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == dirtydanDino.getName()) {
 						System.out.println("fortify from dirty!!");
@@ -6581,6 +7318,33 @@ public class GameBoard extends JPanel {
 					toystoryAttacking = false;
 					attackPhase = true;
 				}
+				
+				if ((toystoryFortify == true) && (currPlayer.getName() == blackbeardDino.getName())) {
+					territories.get(11).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					toystoryFortify = false;
+				}
+				if ((monisaurusFortify == true) && (currPlayer.getName() == blackbeardDino.getName())) {
+					territories.get(11).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					monisaurusFortify = false;
+				}
+				if ((dirtydanFortify == true) && (currPlayer.getName() == blackbeardDino.getName())) {
+					territories.get(11).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					dirtydanFortify = false;
+				}
+				if ((dactilitoFortify == true) && (currPlayer.getName() == blackbeardDino.getName())) {
+					territories.get(11).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					dactilitoFortify = false;
+				}
+				
+				
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == blackbeardDino.getName()) {
 						System.out.println("fortify from black!!");
@@ -6650,6 +7414,32 @@ public class GameBoard extends JPanel {
 					newlandofzachAttacking = false;
 					attackPhase = true;
 				}
+				
+				if ((newlandofzachFortify == true) && (currPlayer.getName() == monisaurusDino.getName())) {
+					territories.get(12).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					newlandofzachFortify = false;
+				}
+				if ((toystoryFortify == true) && (currPlayer.getName() == monisaurusDino.getName())) {
+					territories.get(12).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					toystoryFortify = false;
+				}
+				if ((blackjackFortify == true) && (currPlayer.getName() == monisaurusDino.getName())) {
+					territories.get(12).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					blackjackFortify = false;
+				}
+				if ((dirtydanFortify == true) && (currPlayer.getName() == monisaurusDino.getName())) {
+					territories.get(12).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					dirtydanFortify = false;
+				}
+				
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == monisaurusDino.getName()) {
 						System.out.println("fortify from moni!!");
@@ -6707,12 +7497,32 @@ public class GameBoard extends JPanel {
 					blackbeardAttacking = false;
 					attackPhase = true;
 				}
-				if (toystoryAttacking == true && (currPlayer.getName() != toystoryDino.getName())) {
+				if (monisaurusAttacking == true && (currPlayer.getName() != toystoryDino.getName())) {
 					System.out.println("toystory was attacked by python");
-					gameBoardAttack(territories.get(13), territories.get(13));
-					blackbeardAttacking = false;
+					gameBoardAttack(territories.get(12), territories.get(13));
+					monisaurusAttacking = false;
 					attackPhase = true;
 				}
+				
+				if ((monisaurusFortify == true) && (currPlayer.getName() == toystoryDino.getName())) {
+					territories.get(13).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					monisaurusFortify = false;
+				}
+				if ((blackbeardFortify == true) && (currPlayer.getName() == toystoryDino.getName())) {
+					territories.get(13).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					blackbeardFortify = false;
+				}
+				if ((dactilitoFortify == true) && (currPlayer.getName() == toystoryDino.getName())) {
+					territories.get(13).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					dactilitoFortify = false;
+				}
+				
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == toystoryDino.getName()) {
 						System.out.println("fortify from toystroy!!");
@@ -6772,6 +7582,20 @@ public class GameBoard extends JPanel {
 					millerAttacking = false;
 					attackPhase = true;
 				}
+				if ((millerFortify == true) && (currPlayer.getName() == scraptopiaCresent.getName())) {
+					territories.get(28).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					millerFortify = false;
+				}
+				if ((landofzachFortify == true) && (currPlayer.getName() == scraptopiaCresent.getName())) {
+					territories.get(28).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					landofzachFortify = false;
+				}
+				
+				
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == scraptopiaCresent.getName()) {
 						System.out.println("fortify from scrap!!");
@@ -6838,6 +7662,26 @@ public class GameBoard extends JPanel {
 					newlandofzachAttacking = false;
 					attackPhase = true;
 				}
+				if ((newlandofzachFortify == true) && (currPlayer.getName() == landofzachCresent.getName())) {
+					territories.get(29).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					newlandofzachFortify = false;
+				}
+				if ((giantFortify == true) && (currPlayer.getName() == landofzachCresent.getName())) {
+					territories.get(29).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					giantFortify = false;
+				}
+				if ((scraptopiaFortify == true) && (currPlayer.getName() == landofzachCresent.getName())) {
+					territories.get(29).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					scraptopiaFortify = false;
+				}
+				
+				
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == landofzachCresent.getName()) {
 						System.out.println("fortify from lozach!!");
@@ -6909,6 +7753,33 @@ public class GameBoard extends JPanel {
 					rubyAttacking = false;
 					attackPhase = true;
 				}
+				
+				if ((rubyFortify == true) && (currPlayer.getName() == giantCresent.getName())) {
+					territories.get(30).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					rubyFortify = false;
+				}
+				if ((bloobawlFortify == true) && (currPlayer.getName() == giantCresent.getName())) {
+					territories.get(30).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					bloobawlFortify = false;
+				}
+				if ((southscraptopiaFortify == true) && (currPlayer.getName() == giantCresent.getName())) {
+					territories.get(30).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					southscraptopiaFortify = false;
+				}
+				if ((landofzachFortify == true) && (currPlayer.getName() == giantCresent.getName())) {
+					territories.get(30).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					landofzachFortify = false;
+				}
+				
+				
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == giantCresent.getName()) {
 						System.out.println("fortify from giant!!");
@@ -6987,6 +7858,40 @@ public class GameBoard extends JPanel {
 					monisaurusAttacking = false;
 					attackPhase = true;
 				}
+				
+				
+				if ((monisaurusFortify == true) && (currPlayer.getName() == newlandofzachCresent.getName())) {
+					territories.get(31).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					monisaurusFortify = false;
+				}
+				if ((dirtydanFortify == true) && (currPlayer.getName() == newlandofzachCresent.getName())) {
+					territories.get(31).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					dirtydanFortify = false;
+				}
+				if ((bloobawlFortify == true) && (currPlayer.getName() == newlandofzachCresent.getName())) {
+					territories.get(31).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					bloobawlFortify = false;
+				}
+				if ((southscraptopiaFortify == true) && (currPlayer.getName() == newlandofzachCresent.getName())) {
+					territories.get(31).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					southscraptopiaFortify = false;
+				}
+				if ((landofzachFortify == true) && (currPlayer.getName() == newlandofzachCresent.getName())) {
+					territories.get(31).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					landofzachFortify = false;
+				}
+				
+				
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == newlandofzachCresent.getName()) {
 						System.out.println("fortify from newland!!");
@@ -7047,6 +7952,21 @@ public class GameBoard extends JPanel {
 					newlandofzachAttacking = false;
 					attackPhase = true;
 				}
+				
+				if ((newlandofzachFortify == true) && (currPlayer.getName() == southscraptopiaCresent.getName())) {
+					territories.get(32).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					newlandofzachFortify = false;
+				}
+				if ((giantFortify == true) && (currPlayer.getName() == southscraptopiaCresent.getName())) {
+					territories.get(32).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					giantFortify = false;
+				}
+				
+				
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == southscraptopiaCresent.getName()) {
 						System.out.println("fortify from southscrap!!");
@@ -7119,6 +8039,30 @@ public class GameBoard extends JPanel {
 					dirtydanAttacking = false;
 					attackPhase = true;
 				}
+				if ((dirtydanFortify == true) && (currPlayer.getName() == bloobawlCresent.getName())) {
+					territories.get(33).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					dirtydanFortify = false;
+				}
+				if ((crescentcapitalFortify == true) && (currPlayer.getName() == bloobawlCresent.getName())) {
+					territories.get(33).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					crescentcapitalFortify = false;
+				}
+				if ((newlandofzachFortify == true) && (currPlayer.getName() == bloobawlCresent.getName())) {
+					territories.get(33).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					newlandofzachFortify = false;
+				}
+				if ((giantFortify == true) && (currPlayer.getName() == bloobawlCresent.getName())) {
+					territories.get(33).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					giantFortify = false;
+				}
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == bloobawlCresent.getName()) {
 						System.out.println("fortify from bloo!!");
@@ -7185,6 +8129,26 @@ public class GameBoard extends JPanel {
 					dirtydanAttacking = false;
 					attackPhase = true;
 				}
+				
+				if ((dirtydanFortify == true) && (currPlayer.getName() == cresentcaptitalCresent.getName())) {
+					territories.get(34).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					dirtydanFortify = false;
+				}
+				if ((laieggesFortify == true) && (currPlayer.getName() == cresentcaptitalCresent.getName())) {
+					territories.get(34).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					laieggesFortify = false;
+				}
+				if ((bloobawlFortify == true) && (currPlayer.getName() == cresentcaptitalCresent.getName())) {
+					territories.get(34).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					bloobawlFortify = false;
+				}
+				
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == cresentcaptitalCresent.getName()) {
 						System.out.println("fortify from scrap!!");
