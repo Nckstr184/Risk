@@ -33,11 +33,11 @@ public class BattleLogic {
 	public Territory getDefendingTerritory() {
 		return this.defendingTerritory;
 	}
-	
+
 	public ArrayList<Integer> getAttackDice() {
 		return attackDice.getDice();
 	}
-	
+
 	public ArrayList<Integer> getDefendDice() {
 		return defendDice.getDice();
 	}

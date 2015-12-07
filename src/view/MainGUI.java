@@ -100,7 +100,6 @@ public class MainGUI extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			System.out.println("Saving Game");
 
-
 			try {
 				outputStream = new FileOutputStream("savedGame");
 				objectOutput = new ObjectOutputStream(outputStream);
@@ -111,16 +110,14 @@ public class MainGUI extends JFrame {
 			}
 
 			try {
-				if(map.getPlayers()==null&&map.getCards()==null&&map.getTerritories()==null&&map.getContinents()==null)
-				{
+				if (map.getPlayers() == null && map.getCards() == null && map.getTerritories() == null
+						&& map.getContinents() == null) {
 					System.out.println("ITs NULL MAN");
 				}
 				objectOutput.writeObject(map.getPlayers());
 				objectOutput.writeObject(map.getCards());
 				objectOutput.writeObject(map.getTerritories());
 				objectOutput.writeObject(map.getContinents());
-
-
 
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block

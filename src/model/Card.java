@@ -16,13 +16,13 @@ public class Card implements Serializable {
 	public Card(String territory, CardType type, Image img) {
 		this.type = type;
 		this.img = img;
-		this.territory=territory;
+		this.territory = territory;
 	}
 
 	public String getTerritory() {
 		return territory;
 	}
-	
+
 	public CardType getType() {
 		return type;
 	}
