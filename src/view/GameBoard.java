@@ -99,7 +99,7 @@ public class GameBoard extends JPanel {
 	JLabel picLanguageabel;
 	StartWindow startWindow;
 
-	JButton fortifyButton, endTurnButton;
+	JButton fortifyButton, endTurnButton, turnInCardsButton;
 
 	OpenNewMenu newgame1;
 
@@ -578,12 +578,38 @@ public class GameBoard extends JPanel {
 		Font font = new Font("Serif", Font.BOLD, 20);
 		fortifyButton = new JButton();
 		endTurnButton = new JButton();
+		turnInCardsButton = new JButton();
+
+		turnInCardsButton.setSize(150, 40);
+		turnInCardsButton.setText("Card Turnin");
+		turnInCardsButton.setLocation(1110, 340);
+
 		fortifyButton.setSize(150, 40);
 		fortifyButton.setText("Fortify");
 		fortifyButton.setLocation(1110, 400);
+
 		endTurnButton.setSize(150, 40);
 		endTurnButton.setText("End Turn");
 		endTurnButton.setLocation(1110, 460);
+
+		turnInCardsButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String message = "";
+				Object[] options = { "Turn in", "Return" };
+				int choice = JOptionPane.showOptionDialog(null, "INSERT CARD IMAGES SOMEWHERE AROUND HERE",
+						"Current Player's Cards", JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE, null, options,
+						options[0]);
+				if (choice == 0) {
+					if (newGame.turnInCard()) {
+						message = "Cards successfully turned in";
+					}
+					else {
+						message = "Cards cannot be turned in";
+					}
+					JOptionPane.showMessageDialog(null, message);
+				}
+			}
+		});
 
 		fortifyButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -606,6 +632,7 @@ public class GameBoard extends JPanel {
 				moveTurnLabel();
 			}
 		});
+		this.add(turnInCardsButton);
 		this.add(fortifyButton);
 		this.add(endTurnButton);
 
