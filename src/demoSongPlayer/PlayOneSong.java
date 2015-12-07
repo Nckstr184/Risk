@@ -22,13 +22,10 @@ public class PlayOneSong {
 		// public void run method of this anonymous class
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
-<<<<<<< HEAD
-				//ObjectWaitingForSongToEnd waiter = new ObjectWaitingForSongToEnd();
-				SongPlayer.playFile(null, "./songs/opensong.mp3");
-=======
+
 				ObjectWaitingForSongToEnd waiter = new ObjectWaitingForSongToEnd();
-				SongPlayer.playFile(waiter, "./songs/opensong.mp3");
->>>>>>> f098af0bab08f586027314b52045e96052647d6b
+				SongPlayer.playFile(null, "./songs/opensong.mp3");
+
 				System.out.println("Song played in a separate Thread so this appears immediately");
 				System.out.println("This program terminates only when song finishes...");
 			}
