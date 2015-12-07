@@ -384,6 +384,11 @@ public class GameLogic implements Serializable {
 		disperseNumberOfArmies();
 		startUpPlaceReinforcementPhase();
 	}
+	
+	public void startLoadedGame() {
+		numOfPlayers = allPlayers.getNumOfPlayers();
+		
+	}
 
 	private void startUpPlaceReinforcementPhase() {
 		// make temp list of territories
@@ -491,6 +496,7 @@ public class GameLogic implements Serializable {
 
 	public void setPlayerList(PlayerCollection newPlayers) {
 		allPlayers = newPlayers;
+		
 	}
 
 	public void setCards(ArrayList<String> newCards) {
@@ -627,7 +633,7 @@ public class GameLogic implements Serializable {
 	private int numOfRewardArmies = 4;
 	private int numOfCardTurnIns = 0;
 
-	public void turnInCard() {
+	public boolean turnInCard() {
 		Player currPlayer = allPlayers.getPlayer(indexOfPlayerTurn);
 
 		if (currPlayer.turnInCard()) {
@@ -639,6 +645,8 @@ public class GameLogic implements Serializable {
 				numOfRewardArmies += 5;
 			}
 			currPlayer.addArmies(numOfRewardArmies);
+			return true;
 		}
+		return false;
 	}
 }

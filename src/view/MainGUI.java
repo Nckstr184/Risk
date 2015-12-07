@@ -118,6 +118,8 @@ public class MainGUI extends JFrame {
 				objectOutput.writeObject(map.getCards());
 				objectOutput.writeObject(map.getTerritories());
 				objectOutput.writeObject(map.getContinents());
+				objectOutput.writeObject(map.getCurrentPlayer());
+				objectOutput.writeObject(map.reinforcementPhase);
 
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
