@@ -111,6 +111,8 @@ public class GameBoard extends JPanel {
 	private int fortifyCount, unitsFortified;
 	private FileInputStream inputStream;
 	private ObjectInputStream objectInput;
+	
+	private int turnCount = 0;
 
 	public GameBoard() {
 
