@@ -8232,8 +8232,10 @@ public class GameBoard extends JPanel {
 				gameBoardAttack(attackingTerr, defendingTerr);
 			}
 		} else {
-			JOptionPane.showConfirmDialog(null, "Sorry, you do not have enough armies to attack", "Not Strong Enough",
-					1);
+			if (!attackingTerr.getOwner().isAI()) {
+				JOptionPane.showConfirmDialog(null, "Sorry, you do not have enough armies to attack",
+						"Not Strong Enough", 1);
+			}
 		}
 	}
 
