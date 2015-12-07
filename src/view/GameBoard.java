@@ -164,8 +164,8 @@ public class GameBoard extends JPanel {
 								ArrayList<String> tempCards = null;
 								ArrayList<Territory> tempTerritories = null;
 								ArrayList<Continent> tempContinents = null;
-								Player tempPlayer=null;
-								boolean reinforcementPhaseImport=true;
+								Player tempPlayer = null;
+								boolean reinforcementPhaseImport = true;
 								try {
 									inputStream = new FileInputStream("savedGame");
 									objectInput = new ObjectInputStream(inputStream);
@@ -176,13 +176,15 @@ public class GameBoard extends JPanel {
 									tempPlayer = (Player) objectInput.readObject();
 									reinforcementPhaseImport = (boolean) objectInput.readObject();
 
-									//printPlayersAndTheirTerritories(tempPlayers);
+									printPlayersAndTheirTerritories(tempPlayers);
+
 								} catch (ClassNotFoundException e) {
 									// TODO Auto-generated catch block
 									System.out.println("reading did not work");
 									e.printStackTrace();
 								}
-								this.importGameLogic(tempPlayers, tempCards, tempContinents, tempTerritories, tempPlayer, reinforcementPhaseImport);
+								this.importGameLogic(tempPlayers, tempCards, tempContinents, tempTerritories,
+										tempPlayer, reinforcementPhaseImport);
 							}
 
 							System.out.println("NUMBER OF PLAYERS: " + newGame.getNumOfPlayers());
@@ -505,8 +507,12 @@ public class GameBoard extends JPanel {
 	}
 
 	public void startOldGame() {
+<<<<<<< HEAD
 		int numberOfPlayers=newGame.getNumOfPlayers();
 		System.out.println(numberOfPlayers);
+=======
+		int numberOfPlayers = newGame.getNumOfPlayers();
+>>>>>>> 8380e779c3c6561f20df83fe1ccc78c037c8cb01
 		if (numberOfPlayers == 6) {
 
 			player1 = newGame.getPlayerAt(0);
@@ -607,22 +613,23 @@ public class GameBoard extends JPanel {
 	}
 
 	public void importGameLogic(PlayerCollection newPlayers, ArrayList<String> newCards,
-			ArrayList<Continent> newContinets, ArrayList<Territory> newTerritories, Player tempPlayer, boolean reinforcemnetPhaseImport) {
+			ArrayList<Continent> newContinets, ArrayList<Territory> newTerritories, Player tempPlayer,
+			boolean reinforcemnetPhaseImport) {
 		newGame = new GameLogic(null, null, null, null, null, null);
 		newGame.setPlayerList(newPlayers);
 		newGame.setCards(newCards);
 		newGame.setTerritory(newTerritories);
 		newGame.setContinents(newContinets);
-		currPlayer=tempPlayer;
-		reinforcementPhase=reinforcemnetPhaseImport;
+		currPlayer = tempPlayer;
+		reinforcementPhase = reinforcemnetPhaseImport;
 		newGame.startLoadedGame();
 		this.startOldGame();
 	}
 
-	public Player getCurrentPlayer()
-	{
+	public Player getCurrentPlayer() {
 		return currPlayer;
 	}
+
 	public PlayerCollection getPlayers() {
 		return newGame.getPlayerList();
 	}
@@ -668,14 +675,12 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				String message = "";
 				Object[] options = { "Turn in", "Return" };
-				int choice = JOptionPane.showOptionDialog(null, "INSERT CARD IMAGES SOMEWHERE AROUND HERE",
-						"Current Player's Cards", JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE, null, options,
-						options[0]);
+				int choice = JOptionPane.showOptionDialog(null, currPlayer.getCards(), "Current Player's Cards",
+						JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
 				if (choice == 0) {
 					if (newGame.turnInCard()) {
 						message = "Cards successfully turned in";
-					}
-					else {
+					} else {
 						message = "Cards cannot be turned in";
 					}
 					JOptionPane.showMessageDialog(null, message);
@@ -3818,7 +3823,7 @@ public class GameBoard extends JPanel {
 						territories.get(0).addUnits(1);
 						languageLabel1.setText("" + javaUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+
 						nextPlayer();
 
 					}
@@ -3918,7 +3923,7 @@ public class GameBoard extends JPanel {
 						territories.get(1).addUnits(1);
 						myLabel.setText("" + pythonUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+
 						nextPlayer();
 					}
 
@@ -4029,7 +4034,6 @@ public class GameBoard extends JPanel {
 						territories.get(2).addUnits(1);
 						myLabel.setText("" + cUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
@@ -4127,7 +4131,6 @@ public class GameBoard extends JPanel {
 						territories.get(3).addUnits(1);
 						myLabel.setText("" + sqlUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
@@ -4237,7 +4240,6 @@ public class GameBoard extends JPanel {
 						territories.get(4).addUnits(1);
 						myLabel.setText("" + rubyUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
@@ -4333,7 +4335,6 @@ public class GameBoard extends JPanel {
 						territories.get(5).addUnits(1);
 						myLabel.setText("" + gitUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
@@ -4442,7 +4443,6 @@ public class GameBoard extends JPanel {
 						territories.get(6).addUnits(1);
 						myLabel.setText("" + perlUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
@@ -4513,7 +4513,6 @@ public class GameBoard extends JPanel {
 						territories.get(14).addUnits(1);
 						myLabel.setText("" + wilberUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
@@ -4573,7 +4572,7 @@ public class GameBoard extends JPanel {
 					tonatiuhAttacking = false;
 					attackPhase = true;
 				}
-				
+
 				if ((tonatiuhFortify == true) && (currPlayer.getName() == wilberWildcat.getName())) {
 					territories.get(14).addUnits(unitsFortified);
 					updateLabels();
@@ -4615,7 +4614,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					wilmaFortify = false;
 				}
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == wilberWildcat.getName()) {
 						System.out.println("fortify from wilber!!!");
@@ -4645,7 +4644,6 @@ public class GameBoard extends JPanel {
 						territories.get(15).addUnits(1);
 						myLabel.setText("" + wilmaUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
@@ -4681,7 +4679,7 @@ public class GameBoard extends JPanel {
 					millerAttacking = false;
 					attackPhase = true;
 				}
-				
+
 				if ((wilberFortify == true) && (currPlayer.getName() == wilmaWildcat.getName())) {
 					territories.get(15).addUnits(unitsFortified);
 					updateLabels();
@@ -4729,7 +4727,6 @@ public class GameBoard extends JPanel {
 						territories.get(16).addUnits(1);
 						myLabel.setText("" + richUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
@@ -4777,7 +4774,7 @@ public class GameBoard extends JPanel {
 					mckaleAttacking = false;
 					attackPhase = true;
 				}
-				
+
 				if ((wilberFortify == true) && (currPlayer.getName() == richWildcat.getName())) {
 					territories.get(16).addUnits(unitsFortified);
 					updateLabels();
@@ -4837,7 +4834,6 @@ public class GameBoard extends JPanel {
 						territories.get(17).addUnits(1);
 						myLabel.setText("" + millerUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
@@ -4877,7 +4873,7 @@ public class GameBoard extends JPanel {
 					scraptopiaAttacking = false;
 					attackPhase = true;
 				}
-				
+
 				if ((wilmaFortify == true) && (currPlayer.getName() == millerWildcat.getName())) {
 					territories.get(17).addUnits(unitsFortified);
 					updateLabels();
@@ -4902,7 +4898,7 @@ public class GameBoard extends JPanel {
 					playerCount.setText("Your turn has ended!");
 					richFortify = false;
 				}
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == millerWildcat.getName()) {
 						System.out.println("fortify from miller!!!");
@@ -4932,7 +4928,6 @@ public class GameBoard extends JPanel {
 						territories.get(18).addUnits(1);
 						myLabel.setText("" + scoobyUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
@@ -4978,7 +4973,7 @@ public class GameBoard extends JPanel {
 					papaAttacking = false;
 					attackPhase = true;
 				}
-				
+
 				if ((papaFortify == true) && (currPlayer.getName() == scoobyWildcat.getName())) {
 					territories.get(18).addUnits(unitsFortified);
 					updateLabels();
@@ -5009,8 +5004,7 @@ public class GameBoard extends JPanel {
 					playerCount.setText("Your turn has ended!");
 					wilberFortify = false;
 				}
-				
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == scoobyWildcat.getName()) {
 						System.out.println("fortify from scooby!!!");
@@ -5040,7 +5034,6 @@ public class GameBoard extends JPanel {
 						territories.get(19).addUnits(1);
 						myLabel.setText("" + mckaleUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
@@ -5080,7 +5073,7 @@ public class GameBoard extends JPanel {
 					zonaAttacking = false;
 					attackPhase = true;
 				}
-				
+
 				if ((zonaFortify == true) && (currPlayer.getName() == mckaleWildcat.getName())) {
 					territories.get(19).addUnits(unitsFortified);
 					updateLabels();
@@ -5105,8 +5098,7 @@ public class GameBoard extends JPanel {
 					playerCount.setText("Your turn has ended!");
 					richFortify = false;
 				}
-				
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == mckaleWildcat.getName()) {
 						System.out.println("fortify from miller!!!");
@@ -5136,7 +5128,6 @@ public class GameBoard extends JPanel {
 						territories.get(20).addUnits(1);
 						myLabel.setText("" + zonaUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
@@ -5205,7 +5196,6 @@ public class GameBoard extends JPanel {
 						territories.get(21).addUnits(1);
 						myLabel.setText("" + pjUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
@@ -5251,7 +5241,7 @@ public class GameBoard extends JPanel {
 					scoobyAttacking = false;
 					attackPhase = true;
 				}
-				
+
 				if ((scoobyFortify == true) && (currPlayer.getName() == papajohnsPizza.getName())) {
 					territories.get(21).addUnits(unitsFortified);
 					updateLabels();
@@ -5282,8 +5272,7 @@ public class GameBoard extends JPanel {
 					playerCount.setText("Your turn has ended!");
 					dominosFortify = false;
 				}
-				
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == papajohnsPizza.getName()) {
 						System.out.println("fortify from papa!!!");
@@ -5313,7 +5302,6 @@ public class GameBoard extends JPanel {
 						territories.get(22).addUnits(1);
 						myLabel.setText("" + domUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
@@ -5418,7 +5406,6 @@ public class GameBoard extends JPanel {
 						territories.get(23).addUnits(1);
 						myLabel.setText("" + phUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
@@ -5482,7 +5469,7 @@ public class GameBoard extends JPanel {
 					playerCount.setText("Your turn has ended!");
 					papaFortify = false;
 				}
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == pizzahutPizza.getName()) {
 						System.out.println("fortify from hut!!!");
@@ -5512,7 +5499,6 @@ public class GameBoard extends JPanel {
 						territories.get(24).addUnits(1);
 						myLabel.setText("" + bjUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
@@ -5546,31 +5532,28 @@ public class GameBoard extends JPanel {
 					pizzahutAttacking = false;
 					attackPhase = true;
 				}
-				
+
 				if ((pizzahutFortify == true) && (currPlayer.getName() == blackjackPizza.getName())) {
 					territories.get(24).addUnits(unitsFortified);
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					pizzahutFortify = false;
 				}
-				
+
 				if ((dominosFortify == true) && (currPlayer.getName() == blackjackPizza.getName())) {
 					territories.get(24).addUnits(unitsFortified);
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					dominosFortify = false;
 				}
-				
-				
+
 				if ((papaFortify == true) && (currPlayer.getName() == blackjackPizza.getName())) {
 					territories.get(24).addUnits(unitsFortified);
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					papaFortify = false;
 				}
-				
-				
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == blackjackPizza.getName()) {
 						System.out.println("fortify from blackj!!!");
@@ -5600,7 +5583,6 @@ public class GameBoard extends JPanel {
 						territories.get(25).addUnits(1);
 						myLabel.setText("" + hhUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
@@ -5640,8 +5622,7 @@ public class GameBoard extends JPanel {
 					brooklynsAttacking = false;
 					attackPhase = true;
 				}
-				
-				
+
 				if ((brooklynFortify == true) && (currPlayer.getName() == hungryhowiesPizza.getName())) {
 					territories.get(25).addUnits(unitsFortified);
 					updateLabels();
@@ -5666,8 +5647,7 @@ public class GameBoard extends JPanel {
 					playerCount.setText("Your turn has ended!");
 					dominosFortify = false;
 				}
-				
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == hungryhowiesPizza.getName()) {
 						System.out.println("fortify from hungryhowies!!!");
@@ -5698,7 +5678,6 @@ public class GameBoard extends JPanel {
 						territories.get(26).addUnits(1);
 						myLabel.setText("" + bUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
@@ -5744,7 +5723,7 @@ public class GameBoard extends JPanel {
 					tonatiuhAttacking = false;
 					attackPhase = true;
 				}
-				
+
 				if ((tonatiuhFortify == true) && (currPlayer.getName() == brooklynPizza.getName())) {
 					territories.get(26).addUnits(unitsFortified);
 					updateLabels();
@@ -5775,9 +5754,7 @@ public class GameBoard extends JPanel {
 					playerCount.setText("Your turn has ended!");
 					dominosFortify = false;
 				}
-				
-				
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == brooklynPizza.getName()) {
 						System.out.println("fortify from brook!!!");
@@ -5808,7 +5785,6 @@ public class GameBoard extends JPanel {
 						territories.get(27).addUnits(1);
 						myLabel.setText("" + ppUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
@@ -5843,7 +5819,7 @@ public class GameBoard extends JPanel {
 					tonatiuhAttacking = false;
 					attackPhase = true;
 				}
-				
+
 				if ((tonatiuhFortify == true) && (currPlayer.getName() == pizzaplanetPizza.getName())) {
 					territories.get(27).addUnits(unitsFortified);
 					updateLabels();
@@ -5862,7 +5838,7 @@ public class GameBoard extends JPanel {
 					playerCount.setText("Your turn has ended!");
 					brooklynFortify = false;
 				}
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == pizzaplanetPizza.getName()) {
 						System.out.println("fortify from pizzaplanet!!!");
@@ -5892,7 +5868,6 @@ public class GameBoard extends JPanel {
 						territories.get(35).addUnits(1);
 						myLabel.setText("" + apolloUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
@@ -5900,6 +5875,13 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 
+				}
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (apolloSun.getName() == currPlayer.getName())) {
+					apolloUnits += 1;
+					territories.get(35).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);
 				}
 				if (attackPhase == true) {
 					if ((apolloSun.getName() == currPlayer.getName()) && (apolloUnits >= 2)) {
@@ -5933,7 +5915,7 @@ public class GameBoard extends JPanel {
 					pizzaplanetAttacking = false;
 					attackPhase = true;
 				}
-				
+
 				if ((pizzaplanetFortify == true) && (currPlayer.getName() == apolloSun.getName())) {
 					territories.get(35).addUnits(unitsFortified);
 					updateLabels();
@@ -5958,7 +5940,7 @@ public class GameBoard extends JPanel {
 					playerCount.setText("Your turn has ended!");
 					raFortify = false;
 				}
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == apolloSun.getName()) {
 						System.out.println("fortify from apollo!!");
@@ -5989,11 +5971,18 @@ public class GameBoard extends JPanel {
 						territories.get(36).addUnits(1);
 						myLabel.setText("" + raUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+
 						nextPlayer();
 					}
 
 					checkIfReinforcementPhaseIsOver();
+				}
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (raSun.getName() == currPlayer.getName())) {
+					raUnits += 1;
+					territories.get(36).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);
 				}
 				if (attackPhase == true) {
 					if ((raSun.getName() == currPlayer.getName()) && (raUnits >= 2)) {
@@ -6021,7 +6010,7 @@ public class GameBoard extends JPanel {
 					amunAttacking = false;
 					attackPhase = true;
 				}
-				
+
 				if ((amunFortify == true) && (currPlayer.getName() == raSun.getName())) {
 					territories.get(36).addUnits(unitsFortified);
 					updateLabels();
@@ -6040,7 +6029,7 @@ public class GameBoard extends JPanel {
 					playerCount.setText("Your turn has ended!");
 					apolloFortify = false;
 				}
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == amunSun.getName()) {
 						System.out.println("fortify from amun!!");
@@ -6071,13 +6060,19 @@ public class GameBoard extends JPanel {
 						territories.get(37).addUnits(1);
 						myLabel.setText("" + heliosUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (heliosSun.getName() == currPlayer.getName())) {
+					heliosUnits += 1;
+					territories.get(37).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);
 				}
 				if (attackPhase == true) {
 					if ((heliosSun.getName() == currPlayer.getName()) && (heliosUnits >= 2)) {
@@ -6117,7 +6112,7 @@ public class GameBoard extends JPanel {
 					javaAttacking = false;
 					attackPhase = true;
 				}
-				
+
 				if ((javaFortify == true) && (currPlayer.getName() == heliosSun.getName())) {
 					territories.get(37).addUnits(unitsFortified);
 					updateLabels();
@@ -6148,8 +6143,7 @@ public class GameBoard extends JPanel {
 					playerCount.setText("Your turn has ended!");
 					raFortify = false;
 				}
-				
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == heliosSun.getName()) {
 						System.out.println("fortify from helios!!");
@@ -6179,13 +6173,19 @@ public class GameBoard extends JPanel {
 						territories.get(38).addUnits(1);
 						myLabel.setText("" + intiUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (intiSun.getName() == currPlayer.getName())) {
+					intiUnits += 1;
+					territories.get(38).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);
 				}
 				if (attackPhase == true) {
 					if ((intiSun.getName() == currPlayer.getName()) && (intiUnits >= 2)) {
@@ -6207,7 +6207,7 @@ public class GameBoard extends JPanel {
 					horusAttacking = false;
 					attackPhase = true;
 				}
-				
+
 				if ((horusFortify == true) && (currPlayer.getName() == intiSun.getName())) {
 					territories.get(38).addUnits(unitsFortified);
 					updateLabels();
@@ -6220,7 +6220,7 @@ public class GameBoard extends JPanel {
 					playerCount.setText("Your turn has ended!");
 					heliosFortify = false;
 				}
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == intiSun.getName()) {
 						System.out.println("fortify from inti!!");
@@ -6250,13 +6250,19 @@ public class GameBoard extends JPanel {
 						territories.get(39).addUnits(1);
 						myLabel.setText("" + horusUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (horusSun.getName() == currPlayer.getName())) {
+					horusUnits += 1;
+					territories.get(39).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);
 				}
 				if (attackPhase == true) {
 					if ((horusSun.getName() == currPlayer.getName()) && (horusUnits >= 2)) {
@@ -6290,7 +6296,7 @@ public class GameBoard extends JPanel {
 					amunAttacking = false;
 					attackPhase = true;
 				}
-				
+
 				if ((amunFortify == true) && (currPlayer.getName() == horusSun.getName())) {
 					territories.get(39).addUnits(unitsFortified);
 					updateLabels();
@@ -6303,23 +6309,21 @@ public class GameBoard extends JPanel {
 					playerCount.setText("Your turn has ended!");
 					intiFortify = false;
 				}
-				
+
 				if ((tonatiuhFortify == true) && (currPlayer.getName() == horusSun.getName())) {
 					territories.get(39).addUnits(unitsFortified);
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					tonatiuhFortify = false;
 				}
-				
+
 				if ((heliosFortify == true) && (currPlayer.getName() == horusSun.getName())) {
 					territories.get(39).addUnits(unitsFortified);
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					heliosFortify = false;
 				}
-				
-				
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == horusSun.getName()) {
 						System.out.println("fortify from horus!!");
@@ -6349,13 +6353,19 @@ public class GameBoard extends JPanel {
 						territories.get(40).addUnits(1);
 						myLabel.setText("" + tonatiuhUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (tonatiuhSun.getName() == currPlayer.getName())) {
+					tonatiuhUnits += 1;
+					territories.get(40).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);
 				}
 				if (attackPhase == true) {
 					if ((tonatiuhSun.getName() == currPlayer.getName()) && (tonatiuhUnits >= 2)) {
@@ -6395,8 +6405,7 @@ public class GameBoard extends JPanel {
 					pizzaplanetAttacking = false;
 					attackPhase = true;
 				}
-				
-				
+
 				if ((pizzaplanetFortify == true) && (currPlayer.getName() == tonatiuhSun.getName())) {
 					territories.get(40).addUnits(unitsFortified);
 					updateLabels();
@@ -6427,7 +6436,7 @@ public class GameBoard extends JPanel {
 					playerCount.setText("Your turn has ended!");
 					apolloFortify = false;
 				}
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == tonatiuhSun.getName()) {
 						System.out.println("fortify from ton!!");
@@ -6457,13 +6466,19 @@ public class GameBoard extends JPanel {
 						territories.get(41).addUnits(1);
 						myLabel.setText("" + amunUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (amunSun.getName() == currPlayer.getName())) {
+					amunUnits += 1;
+					territories.get(41).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);
 				}
 				if (attackPhase == true) {
 					if ((amunSun.getName() == currPlayer.getName()) && (amunUnits >= 2)) {
@@ -6503,8 +6518,7 @@ public class GameBoard extends JPanel {
 					tonatiuhAttacking = false;
 					attackPhase = true;
 				}
-				
-				
+
 				if ((tonatiuhFortify == true) && (currPlayer.getName() == amunSun.getName())) {
 					territories.get(41).addUnits(unitsFortified);
 					updateLabels();
@@ -6535,7 +6549,7 @@ public class GameBoard extends JPanel {
 					playerCount.setText("Your turn has ended!");
 					apolloFortify = false;
 				}
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == amunSun.getName()) {
 						System.out.println("fortify from amun!!");
@@ -6565,13 +6579,19 @@ public class GameBoard extends JPanel {
 						territories.get(7).addUnits(1);
 						myLabel.setText("" + rawrUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (rawrvilleDino.getName() == currPlayer.getName())) {
+					rawrUnits += 1;
+					territories.get(7).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);
 				}
 				if (attackPhase == true) {
 					if ((rawrvilleDino.getName() == currPlayer.getName()) && (rawrUnits >= 2)) {
@@ -6593,7 +6613,7 @@ public class GameBoard extends JPanel {
 					dactilitoAttacking = false;
 					attackPhase = true;
 				}
-				
+
 				if ((dactilitoFortify == true) && (currPlayer.getName() == rawrvilleDino.getName())) {
 					territories.get(7).addUnits(unitsFortified);
 					updateLabels();
@@ -6606,7 +6626,7 @@ public class GameBoard extends JPanel {
 					playerCount.setText("Your turn has ended!");
 					laieggesFortify = false;
 				}
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == rawrvilleDino.getName()) {
 						System.out.println("fortify from rawr!!");
@@ -6636,12 +6656,19 @@ public class GameBoard extends JPanel {
 						territories.get(8).addUnits(1);
 						myLabel.setText("" + eggUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
+
 						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (laieggesDino.getName() == currPlayer.getName())) {
+					eggUnits += 1;
+					territories.get(8).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);
 				}
 				if (attackPhase == true) {
 					if ((laieggesDino.getName() == currPlayer.getName()) && (eggUnits >= 2)) {
@@ -6675,7 +6702,7 @@ public class GameBoard extends JPanel {
 					crescentcapitalAttacking = false;
 					attackPhase = true;
 				}
-				
+
 				if ((crescentcapitalFortify == true) && (currPlayer.getName() == laieggesDino.getName())) {
 					territories.get(8).addUnits(unitsFortified);
 					updateLabels();
@@ -6700,9 +6727,7 @@ public class GameBoard extends JPanel {
 					playerCount.setText("Your turn has ended!");
 					rawrFortify = false;
 				}
-				
-				
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == laieggesDino.getName()) {
 						System.out.println("fortify from laieeges!!");
@@ -6732,13 +6757,19 @@ public class GameBoard extends JPanel {
 						territories.get(9).addUnits(1);
 						myLabel.setText("" + dacUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (dactilitoDino.getName() == currPlayer.getName())) {
+					dacUnits += 1;
+					territories.get(9).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);
 				}
 				if (attackPhase == true) {
 					if ((dactilitoDino.getName() == currPlayer.getName()) && (dacUnits >= 2)) {
@@ -6808,8 +6839,7 @@ public class GameBoard extends JPanel {
 					playerCount.setText("Your turn has ended!");
 					laieggesFortify = false;
 				}
-				
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == dactilitoDino.getName()) {
 						System.out.println("fortify from dac!!");
@@ -6839,13 +6869,19 @@ public class GameBoard extends JPanel {
 						territories.get(10).addUnits(1);
 						myLabel.setText("" + danUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (dirtydanDino.getName() == currPlayer.getName())) {
+					danUnits += 1;
+					territories.get(10).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);
 				}
 				if (attackPhase == true) {
 					if ((dirtydanDino.getName() == currPlayer.getName()) && (danUnits >= 2)) {
@@ -6897,7 +6933,7 @@ public class GameBoard extends JPanel {
 					crescentcapitalAttacking = false;
 					attackPhase = true;
 				}
-				
+
 				if ((crescentcapitalFortify == true) && (currPlayer.getName() == dirtydanDino.getName())) {
 					territories.get(10).addUnits(unitsFortified);
 					updateLabels();
@@ -6940,8 +6976,7 @@ public class GameBoard extends JPanel {
 					playerCount.setText("Your turn has ended!");
 					laieggesFortify = false;
 				}
-				
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == dirtydanDino.getName()) {
 						System.out.println("fortify from dirty!!");
@@ -6972,13 +7007,19 @@ public class GameBoard extends JPanel {
 						territories.get(11).addUnits(1);
 						myLabel.setText("" + bbUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (blackbeardDino.getName() == currPlayer.getName())) {
+					bbUnits += 1;
+					territories.get(11).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);
 				}
 				if (attackPhase == true) {
 					if ((blackbeardDino.getName() == currPlayer.getName()) && (bbUnits >= 2)) {
@@ -7012,7 +7053,7 @@ public class GameBoard extends JPanel {
 					toystoryAttacking = false;
 					attackPhase = true;
 				}
-				
+
 				if ((toystoryFortify == true) && (currPlayer.getName() == blackbeardDino.getName())) {
 					territories.get(11).addUnits(unitsFortified);
 					updateLabels();
@@ -7037,8 +7078,7 @@ public class GameBoard extends JPanel {
 					playerCount.setText("Your turn has ended!");
 					dactilitoFortify = false;
 				}
-				
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == blackbeardDino.getName()) {
 						System.out.println("fortify from black!!");
@@ -7068,13 +7108,19 @@ public class GameBoard extends JPanel {
 						territories.get(12).addUnits(1);
 						myLabel.setText("" + moniUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (monisaurusDino.getName() == currPlayer.getName())) {
+					moniUnits += 1;
+					territories.get(12).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);
 				}
 				if (attackPhase == true) {
 					if ((monisaurusDino.getName() == currPlayer.getName()) && (moniUnits >= 2)) {
@@ -7108,7 +7154,7 @@ public class GameBoard extends JPanel {
 					newlandofzachAttacking = false;
 					attackPhase = true;
 				}
-				
+
 				if ((newlandofzachFortify == true) && (currPlayer.getName() == monisaurusDino.getName())) {
 					territories.get(12).addUnits(unitsFortified);
 					updateLabels();
@@ -7133,7 +7179,7 @@ public class GameBoard extends JPanel {
 					playerCount.setText("Your turn has ended!");
 					dirtydanFortify = false;
 				}
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == monisaurusDino.getName()) {
 						System.out.println("fortify from moni!!");
@@ -7163,13 +7209,19 @@ public class GameBoard extends JPanel {
 						territories.get(13).addUnits(1);
 						myLabel.setText("" + tsUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (toystoryDino.getName() == currPlayer.getName())) {
+					tsUnits += 1;
+					territories.get(13).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);
 				}
 				if (attackPhase == true) {
 					if ((toystoryDino.getName() == currPlayer.getName()) && (tsUnits >= 2)) {
@@ -7197,7 +7249,7 @@ public class GameBoard extends JPanel {
 					monisaurusAttacking = false;
 					attackPhase = true;
 				}
-				
+
 				if ((monisaurusFortify == true) && (currPlayer.getName() == toystoryDino.getName())) {
 					territories.get(13).addUnits(unitsFortified);
 					updateLabels();
@@ -7216,7 +7268,7 @@ public class GameBoard extends JPanel {
 					playerCount.setText("Your turn has ended!");
 					dactilitoFortify = false;
 				}
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == toystoryDino.getName()) {
 						System.out.println("fortify from toystroy!!");
@@ -7249,12 +7301,18 @@ public class GameBoard extends JPanel {
 						myLabel.setText("" + scrapUnits);
 
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (scraptopiaCresent.getName() == currPlayer.getName())) {
+					scrapUnits += 1;
+					territories.get(28).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);
 				}
 				if (attackPhase == true) {
 					if ((scraptopiaCresent.getName() == currPlayer.getName()) && (scrapUnits >= 2)) {
@@ -7288,8 +7346,7 @@ public class GameBoard extends JPanel {
 					playerCount.setText("Your turn has ended!");
 					landofzachFortify = false;
 				}
-				
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == scraptopiaCresent.getName()) {
 						System.out.println("fortify from scrap!!");
@@ -7322,13 +7379,19 @@ public class GameBoard extends JPanel {
 						territories.get(29).addUnits(1);
 						myLabel.setText("" + zachUnits);
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (landofzachCresent.getName() == currPlayer.getName())) {
+					zachUnits += 1;
+					territories.get(29).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);
 				}
 				if (attackPhase == true) {
 					if ((landofzachCresent.getName() == currPlayer.getName()) && (zachUnits >= 2)) {
@@ -7374,8 +7437,7 @@ public class GameBoard extends JPanel {
 					playerCount.setText("Your turn has ended!");
 					scraptopiaFortify = false;
 				}
-				
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == landofzachCresent.getName()) {
 						System.out.println("fortify from lozach!!");
@@ -7407,13 +7469,19 @@ public class GameBoard extends JPanel {
 						myLabel.setText("" + giantUnits);
 
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (giantCresent.getName() == currPlayer.getName())) {
+					giantUnits += 1;
+					territories.get(30).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);
 				}
 				if (attackPhase == true) {
 					if ((giantCresent.getName() == currPlayer.getName()) && (giantUnits >= 2)) {
@@ -7447,7 +7515,7 @@ public class GameBoard extends JPanel {
 					rubyAttacking = false;
 					attackPhase = true;
 				}
-				
+
 				if ((rubyFortify == true) && (currPlayer.getName() == giantCresent.getName())) {
 					territories.get(30).addUnits(unitsFortified);
 					updateLabels();
@@ -7472,8 +7540,7 @@ public class GameBoard extends JPanel {
 					playerCount.setText("Your turn has ended!");
 					landofzachFortify = false;
 				}
-				
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == giantCresent.getName()) {
 						System.out.println("fortify from giant!!");
@@ -7506,13 +7573,19 @@ public class GameBoard extends JPanel {
 						myLabel.setText("" + newzachUnits);
 
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
 					checkIfReinforcementPhaseIsOver();
+				}
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (newlandofzachCresent.getName() == currPlayer.getName())) {
+					newzachUnits += 1;
+					territories.get(31).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);
 				}
 				if (attackPhase == true) {
 					if ((newlandofzachCresent.getName() == currPlayer.getName()) && (newzachUnits >= 2)) {
@@ -7552,8 +7625,7 @@ public class GameBoard extends JPanel {
 					monisaurusAttacking = false;
 					attackPhase = true;
 				}
-				
-				
+
 				if ((monisaurusFortify == true) && (currPlayer.getName() == newlandofzachCresent.getName())) {
 					territories.get(31).addUnits(unitsFortified);
 					updateLabels();
@@ -7584,8 +7656,7 @@ public class GameBoard extends JPanel {
 					playerCount.setText("Your turn has ended!");
 					landofzachFortify = false;
 				}
-				
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == newlandofzachCresent.getName()) {
 						System.out.println("fortify from newland!!");
@@ -7617,7 +7688,6 @@ public class GameBoard extends JPanel {
 						myLabel.setText("" + southUnits);
 
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
@@ -7625,6 +7695,13 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 
+				}
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (southscraptopiaCresent.getName() == currPlayer.getName())) {
+					southUnits += 1;
+					territories.get(32).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);
 				}
 				if (attackPhase == true) {
 					if ((southscraptopiaCresent.getName() == currPlayer.getName()) && (southUnits >= 2)) {
@@ -7646,7 +7723,7 @@ public class GameBoard extends JPanel {
 					newlandofzachAttacking = false;
 					attackPhase = true;
 				}
-				
+
 				if ((newlandofzachFortify == true) && (currPlayer.getName() == southscraptopiaCresent.getName())) {
 					territories.get(32).addUnits(unitsFortified);
 					updateLabels();
@@ -7659,8 +7736,7 @@ public class GameBoard extends JPanel {
 					playerCount.setText("Your turn has ended!");
 					giantFortify = false;
 				}
-				
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == southscraptopiaCresent.getName()) {
 						System.out.println("fortify from southscrap!!");
@@ -7692,7 +7768,6 @@ public class GameBoard extends JPanel {
 						myLabel.setText("" + blooUnits);
 
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
@@ -7700,6 +7775,13 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 
+				}
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (bloobawlCresent.getName() == currPlayer.getName())) {
+					blooUnits += 1;
+					territories.get(33).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);
 				}
 				if (attackPhase == true) {
 					if ((bloobawlCresent.getName() == currPlayer.getName()) && (blooUnits >= 2)) {
@@ -7788,7 +7870,6 @@ public class GameBoard extends JPanel {
 						myLabel.setText("" + capUnits);
 
 						currPlayer.removeArmies(1);
-						moveTurnLabel();
 
 						nextPlayer();
 
@@ -7796,6 +7877,13 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 
+				}
+				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
+						&& (cresentcaptitalCresent.getName() == currPlayer.getName())) {
+					capUnits += 1;
+					territories.get(34).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);
 				}
 				if (attackPhase == true) {
 					if ((cresentcaptitalCresent.getName() == currPlayer.getName()) && (capUnits >= 2)) {
@@ -7823,7 +7911,7 @@ public class GameBoard extends JPanel {
 					dirtydanAttacking = false;
 					attackPhase = true;
 				}
-				
+
 				if ((dirtydanFortify == true) && (currPlayer.getName() == cresentcaptitalCresent.getName())) {
 					territories.get(34).addUnits(unitsFortified);
 					updateLabels();
@@ -7842,7 +7930,7 @@ public class GameBoard extends JPanel {
 					playerCount.setText("Your turn has ended!");
 					bloobawlFortify = false;
 				}
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == cresentcaptitalCresent.getName()) {
 						System.out.println("fortify from scrap!!");
@@ -8637,22 +8725,22 @@ public class GameBoard extends JPanel {
 	public void moveTurnLabel() {
 		if (newGame.getPlayerAt(0) == currPlayer) {
 			playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-			turnMarker.setLocation(320, 590);
+			turnMarker.setLocation(150, 590);
 		} else if (newGame.getPlayerAt(1) == currPlayer) {
 			playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-			turnMarker.setLocation(470, 590);
+			turnMarker.setLocation(320, 590);
 		} else if (newGame.getPlayerAt(2) == currPlayer) {
 			playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-			turnMarker.setLocation(640, 590);
+			turnMarker.setLocation(470, 590);
 		} else if (newGame.getPlayerAt(3) == currPlayer) {
 			playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-			turnMarker.setLocation(810, 590);
+			turnMarker.setLocation(640, 590);
 		} else if (newGame.getPlayerAt(4) == currPlayer) {
 			playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-			turnMarker.setLocation(980, 590);
+			turnMarker.setLocation(810, 590);
 		} else if (newGame.getPlayerAt(5) == currPlayer) {
 			playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-			turnMarker.setLocation(150, 590);
+			turnMarker.setLocation(980, 590);
 		}
 	}
 
@@ -8660,6 +8748,10 @@ public class GameBoard extends JPanel {
 
 		currPlayer = newGame.nextPlayer();
 
+		moveTurnLabel();
+		if (!reinforcementPhase) {
+			newGame.addReinforcements();
+		}
 		System.out.println("Current Player: " + currPlayer.getName());
 		System.out.println("AI?: " + currPlayer.isAI());
 
@@ -8668,7 +8760,6 @@ public class GameBoard extends JPanel {
 			if (!reinforcementPhase) {
 				System.out.println("Not in reinforcement phase");
 				newGame.turnInCard();
-				newGame.addReinforcements();
 				AITurn(0);
 				try {
 					Thread.sleep(2000);
@@ -8688,13 +8779,11 @@ public class GameBoard extends JPanel {
 				updateLabels();
 
 				AITurn(2);
-				moveTurnLabel();
 				updateLabels();
 			} else {
 				System.out.println("In reinforcement phase");
 				AITurn(0);
 				updateLabels();
-				moveTurnLabel();
 			}
 			nextPlayer();
 		}
@@ -8796,7 +8885,7 @@ public class GameBoard extends JPanel {
 		/*
 		 * Lots of Run6Bots stuff
 		 * 
-		 * 0 >>> Deploy 1 >>> Attack 2 >>> Fortify
+		 * 0 >>> Deploy | 1 >>> Attack | 2 >>> Fortify
 		 */
 		Random r = new Random();
 
@@ -8807,8 +8896,11 @@ public class GameBoard extends JPanel {
 					.get(r.nextInt(currPlayer.getTerritories().size()));
 			Territory defendingTerritory = currPlayer.attackTerritory(attackingTerritory,
 					attackingTerritory.getNeighbors());
-			gameBoardAttack(attackingTerritory, defendingTerritory);
-			updateLabels();
+			if (defendingTerritory != null) {
+				gameBoardAttack(attackingTerritory, defendingTerritory);
+				updateLabels();
+			}
+
 		} else if (turnPhase == 2) {
 			currPlayer.deployArmy();
 		}
