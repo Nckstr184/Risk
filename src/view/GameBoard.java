@@ -4103,6 +4103,15 @@ public class GameBoard extends JPanel {
 					}
 					checkIfReinforcementPhaseIsOver();
 				}
+				System.out.println(currPlayer.getNumOfArmies());
+				if((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0) &&(javaLanguage.getName() == currPlayer.getName())){
+					javaUnits +=1;
+					territories.get(0).addUnits(1);
+					updateLabels();
+					currPlayer.removeArmies(1);			
+				}
+				
+				
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
 				if (attackPhase == true) {
