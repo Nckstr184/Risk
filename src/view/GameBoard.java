@@ -25,6 +25,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import model.BattleLogic;
+import model.Card;
 import model.CardCollection;
 import model.Continent;
 import model.GameLogic;
@@ -148,14 +149,14 @@ public class GameBoard extends JPanel {
 							startWindow.dispose();
 							if (newgame1.isClicked()) {
 								PlayerCollection tempPlayers = null;
-								CardCollection tempCards = null;
+								ArrayList<String> tempCards = null;
 								ArrayList<Territory> tempTerritories = null;
 								ArrayList<Continent> tempContinents = null;
 								try {
 									inputStream = new FileInputStream("savedGame");
 									objectInput = new ObjectInputStream(inputStream);
 									tempPlayers = (PlayerCollection) objectInput.readObject();
-									tempCards = (CardCollection) objectInput.readObject();
+									tempCards = (ArrayList<String>) objectInput.readObject();
 									tempTerritories = (ArrayList<Territory>) objectInput.readObject();
 									tempContinents = (ArrayList<Continent>) objectInput.readObject();
 
@@ -529,7 +530,7 @@ public class GameBoard extends JPanel {
 		return newGame;
 	}
 
-	public void importGameLogic(PlayerCollection newPlayers, CardCollection newCards, ArrayList<Continent> newContinets,
+	public void importGameLogic(PlayerCollection newPlayers, ArrayList<String> newCards, ArrayList<Continent> newContinets,
 			ArrayList<Territory> newTerritories) {
 		newGame.setPlayerList(newPlayers);
 		newGame.setCards(newCards);
@@ -541,7 +542,7 @@ public class GameBoard extends JPanel {
 		return newGame.getPlayerList();
 	}
 
-	public CardCollection getCards() {
+	public ArrayList<String> getCards() {
 		return newGame.getCards();
 	}
 
@@ -7765,34 +7766,71 @@ public class GameBoard extends JPanel {
 	}
 
 	public void nextPlayer() {
+
 		currPlayer = newGame.nextPlayer();
+
+		System.out.println("Current Player: " + currPlayer.getName());
+		System.out.println("AI?: " + currPlayer.isAI());
+
 		if (currPlayer.isAI()) {
+			if (reinforcementPhase) {
+				if (startWindow.getPlayerAt(0) == currPlayer) {
+					playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					turnMarker.setLocation(150, 590);
+				} else if (startWindow.getPlayerAt(1) == currPlayer) {
+					playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					turnMarker.setLocation(320, 590);
+				} else if (startWindow.getPlayerAt(2) == currPlayer) {
+					playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					turnMarker.setLocation(470, 590);
+				} else if (startWindow.getPlayerAt(3) == currPlayer) {
+					playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					turnMarker.setLocation(640, 590);
+				} else if (startWindow.getPlayerAt(4) == currPlayer) {
+					playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					turnMarker.setLocation(810, 590);
+				} else if (startWindow.getPlayerAt(5) == currPlayer) {
+					playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+					turnMarker.setLocation(980, 590);
+				}
+			}
+			System.out.println("Detecting AI");
 			if (!reinforcementPhase) {
+				System.out.println("Not in reinforcement phase");
 				newGame.turnInCard();
 				newGame.addReinforcements();
 				AITurn(0);
 				try {
-					Thread.sleep(1000);
+					Thread.sleep(2000);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				updateLabels();
+				// updateLabels();
 
 				AITurn(1);
 				try {
-					Thread.sleep(1000);
+					Thread.sleep(2000);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				updateLabels();
+				// updateLabels();
 
 				AITurn(2);
-				updateLabels();
+				// updateLabels();
 			} else {
+				System.out.println("In reinforcement phase");
+
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
 				AITurn(0);
-				updateLabels();
+				// updateLabels();
 			}
 			nextPlayer();
 		}
