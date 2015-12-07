@@ -120,6 +120,8 @@ public class MainGUI extends JFrame {
 				objectOutput.writeObject(map.getTerritories());
 				objectOutput.writeObject(map.getContinents());
 
+
+
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
 				System.out.println("writing game logic failed");

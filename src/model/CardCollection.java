@@ -137,25 +137,33 @@ public class CardCollection implements Serializable {
 	{
 		Card temp=null;
 		ArrayList<String> names= new ArrayList<String>();
-		for(int i=0; i<42; i++)
+		for(int i=0; i<44; i++)
 		{
 			temp=cardCollection.get(i);
+			System.out.println(temp.getTerritory());
 			names.add(temp.getTerritory());
 		}
+
 		return names;
 	}
 	
 	public void setLoadedCardOrder(ArrayList<String> oldCards)
 	{
+		
+		System.out.println(this.getCardCollection().size() );
 		String name="";
-		for(int i=0; i<42; i++)
+		for(int i=0; i<44; i++)
 		{
 			Card temp=null;
 			name=oldCards.get(i);
-			for(int j=0; j<42; j++)
+			System.out.println(name);
+			for(int j=0; j<44; j++)
 			{
-				if(((RiskCard) this.getCard(j)).getTerritory().equals(name))
+				temp=this.getCardCollection().get(j);
+				System.out.println(temp.getTerritory());
+				if(name.equals(temp.getTerritory()))
 				{
+					
 					temp=cardCollection.get(i);
 					cardCollection.set(i, cardCollection.get(j));
 					cardCollection.set(j, temp);
