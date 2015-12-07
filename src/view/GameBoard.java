@@ -9,13 +9,13 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
 import javax.imageio.ImageIO;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -23,13 +23,12 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.UIManager;
 
 import model.BattleLogic;
-import model.Card;
 import model.CardCollection;
 import model.Continent;
 import model.GameLogic;
-import model.Languages;
 import model.Player;
 import model.PlayerCollection;
 import model.Territory;
@@ -43,7 +42,8 @@ public class GameBoard extends JPanel {
 			apolloAttacking, horusAttacking, raAttacking, intiAttacking, heliosAttacking, amunAttacking, giantAttacking,
 			scraptopiaAttacking, monisaurusAttacking, rawrvilleAttacking, laieggesAttacking, dactilitoAttacking,
 			dirtydanAttacking, toystoryAttacking, blackbeardAttacking, crescentcapitalAttacking, newlandofzachAttacking,
-			bloobawlAttacking, landofzachAttacking, southscraptopiaAttacking, pythonFortify;
+			bloobawlAttacking, landofzachAttacking, southscraptopiaAttacking, pythonFortify, cFortify, sqlFortify,
+			perlFortify, javaFortify, rubyFortify, gitFortify,giantFortify,horusFortify;
 	HashMap<JButton, JLabel> myMap;
 	ArrayList<Continent> continents;
 	ArrayList<Territory> territories;
@@ -101,8 +101,8 @@ public class GameBoard extends JPanel {
 
 	JLabel playerTag, playerTag2, playerTag3, playerTag4, playerTag5, playerTag6, playerCount, playerCount2,
 			playerCount3, playerCount4, playerCount5, playerCount6, turnMarker, gameStatus;
-	
-	private int fortifyCount;
+
+	private int fortifyCount, unitsFortified;
 	private FileInputStream inputStream;
 	private ObjectInputStream objectInput;
 
@@ -560,7 +560,6 @@ public class GameBoard extends JPanel {
 	}
 
 	public void addButtons() {
-
 		gray = new ImageIcon("./Pictures/circle.png");
 		red = new ImageIcon("./Pictures/rcircle.png");
 		blue = new ImageIcon("./Pictures/bcircle.png");
@@ -577,14 +576,14 @@ public class GameBoard extends JPanel {
 		endTurnButton.setSize(150, 40);
 		endTurnButton.setText("End Turn");
 		endTurnButton.setLocation(1110, 460);
-		
+
 		fortifyButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				fortifyCount += 1;
-				if(fortifyCount <=1){
-				attackPhase = false;
-				fortifyPhase = true;
-				playerCount.setText("Fortify your armies!");
+				if (fortifyCount <= 1) {
+					attackPhase = false;
+					fortifyPhase = true;
+					playerCount.setText("Fortify your armies!");
 				}
 			}
 		});
@@ -4087,6 +4086,51 @@ public class GameBoard extends JPanel {
 					horusAttacking = false;
 					attackPhase = true;
 				}
+				
+				
+				if ((pythonFortify == true) && (currPlayer.getName() == javaLanguage.getName())) {
+					territories.get(0).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					pythonFortify = false;
+				}
+				if ((sqlFortify == true) && (currPlayer.getName() == javaLanguage.getName())) {
+					territories.get(0).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					sqlFortify = false;
+				}
+				if ((cFortify == true) && (currPlayer.getName() == javaLanguage.getName())) {
+					territories.get(0).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					cFortify = false;
+				}
+				if ((horusFortify == true) && (currPlayer.getName() == javaLanguage.getName())) {
+					territories.get(0).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					horusFortify = false;
+				}
+				
+				
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == javaLanguage.getName()) {
+						System.out.println("fortify from java!!!");
+						Object[] range = new Object[territories.get(0).getUnits()];
+						for (int i = 1; i < territories.get(0).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(0).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						javaFortify = true;
+					}
+				}
 			}
 
 		});
@@ -4153,13 +4197,52 @@ public class GameBoard extends JPanel {
 					attackPhase = true;
 				}
 				
-				if(fortifyPhase == true){
-					if(currPlayer.getName() == pythonLanguage.getName()){
-					System.out.println("fortify from python!!!");
-					territories.get(1).removeUnits(1);
+				if ((perlFortify == true) && (currPlayer.getName() == pythonLanguage.getName())) {
+					territories.get(1).addUnits(unitsFortified);
 					updateLabels();
-					fortifyPhase = false;
-					pythonFortify = true;
+					playerCount.setText("Your turn has ended!");
+					perlFortify = false;
+				}
+				if ((gitFortify == true) && (currPlayer.getName() == pythonLanguage.getName())) {
+					territories.get(1).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					gitFortify = false;
+				}
+				if ((cFortify == true) && (currPlayer.getName() == pythonLanguage.getName())) {
+					territories.get(1).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					cFortify = false;
+				}
+				if ((sqlFortify == true) && (currPlayer.getName() == pythonLanguage.getName())) {
+					territories.get(1).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					sqlFortify = false;
+				}
+				if ((javaFortify == true) && (currPlayer.getName() == pythonLanguage.getName())) {
+					territories.get(1).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					javaFortify = false;
+				}
+
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == pythonLanguage.getName()) {
+						System.out.println("fortify from python!!!");
+						Object[] range = new Object[territories.get(1).getUnits()];
+						for (int i = 1; i < territories.get(1).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(1).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						pythonFortify = true;
 					}
 				}
 			}
@@ -4217,12 +4300,50 @@ public class GameBoard extends JPanel {
 					rubyAttacking = false;
 					attackPhase = true;
 				}
-				if((pythonFortify == true) && (currPlayer.getName() == cLanguage.getName())){
-					territories.get(2).addUnits(1);
+				
+				
+				if ((pythonFortify == true) && (currPlayer.getName() == cLanguage.getName())) {
+					territories.get(2).addUnits(unitsFortified);
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
+					pythonFortify = false;
 				}
-				
+				if ((rubyFortify == true) && (currPlayer.getName() == cLanguage.getName())) {
+					territories.get(2).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					rubyFortify = false;
+				}
+				if ((sqlFortify == true) && (currPlayer.getName() == cLanguage.getName())) {
+					territories.get(2).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					sqlFortify = false;
+				}
+				if ((javaFortify == true) && (currPlayer.getName() == cLanguage.getName())) {
+					territories.get(2).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					javaFortify = false;
+				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == cLanguage.getName()) {
+						System.out.println("fortify from c!!!");
+						Object[] range = new Object[territories.get(2).getUnits()];
+						for (int i = 1; i < territories.get(2).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(2).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						cFortify = true;
+					}
+				}
+
 			}
 		});
 		sqlLanguage.addActionListener(new ActionListener() {
@@ -4284,6 +4405,55 @@ public class GameBoard extends JPanel {
 					gitAttacking = false;
 					attackPhase = true;
 				}
+				
+				if ((gitFortify == true) && (currPlayer.getName() == sqlLanguage.getName())) {
+					territories.get(3).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					gitFortify = false;
+				}
+				if ((rubyFortify == true) && (currPlayer.getName() == sqlLanguage.getName())) {
+					territories.get(3).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					rubyFortify = false;
+				}
+				if ((cFortify == true) && (currPlayer.getName() == sqlLanguage.getName())) {
+					territories.get(3).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					cFortify = false;
+				}
+				if ((pythonFortify == true) && (currPlayer.getName() == sqlLanguage.getName())) {
+					territories.get(3).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					pythonFortify = false;
+				}
+				if ((javaFortify == true) && (currPlayer.getName() == sqlLanguage.getName())) {
+					territories.get(3).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					javaFortify = false;
+				}
+				
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == sqlLanguage.getName()) {
+						System.out.println("fortify from sql!!!");
+						Object[] range = new Object[territories.get(3).getUnits()];
+						for (int i = 1; i < territories.get(3).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(3).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						sqlFortify = true;
+					}
+				}
 			}
 		});
 		rubyLanguage.addActionListener(new ActionListener() {
@@ -4337,6 +4507,47 @@ public class GameBoard extends JPanel {
 					gameBoardAttack(territories.get(30), territories.get(4));
 					giantAttacking = false;
 					attackPhase = true;
+				}
+				if ((giantFortify == true) && (currPlayer.getName() == rubyLanguage.getName())) {
+					territories.get(4).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					giantFortify = false;
+				}
+				if ((gitFortify == true) && (currPlayer.getName() == rubyLanguage.getName())) {
+					territories.get(4).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					gitFortify = false;
+				}
+				if ((sqlFortify == true) && (currPlayer.getName() == rubyLanguage.getName())) {
+					territories.get(4).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					sqlFortify = false;
+				}
+				if ((cFortify == true) && (currPlayer.getName() == rubyLanguage.getName())) {
+					territories.get(4).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					cFortify = false;
+				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == rubyLanguage.getName()) {
+						System.out.println("fortify from ruby!!!");
+						Object[] range = new Object[territories.get(4).getUnits()];
+						for (int i = 1; i < territories.get(4).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(4).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						rubyFortify = true;
+					}
 				}
 
 			}
@@ -4399,6 +4610,56 @@ public class GameBoard extends JPanel {
 					perlAttacking = false;
 					attackPhase = true;
 				}
+				
+				
+				if ((perlFortify == true) && (currPlayer.getName() == gitLanguage.getName())) {
+					territories.get(5).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					perlFortify = false;
+				}
+				if ((giantFortify == true) && (currPlayer.getName() == gitLanguage.getName())) {
+					territories.get(5).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					giantFortify = false;
+				}
+				if ((rubyFortify == true) && (currPlayer.getName() == gitLanguage.getName())) {
+					territories.get(5).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					rubyFortify = false;
+				}
+				if ((sqlFortify == true) && (currPlayer.getName() == gitLanguage.getName())) {
+					territories.get(5).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					sqlFortify = false;
+				}
+				if ((pythonFortify == true) && (currPlayer.getName() == gitLanguage.getName())) {
+					territories.get(5).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					pythonFortify = false;
+				}
+				
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == gitLanguage.getName()) {
+						System.out.println("fortify from git!!!");
+						Object[] range = new Object[territories.get(5).getUnits()];
+						for (int i = 1; i < territories.get(5).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(5).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						gitFortify = true;
+					}
+				}
 			}
 		});
 		perlLanguage.addActionListener(new ActionListener() {
@@ -4440,6 +4701,35 @@ public class GameBoard extends JPanel {
 					gameBoardAttack(territories.get(5), territories.get(6));
 					gitAttacking = false;
 					attackPhase = true;
+				}
+				if ((gitFortify == true) && (currPlayer.getName() == perlLanguage.getName())) {
+					territories.get(6).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					gitFortify = false;
+				}
+				if ((pythonFortify == true) && (currPlayer.getName() == perlLanguage.getName())) {
+					territories.get(6).addUnits(unitsFortified);
+					updateLabels();
+					playerCount.setText("Your turn has ended!");
+					pythonFortify = false;
+				}
+				if (fortifyPhase == true) {
+					if (currPlayer.getName() == perlLanguage.getName()) {
+						System.out.println("fortify from perl!!!");
+						Object[] range = new Object[territories.get(6).getUnits()];
+						for (int i = 1; i < territories.get(6).getUnits(); i++) {
+							range[i] = i;
+						}
+
+						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
+								JOptionPane.PLAIN_MESSAGE, null, range, "Numbers");
+
+						territories.get(6).removeUnits(unitsFortified);
+						updateLabels();
+						fortifyPhase = false;
+						perlFortify = true;
+					}
 				}
 			}
 		});
@@ -7110,7 +7400,7 @@ public class GameBoard extends JPanel {
 					e.printStackTrace();
 				}
 				updateLabels();
-				
+
 				AITurn(2);
 				moveTurnLabel();
 				updateLabels();
@@ -7297,9 +7587,9 @@ public class GameBoard extends JPanel {
 			} else if (!currPlayer.chooseRetreat(attackingTerr)) {
 				gameBoardAttack(attackingTerr, defendingTerr);
 			}
-		}
-		else {
-			JOptionPane.showConfirmDialog(null, "Sorry, you do not have enough armies to attack", "Not Strong Enough", 1);
+		} else {
+			JOptionPane.showConfirmDialog(null, "Sorry, you do not have enough armies to attack", "Not Strong Enough",
+					1);
 		}
 	}
 
