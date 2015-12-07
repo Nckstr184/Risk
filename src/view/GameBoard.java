@@ -8982,11 +8982,13 @@ public class GameBoard extends JPanel {
 
 		Random r = new Random();
 		currPlayer = newGame.nextPlayer();
-		turnCount--;
+
+		turnCountLabel.setText("Turns Left: " + turnCount);
 		
 		moveTurnLabel();
 		if (!reinforcementPhase) {
 			newGame.addReinforcements();
+			turnCount--;
 		}
 
 		System.out.println("Current Player: " + currPlayer.getName());
@@ -9155,7 +9157,6 @@ public class GameBoard extends JPanel {
 		cresentLabel6.setText("" + blooUnits);
 		cresentLabel7.setText("" + capUnits);
 		
-		turnCountLabel.setText("Turns Left: " + turnCount);
 	}
 
 	public void AITurn(int turnPhase) {
