@@ -532,6 +532,8 @@ public class GameLogic implements Serializable {
 		} else {
 			currPlayer.addArmies((int) (totalNumOfTerritories / 3));
 		}
+		
+		currPlayer.addArmies(currPlayer.getConqueredContinents(this) * 7);
 
 		// System.out.println(currPlayer.getNumOfArmies());
 	}
