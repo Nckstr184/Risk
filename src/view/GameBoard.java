@@ -25,6 +25,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import model.BattleLogic;
+import model.Card;
 import model.CardCollection;
 import model.Continent;
 import model.GameLogic;
@@ -148,14 +149,14 @@ public class GameBoard extends JPanel {
 							startWindow.dispose();
 							if (newgame1.isClicked()) {
 								PlayerCollection tempPlayers = null;
-								CardCollection tempCards = null;
+								ArrayList<String> tempCards = null;
 								ArrayList<Territory> tempTerritories = null;
 								ArrayList<Continent> tempContinents = null;
 								try {
 									inputStream = new FileInputStream("savedGame");
 									objectInput = new ObjectInputStream(inputStream);
 									tempPlayers = (PlayerCollection) objectInput.readObject();
-									tempCards = (CardCollection) objectInput.readObject();
+									tempCards = (ArrayList<String>) objectInput.readObject();
 									tempTerritories = (ArrayList<Territory>) objectInput.readObject();
 									tempContinents = (ArrayList<Continent>) objectInput.readObject();
 
@@ -529,7 +530,7 @@ public class GameBoard extends JPanel {
 		return newGame;
 	}
 
-	public void importGameLogic(PlayerCollection newPlayers, CardCollection newCards, ArrayList<Continent> newContinets,
+	public void importGameLogic(PlayerCollection newPlayers, ArrayList<String> newCards, ArrayList<Continent> newContinets,
 			ArrayList<Territory> newTerritories) {
 		newGame.setPlayerList(newPlayers);
 		newGame.setCards(newCards);
@@ -541,7 +542,7 @@ public class GameBoard extends JPanel {
 		return newGame.getPlayerList();
 	}
 
-	public CardCollection getCards() {
+	public ArrayList<String> getCards() {
 		return newGame.getCards();
 	}
 

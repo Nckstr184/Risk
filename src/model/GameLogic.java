@@ -477,8 +477,8 @@ public class GameLogic implements Serializable {
 		return allPlayers;
 	}
 
-	public CardCollection getCards() {
-		return allCards;
+	public ArrayList<String> getCards() {
+		return allCards.getNamesOfCards();
 	}
 
 	public ArrayList<Continent> getContinents() {
@@ -493,8 +493,8 @@ public class GameLogic implements Serializable {
 		allPlayers = newPlayers;
 	}
 
-	public void setCards(CardCollection newCards) {
-		allCards = newCards;
+	public void setCards(ArrayList<String> newCards) {
+		allCards.setLoadedCardOrder(newCards);
 	}
 
 	public void setContinents(ArrayList<Continent> newContinents) {
