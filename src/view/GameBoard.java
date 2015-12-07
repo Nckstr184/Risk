@@ -4147,7 +4147,7 @@ public class GameBoard extends JPanel {
 				}
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((javaLanguage.getName() == currPlayer.getName()) && (javaUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -4258,7 +4258,7 @@ public class GameBoard extends JPanel {
 
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((pythonLanguage.getName() == currPlayer.getName()) && (pythonUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -4373,7 +4373,7 @@ public class GameBoard extends JPanel {
 				}
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((cLanguage.getName() == currPlayer.getName()) && (cUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -4475,7 +4475,7 @@ public class GameBoard extends JPanel {
 				}
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((sqlLanguage.getName() == currPlayer.getName()) && (sqlUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -4589,7 +4589,7 @@ public class GameBoard extends JPanel {
 				}
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((rubyLanguage.getName() == currPlayer.getName()) && (rubyUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -4691,7 +4691,7 @@ public class GameBoard extends JPanel {
 				}
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((gitLanguage.getName() == currPlayer.getName()) && (gitUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -4806,7 +4806,7 @@ public class GameBoard extends JPanel {
 				}
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((perlLanguage.getName() == currPlayer.getName()) && (perlUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -4882,7 +4882,7 @@ public class GameBoard extends JPanel {
 				}
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((wilberWildcat.getName() == currPlayer.getName()) && (wilberUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -5019,7 +5019,7 @@ public class GameBoard extends JPanel {
 				}
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((wilmaWildcat.getName() == currPlayer.getName()) && (wilmaUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -5108,7 +5108,7 @@ public class GameBoard extends JPanel {
 				}
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((richWildcat.getName() == currPlayer.getName()) && (richUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -5219,7 +5219,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					currPlayer.removeArmies(1);			
 				}
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((millerWildcat.getName() == currPlayer.getName()) && (millerUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -5318,7 +5318,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					currPlayer.removeArmies(1);			
 				}
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((scoobyWildcat.getName() == currPlayer.getName()) && (scoobyUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -5432,7 +5432,7 @@ public class GameBoard extends JPanel {
 					currPlayer.removeArmies(1);			
 				}
 
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((mckaleWildcat.getName() == currPlayer.getName()) && (mckaleUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -5532,7 +5532,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					currPlayer.removeArmies(1);			
 				}
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((zonaWildcat.getName() == currPlayer.getName()) && (zonaUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -5606,7 +5606,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					currPlayer.removeArmies(1);			
 				}
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((papajohnsPizza.getName() == currPlayer.getName()) && (pjUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -5718,7 +5718,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					currPlayer.removeArmies(1);			
 				}
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((dominosPizza.getName() == currPlayer.getName()) && (domUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -5828,7 +5828,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					currPlayer.removeArmies(1);			
 				}
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((pizzahutPizza.getName() == currPlayer.getName()) && (phUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -5927,7 +5927,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					currPlayer.removeArmies(1);			
 				}
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((blackjackPizza.getName() == currPlayer.getName()) && (bjUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -6017,7 +6017,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					currPlayer.removeArmies(1);			
 				}
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((hungryhowiesPizza.getName() == currPlayer.getName()) && (hhUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -6118,7 +6118,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					currPlayer.removeArmies(1);			
 				}
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((brooklynPizza.getName() == currPlayer.getName()) && (bUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -6231,7 +6231,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					currPlayer.removeArmies(1);			
 				}
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((pizzaplanetPizza.getName() == currPlayer.getName()) && (ppUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -6322,7 +6322,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					currPlayer.removeArmies(1);
 				}
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((apolloSun.getName() == currPlayer.getName()) && (apolloUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -6423,7 +6423,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					currPlayer.removeArmies(1);
 				}
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((raSun.getName() == currPlayer.getName()) && (raUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -6513,7 +6513,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					currPlayer.removeArmies(1);
 				}
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((heliosSun.getName() == currPlayer.getName()) && (heliosUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -6626,7 +6626,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					currPlayer.removeArmies(1);
 				}
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((intiSun.getName() == currPlayer.getName()) && (intiUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -6703,7 +6703,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					currPlayer.removeArmies(1);
 				}
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((horusSun.getName() == currPlayer.getName()) && (horusUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -6806,7 +6806,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					currPlayer.removeArmies(1);
 				}
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((tonatiuhSun.getName() == currPlayer.getName()) && (tonatiuhUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -6919,7 +6919,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					currPlayer.removeArmies(1);
 				}
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((amunSun.getName() == currPlayer.getName()) && (amunUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -7032,7 +7032,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					currPlayer.removeArmies(1);
 				}
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((rawrvilleDino.getName() == currPlayer.getName()) && (rawrUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -7109,7 +7109,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					currPlayer.removeArmies(1);
 				}
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((laieggesDino.getName() == currPlayer.getName()) && (eggUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -7210,7 +7210,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					currPlayer.removeArmies(1);
 				}
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((dactilitoDino.getName() == currPlayer.getName()) && (dacUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -7322,7 +7322,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					currPlayer.removeArmies(1);
 				}
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((dirtydanDino.getName() == currPlayer.getName()) && (danUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -7460,7 +7460,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					currPlayer.removeArmies(1);
 				}
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((blackbeardDino.getName() == currPlayer.getName()) && (bbUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -7561,7 +7561,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					currPlayer.removeArmies(1);
 				}
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((monisaurusDino.getName() == currPlayer.getName()) && (moniUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -7662,7 +7662,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					currPlayer.removeArmies(1);
 				}
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((toystoryDino.getName() == currPlayer.getName()) && (tsUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -7753,7 +7753,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					currPlayer.removeArmies(1);
 				}
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((scraptopiaCresent.getName() == currPlayer.getName()) && (scrapUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -7832,7 +7832,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					currPlayer.removeArmies(1);
 				}
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((landofzachCresent.getName() == currPlayer.getName()) && (zachUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -7922,7 +7922,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					currPlayer.removeArmies(1);
 				}
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((giantCresent.getName() == currPlayer.getName()) && (giantUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -8026,7 +8026,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					currPlayer.removeArmies(1);
 				}
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((newlandofzachCresent.getName() == currPlayer.getName()) && (newzachUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -8142,7 +8142,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					currPlayer.removeArmies(1);
 				}
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((southscraptopiaCresent.getName() == currPlayer.getName()) && (southUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -8222,7 +8222,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					currPlayer.removeArmies(1);
 				}
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((bloobawlCresent.getName() == currPlayer.getName()) && (blooUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -8324,7 +8324,7 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					currPlayer.removeArmies(1);
 				}
-				if (attackPhase == true) {
+				else if (attackPhase == true) {
 					if ((cresentcaptitalCresent.getName() == currPlayer.getName()) && (capUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						playerCount.setText("Choose Territory to attack");
@@ -9188,13 +9188,11 @@ public class GameBoard extends JPanel {
 		currPlayer = newGame.nextPlayer();
 
 		moveTurnLabel();
-<<<<<<< HEAD
-		
-=======
+
 		if (!reinforcementPhase) {
 			newGame.addReinforcements();
 		}
->>>>>>> 8380e779c3c6561f20df83fe1ccc78c037c8cb01
+
 		System.out.println("Current Player: " + currPlayer.getName());
 		System.out.println("AI?: " + currPlayer.isAI());
 
