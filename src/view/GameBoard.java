@@ -159,6 +159,7 @@ public class GameBoard extends JPanel {
 								ArrayList<Territory> tempTerritories = null;
 								ArrayList<Continent> tempContinents = null;
 								try {
+									System.out.println("READING SHIT IN FROM THE FILE");
 									inputStream = new FileInputStream("savedGame");
 									objectInput = new ObjectInputStream(inputStream);
 									tempPlayers = (PlayerCollection) objectInput.readObject();
@@ -537,6 +538,7 @@ public class GameBoard extends JPanel {
 
 	public void importGameLogic(PlayerCollection newPlayers, ArrayList<String> newCards,
 			ArrayList<Continent> newContinets, ArrayList<Territory> newTerritories) {
+		newGame=new GameLogic(null, null, null, null, null, null);
 		newGame.setPlayerList(newPlayers);
 		newGame.setCards(newCards);
 		newGame.setTerritory(newTerritories);
