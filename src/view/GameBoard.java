@@ -3821,6 +3821,7 @@ public class GameBoard extends JPanel {
 					javaUnits +=1;
 					territories.get(0).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);			
 				}
 				///////////////////////////////// Start Attack
@@ -3931,6 +3932,7 @@ public class GameBoard extends JPanel {
 					pythonUnits +=1;
 					territories.get(1).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);			
 				}
 
@@ -4047,6 +4049,7 @@ public class GameBoard extends JPanel {
 					cUnits +=1;
 					territories.get(2).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);			
 				}
 				///////////////////////////////// Start Attack
@@ -4149,6 +4152,7 @@ public class GameBoard extends JPanel {
 					sqlUnits +=1;
 					territories.get(3).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);			
 				}
 				///////////////////////////////// Start Attack
@@ -4263,6 +4267,7 @@ public class GameBoard extends JPanel {
 					rubyUnits +=1;
 					territories.get(4).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);			
 				}
 				///////////////////////////////// Start Attack
@@ -4365,6 +4370,7 @@ public class GameBoard extends JPanel {
 					gitUnits +=1;
 					territories.get(5).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);			
 				}
 				///////////////////////////////// Start Attack
@@ -4480,6 +4486,7 @@ public class GameBoard extends JPanel {
 					perlUnits +=1;
 					territories.get(6).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);			
 				}
 				///////////////////////////////// Start Attack
@@ -4556,6 +4563,7 @@ public class GameBoard extends JPanel {
 					wilberUnits +=1;
 					territories.get(14).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);			
 				}
 				///////////////////////////////// Start Attack
@@ -4693,6 +4701,7 @@ public class GameBoard extends JPanel {
 					wilmaUnits +=1;
 					territories.get(15).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);			
 				}
 				///////////////////////////////// Start Attack
@@ -4782,6 +4791,7 @@ public class GameBoard extends JPanel {
 					richUnits +=1;
 					territories.get(16).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);			
 				}
 				///////////////////////////////// Start Attack
@@ -4895,6 +4905,7 @@ public class GameBoard extends JPanel {
 					millerUnits +=1;
 					territories.get(17).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);			
 				}
 				else if (attackPhase == true) {
@@ -4994,6 +5005,7 @@ public class GameBoard extends JPanel {
 					scoobyUnits +=1;
 					territories.get(18).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);			
 				}
 				else if (attackPhase == true) {
@@ -5107,6 +5119,7 @@ public class GameBoard extends JPanel {
 					mckaleUnits +=1;
 					territories.get(19).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);			
 				}
 
@@ -5208,6 +5221,7 @@ public class GameBoard extends JPanel {
 					zonaUnits +=1;
 					territories.get(20).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);			
 				}
 				else if (attackPhase == true) {
@@ -5282,6 +5296,7 @@ public class GameBoard extends JPanel {
 					pjUnits +=1;
 					territories.get(21).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);			
 				}
 				else if (attackPhase == true) {
@@ -5394,6 +5409,7 @@ public class GameBoard extends JPanel {
 					domUnits +=1;
 					territories.get(22).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);			
 				}
 				else if (attackPhase == true) {
@@ -5504,6 +5520,7 @@ public class GameBoard extends JPanel {
 					phUnits +=1;
 					territories.get(23).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);			
 				}
 				else if (attackPhase == true) {
@@ -5603,6 +5620,7 @@ public class GameBoard extends JPanel {
 					bjUnits +=1;
 					territories.get(24).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);			
 				}
 				else if (attackPhase == true) {
@@ -5693,6 +5711,7 @@ public class GameBoard extends JPanel {
 					hhUnits +=1;
 					territories.get(25).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);			
 				}
 				else if (attackPhase == true) {
@@ -5794,6 +5813,7 @@ public class GameBoard extends JPanel {
 					bUnits +=1;
 					territories.get(26).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);			
 				}
 				else if (attackPhase == true) {
@@ -5907,6 +5927,7 @@ public class GameBoard extends JPanel {
 					ppUnits +=1;
 					territories.get(27).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);			
 				}
 				else if (attackPhase == true) {
@@ -5998,6 +6019,7 @@ public class GameBoard extends JPanel {
 					apolloUnits += 1;
 					territories.get(35).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);
 				}
 				else if (attackPhase == true) {
@@ -6099,6 +6121,7 @@ public class GameBoard extends JPanel {
 					raUnits += 1;
 					territories.get(36).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);
 				}
 				else if (attackPhase == true) {
@@ -6189,6 +6212,7 @@ public class GameBoard extends JPanel {
 					heliosUnits += 1;
 					territories.get(37).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);
 				}
 				else if (attackPhase == true) {
@@ -6302,6 +6326,7 @@ public class GameBoard extends JPanel {
 					intiUnits += 1;
 					territories.get(38).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);
 				}
 				else if (attackPhase == true) {
@@ -6379,6 +6404,7 @@ public class GameBoard extends JPanel {
 					horusUnits += 1;
 					territories.get(39).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);
 				}
 				else if (attackPhase == true) {
@@ -6482,6 +6508,7 @@ public class GameBoard extends JPanel {
 					tonatiuhUnits += 1;
 					territories.get(40).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);
 				}
 				else if (attackPhase == true) {
@@ -6595,6 +6622,7 @@ public class GameBoard extends JPanel {
 					amunUnits += 1;
 					territories.get(41).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);
 				}
 				else if (attackPhase == true) {
@@ -6708,6 +6736,7 @@ public class GameBoard extends JPanel {
 					rawrUnits += 1;
 					territories.get(7).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);
 				}
 				else if (attackPhase == true) {
@@ -6785,6 +6814,7 @@ public class GameBoard extends JPanel {
 					eggUnits += 1;
 					territories.get(8).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);
 				}
 				else if (attackPhase == true) {
@@ -6886,6 +6916,7 @@ public class GameBoard extends JPanel {
 					dacUnits += 1;
 					territories.get(9).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);
 				}
 				else if (attackPhase == true) {
@@ -6998,6 +7029,7 @@ public class GameBoard extends JPanel {
 					danUnits += 1;
 					territories.get(10).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);
 				}
 				else if (attackPhase == true) {
@@ -7136,6 +7168,7 @@ public class GameBoard extends JPanel {
 					bbUnits += 1;
 					territories.get(11).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);
 				}
 				else if (attackPhase == true) {
@@ -7237,6 +7270,7 @@ public class GameBoard extends JPanel {
 					moniUnits += 1;
 					territories.get(12).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);
 				}
 				else if (attackPhase == true) {
@@ -7338,6 +7372,7 @@ public class GameBoard extends JPanel {
 					tsUnits += 1;
 					territories.get(13).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);
 				}
 				else if (attackPhase == true) {
@@ -7429,6 +7464,7 @@ public class GameBoard extends JPanel {
 					scrapUnits += 1;
 					territories.get(28).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);
 				}
 				else if (attackPhase == true) {
@@ -7508,6 +7544,7 @@ public class GameBoard extends JPanel {
 					zachUnits += 1;
 					territories.get(29).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);
 				}
 				else if (attackPhase == true) {
@@ -7598,6 +7635,7 @@ public class GameBoard extends JPanel {
 					giantUnits += 1;
 					territories.get(30).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);
 				}
 				else if (attackPhase == true) {
@@ -7702,6 +7740,7 @@ public class GameBoard extends JPanel {
 					newzachUnits += 1;
 					territories.get(31).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);
 				}
 				else if (attackPhase == true) {
@@ -7818,6 +7857,7 @@ public class GameBoard extends JPanel {
 					southUnits += 1;
 					territories.get(32).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);
 				}
 				else if (attackPhase == true) {
@@ -7898,6 +7938,7 @@ public class GameBoard extends JPanel {
 					blooUnits += 1;
 					territories.get(33).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);
 				}
 				else if (attackPhase == true) {
@@ -8000,6 +8041,7 @@ public class GameBoard extends JPanel {
 					capUnits += 1;
 					territories.get(34).addUnits(1);
 					updateLabels();
+					moveTurnLabel();
 					currPlayer.removeArmies(1);
 				}
 				else if (attackPhase == true) {
