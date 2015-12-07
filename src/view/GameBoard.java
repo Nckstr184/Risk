@@ -4010,26 +4010,8 @@ public class GameBoard extends JPanel {
 						territories.get(0).addUnits(1);
 						languageLabel1.setText("" + javaUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
-						currPlayer = newGame.nextPlayer();
+						moveTurnLabel();
+						nextPlayer();
 
 					}
 					checkIfReinforcementPhaseIsOver();
@@ -4085,26 +4067,8 @@ public class GameBoard extends JPanel {
 						territories.get(1).addUnits(1);
 						myLabel.setText("" + pythonUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
-						currPlayer = newGame.nextPlayer();
+						moveTurnLabel();
+						nextPlayer();
 					}
 
 					checkIfReinforcementPhaseIsOver();
@@ -4166,27 +4130,9 @@ public class GameBoard extends JPanel {
 						territories.get(2).addUnits(1);
 						myLabel.setText("" + cUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 					}
 					checkIfReinforcementPhaseIsOver();
@@ -4239,27 +4185,9 @@ public class GameBoard extends JPanel {
 						territories.get(3).addUnits(1);
 						myLabel.setText("" + sqlUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 					}
 					checkIfReinforcementPhaseIsOver();
@@ -4318,27 +4246,9 @@ public class GameBoard extends JPanel {
 						territories.get(4).addUnits(1);
 						myLabel.setText("" + rubyUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 					}
 					checkIfReinforcementPhaseIsOver();
@@ -4391,27 +4301,9 @@ public class GameBoard extends JPanel {
 						territories.get(5).addUnits(1);
 						myLabel.setText("" + gitUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -4469,27 +4361,9 @@ public class GameBoard extends JPanel {
 						territories.get(6).addUnits(1);
 						myLabel.setText("" + perlUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -4529,27 +4403,9 @@ public class GameBoard extends JPanel {
 						territories.get(14).addUnits(1);
 						myLabel.setText("" + wilberUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -4619,27 +4475,9 @@ public class GameBoard extends JPanel {
 						territories.get(15).addUnits(1);
 						myLabel.setText("" + wilmaUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -4685,27 +4523,9 @@ public class GameBoard extends JPanel {
 						territories.get(16).addUnits(1);
 						myLabel.setText("" + richUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -4763,27 +4583,9 @@ public class GameBoard extends JPanel {
 						territories.get(17).addUnits(1);
 						myLabel.setText("" + millerUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -4833,27 +4635,9 @@ public class GameBoard extends JPanel {
 						territories.get(18).addUnits(1);
 						myLabel.setText("" + scoobyUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -4909,27 +4693,9 @@ public class GameBoard extends JPanel {
 						territories.get(19).addUnits(1);
 						myLabel.setText("" + mckaleUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -4979,27 +4745,9 @@ public class GameBoard extends JPanel {
 						territories.get(20).addUnits(1);
 						myLabel.setText("" + zonaUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -5037,27 +4785,9 @@ public class GameBoard extends JPanel {
 						territories.get(21).addUnits(1);
 						myLabel.setText("" + pjUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -5113,27 +4843,9 @@ public class GameBoard extends JPanel {
 						territories.get(22).addUnits(1);
 						myLabel.setText("" + domUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -5189,27 +4901,9 @@ public class GameBoard extends JPanel {
 						territories.get(23).addUnits(1);
 						myLabel.setText("" + phUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -5259,27 +4953,9 @@ public class GameBoard extends JPanel {
 						territories.get(24).addUnits(1);
 						myLabel.setText("" + bjUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -5323,27 +4999,9 @@ public class GameBoard extends JPanel {
 						territories.get(25).addUnits(1);
 						myLabel.setText("" + hhUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -5394,27 +5052,9 @@ public class GameBoard extends JPanel {
 						territories.get(26).addUnits(1);
 						myLabel.setText("" + bUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -5471,27 +5111,9 @@ public class GameBoard extends JPanel {
 						territories.get(27).addUnits(1);
 						myLabel.setText("" + ppUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -5536,27 +5158,9 @@ public class GameBoard extends JPanel {
 						territories.get(35).addUnits(1);
 						myLabel.setText("" + apolloUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -5608,27 +5212,8 @@ public class GameBoard extends JPanel {
 						territories.get(36).addUnits(1);
 						myLabel.setText("" + raUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-
-						}
-						currPlayer = newGame.nextPlayer();
+						moveTurnLabel();
+						nextPlayer();
 					}
 
 					checkIfReinforcementPhaseIsOver();
@@ -5672,27 +5257,9 @@ public class GameBoard extends JPanel {
 						territories.get(37).addUnits(1);
 						myLabel.setText("" + heliosUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -5748,27 +5315,9 @@ public class GameBoard extends JPanel {
 						territories.get(38).addUnits(1);
 						myLabel.setText("" + intiUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -5806,27 +5355,9 @@ public class GameBoard extends JPanel {
 						territories.get(39).addUnits(1);
 						myLabel.setText("" + horusUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -5876,27 +5407,9 @@ public class GameBoard extends JPanel {
 						territories.get(40).addUnits(1);
 						myLabel.setText("" + tonatiuhUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -5952,27 +5465,9 @@ public class GameBoard extends JPanel {
 						territories.get(41).addUnits(1);
 						myLabel.setText("" + amunUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -6028,27 +5523,9 @@ public class GameBoard extends JPanel {
 						territories.get(7).addUnits(1);
 						myLabel.setText("" + rawrUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -6086,26 +5563,8 @@ public class GameBoard extends JPanel {
 						territories.get(8).addUnits(1);
 						myLabel.setText("" + eggUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
-						currPlayer = newGame.nextPlayer();
+						moveTurnLabel();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -6155,27 +5614,9 @@ public class GameBoard extends JPanel {
 						territories.get(9).addUnits(1);
 						myLabel.setText("" + dacUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -6231,27 +5672,9 @@ public class GameBoard extends JPanel {
 						territories.get(10).addUnits(1);
 						myLabel.setText("" + danUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -6320,27 +5743,9 @@ public class GameBoard extends JPanel {
 						territories.get(11).addUnits(1);
 						myLabel.setText("" + bbUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -6390,27 +5795,9 @@ public class GameBoard extends JPanel {
 						territories.get(12).addUnits(1);
 						myLabel.setText("" + moniUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -6460,27 +5847,9 @@ public class GameBoard extends JPanel {
 						territories.get(13).addUnits(1);
 						myLabel.setText("" + tsUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -6527,27 +5896,9 @@ public class GameBoard extends JPanel {
 						myLabel.setText("" + scrapUnits);
 
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 					}
 					checkIfReinforcementPhaseIsOver();
@@ -6587,27 +5938,9 @@ public class GameBoard extends JPanel {
 						territories.get(29).addUnits(1);
 						myLabel.setText("" + zachUnits);
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -6653,27 +5986,9 @@ public class GameBoard extends JPanel {
 						myLabel.setText("" + giantUnits);
 
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -6726,27 +6041,9 @@ public class GameBoard extends JPanel {
 						myLabel.setText("" + newzachUnits);
 
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -6804,27 +6101,9 @@ public class GameBoard extends JPanel {
 						myLabel.setText("" + southUnits);
 
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -6865,27 +6144,9 @@ public class GameBoard extends JPanel {
 						myLabel.setText("" + blooUnits);
 
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -6938,27 +6199,9 @@ public class GameBoard extends JPanel {
 						myLabel.setText("" + capUnits);
 
 						currPlayer.removeArmies(1);
-						if (startWindow.getPlayerAt(0) == currPlayer) {
-							playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(320, 590);
-						} else if (startWindow.getPlayerAt(1) == currPlayer) {
-							playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(470, 590);
-						} else if (startWindow.getPlayerAt(2) == currPlayer) {
-							playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(640, 590);
-						} else if (startWindow.getPlayerAt(3) == currPlayer) {
-							playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(810, 590);
-						} else if (startWindow.getPlayerAt(4) == currPlayer) {
-							playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(980, 590);
-						} else if (startWindow.getPlayerAt(5) == currPlayer) {
-							playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
-							turnMarker.setLocation(150, 590);
-						}
+						moveTurnLabel();
 
-						currPlayer = newGame.nextPlayer();
+						nextPlayer();
 
 						// ADD SETTERS AND GETTERS FOR BUTTON COLORS (OWNERS)
 					}
@@ -7764,6 +7007,28 @@ public class GameBoard extends JPanel {
 		this.add(cresentcaptitalCresent);
 
 	}
+	
+	public void moveTurnLabel() {
+		if (startWindow.getPlayerAt(0) == currPlayer) {
+			playerCount.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+			turnMarker.setLocation(320, 590);
+		} else if (startWindow.getPlayerAt(1) == currPlayer) {
+			playerCount2.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+			turnMarker.setLocation(470, 590);
+		} else if (startWindow.getPlayerAt(2) == currPlayer) {
+			playerCount3.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+			turnMarker.setLocation(640, 590);
+		} else if (startWindow.getPlayerAt(3) == currPlayer) {
+			playerCount4.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+			turnMarker.setLocation(810, 590);
+		} else if (startWindow.getPlayerAt(4) == currPlayer) {
+			playerCount5.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+			turnMarker.setLocation(980, 590);
+		} else if (startWindow.getPlayerAt(5) == currPlayer) {
+			playerCount6.setText("You have " + currPlayer.getNumOfArmies() + " units left to place!");
+			turnMarker.setLocation(150, 590);
+		}
+	}
 
 	public void nextPlayer() {
 
@@ -7986,7 +7251,7 @@ public class GameBoard extends JPanel {
 						+ armiesLost[1] + " armies.";
 
 				if (!defendingTerr.getOwner().getName().equals(defenderName)) {
-					optionPaneMessage += ("\n\n" + defenderName + " lost " + defendingTerr + " to " + attackerName);
+					optionPaneMessage += ("\n\n" + defenderName + " lost " + defendingTerr.getName() + " to " + attackerName);
 					options = new String[1];
 					options[0] = "OK";
 					JOptionPane.showOptionDialog(null, optionPaneMessage, "Battle Results", JOptionPane.OK_OPTION,
