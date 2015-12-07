@@ -69,7 +69,7 @@ public class StartWindow extends JFrame {
 		player5.setText("");
 		player6.setText("");
 
-		String[] player1Choice = { "Select Player", "Human", "Easy AI", "Medium AI", "Hard AI" };
+		String[] player1Choice = { "Select Player", "Human"};
 		String[] player2Choice = { "Select Player", "Human", "Easy AI", "Medium AI", "Hard AI"};
 		String[] player3Choice = { "Select Player", "Human", "Easy AI", "Medium AI", "Hard AI"};
 		String[] player4Choice = { "Select Player", "Human", "Easy AI", "Medium AI", "Hard AI" };

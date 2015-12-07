@@ -544,7 +544,7 @@ public class GameBoard extends JPanel {
 
 	public void importGameLogic(PlayerCollection newPlayers, ArrayList<String> newCards,
 			ArrayList<Continent> newContinets, ArrayList<Territory> newTerritories) {
-		newGame=new GameLogic(null, null, null, null, null, null);
+		newGame = new GameLogic(null, null, null, null, null, null);
 		newGame.setPlayerList(newPlayers);
 		newGame.setCards(newCards);
 		newGame.setTerritory(newTerritories);
@@ -8189,8 +8189,10 @@ public class GameBoard extends JPanel {
 				gameBoardAttack(attackingTerr, defendingTerr);
 			}
 		} else {
-			JOptionPane.showConfirmDialog(null, "Sorry, you do not have enough armies to attack", "Not Strong Enough",
-					1);
+			if (!attackingTerr.getOwner().isAI()) {
+				JOptionPane.showConfirmDialog(null, "Sorry, you do not have enough armies to attack",
+						"Not Strong Enough", 1);
+			}
 		}
 	}
 
