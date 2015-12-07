@@ -133,7 +133,7 @@ public class GameBoard extends JPanel {
 						this.setLocation(0, -5);
 
 						try {
-							map = ImageIO.read(new File("./Pictures/map1.png"));
+							map = ImageIO.read(new File("./Pictures/mapwithlines.png"));
 
 							bottomDisplay = ImageIO.read(new File("./Pictures/bottomgui.png"));
 							leftDisplay = ImageIO.read(new File("./Pictures/gui2n.png"));
