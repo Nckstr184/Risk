@@ -6269,7 +6269,7 @@ public class GameBoard extends JPanel {
 		languageLabel7 = new JLabel("" + perlUnits);
 
 		javaLanguage.setSize(25, 25);
-		javaLanguage.setLocation(720, 100);
+		javaLanguage.setLocation(720, 95);
 		javaLanguage.setOpaque(false);
 		javaLanguage.setContentAreaFilled(false);
 		javaLanguage.setBorderPainted(false);
@@ -6277,11 +6277,11 @@ public class GameBoard extends JPanel {
 		languageLabel1.setSize(25, 25);
 		languageLabel1.setFont(font);
 		languageLabel1.setForeground(Color.BLACK);
-		languageLabel1.setLocation(728, 103);
+		languageLabel1.setLocation(728, 98);
 		languageLabel1.setOpaque(false);
 
 		pythonLanguage.setSize(25, 25);
-		pythonLanguage.setLocation(840, 85);
+		pythonLanguage.setLocation(840, 80);
 		pythonLanguage.setOpaque(false);
 		pythonLanguage.setContentAreaFilled(false);
 		pythonLanguage.setBorderPainted(false);
@@ -6289,11 +6289,11 @@ public class GameBoard extends JPanel {
 		languageLabel2.setSize(25, 25);
 		languageLabel2.setFont(font);
 		languageLabel2.setForeground(Color.BLACK);
-		languageLabel2.setLocation(848, 88);
+		languageLabel2.setLocation(848, 83);
 		languageLabel2.setOpaque(false);
 
 		cLanguage.setSize(25, 25);
-		cLanguage.setLocation(725, 145);
+		cLanguage.setLocation(725, 140);
 		cLanguage.setOpaque(false);
 		cLanguage.setContentAreaFilled(false);
 		cLanguage.setBorderPainted(false);
@@ -6301,7 +6301,7 @@ public class GameBoard extends JPanel {
 		languageLabel3.setSize(25, 25);
 		languageLabel3.setFont(font);
 		languageLabel3.setForeground(Color.BLACK);
-		languageLabel3.setLocation(733, 148);
+		languageLabel3.setLocation(733, 143);
 		languageLabel3.setOpaque(false);
 
 		sqlLanguage.setSize(25, 25);
@@ -6317,7 +6317,7 @@ public class GameBoard extends JPanel {
 		languageLabel4.setOpaque(false);
 
 		rubyLanguage.setSize(25, 25);
-		rubyLanguage.setLocation(780, 165);
+		rubyLanguage.setLocation(780, 160);
 		rubyLanguage.setOpaque(false);
 		rubyLanguage.setContentAreaFilled(false);
 		rubyLanguage.setBorderPainted(false);
@@ -6325,11 +6325,11 @@ public class GameBoard extends JPanel {
 		languageLabel5.setSize(25, 25);
 		languageLabel5.setFont(font);
 		languageLabel5.setForeground(Color.BLACK);
-		languageLabel5.setLocation(788, 168);
+		languageLabel5.setLocation(788, 163);
 		languageLabel5.setOpaque(false);
 
 		gitLanguage.setSize(25, 25);
-		gitLanguage.setLocation(840, 140);
+		gitLanguage.setLocation(840, 135);
 		gitLanguage.setOpaque(false);
 		gitLanguage.setContentAreaFilled(false);
 		gitLanguage.setBorderPainted(false);
@@ -6337,11 +6337,11 @@ public class GameBoard extends JPanel {
 		languageLabel6.setSize(25, 25);
 		languageLabel6.setFont(font);
 		languageLabel6.setForeground(Color.BLACK);
-		languageLabel6.setLocation(848, 143);
+		languageLabel6.setLocation(848, 138);
 		languageLabel6.setOpaque(false);
 
 		perlLanguage.setSize(25, 25);
-		perlLanguage.setLocation(890, 130);
+		perlLanguage.setLocation(890, 125);
 		perlLanguage.setOpaque(false);
 		perlLanguage.setContentAreaFilled(false);
 		perlLanguage.setBorderPainted(false);
@@ -6349,7 +6349,7 @@ public class GameBoard extends JPanel {
 		languageLabel7.setSize(25, 25);
 		languageLabel7.setFont(font);
 		languageLabel7.setForeground(Color.BLACK);
-		languageLabel7.setLocation(898, 133);
+		languageLabel7.setLocation(898, 128);
 		languageLabel7.setOpaque(false);
 
 		myMap = new HashMap<JButton, JLabel>();
@@ -6379,7 +6379,7 @@ public class GameBoard extends JPanel {
 		wildcatLabel7 = new JLabel("" + zonaUnits);
 
 		wilberWildcat.setSize(25, 25);
-		wilberWildcat.setLocation(395, 305);
+		wilberWildcat.setLocation(395, 300);
 		wilberWildcat.setOpaque(false);
 		wilberWildcat.setContentAreaFilled(false);
 		wilberWildcat.setBorderPainted(false);
@@ -6387,11 +6387,11 @@ public class GameBoard extends JPanel {
 		wildcatLabel1.setSize(25, 25);
 		wildcatLabel1.setFont(font);
 		wildcatLabel1.setForeground(Color.BLACK);
-		wildcatLabel1.setLocation(403, 308);
+		wildcatLabel1.setLocation(403, 303);
 		wildcatLabel1.setOpaque(false);
 
 		wilmaWildcat.setSize(25, 25);
-		wilmaWildcat.setLocation(460, 300);
+		wilmaWildcat.setLocation(460, 285);
 		wilmaWildcat.setOpaque(false);
 		wilmaWildcat.setContentAreaFilled(false);
 		wilmaWildcat.setBorderPainted(false);
@@ -6399,11 +6399,11 @@ public class GameBoard extends JPanel {
 		wildcatLabel2.setSize(25, 25);
 		wildcatLabel2.setFont(font);
 		wildcatLabel2.setForeground(Color.BLACK);
-		wildcatLabel2.setLocation(468, 303);
+		wildcatLabel2.setLocation(468, 288);
 		wildcatLabel2.setOpaque(false);
 
 		richWildcat.setSize(25, 25);
-		richWildcat.setLocation(520, 370);
+		richWildcat.setLocation(520, 365);
 		richWildcat.setOpaque(false);
 		richWildcat.setContentAreaFilled(false);
 		richWildcat.setBorderPainted(false);
@@ -6411,11 +6411,11 @@ public class GameBoard extends JPanel {
 		wildcatLabel3.setSize(25, 25);
 		wildcatLabel3.setFont(font);
 		wildcatLabel3.setForeground(Color.BLACK);
-		wildcatLabel3.setLocation(528, 373);
+		wildcatLabel3.setLocation(528, 368);
 		wildcatLabel3.setOpaque(false);
 
 		millerWildcat.setSize(25, 25);
-		millerWildcat.setLocation(560, 345);
+		millerWildcat.setLocation(560, 340);
 		millerWildcat.setOpaque(false);
 		millerWildcat.setContentAreaFilled(false);
 		millerWildcat.setBorderPainted(false);
@@ -6423,11 +6423,11 @@ public class GameBoard extends JPanel {
 		wildcatLabel4.setSize(25, 25);
 		wildcatLabel4.setFont(font);
 		wildcatLabel4.setForeground(Color.BLACK);
-		wildcatLabel4.setLocation(568, 348);
+		wildcatLabel4.setLocation(568, 343);
 		wildcatLabel4.setOpaque(false);
 
 		scoobyWildcat.setSize(25, 25);
-		scoobyWildcat.setLocation(380, 380);
+		scoobyWildcat.setLocation(380, 375);
 		scoobyWildcat.setOpaque(false);
 		scoobyWildcat.setContentAreaFilled(false);
 		scoobyWildcat.setBorderPainted(false);
@@ -6435,11 +6435,11 @@ public class GameBoard extends JPanel {
 		wildcatLabel5.setSize(25, 25);
 		wildcatLabel5.setFont(font);
 		wildcatLabel5.setForeground(Color.BLACK);
-		wildcatLabel5.setLocation(388, 383);
+		wildcatLabel5.setLocation(388, 378);
 		wildcatLabel5.setOpaque(false);
 
 		mckaleWildcat.setSize(25, 25);
-		mckaleWildcat.setLocation(450, 380);
+		mckaleWildcat.setLocation(450, 370);
 		mckaleWildcat.setOpaque(false);
 		mckaleWildcat.setContentAreaFilled(false);
 		mckaleWildcat.setBorderPainted(false);
@@ -6447,11 +6447,11 @@ public class GameBoard extends JPanel {
 		wildcatLabel6.setSize(25, 25);
 		wildcatLabel6.setFont(font);
 		wildcatLabel6.setForeground(Color.BLACK);
-		wildcatLabel6.setLocation(458, 383);
+		wildcatLabel6.setLocation(458, 373);
 		wildcatLabel6.setOpaque(false);
 
 		zonaWildcat.setSize(25, 25);
-		zonaWildcat.setLocation(450, 435);
+		zonaWildcat.setLocation(450, 430);
 		zonaWildcat.setOpaque(false);
 		zonaWildcat.setContentAreaFilled(false);
 		zonaWildcat.setBorderPainted(false);
@@ -6459,7 +6459,7 @@ public class GameBoard extends JPanel {
 		wildcatLabel7.setSize(25, 25);
 		wildcatLabel7.setFont(font);
 		wildcatLabel7.setForeground(Color.BLACK);
-		wildcatLabel7.setLocation(458, 438);
+		wildcatLabel7.setLocation(458, 433);
 		wildcatLabel7.setOpaque(false);
 
 		// myMap = new HashMap<JButton, JLabel>();
@@ -6489,7 +6489,7 @@ public class GameBoard extends JPanel {
 		pizzaLabel7 = new JLabel("" + ppUnits);
 
 		papajohnsPizza.setSize(25, 25);
-		papajohnsPizza.setLocation(290, 265);
+		papajohnsPizza.setLocation(290, 260);
 		papajohnsPizza.setOpaque(false);
 		papajohnsPizza.setContentAreaFilled(false);
 		papajohnsPizza.setBorderPainted(false);
@@ -6497,11 +6497,11 @@ public class GameBoard extends JPanel {
 		pizzaLabel1.setSize(25, 25);
 		pizzaLabel1.setFont(font);
 		pizzaLabel1.setForeground(Color.BLACK);
-		pizzaLabel1.setLocation(298, 268);
+		pizzaLabel1.setLocation(298, 263);
 		pizzaLabel1.setOpaque(false);
 
 		dominosPizza.setSize(25, 25);
-		dominosPizza.setLocation(360, 297);
+		dominosPizza.setLocation(360, 287);
 		dominosPizza.setOpaque(false);
 		dominosPizza.setContentAreaFilled(false);
 		dominosPizza.setBorderPainted(false);
@@ -6509,11 +6509,11 @@ public class GameBoard extends JPanel {
 		pizzaLabel2.setSize(25, 25);
 		pizzaLabel2.setFont(font);
 		pizzaLabel2.setForeground(Color.BLACK);
-		pizzaLabel2.setLocation(368, 300);
+		pizzaLabel2.setLocation(368, 290);
 		pizzaLabel2.setOpaque(false);
 
 		pizzahutPizza.setSize(25, 25);
-		pizzahutPizza.setLocation(320, 263);
+		pizzahutPizza.setLocation(320, 248);
 		pizzahutPizza.setOpaque(false);
 		pizzahutPizza.setContentAreaFilled(false);
 		pizzahutPizza.setBorderPainted(false);
@@ -6521,11 +6521,11 @@ public class GameBoard extends JPanel {
 		pizzaLabel3.setSize(25, 25);
 		pizzaLabel3.setFont(font);
 		pizzaLabel3.setForeground(Color.BLACK);
-		pizzaLabel3.setLocation(328, 266);
+		pizzaLabel3.setLocation(328, 251);
 		pizzaLabel3.setOpaque(false);
 
 		blackjackPizza.setSize(25, 25);
-		blackjackPizza.setLocation(306, 218);
+		blackjackPizza.setLocation(306, 208);
 		blackjackPizza.setOpaque(false);
 		blackjackPizza.setContentAreaFilled(false);
 		blackjackPizza.setBorderPainted(false);
@@ -6533,11 +6533,11 @@ public class GameBoard extends JPanel {
 		pizzaLabel4.setSize(25, 25);
 		pizzaLabel4.setFont(font);
 		pizzaLabel4.setForeground(Color.BLACK);
-		pizzaLabel4.setLocation(315, 221);
+		pizzaLabel4.setLocation(315, 211);
 		pizzaLabel4.setOpaque(false);
 
 		hungryhowiesPizza.setSize(25, 25);
-		hungryhowiesPizza.setLocation(368, 211);
+		hungryhowiesPizza.setLocation(368, 196);
 		hungryhowiesPizza.setOpaque(false);
 		hungryhowiesPizza.setContentAreaFilled(false);
 		hungryhowiesPizza.setBorderPainted(false);
@@ -6545,11 +6545,11 @@ public class GameBoard extends JPanel {
 		pizzaLabel5.setSize(25, 25);
 		pizzaLabel5.setFont(font);
 		pizzaLabel5.setForeground(Color.BLACK);
-		pizzaLabel5.setLocation(376, 214);
+		pizzaLabel5.setLocation(376, 199);
 		pizzaLabel5.setOpaque(false);
 
 		brooklynPizza.setSize(25, 25);
-		brooklynPizza.setLocation(398, 234);
+		brooklynPizza.setLocation(398, 224);
 		brooklynPizza.setOpaque(false);
 		brooklynPizza.setContentAreaFilled(false);
 		brooklynPizza.setBorderPainted(false);
@@ -6557,11 +6557,11 @@ public class GameBoard extends JPanel {
 		pizzaLabel6.setSize(25, 25);
 		pizzaLabel6.setFont(font);
 		pizzaLabel6.setForeground(Color.BLACK);
-		pizzaLabel6.setLocation(406, 237);
+		pizzaLabel6.setLocation(406, 227);
 		pizzaLabel6.setOpaque(false);
 
 		pizzaplanetPizza.setSize(25, 25);
-		pizzaplanetPizza.setLocation(440, 201);
+		pizzaplanetPizza.setLocation(440, 196);
 		pizzaplanetPizza.setOpaque(false);
 		pizzaplanetPizza.setContentAreaFilled(false);
 		pizzaplanetPizza.setBorderPainted(false);
@@ -6569,7 +6569,7 @@ public class GameBoard extends JPanel {
 		pizzaLabel7.setSize(25, 25);
 		pizzaLabel7.setFont(font);
 		pizzaLabel7.setForeground(Color.BLACK);
-		pizzaLabel7.setLocation(448, 204);
+		pizzaLabel7.setLocation(448, 199);
 		pizzaLabel7.setOpaque(false);
 
 		// myMap = new HashMap<JButton, JLabel>();
@@ -6599,7 +6599,7 @@ public class GameBoard extends JPanel {
 		sunLabel7 = new JLabel("" + amunUnits);
 
 		apolloSun.setSize(25, 25);
-		apolloSun.setLocation(460, 125);
+		apolloSun.setLocation(460, 115);
 		apolloSun.setOpaque(false);
 		apolloSun.setContentAreaFilled(false);
 		apolloSun.setBorderPainted(false);
@@ -6607,11 +6607,11 @@ public class GameBoard extends JPanel {
 		sunLabel1.setSize(25, 25);
 		sunLabel1.setFont(font);
 		sunLabel1.setForeground(Color.BLACK);
-		sunLabel1.setLocation(468, 128);
+		sunLabel1.setLocation(468, 118);
 		sunLabel1.setOpaque(false);
 
 		raSun.setSize(25, 25);
-		raSun.setLocation(530, 109);
+		raSun.setLocation(530, 99);
 		raSun.setOpaque(false);
 		raSun.setContentAreaFilled(false);
 		raSun.setBorderPainted(false);
@@ -6619,11 +6619,11 @@ public class GameBoard extends JPanel {
 		sunLabel2.setSize(25, 25);
 		sunLabel2.setFont(font);
 		sunLabel2.setForeground(Color.BLACK);
-		sunLabel2.setLocation(538, 112);
+		sunLabel2.setLocation(538, 102);
 		sunLabel2.setOpaque(false);
 
 		heliosSun.setSize(25, 25);
-		heliosSun.setLocation(570, 121);
+		heliosSun.setLocation(570, 111);
 		heliosSun.setOpaque(false);
 		heliosSun.setContentAreaFilled(false);
 		heliosSun.setBorderPainted(false);
@@ -6631,11 +6631,11 @@ public class GameBoard extends JPanel {
 		sunLabel3.setSize(25, 25);
 		sunLabel3.setFont(font);
 		sunLabel3.setForeground(Color.BLACK);
-		sunLabel3.setLocation(578, 124);
+		sunLabel3.setLocation(578, 114);
 		sunLabel3.setOpaque(false);
 
 		intiSun.setSize(25, 25);
-		intiSun.setLocation(565, 180);
+		intiSun.setLocation(560, 165);
 		intiSun.setOpaque(false);
 		intiSun.setContentAreaFilled(false);
 		intiSun.setBorderPainted(false);
@@ -6643,11 +6643,11 @@ public class GameBoard extends JPanel {
 		sunLabel4.setSize(25, 25);
 		sunLabel4.setFont(font);
 		sunLabel4.setForeground(Color.BLACK);
-		sunLabel4.setLocation(573, 183);
+		sunLabel4.setLocation(568, 168);
 		sunLabel4.setOpaque(false);
 
 		horusSun.setSize(25, 25);
-		horusSun.setLocation(525, 230);
+		horusSun.setLocation(530, 215);
 		horusSun.setOpaque(false);
 		horusSun.setContentAreaFilled(false);
 		horusSun.setBorderPainted(false);
@@ -6655,11 +6655,11 @@ public class GameBoard extends JPanel {
 		sunLabel5.setSize(25, 25);
 		sunLabel5.setFont(font);
 		sunLabel5.setForeground(Color.BLACK);
-		sunLabel5.setLocation(533, 233);
+		sunLabel5.setLocation(538, 218);
 		sunLabel5.setOpaque(false);
 
 		tonatiuhSun.setSize(25, 25);
-		tonatiuhSun.setLocation(495, 215);// *
+		tonatiuhSun.setLocation(495, 200);
 		tonatiuhSun.setOpaque(false);
 		tonatiuhSun.setContentAreaFilled(false);
 		tonatiuhSun.setBorderPainted(false);
@@ -6667,11 +6667,11 @@ public class GameBoard extends JPanel {
 		sunLabel6.setSize(25, 25);
 		sunLabel6.setFont(font);
 		sunLabel6.setForeground(Color.BLACK);
-		sunLabel6.setLocation(503, 218);
+		sunLabel6.setLocation(503, 203);
 		sunLabel6.setOpaque(false);
 
 		amunSun.setSize(25, 25);
-		amunSun.setLocation(510, 170);// *
+		amunSun.setLocation(515, 155);
 		amunSun.setOpaque(false);
 		amunSun.setContentAreaFilled(false);
 		amunSun.setBorderPainted(false);
@@ -6679,7 +6679,7 @@ public class GameBoard extends JPanel {
 		sunLabel7.setSize(25, 25);
 		sunLabel7.setFont(font);
 		sunLabel7.setForeground(Color.BLACK);
-		sunLabel7.setLocation(518, 173);
+		sunLabel7.setLocation(523, 158);
 		sunLabel7.setOpaque(false);
 
 		// myMap = new HashMap<JButton, JLabel>();
@@ -6709,7 +6709,7 @@ public class GameBoard extends JPanel {
 		dinoLabel7 = new JLabel("" + tsUnits);
 
 		rawrvilleDino.setSize(25, 25);
-		rawrvilleDino.setLocation(960, 224);
+		rawrvilleDino.setLocation(960, 214);
 		rawrvilleDino.setOpaque(false);
 		rawrvilleDino.setContentAreaFilled(false);
 		rawrvilleDino.setBorderPainted(false);
@@ -6717,11 +6717,11 @@ public class GameBoard extends JPanel {
 		dinoLabel1.setSize(25, 25);
 		dinoLabel1.setFont(font);
 		dinoLabel1.setForeground(Color.BLACK);
-		dinoLabel1.setLocation(968, 227);
+		dinoLabel1.setLocation(968, 217);
 		dinoLabel1.setOpaque(false);
 
 		laieggesDino.setSize(25, 25);
-		laieggesDino.setLocation(923, 241);
+		laieggesDino.setLocation(928, 231);
 		laieggesDino.setOpaque(false);
 		laieggesDino.setContentAreaFilled(false);
 		laieggesDino.setBorderPainted(false);
@@ -6729,11 +6729,11 @@ public class GameBoard extends JPanel {
 		dinoLabel2.setSize(25, 25);
 		dinoLabel2.setFont(font);
 		dinoLabel2.setForeground(Color.BLACK);
-		dinoLabel2.setLocation(931, 244);
+		dinoLabel2.setLocation(936, 234);
 		dinoLabel2.setOpaque(false);
 
 		dactilitoDino.setSize(25, 25);
-		dactilitoDino.setLocation(920, 325);
+		dactilitoDino.setLocation(920, 320);
 		dactilitoDino.setOpaque(false);
 		dactilitoDino.setContentAreaFilled(false);
 		dactilitoDino.setBorderPainted(false);
@@ -6741,11 +6741,11 @@ public class GameBoard extends JPanel {
 		dinoLabel3.setSize(25, 25);
 		dinoLabel3.setFont(font);
 		dinoLabel3.setForeground(Color.BLACK);
-		dinoLabel3.setLocation(928, 328);
+		dinoLabel3.setLocation(928, 323);
 		dinoLabel3.setOpaque(false);
 
 		dirtydanDino.setSize(25, 25);
-		dirtydanDino.setLocation(868, 315);
+		dirtydanDino.setLocation(873, 300);
 		dirtydanDino.setOpaque(false);
 		dirtydanDino.setContentAreaFilled(false);
 		dirtydanDino.setBorderPainted(false);
@@ -6753,11 +6753,11 @@ public class GameBoard extends JPanel {
 		dinoLabel4.setSize(25, 25);
 		dinoLabel4.setFont(font);
 		dinoLabel4.setForeground(Color.BLACK);
-		dinoLabel4.setLocation(875, 318);
+		dinoLabel4.setLocation(880, 303);
 		dinoLabel4.setOpaque(false);
 
 		blackbeardDino.setSize(25, 25);
-		blackbeardDino.setLocation(885, 358);
+		blackbeardDino.setLocation(885, 343);
 		blackbeardDino.setOpaque(false);
 		blackbeardDino.setContentAreaFilled(false);
 		blackbeardDino.setBorderPainted(false);
@@ -6765,11 +6765,11 @@ public class GameBoard extends JPanel {
 		dinoLabel5.setSize(25, 25);
 		dinoLabel5.setFont(font);
 		dinoLabel5.setForeground(Color.BLACK);
-		dinoLabel5.setLocation(893, 361);
+		dinoLabel5.setLocation(893, 346);
 		dinoLabel5.setOpaque(false);
 
 		monisaurusDino.setSize(25, 25);
-		monisaurusDino.setLocation(845, 383);
+		monisaurusDino.setLocation(845, 378);
 		monisaurusDino.setOpaque(false);
 		monisaurusDino.setContentAreaFilled(false);
 		monisaurusDino.setBorderPainted(false);
@@ -6777,11 +6777,11 @@ public class GameBoard extends JPanel {
 		dinoLabel6.setSize(25, 25);
 		dinoLabel6.setFont(font);
 		dinoLabel6.setForeground(Color.BLACK);
-		dinoLabel6.setLocation(853, 386);
+		dinoLabel6.setLocation(853, 381);
 		dinoLabel6.setOpaque(false);
 
 		toystoryDino.setSize(25, 25);
-		toystoryDino.setLocation(930, 408);
+		toystoryDino.setLocation(930, 393);
 		toystoryDino.setOpaque(false);
 		toystoryDino.setContentAreaFilled(false);
 		toystoryDino.setBorderPainted(false);
@@ -6789,7 +6789,7 @@ public class GameBoard extends JPanel {
 		dinoLabel7.setSize(25, 25);
 		dinoLabel7.setFont(font);
 		dinoLabel7.setForeground(Color.BLACK);
-		dinoLabel7.setLocation(938, 411);
+		dinoLabel7.setLocation(938, 396);
 		dinoLabel7.setOpaque(false);
 
 		// myMap = new HashMap<JButton, JLabel>();
@@ -6819,7 +6819,7 @@ public class GameBoard extends JPanel {
 		cresentLabel7 = new JLabel("" + capUnits);
 
 		scraptopiaCresent.setSize(25, 25);
-		scraptopiaCresent.setLocation(715, 334);
+		scraptopiaCresent.setLocation(722, 319);
 		scraptopiaCresent.setOpaque(false);
 		scraptopiaCresent.setContentAreaFilled(false);
 		scraptopiaCresent.setBorderPainted(false);
@@ -6827,11 +6827,11 @@ public class GameBoard extends JPanel {
 		cresentLabel1.setSize(25, 25);
 		cresentLabel1.setFont(font);
 		cresentLabel1.setForeground(Color.BLACK);
-		cresentLabel1.setLocation(723, 337);
+		cresentLabel1.setLocation(730, 322);
 		cresentLabel1.setOpaque(false);
 
 		landofzachCresent.setSize(25, 25);
-		landofzachCresent.setLocation(750, 335);
+		landofzachCresent.setLocation(750, 320);
 		landofzachCresent.setOpaque(false);
 		landofzachCresent.setContentAreaFilled(false);
 		landofzachCresent.setBorderPainted(false);
@@ -6839,11 +6839,11 @@ public class GameBoard extends JPanel {
 		cresentLabel2.setSize(25, 25);
 		cresentLabel2.setFont(font);
 		cresentLabel2.setForeground(Color.BLACK);
-		cresentLabel2.setLocation(758, 338);
+		cresentLabel2.setLocation(758, 323);
 		cresentLabel2.setOpaque(false);
 
 		giantCresent.setSize(25, 25);
-		giantCresent.setLocation(765, 298);
+		giantCresent.setLocation(765, 288);
 		giantCresent.setOpaque(false);
 		giantCresent.setContentAreaFilled(false);
 		giantCresent.setBorderPainted(false);
@@ -6851,11 +6851,11 @@ public class GameBoard extends JPanel {
 		cresentLabel3.setSize(25, 25);
 		cresentLabel3.setFont(font);
 		cresentLabel3.setForeground(Color.BLACK);
-		cresentLabel3.setLocation(773, 301);
+		cresentLabel3.setLocation(773, 291);
 		cresentLabel3.setOpaque(false);
 
 		newlandofzachCresent.setSize(25, 25);
-		newlandofzachCresent.setLocation(790, 350);
+		newlandofzachCresent.setLocation(785, 340);
 		newlandofzachCresent.setOpaque(false);
 		newlandofzachCresent.setContentAreaFilled(false);
 		newlandofzachCresent.setBorderPainted(false);
@@ -6863,11 +6863,11 @@ public class GameBoard extends JPanel {
 		cresentLabel4.setSize(25, 25);
 		cresentLabel4.setFont(font);
 		cresentLabel4.setForeground(Color.BLACK);
-		cresentLabel4.setLocation(798, 353);
+		cresentLabel4.setLocation(793, 343);
 		cresentLabel4.setOpaque(false);
 
 		southscraptopiaCresent.setSize(25, 25);
-		southscraptopiaCresent.setLocation(790, 320);
+		southscraptopiaCresent.setLocation(790, 310);
 		southscraptopiaCresent.setOpaque(false);
 		southscraptopiaCresent.setContentAreaFilled(false);
 		southscraptopiaCresent.setBorderPainted(false);
@@ -6875,11 +6875,11 @@ public class GameBoard extends JPanel {
 		cresentLabel5.setSize(25, 25);
 		cresentLabel5.setFont(font);
 		cresentLabel5.setForeground(Color.BLACK);
-		cresentLabel5.setLocation(798, 323);
+		cresentLabel5.setLocation(798, 313);
 		cresentLabel5.setOpaque(false);
 
 		bloobawlCresent.setSize(25, 25);
-		bloobawlCresent.setLocation(835, 310);
+		bloobawlCresent.setLocation(835, 295);
 		bloobawlCresent.setOpaque(false);
 		bloobawlCresent.setContentAreaFilled(false);
 		bloobawlCresent.setBorderPainted(false);
@@ -6887,11 +6887,11 @@ public class GameBoard extends JPanel {
 		cresentLabel6.setSize(25, 25);
 		cresentLabel6.setFont(font);
 		cresentLabel6.setForeground(Color.BLACK);
-		cresentLabel6.setLocation(843, 313);
+		cresentLabel6.setLocation(843, 298);
 		cresentLabel6.setOpaque(false);
 
 		cresentcaptitalCresent.setSize(25, 25);
-		cresentcaptitalCresent.setLocation(861, 285);
+		cresentcaptitalCresent.setLocation(861, 275);
 		cresentcaptitalCresent.setOpaque(false);
 		cresentcaptitalCresent.setContentAreaFilled(false);
 		cresentcaptitalCresent.setBorderPainted(false);
@@ -6899,7 +6899,7 @@ public class GameBoard extends JPanel {
 		cresentLabel7.setSize(25, 25);
 		cresentLabel7.setFont(font);
 		cresentLabel7.setForeground(Color.BLACK);
-		cresentLabel7.setLocation(866, 288);
+		cresentLabel7.setLocation(869, 278);
 		cresentLabel7.setOpaque(false);
 
 		// myMap = new HashMap<JButton, JLabel>();
