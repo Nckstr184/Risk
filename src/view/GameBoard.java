@@ -700,6 +700,7 @@ public class GameBoard extends JPanel {
 		endTurnButton.setSize(150, 40);
 		endTurnButton.setText("End Turn");
 		endTurnButton.setLocation(1110, 460);
+		endTurnButton.setEnabled(false);
 		
 		
 		
@@ -12321,6 +12322,7 @@ public class GameBoard extends JPanel {
 		}
 		if (playersDone == newGame.getNumOfPlayers()) {
 			reinforcementPhase = false;
+			endTurnButton.setEnabled(true);
 			attackPhase = true;
 			gameStatus.setText("Attack");
 			if (newGame.getNumOfPlayers() == 6) {
