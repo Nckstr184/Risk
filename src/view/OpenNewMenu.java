@@ -33,7 +33,7 @@ public class OpenNewMenu extends JFrame {
 	public OpenNewMenu() {
 		clicked = false;
 
-		this.setSize(350, 350);
+		this.setSize(360, 360);
 		this.setTitle("New Game or Load Old Game");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(new GridLayout(3, 1, 0, 0));
