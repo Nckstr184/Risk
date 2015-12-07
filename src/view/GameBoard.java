@@ -106,7 +106,7 @@ public class GameBoard extends JPanel {
 	GameLogic newGame;
 
 	JLabel playerTag, playerTag2, playerTag3, playerTag4, playerTag5, playerTag6, playerCount, playerCount2,
-			playerCount3, playerCount4, playerCount5, playerCount6, turnMarker, gameStatus;
+			playerCount3, playerCount4, playerCount5, playerCount6, turnMarker, gameStatus, neighborsLabel;
 
 	private int fortifyCount, unitsFortified;
 	private FileInputStream inputStream;
@@ -236,9 +236,11 @@ public class GameBoard extends JPanel {
 		Font plyrTagFont = new Font("Verdana", Font.BOLD, 18);
 		Font plyrCountFont = new Font("Verdana", Font.BOLD, 9);
 		Font gameStatusFont = new Font("Verdana", Font.BOLD, 36);
+		Font neighborsFont = new Font("Serif", Font.BOLD, 22);
 		int count = 1;
 		turnMarker = new JLabel();
 		gameStatus = new JLabel();
+		neighborsLabel = new JLabel();
 		turnMarker.setText("IT'S YOUR TURN!!!");
 		turnMarker.setForeground(Color.white);
 		turnMarker.setFont(plyrCountFont);
@@ -250,9 +252,18 @@ public class GameBoard extends JPanel {
 		gameStatus.setFont(gameStatusFont);
 		gameStatus.setSize(200, 50);
 		gameStatus.setLocation(1110, 40);
-
+		
+		
+		neighborsLabel.setSize(500,100);
+		neighborsLabel.setFont(neighborsFont);
+		neighborsLabel.setLocation(250,20);
+		neighborsLabel.setForeground(Color.WHITE);
+		
+		
+		add(neighborsLabel);
 		add(gameStatus);
 		add(turnMarker);
+		
 
 		if (numberOfPlayers == 6) {
 			playerTag = new JLabel(newGame.getPlayerAt(0).getName());
@@ -507,12 +518,10 @@ public class GameBoard extends JPanel {
 	}
 
 	public void startOldGame() {
-<<<<<<< HEAD
+
 		int numberOfPlayers=newGame.getNumOfPlayers();
 		System.out.println(numberOfPlayers);
-=======
-		int numberOfPlayers = newGame.getNumOfPlayers();
->>>>>>> 8380e779c3c6561f20df83fe1ccc78c037c8cb01
+
 		if (numberOfPlayers == 6) {
 
 			player1 = newGame.getPlayerAt(0);
@@ -670,7 +679,9 @@ public class GameBoard extends JPanel {
 		endTurnButton.setSize(150, 40);
 		endTurnButton.setText("End Turn");
 		endTurnButton.setLocation(1110, 460);
-
+		
+		
+		
 		turnInCardsButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String message = "";
@@ -3808,10 +3819,7 @@ public class GameBoard extends JPanel {
 			}
 		}
 		nextPlayer();
-		if(javaLanguage==null)
-		{
-		System.out.println("I hate you");
-		}
+		
 		javaLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
@@ -3843,6 +3851,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						javaAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack [Python, C, SQL, Helios]");
 
 					}
 				}
