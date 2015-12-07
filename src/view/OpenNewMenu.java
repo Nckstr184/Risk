@@ -26,7 +26,6 @@ public class OpenNewMenu extends JFrame {
 	private JButton aboutgame;
 	private StartWindow startWindow;
 	ImageIcon new1, old, about, background;
-	
 
 	private boolean clicked;
 
@@ -37,36 +36,34 @@ public class OpenNewMenu extends JFrame {
 		this.setTitle("New Game or Load Old Game");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(new GridLayout(3, 1, 0, 0));
-		
 
 		this.setLocation(350, 100);
-			new1 = new ImageIcon("./Pictures/newgamelabel.png");
-			old = new ImageIcon("./Pictures/oldgamelabel.png");
-			about = new ImageIcon("./Pictures/aboutlabel.png");
-			background = new ImageIcon("./Pictures/openmenu.png");//might have to make a buffered image label
+		new1 = new ImageIcon("./Pictures/newgamelabel.png");
+		old = new ImageIcon("./Pictures/oldgamelabel.png");
+		about = new ImageIcon("./Pictures/aboutlabel.png");
+		background = new ImageIcon("./Pictures/openmenu.png");// might have to
+																// make a
+																// buffered
+																// image label
 
-			
-			
-			newgame = new JButton(new1);
-			newgame.addActionListener(new startNewGame());
-			oldgame = new JButton(old);
-			oldgame.addActionListener(new loadOldGame());
-			aboutgame= new JButton(about);
-			//add listener for about
+		newgame = new JButton(new1);
+		newgame.addActionListener(new startNewGame());
+		oldgame = new JButton(old);
+		oldgame.addActionListener(new loadOldGame());
+		aboutgame = new JButton(about);
+		// add listener for about
 
-			
-			newgame.setOpaque(false);
-			newgame.setContentAreaFilled(false);
-			newgame.setBorderPainted(false);
-			
-			oldgame.setOpaque(false);
-			oldgame.setContentAreaFilled(false);
-			oldgame.setBorderPainted(false);
-			
-			aboutgame.setOpaque(false);
-			aboutgame.setContentAreaFilled(false);
-			aboutgame.setBorderPainted(false);
-			
+		newgame.setOpaque(false);
+		newgame.setContentAreaFilled(false);
+		newgame.setBorderPainted(false);
+
+		oldgame.setOpaque(false);
+		oldgame.setContentAreaFilled(false);
+		oldgame.setBorderPainted(false);
+
+		aboutgame.setOpaque(false);
+		aboutgame.setContentAreaFilled(false);
+		aboutgame.setBorderPainted(false);
 
 		this.add(newgame);
 		this.add(oldgame);

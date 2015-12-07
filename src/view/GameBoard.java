@@ -35,15 +35,16 @@ import model.Territory;
 
 public class GameBoard extends JPanel {
 
-	boolean beginReinforcementPhase, reinforcementPhase, attackPhase, fortifyPhase, javaAttacking, pythonAttacking, cAttacking, sqlAttacking, rubyAttacking,
-			gitAttacking, perlAttacking, wilmaAttacking, wilberAttacking, millerAttacking, richAttacking,
-			scoobyAttacking, zonaAttacking, mckaleAttacking, papaAttacking, dominosAttacking, brooklynsAttacking,
-			pizzahutAttacking, blackjackAttacking, hungryhowiesAttacking, pizzaplanetAttacking, tonatiuhAttacking,
-			apolloAttacking, horusAttacking, raAttacking, intiAttacking, heliosAttacking, amunAttacking, giantAttacking,
-			scraptopiaAttacking, monisaurusAttacking, rawrvilleAttacking, laieggesAttacking, dactilitoAttacking,
-			dirtydanAttacking, toystoryAttacking, blackbeardAttacking, crescentcapitalAttacking, newlandofzachAttacking,
-			bloobawlAttacking, landofzachAttacking, southscraptopiaAttacking, pythonFortify, cFortify, sqlFortify,
-			perlFortify, javaFortify, rubyFortify, gitFortify, giantFortify, horusFortify;
+	boolean beginReinforcementPhase, reinforcementPhase, attackPhase, fortifyPhase, javaAttacking, pythonAttacking,
+			cAttacking, sqlAttacking, rubyAttacking, gitAttacking, perlAttacking, wilmaAttacking, wilberAttacking,
+			millerAttacking, richAttacking, scoobyAttacking, zonaAttacking, mckaleAttacking, papaAttacking,
+			dominosAttacking, brooklynsAttacking, pizzahutAttacking, blackjackAttacking, hungryhowiesAttacking,
+			pizzaplanetAttacking, tonatiuhAttacking, apolloAttacking, horusAttacking, raAttacking, intiAttacking,
+			heliosAttacking, amunAttacking, giantAttacking, scraptopiaAttacking, monisaurusAttacking,
+			rawrvilleAttacking, laieggesAttacking, dactilitoAttacking, dirtydanAttacking, toystoryAttacking,
+			blackbeardAttacking, crescentcapitalAttacking, newlandofzachAttacking, bloobawlAttacking,
+			landofzachAttacking, southscraptopiaAttacking, pythonFortify, cFortify, sqlFortify, perlFortify,
+			javaFortify, rubyFortify, gitFortify, giantFortify, horusFortify;
 	HashMap<JButton, JLabel> myMap;
 	ArrayList<Continent> continents;
 	ArrayList<Territory> territories;
@@ -538,7 +539,7 @@ public class GameBoard extends JPanel {
 
 	public void importGameLogic(PlayerCollection newPlayers, ArrayList<String> newCards,
 			ArrayList<Continent> newContinets, ArrayList<Territory> newTerritories) {
-		newGame=new GameLogic(null, null, null, null, null, null);
+		newGame = new GameLogic(null, null, null, null, null, null);
 		newGame.setPlayerList(newPlayers);
 		newGame.setCards(newCards);
 		newGame.setTerritory(newTerritories);
@@ -589,7 +590,7 @@ public class GameBoard extends JPanel {
 				}
 			}
 		});
-		
+
 		endTurnButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				fortifyCount = 0;

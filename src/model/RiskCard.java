@@ -13,5 +13,4 @@ public class RiskCard extends Card {
 		super(territory, type, img);
 	}
 
-	
 }

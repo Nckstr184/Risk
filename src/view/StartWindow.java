@@ -45,7 +45,7 @@ public class StartWindow extends JFrame {
 		this.setSize(350, 350);
 		this.setTitle("Start Window");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setLayout(new GridLayout(8, 2, 10, 10) );
+		this.setLayout(new GridLayout(8, 2, 10, 10));
 
 		this.setLocation(350, 100);
 
@@ -57,10 +57,9 @@ public class StartWindow extends JFrame {
 		player6 = new JTextField();
 
 		enterName = new JLabel();
-		blank= new JLabel("");
+		blank = new JLabel("");
 
 		enterName.setText("Enter Player Names Here");
-		
 
 		player1.setText("Rick");
 		player2.setText("Jeremy");
@@ -70,8 +69,8 @@ public class StartWindow extends JFrame {
 		player6.setText("");
 
 		String[] player1Choice = { "Select Player", "Human", "Easy AI", "Medium AI", "Hard AI" };
-		String[] player2Choice = { "Select Player", "Human", "Easy AI", "Medium AI", "Hard AI"};
-		String[] player3Choice = { "Select Player", "Human", "Easy AI", "Medium AI", "Hard AI"};
+		String[] player2Choice = { "Select Player", "Human", "Easy AI", "Medium AI", "Hard AI" };
+		String[] player3Choice = { "Select Player", "Human", "Easy AI", "Medium AI", "Hard AI" };
 		String[] player4Choice = { "Select Player", "Human", "Easy AI", "Medium AI", "Hard AI" };
 		String[] player5Choice = { "Select Player", "Human", "Easy AI", "Medium AI", "Hard AI" };
 		String[] player6Choice = { "Select Player", "Human", "Easy AI", "Medium AI", "Hard AI" };
@@ -82,14 +81,11 @@ public class StartWindow extends JFrame {
 		diff5 = new JComboBox<String>(player5Choice);
 		diff6 = new JComboBox<String>(player6Choice);
 
-		
-
 		diff1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				selectedDiff1 = (String) diff1.getSelectedItem();
 			}
 		});
-
 
 		diff2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -103,14 +99,12 @@ public class StartWindow extends JFrame {
 			}
 		});
 
-		
 		diff4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				selectedDiff4 = (String) diff4.getSelectedItem();
 			}
 		});
 
-		
 		diff5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				selectedDiff5 = (String) diff5.getSelectedItem();
@@ -125,7 +119,7 @@ public class StartWindow extends JFrame {
 
 		startGame = new JButton();
 		startGame.addActionListener(new startGameListener());
-		
+
 		startGame.setText("Start the Battle!!!");
 
 		this.add(enterName);
@@ -286,18 +280,14 @@ public class StartWindow extends JFrame {
 			}
 
 			setNumberOfPlayers(count);
-			
-			String message = "Welcome to RISK"
-					+ "\n\nRules:"
-					+ "\n\t-Turns have 3 phases: deploy, attack, and fortify"
+
+			String message = "Welcome to RISK" + "\n\nRules:" + "\n\t-Turns have 3 phases: deploy, attack, and fortify"
 					+ "\n\t-You can only attack if you have more than 1 army at that territory"
 					+ "\n\t-You can only fortify once per turn"
 					+ "\n\t-If you lose all your territories, you are removed from the game"
-					+ "\n\t-After 60 rounds of play, the player with the most territories wins"
-					+ "\n\nNotes:"
+					+ "\n\t-After 60 rounds of play, the player with the most territories wins" + "\n\nNotes:"
 					+ "\n\t-AIs will only show battle dialog if the defender is a Human player"
-					+ "\n\t-During battles, dice ties go to the defender"
-					+ "\n\nCreated by: Four Blind Mice <3";
+					+ "\n\t-During battles, dice ties go to the defender" + "\n\nCreated by: Four Blind Mice <3";
 			JOptionPane.showMessageDialog(null, message, "About", 1);
 			dispose();
 
