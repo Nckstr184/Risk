@@ -25,6 +25,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 
+import demoSongPlayer.Play1Song;
 import model.BattleLogic;
 import model.CardCollection;
 import model.Continent;
@@ -111,6 +112,8 @@ public class GameBoard extends JPanel {
 	private int fortifyCount, unitsFortified;
 	private FileInputStream inputStream;
 	private ObjectInputStream objectInput;
+	//Play1Song playsong;
+	//String song;
 
 	public GameBoard() {
 
@@ -140,10 +143,11 @@ public class GameBoard extends JPanel {
 						System.out.print("");
 						this.setSize(1300, 750);
 						this.setLocation(0, -5);
-
+						//song= "./songs/Johnc.aiff";
+						//playsong= new Play1Song(song);
 						try {
 							map = ImageIO.read(new File("./Pictures/mapwithlines.png"));
-
+							
 							bottomDisplay = ImageIO.read(new File("./Pictures/bottomgui.png"));
 							leftDisplay = ImageIO.read(new File("./Pictures/gui2n.png"));
 							rightDisplay = ImageIO.read(new File("./Pictures/gui2n.png"));
