@@ -187,7 +187,7 @@ public class GameBoard extends JPanel {
 									tempTerritories = (ArrayList<Territory>) objectInput.readObject();
 									tempContinents = (ArrayList<Continent>) objectInput.readObject();
 									tempPlayer = (Player) objectInput.readObject();
-							//		reinforcementPhaseImport = (boolean) objectInput.readObject();
+									reinforcementPhaseImport = (boolean) objectInput.readObject();
 
 									printPlayersAndTheirTerritories(tempPlayers);
 
@@ -226,7 +226,7 @@ public class GameBoard extends JPanel {
 				}
 			}
 		}
-
+		updateLabels();
 	}
 
 	private void printPlayersAndTheirTerritories(PlayerCollection tempPlayers) {
@@ -3830,7 +3830,10 @@ public class GameBoard extends JPanel {
 				}
 			}
 		}
-		nextPlayer();
+		
+		if (!newgame1.isClicked()) {
+			nextPlayer();
+		}
 		
 		javaLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
