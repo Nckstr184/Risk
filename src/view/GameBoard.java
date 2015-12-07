@@ -118,12 +118,13 @@ public class GameBoard extends JPanel {
 				System.out.print("");
 
 				startWindow = new StartWindow();
-				if (newgame1.isClicked()) {
-					startWindow.dispose();
-				}
+				
 				// current = new Player();
 				while (startWindow.isDisplayable()) {
+					if (newgame1.isClicked()) {
+						startWindow.dispose();
 
+					}
 					System.out.print("");
 
 					if (!startWindow.isDisplayable()) {
@@ -161,7 +162,6 @@ public class GameBoard extends JPanel {
 									tempCards = (ArrayList<String>) objectInput.readObject();
 									tempTerritories = (ArrayList<Territory>) objectInput.readObject();
 									tempContinents = (ArrayList<Continent>) objectInput.readObject();
-
 									System.out.println(tempPlayers.getNumOfPlayers());
 								} catch (ClassNotFoundException e) {
 									// TODO Auto-generated catch block
