@@ -108,6 +108,8 @@ public class GameBoard extends JPanel {
 
 	JLabel playerTag, playerTag2, playerTag3, playerTag4, playerTag5, playerTag6, playerCount, playerCount2,
 			playerCount3, playerCount4, playerCount5, playerCount6, turnMarker, gameStatus, neighborsLabel;
+	
+	JLabel turnCountLabel;
 
 	private int fortifyCount, unitsFortified;
 	private FileInputStream inputStream;
@@ -117,7 +119,7 @@ public class GameBoard extends JPanel {
 	String song;
 
 	
-	private int turnCount = 0;
+	private int turnCount;
 
 
 	public GameBoard() {
@@ -199,6 +201,7 @@ public class GameBoard extends JPanel {
 
 							System.out.println("NUMBER OF PLAYERS: " + newGame.getNumOfPlayers());
 
+							turnCount = newGame.getNumOfPlayers() * 20;
 							if (!newgame1.isClicked()) {
 								playerTags();
 							}
@@ -251,6 +254,7 @@ public class GameBoard extends JPanel {
 		turnMarker = new JLabel();
 		gameStatus = new JLabel();
 		neighborsLabel = new JLabel();
+		turnCountLabel = new JLabel();
 		turnMarker.setText("IT'S YOUR TURN!!!");
 		turnMarker.setForeground(Color.white);
 		turnMarker.setFont(plyrCountFont);
@@ -269,7 +273,14 @@ public class GameBoard extends JPanel {
 		neighborsLabel.setLocation(250,20);
 		neighborsLabel.setForeground(Color.WHITE);
 		
+		turnCountLabel.setSize(200,300);
+		turnCountLabel.setFont(neighborsFont);
+		turnCountLabel.setLocation(55, 300);
+		turnCountLabel.setForeground(Color.WHITE);
+		turnCountLabel.setText("Turns Left: " + turnCount);
 		
+		
+		add(turnCountLabel);
 		add(neighborsLabel);
 		add(gameStatus);
 		add(turnMarker);
@@ -8928,6 +8939,7 @@ public class GameBoard extends JPanel {
 
 		Random r = new Random();
 		currPlayer = newGame.nextPlayer();
+		turnCount--;
 		
 		moveTurnLabel();
 		if (!reinforcementPhase) {
@@ -9099,6 +9111,8 @@ public class GameBoard extends JPanel {
 		cresentLabel5.setText("" + southUnits);
 		cresentLabel6.setText("" + blooUnits);
 		cresentLabel7.setText("" + capUnits);
+		
+		turnCountLabel.setText("Turns Left: " + turnCount);
 	}
 
 	public void AITurn(int turnPhase) {
