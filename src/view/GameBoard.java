@@ -176,7 +176,7 @@ public class GameBoard extends JPanel {
 									tempPlayer = (Player) objectInput.readObject();
 									reinforcementPhaseImport = (boolean) objectInput.readObject();
 
-									printPlayersAndTheirTerritories(tempPlayers);
+									//printPlayersAndTheirTerritories(tempPlayers);
 								} catch (ClassNotFoundException e) {
 									// TODO Auto-generated catch block
 									System.out.println("reading did not work");
@@ -3114,7 +3114,8 @@ public class GameBoard extends JPanel {
 			}
 
 			for (Territory d : player4.getTerritories()) {
-
+				
+				System.out.println(d.getName());
 				if (d.getName() == "Wilma") {
 					wilmaWildcat = new JButton(red);
 					wilmaWildcat.setName(newGame.getPlayerAt(3).getName());
@@ -3144,7 +3145,7 @@ public class GameBoard extends JPanel {
 					scoobyWildcat.setName(newGame.getPlayerAt(3).getName());
 				}
 				if (d.getName() == "Java") {
-					System.out.println("WELL SHIT PLAYER 3 got this shit and its initiated bitch. "+newGame.getPlayerAt(3).getName());
+					System.out.println("WELL SHIT PLAYER 4 got this shit and its initiated bitch. "+newGame.getPlayerAt(3).getName());
 					javaLanguage = new JButton(red);
 					javaLanguage.setName(newGame.getPlayerAt(3).getName());
 				}
@@ -3802,7 +3803,10 @@ public class GameBoard extends JPanel {
 			}
 		}
 		nextPlayer();
-
+		if(javaLanguage==null)
+		{
+		System.out.println("I hate you");
+		}
 		javaLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
@@ -11308,6 +11312,7 @@ public class GameBoard extends JPanel {
 					scoobyWildcat.setName(newGame.getPlayerAt(3).getName());
 				}
 				if (d.getName() == "Java") {
+					
 					javaLanguage.setIcon(red);
 					javaLanguage.setName(newGame.getPlayerAt(3).getName());
 				}
