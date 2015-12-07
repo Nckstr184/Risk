@@ -4141,6 +4141,9 @@ public class GameBoard extends JPanel {
 				}
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
+				
+				
+				
 				if (attackPhase == true) {
 					if ((javaLanguage.getName() == currPlayer.getName()) && (javaUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
@@ -4150,6 +4153,8 @@ public class GameBoard extends JPanel {
 
 					}
 				}
+				
+				
 				if (pythonAttacking == true && (currPlayer.getName() != javaLanguage.getName())) {
 					System.out.println("Java was attacked by python");
 					gameBoardAttack(territories.get(1), territories.get(0));
