@@ -43,7 +43,7 @@ public class GameBoard extends JPanel {
 			scraptopiaAttacking, monisaurusAttacking, rawrvilleAttacking, laieggesAttacking, dactilitoAttacking,
 			dirtydanAttacking, toystoryAttacking, blackbeardAttacking, crescentcapitalAttacking, newlandofzachAttacking,
 			bloobawlAttacking, landofzachAttacking, southscraptopiaAttacking, pythonFortify, cFortify, sqlFortify,
-			perlFortify, javaFortify, rubyFortify, gitFortify,giantFortify,horusFortify;
+			perlFortify, javaFortify, rubyFortify, gitFortify, giantFortify, horusFortify;
 	HashMap<JButton, JLabel> myMap;
 	ArrayList<Continent> continents;
 	ArrayList<Territory> territories;
@@ -4086,8 +4086,7 @@ public class GameBoard extends JPanel {
 					horusAttacking = false;
 					attackPhase = true;
 				}
-				
-				
+
 				if ((pythonFortify == true) && (currPlayer.getName() == javaLanguage.getName())) {
 					territories.get(0).addUnits(unitsFortified);
 					updateLabels();
@@ -4112,8 +4111,7 @@ public class GameBoard extends JPanel {
 					playerCount.setText("Your turn has ended!");
 					horusFortify = false;
 				}
-				
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == javaLanguage.getName()) {
 						System.out.println("fortify from java!!!");
@@ -4196,7 +4194,7 @@ public class GameBoard extends JPanel {
 					perlAttacking = false;
 					attackPhase = true;
 				}
-				
+
 				if ((perlFortify == true) && (currPlayer.getName() == pythonLanguage.getName())) {
 					territories.get(1).addUnits(unitsFortified);
 					updateLabels();
@@ -4300,8 +4298,7 @@ public class GameBoard extends JPanel {
 					rubyAttacking = false;
 					attackPhase = true;
 				}
-				
-				
+
 				if ((pythonFortify == true) && (currPlayer.getName() == cLanguage.getName())) {
 					territories.get(2).addUnits(unitsFortified);
 					updateLabels();
@@ -4405,7 +4402,7 @@ public class GameBoard extends JPanel {
 					gitAttacking = false;
 					attackPhase = true;
 				}
-				
+
 				if ((gitFortify == true) && (currPlayer.getName() == sqlLanguage.getName())) {
 					territories.get(3).addUnits(unitsFortified);
 					updateLabels();
@@ -4436,7 +4433,7 @@ public class GameBoard extends JPanel {
 					playerCount.setText("Your turn has ended!");
 					javaFortify = false;
 				}
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == sqlLanguage.getName()) {
 						System.out.println("fortify from sql!!!");
@@ -4610,8 +4607,7 @@ public class GameBoard extends JPanel {
 					perlAttacking = false;
 					attackPhase = true;
 				}
-				
-				
+
 				if ((perlFortify == true) && (currPlayer.getName() == gitLanguage.getName())) {
 					territories.get(5).addUnits(unitsFortified);
 					updateLabels();
@@ -4642,7 +4638,7 @@ public class GameBoard extends JPanel {
 					playerCount.setText("Your turn has ended!");
 					pythonFortify = false;
 				}
-				
+
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == gitLanguage.getName()) {
 						System.out.println("fortify from git!!!");
