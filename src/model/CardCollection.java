@@ -132,5 +132,15 @@ public class CardCollection implements Serializable {
 	public Card getCard(int i) {
 		return cardCollection.get(i);
 	}
+	
+	public ArrayList<String> getNamesOfCards()
+	{
+		ArrayList<String> names= new ArrayList<String>();
+		for(int i=0; i<42; i++)
+		{
+			names.add(((RiskCard) cardCollection.get(i)).getTerritory());
+		}
+		return names;
+	}
 
 }
