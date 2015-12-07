@@ -165,14 +165,12 @@ public class GameBoard extends JPanel {
 								ArrayList<Territory> tempTerritories = null;
 								ArrayList<Continent> tempContinents = null;
 								try {
-									System.out.println("READING SHIT IN FROM THE FILE");
 									inputStream = new FileInputStream("savedGame");
 									objectInput = new ObjectInputStream(inputStream);
 									tempPlayers = (PlayerCollection) objectInput.readObject();
 									tempCards = (ArrayList<String>) objectInput.readObject();
 									tempTerritories = (ArrayList<Territory>) objectInput.readObject();
 									tempContinents = (ArrayList<Continent>) objectInput.readObject();
-									System.out.println(tempPlayers.getNumOfPlayers());
 								} catch (ClassNotFoundException e) {
 									// TODO Auto-generated catch block
 									System.out.println("reading did not work");
@@ -484,7 +482,52 @@ public class GameBoard extends JPanel {
 	}
 
 	public void startOldGame() {
+		newGame = new GameLogic(startWindow.playerOne, startWindow.playerTwo, startWindow.playerThree,
+				startWindow.playerFour, startWindow.playerFive, startWindow.playerSix);
+		CardCollection newDeck = new CardCollection();
 
+		if (startWindow.getNumberOfPlayer() == 6) {
+
+			player1 = newGame.getPlayerAt(0);
+			player2 = newGame.getPlayerAt(1);
+			player3 = newGame.getPlayerAt(2);
+			player4 = newGame.getPlayerAt(3);
+			player5 = newGame.getPlayerAt(4);
+			player6 = newGame.getPlayerAt(5);
+		}
+		if (startWindow.getNumberOfPlayer() == 5) {
+
+			player1 = newGame.getPlayerAt(0);
+			player2 = newGame.getPlayerAt(1);
+			player3 = newGame.getPlayerAt(2);
+			player4 = newGame.getPlayerAt(3);
+			player5 = newGame.getPlayerAt(4);
+
+		}
+		if (startWindow.getNumberOfPlayer() == 4) {
+
+			player1 = newGame.getPlayerAt(0);
+			player2 = newGame.getPlayerAt(1);
+			player3 = newGame.getPlayerAt(2);
+			player4 = newGame.getPlayerAt(3);
+
+		}
+		if (startWindow.getNumberOfPlayer() == 3) {
+
+			player1 = newGame.getPlayerAt(0);
+			player2 = newGame.getPlayerAt(1);
+			player3 = newGame.getPlayerAt(2);
+
+		}
+		if (startWindow.getNumberOfPlayer() == 2) {
+
+			player1 = newGame.getPlayerAt(0);
+			player2 = newGame.getPlayerAt(1);
+
+		}
+
+		newGame.startGame();
+		territories = newGame.getTerritories();
 	}
 
 	public void startNewGame() {
@@ -544,7 +587,7 @@ public class GameBoard extends JPanel {
 
 	public void importGameLogic(PlayerCollection newPlayers, ArrayList<String> newCards,
 			ArrayList<Continent> newContinets, ArrayList<Territory> newTerritories) {
-		newGame=new GameLogic(null, null, null, null, null, null);
+		newGame = new GameLogic(null, null, null, null, null, null);
 		newGame.setPlayerList(newPlayers);
 		newGame.setCards(newCards);
 		newGame.setTerritory(newTerritories);
@@ -8189,8 +8232,10 @@ public class GameBoard extends JPanel {
 				gameBoardAttack(attackingTerr, defendingTerr);
 			}
 		} else {
-			JOptionPane.showConfirmDialog(null, "Sorry, you do not have enough armies to attack", "Not Strong Enough",
-					1);
+			if (!attackingTerr.getOwner().isAI()) {
+				JOptionPane.showConfirmDialog(null, "Sorry, you do not have enough armies to attack",
+						"Not Strong Enough", 1);
+			}
 		}
 	}
 
