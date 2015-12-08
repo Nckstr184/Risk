@@ -9706,6 +9706,14 @@ public class GameBoard extends JPanel {
 				gameOver();
 			}
 		}
+		
+		if(currPlayer.getCards().size() == 5) {
+			if(newGame.turnInCard()) {
+				JOptionPane.showMessageDialog(null, "Number of cards reached 5, automatically turned in");
+			}
+			else
+				JOptionPane.showMessageDialog(null, "Tried to turn in 5 cards but failed for unknown reason");
+		}
 
 	}
 
