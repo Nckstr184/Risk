@@ -3843,16 +3843,9 @@ public class GameBoard extends JPanel {
 			nextPlayer();
 		}
 
-<<<<<<< HEAD
-
-		nextPlayer();
-
-
-=======
 
 
 
->>>>>>> 7c04fbd17e2e447a0cf376e557c2743418fc559a
 		javaLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
