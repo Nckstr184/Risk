@@ -232,7 +232,7 @@ public class GameBoard extends JPanel {
 				}
 			}
 		}
-
+		updateLabels();
 	}
 
 	private void printPlayersAndTheirTerritories(PlayerCollection tempPlayers) {
