@@ -6,6 +6,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.ImageIcon;
+
 public abstract class Player implements Serializable {
 
 	/**
@@ -182,10 +184,10 @@ public abstract class Player implements Serializable {
 		return numOfCont;
 	}
 	
-	public ArrayList<Image> getCardImages() {
-		ArrayList<Image> returnImages = new ArrayList<Image>();
+	public ArrayList<ImageIcon> getCardImages() {
+		ArrayList<ImageIcon> returnImages = new ArrayList<ImageIcon>();
 		for(int i=0;i<playerCards.size();i++) {
-			returnImages.add(playerCards.get(i).getImage());
+			returnImages.add(new ImageIcon(playerCards.get(i).getImage()));
 		}
 		
 		return returnImages;

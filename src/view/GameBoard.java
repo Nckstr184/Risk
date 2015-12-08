@@ -710,8 +710,8 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				String message = "";
 				Object[] options = { "Turn in", "Return" };
-				int choice = JOptionPane.showOptionDialog(null, currPlayer.getCardImages(), "Current Player's Cards",
-						JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+				int choice = JOptionPane.showOptionDialog(null, null , "Current Player's Cards",
+						JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE, currPlayer.getCardImages().get(0), options, options[0]);
 				if (choice == 0) {
 					if (newGame.turnInCard()) {
 						message = "Cards successfully turned in";
