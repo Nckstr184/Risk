@@ -153,8 +153,13 @@ public class GameBoard extends JPanel {
 
 						playsong = new Play1Song(john);
 						try {
+<<<<<<< HEAD
 							map = ImageIO.read(new File("./Pictures/mapwithlines.png"));
 
+=======
+							map = ImageIO.read(new File("./Pictures/mapwithlines1.png"));
+							
+>>>>>>> 90d7f11be2cf3e7ea47b266716362fb5f2a54c45
 							bottomDisplay = ImageIO.read(new File("./Pictures/bottomgui.png"));
 							leftDisplay = ImageIO.read(new File("./Pictures/gui2n.png"));
 							rightDisplay = ImageIO.read(new File("./Pictures/gui2n.png"));
