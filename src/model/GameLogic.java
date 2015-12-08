@@ -431,7 +431,7 @@ public class GameLogic implements Serializable {
 		if (allPlayers.getNumOfPlayers() == 3) {
 			for (int i = 0; i < 3; i++) {
 				Player temp = allPlayers.getPlayer(i);
-				temp.addArmies(5);
+				temp.addArmies(35);
 			}
 		}
 		if (allPlayers.getNumOfPlayers() == 4) {
