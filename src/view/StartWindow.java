@@ -42,7 +42,7 @@ public class StartWindow extends JFrame {
 	String playerName, player1Name, player2Name, player3Name, player4Name, player5Name, player6Name, selectedDiff1,
 			selectedDiff2, selectedDiff3, selectedDiff4, selectedDiff5, selectedDiff6;
 	Cursor mercer, jeremy, daniel;
-	
+
 	private int count;
 	public int numOfPlayers;
 
@@ -66,21 +66,23 @@ public class StartWindow extends JFrame {
 		blank = new JLabel("");
 
 		enterName.setText("Enter Player Names Here");
-		
+
 		Toolkit tools1 = Toolkit.getDefaultToolkit();
 		ImageIcon mercerhead = new ImageIcon("./Pictures/mercer.png");
-		ImageIcon jeremyhead= new ImageIcon("./Pictures/jeremy.png");
-		ImageIcon danielhead =new ImageIcon("./Pictures/daniel.png");
-		
-		mercer = tools1.createCustomCursor(mercerhead.getImage(), new Point(0,0), "img");//i hope this works
+		ImageIcon jeremyhead = new ImageIcon("./Pictures/jeremy.png");
+		ImageIcon danielhead = new ImageIcon("./Pictures/daniel.png");
+
+		mercer = tools1.createCustomCursor(mercerhead.getImage(), new Point(0, 0), "img");// i
+																							// hope
+																							// this
+																							// works
 		player1.setCursor(mercer);
-		jeremy= tools1.createCustomCursor(jeremyhead.getImage(), new Point(0,0), "img");
+		jeremy = tools1.createCustomCursor(jeremyhead.getImage(), new Point(0, 0), "img");
 
 		player2.setCursor(jeremy);
-		daniel=  tools1.createCustomCursor(danielhead.getImage(), new Point(0,0), "img");
-		
+		daniel = tools1.createCustomCursor(danielhead.getImage(), new Point(0, 0), "img");
+
 		player3.setCursor(daniel);
-		
 
 		player1.setText("Rick");
 		player2.setText("Jeremy");
@@ -88,10 +90,10 @@ public class StartWindow extends JFrame {
 		player4.setText("");
 		player5.setText("");
 		player6.setText("");
-		
-		String[] player1Choice = { "Select Player", "Human"};
-		String[] player2Choice = { "Select Player", "Human", "Easy AI", "Medium AI", "Hard AI"};
-		String[] player3Choice = { "Select Player", "Human", "Easy AI", "Medium AI", "Hard AI"};
+
+		String[] player1Choice = { "Select Player", "Human" };
+		String[] player2Choice = { "Select Player", "Human", "Easy AI", "Medium AI", "Hard AI" };
+		String[] player3Choice = { "Select Player", "Human", "Easy AI", "Medium AI", "Hard AI" };
 		String[] player4Choice = { "Select Player", "Human", "Easy AI", "Medium AI", "Hard AI" };
 		String[] player5Choice = { "Select Player", "Human", "Easy AI", "Medium AI", "Hard AI" };
 		String[] player6Choice = { "Select Player", "Human", "Easy AI", "Medium AI", "Hard AI" };

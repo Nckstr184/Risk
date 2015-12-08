@@ -384,10 +384,10 @@ public class GameLogic implements Serializable {
 		disperseNumberOfArmies();
 		startUpPlaceReinforcementPhase();
 	}
-	
+
 	public void startLoadedGame() {
 		numOfPlayers = allPlayers.getNumOfPlayers();
-		
+
 	}
 
 	private void startUpPlaceReinforcementPhase() {
@@ -496,7 +496,7 @@ public class GameLogic implements Serializable {
 
 	public void setPlayerList(PlayerCollection newPlayers) {
 		allPlayers = newPlayers;
-		
+
 	}
 
 	public void setCards(ArrayList<String> newCards) {
@@ -532,7 +532,7 @@ public class GameLogic implements Serializable {
 		} else {
 			currPlayer.addArmies((int) (totalNumOfTerritories / 3));
 		}
-		
+
 		currPlayer.addArmies(currPlayer.getConqueredContinents(this) * 7);
 
 		// System.out.println(currPlayer.getNumOfArmies());
@@ -629,30 +629,30 @@ public class GameLogic implements Serializable {
 		attackingTerr.removeUnits(1);
 		defendingTerr.addUnits(1);
 	}
-	
+
 	public ArrayList<String> getFriendlyTerritories(Territory currTerr) {
 		ArrayList<Territory> neighbors = currTerr.getNeighbors();
 		ArrayList<String> friendlies = new ArrayList<String>();
-		
-		for(int i=0; i<neighbors.size();i++) {
-			if(currTerr.getOwner().getName().equals(neighbors.get(i).getOwner().getName())) {
+
+		for (int i = 0; i < neighbors.size(); i++) {
+			if (currTerr.getOwner().getName().equals(neighbors.get(i).getOwner().getName())) {
 				friendlies.add(neighbors.get(i).getName());
 			}
 		}
-		
+
 		return friendlies;
 	}
-	
+
 	public ArrayList<String> getEnemyTerritories(Territory currTerr) {
 		ArrayList<Territory> neighbors = currTerr.getNeighbors();
 		ArrayList<String> enemies = new ArrayList<String>();
-		
-		for(int i=0; i<neighbors.size();i++) {
-			if(!currTerr.getOwner().getName().equals(neighbors.get(i).getOwner().getName())) {
+
+		for (int i = 0; i < neighbors.size(); i++) {
+			if (!currTerr.getOwner().getName().equals(neighbors.get(i).getOwner().getName())) {
 				enemies.add(neighbors.get(i).getName());
 			}
 		}
-		
+
 		return enemies;
 	}
 
