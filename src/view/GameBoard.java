@@ -123,6 +123,7 @@ public class GameBoard extends JPanel {
 	private int turnCount;
 
 	public GameBoard() {
+		Player tempPlayer = null;
 
 		reinforcementPhase = true;
 		attackPhase = false;
@@ -179,7 +180,6 @@ public class GameBoard extends JPanel {
 								ArrayList<String> tempCards = null;
 								ArrayList<Territory> tempTerritories = null;
 								ArrayList<Continent> tempContinents = null;
-								Player tempPlayer = null;
 								boolean reinforcementPhaseImport = true;
 								try {
 									inputStream = new FileInputStream("savedGame");
@@ -191,7 +191,9 @@ public class GameBoard extends JPanel {
 									tempPlayer = (Player) objectInput.readObject();
 							//		reinforcementPhaseImport = (boolean) objectInput.readObject();
 
-									printPlayersAndTheirTerritories(tempPlayers);
+									//printPlayersAndTheirTerritories(tempPlayers);
+									currPlayer=tempPlayer;
+									System.out.println("current Player" + currPlayer.getName());
 
 								} catch (ClassNotFoundException e) {
 									// TODO Auto-generated catch block
@@ -204,14 +206,16 @@ public class GameBoard extends JPanel {
 
 							System.out.println("NUMBER OF PLAYERS: " + newGame.getNumOfPlayers());
 
+							turnCount = newGame.getNumOfPlayers() * 20;
 							if (!newgame1.isClicked()) {
 								playerTags();
 							}
 							addButtons();
+							System.out.println("current Player" + currPlayer.getName());
 							if (!newgame1.isClicked()) {
 								currPlayer = newGame.getPlayerAt(0);
 							}
-
+							System.out.println("current Player" + currPlayer.getName());
 							add(picLabel, BorderLayout.CENTER);
 							add(leftLabel, BorderLayout.WEST);
 							add(rightLabel, BorderLayout.EAST);
@@ -289,73 +293,73 @@ public class GameBoard extends JPanel {
 			playerTag.setSize(150, 40);
 			playerTag.setLocation(170, 600);
 			playerTag.setFont(plyrTagFont);
-			playerTag.setForeground(startWindow.getPlayerColor(0));
+			playerTag.setForeground(Color.yellow);
 			add(playerTag);
 			playerCount = new JLabel("You have " + newGame.getPlayerAt(0).getNumOfArmies() + " units left to place!");
 			playerCount.setSize(200, 40);
 			playerCount.setLocation(130, 620);
 			playerCount.setFont(plyrCountFont);
-			playerCount.setForeground(startWindow.getPlayerColor(0));
+			playerCount.setForeground(Color.yellow);
 			add(playerCount);
 			playerTag2 = new JLabel(newGame.getPlayerAt(1).getName());
 			playerTag2.setSize(150, 40);
 			playerTag2.setLocation(340, 600);
 			playerTag2.setFont(plyrTagFont);
-			playerTag2.setForeground(startWindow.getPlayerColor(1));
+			playerTag2.setForeground(Color.green);
 			add(playerTag2);
 			playerCount2 = new JLabel("You have " + newGame.getPlayerAt(1).getNumOfArmies() + " units left to place!");
 			playerCount2.setSize(200, 40);
 			playerCount2.setLocation(290, 620);
 			playerCount2.setFont(plyrCountFont);
-			playerCount2.setForeground(startWindow.getPlayerColor(1));
+			playerCount2.setForeground(Color.green);
 			add(playerCount2);
 			playerTag3 = new JLabel(newGame.getPlayerAt(2).getName());
 			playerTag3.setSize(150, 40);
 			playerTag3.setLocation(490, 600);
 			playerTag3.setFont(plyrTagFont);
-			playerTag3.setForeground(startWindow.getPlayerColor(2));
+			playerTag3.setForeground(Color.orange);
 			add(playerTag3);
 			playerCount3 = new JLabel("You have " + newGame.getPlayerAt(2).getNumOfArmies() + " units left to place!");
 			playerCount3.setSize(200, 40);
 			playerCount3.setLocation(460, 620);
 			playerCount3.setFont(plyrCountFont);
-			playerCount3.setForeground(startWindow.getPlayerColor(2));
+			playerCount3.setForeground(Color.orange);
 			add(playerCount3);
 			playerTag4 = new JLabel(newGame.getPlayerAt(3).getName());
 			playerTag4.setSize(150, 40);
 			playerTag4.setLocation(660, 600);
 			playerTag4.setFont(plyrTagFont);
-			playerTag4.setForeground(startWindow.getPlayerColor(3));
+			playerTag4.setForeground(Color.red);
 			add(playerTag4);
 			playerCount4 = new JLabel("You have " + newGame.getPlayerAt(3).getNumOfArmies() + " units left to place!");
 			playerCount4.setSize(200, 40);
 			playerCount4.setLocation(630, 620);
 			playerCount4.setFont(plyrCountFont);
-			playerCount4.setForeground(startWindow.getPlayerColor(3));
+			playerCount4.setForeground(Color.red);
 			add(playerCount4);
 			playerTag5 = new JLabel(newGame.getPlayerAt(4).getName());
 			playerTag5.setSize(150, 40);
 			playerTag5.setLocation(830, 600);
 			playerTag5.setFont(plyrTagFont);
-			playerTag5.setForeground(startWindow.getPlayerColor(4));
+			playerTag5.setForeground(Color.pink);
 			add(playerTag5);
 			playerCount5 = new JLabel("You have " + newGame.getPlayerAt(4).getNumOfArmies() + " units left to place!");
 			playerCount5.setSize(200, 40);
 			playerCount5.setLocation(800, 620);
 			playerCount5.setFont(plyrCountFont);
-			playerCount5.setForeground(startWindow.getPlayerColor(4));
+			playerCount5.setForeground(Color.pink);
 			add(playerCount5);
 			playerTag6 = new JLabel(newGame.getPlayerAt(5).getName());
 			playerTag6.setSize(150, 40);
 			playerTag6.setLocation(1000, 600);
 			playerTag6.setFont(plyrTagFont);
-			playerTag6.setForeground(startWindow.getPlayerColor(5));
+			playerTag6.setForeground(Color.blue);
 			add(playerTag6);
 			playerCount6 = new JLabel("You have " + newGame.getPlayerAt(5).getNumOfArmies() + " units left to place!");
 			playerCount6.setSize(150, 40);
 			playerCount6.setLocation(970, 620);
 			playerCount6.setFont(plyrCountFont);
-			playerCount6.setForeground(startWindow.getPlayerColor(5));
+			playerCount6.setForeground(Color.blue);
 			add(playerCount6);
 		}
 		if (numberOfPlayers == 5) {
@@ -363,61 +367,61 @@ public class GameBoard extends JPanel {
 			playerTag.setSize(150, 40);
 			playerTag.setLocation(170, 600);
 			playerTag.setFont(plyrTagFont);
-			playerTag.setForeground(startWindow.getPlayerColor(0));
+			playerTag.setForeground(Color.yellow);
 			add(playerTag);
 			playerCount = new JLabel("You have " + newGame.getPlayerAt(0).getNumOfArmies() + " units left to place!");
 			playerCount.setSize(200, 40);
 			playerCount.setLocation(130, 620);
 			playerCount.setFont(plyrCountFont);
-			playerCount.setForeground(startWindow.getPlayerColor(0));
+			playerCount.setForeground(Color.yellow);
 			add(playerCount);
 			playerTag2 = new JLabel(newGame.getPlayerAt(1).getName());
 			playerTag2.setSize(150, 40);
 			playerTag2.setLocation(340, 600);
 			playerTag2.setFont(plyrTagFont);
-			playerTag2.setForeground(startWindow.getPlayerColor(1));
+			playerTag2.setForeground(Color.green);
 			add(playerTag2);
 			playerCount2 = new JLabel("You have " + newGame.getPlayerAt(1).getNumOfArmies() + " units left to place!");
 			playerCount2.setSize(200, 40);
 			playerCount2.setLocation(290, 620);
 			playerCount2.setFont(plyrCountFont);
-			playerCount2.setForeground(startWindow.getPlayerColor(1));
+			playerCount2.setForeground(Color.green);
 			add(playerCount2);
 			playerTag3 = new JLabel(newGame.getPlayerAt(2).getName());
 			playerTag3.setSize(150, 40);
 			playerTag3.setLocation(490, 600);
 			playerTag3.setFont(plyrTagFont);
-			playerTag3.setForeground(startWindow.getPlayerColor(2));
+			playerTag3.setForeground(Color.orange);
 			add(playerTag3);
 			playerCount3 = new JLabel("You have " + newGame.getPlayerAt(2).getNumOfArmies() + " units left to place!");
 			playerCount3.setSize(200, 40);
 			playerCount3.setLocation(460, 620);
 			playerCount3.setFont(plyrCountFont);
-			playerCount3.setForeground(startWindow.getPlayerColor(2));
+			playerCount3.setForeground(Color.orange);
 			add(playerCount3);
 			playerTag4 = new JLabel(newGame.getPlayerAt(3).getName());
 			playerTag4.setSize(150, 40);
 			playerTag4.setLocation(660, 600);
 			playerTag4.setFont(plyrTagFont);
-			playerTag4.setForeground(startWindow.getPlayerColor(3));
+			playerTag4.setForeground(Color.red);
 			add(playerTag4);
 			playerCount4 = new JLabel("You have " + newGame.getPlayerAt(3).getNumOfArmies() + " units left to place!");
 			playerCount4.setSize(200, 40);
 			playerCount4.setLocation(630, 620);
 			playerCount4.setFont(plyrCountFont);
-			playerCount4.setForeground(startWindow.getPlayerColor(3));
+			playerCount4.setForeground(Color.red);
 			add(playerCount4);
 			playerTag5 = new JLabel(newGame.getPlayerAt(4).getName());
 			playerTag5.setSize(150, 40);
 			playerTag5.setLocation(830, 600);
 			playerTag5.setFont(plyrTagFont);
-			playerTag5.setForeground(startWindow.getPlayerColor(4));
+			playerTag5.setForeground(Color.pink);
 			add(playerTag5);
 			playerCount5 = new JLabel("You have " + newGame.getPlayerAt(4).getNumOfArmies() + " units left to place!");
 			playerCount5.setSize(200, 40);
 			playerCount5.setLocation(800, 620);
 			playerCount5.setFont(plyrCountFont);
-			playerCount5.setForeground(startWindow.getPlayerColor(4));
+			playerCount5.setForeground(Color.pink);
 			add(playerCount5);
 		}
 		if (numberOfPlayers == 4) {
@@ -425,49 +429,49 @@ public class GameBoard extends JPanel {
 			playerTag.setSize(150, 40);
 			playerTag.setLocation(170, 600);
 			playerTag.setFont(plyrTagFont);
-			playerTag.setForeground(startWindow.getPlayerColor(0));
+			playerTag.setForeground(Color.yellow);
 			add(playerTag);
 			playerCount = new JLabel("You have " + newGame.getPlayerAt(0).getNumOfArmies() + " units left to place!");
 			playerCount.setSize(200, 40);
 			playerCount.setLocation(130, 620);
 			playerCount.setFont(plyrCountFont);
-			playerCount.setForeground(startWindow.getPlayerColor(0));
+			playerCount.setForeground(Color.yellow);
 			add(playerCount);
 			playerTag2 = new JLabel(newGame.getPlayerAt(1).getName());
 			playerTag2.setSize(150, 40);
 			playerTag2.setLocation(340, 600);
 			playerTag2.setFont(plyrTagFont);
-			playerTag2.setForeground(startWindow.getPlayerColor(1));
+			playerTag2.setForeground(Color.green);
 			add(playerTag2);
 			playerCount2 = new JLabel("You have " + newGame.getPlayerAt(1).getNumOfArmies() + " units left to place!");
 			playerCount2.setSize(200, 40);
 			playerCount2.setLocation(290, 620);
 			playerCount2.setFont(plyrCountFont);
-			playerCount2.setForeground(startWindow.getPlayerColor(1));
+			playerCount2.setForeground(Color.green);
 			add(playerCount2);
 			playerTag3 = new JLabel(newGame.getPlayerAt(2).getName());
 			playerTag3.setSize(150, 40);
 			playerTag3.setLocation(490, 600);
 			playerTag3.setFont(plyrTagFont);
-			playerTag3.setForeground(startWindow.getPlayerColor(2));
+			playerTag3.setForeground(Color.orange);
 			add(playerTag3);
 			playerCount3 = new JLabel("You have " + newGame.getPlayerAt(2).getNumOfArmies() + " units left to place!");
 			playerCount3.setSize(200, 40);
 			playerCount3.setLocation(460, 620);
 			playerCount3.setFont(plyrCountFont);
-			playerCount3.setForeground(startWindow.getPlayerColor(2));
+			playerCount3.setForeground(Color.orange);
 			add(playerCount3);
 			playerTag4 = new JLabel(newGame.getPlayerAt(3).getName());
 			playerTag4.setSize(150, 40);
 			playerTag4.setLocation(660, 600);
 			playerTag4.setFont(plyrTagFont);
-			playerTag4.setForeground(startWindow.getPlayerColor(3));
+			playerTag4.setForeground(Color.red);
 			add(playerTag4);
 			playerCount4 = new JLabel("You have " + newGame.getPlayerAt(3).getNumOfArmies() + " units left to place!");
 			playerCount4.setSize(200, 40);
 			playerCount4.setLocation(630, 620);
 			playerCount4.setFont(plyrCountFont);
-			playerCount4.setForeground(startWindow.getPlayerColor(3));
+			playerCount4.setForeground(Color.red);
 			add(playerCount4);
 		}
 		if (numberOfPlayers == 3) {
@@ -475,37 +479,37 @@ public class GameBoard extends JPanel {
 			playerTag.setSize(150, 40);
 			playerTag.setLocation(170, 600);
 			playerTag.setFont(plyrTagFont);
-			playerTag.setForeground(startWindow.getPlayerColor(0));
+			playerTag.setForeground(Color.yellow);
 			add(playerTag);
 			playerCount = new JLabel("You have " + newGame.getPlayerAt(0).getNumOfArmies() + " units left to place!");
 			playerCount.setSize(200, 40);
 			playerCount.setLocation(130, 620);
 			playerCount.setFont(plyrCountFont);
-			playerCount.setForeground(startWindow.getPlayerColor(0));
+			playerCount.setForeground(Color.yellow);
 			add(playerCount);
 			playerTag2 = new JLabel(newGame.getPlayerAt(1).getName());
 			playerTag2.setSize(150, 40);
 			playerTag2.setLocation(340, 600);
 			playerTag2.setFont(plyrTagFont);
-			playerTag2.setForeground(startWindow.getPlayerColor(1));
+			playerTag2.setForeground(Color.green);
 			add(playerTag2);
 			playerCount2 = new JLabel("You have " + newGame.getPlayerAt(1).getNumOfArmies() + " units left to place!");
 			playerCount2.setSize(200, 40);
 			playerCount2.setLocation(290, 620);
 			playerCount2.setFont(plyrCountFont);
-			playerCount2.setForeground(startWindow.getPlayerColor(1));
+			playerCount2.setForeground(Color.green);
 			add(playerCount2);
 			playerTag3 = new JLabel(newGame.getPlayerAt(2).getName());
 			playerTag3.setSize(150, 40);
 			playerTag3.setLocation(490, 600);
 			playerTag3.setFont(plyrTagFont);
-			playerTag3.setForeground(startWindow.getPlayerColor(2));
+			playerTag3.setForeground(Color.orange);
 			add(playerTag3);
 			playerCount3 = new JLabel("You have " + newGame.getPlayerAt(2).getNumOfArmies() + " units left to place!");
 			playerCount3.setSize(200, 40);
 			playerCount3.setLocation(460, 620);
 			playerCount3.setFont(plyrCountFont);
-			playerCount3.setForeground(startWindow.getPlayerColor(2));
+			playerCount3.setForeground(Color.orange);
 			add(playerCount3);
 		}
 		if (numberOfPlayers == 2) {
@@ -513,25 +517,25 @@ public class GameBoard extends JPanel {
 			playerTag.setSize(150, 40);
 			playerTag.setLocation(170, 600);
 			playerTag.setFont(plyrTagFont);
-			playerTag.setForeground(startWindow.getPlayerColor(0));
+			playerTag.setForeground(Color.yellow);
 			add(playerTag);
 			playerCount = new JLabel("You have " + newGame.getPlayerAt(0).getNumOfArmies() + " units left to place!");
 			playerCount.setSize(200, 40);
 			playerCount.setLocation(130, 620);
 			playerCount.setFont(plyrCountFont);
-			playerCount.setForeground(startWindow.getPlayerColor(0));
+			playerCount.setForeground(Color.yellow);
 			add(playerCount);
 			playerTag2 = new JLabel(newGame.getPlayerAt(1).getName());
 			playerTag2.setSize(150, 40);
 			playerTag2.setLocation(340, 600);
 			playerTag2.setFont(plyrTagFont);
-			playerTag2.setForeground(startWindow.getPlayerColor(1));
+			playerTag2.setForeground(Color.green);
 			add(playerTag2);
 			playerCount2 = new JLabel("You have " + newGame.getPlayerAt(1).getNumOfArmies() + " units left to place!");
 			playerCount2.setSize(200, 40);
 			playerCount2.setLocation(290, 620);
 			playerCount2.setFont(plyrCountFont);
-			playerCount2.setForeground(startWindow.getPlayerColor(1));
+			playerCount2.setForeground(Color.green);
 			add(playerCount2);
 		}
 	}
@@ -647,7 +651,10 @@ public class GameBoard extends JPanel {
 		newGame.setCards(newCards);
 		newGame.setTerritory(newTerritories);
 		newGame.setContinents(newContinets);
+		System.out.println("current Player" + currPlayer.getName());
 		currPlayer = tempPlayer;
+		System.out.println("current Player" + currPlayer.getName());
+
 		reinforcementPhase = reinforcemnetPhaseImport;
 		newGame.startLoadedGame();
 		this.startOldGame();
@@ -3829,8 +3836,6 @@ public class GameBoard extends JPanel {
 			}
 		}
 
-		nextPlayer();
-		
 
  
 
@@ -3838,10 +3843,16 @@ public class GameBoard extends JPanel {
 			nextPlayer();
 		}
 
+<<<<<<< HEAD
 
 		nextPlayer();
 
 
+=======
+
+
+
+>>>>>>> 7c04fbd17e2e447a0cf376e557c2743418fc559a
 		javaLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
@@ -4512,11 +4523,8 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						gitAttacking = true;
 						attackPhase = false;
-<<<<<<< HEAD
 
-=======
 						neighborsLabel.setText("");
->>>>>>> 95ec9b331cb2dde3a89aeb2c87ad5821ba8f3f0a
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(5)));
 
 					}
