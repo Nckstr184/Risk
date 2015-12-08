@@ -282,7 +282,7 @@ public class GameBoard extends JPanel {
 
 		turnCountLabel.setSize(200, 300);
 		turnCountLabel.setFont(neighborsFont);
-		turnCountLabel.setLocation(55, 300);
+		turnCountLabel.setLocation(40, 300);
 		turnCountLabel.setForeground(Color.WHITE);
 		turnCountLabel.setText("Turns Left: " + turnCount);
 

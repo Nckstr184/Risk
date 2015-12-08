@@ -138,7 +138,46 @@ public class MainGUI extends JFrame {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			System.exit(0);
+			int selectedOption = JOptionPane.showConfirmDialog(null, "Do you want Save?", "Choose",
+					JOptionPane.YES_NO_CANCEL_OPTION);
+			if (selectedOption == JOptionPane.NO_OPTION) {
+				window.dispose();
+				System.exit(0);
+			}
+			if (selectedOption == JOptionPane.YES_OPTION) {
+				try {
+					outputStream = new FileOutputStream("savedGame");
+					objectOutput = new ObjectOutputStream(outputStream);
+
+				} catch (Exception e1) {
+					e1.printStackTrace();
+					System.out.println("opening output stream failed");
+				}
+
+				try {
+					if (map.getPlayers() == null && map.getCards() == null && map.getTerritories() == null
+							&& map.getContinents() == null) {
+						System.out.println("ITs NULL MAN");
+					}
+					objectOutput.writeObject(map.getPlayers());
+					objectOutput.writeObject(map.getCards());
+					objectOutput.writeObject(map.getTerritories());
+					objectOutput.writeObject(map.getContinents());
+					objectOutput.writeObject(map.getCurrentPlayer());
+					objectOutput.writeObject(map.getPlayerTurn());
+					objectOutput.writeObject(map.reinforcementPhase);
+
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					System.out.println("writing game logic failed");
+					e1.printStackTrace();
+				}
+				window.dispose();
+				System.exit(0);
+			}
+			if (selectedOption == JOptionPane.YES_OPTION) {
+				
+			}
 		}
 
 	}
