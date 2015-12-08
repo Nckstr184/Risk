@@ -3989,30 +3989,35 @@ public class GameBoard extends JPanel {
 					gameBoardAttack(territories.get(0), territories.get(1));
 					javaAttacking = false;
 					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (sqlAttacking == true && (currPlayer.getName() != pythonLanguage.getName())) {
 					System.out.println("Python was attacked by sql");
 					gameBoardAttack(territories.get(3), territories.get(1));
 					sqlAttacking = false;
 					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (cAttacking == true && (currPlayer.getName() != pythonLanguage.getName())) {
 					System.out.println("Python was attacked by c");
 					gameBoardAttack(territories.get(2), territories.get(1));
 					cAttacking = false;
 					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (gitAttacking == true && (currPlayer.getName() != pythonLanguage.getName())) {
 					System.out.println("Python was attacked by git");
 					gameBoardAttack(territories.get(5), territories.get(1));
 					gitAttacking = false;
 					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (perlAttacking == true && (currPlayer.getName() != pythonLanguage.getName())) {
 					System.out.println("Python was attacked by perl");
 					gameBoardAttack(territories.get(6), territories.get(1));
 					perlAttacking = false;
 					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 
 				if ((perlFortify == true) && (currPlayer.getName() == pythonLanguage.getName())) {
@@ -4020,30 +4025,35 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					perlFortify = false;
+					neighborsLabel.setText("");
 				}
 				if ((gitFortify == true) && (currPlayer.getName() == pythonLanguage.getName())) {
 					territories.get(1).addUnits(unitsFortified);
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					gitFortify = false;
+					neighborsLabel.setText("");
 				}
 				if ((cFortify == true) && (currPlayer.getName() == pythonLanguage.getName())) {
 					territories.get(1).addUnits(unitsFortified);
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					cFortify = false;
+					neighborsLabel.setText("");
 				}
 				if ((sqlFortify == true) && (currPlayer.getName() == pythonLanguage.getName())) {
 					territories.get(1).addUnits(unitsFortified);
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					sqlFortify = false;
+					neighborsLabel.setText("");
 				}
 				if ((javaFortify == true) && (currPlayer.getName() == pythonLanguage.getName())) {
 					territories.get(1).addUnits(unitsFortified);
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					javaFortify = false;
+					neighborsLabel.setText("");
 				}
 
 				if (fortifyPhase == true) {
@@ -4108,24 +4118,28 @@ public class GameBoard extends JPanel {
 					gameBoardAttack(territories.get(0), territories.get(2));
 					javaAttacking = false;
 					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (sqlAttacking == true && (currPlayer.getName() != cLanguage.getName())) {
 					System.out.println("C was attacked by sql");
 					gameBoardAttack(territories.get(3), territories.get(2));
 					sqlAttacking = false;
 					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (pythonAttacking == true && (currPlayer.getName() != cLanguage.getName())) {
 					System.out.println("c was attacked by python");
 					gameBoardAttack(territories.get(1), territories.get(2));
 					cAttacking = false;
 					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (rubyAttacking == true && (currPlayer.getName() != cLanguage.getName())) {
 					System.out.println("c was attacked by ruby");
 					gameBoardAttack(territories.get(4), territories.get(2));
 					rubyAttacking = false;
 					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 
 				if ((pythonFortify == true) && (currPlayer.getName() == cLanguage.getName())) {
@@ -4133,24 +4147,28 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					pythonFortify = false;
+					neighborsLabel.setText("");
 				}
 				if ((rubyFortify == true) && (currPlayer.getName() == cLanguage.getName())) {
 					territories.get(2).addUnits(unitsFortified);
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					rubyFortify = false;
+					neighborsLabel.setText("");
 				}
 				if ((sqlFortify == true) && (currPlayer.getName() == cLanguage.getName())) {
 					territories.get(2).addUnits(unitsFortified);
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					sqlFortify = false;
+					neighborsLabel.setText("");
 				}
 				if ((javaFortify == true) && (currPlayer.getName() == cLanguage.getName())) {
 					territories.get(2).addUnits(unitsFortified);
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					javaFortify = false;
+					neighborsLabel.setText("");
 				}
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == cLanguage.getName()) {
@@ -4214,30 +4232,35 @@ public class GameBoard extends JPanel {
 					gameBoardAttack(territories.get(0), territories.get(3));
 					javaAttacking = false;
 					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (pythonAttacking == true && (currPlayer.getName() != sqlLanguage.getName())) {
 					System.out.println("SQl was attacked by python");
 					gameBoardAttack(territories.get(1), territories.get(3));
 					pythonAttacking = false;
 					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (cAttacking == true && (currPlayer.getName() != sqlLanguage.getName())) {
 					System.out.println("SQl was attacked by c");
 					gameBoardAttack(territories.get(2), territories.get(3));
 					cAttacking = false;
 					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (rubyAttacking == true && (currPlayer.getName() != sqlLanguage.getName())) {
 					System.out.println("SQl was attacked by ruby");
 					gameBoardAttack(territories.get(4), territories.get(3));
 					rubyAttacking = false;
 					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (gitAttacking == true && (currPlayer.getName() != sqlLanguage.getName())) {
 					System.out.println("SQl was attacked by git");
 					gameBoardAttack(territories.get(5), territories.get(3));
 					gitAttacking = false;
 					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 
 				if ((gitFortify == true) && (currPlayer.getName() == sqlLanguage.getName())) {
@@ -4245,30 +4268,35 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					gitFortify = false;
+					neighborsLabel.setText("");
 				}
 				if ((rubyFortify == true) && (currPlayer.getName() == sqlLanguage.getName())) {
 					territories.get(3).addUnits(unitsFortified);
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					rubyFortify = false;
+					neighborsLabel.setText("");
 				}
 				if ((cFortify == true) && (currPlayer.getName() == sqlLanguage.getName())) {
 					territories.get(3).addUnits(unitsFortified);
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					cFortify = false;
+					neighborsLabel.setText("");
 				}
 				if ((pythonFortify == true) && (currPlayer.getName() == sqlLanguage.getName())) {
 					territories.get(3).addUnits(unitsFortified);
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					pythonFortify = false;
+					neighborsLabel.setText("");
 				}
 				if ((javaFortify == true) && (currPlayer.getName() == sqlLanguage.getName())) {
 					territories.get(3).addUnits(unitsFortified);
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					javaFortify = false;
+					neighborsLabel.setText("");
 				}
 
 				if (fortifyPhase == true) {
@@ -4331,48 +4359,56 @@ public class GameBoard extends JPanel {
 					gameBoardAttack(territories.get(2), territories.get(4));
 					cAttacking = false;
 					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (sqlAttacking == true && (currPlayer.getName() != rubyLanguage.getName())) {
 					System.out.println("ruby was attacked by sql");
 					gameBoardAttack(territories.get(3), territories.get(4));
 					sqlAttacking = false;
 					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (gitAttacking == true && (currPlayer.getName() != rubyLanguage.getName())) {
 					System.out.println("ruby was attacked by git");
 					gameBoardAttack(territories.get(5), territories.get(4));
 					gitAttacking = false;
 					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (giantAttacking == true && (currPlayer.getName() != rubyLanguage.getName())) {
 					System.out.println("ruby was attacked by giant");
 					gameBoardAttack(territories.get(30), territories.get(4));
 					giantAttacking = false;
 					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if ((giantFortify == true) && (currPlayer.getName() == rubyLanguage.getName())) {
 					territories.get(4).addUnits(unitsFortified);
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					giantFortify = false;
+					neighborsLabel.setText("");
 				}
 				if ((gitFortify == true) && (currPlayer.getName() == rubyLanguage.getName())) {
 					territories.get(4).addUnits(unitsFortified);
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					gitFortify = false;
+					neighborsLabel.setText("");
 				}
 				if ((sqlFortify == true) && (currPlayer.getName() == rubyLanguage.getName())) {
 					territories.get(4).addUnits(unitsFortified);
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					sqlFortify = false;
+					neighborsLabel.setText("");
 				}
 				if ((cFortify == true) && (currPlayer.getName() == rubyLanguage.getName())) {
 					territories.get(4).addUnits(unitsFortified);
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					cFortify = false;
+					neighborsLabel.setText("");
 				}
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == rubyLanguage.getName()) {
@@ -4428,6 +4464,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						gitAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("");
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(5)));
 					}
 				}
@@ -4436,12 +4473,14 @@ public class GameBoard extends JPanel {
 					gameBoardAttack(territories.get(1), territories.get(5));
 					pythonAttacking = false;
 					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (sqlAttacking == true && (currPlayer.getName() != gitLanguage.getName())) {
 					System.out.println("git was attacked by sql");
 					gameBoardAttack(territories.get(3), territories.get(5));
 					sqlAttacking = false;
 					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (rubyAttacking == true && (currPlayer.getName() != gitLanguage.getName())) {
 					System.out.println("git was attacked by ruby");
@@ -4454,12 +4493,14 @@ public class GameBoard extends JPanel {
 					gameBoardAttack(territories.get(30), territories.get(5));
 					giantAttacking = false;
 					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (perlAttacking == true && (currPlayer.getName() != gitLanguage.getName())) {
 					System.out.println("git was attacked by giant");
 					gameBoardAttack(territories.get(6), territories.get(5));
 					perlAttacking = false;
 					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 
 				if ((perlFortify == true) && (currPlayer.getName() == gitLanguage.getName())) {
@@ -4467,30 +4508,35 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					perlFortify = false;
+					neighborsLabel.setText("");
 				}
 				if ((giantFortify == true) && (currPlayer.getName() == gitLanguage.getName())) {
 					territories.get(5).addUnits(unitsFortified);
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					giantFortify = false;
+					neighborsLabel.setText("");
 				}
 				if ((rubyFortify == true) && (currPlayer.getName() == gitLanguage.getName())) {
 					territories.get(5).addUnits(unitsFortified);
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					rubyFortify = false;
+					neighborsLabel.setText("");
 				}
 				if ((sqlFortify == true) && (currPlayer.getName() == gitLanguage.getName())) {
 					territories.get(5).addUnits(unitsFortified);
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					sqlFortify = false;
+					neighborsLabel.setText("");
 				}
 				if ((pythonFortify == true) && (currPlayer.getName() == gitLanguage.getName())) {
 					territories.get(5).addUnits(unitsFortified);
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					pythonFortify = false;
+					neighborsLabel.setText("");
 				}
 
 				if (fortifyPhase == true) {
@@ -4555,24 +4601,28 @@ public class GameBoard extends JPanel {
 					gameBoardAttack(territories.get(1), territories.get(6));
 					pythonAttacking = false;
 					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (gitAttacking == true && (currPlayer.getName() != perlLanguage.getName())) {
 					System.out.println("perl was attacked by git");
 					gameBoardAttack(territories.get(5), territories.get(6));
 					gitAttacking = false;
 					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if ((gitFortify == true) && (currPlayer.getName() == perlLanguage.getName())) {
 					territories.get(6).addUnits(unitsFortified);
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					gitFortify = false;
+					neighborsLabel.setText("");
 				}
 				if ((pythonFortify == true) && (currPlayer.getName() == perlLanguage.getName())) {
 					territories.get(6).addUnits(unitsFortified);
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					pythonFortify = false;
+					neighborsLabel.setText("");
 				}
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == perlLanguage.getName()) {
