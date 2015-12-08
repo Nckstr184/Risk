@@ -3898,7 +3898,13 @@ public class GameBoard extends JPanel {
 
 					}
 				}
-
+				if (javaAttacking == true && (currPlayer.getName() == javaLanguage.getName())) {
+					System.out.println("Java stopped attacking");
+					javaAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
+				}
+				
 				if (pythonAttacking == true && (currPlayer.getName() != javaLanguage.getName())) {
 					System.out.println("Java was attacked by python");
 					gameBoardAttack(territories.get(1), territories.get(0));
@@ -3918,10 +3924,10 @@ public class GameBoard extends JPanel {
 					cAttacking = false;
 					attackPhase = true;
 				}
-				if (horusAttacking == true && (currPlayer.getName() != javaLanguage.getName())) {
+				if (heliosAttacking == true && (currPlayer.getName() != javaLanguage.getName())) {
 					System.out.println("Java was attacked by Horius");
 					gameBoardAttack(territories.get(39), territories.get(0));
-					horusAttacking = false;
+					heliosAttacking = false;
 					attackPhase = true;
 				}
 
@@ -4021,6 +4027,11 @@ public class GameBoard extends JPanel {
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(1)));
 
 					}
+				}
+				if (pythonAttacking == true && (currPlayer.getName() == pythonLanguage.getName())) {
+					pythonAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 
 				if (javaAttacking == true && (currPlayer.getName() != pythonLanguage.getName())) {
@@ -4158,7 +4169,11 @@ public class GameBoard extends JPanel {
 
 					}
 				}
-
+				if (cAttacking == true && (currPlayer.getName() == cLanguage.getName())) {
+					cAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
+				}
 				if (javaAttacking == true && (currPlayer.getName() != cLanguage.getName())) {
 					System.out.println("C was attacked by java");
 					gameBoardAttack(territories.get(0), territories.get(2));
@@ -4280,6 +4295,11 @@ public class GameBoard extends JPanel {
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(3)));
 
 					}
+				}
+				if (sqlAttacking == true && (currPlayer.getName() == sqlLanguage.getName())) {
+					sqlAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 
 				if (javaAttacking == true && (currPlayer.getName() != sqlLanguage.getName())) {
@@ -4420,6 +4440,11 @@ public class GameBoard extends JPanel {
 
 					}
 				}
+				if (rubyAttacking == true && (currPlayer.getName() == rubyLanguage.getName())) {
+					rubyAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
+				}
 				if (cAttacking == true && (currPlayer.getName() != rubyLanguage.getName())) {
 					System.out.println("ruby was attacked by c");
 					gameBoardAttack(territories.get(2), territories.get(4));
@@ -4542,6 +4567,11 @@ public class GameBoard extends JPanel {
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(5)));
 
 					}
+				}
+				if (gitAttacking == true && (currPlayer.getName() == gitLanguage.getName())) {
+					gitAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (pythonAttacking == true && (currPlayer.getName() != gitLanguage.getName())) {
 					System.out.println("git was attacked by python");
@@ -4681,6 +4711,11 @@ public class GameBoard extends JPanel {
 
 					}
 				}
+				if (perlAttacking == true && (currPlayer.getName() == perlLanguage.getName())) {
+					perlAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
+				}
 				if (pythonAttacking == true && (currPlayer.getName() != perlLanguage.getName())) {
 					System.out.println("perl was attacked by python");
 					gameBoardAttack(territories.get(1), territories.get(6));
@@ -4771,6 +4806,11 @@ public class GameBoard extends JPanel {
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(14)));
 
 					}
+				}
+				if (wilberAttacking == true && (currPlayer.getName() == wilberWildcat.getName())) {
+					wilberAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (wilmaAttacking == true && (currPlayer.getName() != wilberWildcat.getName())) {
 					System.out.println("wilber was attacked by python");
@@ -4937,6 +4977,11 @@ public class GameBoard extends JPanel {
 
 					}
 				}
+				if (wilmaAttacking == true && (currPlayer.getName() == wilmaWildcat.getName())) {
+					wilmaAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
+				}
 				if (wilberAttacking == true && (currPlayer.getName() != wilmaWildcat.getName())) {
 					System.out.println("wilma was attacked by python");
 					gameBoardAttack(territories.get(14), territories.get(15));
@@ -5045,6 +5090,11 @@ public class GameBoard extends JPanel {
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(16)));
 
 					}
+				}
+				if (richAttacking == true && (currPlayer.getName() == richWildcat.getName())) {
+					richAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (wilberAttacking == true && (currPlayer.getName() != richWildcat.getName())) {
 					System.out.println("rich was attacked by python");
@@ -5179,6 +5229,11 @@ public class GameBoard extends JPanel {
 
 					}
 				}
+				if (millerAttacking == true && (currPlayer.getName() == millerWildcat.getName())) {
+					millerAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
+				}
 				if (wilmaAttacking == true && (currPlayer.getName() != millerWildcat.getName())) {
 					System.out.println("miller was attacked by python");
 					gameBoardAttack(territories.get(15), territories.get(17));
@@ -5297,6 +5352,11 @@ public class GameBoard extends JPanel {
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(18)));
 
 					}
+				}
+				if (scoobyAttacking == true && (currPlayer.getName() == scoobyWildcat.getName())) {
+					scoobyAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (wilberAttacking == true && (currPlayer.getName() != scoobyWildcat.getName())) {
 					System.out.println("scooby was attacked by python");
@@ -5435,6 +5495,11 @@ public class GameBoard extends JPanel {
 
 					}
 				}
+				if (mckaleAttacking == true && (currPlayer.getName() == mckaleWildcat.getName())) {
+					mckaleAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
+				}
 				if (richAttacking == true && (currPlayer.getName() != mckaleWildcat.getName())) {
 					System.out.println("mckale was attacked by python");
 					gameBoardAttack(territories.get(16), territories.get(19));
@@ -5555,6 +5620,11 @@ public class GameBoard extends JPanel {
 
 					}
 				}
+				if (zonaAttacking == true && (currPlayer.getName() == zonaWildcat.getName())) {
+					zonaAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
+				}
 				if (scoobyAttacking == true && (currPlayer.getName() != zonaWildcat.getName())) {
 					System.out.println("zona was attacked by python");
 					gameBoardAttack(territories.get(18), territories.get(20));
@@ -5643,6 +5713,11 @@ public class GameBoard extends JPanel {
 
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(21)));
 					}
+				}
+				if (papaAttacking == true && (currPlayer.getName() == papajohnsPizza.getName())) {
+					papaAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (dominosAttacking == true && (currPlayer.getName() != papajohnsPizza.getName())) {
 					System.out.println("papajohns was attacked by python");
@@ -5777,6 +5852,11 @@ public class GameBoard extends JPanel {
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(22)));
 					}
 				}
+				if (dominosAttacking == true && (currPlayer.getName() == dominosPizza.getName())) {
+					dominosAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
+				}
 				if (papaAttacking == true && (currPlayer.getName() != dominosPizza.getName())) {
 					System.out.println("dom was attacked by python");
 					gameBoardAttack(territories.get(21), territories.get(22));
@@ -5909,6 +5989,11 @@ public class GameBoard extends JPanel {
 
 					}
 				}
+				if (pizzahutAttacking == true && (currPlayer.getName() == pizzahutPizza.getName())) {
+					pizzahutAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
+				}
 				if (papaAttacking == true && (currPlayer.getName() != pizzahutPizza.getName())) {
 					System.out.println("pizzhut was attacked by python");
 					gameBoardAttack(territories.get(21), territories.get(23));
@@ -6028,6 +6113,11 @@ public class GameBoard extends JPanel {
 
 					}
 				}
+				if (blackjackAttacking == true && (currPlayer.getName() == blackjackPizza.getName())) {
+					blackjackAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
+				}
 				if (papaAttacking == true && (currPlayer.getName() != blackjackPizza.getName())) {
 					System.out.println("blackjack was attacked by python");
 					gameBoardAttack(territories.get(21), territories.get(24));
@@ -6134,6 +6224,10 @@ public class GameBoard extends JPanel {
 
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(25)));
 					}
+				}if (hungryhowiesAttacking == true && (currPlayer.getName() == hungryhowiesPizza.getName())) {
+					hungryhowiesAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (dominosAttacking == true && (currPlayer.getName() != hungryhowiesPizza.getName())) {
 					System.out.println("hungryHowies was attacked by python");
@@ -6254,6 +6348,11 @@ public class GameBoard extends JPanel {
 
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(26)));
 					}
+				}
+				if (brooklynsAttacking == true && (currPlayer.getName() == brooklynPizza.getName())) {
+					brooklynsAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (dominosAttacking == true && (currPlayer.getName() != brooklynPizza.getName())) {
 					System.out.println("brookl was attacked by python");
@@ -6390,6 +6489,11 @@ public class GameBoard extends JPanel {
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(27)));
 					}
 				}
+				if (pizzaplanetAttacking == true && (currPlayer.getName() == pizzaplanetPizza.getName())) {
+					pizzaplanetAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
+				}
 				if (brooklynsAttacking == true && (currPlayer.getName() != pizzaplanetPizza.getName())) {
 					System.out.println("pizzaplanet was attacked by python");
 					gameBoardAttack(territories.get(26), territories.get(27));
@@ -6495,6 +6599,11 @@ public class GameBoard extends JPanel {
 
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(35)));
 					}
+				}
+				if (apolloAttacking == true && (currPlayer.getName() == apolloSun.getName())) {
+					apolloAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (raAttacking == true && (currPlayer.getName() != apolloSun.getName())) {
 					System.out.println("apollo was attacked by python");
@@ -6615,6 +6724,11 @@ public class GameBoard extends JPanel {
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(36)));
 					}
 				}
+				if (raAttacking == true && (currPlayer.getName() == raSun.getName())) {
+					raAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
+				}
 				if (apolloAttacking == true && (currPlayer.getName() != raSun.getName())) {
 					System.out.println("ra was attacked by python");
 					gameBoardAttack(territories.get(35), territories.get(36));
@@ -6721,6 +6835,11 @@ public class GameBoard extends JPanel {
 
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(37)));
 					}
+				}
+				if (heliosAttacking == true && (currPlayer.getName() == heliosSun.getName())) {
+					heliosAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (raAttacking == true && (currPlayer.getName() != heliosSun.getName())) {
 					System.out.println("helios was attacked by python");
@@ -6856,6 +6975,11 @@ public class GameBoard extends JPanel {
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(38)));
 					}
 				}
+				if (intiAttacking == true && (currPlayer.getName() == intiSun.getName())) {
+					intiAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
+				}
 				if (heliosAttacking == true && (currPlayer.getName() != intiSun.getName())) {
 					System.out.println("inti was attacked by python");
 					gameBoardAttack(territories.get(37), territories.get(38));
@@ -6946,6 +7070,11 @@ public class GameBoard extends JPanel {
 
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(39)));
 					}
+				}
+				if (horusAttacking == true && (currPlayer.getName() == horusSun.getName())) {
+					horusAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (heliosAttacking == true && (currPlayer.getName() != horusSun.getName())) {
 					System.out.println("horus was attacked by python");
@@ -7068,6 +7197,11 @@ public class GameBoard extends JPanel {
 
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(40)));
 					}
+				}
+				if (tonatiuhAttacking == true && (currPlayer.getName() == tonatiuhSun.getName())) {
+					tonatiuhAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (apolloAttacking == true && (currPlayer.getName() != tonatiuhSun.getName())) {
 					System.out.println("tonatiuh was attacked by python");
@@ -7201,6 +7335,11 @@ public class GameBoard extends JPanel {
 
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(41)));
 					}
+				}
+				if (amunAttacking == true && (currPlayer.getName() == amunSun.getName())) {
+					amunAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (apolloAttacking == true && (currPlayer.getName() != amunSun.getName())) {
 					System.out.println("amun was attacked by python");
@@ -7336,6 +7475,11 @@ public class GameBoard extends JPanel {
 
 					}
 				}
+				if (rawrvilleAttacking == true && (currPlayer.getName() == rawrvilleDino.getName())) {
+					rawrvilleAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
+				}
 				if (laieggesAttacking == true && (currPlayer.getName() != rawrvilleDino.getName())) {
 					System.out.println("rawr was attacked by python");
 					gameBoardAttack(territories.get(8), territories.get(7));
@@ -7426,6 +7570,11 @@ public class GameBoard extends JPanel {
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(8)));
 
 					}
+				}
+				if (laieggesAttacking == true && (currPlayer.getName() == laieggesDino.getName())) {
+					laieggesAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (rawrvilleAttacking == true && (currPlayer.getName() != laieggesDino.getName())) {
 					System.out.println("laiegges was attacked by python");
@@ -7545,6 +7694,11 @@ public class GameBoard extends JPanel {
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(9)));
 
 					}
+				}
+				if (dactilitoAttacking == true && (currPlayer.getName() == dactilitoDino.getName())) {
+					dactilitoAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (rawrvilleAttacking == true && (currPlayer.getName() != dactilitoDino.getName())) {
 					System.out.println("dactilito was attacked by python");
@@ -7676,6 +7830,11 @@ public class GameBoard extends JPanel {
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(10)));
 
 					}
+				}
+				if (dirtydanAttacking == true && (currPlayer.getName() == dirtydanDino.getName())) {
+					dirtydanAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (laieggesAttacking == true && (currPlayer.getName() != dirtydanDino.getName())) {
 					System.out.println("dirty dan was attacked by python");
@@ -7840,6 +7999,11 @@ public class GameBoard extends JPanel {
 
 					}
 				}
+				if (blackbeardAttacking == true && (currPlayer.getName() == blackbeardDino.getName())) {
+					blackbeardAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
+				}
 				if (dactilitoAttacking == true && (currPlayer.getName() != blackbeardDino.getName())) {
 					System.out.println("blackbeard was attacked by python");
 					gameBoardAttack(territories.get(9), territories.get(11));
@@ -7958,6 +8122,11 @@ public class GameBoard extends JPanel {
 
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(12)));
 					}
+				}
+				if (monisaurusAttacking == true && (currPlayer.getName() == monisaurusDino.getName())) {
+					monisaurusAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (dirtydanAttacking == true && (currPlayer.getName() != monisaurusDino.getName())) {
 					System.out.println("moni was attacked by python");
@@ -8078,6 +8247,11 @@ public class GameBoard extends JPanel {
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(13)));
 					}
 				}
+				if (toystoryAttacking == true && (currPlayer.getName() == toystoryDino.getName())) {
+					toystoryAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
+				}
 				if (dactilitoAttacking == true && (currPlayer.getName() != toystoryDino.getName())) {
 					System.out.println("toystory was attacked by python");
 					gameBoardAttack(territories.get(9), territories.get(13));
@@ -8185,6 +8359,11 @@ public class GameBoard extends JPanel {
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(28)));
 					}
 				}
+				if (scraptopiaAttacking == true && (currPlayer.getName() == scraptopiaCresent.getName())) {
+					scraptopiaAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
+				}
 				if (landofzachAttacking == true && (currPlayer.getName() != scraptopiaCresent.getName())) {
 					System.out.println("scraptopia was attacked by python");
 					gameBoardAttack(territories.get(29), territories.get(28));
@@ -8277,6 +8456,11 @@ public class GameBoard extends JPanel {
 
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(29)));
 					}
+				}
+				if (landofzachAttacking == true && (currPlayer.getName() == landofzachCresent.getName())) {
+					landofzachAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (scraptopiaAttacking == true && (currPlayer.getName() != landofzachCresent.getName())) {
 					System.out.println("landofzach was attacked by python");
@@ -8381,6 +8565,11 @@ public class GameBoard extends JPanel {
 
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(30)));
 					}
+				}
+				if (giantAttacking == true && (currPlayer.getName() == giantCresent.getName())) {
+					giantAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (landofzachAttacking == true && (currPlayer.getName() != giantCresent.getName())) {
 					System.out.println("giant was attacked by python");
@@ -8503,6 +8692,11 @@ public class GameBoard extends JPanel {
 
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(31)));
 					}
+				}
+				if (newlandofzachAttacking == true && (currPlayer.getName() == newlandofzachCresent.getName())) {
+					newlandofzachAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (landofzachAttacking == true && (currPlayer.getName() != newlandofzachCresent.getName())) {
 					System.out.println("new land of zach was attacked by python");
@@ -8640,6 +8834,11 @@ public class GameBoard extends JPanel {
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(32)));
 					}
 				}
+				if (southscraptopiaAttacking == true && (currPlayer.getName() == southscraptopiaCresent.getName())) {
+					southscraptopiaAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
+				}
 				if (giantAttacking == true && (currPlayer.getName() != southscraptopiaCresent.getName())) {
 					System.out.println("southscraptopia was attacked by python");
 					gameBoardAttack(territories.get(30), territories.get(32));
@@ -8732,6 +8931,11 @@ public class GameBoard extends JPanel {
 
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(33)));
 					}
+				}
+				if (bloobawlAttacking == true && (currPlayer.getName() == bloobawlCresent.getName())) {
+					bloobawlAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (giantAttacking == true && (currPlayer.getName() != bloobawlCresent.getName())) {
 					System.out.println("bloobawl was attacked by python");
@@ -8853,6 +9057,11 @@ public class GameBoard extends JPanel {
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(34)));
 
 					}
+				}
+				if (crescentcapitalAttacking == true && (currPlayer.getName() == cresentcaptitalCresent.getName())) {
+					crescentcapitalAttacking = false;
+					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (bloobawlAttacking == true && (currPlayer.getName() != cresentcaptitalCresent.getName())) {
 					System.out.println("crescent capital was attacked by python");
