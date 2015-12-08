@@ -187,7 +187,7 @@ public class GameBoard extends JPanel {
 									tempTerritories = (ArrayList<Territory>) objectInput.readObject();
 									tempContinents = (ArrayList<Continent>) objectInput.readObject();
 									tempPlayer = (Player) objectInput.readObject();
-							//		reinforcementPhaseImport = (boolean) objectInput.readObject();
+									reinforcementPhaseImport = (boolean) objectInput.readObject();
 
 									printPlayersAndTheirTerritories(tempPlayers);
 
@@ -226,7 +226,7 @@ public class GameBoard extends JPanel {
 				}
 			}
 		}
-
+		updateLabels();
 	}
 
 	private void printPlayersAndTheirTerritories(PlayerCollection tempPlayers) {
@@ -700,6 +700,7 @@ public class GameBoard extends JPanel {
 		endTurnButton.setSize(150, 40);
 		endTurnButton.setText("End Turn");
 		endTurnButton.setLocation(1110, 460);
+		endTurnButton.setEnabled(false);
 		
 		
 		
@@ -3830,7 +3831,10 @@ public class GameBoard extends JPanel {
 				}
 			}
 		}
-		nextPlayer();
+		
+		if (!newgame1.isClicked()) {
+			nextPlayer();
+		}
 		
 		javaLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -3865,7 +3869,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						javaAttacking = true;
 						attackPhase = false;
-						neighborsLabel.setText("You may attack [Python, C, SQL, Helios]");
+						neighborsLabel.setText("You may attack " + );
 
 					}
 				}
@@ -3877,6 +3881,7 @@ public class GameBoard extends JPanel {
 					gameBoardAttack(territories.get(1), territories.get(0));
 					pythonAttacking = false;
 					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 
 				if (sqlAttacking == true && (currPlayer.getName() != javaLanguage.getName())) {
@@ -3884,18 +3889,21 @@ public class GameBoard extends JPanel {
 					gameBoardAttack(territories.get(3), territories.get(0));
 					sqlAttacking = false;
 					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (cAttacking == true && (currPlayer.getName() != javaLanguage.getName())) {
 					System.out.println("Java was attacked by c");
 					gameBoardAttack(territories.get(2), territories.get(0));
 					cAttacking = false;
 					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 				if (horusAttacking == true && (currPlayer.getName() != javaLanguage.getName())) {
 					System.out.println("Java was attacked by Horius");
 					gameBoardAttack(territories.get(39), territories.get(0));
 					horusAttacking = false;
 					attackPhase = true;
+					neighborsLabel.setText("");
 				}
 
 				if ((pythonFortify == true) && (currPlayer.getName() == javaLanguage.getName())) {
@@ -3903,32 +3911,38 @@ public class GameBoard extends JPanel {
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					pythonFortify = false;
+					neighborsLabel.setText("");
 				}
 				if ((sqlFortify == true) && (currPlayer.getName() == javaLanguage.getName())) {
 					territories.get(0).addUnits(unitsFortified);
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					sqlFortify = false;
+					neighborsLabel.setText("");
 				}
 				if ((cFortify == true) && (currPlayer.getName() == javaLanguage.getName())) {
 					territories.get(0).addUnits(unitsFortified);
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					cFortify = false;
+					neighborsLabel.setText("");
 				}
 				if ((horusFortify == true) && (currPlayer.getName() == javaLanguage.getName())) {
 					territories.get(0).addUnits(unitsFortified);
 					updateLabels();
 					playerCount.setText("Your turn has ended!");
 					horusFortify = false;
+					neighborsLabel.setText("");
 				}
 
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == javaLanguage.getName()) {
 						System.out.println("fortify from java!!!");
+						neighborsLabel.setText("You may fortify " + );
 						Object[] range = new Object[territories.get(0).getUnits()];
 						for (int i = 1; i < territories.get(0).getUnits(); i++) {
 							range[i] = i;
+							
 						}
 
 						unitsFortified = (int) JOptionPane.showInputDialog(null, "How many units?", "Select Units",
@@ -3955,7 +3969,11 @@ public class GameBoard extends JPanel {
 						territories.get(1).addUnits(1);
 						myLabel.setText("" + pythonUnits);
 						currPlayer.removeArmies(1);
+<<<<<<< HEAD
+						
+=======
 						playsong= new Play1Song(coin);
+>>>>>>> 15fcc93030f4411dfdbbba5b56c8ed21521f3417
 
 						nextPlayer();
 					}
@@ -3979,6 +3997,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						pythonAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 
 					}
 				}
@@ -4096,6 +4115,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						cAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 
 					}
 				}
@@ -4200,6 +4220,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						sqlAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 
 					}
 				}
@@ -4317,6 +4338,7 @@ public class GameBoard extends JPanel {
 
 						rubyAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (cAttacking == true && (currPlayer.getName() != rubyLanguage.getName())) {
@@ -4420,6 +4442,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						gitAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (pythonAttacking == true && (currPlayer.getName() != gitLanguage.getName())) {
@@ -4537,6 +4560,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						perlAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (pythonAttacking == true && (currPlayer.getName() != perlLanguage.getName())) {
@@ -4615,6 +4639,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						wilberAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (wilmaAttacking == true && (currPlayer.getName() != wilberWildcat.getName())) {
@@ -4754,6 +4779,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						wilmaAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (wilberAttacking == true && (currPlayer.getName() != wilmaWildcat.getName())) {
@@ -4845,6 +4871,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						richAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (wilberAttacking == true && (currPlayer.getName() != richWildcat.getName())) {
@@ -4958,6 +4985,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						millerAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (wilmaAttacking == true && (currPlayer.getName() != millerWildcat.getName())) {
@@ -5059,6 +5087,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						scoobyAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (wilberAttacking == true && (currPlayer.getName() != scoobyWildcat.getName())) {
@@ -5175,6 +5204,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						mckaleAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (richAttacking == true && (currPlayer.getName() != mckaleWildcat.getName())) {
@@ -5277,6 +5307,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						zonaAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (scoobyAttacking == true && (currPlayer.getName() != zonaWildcat.getName())) {
@@ -5353,6 +5384,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						papaAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (dominosAttacking == true && (currPlayer.getName() != papajohnsPizza.getName())) {
@@ -5467,6 +5499,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						dominosAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (papaAttacking == true && (currPlayer.getName() != dominosPizza.getName())) {
@@ -5579,6 +5612,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						pizzahutAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (papaAttacking == true && (currPlayer.getName() != pizzahutPizza.getName())) {
@@ -5680,6 +5714,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						blackjackAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (papaAttacking == true && (currPlayer.getName() != blackjackPizza.getName())) {
@@ -5772,6 +5807,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						hungryhowiesAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (dominosAttacking == true && (currPlayer.getName() != hungryhowiesPizza.getName())) {
@@ -5875,6 +5911,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						brooklynsAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (dominosAttacking == true && (currPlayer.getName() != brooklynPizza.getName())) {
@@ -5991,6 +6028,7 @@ public class GameBoard extends JPanel {
 						gameBoardAttack(territories.get(1), territories.get(27));
 						pizzaplanetAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (brooklynsAttacking == true && (currPlayer.getName() != pizzaplanetPizza.getName())) {
@@ -6083,6 +6121,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						apolloAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (raAttacking == true && (currPlayer.getName() != apolloSun.getName())) {
@@ -6186,6 +6225,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						raAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (apolloAttacking == true && (currPlayer.getName() != raSun.getName())) {
@@ -6278,6 +6318,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						heliosAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (raAttacking == true && (currPlayer.getName() != heliosSun.getName())) {
@@ -6393,6 +6434,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						intiAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (heliosAttacking == true && (currPlayer.getName() != intiSun.getName())) {
@@ -6472,6 +6514,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						horusAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (heliosAttacking == true && (currPlayer.getName() != horusSun.getName())) {
@@ -6577,6 +6620,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						tonatiuhAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (apolloAttacking == true && (currPlayer.getName() != tonatiuhSun.getName())) {
@@ -6692,6 +6736,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						amunAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (apolloAttacking == true && (currPlayer.getName() != amunSun.getName())) {
@@ -6807,6 +6852,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						rawrvilleAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (laieggesAttacking == true && (currPlayer.getName() != rawrvilleDino.getName())) {
@@ -6886,6 +6932,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						laieggesAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (rawrvilleAttacking == true && (currPlayer.getName() != laieggesDino.getName())) {
@@ -6989,6 +7036,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						dactilitoAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (rawrvilleAttacking == true && (currPlayer.getName() != dactilitoDino.getName())) {
@@ -7103,6 +7151,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						dirtydanAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (laieggesAttacking == true && (currPlayer.getName() != dirtydanDino.getName())) {
@@ -7243,6 +7292,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						blackbeardAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (dactilitoAttacking == true && (currPlayer.getName() != blackbeardDino.getName())) {
@@ -7346,6 +7396,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						monisaurusAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (dirtydanAttacking == true && (currPlayer.getName() != monisaurusDino.getName())) {
@@ -7449,6 +7500,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						toystoryAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (dactilitoAttacking == true && (currPlayer.getName() != toystoryDino.getName())) {
@@ -7542,6 +7594,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						scraptopiaAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (landofzachAttacking == true && (currPlayer.getName() != scraptopiaCresent.getName())) {
@@ -7623,6 +7676,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						landofzachAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (scraptopiaAttacking == true && (currPlayer.getName() != landofzachCresent.getName())) {
@@ -7715,6 +7769,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						giantAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (landofzachAttacking == true && (currPlayer.getName() != giantCresent.getName())) {
@@ -7821,6 +7876,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						newlandofzachAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (landofzachAttacking == true && (currPlayer.getName() != newlandofzachCresent.getName())) {
@@ -7939,6 +7995,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						southscraptopiaAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (giantAttacking == true && (currPlayer.getName() != southscraptopiaCresent.getName())) {
@@ -8021,6 +8078,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						bloobawlAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (giantAttacking == true && (currPlayer.getName() != bloobawlCresent.getName())) {
@@ -8125,6 +8183,7 @@ public class GameBoard extends JPanel {
 						playerCount.setText("Choose Territory to attack");
 						crescentcapitalAttacking = true;
 						attackPhase = false;
+						neighborsLabel.setText("You may attack " + );
 					}
 				}
 				if (bloobawlAttacking == true && (currPlayer.getName() != cresentcaptitalCresent.getName())) {
@@ -12356,6 +12415,7 @@ public class GameBoard extends JPanel {
 		}
 		if (playersDone == newGame.getNumOfPlayers()) {
 			reinforcementPhase = false;
+			endTurnButton.setEnabled(true);
 			attackPhase = true;
 			gameStatus.setText("Attack");
 			if (newGame.getNumOfPlayers() == 6) {
