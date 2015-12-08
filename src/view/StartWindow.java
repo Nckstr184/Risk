@@ -308,8 +308,7 @@ public class StartWindow extends JFrame {
 					+ "\n\t-You can only attack if you have more than 1 army at that territory"
 					+ "\n\t-You can only fortify once per turn"
 					+ "\n\t-If you lose all your territories, you are removed from the game"
-					+ "\n\t-After 60 rounds of play, the player with the most territories wins" + "\n\nNotes:"
-					+ "\n\t-AIs will only show battle dialog if the defender is a Human player"
+					+ "\n\t-After 20 turns per person, the player with the most territories wins" + "\n\nNotes:"
 					+ "\n\t-During battles, dice ties go to the defender" + "\n\nCreated by: Four Blind Mice <3";
 			JOptionPane.showMessageDialog(null, message, "About", 1);
 			dispose();

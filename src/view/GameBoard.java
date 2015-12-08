@@ -123,6 +123,10 @@ public class GameBoard extends JPanel {
 	String john, coin, bass, ass;
 
 	private int turnCount;
+	
+
+	Font plyrTagFont;
+	Font plyrCountFont;
 
 	public GameBoard() {
 		Player tempPlayer = null;
@@ -250,8 +254,8 @@ public class GameBoard extends JPanel {
 		int numberOfPlayers;
 
 		numberOfPlayers = newGame.getNumOfPlayers();
-		Font plyrTagFont = new Font("Verdana", Font.BOLD, 18);
-		Font plyrCountFont = new Font("Verdana", Font.BOLD, 9);
+		plyrTagFont = new Font("Verdana", Font.BOLD, 18);
+		plyrCountFont = new Font("Verdana", Font.BOLD, 9);
 		Font gameStatusFont = new Font("Verdana", Font.BOLD, 36);
 		Font neighborsFont = new Font("Serif", Font.BOLD, 22);
 		int count = 1;
@@ -3856,7 +3860,7 @@ public class GameBoard extends JPanel {
 
 				javaAttacking = false;
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && javaLanguage.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && javaLanguage.getName().equals(currPlayer.getName())) {
 						javaUnits += 1;
 						territories.get(0).addUnits(1);
 						languageLabel1.setText("" + javaUnits);
@@ -3869,7 +3873,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (javaLanguage.getName() == currPlayer.getName())) {
+						&& (javaLanguage.getName().equals(currPlayer.getName()))) {
 					javaUnits += 1;
 					territories.get(0).addUnits(1);
 					
@@ -3884,7 +3888,7 @@ public class GameBoard extends JPanel {
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
 				else if (attackPhase == true) {
-					if ((javaLanguage.getName() == currPlayer.getName()) && (javaUnits >= 2)) {
+					if ((javaLanguage.getName().equals(currPlayer.getName())) && (javaUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						//
 						javaAttacking = true;
@@ -3977,7 +3981,7 @@ public class GameBoard extends JPanel {
 				JLabel myLabel = myMap.get(myButton);
 
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && pythonLanguage.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && pythonLanguage.getName().equals(currPlayer.getName())) {
 						pythonUnits += 1;
 						territories.get(1).addUnits(1);
 						myLabel.setText("" + pythonUnits);
@@ -3993,7 +3997,7 @@ public class GameBoard extends JPanel {
 
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (pythonLanguage.getName() == currPlayer.getName())) {
+						&& (pythonLanguage.getName().equals(currPlayer.getName()))) {
 					pythonUnits += 1;
 					territories.get(1).addUnits(1);
 					
@@ -4008,7 +4012,7 @@ public class GameBoard extends JPanel {
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
 				else if (attackPhase == true) {
-					if ((pythonLanguage.getName() == currPlayer.getName()) && (pythonUnits >= 2)) {
+					if ((pythonLanguage.getName().equals(currPlayer.getName())) && (pythonUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						//
 						pythonAttacking = true;
@@ -4117,7 +4121,7 @@ public class GameBoard extends JPanel {
 				JLabel myLabel = myMap.get(myButton);
 
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && cLanguage.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && cLanguage.getName().equals(currPlayer.getName())) {
 						cUnits += 1;
 						territories.get(2).addUnits(1);
 						myLabel.setText("" + cUnits);
@@ -4131,7 +4135,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (cLanguage.getName() == currPlayer.getName())) {
+						&& (cLanguage.getName().equals(currPlayer.getName()))) {
 					cUnits += 1;
 					territories.get(2).addUnits(1);
 					currPlayer.removeArmies(1);
@@ -4144,7 +4148,7 @@ public class GameBoard extends JPanel {
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
 				else if (attackPhase == true) {
-					if ((cLanguage.getName() == currPlayer.getName()) && (cUnits >= 2)) {
+					if ((cLanguage.getName().equals(currPlayer.getName())) && (cUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						cAttacking = true;
@@ -4239,7 +4243,7 @@ public class GameBoard extends JPanel {
 
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && sqlLanguage.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && sqlLanguage.getName().equals(currPlayer.getName())) {
 						sqlUnits += 1;
 						territories.get(3).addUnits(1);
 						myLabel.setText("" + sqlUnits);
@@ -4253,7 +4257,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (sqlLanguage.getName() == currPlayer.getName())) {
+						&& (sqlLanguage.getName().equals(currPlayer.getName()))) {
 					sqlUnits += 1;
 					territories.get(3).addUnits(1);
 					
@@ -4267,7 +4271,7 @@ public class GameBoard extends JPanel {
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
 				else if (attackPhase == true) {
-					if ((sqlLanguage.getName() == currPlayer.getName()) && (sqlUnits >= 2)) {
+					if ((sqlLanguage.getName().equals(currPlayer.getName())) && (sqlUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						sqlAttacking = true;
@@ -4376,7 +4380,7 @@ public class GameBoard extends JPanel {
 
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && rubyLanguage.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && rubyLanguage.getName().equals(currPlayer.getName())) {
 						rubyUnits += 1;
 						territories.get(4).addUnits(1);
 						myLabel.setText("" + rubyUnits);
@@ -4390,7 +4394,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (rubyLanguage.getName() == currPlayer.getName())) {
+						&& (rubyLanguage.getName().equals(currPlayer.getName()))) {
 					rubyUnits += 1;
 					territories.get(4).addUnits(1);
 					
@@ -4405,7 +4409,7 @@ public class GameBoard extends JPanel {
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
 				else if (attackPhase == true) {
-					if ((rubyLanguage.getName() == currPlayer.getName()) && (rubyUnits >= 2)) {
+					if ((rubyLanguage.getName().equals(currPlayer.getName())) && (rubyUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 
@@ -4499,7 +4503,7 @@ public class GameBoard extends JPanel {
 
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && gitLanguage.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && gitLanguage.getName().equals(currPlayer.getName())) {
 						gitUnits += 1;
 						territories.get(5).addUnits(1);
 						myLabel.setText("" + gitUnits);
@@ -4514,7 +4518,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (gitLanguage.getName() == currPlayer.getName())) {
+						&& (gitLanguage.getName().equals(currPlayer.getName()))) {
 					gitUnits += 1;
 					territories.get(5).addUnits(1);
 					
@@ -4528,7 +4532,7 @@ public class GameBoard extends JPanel {
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
 				else if (attackPhase == true) {
-					if ((gitLanguage.getName() == currPlayer.getName()) && (gitUnits >= 2)) {
+					if ((gitLanguage.getName().equals(currPlayer.getName())) && (gitUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						gitAttacking = true;
@@ -4636,7 +4640,7 @@ public class GameBoard extends JPanel {
 				JLabel myLabel = myMap.get(myButton);
 
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && perlLanguage.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && perlLanguage.getName().equals(currPlayer.getName())) {
 						perlUnits += 1;
 						territories.get(6).addUnits(1);
 						myLabel.setText("" + perlUnits);
@@ -4652,7 +4656,7 @@ public class GameBoard extends JPanel {
 				}
 
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (perlLanguage.getName() == currPlayer.getName())) {
+						&& (perlLanguage.getName().equals(currPlayer.getName()))) {
 					perlUnits += 1;
 					territories.get(6).addUnits(1);
 					
@@ -4667,7 +4671,7 @@ public class GameBoard extends JPanel {
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
 				else if (attackPhase == true) {
-					if ((perlLanguage.getName() == currPlayer.getName()) && (perlUnits >= 2)) {
+					if ((perlLanguage.getName().equals(currPlayer.getName())) && (perlUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						perlAttacking = true;
@@ -4730,7 +4734,7 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && wilberWildcat.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && wilberWildcat.getName().equals(currPlayer.getName())) {
 						wilberUnits += 1;
 						territories.get(14).addUnits(1);
 						myLabel.setText("" + wilberUnits);
@@ -4745,7 +4749,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (wilberWildcat.getName() == currPlayer.getName())) {
+						&& (wilberWildcat.getName().equals(currPlayer.getName()))) {
 					wilberUnits += 1;
 					territories.get(14).addUnits(1);
 					currPlayer.removeArmies(1);
@@ -4758,7 +4762,7 @@ public class GameBoard extends JPanel {
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
 				else if (attackPhase == true) {
-					if ((wilberWildcat.getName() == currPlayer.getName()) && (wilberUnits >= 2)) {
+					if ((wilberWildcat.getName().equals(currPlayer.getName())) && (wilberUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						wilberAttacking = true;
@@ -4893,7 +4897,7 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && wilmaWildcat.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && wilmaWildcat.getName().equals(currPlayer.getName())) {
 						wilmaUnits += 1;
 						territories.get(15).addUnits(1);
 						myLabel.setText("" + wilmaUnits);
@@ -4908,7 +4912,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (wilmaWildcat.getName() == currPlayer.getName())) {
+						&& (wilmaWildcat.getName().equals(currPlayer.getName()))) {
 					wilmaUnits += 1;
 					territories.get(15).addUnits(1);
 				
@@ -4923,7 +4927,7 @@ public class GameBoard extends JPanel {
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
 				else if (attackPhase == true) {
-					if ((wilmaWildcat.getName() == currPlayer.getName()) && (wilmaUnits >= 2)) {
+					if ((wilmaWildcat.getName().equals(currPlayer.getName())) && (wilmaUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						wilmaAttacking = true;
@@ -5002,7 +5006,7 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && richWildcat.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && richWildcat.getName().equals(currPlayer.getName())) {
 						richUnits += 1;
 						territories.get(16).addUnits(1);
 						myLabel.setText("" + richUnits);
@@ -5017,7 +5021,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (richWildcat.getName() == currPlayer.getName())) {
+						&& (richWildcat.getName().equals(currPlayer.getName()))) {
 					richUnits += 1;
 					territories.get(16).addUnits(1);
 					
@@ -5032,7 +5036,7 @@ public class GameBoard extends JPanel {
 				///////////////////////////////// Start Attack
 				///////////////////////////////// Phase//////////////////////////////////////////
 				else if (attackPhase == true) {
-					if ((richWildcat.getName() == currPlayer.getName()) && (richUnits >= 2)) {
+					if ((richWildcat.getName().equals(currPlayer.getName())) && (richUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						richAttacking = true;
@@ -5139,7 +5143,7 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && millerWildcat.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && millerWildcat.getName().equals(currPlayer.getName())) {
 						millerUnits += 1;
 						territories.get(17).addUnits(1);
 						myLabel.setText("" + millerUnits);
@@ -5154,7 +5158,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (millerWildcat.getName() == currPlayer.getName())) {
+						&& (millerWildcat.getName().equals(currPlayer.getName()))) {
 					millerUnits += 1;
 					territories.get(17).addUnits(1);
 					
@@ -5165,7 +5169,7 @@ public class GameBoard extends JPanel {
 						gameStatus.setText("ATTACK!");
 					}
 				} else if (attackPhase == true) {
-					if ((millerWildcat.getName() == currPlayer.getName()) && (millerUnits >= 2)) {
+					if ((millerWildcat.getName().equals(currPlayer.getName())) && (millerUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						millerAttacking = true;
@@ -5259,7 +5263,7 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && scoobyWildcat.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && scoobyWildcat.getName().equals(currPlayer.getName())) {
 						scoobyUnits += 1;
 						territories.get(18).addUnits(1);
 						myLabel.setText("" + scoobyUnits);
@@ -5274,7 +5278,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (scoobyWildcat.getName() == currPlayer.getName())) {
+						&& (scoobyWildcat.getName().equals(currPlayer.getName()))) {
 					scoobyUnits += 1;
 					territories.get(18).addUnits(1);
 					
@@ -5285,7 +5289,7 @@ public class GameBoard extends JPanel {
 						gameStatus.setText("ATTACK!");
 					}
 				} else if (attackPhase == true) {
-					if ((scoobyWildcat.getName() == currPlayer.getName()) && (scoobyUnits >= 2)) {
+					if ((scoobyWildcat.getName().equals(currPlayer.getName())) && (scoobyUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						scoobyAttacking = true;
@@ -5392,7 +5396,7 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && mckaleWildcat.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && mckaleWildcat.getName().equals(currPlayer.getName())) {
 						mckaleUnits += 1;
 						territories.get(19).addUnits(1);
 						myLabel.setText("" + mckaleUnits);
@@ -5408,7 +5412,7 @@ public class GameBoard extends JPanel {
 				}
 
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (mckaleWildcat.getName() == currPlayer.getName())) {
+						&& (mckaleWildcat.getName().equals(currPlayer.getName()))) {
 					mckaleUnits += 1;
 					territories.get(19).addUnits(1);
 				
@@ -5421,7 +5425,7 @@ public class GameBoard extends JPanel {
 				}
 
 				else if (attackPhase == true) {
-					if ((mckaleWildcat.getName() == currPlayer.getName()) && (mckaleUnits >= 2)) {
+					if ((mckaleWildcat.getName().equals(currPlayer.getName())) && (mckaleUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						mckaleAttacking = true;
@@ -5515,7 +5519,7 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && zonaWildcat.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && zonaWildcat.getName().equals(currPlayer.getName())) {
 						zonaUnits += 1;
 						territories.get(20).addUnits(1);
 						myLabel.setText("" + zonaUnits);
@@ -5530,7 +5534,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (zonaWildcat.getName() == currPlayer.getName())) {
+						&& (zonaWildcat.getName().equals(currPlayer.getName()))) {
 					zonaUnits += 1;
 					territories.get(20).addUnits(1);
 					
@@ -5541,7 +5545,7 @@ public class GameBoard extends JPanel {
 						gameStatus.setText("ATTACK!");
 					}
 				} else if (attackPhase == true) {
-					if ((zonaWildcat.getName() == currPlayer.getName()) && (zonaUnits >= 2)) {
+					if ((zonaWildcat.getName().equals(currPlayer.getName())) && (zonaUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						zonaAttacking = true;
@@ -5605,7 +5609,7 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && papajohnsPizza.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && papajohnsPizza.getName().equals(currPlayer.getName())) {
 						pjUnits += 1;
 						territories.get(21).addUnits(1);
 						myLabel.setText("" + pjUnits);
@@ -5620,7 +5624,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (papajohnsPizza.getName() == currPlayer.getName())) {
+						&& (papajohnsPizza.getName().equals(currPlayer.getName()))) {
 					pjUnits += 1;
 					territories.get(21).addUnits(1);
 				
@@ -5631,7 +5635,7 @@ public class GameBoard extends JPanel {
 						gameStatus.setText("ATTACK!");
 					}
 				} else if (attackPhase == true) {
-					if ((papajohnsPizza.getName() == currPlayer.getName()) && (pjUnits >= 2)) {
+					if ((papajohnsPizza.getName().equals(currPlayer.getName())) && (pjUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						papaAttacking = true;
@@ -5738,7 +5742,7 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && dominosPizza.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && dominosPizza.getName().equals(currPlayer.getName())) {
 						domUnits += 1;
 						territories.get(22).addUnits(1);
 						myLabel.setText("" + domUnits);
@@ -5753,7 +5757,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (dominosPizza.getName() == currPlayer.getName())) {
+						&& (dominosPizza.getName().equals(currPlayer.getName()))) {
 					domUnits += 1;
 					territories.get(22).addUnits(1);
 					
@@ -5764,7 +5768,7 @@ public class GameBoard extends JPanel {
 						gameStatus.setText("ATTACK!");
 					}
 				} else if (attackPhase == true) {
-					if ((dominosPizza.getName() == currPlayer.getName()) && (domUnits >= 2)) {
+					if ((dominosPizza.getName().equals(currPlayer.getName())) && (domUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						dominosAttacking = true;
@@ -5869,7 +5873,7 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && pizzahutPizza.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && pizzahutPizza.getName().equals(currPlayer.getName())) {
 						phUnits += 1;
 						territories.get(23).addUnits(1);
 						myLabel.setText("" + phUnits);
@@ -5884,7 +5888,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (pizzahutPizza.getName() == currPlayer.getName())) {
+						&& (pizzahutPizza.getName().equals(currPlayer.getName()))) {
 					phUnits += 1;
 					territories.get(23).addUnits(1);
 
@@ -5895,7 +5899,7 @@ public class GameBoard extends JPanel {
 						gameStatus.setText("ATTACK!");
 					}
 				} else if (attackPhase == true) {
-					if ((pizzahutPizza.getName() == currPlayer.getName()) && (phUnits >= 2)) {
+					if ((pizzahutPizza.getName().equals(currPlayer.getName())) && (phUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						pizzahutAttacking = true;
@@ -5988,7 +5992,7 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && blackjackPizza.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && blackjackPizza.getName().equals(currPlayer.getName())) {
 						bjUnits += 1;
 						territories.get(24).addUnits(1);
 						myLabel.setText("" + bjUnits);
@@ -6003,7 +6007,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (blackjackPizza.getName() == currPlayer.getName())) {
+						&& (blackjackPizza.getName().equals(currPlayer.getName()))) {
 					bjUnits += 1;
 					territories.get(24).addUnits(1);
 				
@@ -6014,7 +6018,7 @@ public class GameBoard extends JPanel {
 						gameStatus.setText("ATTACK!");
 					}
 				} else if (attackPhase == true) {
-					if ((blackjackPizza.getName() == currPlayer.getName()) && (bjUnits >= 2)) {
+					if ((blackjackPizza.getName().equals(currPlayer.getName())) && (bjUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						blackjackAttacking = true;
@@ -6096,7 +6100,7 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && hungryhowiesPizza.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && hungryhowiesPizza.getName().equals(currPlayer.getName())) {
 						hhUnits += 1;
 						territories.get(25).addUnits(1);
 						myLabel.setText("" + hhUnits);
@@ -6111,7 +6115,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (hungryhowiesPizza.getName() == currPlayer.getName())) {
+						&& (hungryhowiesPizza.getName().equals(currPlayer.getName()))) {
 					hhUnits += 1;
 					territories.get(25).addUnits(1);
 				
@@ -6122,7 +6126,7 @@ public class GameBoard extends JPanel {
 						gameStatus.setText("ATTACK!");
 					}
 				} else if (attackPhase == true) {
-					if ((hungryhowiesPizza.getName() == currPlayer.getName()) && (hhUnits >= 2)) {
+					if ((hungryhowiesPizza.getName().equals(currPlayer.getName())) && (hhUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						hungryhowiesAttacking = true;
@@ -6216,7 +6220,7 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && brooklynPizza.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && brooklynPizza.getName().equals(currPlayer.getName())) {
 						bUnits += 1;
 						territories.get(26).addUnits(1);
 						myLabel.setText("" + bUnits);
@@ -6231,7 +6235,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (brooklynPizza.getName() == currPlayer.getName())) {
+						&& (brooklynPizza.getName().equals(currPlayer.getName()))) {
 					bUnits += 1;
 					territories.get(26).addUnits(1);
 					
@@ -6242,7 +6246,7 @@ public class GameBoard extends JPanel {
 						gameStatus.setText("ATTACK!");
 					}
 				} else if (attackPhase == true) {
-					if ((brooklynPizza.getName() == currPlayer.getName()) && (bUnits >= 2)) {
+					if ((brooklynPizza.getName().equals(currPlayer.getName())) && (bUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						brooklynsAttacking = true;
@@ -6350,7 +6354,7 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && pizzaplanetPizza.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && pizzaplanetPizza.getName().equals(currPlayer.getName())) {
 						ppUnits += 1;
 						territories.get(27).addUnits(1);
 						myLabel.setText("" + ppUnits);
@@ -6365,7 +6369,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (pizzaplanetPizza.getName() == currPlayer.getName())) {
+						&& (pizzaplanetPizza.getName().equals(currPlayer.getName()))) {
 					ppUnits += 1;
 					territories.get(27).addUnits(1);
 			
@@ -6376,7 +6380,7 @@ public class GameBoard extends JPanel {
 						gameStatus.setText("ATTACK!");
 					}
 				} else if (attackPhase == true) {
-					if ((pizzaplanetPizza.getName() == currPlayer.getName()) && (ppUnits >= 2)) {
+					if ((pizzaplanetPizza.getName().equals(currPlayer.getName())) && (ppUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						gameBoardAttack(territories.get(1), territories.get(27));
@@ -6456,7 +6460,7 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && apolloSun.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && apolloSun.getName().equals(currPlayer.getName())) {
 						apolloUnits += 1;
 						territories.get(35).addUnits(1);
 						myLabel.setText("" + apolloUnits);
@@ -6472,7 +6476,7 @@ public class GameBoard extends JPanel {
 
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (apolloSun.getName() == currPlayer.getName())) {
+						&& (apolloSun.getName().equals(currPlayer.getName()))) {
 					apolloUnits += 1;
 					territories.get(35).addUnits(1);
 				
@@ -6483,7 +6487,7 @@ public class GameBoard extends JPanel {
 						gameStatus.setText("ATTACK!");
 					}
 				} else if (attackPhase == true) {
-					if ((apolloSun.getName() == currPlayer.getName()) && (apolloUnits >= 2)) {
+					if ((apolloSun.getName().equals(currPlayer.getName())) && (apolloUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						apolloAttacking = true;
@@ -6577,7 +6581,7 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && raSun.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && raSun.getName().equals(currPlayer.getName())) {
 						raUnits += 1;
 						territories.get(36).addUnits(1);
 						myLabel.setText("" + raUnits);
@@ -6591,7 +6595,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (raSun.getName() == currPlayer.getName())) {
+						&& (raSun.getName().equals(currPlayer.getName()))) {
 					raUnits += 1;
 					territories.get(36).addUnits(1);
 
@@ -6602,7 +6606,7 @@ public class GameBoard extends JPanel {
 						gameStatus.setText("ATTACK!");
 					}
 				} else if (attackPhase == true) {
-					if ((raSun.getName() == currPlayer.getName()) && (raUnits >= 2)) {
+					if ((raSun.getName().equals(currPlayer.getName())) && (raUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						raAttacking = true;
@@ -6683,7 +6687,7 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && heliosSun.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && heliosSun.getName().equals(currPlayer.getName())) {
 						heliosUnits += 1;
 						territories.get(37).addUnits(1);
 						myLabel.setText("" + heliosUnits);
@@ -6698,7 +6702,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (heliosSun.getName() == currPlayer.getName())) {
+						&& (heliosSun.getName().equals(currPlayer.getName()))) {
 					heliosUnits += 1;
 					territories.get(37).addUnits(1);
 
@@ -6709,7 +6713,7 @@ public class GameBoard extends JPanel {
 						gameStatus.setText("ATTACK!");
 					}
 				} else if (attackPhase == true) {
-					if ((heliosSun.getName() == currPlayer.getName()) && (heliosUnits >= 2)) {
+					if ((heliosSun.getName().equals(currPlayer.getName())) && (heliosUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						heliosAttacking = true;
@@ -6817,7 +6821,7 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && intiSun.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && intiSun.getName().equals(currPlayer.getName())) {
 						intiUnits += 1;
 						territories.get(38).addUnits(1);
 						myLabel.setText("" + intiUnits);
@@ -6832,7 +6836,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (intiSun.getName() == currPlayer.getName())) {
+						&& (intiSun.getName().equals(currPlayer.getName()))) {
 					intiUnits += 1;
 					territories.get(38).addUnits(1);
 
@@ -6843,7 +6847,7 @@ public class GameBoard extends JPanel {
 						gameStatus.setText("ATTACK!");
 					}
 				} else if (attackPhase == true) {
-					if ((intiSun.getName() == currPlayer.getName()) && (intiUnits >= 2)) {
+					if ((intiSun.getName().equals(currPlayer.getName())) && (intiUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						intiAttacking = true;
@@ -6908,7 +6912,7 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && horusSun.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && horusSun.getName().equals(currPlayer.getName())) {
 						horusUnits += 1;
 						territories.get(39).addUnits(1);
 						myLabel.setText("" + horusUnits);
@@ -6923,7 +6927,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (horusSun.getName() == currPlayer.getName())) {
+						&& (horusSun.getName().equals(currPlayer.getName()))) {
 					horusUnits += 1;
 					territories.get(39).addUnits(1);
 
@@ -6934,7 +6938,7 @@ public class GameBoard extends JPanel {
 						gameStatus.setText("ATTACK!");
 					}
 				} else if (attackPhase == true) {
-					if ((horusSun.getName() == currPlayer.getName()) && (horusUnits >= 2)) {
+					if ((horusSun.getName().equals(currPlayer.getName())) && (horusUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						horusAttacking = true;
@@ -7030,7 +7034,7 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && tonatiuhSun.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && tonatiuhSun.getName().equals(currPlayer.getName())) {
 						tonatiuhUnits += 1;
 						territories.get(40).addUnits(1);
 						myLabel.setText("" + tonatiuhUnits);
@@ -7045,7 +7049,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (tonatiuhSun.getName() == currPlayer.getName())) {
+						&& (tonatiuhSun.getName().equals(currPlayer.getName()))) {
 					tonatiuhUnits += 1;
 					territories.get(40).addUnits(1);
 
@@ -7056,7 +7060,7 @@ public class GameBoard extends JPanel {
 						gameStatus.setText("ATTACK!");
 					}
 				} else if (attackPhase == true) {
-					if ((tonatiuhSun.getName() == currPlayer.getName()) && (tonatiuhUnits >= 2)) {
+					if ((tonatiuhSun.getName().equals(currPlayer.getName())) && (tonatiuhUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						tonatiuhAttacking = true;
@@ -7163,7 +7167,7 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && amunSun.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && amunSun.getName().equals(currPlayer.getName())) {
 						amunUnits += 1;
 						territories.get(41).addUnits(1);
 						myLabel.setText("" + amunUnits);
@@ -7178,7 +7182,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (amunSun.getName() == currPlayer.getName())) {
+						&& (amunSun.getName().equals(currPlayer.getName()))) {
 					amunUnits += 1;
 					territories.get(41).addUnits(1);
 
@@ -7189,7 +7193,7 @@ public class GameBoard extends JPanel {
 						gameStatus.setText("ATTACK!");
 					}
 				} else if (attackPhase == true) {
-					if ((amunSun.getName() == currPlayer.getName()) && (amunUnits >= 2)) {
+					if ((amunSun.getName().equals(currPlayer.getName())) && (amunUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						amunAttacking = true;
@@ -7296,7 +7300,7 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && rawrvilleDino.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && rawrvilleDino.getName().equals(currPlayer.getName())) {
 						rawrUnits += 1;
 						territories.get(7).addUnits(1);
 						myLabel.setText("" + rawrUnits);
@@ -7311,7 +7315,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (rawrvilleDino.getName() == currPlayer.getName())) {
+						&& (rawrvilleDino.getName().equals(currPlayer.getName()))) {
 					rawrUnits += 1;
 					territories.get(7).addUnits(1);
 
@@ -7322,7 +7326,7 @@ public class GameBoard extends JPanel {
 						gameStatus.setText("ATTACK!");
 					}
 				} else if (attackPhase == true) {
-					if ((rawrvilleDino.getName() == currPlayer.getName()) && (rawrUnits >= 2)) {
+					if ((rawrvilleDino.getName().equals(currPlayer.getName())) && (rawrUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						rawrvilleAttacking = true;
@@ -7387,7 +7391,7 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && laieggesDino.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && laieggesDino.getName().equals(currPlayer.getName())) {
 						eggUnits += 1;
 						territories.get(8).addUnits(1);
 						myLabel.setText("" + eggUnits);
@@ -7402,7 +7406,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (laieggesDino.getName() == currPlayer.getName())) {
+						&& (laieggesDino.getName().equals(currPlayer.getName()))) {
 					eggUnits += 1;
 					territories.get(8).addUnits(1);
 
@@ -7413,7 +7417,7 @@ public class GameBoard extends JPanel {
 						gameStatus.setText("ATTACK!");
 					}
 				} else if (attackPhase == true) {
-					if ((laieggesDino.getName() == currPlayer.getName()) && (eggUnits >= 2)) {
+					if ((laieggesDino.getName().equals(currPlayer.getName())) && (eggUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						laieggesAttacking = true;
@@ -7506,7 +7510,7 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && dactilitoDino.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && dactilitoDino.getName().equals(currPlayer.getName())) {
 						dacUnits += 1;
 						territories.get(9).addUnits(1);
 						myLabel.setText("" + dacUnits);
@@ -7521,7 +7525,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (dactilitoDino.getName() == currPlayer.getName())) {
+						&& (dactilitoDino.getName().equals(currPlayer.getName()))) {
 					dacUnits += 1;
 					territories.get(9).addUnits(1);
 
@@ -7532,7 +7536,7 @@ public class GameBoard extends JPanel {
 						gameStatus.setText("ATTACK!");
 					}
 				} else if (attackPhase == true) {
-					if ((dactilitoDino.getName() == currPlayer.getName()) && (dacUnits >= 2)) {
+					if ((dactilitoDino.getName().equals(currPlayer.getName())) && (dacUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						dactilitoAttacking = true;
@@ -7638,7 +7642,7 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && dirtydanDino.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && dirtydanDino.getName().equals(currPlayer.getName())) {
 						danUnits += 1;
 						territories.get(10).addUnits(1);
 						myLabel.setText("" + danUnits);
@@ -7653,7 +7657,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (dirtydanDino.getName() == currPlayer.getName())) {
+						&& (dirtydanDino.getName().equals(currPlayer.getName()))) {
 					danUnits += 1;
 					territories.get(10).addUnits(1);
 
@@ -7664,7 +7668,7 @@ public class GameBoard extends JPanel {
 						gameStatus.setText("ATTACK!");
 					}
 				} else if (attackPhase == true) {
-					if ((dirtydanDino.getName() == currPlayer.getName()) && (danUnits >= 2)) {
+					if ((dirtydanDino.getName().equals(currPlayer.getName())) && (danUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						dirtydanAttacking = true;
@@ -7800,7 +7804,7 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && blackbeardDino.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && blackbeardDino.getName().equals(currPlayer.getName())) {
 						bbUnits += 1;
 						territories.get(11).addUnits(1);
 						myLabel.setText("" + bbUnits);
@@ -7815,7 +7819,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (blackbeardDino.getName() == currPlayer.getName())) {
+						&& (blackbeardDino.getName().equals(currPlayer.getName()))) {
 					bbUnits += 1;
 					territories.get(11).addUnits(1);
 
@@ -7826,7 +7830,7 @@ public class GameBoard extends JPanel {
 						gameStatus.setText("ATTACK!");
 					}
 				} else if (attackPhase == true) {
-					if ((blackbeardDino.getName() == currPlayer.getName()) && (bbUnits >= 2)) {
+					if ((blackbeardDino.getName().equals(currPlayer.getName())) && (bbUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						blackbeardAttacking = true;
@@ -7920,7 +7924,7 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && monisaurusDino.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && monisaurusDino.getName().equals(currPlayer.getName())) {
 						moniUnits += 1;
 						territories.get(12).addUnits(1);
 						myLabel.setText("" + moniUnits);
@@ -7935,7 +7939,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (monisaurusDino.getName() == currPlayer.getName())) {
+						&& (monisaurusDino.getName().equals(currPlayer.getName()))) {
 					moniUnits += 1;
 					territories.get(12).addUnits(1);
 
@@ -7946,7 +7950,7 @@ public class GameBoard extends JPanel {
 						gameStatus.setText("ATTACK!");
 					}
 				} else if (attackPhase == true) {
-					if ((monisaurusDino.getName() == currPlayer.getName()) && (moniUnits >= 2)) {
+					if ((monisaurusDino.getName().equals(currPlayer.getName())) && (moniUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						monisaurusAttacking = true;
@@ -8039,7 +8043,7 @@ public class GameBoard extends JPanel {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && toystoryDino.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && toystoryDino.getName().equals(currPlayer.getName())) {
 						tsUnits += 1;
 						territories.get(13).addUnits(1);
 						myLabel.setText("" + tsUnits);
@@ -8054,7 +8058,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (toystoryDino.getName() == currPlayer.getName())) {
+						&& (toystoryDino.getName().equals(currPlayer.getName()))) {
 					tsUnits += 1;
 					territories.get(13).addUnits(1);
 
@@ -8065,7 +8069,7 @@ public class GameBoard extends JPanel {
 						gameStatus.setText("ATTACK!");
 					}
 				} else if (attackPhase == true) {
-					if ((toystoryDino.getName() == currPlayer.getName()) && (tsUnits >= 2)) {
+					if ((toystoryDino.getName().equals(currPlayer.getName())) && (tsUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						toystoryAttacking = true;
@@ -8146,7 +8150,7 @@ public class GameBoard extends JPanel {
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
 
-					if (currPlayer.getNumOfArmies() >= 1 && scraptopiaCresent.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && scraptopiaCresent.getName().equals(currPlayer.getName())) {
 						scrapUnits += 1;
 						territories.get(28).addUnits(1);
 						myLabel.setText("" + scrapUnits);
@@ -8161,7 +8165,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (scraptopiaCresent.getName() == currPlayer.getName())) {
+						&& (scraptopiaCresent.getName().equals(currPlayer.getName()))) {
 					scrapUnits += 1;
 					territories.get(28).addUnits(1);
 
@@ -8172,7 +8176,7 @@ public class GameBoard extends JPanel {
 						gameStatus.setText("ATTACK!");
 					}
 				} else if (attackPhase == true) {
-					if ((scraptopiaCresent.getName() == currPlayer.getName()) && (scrapUnits >= 2)) {
+					if ((scraptopiaCresent.getName().equals(currPlayer.getName())) && (scrapUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						scraptopiaAttacking = true;
@@ -8239,7 +8243,7 @@ public class GameBoard extends JPanel {
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
 
-					if (currPlayer.getNumOfArmies() >= 1 && landofzachCresent.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && landofzachCresent.getName().equals(currPlayer.getName())) {
 						zachUnits += 1;
 						territories.get(29).addUnits(1);
 						myLabel.setText("" + zachUnits);
@@ -8254,7 +8258,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (landofzachCresent.getName() == currPlayer.getName())) {
+						&& (landofzachCresent.getName().equals(currPlayer.getName()))) {
 					zachUnits += 1;
 					territories.get(29).addUnits(1);
 
@@ -8265,7 +8269,7 @@ public class GameBoard extends JPanel {
 						gameStatus.setText("ATTACK!");
 					}
 				} else if (attackPhase == true) {
-					if ((landofzachCresent.getName() == currPlayer.getName()) && (zachUnits >= 2)) {
+					if ((landofzachCresent.getName().equals(currPlayer.getName())) && (zachUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						landofzachAttacking = true;
@@ -8342,7 +8346,7 @@ public class GameBoard extends JPanel {
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
 
-					if (currPlayer.getNumOfArmies() >= 1 && giantCresent.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && giantCresent.getName().equals(currPlayer.getName())) {
 						giantUnits += 1;
 						territories.get(30).addUnits(1);
 						myLabel.setText("" + giantUnits);
@@ -8358,7 +8362,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (giantCresent.getName() == currPlayer.getName())) {
+						&& (giantCresent.getName().equals(currPlayer.getName()))) {
 					giantUnits += 1;
 					territories.get(30).addUnits(1);
 
@@ -8369,7 +8373,7 @@ public class GameBoard extends JPanel {
 						gameStatus.setText("ATTACK!");
 					}
 				} else if (attackPhase == true) {
-					if ((giantCresent.getName() == currPlayer.getName()) && (giantUnits >= 2)) {
+					if ((giantCresent.getName().equals(currPlayer.getName())) && (giantUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						giantAttacking = true;
@@ -8464,7 +8468,7 @@ public class GameBoard extends JPanel {
 				JLabel myLabel = myMap.get(myButton);
 
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && newlandofzachCresent.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && newlandofzachCresent.getName().equals(currPlayer.getName())) {
 						newzachUnits += 1;
 						territories.get(31).addUnits(1);
 						myLabel.setText("" + newzachUnits);
@@ -8480,7 +8484,7 @@ public class GameBoard extends JPanel {
 					checkIfReinforcementPhaseIsOver();
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (newlandofzachCresent.getName() == currPlayer.getName())) {
+						&& (newlandofzachCresent.getName().equals(currPlayer.getName()))) {
 					newzachUnits += 1;
 					territories.get(31).addUnits(1);
 
@@ -8491,7 +8495,7 @@ public class GameBoard extends JPanel {
 						gameStatus.setText("ATTACK!");
 					}
 				} else if (attackPhase == true) {
-					if ((newlandofzachCresent.getName() == currPlayer.getName()) && (newzachUnits >= 2)) {
+					if ((newlandofzachCresent.getName().equals(currPlayer.getName())) && (newzachUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						newlandofzachAttacking = true;
@@ -8599,7 +8603,7 @@ public class GameBoard extends JPanel {
 				JLabel myLabel = myMap.get(myButton);
 
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && southscraptopiaCresent.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && southscraptopiaCresent.getName().equals(currPlayer.getName())) {
 						southUnits += 1;
 						territories.get(32).addUnits(1);
 						myLabel.setText("" + southUnits);
@@ -8616,7 +8620,7 @@ public class GameBoard extends JPanel {
 
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (southscraptopiaCresent.getName() == currPlayer.getName())) {
+						&& (southscraptopiaCresent.getName().equals(currPlayer.getName()))) {
 					southUnits += 1;
 					territories.get(32).addUnits(1);
 
@@ -8627,7 +8631,7 @@ public class GameBoard extends JPanel {
 						gameStatus.setText("ATTACK!");
 					}
 				} else if (attackPhase == true) {
-					if ((southscraptopiaCresent.getName() == currPlayer.getName()) && (southUnits >= 2)) {
+					if ((southscraptopiaCresent.getName().equals(currPlayer.getName())) && (southUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						southscraptopiaAttacking = true;
@@ -8693,7 +8697,7 @@ public class GameBoard extends JPanel {
 				JLabel myLabel = myMap.get(myButton);
 
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && bloobawlCresent.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && bloobawlCresent.getName().equals(currPlayer.getName())) {
 						blooUnits += 1;
 						territories.get(33).addUnits(1);
 						myLabel.setText("" + blooUnits);
@@ -8709,7 +8713,7 @@ public class GameBoard extends JPanel {
 
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (bloobawlCresent.getName() == currPlayer.getName())) {
+						&& (bloobawlCresent.getName().equals(currPlayer.getName()))) {
 					blooUnits += 1;
 					territories.get(33).addUnits(1);
 
@@ -8720,7 +8724,7 @@ public class GameBoard extends JPanel {
 						gameStatus.setText("ATTACK!");
 					}
 				} else if (attackPhase == true) {
-					if ((bloobawlCresent.getName() == currPlayer.getName()) && (blooUnits >= 2)) {
+					if ((bloobawlCresent.getName().equals(currPlayer.getName())) && (blooUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						
 						bloobawlAttacking = true;
@@ -8812,7 +8816,7 @@ public class GameBoard extends JPanel {
 				JLabel myLabel = myMap.get(myButton);
 
 				if (reinforcementPhase == true) {
-					if (currPlayer.getNumOfArmies() >= 1 && cresentcaptitalCresent.getName() == currPlayer.getName()) {
+					if (currPlayer.getNumOfArmies() >= 1 && cresentcaptitalCresent.getName().equals(currPlayer.getName())) {
 						capUnits += 1;
 						territories.get(34).addUnits(1);
 						myLabel.setText("" + capUnits);
@@ -8829,7 +8833,7 @@ public class GameBoard extends JPanel {
 
 				}
 				if ((reinforcementPhase == false) && (currPlayer.getNumOfArmies() > 0)
-						&& (cresentcaptitalCresent.getName() == currPlayer.getName())) {
+						&& (cresentcaptitalCresent.getName().equals(currPlayer.getName()))) {
 					capUnits += 1;
 					territories.get(34).addUnits(1);
 
@@ -8840,7 +8844,7 @@ public class GameBoard extends JPanel {
 						gameStatus.setText("ATTACK!");
 					}
 				} else if (attackPhase == true) {
-					if ((cresentcaptitalCresent.getName() == currPlayer.getName()) && (capUnits >= 2)) {
+					if ((cresentcaptitalCresent.getName().equals(currPlayer.getName())) && (capUnits >= 2)) {
 						System.out.println("ATTACK PHASE");
 						//
 						crescentcapitalAttacking = true;
@@ -9715,6 +9719,9 @@ public class GameBoard extends JPanel {
 	}
 	public void nextPlayer() {
 
+		if(turnCount == 0) {
+			gameOver();
+		}
 		Random r = new Random();
 		currPlayer = newGame.nextPlayer();
 
@@ -9841,11 +9848,8 @@ public class GameBoard extends JPanel {
 				System.out.println("Now it is " + currPlayer.getClass());
 			}
 
-			if (turnCount >= 0)
+			if (turnCount > 0)
 				nextPlayer();
-			else {
-				gameOver();
-			}
 		}
 		
 		if(currPlayer.getCards().size() == 5) {
@@ -9966,6 +9970,7 @@ public class GameBoard extends JPanel {
 		cresentLabel6.setText("" + blooUnits);
 		cresentLabel7.setText("" + capUnits);
 		moveTurnLabel();
+		updatePlayerLabels();
 	}
 
 	public void AITurn(int turnPhase) {
@@ -10059,6 +10064,233 @@ public class GameBoard extends JPanel {
 			if (!attackingTerr.getOwner().isAI()) {
 				JOptionPane.showMessageDialog(null, "Sorry, you do not have enough armies to attack");
 			}
+		}
+	}
+	
+	public void updatePlayerLabels() {
+		if (newGame.getNumOfPlayers() == 6) {
+			playerTag = new JLabel(newGame.getPlayerAt(0).getName());
+			playerTag.setSize(150, 40);
+			playerTag.setLocation(170, 600);
+			playerTag.setFont(plyrTagFont);
+			playerTag.setForeground(Color.yellow);
+			add(playerTag);
+			playerCount = new JLabel("You have " + newGame.getPlayerAt(0).getNumOfArmies() + " units left to place!");
+			playerCount.setSize(200, 40);
+			playerCount.setLocation(130, 620);
+			playerCount.setFont(plyrCountFont);
+			playerCount.setForeground(Color.yellow);
+			add(playerCount);
+			playerTag2 = new JLabel(newGame.getPlayerAt(1).getName());
+			playerTag2.setSize(150, 40);
+			playerTag2.setLocation(340, 600);
+			playerTag2.setFont(plyrTagFont);
+			playerTag2.setForeground(Color.green);
+			add(playerTag2);
+			playerCount2 = new JLabel("You have " + newGame.getPlayerAt(1).getNumOfArmies() + " units left to place!");
+			playerCount2.setSize(200, 40);
+			playerCount2.setLocation(290, 620);
+			playerCount2.setFont(plyrCountFont);
+			playerCount2.setForeground(Color.green);
+			add(playerCount2);
+			playerTag3 = new JLabel(newGame.getPlayerAt(2).getName());
+			playerTag3.setSize(150, 40);
+			playerTag3.setLocation(490, 600);
+			playerTag3.setFont(plyrTagFont);
+			playerTag3.setForeground(Color.orange);
+			add(playerTag3);
+			playerCount3 = new JLabel("You have " + newGame.getPlayerAt(2).getNumOfArmies() + " units left to place!");
+			playerCount3.setSize(200, 40);
+			playerCount3.setLocation(460, 620);
+			playerCount3.setFont(plyrCountFont);
+			playerCount3.setForeground(Color.orange);
+			add(playerCount3);
+			playerTag4 = new JLabel(newGame.getPlayerAt(3).getName());
+			playerTag4.setSize(150, 40);
+			playerTag4.setLocation(660, 600);
+			playerTag4.setFont(plyrTagFont);
+			playerTag4.setForeground(Color.red);
+			add(playerTag4);
+			playerCount4 = new JLabel("You have " + newGame.getPlayerAt(3).getNumOfArmies() + " units left to place!");
+			playerCount4.setSize(200, 40);
+			playerCount4.setLocation(630, 620);
+			playerCount4.setFont(plyrCountFont);
+			playerCount4.setForeground(Color.red);
+			add(playerCount4);
+			playerTag5 = new JLabel(newGame.getPlayerAt(4).getName());
+			playerTag5.setSize(150, 40);
+			playerTag5.setLocation(830, 600);
+			playerTag5.setFont(plyrTagFont);
+			playerTag5.setForeground(Color.pink);
+			add(playerTag5);
+			playerCount5 = new JLabel("You have " + newGame.getPlayerAt(4).getNumOfArmies() + " units left to place!");
+			playerCount5.setSize(200, 40);
+			playerCount5.setLocation(800, 620);
+			playerCount5.setFont(plyrCountFont);
+			playerCount5.setForeground(Color.pink);
+			add(playerCount5);
+			playerTag6 = new JLabel(newGame.getPlayerAt(5).getName());
+			playerTag6.setSize(150, 40);
+			playerTag6.setLocation(1000, 600);
+			playerTag6.setFont(plyrTagFont);
+			playerTag6.setForeground(Color.blue);
+			add(playerTag6);
+			playerCount6 = new JLabel("You have " + newGame.getPlayerAt(5).getNumOfArmies() + " units left to place!");
+			playerCount6.setSize(150, 40);
+			playerCount6.setLocation(970, 620);
+			playerCount6.setFont(plyrCountFont);
+			playerCount6.setForeground(Color.blue);
+			add(playerCount6);
+		}
+		if (newGame.getNumOfPlayers() == 5) {
+			playerTag = new JLabel(newGame.getPlayerAt(0).getName());
+			playerTag.setSize(150, 40);
+			playerTag.setLocation(170, 600);
+			playerTag.setFont(plyrTagFont);
+			playerTag.setForeground(Color.yellow);
+			add(playerTag);
+			playerCount = new JLabel("You have " + newGame.getPlayerAt(0).getNumOfArmies() + " units left to place!");
+			playerCount.setSize(200, 40);
+			playerCount.setLocation(130, 620);
+			playerCount.setFont(plyrCountFont);
+			playerCount.setForeground(Color.yellow);
+			add(playerCount);
+			playerTag2 = new JLabel(newGame.getPlayerAt(1).getName());
+			playerTag2.setSize(150, 40);
+			playerTag2.setLocation(340, 600);
+			playerTag2.setFont(plyrTagFont);
+			playerTag2.setForeground(Color.green);
+			add(playerTag2);
+			playerCount2 = new JLabel("You have " + newGame.getPlayerAt(1).getNumOfArmies() + " units left to place!");
+			playerCount2.setSize(200, 40);
+			playerCount2.setLocation(290, 620);
+			playerCount2.setFont(plyrCountFont);
+			playerCount2.setForeground(Color.green);
+			add(playerCount2);
+			playerTag3 = new JLabel(newGame.getPlayerAt(2).getName());
+			playerTag3.setSize(150, 40);
+			playerTag3.setLocation(490, 600);
+			playerTag3.setFont(plyrTagFont);
+			playerTag3.setForeground(Color.orange);
+			add(playerTag3);
+			playerCount3 = new JLabel("You have " + newGame.getPlayerAt(2).getNumOfArmies() + " units left to place!");
+			playerCount3.setSize(200, 40);
+			playerCount3.setLocation(460, 620);
+			playerCount3.setFont(plyrCountFont);
+			playerCount3.setForeground(Color.orange);
+			add(playerCount3);
+			playerTag4 = new JLabel(newGame.getPlayerAt(3).getName());
+			playerTag4.setSize(150, 40);
+			playerTag4.setLocation(660, 600);
+			playerTag4.setFont(plyrTagFont);
+			playerTag4.setForeground(Color.red);
+			add(playerTag4);
+			playerCount4 = new JLabel("You have " + newGame.getPlayerAt(3).getNumOfArmies() + " units left to place!");
+			playerCount4.setSize(200, 40);
+			playerCount4.setLocation(630, 620);
+			playerCount4.setFont(plyrCountFont);
+			playerCount4.setForeground(Color.red);
+			add(playerCount4);
+			playerTag5 = new JLabel(newGame.getPlayerAt(4).getName());
+			playerTag5.setSize(150, 40);
+			playerTag5.setLocation(830, 600);
+			playerTag5.setFont(plyrTagFont);
+			playerTag5.setForeground(Color.pink);
+			add(playerTag5);
+			playerCount5 = new JLabel("You have " + newGame.getPlayerAt(4).getNumOfArmies() + " units left to place!");
+			playerCount5.setSize(200, 40);
+			playerCount5.setLocation(800, 620);
+			playerCount5.setFont(plyrCountFont);
+			playerCount5.setForeground(Color.pink);
+			add(playerCount5);
+		}
+		if (newGame.getNumOfPlayers() == 4) {
+			playerTag = new JLabel(newGame.getPlayerAt(0).getName());
+			playerTag.setSize(150, 40);
+			playerTag.setLocation(170, 600);
+			playerTag.setFont(plyrTagFont);
+			playerTag.setForeground(Color.yellow);
+			add(playerTag);
+			playerCount = new JLabel("You have " + newGame.getPlayerAt(0).getNumOfArmies() + " units left to place!");
+			playerCount.setSize(200, 40);
+			playerCount.setLocation(130, 620);
+			playerCount.setFont(plyrCountFont);
+			playerCount.setForeground(Color.yellow);
+			add(playerCount);
+			playerTag2 = new JLabel(newGame.getPlayerAt(1).getName());
+			playerTag2.setSize(150, 40);
+			playerTag2.setLocation(340, 600);
+			playerTag2.setFont(plyrTagFont);
+			playerTag2.setForeground(Color.green);
+			add(playerTag2);
+			playerCount2 = new JLabel("You have " + newGame.getPlayerAt(1).getNumOfArmies() + " units left to place!");
+			playerCount2.setSize(200, 40);
+			playerCount2.setLocation(290, 620);
+			playerCount2.setFont(plyrCountFont);
+			playerCount2.setForeground(Color.green);
+			add(playerCount2);
+			playerTag3 = new JLabel(newGame.getPlayerAt(2).getName());
+			playerTag3.setSize(150, 40);
+			playerTag3.setLocation(490, 600);
+			playerTag3.setFont(plyrTagFont);
+			playerTag3.setForeground(Color.orange);
+			add(playerTag3);
+			playerCount3 = new JLabel("You have " + newGame.getPlayerAt(2).getNumOfArmies() + " units left to place!");
+			playerCount3.setSize(200, 40);
+			playerCount3.setLocation(460, 620);
+			playerCount3.setFont(plyrCountFont);
+			playerCount3.setForeground(Color.orange);
+			add(playerCount3);
+			playerTag4 = new JLabel(newGame.getPlayerAt(3).getName());
+			playerTag4.setSize(150, 40);
+			playerTag4.setLocation(660, 600);
+			playerTag4.setFont(plyrTagFont);
+			playerTag4.setForeground(Color.red);
+			add(playerTag4);
+			playerCount4 = new JLabel("You have " + newGame.getPlayerAt(3).getNumOfArmies() + " units left to place!");
+			playerCount4.setSize(200, 40);
+			playerCount4.setLocation(630, 620);
+			playerCount4.setFont(plyrCountFont);
+			playerCount4.setForeground(Color.red);
+			add(playerCount4);
+		}
+		if (newGame.getNumOfPlayers() == 3) {
+			playerTag = new JLabel(newGame.getPlayerAt(0).getName());
+			playerTag.setSize(150, 40);
+			playerTag.setLocation(170, 600);
+			playerTag.setFont(plyrTagFont);
+			playerTag.setForeground(Color.yellow);
+			add(playerTag);
+			playerCount = new JLabel("You have " + newGame.getPlayerAt(0).getNumOfArmies() + " units left to place!");
+			playerCount.setSize(200, 40);
+			playerCount.setLocation(130, 620);
+			playerCount.setFont(plyrCountFont);
+			playerCount.setForeground(Color.yellow);
+			add(playerCount);
+			playerTag2 = new JLabel(newGame.getPlayerAt(1).getName());
+			playerTag2.setSize(150, 40);
+			playerTag2.setLocation(340, 600);
+			playerTag2.setFont(plyrTagFont);
+			playerTag2.setForeground(Color.green);
+			add(playerTag2);
+			playerCount2 = new JLabel("You have " + newGame.getPlayerAt(1).getNumOfArmies() + " units left to place!");
+			playerCount2.setSize(200, 40);
+			playerCount2.setLocation(290, 620);
+			playerCount2.setFont(plyrCountFont);
+			playerCount2.setForeground(Color.green);
+			add(playerCount2);
+			playerTag3 = new JLabel(newGame.getPlayerAt(2).getName());
+			playerTag3.setSize(150, 40);
+			playerTag3.setLocation(490, 600);
+			playerTag3.setFont(plyrTagFont);
+			playerTag3.setForeground(Color.orange);
+			add(playerTag3);
+			playerCount3 = new JLabel("You have " + newGame.getPlayerAt(2).getNumOfArmies() + " units left to place!");
+			playerCount3.setSize(200, 40);
+			playerCount3.setLocation(460, 620);
+			playerCount3.setFont(plyrCountFont);
+			playerCount3.setForeground(Color.orange);
+			add(playerCount3);
 		}
 	}
 
