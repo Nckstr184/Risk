@@ -196,7 +196,6 @@ public class GameBoard extends JPanel {
 
 									// printPlayersAndTheirTerritories(tempPlayers);
 									currPlayer = tempPlayer;
-									System.out.println("current Player" + currPlayer.getName());
 
 								} catch (ClassNotFoundException e) {
 									// TODO Auto-generated catch block
@@ -213,11 +212,9 @@ public class GameBoard extends JPanel {
 							playerTags();
 
 							addButtons();
-							System.out.println("current Player BIAATCH" + currPlayer.getName());
 							if (!newgame1.isClicked()) {
 								currPlayer = newGame.getPlayerAt(0);
 							}
-							System.out.println("current Player" + currPlayer.getName());
 							add(picLabel, BorderLayout.CENTER);
 							add(leftLabel, BorderLayout.WEST);
 							add(rightLabel, BorderLayout.EAST);
@@ -2636,7 +2633,6 @@ public class GameBoard extends JPanel {
 		}
 
 		if (newGame.getNumOfPlayers() == 4) {
-			System.out.println("FUCCCCKK");
 			for (Territory d : player1.getTerritories()) {
 				if (d.getName().equals("Wilma")) {
 					wilmaWildcat = new JButton(yellow);
