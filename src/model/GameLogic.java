@@ -681,4 +681,11 @@ public class GameLogic implements Serializable {
 		}
 		return false;
 	}
+
+	public int getPlayerTurn() {
+		return playerTurn;
+	}
+	public void setPlayerTurn(int number) {
+		playerTurn=number;
+	}
 }

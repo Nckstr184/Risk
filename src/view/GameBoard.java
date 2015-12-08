@@ -182,6 +182,7 @@ public class GameBoard extends JPanel {
 								ArrayList<Territory> tempTerritories = null;
 								ArrayList<Continent> tempContinents = null;
 								boolean reinforcementPhaseImport = true;
+								int currentPlayerTurn=0;
 								try {
 									inputStream = new FileInputStream("savedGame");
 									objectInput = new ObjectInputStream(inputStream);
@@ -190,8 +191,8 @@ public class GameBoard extends JPanel {
 									tempTerritories = (ArrayList<Territory>) objectInput.readObject();
 									tempContinents = (ArrayList<Continent>) objectInput.readObject();
 									tempPlayer = (Player) objectInput.readObject();
-									// reinforcementPhaseImport = (boolean)
-									// objectInput.readObject();
+									currentPlayerTurn = (Integer) objectInput.readObject();
+									reinforcementPhaseImport = (boolean)objectInput.readObject();
 
 									// printPlayersAndTheirTerritories(tempPlayers);
 									currPlayer = tempPlayer;
@@ -203,7 +204,7 @@ public class GameBoard extends JPanel {
 									e.printStackTrace();
 								}
 								this.importGameLogic(tempPlayers, tempCards, tempContinents, tempTerritories,
-										tempPlayer, reinforcementPhaseImport);
+										tempPlayer, reinforcementPhaseImport, currentPlayerTurn);
 							}
 
 							System.out.println("NUMBER OF PLAYERS: " + newGame.getNumOfPlayers());
@@ -645,12 +646,13 @@ public class GameBoard extends JPanel {
 
 	public void importGameLogic(PlayerCollection newPlayers, ArrayList<String> newCards,
 			ArrayList<Continent> newContinets, ArrayList<Territory> newTerritories, Player tempPlayer,
-			boolean reinforcemnetPhaseImport) {
+			boolean reinforcemnetPhaseImport, int currentPlayerTurn) {
 		newGame = new GameLogic(null, null, null, null, null, null);
 		newGame.setPlayerList(newPlayers);
 		newGame.setCards(newCards);
 		newGame.setTerritory(newTerritories);
 		newGame.setContinents(newContinets);
+		newGame.setPlayerTurn(currentPlayerTurn);
 		System.out.println("current Player" + currPlayer.getName());
 		currPlayer = tempPlayer;
 		System.out.println("current Player" + currPlayer.getName());
@@ -9528,6 +9530,10 @@ public class GameBoard extends JPanel {
 		}
 	}
 
+	public int getPlayerTurn()
+	{
+		return newGame.getPlayerTurn();
+	}
 	public void nextPlayer() {
 
 		Random r = new Random();
