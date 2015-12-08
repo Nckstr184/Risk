@@ -12637,6 +12637,7 @@ public class GameBoard extends JPanel {
 		if (playersDone == newGame.getNumOfPlayers()) {
 			reinforcementPhase = false;
 			attackPhase = true;
+			newGame.addReinforcements();
 			gameStatus.setText("Attack");
 			endTurnButton.setEnabled(true);
 			if (newGame.getNumOfPlayers() == 6) {
