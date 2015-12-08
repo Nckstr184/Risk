@@ -27,12 +27,16 @@ import javax.swing.UIManager;
 
 import demoSongPlayer.Play1Song;
 import model.BattleLogic;
+import model.Card;
 import model.CardCollection;
 import model.Continent;
 import model.GameLogic;
 import model.Player;
 import model.PlayerCollection;
 import model.Territory;
+import typesOfPlayers.EasyAI;
+import typesOfPlayers.HardAI;
+import typesOfPlayers.MediumAI;
 
 public class GameBoard extends JPanel {
 
@@ -9609,7 +9613,47 @@ public class GameBoard extends JPanel {
 				updateLabels();
 			}
 			log += "\nEnd of Log";
-			JOptionPane.showMessageDialog(null, log);
+			Object[] options = { "Change Difficulty", "Next Turn" };
+			int choice = JOptionPane.showOptionDialog(null, log, "AI Turn Over", JOptionPane.DEFAULT_OPTION,
+					JOptionPane.PLAIN_MESSAGE, null, options, options[1]);
+
+			if (choice == 0) {
+				// CHANGE DIFFICULTY
+				Object[] diff = { "Easy", "Medium", "Hard"};
+				int diffChoice = JOptionPane.showOptionDialog(null, "Choose Difficulty to Change to",
+						"Difficulty Change", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, diff,
+						diff[0]);
+				
+				String name = currPlayer.getName();
+				Color color = currPlayer.getColor();
+				int numOfArmies = currPlayer.getNumOfArmies();
+				boolean isAI = currPlayer.isAI();
+				ArrayList<Card> cards = currPlayer.getCards();
+				ArrayList<Territory> territories = currPlayer.getTerritories();
+				PlayerCollection players = newGame.getPlayerList();
+				int index = newGame.getIndexOfPlayer();
+				
+				System.out.println("Started as " + currPlayer.getClass());
+				if(diffChoice == 0) {
+					currPlayer = new EasyAI(name, color, numOfArmies, isAI);
+					currPlayer.setCards(cards);
+					currPlayer.setTerritories(territories);
+
+				}
+				if(diffChoice == 1) {
+					currPlayer = new MediumAI(name, color, numOfArmies, isAI);
+					currPlayer.setCards(cards);
+					currPlayer.setTerritories(territories);
+				}
+				if(diffChoice == 2) {
+					currPlayer = new HardAI(name, color, numOfArmies, isAI);
+					currPlayer.setCards(cards);
+					currPlayer.setTerritories(territories);
+				}
+				players.setPlayerAt(index, currPlayer);
+				System.out.println("Now it is " + currPlayer.getClass());
+			}
+
 			if (turnCount >= 0)
 				nextPlayer();
 			else {

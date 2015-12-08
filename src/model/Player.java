@@ -34,6 +34,10 @@ public abstract class Player implements Serializable {
 	public ArrayList<Territory> getTerritories() {
 		return playerTerritories;
 	}
+	
+	public Color getColor() {
+		return playerColor;
+	}
 
 	public ArrayList<Card> getCards() {
 		return playerCards;
@@ -75,6 +79,14 @@ public abstract class Player implements Serializable {
 
 	public void addTerritories(Territory newTerritory) {
 		playerTerritories.add(newTerritory);
+	}
+	
+	public void setTerritories(ArrayList<Territory> territories) {
+		playerTerritories = new ArrayList<Territory>(territories);
+	}
+	
+	public void setCards(ArrayList<Card> card) {
+		playerCards = new ArrayList<Card>(card);
 	}
 
 	public void removeTerritory(Territory removedTerritory) {

@@ -94,6 +94,10 @@ public class GameLogic implements Serializable {
 		indexOfPlayerTurn = playerTurn % (allPlayers.getNumOfPlayers());
 		return allPlayers.getPlayer(indexOfPlayerTurn);
 	}
+	
+	public int getIndexOfPlayer() {
+		return indexOfPlayerTurn;
+	}
 
 	private void setNeighbors(ArrayList<Territory> allTerritories2) {
 
