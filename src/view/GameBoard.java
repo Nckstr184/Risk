@@ -207,9 +207,8 @@ public class GameBoard extends JPanel {
 							System.out.println("NUMBER OF PLAYERS: " + newGame.getNumOfPlayers());
 
 							turnCount = newGame.getNumOfPlayers() * 20;
-							if (!newgame1.isClicked()) {
 								playerTags();
-							}
+							
 							addButtons();
 							System.out.println("current Player" + currPlayer.getName());
 							if (!newgame1.isClicked()) {
