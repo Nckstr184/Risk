@@ -60,7 +60,7 @@ public class MainGUI extends JFrame {
 
 		this.setLayout(new BorderLayout());
 
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		this.setSize(1300, 750);
 
 		saveGame = new JButton();
@@ -172,6 +172,7 @@ public class MainGUI extends JFrame {
 					JOptionPane.YES_NO_CANCEL_OPTION);
 			if (selectedOption == JOptionPane.NO_OPTION) {
 				window.dispose();
+				System.exit(0);
 			}
 			if (selectedOption == JOptionPane.YES_OPTION) {
 				try {

@@ -147,13 +147,14 @@ public abstract class Player implements Serializable {
 		availableType.add(CardType.GARY);
 		availableType.add(CardType.PATRICK);
 		availableType.add(CardType.SPONGEBOB);
+		availableType.add(CardType.WILD);
 		for (int j = 0; j < playerCards.size(); j++) {
 			if (availableType.indexOf(playerCards.get(j).getType()) != -1) {
 				availableType.remove(availableType.indexOf(playerCards.get(j).getType()));
 				indexes.add(playerCards.get(j));
 			}
 		}
-		if (availableType.size() == 0) {
+		if (availableType.size() == 1) {
 			for (int k = 0; k < 3; k++) {
 				playerCards.remove(indexes.get(k));
 			}
