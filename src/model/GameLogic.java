@@ -630,26 +630,26 @@ public class GameLogic implements Serializable {
 		defendingTerr.addUnits(1);
 	}
 	
-	public ArrayList<Territory> getFriendlyTerritories(Territory currTerr) {
+	public ArrayList<String> getFriendlyTerritories(Territory currTerr) {
 		ArrayList<Territory> neighbors = currTerr.getNeighbors();
-		ArrayList<Territory> friendlies = new ArrayList<Territory>();
+		ArrayList<String> friendlies = new ArrayList<String>();
 		
 		for(int i=0; i<neighbors.size();i++) {
 			if(currTerr.getOwner().getName().equals(neighbors.get(i).getOwner().getName())) {
-				friendlies.add(neighbors.get(i));
+				friendlies.add(neighbors.get(i).getName());
 			}
 		}
 		
 		return friendlies;
 	}
 	
-	public ArrayList<Territory> getEnemyTerritories(Territory currTerr) {
+	public ArrayList<String> getEnemyTerritories(Territory currTerr) {
 		ArrayList<Territory> neighbors = currTerr.getNeighbors();
-		ArrayList<Territory> enemies = new ArrayList<Territory>();
+		ArrayList<String> enemies = new ArrayList<String>();
 		
 		for(int i=0; i<neighbors.size();i++) {
 			if(!currTerr.getOwner().getName().equals(neighbors.get(i).getOwner().getName())) {
-				enemies.add(neighbors.get(i));
+				enemies.add(neighbors.get(i).getName());
 			}
 		}
 		
