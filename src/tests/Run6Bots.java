@@ -11,7 +11,7 @@ import typesOfPlayers.EasyAI;
 import typesOfPlayers.HardAI;
 import typesOfPlayers.MediumAI;
 
-public class Run6BotsFIX {
+public class Run6Bots {
 	/*
 	 * TODO LIST
 	 * 
