@@ -13152,6 +13152,7 @@ public class GameBoard extends JPanel {
 			}
 		}
 		if (playersDone == newGame.getNumOfPlayers()) {
+			turnCount--;
 			reinforcementPhase = false;
 			attackPhase = true;
 			newGame.addReinforcements();
