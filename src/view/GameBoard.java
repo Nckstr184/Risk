@@ -3842,11 +3842,7 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-<<<<<<< HEAD
-=======
 
-				playsong = new Play1Song(coin);
->>>>>>> 4d3fc01cb438e67033c313c18b55a560af843790
 				javaAttacking = false;
 				if (reinforcementPhase == true) {
 					if (currPlayer.getNumOfArmies() >= 1 && javaLanguage.getName() == currPlayer.getName()) {
@@ -3962,11 +3958,7 @@ public class GameBoard extends JPanel {
 		pythonLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
-<<<<<<< HEAD
-				
-=======
-				playsong = new Play1Song(coin);
->>>>>>> 4d3fc01cb438e67033c313c18b55a560af843790
+
 				JLabel myLabel = myMap.get(myButton);
 
 				if (reinforcementPhase == true) {
@@ -3975,12 +3967,7 @@ public class GameBoard extends JPanel {
 						territories.get(1).addUnits(1);
 						myLabel.setText("" + pythonUnits);
 						currPlayer.removeArmies(1);
-<<<<<<< HEAD
-  
-=======
 
->>>>>>> 4d3fc01cb438e67033c313c18b55a560af843790
-						playsong = new Play1Song(coin);
 
 						playsong = new Play1Song(coin);
 
@@ -4110,10 +4097,7 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-<<<<<<< HEAD
-=======
-				playsong = new Play1Song(coin);
->>>>>>> 4d3fc01cb438e67033c313c18b55a560af843790
+
 				if (reinforcementPhase == true) {
 					if (currPlayer.getNumOfArmies() >= 1 && cLanguage.getName() == currPlayer.getName()) {
 						cUnits += 1;
@@ -4231,10 +4215,7 @@ public class GameBoard extends JPanel {
 		sqlLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
-<<<<<<< HEAD
-=======
-				playsong = new Play1Song(coin);
->>>>>>> 4d3fc01cb438e67033c313c18b55a560af843790
+
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
 					if (currPlayer.getNumOfArmies() >= 1 && sqlLanguage.getName() == currPlayer.getName()) {
@@ -4368,10 +4349,7 @@ public class GameBoard extends JPanel {
 		rubyLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
-<<<<<<< HEAD
-=======
-				playsong = new Play1Song(coin);
->>>>>>> 4d3fc01cb438e67033c313c18b55a560af843790
+
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
 					if (currPlayer.getNumOfArmies() >= 1 && rubyLanguage.getName() == currPlayer.getName()) {
@@ -4491,10 +4469,7 @@ public class GameBoard extends JPanel {
 		gitLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
-<<<<<<< HEAD
-=======
-				playsong = new Play1Song(coin);
->>>>>>> 4d3fc01cb438e67033c313c18b55a560af843790
+
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
 					if (currPlayer.getNumOfArmies() >= 1 && gitLanguage.getName() == currPlayer.getName()) {
@@ -4629,10 +4604,7 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-<<<<<<< HEAD
-=======
-				playsong = new Play1Song(coin);
->>>>>>> 4d3fc01cb438e67033c313c18b55a560af843790
+
 				if (reinforcementPhase == true) {
 					if (currPlayer.getNumOfArmies() >= 1 && perlLanguage.getName() == currPlayer.getName()) {
 						perlUnits += 1;
@@ -6590,16 +6562,11 @@ public class GameBoard extends JPanel {
 				}
 
 				if (fortifyPhase == true) {
-<<<<<<< HEAD
+
 					if (currPlayer.getName() == raSun.getName()) {
 						System.out.println("fortify from ra!!");
 						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(36)));
-=======
-					if (currPlayer.getName() == amunSun.getName()) {
-						System.out.println("fortify from amun!!");
-						neighborsLabel
-								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(36)));
->>>>>>> 4d3fc01cb438e67033c313c18b55a560af843790
+
 						Object[] range = new Object[territories.get(36).getUnits()];
 						for (int i = 1; i < territories.get(36).getUnits(); i++) {
 							range[i] = i;
