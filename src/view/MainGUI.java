@@ -120,6 +120,7 @@ public class MainGUI extends JFrame {
 				objectOutput.writeObject(map.getTerritories());
 				objectOutput.writeObject(map.getContinents());
 				objectOutput.writeObject(map.getCurrentPlayer());
+				objectOutput.writeObject(map.getPlayerTurn());
 				objectOutput.writeObject(map.reinforcementPhase);
 
 			} catch (IOException e1) {
@@ -192,6 +193,7 @@ public class MainGUI extends JFrame {
 					objectOutput.writeObject(map.getTerritories());
 					objectOutput.writeObject(map.getContinents());
 					objectOutput.writeObject(map.getCurrentPlayer());
+					objectOutput.writeObject(map.getPlayerTurn());
 					objectOutput.writeObject(map.reinforcementPhase);
 
 				} catch (IOException e1) {

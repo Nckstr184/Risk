@@ -667,7 +667,6 @@ public class GameLogic implements Serializable {
 
 	public boolean turnInCard() {
 		Player currPlayer = allPlayers.getPlayer(indexOfPlayerTurn);
-
 		if (currPlayer.turnInCard()) {
 			if (numOfCardTurnIns < 6) {
 				currPlayer.addArmies(numOfRewardArmies);
@@ -680,5 +679,12 @@ public class GameLogic implements Serializable {
 			return true;
 		}
 		return false;
+	}
+
+	public int getPlayerTurn() {
+		return playerTurn;
+	}
+	public void setPlayerTurn(int number) {
+		playerTurn=number;
 	}
 }
