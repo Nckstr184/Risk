@@ -17,12 +17,12 @@ public class Play1Song {
 	 * is included to indicate the song is playing in a separate Thread.
 	 */
 	public Play1Song(String song) {
-		
+
 		// Construct an instance of the private inner class
 		EndOfSongListener waitForSongEnd = new WaitingForSongToEnd();
-		
+
 		SongPlayer.playFile(waitForSongEnd, song);
-		
+
 		System.out.println("Song played in a separate Thread so this appears immediately");
 		System.out.println("This program will not terminate umtil the song finishes...");
 	}

@@ -1,6 +1,7 @@
 package model;
 
 import java.awt.Color;
+import java.awt.Image;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +34,10 @@ public abstract class Player implements Serializable {
 
 	public ArrayList<Territory> getTerritories() {
 		return playerTerritories;
+	}
+	
+	public Color getColor() {
+		return playerColor;
 	}
 
 	public ArrayList<Card> getCards() {
@@ -75,6 +80,14 @@ public abstract class Player implements Serializable {
 
 	public void addTerritories(Territory newTerritory) {
 		playerTerritories.add(newTerritory);
+	}
+	
+	public void setTerritories(ArrayList<Territory> territories) {
+		playerTerritories = new ArrayList<Territory>(territories);
+	}
+	
+	public void setCards(ArrayList<Card> card) {
+		playerCards = new ArrayList<Card>(card);
 	}
 
 	public void removeTerritory(Territory removedTerritory) {
@@ -135,13 +148,14 @@ public abstract class Player implements Serializable {
 		availableType.add(CardType.GARY);
 		availableType.add(CardType.PATRICK);
 		availableType.add(CardType.SPONGEBOB);
+		availableType.add(CardType.WILD);
 		for (int j = 0; j < playerCards.size(); j++) {
 			if (availableType.indexOf(playerCards.get(j).getType()) != -1) {
 				availableType.remove(availableType.indexOf(playerCards.get(j).getType()));
 				indexes.add(playerCards.get(j));
 			}
 		}
-		if (availableType.size() == 0) {
+		if (availableType.size() == 1) {
 			for (int k = 0; k < 3; k++) {
 				playerCards.remove(indexes.get(k));
 			}
@@ -151,21 +165,30 @@ public abstract class Player implements Serializable {
 		// if there is no card able to be turned in then it returns false
 		return false;
 	}
-	
+
 	public int getConqueredContinents(GameLogic gl) {
 		ArrayList<Continent> allContinents = gl.getContinents();
 		ArrayList<Territory> allTerritories = gl.getTerritories();
 		int numOfCont = 0;
-		
-		for(int i=0;i<allContinents.size();i++) {
-			if(allContinents.get(i).getTerritories().get(0).getOwner().getName() == name) {
-				if(allContinents.get(i).isConquered()) {
+
+		for (int i = 0; i < allContinents.size(); i++) {
+			if (allContinents.get(i).getTerritories().get(0).getOwner().getName() == name) {
+				if (allContinents.get(i).isConquered()) {
 					numOfCont++;
 				}
 			}
 		}
-		
+
 		return numOfCont;
+	}
+	
+	public ArrayList<Image> getCardImages() {
+		ArrayList<Image> returnImages = new ArrayList<Image>();
+		for(int i=0;i<playerCards.size();i++) {
+			returnImages.add(playerCards.get(i).getImage());
+		}
+		
+		return returnImages;
 	}
 
 	abstract public void startGame();
