@@ -86,7 +86,7 @@ public class CardCollection implements Serializable {
 		cardCollection.add(new RiskCard("Miller", CardType.PATRICK, C2T4));
 		cardCollection.add(new RiskCard("Scooby", CardType.GARY, C2T5));
 		cardCollection.add(new RiskCard("McKale", CardType.SPONGEBOB, C2T6));
-		cardCollection.add(new RiskCard("Zone", CardType.GARY, C2T7));
+		cardCollection.add(new RiskCard("Zona", CardType.PATRICK, C2T7));
 		cardCollection.add(new RiskCard("Papa Johns", CardType.GARY, C3T1));
 		cardCollection.add(new RiskCard("Dominos", CardType.SPONGEBOB, C3T2));
 		cardCollection.add(new RiskCard("PizzaHut", CardType.PATRICK, C3T3));
@@ -97,11 +97,11 @@ public class CardCollection implements Serializable {
 		cardCollection.add(new RiskCard("RawrVille", CardType.SPONGEBOB, C4T1));
 		cardCollection.add(new RiskCard("Laiegges", CardType.PATRICK, C4T2));
 		cardCollection.add(new RiskCard("Dactilito", CardType.GARY, C4T3));
-		cardCollection.add(new RiskCard("Miller", CardType.PATRICK, C4T4));
-		cardCollection.add(new RiskCard("DirtyDan", CardType.SPONGEBOB, C4T5));
-		cardCollection.add(new RiskCard("BlackBeard", CardType.PATRICK, C4T6));
-		cardCollection.add(new RiskCard("Monisaurus", CardType.GARY, C4T7));
-		cardCollection.add(new RiskCard("Scraptopia", CardType.SPONGEBOB, C5T1));
+		cardCollection.add(new RiskCard("DirtyDan", CardType.SPONGEBOB, C4T4));
+		cardCollection.add(new RiskCard("BlackBeard", CardType.PATRICK, C4T5));
+		cardCollection.add(new RiskCard("Monisaurus", CardType.GARY, C4T6));
+		cardCollection.add(new RiskCard("Toy Story", CardType.SPONGEBOB, C4T7));
+		cardCollection.add(new RiskCard("Scraptopia", CardType.PATRICK, C5T1));
 		cardCollection.add(new RiskCard("Land Of Zach", CardType.GARY, C5T2));
 		cardCollection.add(new RiskCard("Giant", CardType.SPONGEBOB, C5T3));
 		cardCollection.add(new RiskCard("New Land Of Zach", CardType.PATRICK, C5T4));
