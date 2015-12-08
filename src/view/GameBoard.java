@@ -710,7 +710,7 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				String message = "";
 				Object[] options = { "Turn in", "Return" };
-				int choice = JOptionPane.showOptionDialog(null, currPlayer.getCards(), "Current Player's Cards",
+				int choice = JOptionPane.showOptionDialog(null, currPlayer.getCardImages(), "Current Player's Cards",
 						JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
 				if (choice == 0) {
 					if (newGame.turnInCard()) {
@@ -9582,6 +9582,7 @@ public class GameBoard extends JPanel {
 
 		moveTurnLabel();
 		if (!reinforcementPhase) {
+			turnCount--;
 			newGame.addReinforcements();
 			gameStatus.setText("Add Armies!!");
 			moveTurnLabel();

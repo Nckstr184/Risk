@@ -1,6 +1,7 @@
 package model;
 
 import java.awt.Color;
+import java.awt.Image;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -179,6 +180,15 @@ public abstract class Player implements Serializable {
 		}
 
 		return numOfCont;
+	}
+	
+	public ArrayList<Image> getCardImages() {
+		ArrayList<Image> returnImages = new ArrayList<Image>();
+		for(int i=0;i<playerCards.size();i++) {
+			returnImages.add(playerCards.get(i).getImage());
+		}
+		
+		return returnImages;
 	}
 
 	abstract public void startGame();
