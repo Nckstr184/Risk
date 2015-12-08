@@ -120,7 +120,7 @@ public class GameBoard extends JPanel {
 	private ObjectInputStream objectInput;
 
 	Play1Song playsong;
-	String john, coin, bass;
+	String john, coin, bass, ass;
 
 	private int turnCount;
 
@@ -135,6 +135,7 @@ public class GameBoard extends JPanel {
 		john = "./songs/Johnc.aiff";
 		coin = "./songs/coin.aiff";
 		bass = "./songs/Bass.aiff";
+		ass = "./songs/ass.aiff";
 
 		newgame1 = new OpenNewMenu();
 		while (newgame1.isDisplayable()) {
@@ -9860,8 +9861,9 @@ public class GameBoard extends JPanel {
 			}
 		}
 
-		String message = "The Winner Is: " + winner.getName() + "!\n" + "They had " + highestNumOfTerritories + "!";
-
+		String message = "The Winner Is: " + winner.getName() + "!\n" + "They had " + highestNumOfTerritories + "!"
+				+ "\n\nCredits: Nick Larson, Zach Haddad, Esgar Moreno, and Monica Sproul";
+		playsong = new Play1Song(ass);
 		JOptionPane.showMessageDialog(null, message);
 
 		System.exit(0);

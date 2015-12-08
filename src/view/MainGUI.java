@@ -48,6 +48,7 @@ public class MainGUI extends JFrame {
 	public static void main(String[] args) {
 		window = new MainGUI();
 		window.setVisible(true);
+		window.setResizable(false);
 
 	}
 
