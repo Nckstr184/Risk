@@ -251,6 +251,7 @@ public class GameBoard extends JPanel {
 		turnMarker = new JLabel();
 		gameStatus = new JLabel();
 		neighborsLabel = new JLabel();
+		turnCountLabel = new JLabel();
 		turnMarker.setText("IT'S YOUR TURN!!!");
 		turnMarker.setForeground(Color.white);
 		turnMarker.setFont(plyrCountFont);
@@ -3829,7 +3830,7 @@ public class GameBoard extends JPanel {
 			nextPlayer();
 		}
 
-		nextPlayer();
+	
 		javaLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
