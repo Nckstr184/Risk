@@ -208,7 +208,7 @@ public class GameBoard extends JPanel {
 							playerTags();
 
 							addButtons();
-							System.out.println("current Player" + currPlayer.getName());
+							System.out.println("current Player BIAATCH" + currPlayer.getName());
 							if (!newgame1.isClicked()) {
 								currPlayer = newGame.getPlayerAt(0);
 							}
@@ -9725,7 +9725,7 @@ public class GameBoard extends JPanel {
 		cresentLabel5.setText("" + southUnits);
 		cresentLabel6.setText("" + blooUnits);
 		cresentLabel7.setText("" + capUnits);
-
+		moveTurnLabel();
 	}
 
 	public void AITurn(int turnPhase) {
