@@ -708,10 +708,19 @@ public class GameBoard extends JPanel {
 
 		turnInCardsButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				JPanel icons = new JPanel();
+				for(int i=0;i<currPlayer.getCards().size();i++) {
+					icons.add(new JLabel(currPlayer.getCardImages().get(i)));
+				}
 				String message = "";
 				Object[] options = { "Turn in", "Return" };
+<<<<<<< HEAD
 				int choice = JOptionPane.showOptionDialog(null, null , "Current Player's Cards",
 						JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE, currPlayer.getCardImages().get(0) , options, options[0]);
+=======
+				int choice = JOptionPane.showOptionDialog(null, icons , "Current Player's Cards",
+						JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+>>>>>>> a47c71fa085a84d6d1e1fe136f94830827ed323e
 				if (choice == 0) {
 					if (newGame.turnInCard()) {
 						message = "Cards successfully turned in";
