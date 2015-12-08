@@ -10057,7 +10057,7 @@ public class GameBoard extends JPanel {
 				System.out.println("Now it is " + currPlayer.getClass());
 			}
 
-			if (turnCount > 0)
+			if (turnCount >= 0)
 				nextPlayer();
 		}
 		
