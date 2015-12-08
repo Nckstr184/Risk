@@ -201,6 +201,7 @@ public class GameBoard extends JPanel {
 
 							System.out.println("NUMBER OF PLAYERS: " + newGame.getNumOfPlayers());
 
+							turnCount = newGame.getNumOfPlayers() * 20;
 							if (!newgame1.isClicked()) {
 								playerTags();
 							}
@@ -251,6 +252,7 @@ public class GameBoard extends JPanel {
 		turnMarker = new JLabel();
 		gameStatus = new JLabel();
 		neighborsLabel = new JLabel();
+		turnCountLabel = new JLabel();
 		turnMarker.setText("IT'S YOUR TURN!!!");
 		turnMarker.setForeground(Color.white);
 		turnMarker.setFont(plyrCountFont);
@@ -3829,7 +3831,7 @@ public class GameBoard extends JPanel {
 			nextPlayer();
 		}
 
-		nextPlayer();
+
 		javaLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
@@ -9119,6 +9121,7 @@ public class GameBoard extends JPanel {
 		moveTurnLabel();
 		if (!reinforcementPhase) {
 			newGame.addReinforcements();
+			moveTurnLabel();
 		}
 
 		System.out.println("Current Player: " + currPlayer.getName());
@@ -12511,6 +12514,7 @@ public class GameBoard extends JPanel {
 			reinforcementPhase = false;
 			attackPhase = true;
 			gameStatus.setText("Attack");
+			endTurnButton.setEnabled(true);
 			if (newGame.getNumOfPlayers() == 6) {
 				playerCount.setText("Select Territory to attack from");
 				playerCount2.setText("");
