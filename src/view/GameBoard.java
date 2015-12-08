@@ -3836,6 +3836,7 @@ public class GameBoard extends JPanel {
 		if (!newgame1.isClicked()) {
 			nextPlayer();
 		}
+
 		javaLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
