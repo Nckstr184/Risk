@@ -37,6 +37,11 @@ public class PlayerCollection implements Serializable {
 	public void setPlayerList(ArrayList<Player> playerList) {
 		this.playerList = playerList;
 	}
+	
+	public void setPlayerAt(int index, Player player) {
+		this.playerList.remove(index);
+		this.playerList.add(index, player);
+	}
 
 	public int getNumOfPlayers() {
 		return playerList.size();

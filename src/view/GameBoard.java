@@ -27,12 +27,16 @@ import javax.swing.UIManager;
 
 import demoSongPlayer.Play1Song;
 import model.BattleLogic;
+import model.Card;
 import model.CardCollection;
 import model.Continent;
 import model.GameLogic;
 import model.Player;
 import model.PlayerCollection;
 import model.Territory;
+import typesOfPlayers.EasyAI;
+import typesOfPlayers.HardAI;
+import typesOfPlayers.MediumAI;
 
 public class GameBoard extends JPanel {
 
@@ -108,7 +112,6 @@ public class GameBoard extends JPanel {
 
 	JLabel playerTag, playerTag2, playerTag3, playerTag4, playerTag5, playerTag6, playerCount, playerCount2,
 			playerCount3, playerCount4, playerCount5, playerCount6, turnMarker, gameStatus, neighborsLabel;
- 
 
 	JLabel turnCountLabel;
 
@@ -119,7 +122,6 @@ public class GameBoard extends JPanel {
 	Play1Song playsong;
 	String john, coin, bass;
 
- 
 	private int turnCount;
 
 	public GameBoard() {
@@ -130,10 +132,9 @@ public class GameBoard extends JPanel {
 		fortifyPhase = false;
 		fortifyCount = 0;
 
-		john= "./songs/Johnc.aiff";
-		coin= "./songs/coin.aiff";
-		bass= "./songs/Bass.aiff";
-
+		john = "./songs/Johnc.aiff";
+		coin = "./songs/coin.aiff";
+		bass = "./songs/Bass.aiff";
 
 		newgame1 = new OpenNewMenu();
 		while (newgame1.isDisplayable()) {
@@ -189,10 +190,11 @@ public class GameBoard extends JPanel {
 									tempTerritories = (ArrayList<Territory>) objectInput.readObject();
 									tempContinents = (ArrayList<Continent>) objectInput.readObject();
 									tempPlayer = (Player) objectInput.readObject();
-							//		reinforcementPhaseImport = (boolean) objectInput.readObject();
+									// reinforcementPhaseImport = (boolean)
+									// objectInput.readObject();
 
-									//printPlayersAndTheirTerritories(tempPlayers);
-									currPlayer=tempPlayer;
+									// printPlayersAndTheirTerritories(tempPlayers);
+									currPlayer = tempPlayer;
 									System.out.println("current Player" + currPlayer.getName());
 
 								} catch (ClassNotFoundException e) {
@@ -207,8 +209,8 @@ public class GameBoard extends JPanel {
 							System.out.println("NUMBER OF PLAYERS: " + newGame.getNumOfPlayers());
 
 							turnCount = newGame.getNumOfPlayers() * 20;
-								playerTags();
-							
+							playerTags();
+
 							addButtons();
 							System.out.println("current Player" + currPlayer.getName());
 							if (!newgame1.isClicked()) {
@@ -274,7 +276,6 @@ public class GameBoard extends JPanel {
 		neighborsLabel.setFont(neighborsFont);
 		neighborsLabel.setLocation(250, 20);
 		neighborsLabel.setForeground(Color.WHITE);
- 
 
 		turnCountLabel.setSize(200, 300);
 		turnCountLabel.setFont(neighborsFont);
@@ -704,7 +705,6 @@ public class GameBoard extends JPanel {
 		endTurnButton.setText("End Turn");
 		endTurnButton.setLocation(1110, 460);
 
- 
 		endTurnButton.setEnabled(false);
 
 		turnInCardsButton.addActionListener(new ActionListener() {
@@ -3835,9 +3835,6 @@ public class GameBoard extends JPanel {
 			}
 		}
 
-
- 
-
 		if (!newgame1.isClicked()) {
 			nextPlayer();
 		}
@@ -3845,8 +3842,8 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
- 
-				playsong= new Play1Song(coin);
+
+				playsong = new Play1Song(coin);
 				javaAttacking = false;
 				if (reinforcementPhase == true) {
 					if (currPlayer.getNumOfArmies() >= 1 && javaLanguage.getName() == currPlayer.getName()) {
@@ -3854,7 +3851,7 @@ public class GameBoard extends JPanel {
 						territories.get(0).addUnits(1);
 						languageLabel1.setText("" + javaUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 						nextPlayer();
 
@@ -3878,9 +3875,7 @@ public class GameBoard extends JPanel {
 						javaAttacking = true;
 						attackPhase = false;
 
-
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(0)));
-
 
 					}
 				}
@@ -3940,7 +3935,6 @@ public class GameBoard extends JPanel {
 					if (currPlayer.getName() == javaLanguage.getName()) {
 						System.out.println("fortify from java!!!");
 
-
 						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(0)));
 
 						Object[] range = new Object[territories.get(0).getUnits()];
@@ -3964,7 +3958,7 @@ public class GameBoard extends JPanel {
 		pythonLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
-				playsong= new Play1Song(coin);
+				playsong = new Play1Song(coin);
 				JLabel myLabel = myMap.get(myButton);
 
 				if (reinforcementPhase == true) {
@@ -3974,12 +3968,9 @@ public class GameBoard extends JPanel {
 						myLabel.setText("" + pythonUnits);
 						currPlayer.removeArmies(1);
 
-						playsong= new Play1Song(coin);
-
- 
- 
 						playsong = new Play1Song(coin);
 
+						playsong = new Play1Song(coin);
 
 						nextPlayer();
 					}
@@ -4006,7 +3997,6 @@ public class GameBoard extends JPanel {
 						attackPhase = false;
 
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(1)));
-
 
 					}
 				}
@@ -4107,14 +4097,14 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				playsong= new Play1Song(coin);
+				playsong = new Play1Song(coin);
 				if (reinforcementPhase == true) {
 					if (currPlayer.getNumOfArmies() >= 1 && cLanguage.getName() == currPlayer.getName()) {
 						cUnits += 1;
 						territories.get(2).addUnits(1);
 						myLabel.setText("" + cUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -4140,7 +4130,6 @@ public class GameBoard extends JPanel {
 						attackPhase = false;
 
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(2)));
-
 
 					}
 				}
@@ -4226,7 +4215,7 @@ public class GameBoard extends JPanel {
 		sqlLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
-				playsong= new Play1Song(coin);
+				playsong = new Play1Song(coin);
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
 					if (currPlayer.getNumOfArmies() >= 1 && sqlLanguage.getName() == currPlayer.getName()) {
@@ -4234,7 +4223,7 @@ public class GameBoard extends JPanel {
 						territories.get(3).addUnits(1);
 						myLabel.setText("" + sqlUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -4260,7 +4249,6 @@ public class GameBoard extends JPanel {
 						attackPhase = false;
 
 						neighborsLabel.setText("You may attack " + newGame.getEnemyTerritories(territories.get(3)));
-
 
 					}
 				}
@@ -4360,7 +4348,7 @@ public class GameBoard extends JPanel {
 		rubyLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
-				playsong= new Play1Song(coin);
+				playsong = new Play1Song(coin);
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
 					if (currPlayer.getNumOfArmies() >= 1 && rubyLanguage.getName() == currPlayer.getName()) {
@@ -4368,7 +4356,7 @@ public class GameBoard extends JPanel {
 						territories.get(4).addUnits(1);
 						myLabel.setText("" + rubyUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -4478,7 +4466,7 @@ public class GameBoard extends JPanel {
 		gitLanguage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
-				playsong= new Play1Song(coin);
+				playsong = new Play1Song(coin);
 				JLabel myLabel = myMap.get(myButton);
 				if (reinforcementPhase == true) {
 					if (currPlayer.getNumOfArmies() >= 1 && gitLanguage.getName() == currPlayer.getName()) {
@@ -4486,7 +4474,7 @@ public class GameBoard extends JPanel {
 						territories.get(5).addUnits(1);
 						myLabel.setText("" + gitUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -4612,14 +4600,14 @@ public class GameBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				JButton myButton = (JButton) e.getSource();
 				JLabel myLabel = myMap.get(myButton);
-				playsong= new Play1Song(coin);
+				playsong = new Play1Song(coin);
 				if (reinforcementPhase == true) {
 					if (currPlayer.getNumOfArmies() >= 1 && perlLanguage.getName() == currPlayer.getName()) {
 						perlUnits += 1;
 						territories.get(6).addUnits(1);
 						myLabel.setText("" + perlUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -4708,7 +4696,7 @@ public class GameBoard extends JPanel {
 						territories.get(14).addUnits(1);
 						myLabel.setText("" + wilberUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -4840,7 +4828,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == wilberWildcat.getName()) {
 						System.out.println("fortify from wilber!!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(14)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(14)));
 						Object[] range = new Object[territories.get(14).getUnits()];
 						for (int i = 1; i < territories.get(14).getUnits(); i++) {
 							range[i] = i;
@@ -4867,7 +4856,7 @@ public class GameBoard extends JPanel {
 						territories.get(15).addUnits(1);
 						myLabel.setText("" + wilmaUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -4943,7 +4932,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == wilmaWildcat.getName()) {
 						System.out.println("fortify from wilma!!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(15)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(15)));
 						Object[] range = new Object[territories.get(15).getUnits()];
 						for (int i = 1; i < territories.get(15).getUnits(); i++) {
 							range[i] = i;
@@ -4970,7 +4960,7 @@ public class GameBoard extends JPanel {
 						territories.get(16).addUnits(1);
 						myLabel.setText("" + richUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -5074,7 +5064,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == richWildcat.getName()) {
 						System.out.println("fortify from wilber!!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(16)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(16)));
 						Object[] range = new Object[territories.get(16).getUnits()];
 						for (int i = 1; i < territories.get(16).getUnits(); i++) {
 							range[i] = i;
@@ -5101,7 +5092,7 @@ public class GameBoard extends JPanel {
 						territories.get(17).addUnits(1);
 						myLabel.setText("" + millerUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -5189,7 +5180,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == millerWildcat.getName()) {
 						System.out.println("fortify from miller!!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(17)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(17)));
 						Object[] range = new Object[territories.get(17).getUnits()];
 						for (int i = 1; i < territories.get(17).getUnits(); i++) {
 							range[i] = i;
@@ -5216,7 +5208,7 @@ public class GameBoard extends JPanel {
 						territories.get(18).addUnits(1);
 						myLabel.setText("" + scoobyUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -5317,7 +5309,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == scoobyWildcat.getName()) {
 						System.out.println("fortify from scooby!!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(18)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(18)));
 						Object[] range = new Object[territories.get(18).getUnits()];
 						for (int i = 1; i < territories.get(18).getUnits(); i++) {
 							range[i] = i;
@@ -5344,7 +5337,7 @@ public class GameBoard extends JPanel {
 						territories.get(19).addUnits(1);
 						myLabel.setText("" + mckaleUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -5435,7 +5428,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == mckaleWildcat.getName()) {
 						System.out.println("fortify from miller!!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(19)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(19)));
 						Object[] range = new Object[territories.get(19).getUnits()];
 						for (int i = 1; i < territories.get(19).getUnits(); i++) {
 							range[i] = i;
@@ -5462,7 +5456,7 @@ public class GameBoard extends JPanel {
 						territories.get(20).addUnits(1);
 						myLabel.setText("" + zonaUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -5506,7 +5500,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == zonaWildcat.getName()) {
 						System.out.println("fortify from zona!!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(20)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(20)));
 						Object[] range = new Object[territories.get(20).getUnits()];
 						for (int i = 1; i < territories.get(20).getUnits(); i++) {
 							range[i] = i;
@@ -5547,7 +5542,7 @@ public class GameBoard extends JPanel {
 						territories.get(21).addUnits(1);
 						myLabel.setText("" + pjUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -5648,7 +5643,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == papajohnsPizza.getName()) {
 						System.out.println("fortify from papa!!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(21)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(21)));
 						Object[] range = new Object[territories.get(21).getUnits()];
 						for (int i = 1; i < territories.get(21).getUnits(); i++) {
 							range[i] = i;
@@ -5675,7 +5671,7 @@ public class GameBoard extends JPanel {
 						territories.get(22).addUnits(1);
 						myLabel.setText("" + domUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -5774,7 +5770,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == dominosPizza.getName()) {
 						System.out.println("fortify from dominos!!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(22)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(22)));
 						Object[] range = new Object[territories.get(22).getUnits()];
 						for (int i = 1; i < territories.get(22).getUnits(); i++) {
 							range[i] = i;
@@ -5801,7 +5798,7 @@ public class GameBoard extends JPanel {
 						territories.get(23).addUnits(1);
 						myLabel.setText("" + phUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -5888,7 +5885,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == pizzahutPizza.getName()) {
 						System.out.println("fortify from hut!!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(23)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(23)));
 						Object[] range = new Object[territories.get(23).getUnits()];
 						for (int i = 1; i < territories.get(23).getUnits(); i++) {
 							range[i] = i;
@@ -5915,7 +5913,7 @@ public class GameBoard extends JPanel {
 						territories.get(24).addUnits(1);
 						myLabel.setText("" + bjUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -5991,7 +5989,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == blackjackPizza.getName()) {
 						System.out.println("fortify from blackj!!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(24)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(24)));
 						Object[] range = new Object[territories.get(24).getUnits()];
 						for (int i = 1; i < territories.get(24).getUnits(); i++) {
 							range[i] = i;
@@ -6018,7 +6017,7 @@ public class GameBoard extends JPanel {
 						territories.get(25).addUnits(1);
 						myLabel.setText("" + hhUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -6105,7 +6104,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == hungryhowiesPizza.getName()) {
 						System.out.println("fortify from hungryhowies!!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(25)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(25)));
 						Object[] range = new Object[territories.get(25).getUnits()];
 						for (int i = 1; i < territories.get(25).getUnits(); i++) {
 							range[i] = i;
@@ -6133,7 +6133,7 @@ public class GameBoard extends JPanel {
 						territories.get(26).addUnits(1);
 						myLabel.setText("" + bUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -6234,7 +6234,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == brooklynPizza.getName()) {
 						System.out.println("fortify from brook!!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(26)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(26)));
 						Object[] range = new Object[territories.get(26).getUnits()];
 						for (int i = 1; i < territories.get(26).getUnits(); i++) {
 							range[i] = i;
@@ -6262,7 +6263,7 @@ public class GameBoard extends JPanel {
 						territories.get(27).addUnits(1);
 						myLabel.setText("" + ppUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -6336,7 +6337,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == pizzaplanetPizza.getName()) {
 						System.out.println("fortify from pizzaplanet!!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(27)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(27)));
 						Object[] range = new Object[territories.get(27).getUnits()];
 						for (int i = 1; i < territories.get(27).getUnits(); i++) {
 							range[i] = i;
@@ -6363,7 +6365,7 @@ public class GameBoard extends JPanel {
 						territories.get(35).addUnits(1);
 						myLabel.setText("" + apolloUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -6451,7 +6453,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == apolloSun.getName()) {
 						System.out.println("fortify from apollo!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(35)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(35)));
 						Object[] range = new Object[territories.get(35).getUnits()];
 						for (int i = 1; i < territories.get(35).getUnits(); i++) {
 							range[i] = i;
@@ -6479,7 +6482,7 @@ public class GameBoard extends JPanel {
 						territories.get(36).addUnits(1);
 						myLabel.setText("" + raUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -6551,7 +6554,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == amunSun.getName()) {
 						System.out.println("fortify from amun!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(36)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(36)));
 						Object[] range = new Object[territories.get(36).getUnits()];
 						for (int i = 1; i < territories.get(36).getUnits(); i++) {
 							range[i] = i;
@@ -6579,7 +6583,7 @@ public class GameBoard extends JPanel {
 						territories.get(37).addUnits(1);
 						myLabel.setText("" + heliosUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -6681,7 +6685,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == heliosSun.getName()) {
 						System.out.println("fortify from helios!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(37)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(37)));
 						Object[] range = new Object[territories.get(37).getUnits()];
 						for (int i = 1; i < territories.get(37).getUnits(); i++) {
 							range[i] = i;
@@ -6708,7 +6713,7 @@ public class GameBoard extends JPanel {
 						territories.get(38).addUnits(1);
 						myLabel.setText("" + intiUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -6767,7 +6772,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == intiSun.getName()) {
 						System.out.println("fortify from inti!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(38)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(38)));
 						Object[] range = new Object[territories.get(38).getUnits()];
 						for (int i = 1; i < territories.get(38).getUnits(); i++) {
 							range[i] = i;
@@ -6794,7 +6800,7 @@ public class GameBoard extends JPanel {
 						territories.get(39).addUnits(1);
 						myLabel.setText("" + horusUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -6884,7 +6890,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == horusSun.getName()) {
 						System.out.println("fortify from horus!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(39)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(39)));
 						Object[] range = new Object[territories.get(39).getUnits()];
 						for (int i = 1; i < territories.get(39).getUnits(); i++) {
 							range[i] = i;
@@ -6911,7 +6918,7 @@ public class GameBoard extends JPanel {
 						territories.get(40).addUnits(1);
 						myLabel.setText("" + tonatiuhUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -7012,7 +7019,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == tonatiuhSun.getName()) {
 						System.out.println("fortify from ton!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(40)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(40)));
 						Object[] range = new Object[territories.get(40).getUnits()];
 						for (int i = 1; i < territories.get(40).getUnits(); i++) {
 							range[i] = i;
@@ -7039,7 +7047,7 @@ public class GameBoard extends JPanel {
 						territories.get(41).addUnits(1);
 						myLabel.setText("" + amunUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -7140,7 +7148,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == amunSun.getName()) {
 						System.out.println("fortify from amun!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(41)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(41)));
 						Object[] range = new Object[territories.get(41).getUnits()];
 						for (int i = 1; i < territories.get(41).getUnits(); i++) {
 							range[i] = i;
@@ -7167,7 +7176,7 @@ public class GameBoard extends JPanel {
 						territories.get(7).addUnits(1);
 						myLabel.setText("" + rawrUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -7254,7 +7263,7 @@ public class GameBoard extends JPanel {
 						territories.get(8).addUnits(1);
 						myLabel.setText("" + eggUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -7369,7 +7378,7 @@ public class GameBoard extends JPanel {
 						territories.get(9).addUnits(1);
 						myLabel.setText("" + dacUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -7497,7 +7506,7 @@ public class GameBoard extends JPanel {
 						territories.get(10).addUnits(1);
 						myLabel.setText("" + danUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -7626,7 +7635,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == dirtydanDino.getName()) {
 						System.out.println("fortify from dirty!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(10)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(10)));
 						Object[] range = new Object[territories.get(10).getUnits()];
 						for (int i = 1; i < territories.get(10).getUnits(); i++) {
 							range[i] = i;
@@ -7654,7 +7664,7 @@ public class GameBoard extends JPanel {
 						territories.get(11).addUnits(1);
 						myLabel.setText("" + bbUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -7742,7 +7752,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == blackbeardDino.getName()) {
 						System.out.println("fortify from black!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(11)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(11)));
 						Object[] range = new Object[territories.get(11).getUnits()];
 						for (int i = 1; i < territories.get(11).getUnits(); i++) {
 							range[i] = i;
@@ -7769,7 +7780,7 @@ public class GameBoard extends JPanel {
 						territories.get(12).addUnits(1);
 						myLabel.setText("" + moniUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -7856,7 +7867,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == monisaurusDino.getName()) {
 						System.out.println("fortify from moni!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(12)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(12)));
 						Object[] range = new Object[territories.get(12).getUnits()];
 						for (int i = 1; i < territories.get(12).getUnits(); i++) {
 							range[i] = i;
@@ -7883,7 +7895,7 @@ public class GameBoard extends JPanel {
 						territories.get(13).addUnits(1);
 						myLabel.setText("" + tsUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -7956,7 +7968,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == toystoryDino.getName()) {
 						System.out.println("fortify from toystroy!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(13)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(13)));
 						Object[] range = new Object[territories.get(13).getUnits()];
 						for (int i = 1; i < territories.get(13).getUnits(); i++) {
 							range[i] = i;
@@ -7984,7 +7997,7 @@ public class GameBoard extends JPanel {
 						scrapUnits += 1;
 						territories.get(28).addUnits(1);
 						myLabel.setText("" + scrapUnits);
- 
+
 						playsong = new Play1Song(coin);
 
 						currPlayer.removeArmies(1);
@@ -8043,7 +8056,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == scraptopiaCresent.getName()) {
 						System.out.println("fortify from scrap!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(28)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(28)));
 						Object[] range = new Object[territories.get(28).getUnits()];
 						for (int i = 1; i < territories.get(28).getUnits(); i++) {
 							range[i] = i;
@@ -8073,7 +8087,7 @@ public class GameBoard extends JPanel {
 						territories.get(29).addUnits(1);
 						myLabel.setText("" + zachUnits);
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -8143,7 +8157,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == landofzachCresent.getName()) {
 						System.out.println("fortify from lozach!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(29)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(29)));
 						Object[] range = new Object[territories.get(29).getUnits()];
 						for (int i = 1; i < territories.get(29).getUnits(); i++) {
 							range[i] = i;
@@ -8172,7 +8187,7 @@ public class GameBoard extends JPanel {
 						myLabel.setText("" + giantUnits);
 
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -8259,7 +8274,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == giantCresent.getName()) {
 						System.out.println("fortify from giant!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(30)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(30)));
 						Object[] range = new Object[territories.get(30).getUnits()];
 						for (int i = 1; i < territories.get(30).getUnits(); i++) {
 							range[i] = i;
@@ -8289,7 +8305,7 @@ public class GameBoard extends JPanel {
 						myLabel.setText("" + newzachUnits);
 
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -8390,7 +8406,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == newlandofzachCresent.getName()) {
 						System.out.println("fortify from newland!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(31)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(31)));
 						Object[] range = new Object[territories.get(31).getUnits()];
 						for (int i = 1; i < territories.get(31).getUnits(); i++) {
 							range[i] = i;
@@ -8417,7 +8434,7 @@ public class GameBoard extends JPanel {
 						southUnits += 1;
 						territories.get(32).addUnits(1);
 						myLabel.setText("" + southUnits);
- 
+
 						playsong = new Play1Song(coin);
 
 						currPlayer.removeArmies(1);
@@ -8479,7 +8496,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == southscraptopiaCresent.getName()) {
 						System.out.println("fortify from southscrap!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(32)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(32)));
 						Object[] range = new Object[territories.get(32).getUnits()];
 						for (int i = 1; i < territories.get(32).getUnits(); i++) {
 							range[i] = i;
@@ -8593,7 +8611,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == bloobawlCresent.getName()) {
 						System.out.println("fortify from bloo!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(33)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(33)));
 						Object[] range = new Object[territories.get(33).getUnits()];
 						for (int i = 1; i < territories.get(33).getUnits(); i++) {
 							range[i] = i;
@@ -8622,7 +8641,7 @@ public class GameBoard extends JPanel {
 						myLabel.setText("" + capUnits);
 
 						currPlayer.removeArmies(1);
- 
+
 						playsong = new Play1Song(coin);
 
 						nextPlayer();
@@ -8697,7 +8716,8 @@ public class GameBoard extends JPanel {
 				if (fortifyPhase == true) {
 					if (currPlayer.getName() == cresentcaptitalCresent.getName()) {
 						System.out.println("fortify from scrap!!");
-						neighborsLabel.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(34)));
+						neighborsLabel
+								.setText("You may fortify " + newGame.getFriendlyTerritories(territories.get(34)));
 						Object[] range = new Object[territories.get(34).getUnits()];
 						for (int i = 1; i < territories.get(34).getUnits(); i++) {
 							range[i] = i;
@@ -9512,7 +9532,6 @@ public class GameBoard extends JPanel {
 
 		Random r = new Random();
 		currPlayer = newGame.nextPlayer();
- 
 
 		turnCountLabel.setText("Turns Left: " + turnCount);
 
@@ -9594,7 +9613,47 @@ public class GameBoard extends JPanel {
 				updateLabels();
 			}
 			log += "\nEnd of Log";
-			JOptionPane.showMessageDialog(null, log);
+			Object[] options = { "Change Difficulty", "Next Turn" };
+			int choice = JOptionPane.showOptionDialog(null, log, "AI Turn Over", JOptionPane.DEFAULT_OPTION,
+					JOptionPane.PLAIN_MESSAGE, null, options, options[1]);
+
+			if (choice == 0) {
+				// CHANGE DIFFICULTY
+				Object[] diff = { "Easy", "Medium", "Hard"};
+				int diffChoice = JOptionPane.showOptionDialog(null, "Choose Difficulty to Change to",
+						"Difficulty Change", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, diff,
+						diff[0]);
+				
+				String name = currPlayer.getName();
+				Color color = currPlayer.getColor();
+				int numOfArmies = currPlayer.getNumOfArmies();
+				boolean isAI = currPlayer.isAI();
+				ArrayList<Card> cards = currPlayer.getCards();
+				ArrayList<Territory> territories = currPlayer.getTerritories();
+				PlayerCollection players = newGame.getPlayerList();
+				int index = newGame.getIndexOfPlayer();
+				
+				System.out.println("Started as " + currPlayer.getClass());
+				if(diffChoice == 0) {
+					currPlayer = new EasyAI(name, color, numOfArmies, isAI);
+					currPlayer.setCards(cards);
+					currPlayer.setTerritories(territories);
+
+				}
+				if(diffChoice == 1) {
+					currPlayer = new MediumAI(name, color, numOfArmies, isAI);
+					currPlayer.setCards(cards);
+					currPlayer.setTerritories(territories);
+				}
+				if(diffChoice == 2) {
+					currPlayer = new HardAI(name, color, numOfArmies, isAI);
+					currPlayer.setCards(cards);
+					currPlayer.setTerritories(territories);
+				}
+				players.setPlayerAt(index, currPlayer);
+				System.out.println("Now it is " + currPlayer.getClass());
+			}
+
 			if (turnCount >= 0)
 				nextPlayer();
 			else {
@@ -9603,22 +9662,21 @@ public class GameBoard extends JPanel {
 		}
 
 	}
-	
+
 	public void gameOver() {
 		Player winner = null;
 		int highestNumOfTerritories = 0;
-		for(int i=0;i<newGame.getNumOfPlayers();i++) {
-			if(highestNumOfTerritories < newGame.getPlayerAt(i).getTerritories().size()) {
+		for (int i = 0; i < newGame.getNumOfPlayers(); i++) {
+			if (highestNumOfTerritories < newGame.getPlayerAt(i).getTerritories().size()) {
 				winner = newGame.getPlayerAt(i);
 				highestNumOfTerritories = newGame.getPlayerAt(i).getTerritories().size();
 			}
 		}
-		
-		String message = "The Winner Is: " + winner.getName() + "!\n"
-				+ "They had " + highestNumOfTerritories + "!";
-		
+
+		String message = "The Winner Is: " + winner.getName() + "!\n" + "They had " + highestNumOfTerritories + "!";
+
 		JOptionPane.showMessageDialog(null, message);
-		
+
 		System.exit(0);
 	}
 
@@ -9740,9 +9798,9 @@ public class GameBoard extends JPanel {
 	}
 
 	private void gameBoardAttack(Territory attackingTerr, Territory defendingTerr) {
-		playsong= new Play1Song(bass);///bass sound?
+		playsong = new Play1Song(bass);/// bass sound?
 		if (attackingTerr.getUnits() >= 2) {
-			playsong= new Play1Song(bass);//bass sound
+			playsong = new Play1Song(bass);// bass sound
 
 			BattleLogic battleLogic = new BattleLogic(attackingTerr.getOwner(), defendingTerr.getOwner(), attackingTerr,
 					defendingTerr);
