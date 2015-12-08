@@ -34,6 +34,10 @@ public abstract class Player implements Serializable {
 	public ArrayList<Territory> getTerritories() {
 		return playerTerritories;
 	}
+	
+	public Color getColor() {
+		return playerColor;
+	}
 
 	public ArrayList<Card> getCards() {
 		return playerCards;
@@ -75,6 +79,14 @@ public abstract class Player implements Serializable {
 
 	public void addTerritories(Territory newTerritory) {
 		playerTerritories.add(newTerritory);
+	}
+	
+	public void setTerritories(ArrayList<Territory> territories) {
+		playerTerritories = new ArrayList<Territory>(territories);
+	}
+	
+	public void setCards(ArrayList<Card> card) {
+		playerCards = new ArrayList<Card>(card);
 	}
 
 	public void removeTerritory(Territory removedTerritory) {
@@ -151,20 +163,20 @@ public abstract class Player implements Serializable {
 		// if there is no card able to be turned in then it returns false
 		return false;
 	}
-	
+
 	public int getConqueredContinents(GameLogic gl) {
 		ArrayList<Continent> allContinents = gl.getContinents();
 		ArrayList<Territory> allTerritories = gl.getTerritories();
 		int numOfCont = 0;
-		
-		for(int i=0;i<allContinents.size();i++) {
-			if(allContinents.get(i).getTerritories().get(0).getOwner().getName() == name) {
-				if(allContinents.get(i).isConquered()) {
+
+		for (int i = 0; i < allContinents.size(); i++) {
+			if (allContinents.get(i).getTerritories().get(0).getOwner().getName() == name) {
+				if (allContinents.get(i).isConquered()) {
 					numOfCont++;
 				}
 			}
 		}
-		
+
 		return numOfCont;
 	}
 
